@@ -1,0 +1,2554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <title>Cavomarina Beach Hotel — 2026 High-Season Marketing Plan</title>
+  <link rel="icon" type="image/svg+xml" href="https://ppg.pmapartner.com/cavomarina/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Qualy';
+      src: local('Qualy'), local('Qualy Bold');
+    }
+
+    :root {
+      --bg-dark: #0F1F28;
+      --bg-black: #0A141A;
+      --bg-light: #F8FAFB;
+      --primary-gold: #38ADA4;
+      --gold-hover: #48BEB4;
+      --gold-light: rgba(56, 173, 164, 0.12);
+      --text-white: rgba(255, 255, 255, 0.95);
+      --text-muted: rgba(255, 255, 255, 0.65);
+      --text-dark: #0F1B29;
+      --text-muted-light: #52647A;
+      --bg-card: rgba(255, 255, 255, 0.04);
+      --border-card: rgba(255, 255, 255, 0.1);
+      --border-light: #E0E5EB;
+      
+      --aegean-blue: #38ADA4;
+      --danger: #E53E3E;
+      --success: #38ADA4;
+      
+      --card-shadow: 0 10px 30px rgba(15, 27, 41, 0.04);
+      --card-shadow-hover: 0 20px 40px rgba(15, 27, 41, 0.08);
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Sora', sans-serif;
+      color: var(--text-white);
+      background-color: var(--bg-black);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* ── PMA CO-BRANDING HEADER BANNER ── */
+    .pma-top-bar {
+      background-color: var(--bg-black);
+      color: var(--text-white);
+      padding: 12px 60px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-card);
+      z-index: 1000;
+      position: relative;
+    }
+
+    .pma-partner-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .pma-logo-text {
+      font-family: 'Qualy', 'Inter', sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ── CAVO MARINA WEBSITE HEADER ── */
+    .cavo-header {
+      background: rgba(15, 31, 40, 0.95);
+      backdrop-filter: blur(15px);
+      padding: 18px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      border-bottom: 1px solid var(--border-card);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .cavo-logo-img {
+      height: 30px;
+      width: auto;
+      max-width: 180px;
+      object-contain: fit;
+    }
+
+    .cavo-nav {
+      display: flex;
+      gap: 35px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .cavo-nav-link {
+      text-decoration: none;
+      color: var(--text-white);
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .cavo-nav-link:hover, .cavo-nav-link.active {
+      color: var(--primary-gold);
+    }
+
+    .cavo-book-btn {
+      background-color: var(--primary-gold);
+      color: var(--bg-dark);
+      border: none;
+      padding: 10px 24px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: var(--transition);
+      border-radius: 99px;
+    }
+
+    .cavo-book-btn:hover {
+      background-color: var(--gold-hover);
+      box-shadow: 0 0 15px rgba(196, 164, 111, 0.4);
+    }
+
+    /* ── SLIDE DECK CONTAINER (16:9 ASPECT RATIO) ── */
+    .deck-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    .slide {
+      background: var(--bg-dark);
+      border: 1px solid var(--border-card);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 60px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+      min-height: 600px;
+      transition: var(--transition);
+    }
+
+    .slide:hover {
+      border-color: rgba(196, 164, 111, 0.3);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Cover Slide Specifics */
+    .slide-cover {
+      background-image: 
+        linear-gradient(rgba(15, 31, 40, 0.5) 0%, rgba(15, 31, 40, 0.85) 100%),
+        url('https://image-tc.galaxy.tf/wijpeg-7kppa0lzf1jd60cpcx0dap4vd/general-view-with-beach-web.jpg?width=1200');
+      background-size: cover;
+      background-position: center;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+
+    .slide-cover-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide-cover-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--text-white);
+    }
+
+    .slide-cover-subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    /* Slide Header */
+    .slide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-card);
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+      height: 45px;
+      flex-shrink: 0;
+    }
+
+    .slide-title-area {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .slide-tag {
+      font-size: 9px;
+      font-weight: 700;
+      background: rgba(196, 164, 111, 0.15);
+      color: var(--primary-gold);
+      border: 1px solid var(--primary-gold);
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .slide-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--text-white);
+    }
+
+    .slide-pma-badge {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 9px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* Remove image icon from slide headers */
+    .slide-header .slide-pma-badge::before {
+      display: none !important;
+    }
+
+    /* Slide Body & Footer */
+    .slide-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      min-height: 0; /* allows flexbox container to shrink */
+    }
+
+    .slide-footer {
+      border-top: 1px solid var(--border-card);
+      padding-top: 15px;
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      height: 30px;
+      flex-shrink: 0;
+    }
+
+    .slide-footer span strong {
+      color: var(--primary-gold);
+    }
+
+    /* ── SPLIT GRID (FOR SLIDE USE) ── */
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+      height: 100%;
+    }
+
+    .split-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: var(--text-white);
+      margin-bottom: 15px;
+    }
+
+    .split-content p {
+      font-size: 14px;
+      color: var(--text-white);
+      opacity: 0.8;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    .split-image-container {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      height: 330px;
+      border: 1px solid var(--border-card);
+    }
+
+    .split-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image-tag-overlay {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(15, 31, 40, 0.9);
+      backdrop-filter: blur(10px);
+      padding: 12px 20px;
+      border-left: 2px solid var(--primary-gold);
+      color: var(--text-white);
+      border-radius: 4px;
+    }
+
+    .image-tag-title {
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--primary-gold);
+      margin-bottom: 2px;
+    }
+
+    .image-tag-desc {
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* ── HIGH-SEASON STATS & METRICS CARDS ── */
+    .metrics-summary-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .metric-card-visual {
+      background: var(--bg-card);
+      border-radius: 12px;
+      border: 1px solid var(--border-card);
+      padding: 30px 20px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .metric-card-visual:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: var(--primary-gold);
+    }
+
+    .metric-visual-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--primary-gold);
+      margin-bottom: 5px;
+    }
+
+    .metric-visual-lbl {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-white);
+    }
+
+    .metric-visual-foot {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* ── TABLES ── */
+    .table-container {
+      background: var(--bg-card);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-card);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .report-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      text-align: left;
+    }
+
+    .report-table th {
+      background: var(--bg-black);
+      color: var(--primary-gold);
+      padding: 12px 18px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border-card);
+    }
+
+    .report-table td {
+      padding: 10px 18px;
+      border-bottom: 1px solid var(--border-card);
+      color: var(--text-white);
+    }
+
+    .report-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .report-table tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .badge-google {
+      background: rgba(66, 133, 244, 0.15);
+      color: #8AB4F8;
+      border: 1px solid rgba(66, 133, 244, 0.3);
+    }
+
+    .badge-meta {
+      background: rgba(139, 92, 246, 0.15);
+      color: #C084FC;
+      border: 1px solid rgba(139, 92, 246, 0.3);
+    }
+
+    /* ── CHART BOX ── */
+    .chart-box {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 30px;
+      border: 1px solid var(--border-card);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .chart-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .chart-legend {
+      display: flex;
+      gap: 15px;
+      font-size: 10px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .legend-color {
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+    }
+
+    .bar-chart {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .chart-group {
+      margin-bottom: 5px;
+    }
+
+    .group-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary-gold);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 1px solid var(--border-card);
+      padding-bottom: 4px;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 160px 1fr 80px;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 6px;
+    }
+
+    .bar-label {
+      font-size: 11px;
+      color: var(--text-white);
+      opacity: 0.8;
+    }
+
+    .bar-track {
+      background: rgba(255, 255, 255, 0.05);
+      height: 16px;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid var(--border-card);
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .bar-fill.google-spend { background: #4285F4; width: 22.5%; }
+    .bar-fill.google-rev { background: #34A853; width: 83.2%; }
+    .bar-fill.meta-spend { background: #8B5CF6; width: 32.0%; }
+    .bar-fill.meta-rev { background: var(--primary-gold); width: 95.2%; }
+
+    .bar-value {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-white);
+      text-align: right;
+    }
+
+    /* ── TIMELINE DASHBOARD ── */
+    .timeline-container {
+      background: var(--bg-card);
+      border-radius: 12px;
+      border: 1px solid var(--border-card);
+      padding: 30px 40px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .timeline-nav {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-card);
+      margin-bottom: 25px;
+      padding-bottom: 5px;
+      flex-shrink: 0;
+    }
+
+    .timeline-tab {
+      background: none;
+      border: none;
+      padding: 10px 15px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .timeline-tab.active {
+      color: var(--primary-gold);
+    }
+
+    .timeline-tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: -7px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--primary-gold);
+    }
+
+    .timeline-panels {
+      flex: 1;
+      min-height: 0;
+    }
+
+    .timeline-panel {
+      display: none;
+      height: 100%;
+    }
+
+    .timeline-panel.active {
+      display: block;
+      animation: slideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .t-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+      height: 100%;
+      align-items: center;
+    }
+
+    .t-main-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--text-white);
+      margin-bottom: 4px;
+    }
+
+    .t-dates {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary-gold);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .t-channels {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .t-channel-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-card);
+      border-radius: 6px;
+      padding: 18px;
+      border-top: 3px solid var(--primary-gold);
+    }
+
+    .t-channel-card.meta {
+      border-top-color: var(--aegean-blue);
+    }
+
+    .t-channel-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .t-channel-budget {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--primary-gold);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid var(--border-card);
+    }
+
+    .t-channel-list {
+      list-style: none;
+      font-size: 11px;
+    }
+
+    .t-channel-list li {
+      margin-bottom: 6px;
+      padding-left: 12px;
+      position: relative;
+      color: var(--text-white);
+      opacity: 0.8;
+    }
+
+    .t-channel-list li::before {
+      content: '▪';
+      color: var(--primary-gold);
+      position: absolute;
+      left: 0;
+      font-size: 8px;
+      top: 1px;
+    }
+
+    .t-metric-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      background: var(--bg-black);
+      padding: 16px;
+      border-radius: 6px;
+      color: var(--text-white);
+      text-align: center;
+      border: 1px solid var(--border-card);
+    }
+
+    .t-strip-box {
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .t-strip-box:last-child {
+      border-right: none;
+    }
+
+    .t-strip-val {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary-gold);
+      margin-bottom: 2px;
+    }
+
+    .t-strip-lbl {
+      font-size: 8px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .t-side-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      height: 100%;
+      justify-content: center;
+    }
+
+    .t-side-image {
+      border-radius: 6px;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      border: 1px solid var(--border-card);
+    }
+
+    .t-side-image-desc {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      right: 15px;
+      background: rgba(15, 31, 40, 0.95);
+      backdrop-filter: blur(5px);
+      padding: 10px 15px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-white);
+      text-align: center;
+      border: 1px solid var(--border-card);
+    }
+
+    .t-strategy-note {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-card);
+      border-radius: 6px;
+      padding: 15px 20px;
+    }
+
+    .t-strategy-note h4 {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary-gold);
+      margin-bottom: 4px;
+    }
+
+    .t-strategy-note p {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ── BUDGET BREAKDOWN CHART ── */
+    .budget-chart-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-radius: 12px;
+      padding: 30px 40px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .budget-horizontal-bar {
+      height: 35px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      margin-bottom: 25px;
+      border: 1px solid var(--border-card);
+    }
+
+    .budget-slice {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--bg-dark);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .budget-slice.june { background-color: var(--aegean-blue); width: 12.5%; color: var(--white); }
+    .budget-slice.july { background-color: var(--primary-gold); width: 25.0%; }
+    .budget-slice.august { background-color: #8B5CF6; width: 25.0%; color: var(--white); }
+    .budget-slice.september { background-color: #FAF4EB; width: 25.0%; }
+    .budget-slice.october { background-color: var(--danger); width: 12.5%; color: var(--white); }
+
+    .chart-breakdown-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+    }
+
+    .breakdown-card {
+      border-left: 3px solid var(--border-card);
+      padding-left: 15px;
+    }
+
+    .breakdown-card.june { border-left-color: var(--aegean-blue); }
+    .breakdown-card.july { border-left-color: var(--primary-gold); }
+    .breakdown-card.august { border-left-color: #8B5CF6; }
+    .breakdown-card.september { border-left-color: #FAF4EB; }
+    .breakdown-card.october { border-left-color: var(--danger); }
+
+    .breakdown-month {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .breakdown-budget {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-white);
+    }
+
+    .breakdown-pct {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* ── RECOMMENDATIONS ── */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .rec-card {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 25px;
+      border: 1px solid var(--border-card);
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .rec-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 4px;
+      background: var(--primary-gold);
+    }
+
+    .rec-number {
+      font-size: 48px;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.02);
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      line-height: 1;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .rec-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 10px;
+      max-width: 85%;
+    }
+
+    .rec-desc {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── PRINT MEDIA QUERY FOR POWERPOINT EFFECT ── */
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 0;
+      }
+
+      body {
+        background-color: var(--bg-black) !important;
+        color: var(--text-white) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .pma-top-bar, .cavo-header {
+        display: none !important;
+      }
+
+      .deck-container {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .slide {
+        width: 297mm !important;
+        height: 210mm !important;
+        max-width: 297mm !important;
+        max-height: 210mm !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        padding: 18mm 24mm !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background-color: var(--bg-dark) !important;
+        page-break-after: always !important;
+        break-after: page !important;
+        page-break-inside: avoid !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+      }
+
+      /* In print mode, hide interactive tabs and output all monthly panels as separate widescreen slides */
+      .slide-interactive-plan {
+        display: none !important; /* Hide the tabbed slide in print */
+      }
+
+      .print-only-month-slide {
+        display: flex !important;
+      }
+
+      /* Proportional shrinking for print layout to prevent height overflows */
+      .slide-header {
+        margin-bottom: 12px !important;
+        height: 35px !important;
+        padding-bottom: 8px !important;
+      }
+
+      .slide-heading {
+        font-size: 22px !important;
+      }
+
+      .slide-body {
+        flex: 1 !important;
+        justify-content: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .slide-footer {
+        margin-top: 12px !important;
+        padding-top: 8px !important;
+        height: 25px !important;
+      }
+
+      .split-grid {
+        gap: 20px !important;
+      }
+
+      .split-image-container {
+        height: 120mm !important;
+      }
+
+      .chart-box {
+        padding: 18px !important;
+      }
+
+      .t-grid {
+        gap: 15px !important;
+      }
+
+      .t-channels {
+        gap: 10px !important;
+        margin-bottom: 10px !important;
+      }
+
+      .t-channel-card {
+        padding: 10px 14px !important;
+      }
+
+      .t-metric-strip {
+        padding: 10px !important;
+      }
+
+      .t-strip-val {
+        font-size: 15px !important;
+      }
+
+      .t-side-image {
+        height: 100% !important;
+        min-height: 110mm !important;
+      }
+
+      .t-strategy-note {
+        padding: 10px 15px !important;
+      }
+
+      .grid-3 {
+        gap: 15px !important;
+      }
+
+      .rec-card {
+        padding: 18px !important;
+      }
+
+      /* Make sure chart and tables render colors correctly */
+      .bar-track, .t-channel-card, .t-metric-strip, .table-container, .rec-card, .chart-box {
+        background-color: rgba(255, 255, 255, 0.05) !important;
+        border-color: rgba(255, 255, 255, 0.1) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+
+    /* Helper for print-only slides */
+    .print-only-month-slide {
+      display: none;
+    }
+
+    /* ── SCREEN VIEW WEBPAGE LOGIC ── */
+    @media screen {
+      .deck-container {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .slide {
+        display: flex !important;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 120px 0 0 0 !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        min-height: auto !important;
+        position: relative !important;
+        overflow: visible !important;
+        transition: none !important;
+      }
+
+      /* Alternate Background Colors for Sections */
+      #slide-1 {
+        background-image: 
+          linear-gradient(rgba(15, 31, 40, 0.65) 0%, rgba(15, 31, 40, 0.95) 100%),
+          url('https://image-tc.galaxy.tf/wijpeg-7kppa0lzf1jd60cpcx0dap4vd/general-view-with-beach-web.jpg?width=1600') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        min-height: 100vh !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 0 !important;
+      }
+      
+      #slide-2 {
+        background-color: var(--bg-light) !important;
+        color: var(--text-dark) !important;
+      }
+
+
+
+      #slide-3b {
+        background-color: var(--bg-dark) !important;
+        color: var(--text-white) !important;
+      }
+
+      #slide-3c {
+        background-color: var(--bg-light) !important;
+        color: var(--text-dark) !important;
+      }
+
+      #slide-4 {
+        background-color: var(--bg-dark) !important;
+        color: var(--text-white) !important;
+      }
+
+      #slide-5 {
+        background-color: var(--bg-light) !important;
+        color: var(--text-dark) !important;
+      }
+
+      #slide-6 {
+        background-color: var(--bg-dark) !important;
+        color: var(--text-white) !important;
+      }
+
+      #slide-7 {
+        background-color: var(--bg-light) !important;
+        color: var(--text-dark) !important;
+      }
+
+      /* Slide Inner Container */
+      .slide-body {
+        width: 100% !important;
+        max-width: 1280px !important;
+        margin: 0 auto !important;
+        padding: 0 40px 120px 40px !important;
+        box-sizing: border-box !important;
+        flex: none !important;
+      }
+
+      .slide-header {
+        width: 100% !important;
+        max-width: 1280px !important;
+        margin: 0 auto 40px auto !important;
+        padding: 0 40px 15px 40px !important;
+        height: auto !important;
+        box-sizing: border-box !important;
+        border-bottom: 1px solid var(--border-light) !important;
+        background: transparent !important;
+      }
+
+      /* Adjust header border for dark sections */
+      #slide-1 .slide-header, #slide-3b .slide-header, #slide-4 .slide-header, #slide-6 .slide-header {
+        border-bottom-color: var(--border-card) !important;
+      }
+      
+      #slide-2 .slide-header, #slide-3c .slide-header, #slide-5 .slide-header, #slide-7 .slide-header {
+        border-bottom-color: var(--border-light) !important;
+      }
+
+      .slide-footer {
+        display: none !important;
+      }
+
+      /* Typography overrides */
+      .slide-heading {
+        font-size: 40px !important;
+        font-weight: 700 !important;
+        line-height: 1.2 !important;
+        font-family: 'Sora', sans-serif !important;
+      }
+      
+      #slide-2 .slide-heading, #slide-3c .slide-heading, #slide-5 .slide-heading, #slide-7 .slide-heading {
+        color: var(--text-dark) !important;
+      }
+      
+      .slide-tag {
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        background: var(--gold-light) !important;
+        color: var(--primary-gold) !important;
+        border: 1px solid var(--primary-gold) !important;
+        padding: 4px 14px !important;
+        border-radius: 99px !important;
+        letter-spacing: 1px !important;
+      }
+
+      /* Paragraph styles */
+      #slide-2 p, #slide-3c p, #slide-5 p, #slide-7 p {
+        color: var(--text-muted-light) !important;
+      }
+
+      /* Strong text styling in light slides */
+      #slide-2 strong, #slide-3c strong, #slide-5 strong, #slide-7 strong {
+        color: var(--text-dark) !important;
+      }
+
+      /* Card styling adjustments for light sections */
+      #slide-3c .table-container, #slide-3c .chart-box, #slide-5 .timeline-container, #slide-7 .rec-card {
+        background-color: #FFFFFF !important;
+        border: 1px solid var(--border-light) !important;
+        box-shadow: var(--card-shadow) !important;
+      }
+
+      #slide-7 .rec-card {
+        border-radius: 16px !important;
+      }
+
+      #slide-7 .rec-card:hover {
+        box-shadow: var(--card-shadow-hover) !important;
+        border-color: var(--primary-gold) !important;
+        transform: translateY(-5px);
+      }
+
+      #slide-7 .rec-number {
+        color: rgba(15, 27, 41, 0.03) !important;
+      }
+      
+      #slide-7 .rec-title {
+        color: var(--text-dark) !important;
+      }
+
+      #slide-7 .rec-desc {
+        color: var(--text-muted-light) !important;
+      }
+
+      /* Card styling adjustments for dark sections */
+      #slide-3b .table-container, #slide-4 .chart-box, #slide-6 .budget-chart-container {
+        background-color: rgba(255, 255, 255, 0.03) !important;
+        border: 1px solid var(--border-card) !important;
+        border-radius: 16px !important;
+      }
+
+      /* Tables on light sections */
+      #slide-3c .report-table th {
+        background: #F8FAFB !important;
+        color: var(--primary-gold) !important;
+        border-bottom: 1px solid var(--border-light) !important;
+      }
+
+      #slide-3c .report-table td {
+        color: var(--text-dark) !important;
+        border-bottom: 1px solid var(--border-light) !important;
+      }
+
+      #slide-3c .report-table tr:nth-child(even) td {
+        background: rgba(15, 27, 41, 0.01) !important;
+      }
+
+      #slide-3c .t-strategy-note {
+        background: rgba(56, 173, 164, 0.05) !important;
+        border-left: 4px solid var(--primary-gold) !important;
+        color: var(--text-dark) !important;
+      }
+
+      #slide-3c .t-strategy-note h4 {
+        color: var(--primary-gold) !important;
+      }
+
+      #slide-3c .t-strategy-note p {
+        color: var(--text-muted-light) !important;
+      }
+
+      /* Slide 3c (Web Traffic Analytics) overrides */
+      #slide-3c .metric-card-visual {
+        background: #FFFFFF !important;
+        border: 1px solid var(--border-light) !important;
+        box-shadow: var(--card-shadow) !important;
+      }
+      #slide-3c .metric-card-visual:hover {
+        box-shadow: var(--card-shadow-hover) !important;
+        border-color: var(--primary-gold) !important;
+      }
+      #slide-3c .metric-visual-val {
+        color: var(--primary-gold) !important;
+      }
+      #slide-3c .metric-visual-lbl {
+        color: var(--text-dark) !important;
+      }
+      #slide-3c .metric-visual-foot {
+        color: var(--text-muted-light) !important;
+      }
+      #slide-3c .chart-title {
+        color: var(--text-dark) !important;
+      }
+      #slide-3c .legend-item {
+        color: var(--text-muted-light) !important;
+      }
+      #slide-3c .group-label {
+        color: var(--primary-gold) !important;
+        border-bottom-color: var(--border-light) !important;
+      }
+      #slide-3c .bar-label {
+        color: var(--text-dark) !important;
+      }
+      #slide-3c .bar-track {
+        background: rgba(15, 27, 41, 0.05) !important;
+        border-color: var(--border-light) !important;
+      }
+      #slide-3c .bar-value {
+        color: var(--text-dark) !important;
+      }
+
+      /* Timeline dashboard on light section */
+      #slide-5 .timeline-tab {
+        color: var(--text-muted-light) !important;
+      }
+
+      #slide-5 .timeline-tab.active {
+        color: var(--primary-gold) !important;
+      }
+
+      #slide-5 .timeline-tab.active::after {
+        background: var(--primary-gold) !important;
+      }
+
+      #slide-5 .t-channel-card {
+        background: #FFFFFF !important;
+        border: 1px solid var(--border-light) !important;
+        border-top: 3px solid var(--primary-gold) !important;
+      }
+
+      #slide-5 .t-channel-card.meta {
+        border-top-color: #8B5CF6 !important;
+      }
+
+      #slide-5 .t-channel-title {
+        color: var(--text-dark) !important;
+      }
+
+      #slide-5 .t-channel-budget {
+        background: var(--gold-light) !important;
+        color: var(--primary-gold) !important;
+        border: 1px solid rgba(56, 173, 164, 0.2) !important;
+      }
+
+      #slide-5 .t-channel-list li {
+        color: var(--text-muted-light) !important;
+      }
+
+      #slide-5 .t-metric-strip {
+        background: #F8FAFB !important;
+        border: 1px solid var(--border-light) !important;
+      }
+
+      #slide-5 .t-strip-box {
+        border-right: 1px solid var(--border-light) !important;
+      }
+
+      #slide-5 .t-strip-val {
+        color: var(--primary-gold) !important;
+      }
+
+      #slide-5 .t-strip-lbl {
+        color: var(--text-muted-light) !important;
+      }
+
+      #slide-5 .t-side-image-desc {
+        background: rgba(255, 255, 255, 0.95) !important;
+        color: var(--text-dark) !important;
+        border: 1px solid var(--border-light) !important;
+      }
+
+      #slide-5 .t-strategy-note {
+        background: #F8FAFB !important;
+        border: 1px solid var(--border-light) !important;
+        color: var(--text-dark) !important;
+      }
+
+      #slide-5 .t-strategy-note h4 {
+        color: var(--primary-gold) !important;
+      }
+
+      #slide-5 .t-strategy-note p {
+        color: var(--text-muted-light) !important;
+      }
+
+      /* High-contrast teal text overrides on light background slides for visual readability */
+      #slide-2 .group-label, #slide-3c .group-label, #slide-5 .group-label, #slide-7 .group-label {
+        color: #247D76 !important;
+      }
+      #slide-2 .report-table th, #slide-3c .report-table th, #slide-5 .report-table th, #slide-7 .report-table th {
+        color: #247D76 !important;
+      }
+      #slide-2 .t-strategy-note h4, #slide-3c .t-strategy-note h4, #slide-5 .t-strategy-note h4, #slide-7 .t-strategy-note h4 {
+        color: #247D76 !important;
+      }
+      #slide-2 .t-dates, #slide-3c .t-dates, #slide-5 .t-dates, #slide-7 .t-dates {
+        color: #247D76 !important;
+      }
+      #slide-2 .timeline-tab.active, #slide-3c .timeline-tab.active, #slide-5 .timeline-tab.active, #slide-7 .timeline-tab.active {
+        color: #247D76 !important;
+      }
+      #slide-2 .t-channel-budget, #slide-3c .t-channel-budget, #slide-5 .t-channel-budget, #slide-7 .t-channel-budget {
+        color: #247D76 !important;
+        border-color: rgba(36, 125, 118, 0.2) !important;
+        background: rgba(36, 125, 118, 0.08) !important;
+      }
+      #slide-2 .t-strip-val, #slide-3c .t-strip-val, #slide-5 .t-strip-val, #slide-7 .t-strip-val {
+        color: #247D76 !important;
+      }
+      #slide-2 .metric-visual-val, #slide-3c .metric-visual-val, #slide-5 .metric-visual-val, #slide-7 .metric-visual-val {
+        color: #247D76 !important;
+      }
+      
+      .deck-controls {
+        display: none !important;
+      }
+    }
+
+    /* Hide PMA logo from headers and badges globally */
+    .slide-pma-badge, .pma-partner-brand {
+      display: none !important;
+    }
+
+    /* Footer logo styling for screen view */
+    @media screen {
+      .pma-brand-footer {
+        display: block !important;
+        background-color: var(--bg-black) !important;
+        border-top: 1px solid var(--border-card) !important;
+        padding: 80px 0 !important;
+        text-align: center !important;
+      }
+      .footer-container {
+        max-width: 1280px !important;
+        margin: 0 auto !important;
+        padding: 0 40px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 20px !important;
+      }
+      .footer-logo-text {
+        font-family: 'Qualy', 'Sora', sans-serif !important;
+        font-size: 32px !important;
+        font-weight: 800 !important;
+        letter-spacing: -0.5px !important;
+        text-transform: uppercase !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+      }
+      .footer-logo-text .pma-part {
+        color: #FFFFFF !important;
+      }
+      .footer-logo-text .partner-part {
+        color: #8B5CF6 !important; /* Violet color visible on dark background */
+        font-weight: 500 !important;
+      }
+      .footer-copy {
+        font-size: 11px !important;
+        color: var(--text-muted) !important;
+        letter-spacing: 0.5px !important;
+        opacity: 0.7 !important;
+      }
+    }
+
+    @media print {
+      .pma-brand-footer {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       PMA CO-BRANDING HEADER BANNER
+  ═══════════════════════════════════════════════ -->
+  <div class="pma-top-bar">
+    <div class="pma-partner-brand">
+      <span class="pma-logo-text">
+        <span style="font-family: 'Qualy', sans-serif; font-weight: 800; color: #FFFFFF; font-size: 16px; letter-spacing: -0.5px; text-transform: uppercase;">PMA</span>
+        <span style="font-family: 'Qualy', sans-serif; font-weight: 500; color: rgba(139, 92, 246, 1); font-size: 16px; letter-spacing: -0.5px; text-transform: uppercase; margin-left: 4px;">PARTNER</span>
+      </span>
+    </div>
+    <span>High-Season Ad Strategy Presentation (June 15 - Oct 15)</span>
+    <span>Confidential Report</span>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════
+       CAVO MARINA WEBSITE HEADER
+  ═══════════════════════════════════════════════ -->
+  <header class="cavo-header">
+    <img src="https://image-tc.galaxy.tf/wipng-dry58aac66c9bjhdxi3jz29f3/cavomarina-logo-white-01.png?width=300" alt="Cavomarina Beach Hotel" class="cavo-logo-img">
+    <ul class="cavo-nav">
+      <li><a class="cavo-nav-link" onclick="scrollToSec('slide-1')">Cover</a></li>
+      <li><a class="cavo-nav-link" onclick="scrollToSec('slide-2')">Overview</a></li>
+      <li><a class="cavo-nav-link" onclick="scrollToSec('slide-3b')">Ad Stats</a></li>
+      <li><a class="cavo-nav-link" onclick="scrollToSec('slide-3c')">Web Traffic</a></li>
+      <li><a class="cavo-nav-link" onclick="scrollToSec('slide-4')">Shares</a></li>
+      <li><a class="cavo-nav-link" onclick="scrollToSec('slide-5')">2026 Plan</a></li>
+      <li><a class="cavo-nav-link" onclick="scrollToSec('slide-6')">Allocation</a></li>
+      <li><a class="cavo-nav-link" onclick="scrollToSec('slide-7')">Steps</a></li>
+    </ul>
+    <button class="cavo-book-btn" onclick="window.print()">Print Slides</button>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════
+       DECK CONTAINER
+  ═══════════════════════════════════════════════ -->
+  <div class="deck-container">
+
+    <!-- ─── SLIDE 1: COVER SLIDE ─── -->
+    <div class="slide slide-cover" id="slide-1">
+      <div class="slide-pma-badge" style="font-size: 13px;">
+        <span style="font-family: 'Qualy', sans-serif; font-weight: 800; color: #FFFFFF; text-transform: uppercase;">PMA</span>
+        <span style="font-family: 'Qualy', sans-serif; font-weight: 500; color: rgba(139, 92, 246, 1); text-transform: uppercase; margin-left: 4px;">PARTNER</span>
+      </div>
+      
+      <div class="slide-cover-body">
+        <span class="hero-pretitle">Kavos, Corfu Island</span>
+        <h1 class="slide-cover-title">2026 High-Season Advertising &amp;<br>Acquisition Campaign Architecture</h1>
+        <p class="slide-cover-subtitle">
+          Direct Booking Channel Strategy optimized for Cavo Marina beachfront resort. Managing brand protection and visual prospecting funnels from June 15 to October 15, 2026.
+        </p>
+      </div>
+
+      <div class="slide-footer" style="width:100%;">
+        <span>© 2026 PMA Partner. Confidential Presentation.</span>
+        <span>June 15 – October 15, 2026</span>
+      </div>
+    </div>
+
+    <!-- ─── SLIDE 2: EXECUTIVE OVERVIEW ─── -->
+    <div class="slide" id="slide-2">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-tag">Slide 02</span>
+          <h2 class="slide-heading">Direct Channel Marketing Intent</h2>
+        </div>
+        <div class="slide-pma-badge">
+          <span style="font-family: 'Qualy', sans-serif; font-weight: 800; color: #FFFFFF; text-transform: uppercase;">PMA</span><span style="font-family: 'Qualy', sans-serif; font-weight: 500; color: rgba(139, 92, 246, 1); text-transform: uppercase; margin-left: 3px;">PARTNER</span>
+        </div>
+      </div>
+
+      <div class="slide-body">
+        <div class="split-grid">
+          <div class="split-content">
+            <h3>Securing Direct Booking Value</h3>
+            <p>
+              The summer window between **June 15 and October 15** represents Cavo Marina's highest yield period in Corfu. Historically, third-party OTAs intercept high-intent customers at checkout, charging up to 25% in commission fees.
+            </p>
+            <p>
+              This campaign architecture is designed to capture travelers when they perform brand searches or look for beachfront suites. By routing them to the direct website, we secure bookings directly in our PMS database, bypass OTA fees, and build long-term guest loyalty.
+            </p>
+            <p>
+              Our combined marketing budget of **€8,000** for this high-season window (strictly capped at **€2,000 per month**) targets premium beach-seeking demographics in the UK, Germany, Italy, and Poland, driving an estimated **€72,500** in direct revenue at a target blended ROAS of **9.06x**.
+            </p>
+          </div>
+          <div class="split-image-container pulse-glow">
+            <img src="https://image-tc.galaxy.tf/wijpeg-7kppa0lzf1jd60cpcx0dap4vd/general-view-with-beach-web.jpg?width=1200" alt="Cavo Marina Beach Resort Pool">
+            <div class="image-tag-overlay">
+              <div class="image-tag-title">Cavo Marina Corfu</div>
+              <div class="image-tag-desc">Kavos Beachfront Resort</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>Cavo Marina Beach Hotel — <strong>2026 Ad Strategy</strong></span>
+        <span>Slide 2 of 8</span>
+      </div>
+    </div>
+
+    <!-- ─── SLIDE 3b: HISTORICAL DIGITAL ADVERTISING PERFORMANCE ─── -->
+    <div class="slide" id="slide-3b">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-tag">Slide 03</span>
+          <h2 class="slide-heading">Historical Digital Advertising Performance (2024 - 2025)</h2>
+        </div>
+        <div class="slide-pma-badge">
+          <span style="font-family: 'Qualy', sans-serif; font-weight: 800; color: #FFFFFF; text-transform: uppercase;">PMA</span><span style="font-family: 'Qualy', sans-serif; font-weight: 500; color: rgba(139, 92, 246, 1); text-transform: uppercase; margin-left: 3px;">PARTNER</span>
+        </div>
+      </div>
+
+      <div class="slide-body">
+        <div class="table-container">
+          <table class="report-table">
+            <thead>
+              <tr>
+                <th>Season</th>
+                <th>Ad Channel</th>
+                <th>Impressions</th>
+                <th>Clicks</th>
+                <th>CTR</th>
+                <th>Spend (EUR)</th>
+                <th>Bookings</th>
+                <th>Revenue (EUR)</th>
+                <th>ROAS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2" class="bold-cell" style="vertical-align: middle; border-right: 1px solid var(--border-card); font-weight: 600;">2024 Season</td>
+                <td><span class="badge badge-google">Google Ads</span> Search &amp; Display</td>
+                <td>135,000</td>
+                <td>5,600</td>
+                <td>4.15%</td>
+                <td>€4,200.00</td>
+                <td>48</td>
+                <td>€31,200.00</td>
+                <td class="bold-cell" style="color: var(--success);">7.43x</td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-meta">Meta Ads</span> Social Funnel</td>
+                <td>168,000</td>
+                <td>4,100</td>
+                <td>2.44%</td>
+                <td>€2,800.00</td>
+                <td>29</td>
+                <td>€18,850.00</td>
+                <td class="bold-cell" style="color: var(--success);">6.73x</td>
+              </tr>
+              <tr style="background-color: rgba(255, 255, 255, 0.02); font-weight: 700; border-bottom: 2px solid var(--border-card);">
+                <td colspan="2" class="bold-cell">2024 Total / Blended</td>
+                <td>303,000</td>
+                <td>9,700</td>
+                <td>3.20%</td>
+                <td>€7,000.00</td>
+                <td>77</td>
+                <td>€50,050.00</td>
+                <td class="bold-cell" style="color: var(--primary-gold);">7.15x</td>
+              </tr>
+              
+              <tr>
+                <td rowspan="2" class="bold-cell" style="vertical-align: middle; border-right: 1px solid var(--border-card); font-weight: 600;">2025 Season</td>
+                <td><span class="badge badge-google">Google Ads</span> Search &amp; Display</td>
+                <td>162,000</td>
+                <td>6,800</td>
+                <td>4.20%</td>
+                <td>€4,600.00</td>
+                <td>61</td>
+                <td>€40,260.00</td>
+                <td class="bold-cell" style="color: var(--success);">8.75x</td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-meta">Meta Ads</span> Social Funnel</td>
+                <td>195,000</td>
+                <td>5,100</td>
+                <td>2.62%</td>
+                <td>€3,200.00</td>
+                <td>38</td>
+                <td>€26,880.00</td>
+                <td class="bold-cell" style="color: var(--success);">8.40x</td>
+              </tr>
+              <tr style="background-color: var(--gold-light); font-weight: 700;">
+                <td colspan="2" class="bold-cell">2025 Total / Blended</td>
+                <td>357,000</td>
+                <td>11,900</td>
+                <td>3.33%</td>
+                <td>€7,800.00</td>
+                <td>99</td>
+                <td>€67,140.00</td>
+                <td class="bold-cell" style="color: var(--primary-gold);">8.61x</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- Historical Advertising Note -->
+        <div class="t-strategy-note" style="margin-top: 20px; border-left: 4px solid var(--primary-gold); background: rgba(255, 255, 255, 0.02); padding: 15px 20px; border-radius: 6px;">
+          <h4 style="color: var(--primary-gold); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">Historical Direct Marketing Performance Context</h4>
+          <p style="font-size: 12px; opacity: 0.85; line-height: 1.6; margin: 0;">
+            The 2024 and 2025 seasons established the foundation for Cavo Marina's direct digital acquisition. With a combined high-season ad spend of <strong>€7,000 in 2024</strong> and <strong>€7,800 in 2025</strong>, the hotel achieved a steady progression in booking volumes, rising from a <strong>7.15x blended ROAS</strong> to an <strong>8.61x blended ROAS</strong>. The proposed 2026 campaign architecture leverages this baseline to scale direct revenue to <strong>€72,500</strong> with a target blended ROAS of <strong>9.06x</strong>.
+          </p>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>Cavo Marina Beach Hotel — <strong>2026 Ad Strategy</strong></span>
+        <span>Slide 3 of 8</span>
+      </div>
+    </div>
+
+    <!-- ─── SLIDE 3c: WEB TRAFFIC ANALYTICS ─── -->
+    <div class="slide" id="slide-3c">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-tag">Slide 04</span>
+          <h2 class="slide-heading">Web Traffic Analytics (GA4 Real Data: May 1 – June 10, 2026)</h2>
+        </div>
+        <div class="slide-pma-badge">
+          <span style="font-family: 'Qualy', sans-serif; font-weight: 800; color: #FFFFFF; text-transform: uppercase;">PMA</span><span style="font-family: 'Qualy', sans-serif; font-weight: 500; color: rgba(139, 92, 246, 1); text-transform: uppercase; margin-left: 3px;">PARTNER</span>
+        </div>
+      </div>
+
+      <div class="slide-body">
+        <!-- GA4 Metric Cards -->
+        <div class="metrics-summary-cards" style="grid-template-columns: repeat(5, 1fr); margin-bottom: 25px;">
+          <div class="metric-card-visual">
+            <div class="metric-visual-val">1,395</div>
+            <div class="metric-visual-lbl">Active Users</div>
+            <div class="metric-visual-foot">Unique visitors</div>
+          </div>
+          <div class="metric-card-visual">
+            <div class="metric-visual-val">1,999</div>
+            <div class="metric-visual-lbl">Sessions</div>
+            <div class="metric-visual-foot">Total visits</div>
+          </div>
+          <div class="metric-card-visual">
+            <div class="metric-visual-val">5,956</div>
+            <div class="metric-visual-lbl">Pageviews</div>
+            <div class="metric-visual-foot">Screens viewed</div>
+          </div>
+          <div class="metric-card-visual">
+            <div class="metric-visual-val">28.8%</div>
+            <div class="metric-visual-lbl">Bounce Rate</div>
+            <div class="metric-visual-foot">High engagement</div>
+          </div>
+          <div class="metric-card-visual">
+            <div class="metric-visual-val">3m 58s</div>
+            <div class="metric-visual-lbl">Avg Duration</div>
+            <div class="metric-visual-foot">Time on site</div>
+          </div>
+        </div>
+
+        <div class="split-grid" style="grid-template-columns: 1.05fr 0.95fr; gap: 30px;">
+          <!-- Traffic Channels & Device Categories -->
+          <div class="chart-box" style="padding: 20px;">
+            <div class="chart-title" style="margin-bottom: 12px; font-size: 11px;">
+              <span>Acquisition Channels &amp; Devices</span>
+              <div class="chart-legend">
+                <div class="legend-item"><span class="legend-color" style="background: var(--aegean-blue);"></span> Users</div>
+              </div>
+            </div>
+
+            <div class="bar-chart" style="gap: 8px;">
+              <div class="chart-group">
+                <div class="group-label" style="font-size: 9px; margin-bottom: 4px; padding-bottom: 2px;">Acquisition Channel Groups</div>
+                <div class="bar-row" style="grid-template-columns: 110px 1fr 50px; gap: 8px; margin-bottom: 4px;">
+                  <div class="bar-label" style="font-size: 10px;">Organic Search</div>
+                  <div class="bar-track" style="height: 12px;"><div class="bar-fill" style="background: var(--aegean-blue); width: 76.6%;"></div></div>
+                  <div class="bar-value" style="font-size: 10px;">766</div>
+                </div>
+                <div class="bar-row" style="grid-template-columns: 110px 1fr 50px; gap: 8px; margin-bottom: 4px;">
+                  <div class="bar-label" style="font-size: 10px;">Direct</div>
+                  <div class="bar-track" style="height: 12px;"><div class="bar-fill" style="background: var(--aegean-blue); width: 26.9%;"></div></div>
+                  <div class="bar-value" style="font-size: 10px;">269</div>
+                </div>
+                <div class="bar-row" style="grid-template-columns: 110px 1fr 50px; gap: 8px; margin-bottom: 4px;">
+                  <div class="bar-label" style="font-size: 10px;">Unassigned</div>
+                  <div class="bar-track" style="height: 12px;"><div class="bar-fill" style="background: var(--aegean-blue); width: 22.4%;"></div></div>
+                  <div class="bar-value" style="font-size: 10px;">224</div>
+                </div>
+                <div class="bar-row" style="grid-template-columns: 110px 1fr 50px; gap: 8px; margin-bottom: 4px;">
+                  <div class="bar-label" style="font-size: 10px;">Paid Search</div>
+                  <div class="bar-track" style="height: 12px;"><div class="bar-fill" style="background: var(--aegean-blue); width: 8.1%;"></div></div>
+                  <div class="bar-value" style="font-size: 10px;">81</div>
+                </div>
+                <div class="bar-row" style="grid-template-columns: 110px 1fr 50px; gap: 8px; margin-bottom: 4px;">
+                  <div class="bar-label" style="font-size: 10px;">Organic Social</div>
+                  <div class="bar-track" style="height: 12px;"><div class="bar-fill" style="background: var(--aegean-blue); width: 4.7%;"></div></div>
+                  <div class="bar-value" style="font-size: 10px;">47</div>
+                </div>
+                <div class="bar-row" style="grid-template-columns: 110px 1fr 50px; gap: 8px; margin-bottom: 4px;">
+                  <div class="bar-label" style="font-size: 10px;">Referrals</div>
+                  <div class="bar-track" style="height: 12px;"><div class="bar-fill" style="background: var(--aegean-blue); width: 4.0%;"></div></div>
+                  <div class="bar-value" style="font-size: 10px;">40</div>
+                </div>
+              </div>
+
+              <div class="chart-group">
+                <div class="group-label" style="font-size: 9px; margin-bottom: 4px; padding-bottom: 2px;">Device Share</div>
+                <div class="bar-row" style="grid-template-columns: 110px 1fr 50px; gap: 8px; margin-bottom: 4px;">
+                  <div class="bar-label" style="font-size: 10px;">Mobile (73%)</div>
+                  <div class="bar-track" style="height: 12px;"><div class="bar-fill" style="background: var(--primary-gold); width: 73%;"></div></div>
+                  <div class="bar-value" style="font-size: 10px;">1,017</div>
+                </div>
+                <div class="bar-row" style="grid-template-columns: 110px 1fr 50px; gap: 8px; margin-bottom: 4px;">
+                  <div class="bar-label" style="font-size: 10px;">Desktop (25%)</div>
+                  <div class="bar-track" style="height: 12px;"><div class="bar-fill" style="background: var(--primary-gold); width: 25%;"></div></div>
+                  <div class="bar-value" style="font-size: 10px;">349</div>
+                </div>
+                <div class="bar-row" style="grid-template-columns: 110px 1fr 50px; gap: 8px; margin-bottom: 4px;">
+                  <div class="bar-label" style="font-size: 10px;">Tablet (2%)</div>
+                  <div class="bar-track" style="height: 12px;"><div class="bar-fill" style="background: var(--primary-gold); width: 2%;"></div></div>
+                  <div class="bar-value" style="font-size: 10px;">29</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Top Countries & Strategic Insights -->
+          <div style="display: flex; flex-direction: column; gap: 15px; justify-content: center;">
+            <div class="table-container" style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-card);">
+              <table class="report-table" style="font-size: 11.5px;">
+                <thead>
+                  <tr>
+                    <th style="padding: 8px 12px;">Top Countries</th>
+                    <th style="padding: 8px 12px; text-align: right;">Active Users</th>
+                    <th style="padding: 8px 12px; text-align: right;">Share %</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="padding: 6px 12px; font-weight: 600;">Germany</td>
+                    <td style="padding: 6px 12px; text-align: right;">434</td>
+                    <td style="padding: 6px 12px; text-align: right; color: var(--primary-gold); font-weight: 700;">31%</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 6px 12px; font-weight: 600;">United Kingdom</td>
+                    <td style="padding: 6px 12px; text-align: right;">242</td>
+                    <td style="padding: 6px 12px; text-align: right; color: var(--primary-gold); font-weight: 700;">17%</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 6px 12px; font-weight: 600;">Greece</td>
+                    <td style="padding: 6px 12px; text-align: right;">149</td>
+                    <td style="padding: 6px 12px; text-align: right; color: var(--primary-gold); font-weight: 700;">11%</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 6px 12px; font-weight: 600;">Italy</td>
+                    <td style="padding: 6px 12px; text-align: right;">69</td>
+                    <td style="padding: 6px 12px; text-align: right; color: var(--primary-gold); font-weight: 700;">5%</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 6px 12px; font-weight: 600;">France</td>
+                    <td style="padding: 6px 12px; text-align: right;">67</td>
+                    <td style="padding: 6px 12px; text-align: right; color: var(--primary-gold); font-weight: 700;">5%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="t-strategy-note" style="border-left: 4px solid var(--primary-gold); background: rgba(255, 255, 255, 0.02); padding: 12px 18px; border-radius: 6px;">
+              <h4 style="color: var(--primary-gold); font-size: 11px; margin-bottom: 4px;">Traffic Action Insights</h4>
+              <p style="font-size: 11px; opacity: 0.85; line-height: 1.5; margin: 0;">
+                High organic search volume (<strong>766 users</strong>) confirms strong pre-season interest. 
+                With <strong>73% of traffic coming from mobile devices</strong>, keeping the booking engine mobile-optimized is critical. 
+                Germany and the UK generate <strong>48% of active users</strong>, validating our targeted high-season budget allocation toward these regions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>Cavo Marina Beach Hotel — <strong>2026 Ad Strategy</strong></span>
+        <span>Slide 4 of 8</span>
+      </div>
+    </div>
+
+
+    <!-- ─── SLIDE 4: HISTORICAL ANALTICS & CHARTS ─── -->
+    <div class="slide" id="slide-4">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-tag">Slide 05</span>
+          <h2 class="slide-heading">Direct Channel vs Agency Reservation Shares</h2>
+        </div>
+        <div class="slide-pma-badge">
+          <span style="font-family: 'Qualy', sans-serif; font-weight: 800; color: #FFFFFF; text-transform: uppercase;">PMA</span><span style="font-family: 'Qualy', sans-serif; font-weight: 500; color: rgba(139, 92, 246, 1); text-transform: uppercase; margin-left: 3px;">PARTNER</span>
+        </div>
+      </div>
+
+      <div class="slide-body">
+        <div class="split-grid" style="grid-template-columns: 1.15fr 0.85fr;">
+          <div class="chart-box">
+            <div class="chart-title">
+              <span>Actual Booking Channels Revenue Share</span>
+              <div class="chart-legend">
+                <div class="legend-item"><span class="legend-color" style="background: var(--aegean-blue);"></span> Direct</div>
+                <div class="legend-item"><span class="legend-color" style="background: var(--primary-gold);"></span> OTA / Tour Operator</div>
+              </div>
+            </div>
+
+            <div class="bar-chart" style="gap: 12px;">
+              <div class="chart-group">
+                <div class="bar-row" style="grid-template-columns: 140px 1fr 60px; gap: 10px;">
+                  <div class="bar-label">Schauinsland</div>
+                  <div class="bar-track"><div class="bar-fill" style="background: var(--primary-gold); width: 37.9%;"></div></div>
+                  <div class="bar-value">37.9%</div>
+                </div>
+                <div class="bar-row" style="grid-template-columns: 140px 1fr 60px; gap: 10px;">
+                  <div class="bar-label">Booking.com</div>
+                  <div class="bar-track"><div class="bar-fill" style="background: var(--primary-gold); width: 21.6%;"></div></div>
+                  <div class="bar-value">21.6%</div>
+                </div>
+                <div class="bar-row" style="grid-template-columns: 140px 1fr 60px; gap: 10px;">
+                  <div class="bar-label">Jet2</div>
+                  <div class="bar-track"><div class="bar-fill" style="background: var(--primary-gold); width: 13.1%;"></div></div>
+                  <div class="bar-value">13.1%</div>
+                </div>
+                <div class="bar-row" style="grid-template-columns: 140px 1fr 60px; gap: 10px;">
+                  <div class="bar-label">Dertour DE</div>
+                  <div class="bar-track"><div class="bar-fill" style="background: var(--primary-gold); width: 9.2%;"></div></div>
+                  <div class="bar-value">9.2%</div>
+                </div>
+                <div class="bar-row" style="grid-template-columns: 140px 1fr 60px; gap: 10px;">
+                  <div class="bar-label">Hydrotours</div>
+                  <div class="bar-track"><div class="bar-fill" style="background: var(--primary-gold); width: 8.0%;"></div></div>
+                  <div class="bar-value">8.0%</div>
+                </div>
+                <div class="bar-row" style="grid-template-columns: 140px 1fr 60px; gap: 10px;">
+                  <div class="bar-label">Direct Channel</div>
+                  <div class="bar-track"><div class="bar-fill" style="background: var(--aegean-blue); width: 3.1%;"></div></div>
+                  <div class="bar-value">3.1%</div>
+                </div>
+                <div class="bar-row" style="grid-template-columns: 140px 1fr 60px; gap: 10px;">
+                  <div class="bar-label">Other Channels</div>
+                  <div class="bar-track"><div class="bar-fill" style="background: var(--primary-gold); width: 7.1%;"></div></div>
+                  <div class="bar-value">7.1%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div style="display: flex; flex-direction: column; gap: 12px; justify-content: center;">
+            <div class="t-strategy-note" style="border-left-width: 4px; border-left-color: var(--primary-gold);">
+              <h4>Agency &amp; OTA Domination</h4>
+              <p>Combined tour operator agencies (Schauinsland, Jet2, Dertour, Hydrotours) command **68.2%** of Cavo Marina bookings. Booking.com represents the largest single OTA partner at **21.6%**.</p>
+            </div>
+            <div class="t-strategy-note" style="border-left-width: 4px; border-left-color: var(--aegean-blue);">
+              <h4>Direct Sales Opportunity</h4>
+              <p>Direct bookings currently stand at only **3.1%** (€560.00). Diverting high-intent searchers directly to the hotel website will capture margins from high-cost OTA and tour operator channels.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>Cavo Marina Beach Hotel — <strong>2026 Ad Strategy</strong></span>
+        <span>Slide 5 of 8</span>
+      </div>
+    </div>
+
+    <!-- ─── SLIDE 5: 2026 MONTH-BY-MONTH INTERACTIVE PLAN ─── -->
+    <div class="slide slide-interactive-plan" id="slide-5">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-tag">Slide 06</span>
+          <h2 class="slide-heading">2026 Season Plan (June 15 – Oct 15)</h2>
+        </div>
+        <div class="slide-pma-badge">
+          <span style="font-family: 'Qualy', sans-serif; font-weight: 800; color: #FFFFFF; text-transform: uppercase;">PMA</span><span style="font-family: 'Qualy', sans-serif; font-weight: 500; color: rgba(139, 92, 246, 1); text-transform: uppercase; margin-left: 3px;">PARTNER</span>
+        </div>
+      </div>
+
+      <div class="slide-body">
+        <div class="timeline-container">
+          <div class="timeline-nav">
+            <button class="timeline-tab active" onclick="switchTimeline(1)">June 15 – 30</button>
+            <button class="timeline-tab" onclick="switchTimeline(2)">July 1 – 31</button>
+            <button class="timeline-tab" onclick="switchTimeline(3)">August 1 – 31</button>
+            <button class="timeline-tab" onclick="switchTimeline(4)">September 1 – 30</button>
+            <button class="timeline-tab" onclick="switchTimeline(5)">October 1 – 15</button>
+          </div>
+
+          <div class="timeline-panels">
+            <!-- June 15 - June 30 -->
+            <div class="timeline-panel active" id="time-1">
+              <div class="t-grid">
+                <div class="t-main-info">
+                  <h3>High Season Launch Kickoff</h3>
+                  <span class="t-dates">June 15 – June 30, 2026</span>
+                  <div class="t-channels">
+                    <div class="t-channel-card">
+                      <div class="t-channel-title"><span>Google Ads</span><span class="t-channel-budget">€500</span></div>
+                      <ul class="t-channel-list">
+                        <li><strong>Brand Protection:</strong> We prevent OTAs from bidding on our brand name, capturing high-intent searchers and routing them directly to our website.</li>
+                        <li><strong>Direct Booking Searches:</strong> We capture search terms like "Kavos beach hotel direct booking" to target ready-to-book visitors.</li>
+                      </ul>
+                    </div>
+                    <div class="t-channel-card meta">
+                      <div class="t-channel-title"><span>Meta Ads</span><span class="t-channel-budget">€500</span></div>
+                      <ul class="t-channel-list">
+                        <li><strong>Social Media Showcase:</strong> We showcase our beachfront rooms and pool experience using highly engaging Instagram Reels.</li>
+                        <li><strong>Regional Targeting:</strong> We target seaside vacation seekers in the UK and Germany with direct flight access.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="t-metric-strip">
+                    <div class="t-strip-box"><div class="t-strip-val">€1,000</div><div class="t-strip-lbl">Period Budget</div></div>
+                    <div class="t-strip-box"><div class="t-strip-val">8.0x</div><div class="t-strip-lbl">Target ROAS</div></div>
+                    <div class="t-strip-box"><div class="t-strip-val">€8,000</div><div class="t-strip-lbl">Target Revenue</div></div>
+                  </div>
+                </div>
+                <div class="t-side-visual">
+                  <div class="t-side-image" style="background-image: url('https://image-tc.galaxy.tf/wijpeg-7kppa0lzf1jd60cpcx0dap4vd/general-view-with-beach-web.jpg?width=600');"><div class="t-side-image-desc">Direct Focus: Beachfront Pool Lounge</div></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- July 1 - 31 -->
+            <div class="timeline-panel" id="time-2">
+              <div class="t-grid">
+                <div class="t-main-info">
+                  <h3>Peak Summer Beach Phase</h3>
+                  <span class="t-dates">July 1 – July 31, 2026</span>
+                  <div class="t-channels">
+                    <div class="t-channel-card">
+                      <div class="t-channel-title"><span>Google Ads</span><span class="t-channel-budget">€900</span></div>
+                      <ul class="t-channel-list">
+                        <li><strong>Category Searches:</strong> We secure top positions for searches like "Corfu beachfront suites" or "Kavos hotel with pool".</li>
+                        <li><strong>Google Maps Visibility:</strong> We highlight our direct booking rates on Google Maps to capture immediate booking intent.</li>
+                      </ul>
+                    </div>
+                    <div class="t-channel-card meta">
+                      <div class="t-channel-title"><span>Meta Ads</span><span class="t-channel-budget">€1,100</span></div>
+                      <ul class="t-channel-list">
+                        <li><strong>Major City Focus:</strong> We target travelers in major feeder cities with direct flights, such as London, Manchester, and Rome.</li>
+                        <li><strong>Summer Dream Experience:</strong> We highlight poolside cocktails, our gourmet beach menu, and luxury beachfront suites.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="t-metric-strip">
+                    <div class="t-strip-box"><div class="t-strip-val">€2,000</div><div class="t-strip-lbl">Period Budget</div></div>
+                    <div class="t-strip-box"><div class="t-strip-val">9.5x</div><div class="t-strip-lbl">Target ROAS</div></div>
+                    <div class="t-strip-box"><div class="t-strip-val">€19,000</div><div class="t-strip-lbl">Target Revenue</div></div>
+                  </div>
+                </div>
+                <div class="t-side-visual">
+                  <div class="t-side-image" style="background-image: url('https://image-tc.galaxy.tf/wijpeg-esa9cenqpdzp5yftk2ple3r4j/107-double-extra-bed-swim-up-room-7-2.jpg?width=800');"><div class="t-side-image-desc">Focus: Beachfront Swim-Up Suites</div></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- August 1 - 31 -->
+            <div class="timeline-panel" id="time-3">
+              <div class="t-grid">
+                <div class="t-main-info">
+                  <h3>Peak Summer &amp; Late Season Prep</h3>
+                  <span class="t-dates">August 1 – August 31, 2026</span>
+                  <div class="t-channels">
+                    <div class="t-channel-card">
+                      <div class="t-channel-title"><span>Google Ads</span><span class="t-channel-budget">€900</span></div>
+                      <ul class="t-channel-list">
+                        <li><strong>OTA Defense:</strong> We protect our brand keywords to prevent agencies from hijacking high-value search traffic during peak season.</li>
+                        <li><strong>Autumn Specials:</strong> We promote early-bird discounts on Google for quiet, post-peak stays in September.</li>
+                      </ul>
+                    </div>
+                    <div class="t-channel-card meta">
+                      <div class="t-channel-title"><span>Meta Ads</span><span class="t-channel-budget">€1,100</span></div>
+                      <ul class="t-channel-list">
+                        <li><strong>Couples' Getaways:</strong> We target childless couples and travelers seeking tranquility for end-of-summer trips.</li>
+                        <li><strong>Remarketing Push:</strong> We retarget window shoppers with exclusive perks like a "complimentary room upgrade" to complete bookings.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="t-metric-strip">
+                    <div class="t-strip-box"><div class="t-strip-val">€2,000</div><div class="t-strip-lbl">Period Budget</div></div>
+                    <div class="t-strip-box"><div class="t-strip-val">9.2x</div><div class="t-strip-lbl">Target ROAS</div></div>
+                    <div class="t-strip-box"><div class="t-strip-val">€18,400</div><div class="t-strip-lbl">Target Revenue</div></div>
+                  </div>
+                </div>
+                <div class="t-side-visual">
+                  <div class="t-side-image" style="background-image: url('https://image-tc.galaxy.tf/wijpeg-y1uwx7zk3na5oqsg2n7rlb25/girl-drinks-a-cocktail-in-the-pool-2022-08-26-13-51-51-utc_standard.jpg?width=600');"><div class="t-side-image-desc">Focus: Poolside Cocktail &amp; Beach Lounge</div></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- September 1 - 30 -->
+            <div class="timeline-panel" id="time-4">
+              <div class="t-grid">
+                <div class="t-main-info">
+                  <h3>Corfu Late Season Sun Phase</h3>
+                  <span class="t-dates">September 1 – September 30, 2026</span>
+                  <div class="t-channels">
+                    <div class="t-channel-card">
+                      <div class="t-channel-title"><span>Google Ads</span><span class="t-channel-budget">€800</span></div>
+                      <ul class="t-channel-list">
+                        <li><strong>Tranquility Seekers:</strong> We capture search queries like "Corfu late-season sun" and "Kavos quiet beachfront hotel".</li>
+                        <li><strong>Late Travelers:</strong> We target autumn travelers from Germany and Poland seeking warm seaside destinations.</li>
+                      </ul>
+                    </div>
+                    <div class="t-channel-card meta">
+                      <div class="t-channel-title"><span>Meta Ads</span><span class="t-channel-budget">€1,200</span></div>
+                      <ul class="t-channel-list">
+                        <li><strong>Peace Seekers:</strong> We target couples and empty-nesters whose schedules are flexible post-school reopening.</li>
+                        <li><strong>Golden Autumn:</strong> We showcase the pleasant autumn weather, wine-pairing gourmet dinners, and peaceful poolside relaxation.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="t-metric-strip">
+                    <div class="t-strip-box"><div class="t-strip-val">€2,000</div><div class="t-strip-lbl">Period Budget</div></div>
+                    <div class="t-strip-box"><div class="t-strip-val">8.5x</div><div class="t-strip-lbl">Target ROAS</div></div>
+                    <div class="t-strip-box"><div class="t-strip-val">€17,000</div><div class="t-strip-lbl">Target Revenue</div></div>
+                  </div>
+                </div>
+                <div class="t-side-visual">
+                  <div class="t-side-image" style="background-image: url('https://image-tc.galaxy.tf/wijpeg-8qo0ui8eo9dbgu1ivds0qmn9h/lunch-couple-1wb.jpg?width=800');"><div class="t-side-image-desc">Focus: Beachfront Couple Sunset Dining</div></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- October 1 - 15 -->
+            <div class="timeline-panel" id="time-5">
+              <div class="t-grid">
+                <div class="t-main-info">
+                  <h3>End-of-Season Closing Push</h3>
+                  <span class="t-dates">October 1 – October 15, 2026</span>
+                  <div class="t-channels">
+                    <div class="t-channel-card">
+                      <div class="t-channel-title"><span>Google Ads</span><span class="t-channel-budget">€400</span></div>
+                      <ul class="t-channel-list">
+                        <li><strong>Last-Minute Hunters:</strong> We capture end-of-season searches for "Kavos last-minute beachfront deals" in the closing week.</li>
+                        <li><strong>Closing Deals on Maps:</strong> We highlight attractive farewell packages directly on Google Maps listings.</li>
+                      </ul>
+                    </div>
+                    <div class="t-channel-card meta">
+                      <div class="t-channel-title"><span>Meta Ads</span><span class="t-channel-budget">€600</span></div>
+                      <ul class="t-channel-list">
+                        <li><strong>Autumn Warmth:</strong> We target travelers looking to enjoy our heated pool under the mild autumn breeze.</li>
+                        <li><strong>Last Call Campaigns:</strong> We retarget past website visitors with "final 7 days of the season" farewell messages.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="t-metric-strip">
+                    <div class="t-strip-box"><div class="t-strip-val">€1,000</div><div class="t-strip-lbl">Period Budget</div></div>
+                    <div class="t-strip-box"><div class="t-strip-val">7.5x</div><div class="t-strip-lbl">Target ROAS</div></div>
+                    <div class="t-strip-box"><div class="t-strip-val">€7,500</div><div class="t-strip-lbl">Target Revenue</div></div>
+                  </div>
+                </div>
+                <div class="t-side-visual">
+                  <div class="t-side-image" style="background-image: url('https://image-tc.galaxy.tf/wijpeg-4332ulfqlae4u26w35fkfifgx/hotel-and-beach.jpg?width=1200');"><div class="t-side-image-desc">Focus: October Beachfront Closing Deals</div></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>Cavo Marina Beach Hotel — <strong>2026 Ad Strategy</strong></span>
+        <span>Slide 6 of 8</span>
+      </div>
+    </div>
+
+    <!-- ─── PRINT SLIDES (WILL RENDER AUTOMATICALLY AS WIDESCREEN POWERPOINT SLIDES ON EXPORT) ─── -->
+    <!-- Print Month Slide 1: June -->
+    <div class="slide print-only-month-slide">
+      <div class="slide-header">
+        <div class="slide-title-area"><span class="slide-tag">Monthly Plan</span><h2 class="slide-heading">June 15 – 30 Ad Strategy</h2></div>
+        <div class="slide-pma-badge"><span style="font-family: 'Qualy', sans-serif; font-weight: 800; color: #FFFFFF; text-transform: uppercase;">PMA</span><span style="font-family: 'Qualy', sans-serif; font-weight: 500; color: rgba(139, 92, 246, 1); text-transform: uppercase; margin-left: 3px;">PARTNER</span></div>
+      </div>
+      <div class="slide-body">
+        <div class="t-grid">
+          <div class="t-main-info">
+            <h3>High Season Launch Kickoff</h3>
+            <span class="t-dates">June 15 – June 30, 2026</span>
+            <div class="t-channels">
+              <div class="t-channel-card">
+                <div class="t-channel-title"><span>Google Ads</span><span class="t-channel-budget">€500</span></div>
+                <ul class="t-channel-list">
+                  <li><strong>Brand Protection:</strong> We prevent OTAs from bidding on our brand name, capturing high-intent searchers and routing them directly to our website.</li>
+                  <li><strong>Direct Booking Searches:</strong> We capture search terms like "Kavos beach hotel direct booking" to target ready-to-book visitors.</li>
+                </ul>
+              </div>
+              <div class="t-channel-card meta">
+                <div class="t-channel-title"><span>Meta Ads</span><span class="t-channel-budget">€500</span></div>
+                <ul class="t-channel-list">
+                  <li><strong>Social Media Showcase:</strong> We showcase our beachfront rooms and pool experience using highly engaging Instagram Reels.</li>
+                  <li><strong>Regional Targeting:</strong> We target seaside vacation seekers in the UK and Germany with direct flight access.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="t-metric-strip">
+              <div class="t-strip-box"><div class="t-strip-val">€1,000</div><div class="t-strip-lbl">Period Budget</div></div>
+              <div class="t-strip-box"><div class="t-strip-val">8.0x</div><div class="t-strip-lbl">Target ROAS</div></div>
+              <div class="t-strip-box"><div class="t-strip-val">€8,000</div><div class="t-strip-lbl">Target Revenue</div></div>
+            </div>
+          </div>
+          <div class="t-side-visual">
+            <div class="t-side-image" style="background-image: url('https://image-tc.galaxy.tf/wijpeg-7kppa0lzf1jd60cpcx0dap4vd/general-view-with-beach-web.jpg?width=600');"><div class="t-side-image-desc">Direct Focus: Beachfront Pool Lounge</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>Cavo Marina Beach Hotel — <strong>2026 Ad Strategy</strong></span><span>Slide 6a of 8</span></div>
+    </div>
+
+    <!-- Print Month Slide 2: July -->
+    <div class="slide print-only-month-slide">
+      <div class="slide-header">
+        <div class="slide-title-area"><span class="slide-tag">Monthly Plan</span><h2 class="slide-heading">July 1 – 31 Ad Strategy</h2></div>
+        <div class="slide-pma-badge"><span style="font-family: 'Qualy', sans-serif; font-weight: 800; color: #FFFFFF; text-transform: uppercase;">PMA</span><span style="font-family: 'Qualy', sans-serif; font-weight: 500; color: rgba(139, 92, 246, 1); text-transform: uppercase; margin-left: 3px;">PARTNER</span></div>
+      </div>
+      <div class="slide-body">
+        <div class="t-grid">
+          <div class="t-main-info">
+            <h3>Peak Summer Beach Phase</h3>
+            <span class="t-dates">July 1 – July 31, 2026</span>
+            <div class="t-channels">
+              <div class="t-channel-card">
+                <div class="t-channel-title"><span>Google Ads</span><span class="t-channel-budget">€900</span></div>
+                <ul class="t-channel-list">
+                  <li><strong>Category Searches:</strong> We secure top positions for searches like "Corfu beachfront suites" or "Kavos hotel with pool".</li>
+                  <li><strong>Google Maps Visibility:</strong> We highlight our direct booking rates on Google Maps to capture immediate booking intent.</li>
+                </ul>
+              </div>
+              <div class="t-channel-card meta">
+                <div class="t-channel-title"><span>Meta Ads</span><span class="t-channel-budget">€1,100</span></div>
+                <ul class="t-channel-list">
+                  <li><strong>Major City Focus:</strong> We target travelers in major feeder cities with direct flights, such as London, Manchester, and Rome.</li>
+                  <li><strong>Summer Dream Experience:</strong> We highlight poolside cocktails, our gourmet beach menu, and luxury beachfront suites.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="t-metric-strip">
+              <div class="t-strip-box"><div class="t-strip-val">€2,000</div><div class="t-strip-lbl">Period Budget</div></div>
+              <div class="t-strip-box"><div class="t-strip-val">9.5x</div><div class="t-strip-lbl">Target ROAS</div></div>
+              <div class="t-strip-box"><div class="t-strip-val">€19,000</div><div class="t-strip-lbl">Target Revenue</div></div>
+            </div>
+          </div>
+          <div class="t-side-visual">
+            <div class="t-side-image" style="background-image: url('https://image-tc.galaxy.tf/wijpeg-esa9cenqpdzp5yftk2ple3r4j/107-double-extra-bed-swim-up-room-7-2.jpg?width=800');"><div class="t-side-image-desc">Focus: Beachfront Swim-Up Suites</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>Cavo Marina Beach Hotel — <strong>2026 Ad Strategy</strong></span><span>Slide 6b of 8</span></div>
+    </div>
+
+    <!-- Print Month Slide 3: August -->
+    <div class="slide print-only-month-slide">
+      <div class="slide-header">
+        <div class="slide-title-area"><span class="slide-tag">Monthly Plan</span><h2 class="slide-heading">August 1 – 31 Ad Strategy</h2></div>
+        <div class="slide-pma-badge"><span style="font-family: 'Qualy', sans-serif; font-weight: 800; color: #FFFFFF; text-transform: uppercase;">PMA</span><span style="font-family: 'Qualy', sans-serif; font-weight: 500; color: rgba(139, 92, 246, 1); text-transform: uppercase; margin-left: 3px;">PARTNER</span></div>
+      </div>
+      <div class="slide-body">
+        <div class="t-grid">
+          <div class="t-main-info">
+            <h3>Peak Summer &amp; Late Season Prep</h3>
+            <span class="t-dates">August 1 – August 31, 2026</span>
+            <div class="t-channels">
+              <div class="t-channel-card">
+                <div class="t-channel-title"><span>Google Ads</span><span class="t-channel-budget">€900</span></div>
+                <ul class="t-channel-list">
+                  <li><strong>OTA Defense:</strong> We protect our brand keywords to prevent agencies from hijacking high-value search traffic during peak season.</li>
+                  <li><strong>Autumn Specials:</strong> We promote early-bird discounts on Google for quiet, post-peak stays in September.</li>
+                </ul>
+              </div>
+              <div class="t-channel-card meta">
+                <div class="t-channel-title"><span>Meta Ads</span><span class="t-channel-budget">€1,100</span></div>
+                <ul class="t-channel-list">
+                  <li><strong>Couples' Getaways:</strong> We target childless couples and travelers seeking tranquility for end-of-summer trips.</li>
+                  <li><strong>Remarketing Push:</strong> We retarget window shoppers with exclusive perks like a "complimentary room upgrade" to complete bookings.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="t-metric-strip">
+              <div class="t-strip-box"><div class="t-strip-val">€2,000</div><div class="t-strip-lbl">Period Budget</div></div>
+              <div class="t-strip-box"><div class="t-strip-val">9.2x</div><div class="t-strip-lbl">Target ROAS</div></div>
+              <div class="t-strip-box"><div class="t-strip-val">€18,400</div><div class="t-strip-lbl">Target Revenue</div></div>
+            </div>
+          </div>
+          <div class="t-side-visual">
+            <div class="t-side-image" style="background-image: url('https://image-tc.galaxy.tf/wijpeg-y1uwx7zk3na5oqsg2n7rlb25/girl-drinks-a-cocktail-in-the-pool-2022-08-26-13-51-51-utc_standard.jpg?width=600');"><div class="t-side-image-desc">Focus: Poolside Cocktail &amp; Beach Lounge</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>Cavo Marina Beach Hotel — <strong>2026 Ad Strategy</strong></span><span>Slide 6c of 8</span></div>
+    </div>
+
+    <!-- Print Month Slide 4: September -->
+    <div class="slide print-only-month-slide">
+      <div class="slide-header">
+        <div class="slide-title-area"><span class="slide-tag">Monthly Plan</span><h2 class="slide-heading">September 1 – 30 Ad Strategy</h2></div>
+        <div class="slide-pma-badge"><span style="font-family: 'Qualy', sans-serif; font-weight: 800; color: #FFFFFF; text-transform: uppercase;">PMA</span><span style="font-family: 'Qualy', sans-serif; font-weight: 500; color: rgba(139, 92, 246, 1); text-transform: uppercase; margin-left: 3px;">PARTNER</span></div>
+      </div>
+      <div class="slide-body">
+        <div class="t-grid">
+          <div class="t-main-info">
+            <h3>Corfu Late Season Sun Phase</h3>
+            <span class="t-dates">September 1 – September 30, 2026</span>
+            <div class="t-channels">
+              <div class="t-channel-card">
+                <div class="t-channel-title"><span>Google Ads</span><span class="t-channel-budget">€800</span></div>
+                <ul class="t-channel-list">
+                  <li><strong>Tranquility Seekers:</strong> We capture search queries like "Corfu late-season sun" and "Kavos quiet beachfront hotel".</li>
+                  <li><strong>Late Travelers:</strong> We target autumn travelers from Germany and Poland seeking warm seaside destinations.</li>
+                </ul>
+              </div>
+              <div class="t-channel-card meta">
+                <div class="t-channel-title"><span>Meta Ads</span><span class="t-channel-budget">€1,200</span></div>
+                <ul class="t-channel-list">
+                  <li><strong>Peace Seekers:</strong> We target couples and empty-nesters whose schedules are flexible post-school reopening.</li>
+                  <li><strong>Golden Autumn:</strong> We showcase the pleasant autumn weather, wine-pairing gourmet dinners, and peaceful poolside relaxation.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="t-metric-strip">
+              <div class="t-strip-box"><div class="t-strip-val">€2,000</div><div class="t-strip-lbl">Period Budget</div></div>
+              <div class="t-strip-box"><div class="t-strip-val">8.5x</div><div class="t-strip-lbl">Target ROAS</div></div>
+              <div class="t-strip-box"><div class="t-strip-val">€17,000</div><div class="t-strip-lbl">Target Revenue</div></div>
+            </div>
+          </div>
+          <div class="t-side-visual">
+            <div class="t-side-image" style="background-image: url('https://image-tc.galaxy.tf/wijpeg-8qo0ui8eo9dbgu1ivds0qmn9h/lunch-couple-1wb.jpg?width=800');"><div class="t-side-image-desc">Focus: Beachfront Couple Sunset Dining</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>Cavo Marina Beach Hotel — <strong>2026 Ad Strategy</strong></span><span>Slide 6d of 8</span></div>
+    </div>
+
+    <!-- Print Month Slide 5: October -->
+    <div class="slide print-only-month-slide">
+      <div class="slide-header">
+        <div class="slide-title-area"><span class="slide-tag">Monthly Plan</span><h2 class="slide-heading">October 1 – 15 Ad Strategy</h2></div>
+        <div class="slide-pma-badge"><span style="font-family: 'Qualy', sans-serif; font-weight: 800; color: #FFFFFF; text-transform: uppercase;">PMA</span><span style="font-family: 'Qualy', sans-serif; font-weight: 500; color: rgba(139, 92, 246, 1); text-transform: uppercase; margin-left: 3px;">PARTNER</span></div>
+      </div>
+      <div class="slide-body">
+        <div class="t-grid">
+          <div class="t-main-info">
+            <h3>End-of-Season Closing Push</h3>
+            <span class="t-dates">October 1 – October 15, 2026</span>
+            <div class="t-channels">
+              <div class="t-channel-card">
+                <div class="t-channel-title"><span>Google Ads</span><span class="t-channel-budget">€400</span></div>
+                <ul class="t-channel-list">
+                  <li><strong>Last-Minute Hunters:</strong> We capture end-of-season searches for "Kavos last-minute beachfront deals" in the closing week.</li>
+                  <li><strong>Closing Deals on Maps:</strong> We highlight attractive farewell packages directly on Google Maps listings.</li>
+                </ul>
+              </div>
+              <div class="t-channel-card meta">
+                <div class="t-channel-title"><span>Meta Ads</span><span class="t-channel-budget">€600</span></div>
+                <ul class="t-channel-list">
+                  <li><strong>Autumn Warmth:</strong> We target travelers looking to enjoy our heated pool under the mild autumn breeze.</li>
+                  <li><strong>Last Call Campaigns:</strong> We retarget past website visitors with "final 7 days of the season" farewell messages.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="t-metric-strip">
+              <div class="t-strip-box"><div class="t-strip-val">€1,000</div><div class="t-strip-lbl">Period Budget</div></div>
+              <div class="t-strip-box"><div class="t-strip-val">7.5x</div><div class="t-strip-lbl">Target ROAS</div></div>
+              <div class="t-strip-box"><div class="t-strip-val">€7,500</div><div class="t-strip-lbl">Target Revenue</div></div>
+            </div>
+          </div>
+          <div class="t-side-visual">
+            <div class="t-side-image" style="background-image: url('https://image-tc.galaxy.tf/wijpeg-4332ulfqlae4u26w35fkfifgx/hotel-and-beach.jpg?width=1200');"><div class="t-side-image-desc">Focus: October Beachfront Closing Deals</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>Cavo Marina Beach Hotel — <strong>2026 Ad Strategy</strong></span><span>Slide 6e of 8</span></div>
+    </div>
+
+    <!-- ─── SLIDE 6: BUDGET ALLOCATION ─── -->
+    <div class="slide" id="slide-6">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-tag">Slide 07</span>
+          <h2 class="slide-heading">High-Season Budget Allocation</h2>
+        </div>
+        <div class="slide-pma-badge">
+          <span style="font-family: 'Qualy', sans-serif; font-weight: 800; color: #FFFFFF; text-transform: uppercase;">PMA</span><span style="font-family: 'Qualy', sans-serif; font-weight: 500; color: rgba(139, 92, 246, 1); text-transform: uppercase; margin-left: 3px;">PARTNER</span>
+        </div>
+      </div>
+
+      <div class="slide-body">
+        <div class="budget-chart-container">
+          <div class="budget-horizontal-bar">
+            <div class="budget-slice june" title="June 15-30: €1,000">June 15-30</div>
+            <div class="budget-slice july" title="July: €2,000">July 1-31</div>
+            <div class="budget-slice august" title="August: €2,000">August 1-31</div>
+            <div class="budget-slice september" title="September: €2,000">September</div>
+            <div class="budget-slice october" title="October 1-15: €1,000">Oct 1-15</div>
+          </div>
+
+          <div class="chart-breakdown-grid">
+            <div class="breakdown-card june">
+              <div class="breakdown-month">June 15-30</div>
+              <div class="breakdown-budget">€1,000</div>
+              <div class="breakdown-pct">12.5% of budget</div>
+            </div>
+            <div class="breakdown-card july">
+              <div class="breakdown-month">July 1-31</div>
+              <div class="breakdown-budget">€2,000</div>
+              <div class="breakdown-pct">25.0% of budget</div>
+            </div>
+            <div class="breakdown-card august">
+              <div class="breakdown-month">August 1-31</div>
+              <div class="breakdown-budget">€2,000</div>
+              <div class="breakdown-pct">25.0% of budget</div>
+            </div>
+            <div class="breakdown-card september">
+              <div class="breakdown-month">September</div>
+              <div class="breakdown-budget">€2,000</div>
+              <div class="breakdown-pct">25.0% of budget</div>
+            </div>
+            <div class="breakdown-card october">
+              <div class="breakdown-month">October 1-15</div>
+              <div class="breakdown-budget">€1,000</div>
+              <div class="breakdown-pct">12.5% of budget</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>Cavo Marina Beach Hotel — <strong>2026 Ad Strategy</strong></span>
+        <span>Slide 7 of 8</span>
+      </div>
+    </div>
+
+    <!-- ─── SLIDE 7: RECOMMENDATIONS ─── -->
+    <div class="slide" id="slide-7">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-tag">Slide 08</span>
+          <h2 class="slide-heading">Strategic Recommendations</h2>
+        </div>
+        <div class="slide-pma-badge">
+          <span style="font-family: 'Qualy', sans-serif; font-weight: 800; color: #FFFFFF; text-transform: uppercase;">PMA</span><span style="font-family: 'Qualy', sans-serif; font-weight: 500; color: rgba(139, 92, 246, 1); text-transform: uppercase; margin-left: 3px;">PARTNER</span>
+        </div>
+      </div>
+
+      <div class="slide-body">
+        <div class="grid-3">
+          <div class="rec-card">
+            <span class="rec-number">01</span>
+            <h4 class="rec-title">Enforce Direct Rate Parity</h4>
+            <p class="rec-desc">
+              Ensure the direct website rate is always equal to or slightly lower than rates displayed on OTAs. If Booking.com undercuts the direct rate through Genius, utilize dynamic pricing controls to remain competitive.
+            </p>
+          </div>
+          
+          <div class="rec-card">
+            <span class="rec-number">02</span>
+            <h4 class="rec-title">Establish Google Hotel Ads Price Feed</h4>
+            <p class="rec-desc">
+              Directly connect the PMS/Direct Booking rate feed to Google Maps. When travelers search for Cavomarina, they will see direct rates alongside OTA rates.
+            </p>
+          </div>
+
+          <div class="rec-card">
+            <span class="rec-number">03</span>
+            <h4 class="rec-title">Implement Dynamic Abandonment Retargeting</h4>
+            <p class="rec-desc">
+              Leverage Meta and Google pixel tracking to identify users who started the reservation process but did not complete it, offering direct-booking perks.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-footer">
+        <span>Cavo Marina Beach Hotel — <strong>2026 Ad Strategy</strong></span>
+        <span>Slide 8 of 8</span>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="pma-brand-footer">
+    <div class="footer-container">
+      <div class="footer-logo-text">
+        <span class="pma-part">PMA</span>
+        <span class="partner-part">PARTNER</span>
+      </div>
+      <p class="footer-copy">© 2026 PMA Partner. Confidential Report. High-Season Ad Strategy Presentation (June 15 - Oct 15).</p>
+    </div>
+  </footer>
+
+  <!-- Floating Navigation Controls for Slide Deck (Screen View Only) -->
+  <div class="deck-controls">
+    <button id="prev-slide-btn" class="deck-btn" onclick="prevSlide()">◀ Prev</button>
+    <span id="slide-progress-text" class="deck-progress">Slide 1 of 8</span>
+    <button id="next-slide-btn" class="deck-btn" onclick="nextSlide()">Next ▶</button>
+  </div>
+
+  <script>
+    function scrollToSec(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function switchTimeline(index) {
+      // Deactivate tabs
+      document.querySelectorAll('.timeline-tab').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      // Deactivate panels
+      document.querySelectorAll('.timeline-panel').forEach(panel => {
+        panel.classList.remove('active');
+      });
+
+      // Activate clicked
+      const tabSelector = `.timeline-tab:nth-child(${index})`;
+      document.querySelector(tabSelector).classList.add('active');
+      document.getElementById(`time-${index}`).classList.add('active');
+    }
+
+    // IntersectionObserver for active navigation highlighting
+    window.addEventListener('DOMContentLoaded', () => {
+      // Make sure timeline starts active for month 1
+      switchTimeline(1);
+
+      const slides = document.querySelectorAll('.slide:not(.print-only-month-slide)');
+      const navLinks = document.querySelectorAll('.cavo-nav-link');
+
+      const observerOptions = {
+        root: null,
+        rootMargin: '-15% 0px -75% 0px', // trigger when slide occupies upper-mid section of viewport
+        threshold: 0
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(link => {
+              const onclickText = link.getAttribute('onclick') || '';
+              if (onclickText.includes(id)) {
+                link.classList.add('active');
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          }
+        });
+      }, observerOptions);
+
+      slides.forEach(slide => observer.observe(slide));
+    });
+  </script>
+</body>
+</html>
+

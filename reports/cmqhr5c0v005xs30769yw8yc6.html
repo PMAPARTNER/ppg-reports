@@ -1,0 +1,2015 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Belconti Resort — Aylık Performans Raporu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg-dark: #FFFFFF;
+      --bg-black: #F5F7FA;
+      --bg-light: #FFFFFF;
+      --primary-gold: #008B8B;
+      --gold-hover: #00A3A3;
+      --gold-light: rgba(0, 139, 139, 0.15);
+      --text-white: #1A1A1A;
+      --text-muted: #666666;
+      --text-dark: #0F1B29;
+      --text-muted-light: #999999;
+      --bg-card: rgba(0, 139, 139, 0.08);
+      --border-card: rgba(0, 139, 139, 0.2);
+      --border-light: #CCCCCC;
+      --aegean-blue: #008B8B;
+      --danger: #DC2626;
+      --success: #008B8B;
+      --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      --card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.12);
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Sora', sans-serif;
+      color: var(--text-white);
+      background-color: var(--bg-black);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* ── PMA CO-BRANDING HEADER BANNER ── */
+    .pma-top-bar {
+      background-color: var(--bg-black);
+      color: var(--text-white);
+      padding: 12px 60px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-card);
+      z-index: 1000;
+      position: relative;
+    }
+
+    .pma-partner-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .pma-logo-text {
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ── HOTEL WEBSITE HEADER ── */
+    .cavo-header {
+      background: rgba(15, 31, 40, 0.95);
+      backdrop-filter: blur(15px);
+      padding: 18px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      border-bottom: 1px solid var(--border-card);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .cavo-book-btn {
+      background-color: var(--primary-gold);
+      color: var(--bg-dark);
+      border: none;
+      padding: 10px 24px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: var(--transition);
+      border-radius: 99px;
+    }
+
+    .cavo-book-btn:hover {
+      background-color: var(--gold-hover);
+      box-shadow: 0 0 15px rgba(56, 173, 164, 0.4);
+    }
+
+    /* ── SLIDE DECK CONTAINER (16:9 ASPECT RATIO) ── */
+    .deck-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    .slide {
+      background: var(--bg-dark);
+      border: 1px solid var(--border-card);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 60px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+      min-height: 600px;
+      transition: var(--transition);
+    }
+
+    .slide:hover {
+      border-color: rgba(56, 173, 164, 0.3);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Cover Slide Specifics */
+    .slide-cover {
+      background-image: 
+        linear-gradient(rgba(15, 31, 40, 0.75) 0%, rgba(15, 31, 40, 0.95) 100%),
+        url('https://image-tc.galaxy.tf/wijpeg-7kppa0lzf1jd60cpcx0dap4vd/general-view-with-beach-web.jpg?width=1200');
+      background-size: cover;
+      background-position: center;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+
+    .slide-cover-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide-cover-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--text-white);
+    }
+
+    .slide-cover-subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    /* Slide Header */
+    .slide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-card);
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+      height: 45px;
+      flex-shrink: 0;
+    }
+
+    .slide-title-area {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .slide-tag {
+      font-size: 9px;
+      font-weight: 700;
+      background: rgba(56, 173, 164, 0.15);
+      color: var(--primary-gold);
+      border: 1px solid var(--primary-gold);
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .slide-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--text-white);
+    }
+
+    .slide-pma-badge {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 9px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--primary-gold);
+      font-weight: 700;
+    }
+
+    /* Slide Body & Footer */
+    .slide-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    .slide-footer {
+      border-top: 1px solid var(--border-card);
+      padding-top: 15px;
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      height: 30px;
+      flex-shrink: 0;
+    }
+
+    .slide-footer span strong {
+      color: var(--primary-gold);
+    }
+
+    /* ── SPLIT GRID (FOR SLIDE USE) ── */
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+      height: 100%;
+    }
+
+    /* ── HIGH-SEASON STATS & METRICS CARDS ── */
+    .metrics-summary-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .metric-card-visual {
+      background: var(--bg-card);
+      border-radius: 12px;
+      border: 1px solid var(--border-card);
+      padding: 24px 16px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .metric-card-visual:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: var(--primary-gold);
+    }
+
+    .metric-visual-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--primary-gold);
+      margin-bottom: 5px;
+    }
+
+    .metric-visual-lbl {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-white);
+    }
+
+    .metric-visual-foot {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* ── TABLES ── */
+    .table-container {
+      background: var(--bg-card);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-card);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .report-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      text-align: left;
+    }
+
+    .report-table th {
+      background: var(--bg-black);
+      color: var(--primary-gold);
+      padding: 12px 18px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border-card);
+    }
+
+    .report-table td {
+      padding: 10px 18px;
+      border-bottom: 1px solid var(--border-card);
+      color: var(--text-white);
+    }
+
+    .report-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .report-table tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 0;
+      }
+      body {
+        background-color: var(--bg-black) !important;
+        color: var(--text-white) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .pma-top-bar, .cavo-header {
+        display: none !important;
+      }
+      .slide {
+        width: 297mm !important;
+        height: 210mm !important;
+        max-width: 297mm !important;
+        max-height: 210mm !important;
+        margin: 0 !important;
+        padding: 20mm !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background-color: var(--bg-dark) !important;
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PMA CO-BRANDING HEADER BANNER -->
+  <div class="pma-top-bar">
+    <div class="pma-partner-brand">
+      <span class="pma-logo-text">PMA PARTNER</span>
+    </div>
+    <div>OTOMATİK PERFORMANS BİLGİLENDİRME RAPORU</div>
+  </div>
+
+  <!-- HOTEL HEADER -->
+  <div class="cavo-header">
+    <span style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--text-white);">Belconti Resort</span>
+    <button class="cavo-book-btn">AYLIK PERFORMANS RAPORU</button>
+  </div>
+
+  <div class="deck-container">
+    
+            <div class="slide slide-cover" id="slide-1">
+              <div class="slide-cover-body">
+                <div style="font-size:12px; font-weight:700; color:var(--primary-gold); letter-spacing:2.5px; text-transform:uppercase; margin-bottom:20px;">PPG NEWS &bull; PERFORMANCE BRIEFING</div>
+                <h1 class="slide-cover-title" style="font-size:52px; font-family:'Playfair Display', serif;">Yıldan Yıla Karşılaştırma - 17.06.2026</h1>
+                <div class="slide-cover-subtitle" style="font-size:16px;">Belconti Resort &bull; 2025-12-31 — 2026-06-17</div>
+                <div style="font-size:13px; color:var(--text-muted); margin-top:15px; font-weight:500;">PPG-01 Series Performance Report</div>
+              </div>
+              <div style="font-size:10px; color:var(--text-muted); letter-spacing:1px; text-transform:uppercase;">PPG Hospitality Technology &bull; Automated Briefing System</div>
+            </div>
+        
+
+                <div class="slide" id="slide-2">
+                  <div class="slide-header">
+                    <div class="slide-title-area">
+                      <span class="slide-tag">REVENUE</span>
+                      <h2 class="slide-heading">Rezervasyon ve Gelir Analizi</h2>
+                    </div>
+                    <div class="slide-pma-badge">PPG-01 SERIES</div>
+                  </div>
+                  <div class="slide-body">
+                    <div class="split-grid">
+                      <div class="metrics-summary-cards" style="grid-template-columns: 1fr; gap: 15px;">
+                        <div class="metric-card-visual" style="padding: 16px;">
+                          <div class="metric-visual-val">6.115</div>
+                          <div class="metric-visual-lbl">Toplam Rezervasyon</div>
+                        </div>
+                        <div class="metric-card-visual" style="padding: 16px;">
+                          <div class="metric-visual-val">5.333</div>
+                          <div class="metric-visual-lbl" style="color:var(--primary-gold);">Aktif Rezervasyon</div>
+                        </div>
+                        <div class="metric-card-visual" style="padding: 16px; border-color: rgba(239, 68, 68, 0.2)">
+                          <div class="metric-visual-val" style="color:#ef4444;">782</div>
+                          <div class="metric-visual-lbl" style="color:#ef4444;">İptal Rezervasyon</div>
+                        </div>
+                      </div>
+                      
+                      <div style="background:var(--bg-card); border:1px solid var(--border-card); border-radius:12px; padding:30px; display:flex; flex-direction:column; justify-content:center; height:100%;">
+                        <div style="font-size:12px; color:var(--text-muted); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:6px;">Toplam Rezervasyon Cirosu</div>
+                        <div style="font-size:44px; font-weight:800; color:var(--primary-gold); font-family:'Playfair Display', serif; line-height:1.1; margin-bottom:20px;">
+                          €3.812.185
+                        </div>
+                        
+                        <div style="font-size:13px; color:var(--text-white); opacity:0.9; line-height:1.6;">
+                          <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--primary-gold); margin-right:6px;"></span>
+                          <strong>Canlı PMS Verisi (Kesin Kaynak):</strong> Ciro tutarı doğrudan veritabanı denetimi ile doğrulanmıştır.
+                          <br>Önbellek (Cache) değeri: €5.258.995 (Sapma: 27.5%)
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slide-footer">
+                    <span>PPG MASTER SYSTEM REPORT &bull; <strong>Belconti Resort</strong></span>
+                    <span>SLIDE 2</span>
+                  </div>
+                </div>
+            
+
+                <div class="slide" id="slide-3">
+                  <div class="slide-header">
+                    <div class="slide-title-area">
+                      <span class="slide-tag">OCCUPANCY</span>
+                      <h2 class="slide-heading">Doluluk ve ADR Detayları</h2>
+                    </div>
+                    <div class="slide-pma-badge">PPG-01 SERIES</div>
+                  </div>
+                  <div class="slide-body">
+                    <div class="table-container" style="max-height:340px; overflow-y:auto;">
+                      <table class="report-table">
+                        <thead>
+                          <tr>
+                            <th>Tarih</th>
+                            <th style="text-align:right;">Toplam Oda</th>
+                            <th style="text-align:right;">Dolu Oda</th>
+                            <th style="text-align:right;">Doluluk Oranı</th>
+                            <th style="text-align:right;">ADR</th>
+                            <th style="text-align:right;">RevPAR</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">31 Ara 2025</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">1 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">2 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">3 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">4 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">5 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">6 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">7 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">8 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">9 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">10 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">11 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">12 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">13 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">14 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">15 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">16 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">17 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">18 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">19 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">20 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">21 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">22 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">23 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">24 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">25 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">26 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">27 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">28 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">29 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">30 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">31 Oca 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">1 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">2 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">3 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">4 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">5 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">6 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">7 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">8 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">9 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">10 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">11 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">12 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">13 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">14 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">15 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">16 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">17 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">18 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">19 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">20 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">21 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">22 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">23 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">24 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">25 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">26 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">27 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">28 Şub 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">1 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">2 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">3 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">4 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">5 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">6 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">7 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">8 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">9 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">10 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">11 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">12 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">13 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">14 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">15 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">16 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">17 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">18 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">19 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">20 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">21 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">22 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">23 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">24 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">25 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">26 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">27 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">28 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">29 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">30 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">31 Mar 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%0</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">1 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">80</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%13.4228</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€3.449</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€463</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">2 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">146</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%24.4966</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.765</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€432</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">3 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">179</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%30.0336</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.727</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€519</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">4 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">159</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%26.6779</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.737</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€463</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">5 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">155</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%26.0067</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€157</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€41</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">6 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">171</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%28.6913</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€291</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€84</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">7 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">191</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%32.047</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€662</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€212</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">8 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">184</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%30.8725</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€747</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€231</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">9 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">179</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%30.0336</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.133</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€340</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">10 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">132</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%22.1477</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€785</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€174</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">11 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">120</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%20.1342</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.134</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€228</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">12 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">112</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%18.7919</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€836</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€157</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">13 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">125</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%20.9732</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€619</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€130</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">14 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">120</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%20.1342</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€160</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€32</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">15 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">434</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%72.8188</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€4.159</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€3.029</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">16 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">501</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%84.0604</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€3.982</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€3.347</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">17 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">589</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%98.8255</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€3.493</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€3.452</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">18 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">594</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%99.6644</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€3.475</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€3.464</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">19 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">346</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%58.0537</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€3.567</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€2.071</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">20 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">140</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%23.4899</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€377</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€88</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">21 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">141</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%23.6577</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€281</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€66</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">22 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">193</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%32.3826</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€237</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€77</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">23 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">323</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%54.1946</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€408</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€221</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">24 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">597</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%100.1678</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€426</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€427</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">25 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">599</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%100.5034</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€464</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€467</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">26 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">388</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%65.1007</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€475</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€309</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">27 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">467</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%78.3557</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€283</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€222</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">28 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">437</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%73.3221</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€291</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€214</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">29 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">449</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%75.3356</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€332</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€250</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">30 Nis 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">448</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%75.1678</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€654</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€491</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">1 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">460</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%77.1812</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.008</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€778</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">2 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">408</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%68.4564</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€980</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€671</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">3 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">209</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%35.0671</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€705</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€247</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">4 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">202</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%33.8926</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€749</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€254</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">5 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">201</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%33.7248</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€832</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€281</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">6 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">233</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%39.094</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€878</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€343</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">7 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">328</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%55.0336</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€823</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€453</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">8 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">454</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%76.1745</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€468</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€357</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">9 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">425</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%71.3087</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€553</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€395</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">10 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">171</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%28.6913</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€567</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€163</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">11 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">146</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%24.4966</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€949</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€232</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">12 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">151</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%25.3356</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.257</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€318</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">13 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">226</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%37.9195</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€731</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€277</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">14 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">448</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%75.1678</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€438</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€329</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">15 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">467</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%78.3557</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€654</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€512</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">16 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">487</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%81.7114</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€835</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€682</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">17 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">220</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%36.9128</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.596</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€589</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">18 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">168</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%28.1879</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€2.123</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€599</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">19 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">169</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%28.3557</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.580</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€448</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">20 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">200</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%33.557</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.776</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€596</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">21 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">228</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%38.255</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.439</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€550</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">22 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">272</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%45.6376</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€2.022</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€923</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">23 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">372</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%62.4161</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€4.779</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€2.983</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">24 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">462</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%77.5168</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€7.727</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€5.990</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">25 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">539</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%90.4362</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€8.544</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€7.727</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">26 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">584</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%97.9866</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€8.936</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€8.756</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">27 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">600</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%100.6711</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€9.019</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€9.079</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">28 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">594</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%99.6644</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€8.877</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€8.847</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">29 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">600</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%100.6711</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€9.648</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€9.713</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">30 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">541</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%90.7718</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€7.095</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€6.441</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">31 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">402</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%67.4497</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.918</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.294</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">1 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">369</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%61.9128</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.214</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€752</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">2 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">368</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%61.745</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.327</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€819</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">3 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">361</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%60.5705</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.212</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€734</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">4 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">358</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%60.0671</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.073</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€645</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">5 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">350</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%58.7248</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.000</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€587</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">6 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">311</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%52.1812</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.122</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€586</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">7 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">268</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%44.9664</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€782</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€351</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">8 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">261</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%43.7919</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€608</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€266</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">9 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">269</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%45.1342</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€932</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€420</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">10 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">259</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%43.4564</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€982</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€427</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">11 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">295</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%49.4966</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€2.211</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.095</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">12 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">320</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%53.6913</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€2.679</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.439</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">13 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">327</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%54.8658</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€2.330</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.278</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">14 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">355</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%59.5638</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€2.045</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.218</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">15 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">352</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%59.0604</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.849</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.092</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">16 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">376</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%63.0872</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.860</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.173</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">17 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">434</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%72.8188</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€2.355</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€1.715</td>
+                </tr>
+            
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="slide-footer">
+                    <span>PPG MASTER SYSTEM REPORT &bull; <strong>Belconti Resort</strong></span>
+                    <span>SLIDE 3</span>
+                  </div>
+                </div>
+            
+  </div>
+
+  <!-- Footer -->
+  <div style="border-top:1px solid var(--border-card); padding:30px 60px; text-align:center; color:var(--text-muted); font-size:11px; font-weight:500; background:var(--bg-dark);">
+    PPG Performance — Otomatik Rapor &bull; Raporlama Zamanı: 17.06.2026 07:31:14<br>
+    <strong style="color:var(--text-white); font-weight:700;">PPG Hospitality Technology &copy; 2026</strong>
+  </div>
+
+</body>
+</html>

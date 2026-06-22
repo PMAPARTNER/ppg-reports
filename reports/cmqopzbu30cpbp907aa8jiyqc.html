@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <title>Salamis Bay Conti — Daily Report 2026-06-21</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0F1F28;
+      --bg-black: #0A141A;
+      --bg-light: #F8FAFB;
+      --primary-gold: #38ADA4;
+      --gold-hover: #48BEB4;
+      --gold-light: rgba(56, 173, 164, 0.12);
+      --text-white: rgba(255, 255, 255, 0.95);
+      --text-muted: rgba(255, 255, 255, 0.65);
+      --text-dark: #0F1B29;
+      --text-muted-light: #52647A;
+      --bg-card: rgba(255, 255, 255, 0.04);
+      --border-card: rgba(255, 255, 255, 0.1);
+      --border-light: #E0E5EB;
+      --aegean-blue: #38ADA4;
+      --danger: #E53E3E;
+      --success: #38ADA4;
+      --card-shadow: 0 10px 30px rgba(15, 27, 41, 0.04);
+      --card-shadow-hover: 0 20px 40px rgba(15, 27, 41, 0.08);
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Sora', sans-serif;
+      color: var(--text-white);
+      background-color: var(--bg-black);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* ── PMA CO-BRANDING HEADER BANNER ── */
+    .pma-top-bar {
+      background-color: var(--bg-black);
+      color: var(--text-white);
+      padding: 12px 60px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-card);
+      z-index: 1000;
+      position: relative;
+    }
+
+    .pma-partner-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .pma-logo-text {
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ── HOTEL WEBSITE HEADER ── */
+    .cavo-header {
+      background: rgba(15, 31, 40, 0.95);
+      backdrop-filter: blur(15px);
+      padding: 18px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      border-bottom: 1px solid var(--border-card);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .cavo-book-btn {
+      background-color: var(--primary-gold);
+      color: var(--bg-dark);
+      border: none;
+      padding: 10px 24px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: var(--transition);
+      border-radius: 99px;
+    }
+
+    .cavo-book-btn:hover {
+      background-color: var(--gold-hover);
+      box-shadow: 0 0 15px rgba(56, 173, 164, 0.4);
+    }
+
+    /* ── SLIDE DECK CONTAINER (16:9 ASPECT RATIO) ── */
+    .deck-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    .slide {
+      background: var(--bg-dark);
+      border: 1px solid var(--border-card);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 60px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+      min-height: 600px;
+      transition: var(--transition);
+    }
+
+    .slide:hover {
+      border-color: rgba(56, 173, 164, 0.3);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Cover Slide Specifics */
+    .slide-cover {
+      background-image: 
+        linear-gradient(rgba(15, 31, 40, 0.75) 0%, rgba(15, 31, 40, 0.95) 100%),
+        url('https://image-tc.galaxy.tf/wijpeg-7kppa0lzf1jd60cpcx0dap4vd/general-view-with-beach-web.jpg?width=1200');
+      background-size: cover;
+      background-position: center;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+
+    .slide-cover-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide-cover-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--text-white);
+    }
+
+    .slide-cover-subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    /* Slide Header */
+    .slide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-card);
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+      height: 45px;
+      flex-shrink: 0;
+    }
+
+    .slide-title-area {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .slide-tag {
+      font-size: 9px;
+      font-weight: 700;
+      background: rgba(56, 173, 164, 0.15);
+      color: var(--primary-gold);
+      border: 1px solid var(--primary-gold);
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .slide-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--text-white);
+    }
+
+    .slide-pma-badge {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 9px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--primary-gold);
+      font-weight: 700;
+    }
+
+    /* Slide Body & Footer */
+    .slide-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    .slide-footer {
+      border-top: 1px solid var(--border-card);
+      padding-top: 15px;
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      height: 30px;
+      flex-shrink: 0;
+    }
+
+    .slide-footer span strong {
+      color: var(--primary-gold);
+    }
+
+    /* ── SPLIT GRID (FOR SLIDE USE) ── */
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+      height: 100%;
+    }
+
+    /* ── HIGH-SEASON STATS & METRICS CARDS ── */
+    .metrics-summary-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .metric-card-visual {
+      background: var(--bg-card);
+      border-radius: 12px;
+      border: 1px solid var(--border-card);
+      padding: 24px 16px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .metric-card-visual:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: var(--primary-gold);
+    }
+
+    .metric-visual-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--primary-gold);
+      margin-bottom: 5px;
+    }
+
+    .metric-visual-lbl {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-white);
+    }
+
+    .metric-visual-foot {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* ── TABLES ── */
+    .table-container {
+      background: var(--bg-card);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-card);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .report-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      text-align: left;
+    }
+
+    .report-table th {
+      background: var(--bg-black);
+      color: var(--primary-gold);
+      padding: 12px 18px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border-card);
+    }
+
+    .report-table td {
+      padding: 10px 18px;
+      border-bottom: 1px solid var(--border-card);
+      color: var(--text-white);
+    }
+
+    .report-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .report-table tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    /* ── CHART BOX ── */
+    .chart-box {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid var(--border-card);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .chart-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border-bottom: 1px solid var(--border-card);
+      padding-bottom: 8px;
+    }
+
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 0;
+      }
+      body {
+        background-color: var(--bg-black) !important;
+        color: var(--text-white) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .pma-top-bar, .cavo-header {
+        display: none !important;
+      }
+      .slide {
+        width: 297mm !important;
+        height: 210mm !important;
+        max-width: 297mm !important;
+        max-height: 210mm !important;
+        margin: 0 !important;
+        padding: 20mm !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background-color: var(--bg-dark) !important;
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PMA CO-BRANDING HEADER BANNER -->
+  <div class="pma-top-bar">
+    <div class="pma-partner-brand">
+      <span class="pma-logo-text">PMA PARTNER</span>
+    </div>
+    <div>AUTOMATED DAILY PERFORMANCE REPORT</div>
+  </div>
+
+  <!-- HOTEL HEADER -->
+  <div class="cavo-header">
+    <span style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--text-white);">Salamis Bay Conti</span>
+    <button class="cavo-book-btn">DAILY BRIEF</button>
+  </div>
+
+  <div class="deck-container">
+
+    <!-- Slide 1: Cover -->
+    <div class="slide slide-cover" id="slide-1">
+      <div class="slide-cover-body">
+        <div style="font-size:12px; font-weight:700; color:var(--primary-gold); letter-spacing:2.5px; text-transform:uppercase; margin-bottom:20px;">PPG NEWS &bull; DAILY INTELLIGENCE</div>
+        <h1 class="slide-cover-title" style="font-size:52px;">Salamis Bay Conti</h1>
+        <div class="slide-cover-subtitle" style="font-size:16px;">DAILY OPERATIONAL & PERFORMANCE REPORT &bull; 2026-06-21</div>
+        <div style="font-size:13px; color:var(--text-muted); margin-top:15px; font-weight:500;">Connection: VEBONI PMS (Live)</div>
+      </div>
+      <div style="font-size:10px; color:var(--text-muted); letter-spacing:1px; text-transform:uppercase;">PPG Hospitality Technology &bull; Automated Briefing System</div>
+    </div>
+
+    <!-- Slide 2: KPI Dashboard -->
+    <div class="slide" id="slide-2">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-tag">KPI</span>
+          <h2 class="slide-heading">Today's Performance Summary</h2>
+        </div>
+        <div class="slide-pma-badge">PPG NEWS</div>
+      </div>
+      <div class="slide-body">
+        <div class="metrics-summary-cards" style="margin-bottom:25px;">
+          <div class="metric-card-visual">
+            <div class="metric-visual-val">3</div>
+            <div class="metric-visual-lbl">Active Bookings</div>
+            <div class="metric-visual-foot">Bookings generated today</div>
+          </div>
+          <div class="metric-card-visual">
+            <div class="metric-visual-val">€1,672</div>
+            <div class="metric-visual-lbl">Daily Revenue</div>
+            <div class="metric-visual-foot" style="color:#38ADA4; font-weight:600;">
+              ▲ 0% vs yesterday
+            </div>
+          </div>
+          <div class="metric-card-visual">
+            <div class="metric-visual-val">%85</div>
+            <div class="metric-visual-lbl">Occupancy Rate</div>
+            <div class="metric-visual-foot">562 active rooms</div>
+          </div>
+          <div class="metric-card-visual">
+            <div class="metric-visual-val">€1,574</div>
+            <div class="metric-visual-lbl">Average ADR</div>
+            <div class="metric-visual-foot">RevPAR: €1,338</div>
+          </div>
+        </div>
+        
+        <div style="background:var(--bg-black); padding:24px; border-radius:12px; border:1px solid var(--border-card);">
+          <h3 style="font-family:'Playfair Display', serif; font-size:16px; color:var(--primary-gold); margin-bottom:15px; text-transform:uppercase; letter-spacing:1px;">Operational Summary</h3>
+          <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; text-align:center;">
+            <div>
+              <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px;">Arrivals Today</div>
+              <div style="font-size:24px; font-weight:800; color:var(--primary-gold); margin-top:4px; font-family:'Playfair Display', serif;">132</div>
+            </div>
+            <div>
+              <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px;">Departures Today</div>
+              <div style="font-size:24px; font-weight:800; color:#f97316; margin-top:4px; font-family:'Playfair Display', serif;">192</div>
+            </div>
+            <div>
+              <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px;">Cancelled</div>
+              <div style="font-size:24px; font-weight:800; color:#ef4444; margin-top:4px; font-family:'Playfair Display', serif;">0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>PPG MASTER SYSTEM REPORT &bull; <strong>Salamis Bay Conti</strong></span>
+        <span>SLIDE 2 / 5</span>
+      </div>
+    </div>
+
+    <!-- Slide 3: Trend & Channels -->
+    <div class="slide" id="slide-3">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-tag">TREND</span>
+          <h2 class="slide-heading">Revenue Trend & Booking Channels</h2>
+        </div>
+        <div class="slide-pma-badge">PPG NEWS</div>
+      </div>
+      <div class="slide-body">
+        <div class="split-grid">
+          <div class="chart-box" style="height:320px;">
+            <div class="chart-title">Last 7 Days Revenue Distribution (EUR)</div>
+            <div style="display:flex; align-items:center; justify-content:center; height:100%; padding-top:15px;">
+              <svg width="392" height="155" style="max-width:100%;">
+                <defs>
+                  <linearGradient id="barGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#247D76;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#38ADA4;stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                
+            <g>
+                <rect x="0" y="10" width="40" height="110" rx="4" fill="url(#barGrad)" />
+                <text x="20" y="136" text-anchor="middle" font-size="11" fill="rgba(255, 255, 255, 0.65)" font-family="'Sora', sans-serif">Jun 16</text>
+                <text x="20" y="6" text-anchor="middle" font-size="10" fill="rgba(255, 255, 255, 0.95)" font-weight="700" font-family="'Sora', sans-serif">€204,787</text>
+            </g>
+        
+            <g>
+                <rect x="56" y="19" width="40" height="101" rx="4" fill="url(#barGrad)" />
+                <text x="76" y="136" text-anchor="middle" font-size="11" fill="rgba(255, 255, 255, 0.65)" font-family="'Sora', sans-serif">Jun 17</text>
+                <text x="76" y="15" text-anchor="middle" font-size="10" fill="rgba(255, 255, 255, 0.95)" font-weight="700" font-family="'Sora', sans-serif">€187,482</text>
+            </g>
+        
+            <g>
+                <rect x="112" y="0" width="40" height="120" rx="4" fill="url(#barGrad)" />
+                <text x="132" y="136" text-anchor="middle" font-size="11" fill="rgba(255, 255, 255, 0.65)" font-family="'Sora', sans-serif">Jun 18</text>
+                <text x="132" y="-4" text-anchor="middle" font-size="10" fill="rgba(255, 255, 255, 0.95)" font-weight="700" font-family="'Sora', sans-serif">€222,898</text>
+            </g>
+        
+            <g>
+                <rect x="168" y="60" width="40" height="60" rx="4" fill="url(#barGrad)" />
+                <text x="188" y="136" text-anchor="middle" font-size="11" fill="rgba(255, 255, 255, 0.65)" font-family="'Sora', sans-serif">Jun 19</text>
+                <text x="188" y="56" text-anchor="middle" font-size="10" fill="rgba(255, 255, 255, 0.95)" font-weight="700" font-family="'Sora', sans-serif">€112,017</text>
+            </g>
+        
+            <g>
+                <rect x="224" y="101" width="40" height="19" rx="4" fill="url(#barGrad)" />
+                <text x="244" y="136" text-anchor="middle" font-size="11" fill="rgba(255, 255, 255, 0.65)" font-family="'Sora', sans-serif">Jun 20</text>
+                <text x="244" y="97" text-anchor="middle" font-size="10" fill="rgba(255, 255, 255, 0.95)" font-weight="700" font-family="'Sora', sans-serif">€35,496</text>
+            </g>
+        
+            <g>
+                <rect x="280" y="119" width="40" height="1" rx="4" fill="url(#barGrad)" />
+                <text x="300" y="136" text-anchor="middle" font-size="11" fill="rgba(255, 255, 255, 0.65)" font-family="'Sora', sans-serif">Jun 21</text>
+                <text x="300" y="115" text-anchor="middle" font-size="10" fill="rgba(255, 255, 255, 0.95)" font-weight="700" font-family="'Sora', sans-serif">€1,672</text>
+            </g>
+        
+            <g>
+                <rect x="336" y="120" width="40" height="0" rx="4" fill="url(#barGrad)" />
+                <text x="356" y="136" text-anchor="middle" font-size="11" fill="rgba(255, 255, 255, 0.65)" font-family="'Sora', sans-serif">Jun 22</text>
+                <text x="356" y="116" text-anchor="middle" font-size="10" fill="rgba(255, 255, 255, 0.95)" font-weight="700" font-family="'Sora', sans-serif">€0</text>
+            </g>
+        
+              </svg>
+            </div>
+          </div>
+          
+          <div class="table-container" style="height:320px; overflow-y:auto;">
+            <div style="padding:14px 18px; font-weight:700; font-size:11px; color:var(--primary-gold); text-transform:uppercase; letter-spacing:1px; background:var(--bg-black); border-bottom:1px solid var(--border-card);">
+              Channel Booking Shares
+            </div>
+            <table class="report-table">
+              <thead>
+                <tr>
+                  <th>Channel</th>
+                  <th style="text-align:right;">Bookings</th>
+                  <th style="text-align:right;">Total Revenue</th>
+                </tr>
+              </thead>
+              <tbody>
+        <tr>
+            <td style="padding:10px 14px;border-bottom:1px solid rgba(255, 255, 255, 0.1);color:rgba(255, 255, 255, 0.95);">Call Center</td>
+            <td style="padding:10px 14px;border-bottom:1px solid rgba(255, 255, 255, 0.1);text-align:right;color:rgba(255, 255, 255, 0.65);">3</td>
+            <td style="padding:10px 14px;border-bottom:1px solid rgba(255, 255, 255, 0.1);text-align:right;font-weight:700;color:#38ADA4;">€1,672</td>
+        </tr>
+    </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>PPG MASTER SYSTEM REPORT &bull; <strong>Salamis Bay Conti</strong></span>
+        <span>SLIDE 3 / 5</span>
+      </div>
+    </div>
+
+    <!-- Slide 4: Agencies & Reviews -->
+    <div class="slide" id="slide-4">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-tag">AGENCY</span>
+          <h2 class="slide-heading">Agency Distribution & Guest Reviews</h2>
+        </div>
+        <div class="slide-pma-badge">PPG NEWS</div>
+      </div>
+      <div class="slide-body">
+        <div class="split-grid">
+          <div class="table-container" style="height:320px; overflow-y:auto;">
+            <div style="padding:14px 18px; font-weight:700; font-size:11px; color:var(--primary-gold); text-transform:uppercase; letter-spacing:1px; background:var(--bg-black); border-bottom:1px solid var(--border-card);">
+              Top Performing Agencies
+            </div>
+            <table class="report-table">
+              <thead>
+                <tr>
+                  <th>Agency</th>
+                  <th style="text-align:right;">Bookings</th>
+                  <th style="text-align:right;">Total Revenue</th>
+                </tr>
+              </thead>
+              <tbody>
+        <tr>
+            <td style="padding:10px 14px;border-bottom:1px solid rgba(255, 255, 255, 0.1);color:rgba(255, 255, 255, 0.95);">Bilinmeyen</td>
+            <td style="padding:10px 14px;border-bottom:1px solid rgba(255, 255, 255, 0.1);text-align:right;color:rgba(255, 255, 255, 0.65);">3</td>
+            <td style="padding:10px 14px;border-bottom:1px solid rgba(255, 255, 255, 0.1);text-align:right;font-weight:700;color:#38ADA4;">€1,672</td>
+        </tr>
+    </tbody>
+            </table>
+          </div>
+          
+          <div style="background:var(--bg-card); border:1px solid var(--border-card); border-radius:12px; padding:35px; height:320px; display:flex; flex-direction:column; justify-content:center;">
+            <h3 style="font-family:'Playfair Display', serif; font-size:16px; color:var(--primary-gold); margin-bottom:15px; text-transform:uppercase; letter-spacing:1px;">Guest Satisfaction</h3>
+            <div style="display:flex; align-items:center; gap:20px; margin-bottom:20px;">
+              <div style="font-size:50px; line-height:1;">⭐</div>
+              <div>
+                <div style="font-size:38px; font-weight:800; color:var(--text-white); font-family:'Playfair Display', serif; line-height:1.1;">4.9<span style="font-size:16px; color:var(--text-muted); font-weight:500;">/10</span></div>
+                <div style="font-size:12px; color:var(--text-muted); font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-top:2px;">Average Review Score</div>
+              </div>
+            </div>
+            <div style="font-size:13px; color:var(--text-white); line-height:1.6; opacity:0.9;">
+              A total of <strong>42</strong> guest reviews have been analyzed.
+              Number of new reviews added today: <strong style="color:var(--primary-gold);">4</strong>.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>PPG MASTER SYSTEM REPORT &bull; <strong>Salamis Bay Conti</strong></span>
+        <span>SLIDE 4 / 5</span>
+      </div>
+    </div>
+
+    <!-- Slide 5: Demographics -->
+    <div class="slide" id="slide-5">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-tag">DEMOGRAPHICS</span>
+          <h2 class="slide-heading">Visitor Geographical Distribution</h2>
+        </div>
+        <div class="slide-pma-badge">PPG NEWS</div>
+      </div>
+      <div class="slide-body">
+        <div class="split-grid">
+          <div class="table-container" style="height:320px; overflow-y:auto;">
+            <div style="padding:14px 18px; font-weight:700; font-size:11px; color:var(--primary-gold); text-transform:uppercase; letter-spacing:1px; background:var(--bg-black); border-bottom:1px solid var(--border-card);">
+              Active Visitor Nationalities
+            </div>
+            <table class="report-table">
+              <thead>
+                <tr>
+                  <th>Country</th>
+                  <th style="text-align:right;">Active Accommodation Count</th>
+                </tr>
+              </thead>
+              <tbody>
+        <tr>
+            <td style="padding:10px 14px;border-bottom:1px solid rgba(255, 255, 255, 0.1);color:rgba(255, 255, 255, 0.95);">TURKEY</td>
+            <td style="padding:10px 14px;border-bottom:1px solid rgba(255, 255, 255, 0.1);text-align:right;font-weight:700;color:#38ADA4;">430</td>
+        </tr>
+    
+        <tr>
+            <td style="padding:10px 14px;border-bottom:1px solid rgba(255, 255, 255, 0.1);color:rgba(255, 255, 255, 0.95);">POLAND</td>
+            <td style="padding:10px 14px;border-bottom:1px solid rgba(255, 255, 255, 0.1);text-align:right;font-weight:700;color:#38ADA4;">69</td>
+        </tr>
+    
+        <tr>
+            <td style="padding:10px 14px;border-bottom:1px solid rgba(255, 255, 255, 0.1);color:rgba(255, 255, 255, 0.95);">GERMANY (DEUTSCHLAN</td>
+            <td style="padding:10px 14px;border-bottom:1px solid rgba(255, 255, 255, 0.1);text-align:right;font-weight:700;color:#38ADA4;">45</td>
+        </tr>
+    
+        <tr>
+            <td style="padding:10px 14px;border-bottom:1px solid rgba(255, 255, 255, 0.1);color:rgba(255, 255, 255, 0.95);">ISRAEL</td>
+            <td style="padding:10px 14px;border-bottom:1px solid rgba(255, 255, 255, 0.1);text-align:right;font-weight:700;color:#38ADA4;">36</td>
+        </tr>
+    
+        <tr>
+            <td style="padding:10px 14px;border-bottom:1px solid rgba(255, 255, 255, 0.1);color:rgba(255, 255, 255, 0.95);">NORTHERN CYPRUS TUR</td>
+            <td style="padding:10px 14px;border-bottom:1px solid rgba(255, 255, 255, 0.1);text-align:right;font-weight:700;color:#38ADA4;">30</td>
+        </tr>
+    </tbody>
+            </table>
+          </div>
+          
+          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-card); border-radius:12px; padding:30px; display:flex; flex-direction:column; justify-content:center; height:320px;">
+            <h3 style="font-family:'Playfair Display', serif; font-size:15px; color:var(--primary-gold); margin-bottom:12px; text-transform:uppercase; letter-spacing:1px;">Market Commentary</h3>
+            <p style="font-size:13px; line-height:1.6; color:var(--text-white); opacity:0.85; margin-bottom:12px;">
+              According to the check-in and staying guest profile, the market generating the highest volume is <strong>TURKEY</strong>.
+            </p>
+            <p style="font-size:13px; line-height:1.6; color:var(--text-white); opacity:0.85;">
+              This data should be prioritized in on-site language support, operational planning, and regional ad campaigns.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>PPG MASTER SYSTEM REPORT &bull; <strong>Salamis Bay Conti</strong></span>
+        <span>SLIDE 5 / 5</span>
+      </div>
+    </div>
+    
+    <div class="slide" id="slide-6">
+      <div class="slide-header">
+        <div class="slide-title-area"><span class="slide-tag">DIGITAL</span>
+          <h2 class="slide-heading">Digital Marketing, SEO & Market</h2></div>
+        <div class="slide-pma-badge">PPG NEWS</div>
+      </div>
+      <div class="slide-body">
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px;">
+          
+      <div style="background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:18px;">
+        <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;font-weight:700;">Ad Spend</div>
+        <div style="font-size:26px;font-weight:800;color:var(--text-white);font-family:'Playfair Display',serif;line-height:1.2;margin-top:4px;">€0</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">0 clicks</div>
+      </div>
+          
+      <div style="background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:18px;">
+        <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;font-weight:700;">Impressions</div>
+        <div style="font-size:26px;font-weight:800;color:var(--text-white);font-family:'Playfair Display',serif;line-height:1.2;margin-top:4px;">0</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Conv. 0</div>
+      </div>
+          
+          
+        </div>
+        <div class="split-grid">
+          <div class="table-container" style="height:280px;overflow-y:auto;">
+            <div style="padding:14px 18px;font-weight:700;font-size:11px;color:var(--primary-gold);text-transform:uppercase;letter-spacing:1px;background:var(--bg-black);border-bottom:1px solid var(--border-card);">Competitor Price Position</div>
+            <table class="report-table"><tbody>
+      <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);font-weight:400;">Salamis Bay Conti Resort Hotel</td>
+      <td style="padding:9px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€120</td></tr>
+      <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);font-weight:400;">Kaya Artemis Resort & Casino</td>
+      <td style="padding:9px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€150</td></tr>
+      <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);font-weight:400;">Noah's Ark Deluxe Hotel & Casino</td>
+      <td style="padding:9px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€100</td></tr>
+      <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);font-weight:400;">Concorde Luxury Resort & Casino</td>
+      <td style="padding:9px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€180</td></tr>
+      <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);font-weight:400;">Limak Cyprus Deluxe Hotel & Casino</td>
+      <td style="padding:9px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€130</td></tr>
+      <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);font-weight:400;">Elexus Hotel Resort Casino & Spa</td>
+      <td style="padding:9px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€140</td></tr></tbody></table></div>
+          <div style="background:rgba(255,255,255,0.02);border:1px solid var(--border-card);border-radius:12px;padding:22px;height:280px;overflow-y:auto;">
+            <h3 style="font-family:'Playfair Display',serif;font-size:14px;color:var(--primary-gold);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;">Weather & Demand Drivers</h3>
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:5px 0;border-bottom:1px solid var(--border-card);"><span style="color:var(--text-muted);">21 Sun ⛅</span><span style="color:var(--text-white);font-weight:600;">23° / 31°</span></div><div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:5px 0;border-bottom:1px solid var(--border-card);"><span style="color:var(--text-muted);">22 Mon ☀️</span><span style="color:var(--text-white);font-weight:600;">24° / 32°</span></div><div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:5px 0;border-bottom:1px solid var(--border-card);"><span style="color:var(--text-muted);">23 Tue ☀️</span><span style="color:var(--text-white);font-weight:600;">25° / 33°</span></div><div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:5px 0;border-bottom:1px solid var(--border-card);"><span style="color:var(--text-muted);">24 Wed ☀️</span><span style="color:var(--text-white);font-weight:600;">24° / 33°</span></div><div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:5px 0;border-bottom:1px solid var(--border-card);"><span style="color:var(--text-muted);">25 Thu ☀️</span><span style="color:var(--text-white);font-weight:600;">23° / 32°</span></div>
+            <ul style="margin-top:12px;padding-left:16px;"><li style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:5px;">Famagusta Festival</li><li style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:5px;">Cyprus International Film Festival</li><li style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:5px;">Famagusta Marathon</li><li style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:5px;">Exhibition of Local Artists</li><li style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:5px;">Famagusta Beach Concert</li><li style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:5px;">Battle of the Boyne (holiday)</li></ul>
+          </div>
+        </div>
+        <p style="font-size:11px;color:var(--text-muted);margin-top:14px;">SEO (GSC): ⚠️ Yetki bekliyor (marketing OAuth webmasters re-consent)</p>
+      </div>
+      <div class="slide-footer">
+        <span>PPG MASTER SYSTEM REPORT &bull; <strong>Salamis Bay Conti</strong></span>
+        <span>DIGITAL</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div style="border-top:1px solid var(--border-card); padding:30px 60px; text-align:center; color:var(--text-muted); font-size:11px; font-weight:500; background:var(--bg-dark);">
+    PPG News — Automated Daily Newsletter Report &bull; Report Time: 6/22/2026, 7:32:57 AM<br>
+    <strong style="color:var(--text-white); font-weight:700;">PPG Hospitality Technology &copy; 2026</strong>
+  </div>
+
+</body>
+</html>

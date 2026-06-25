@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <title>Belconti Resort — Günlük Rapor 2026-06-24</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #FFFFFF;
+      --bg-black: #EEF3F5;
+      --bg-light: #F8FAFB;
+      --primary-gold: #0E7C86;
+      --gold-hover: #0E7C86;
+      --gold-light: #0E7C861f;
+      --text-white: #13212B;
+      --text-muted: #5C6B77;
+      --text-dark: #0F1B29;
+      --text-muted-light: #52647A;
+      --bg-card: rgba(19,33,43,0.035);
+      --border-card: rgba(19,33,43,0.12);
+      --border-light: #E0E5EB;
+      --aegean-blue: #0E7C86;
+      --danger: #E53E3E;
+      --success: #0E7C86;
+      --card-shadow: 0 10px 30px rgba(15, 27, 41, 0.08);
+      --card-shadow-hover: 0 20px 40px rgba(15, 27, 41, 0.12);
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Sora', sans-serif;
+      color: var(--text-white);
+      background-color: var(--bg-black);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* ── PMA CO-BRANDING HEADER BANNER ── */
+    .pma-top-bar {
+      background-color: var(--bg-black);
+      color: var(--text-white);
+      padding: 12px 60px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-card);
+      z-index: 1000;
+      position: relative;
+    }
+
+    .pma-partner-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .pma-logo-text {
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ── HOTEL WEBSITE HEADER ── */
+    .cavo-header {
+      background: rgba(15, 31, 40, 0.95);
+      backdrop-filter: blur(15px);
+      padding: 18px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      border-bottom: 1px solid var(--border-card);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .cavo-book-btn {
+      background-color: var(--primary-gold);
+      color: var(--bg-dark);
+      border: none;
+      padding: 10px 24px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: var(--transition);
+      border-radius: 99px;
+    }
+
+    .cavo-book-btn:hover {
+      background-color: var(--gold-hover);
+      box-shadow: 0 0 15px rgba(56, 173, 164, 0.4);
+    }
+
+    /* ── SLIDE DECK CONTAINER (16:9 ASPECT RATIO) ── */
+    .deck-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    .slide {
+      background: var(--bg-dark);
+      border: 1px solid var(--border-card);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 60px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+      min-height: 600px;
+      transition: var(--transition);
+    }
+
+    .slide:hover {
+      border-color: rgba(56, 173, 164, 0.3);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Cover Slide Specifics */
+    .slide-cover {
+      background-image: 
+        linear-gradient(rgba(15, 31, 40, 0.75) 0%, rgba(15, 31, 40, 0.95) 100%),
+        url('https://image-tc.galaxy.tf/wijpeg-7kppa0lzf1jd60cpcx0dap4vd/general-view-with-beach-web.jpg?width=1200');
+      background-size: cover;
+      background-position: center;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+
+    .slide-cover-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide-cover-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--text-white);
+    }
+
+    .slide-cover-subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    /* Slide Header */
+    .slide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-card);
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+      height: 45px;
+      flex-shrink: 0;
+    }
+
+    .slide-title-area {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .slide-tag {
+      font-size: 9px;
+      font-weight: 700;
+      background: rgba(56, 173, 164, 0.15);
+      color: var(--primary-gold);
+      border: 1px solid var(--primary-gold);
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .slide-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--text-white);
+    }
+
+    .slide-pma-badge {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 9px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--primary-gold);
+      font-weight: 700;
+    }
+
+    /* Slide Body & Footer */
+    .slide-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    .slide-footer {
+      border-top: 1px solid var(--border-card);
+      padding-top: 15px;
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      height: 30px;
+      flex-shrink: 0;
+    }
+
+    .slide-footer span strong {
+      color: var(--primary-gold);
+    }
+
+    /* ── SPLIT GRID (FOR SLIDE USE) ── */
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+      height: 100%;
+    }
+
+    /* ── HIGH-SEASON STATS & METRICS CARDS ── */
+    .metrics-summary-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .metric-card-visual {
+      background: var(--bg-card);
+      border-radius: 12px;
+      border: 1px solid var(--border-card);
+      padding: 24px 16px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .metric-card-visual:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: var(--primary-gold);
+    }
+
+    a.metric-card-visual {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    a.metric-card-visual:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: var(--primary-gold);
+    }
+
+    .metric-visual-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--primary-gold);
+      margin-bottom: 5px;
+    }
+
+    .metric-visual-lbl {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-white);
+    }
+
+    .metric-visual-foot {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* ── TABLES ── */
+    .table-container {
+      background: var(--bg-card);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-card);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .report-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      text-align: left;
+    }
+
+    .report-table th {
+      background: var(--bg-black);
+      color: var(--primary-gold);
+      padding: 12px 18px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border-card);
+    }
+
+    .report-table td {
+      padding: 10px 18px;
+      border-bottom: 1px solid var(--border-card);
+      color: var(--text-white);
+    }
+
+    .report-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .report-table tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    /* ── CHART BOX ── */
+    .chart-box {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid var(--border-card);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .chart-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border-bottom: 1px solid var(--border-card);
+      padding-bottom: 8px;
+    }
+
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 0;
+      }
+      body {
+        background-color: var(--bg-black) !important;
+        color: var(--text-white) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .pma-top-bar, .cavo-header {
+        display: none !important;
+      }
+      .slide {
+        width: 297mm !important;
+        height: 210mm !important;
+        max-width: 297mm !important;
+        max-height: 210mm !important;
+        margin: 0 !important;
+        padding: 20mm !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background-color: var(--bg-dark) !important;
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PMA CO-BRANDING HEADER BANNER -->
+  <div class="pma-top-bar">
+    <div class="pma-partner-brand">
+      <span class="pma-logo-text">PMA PARTNER</span>
+    </div>
+    <div>OTOMATİK GÜNLÜK PERFORMANS RAPORU</div>
+  </div>
+
+  <!-- HOTEL HEADER -->
+  <div class="cavo-header">
+    <div style="display:flex;align-items:center;gap:14px;">
+      
+      <span style="font-family:'Sora', sans-serif; font-size:18px; font-weight:700; color:var(--text-white);">Belconti Resort</span>
+    </div>
+    <button type="button" class="cavo-book-btn" onclick="return false;">GÜNLÜK BÜLTEN</button>
+  </div>
+
+  <div class="deck-container">
+
+    <!-- Slide 1: Cover -->
+    <div class="slide slide-cover" id="slide-1" style="background-image:linear-gradient(135deg, #0E7C8614, #0E7C8605);">
+      <div class="slide-cover-body">
+        
+        <div style="font-size:12px; font-weight:700; color:var(--primary-gold); letter-spacing:2.5px; text-transform:uppercase; margin-bottom:20px;">PPG NEWS &bull; DAILY INTELLIGENCE</div>
+        <h1 class="slide-cover-title" style="font-size:52px;font-family:'Sora', sans-serif;">Belconti Resort</h1>
+        <div class="slide-cover-subtitle" style="font-size:16px;">GÜNLÜK OPERASYON VE PERFORMANS RAPORU &bull; 2026-06-24</div>
+        <div style="font-size:13px; color:var(--text-muted); margin-top:15px; font-weight:500;">Connection: SEDNA PMS (Live)</div>
+      </div>
+      <div style="font-size:10px; color:var(--text-muted); letter-spacing:1px; text-transform:uppercase;">PPG Hospitality Technology &bull; Automated Briefing System</div>
+    </div>
+
+    <!-- Slide 2: KPI Dashboard -->
+    <div class="slide" id="slide-2">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-tag">KPI</span>
+          <h2 class="slide-heading">Günün Performans Özeti</h2>
+        </div>
+        <div class="slide-pma-badge">PPG NEWS</div>
+      </div>
+      <div class="slide-body">
+        <div class="metrics-summary-cards" style="margin-bottom:25px;">
+          <a class="metric-card-visual" href="https://ppg.pmapartner.com/tr/admin" target="_blank" rel="noopener">
+            <div class="metric-visual-val">566</div>
+            <div class="metric-visual-lbl">Konaklamada (Oda)</div>
+            <div class="metric-visual-foot">153 yeni rez. bugün</div>
+          </a>
+          <a class="metric-card-visual" href="https://ppg.pmapartner.com/tr/admin/sales-monitor" target="_blank" rel="noopener">
+            <div class="metric-visual-val">€247.998</div>
+            <div class="metric-visual-lbl">Günlük Ciro</div>
+            <div class="metric-visual-foot" style="color:#ef4444; font-weight:600;">
+              ▼ %4 dün vs
+            </div>
+          </a>
+          <a class="metric-card-visual" href="https://ppg.pmapartner.com/tr/admin" target="_blank" rel="noopener">
+            <div class="metric-visual-val">%99</div>
+            <div class="metric-visual-lbl">Doluluk Oranı</div>
+            <div class="metric-visual-foot">591 aktif oda</div>
+          </a>
+          <a class="metric-card-visual" href="https://ppg.pmapartner.com/tr/admin/revenue-manager" target="_blank" rel="noopener">
+            <div class="metric-visual-val">€437</div>
+            <div class="metric-visual-lbl">Ortalama ADR</div>
+            <div class="metric-visual-foot">RevPAR: €434</div>
+          </a>
+        </div>
+        
+        <div style="background:var(--bg-black); padding:24px; border-radius:12px; border:1px solid var(--border-card);">
+          <h3 style="font-family:'Playfair Display', serif; font-size:16px; color:var(--primary-gold); margin-bottom:15px; text-transform:uppercase; letter-spacing:1px;">Operasyon Özeti</h3>
+          <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; text-align:center;">
+            <a href="https://ppg.pmapartner.com/tr/admin/reservations" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+              <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px;">Bugün Giriş</div>
+              <div style="font-size:24px; font-weight:800; color:var(--primary-gold); margin-top:4px; font-family:'Playfair Display', serif;">72</div>
+            </a>
+            <a href="https://ppg.pmapartner.com/tr/admin/reservations" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+              <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px;">Bugün Çıkış</div>
+              <div style="font-size:24px; font-weight:800; color:#f97316; margin-top:4px; font-family:'Playfair Display', serif;">67</div>
+            </a>
+            <a href="https://ppg.pmapartner.com/tr/admin/reservations" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+              <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px;">İptal Edilen</div>
+              <div style="font-size:24px; font-weight:800; color:#ef4444; margin-top:4px; font-family:'Playfair Display', serif;">0</div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>PPG MASTER SİSTEM RAPORU &bull; <strong>Belconti Resort</strong></span>
+        <span>SLAYT 2</span>
+      </div>
+    </div>
+
+    
+    <div class="slide" id="slide-manager">
+      <div class="slide-header">
+        <div class="slide-title-area"><span class="slide-tag">YÖNETİCİ</span>
+          <h2 class="slide-heading">Yönetici Değerlendirmesi</h2></div>
+        <div class="slide-pma-badge">PPG NEWS &bull; AI</div>
+      </div>
+      <div class="slide-body">
+        <div style="background:var(--gold-light);border:1px solid var(--primary-gold);border-radius:12px;padding:22px 26px;margin-bottom:24px;">
+          <div style="font-size:18px;font-weight:700;color:var(--text-white);font-family:'Playfair Display',serif;line-height:1.45;">Doluluk %99 seviyesinde sabit kalırken, gelecek ay OTB’de %30 düşüş riski en kritik sorun olarak öne çıkıyor.</div>
+        </div>
+        <ul style="padding-left:20px;margin:0;"><li style="font-size:13.5px;line-height:1.65;color:var(--text-white);opacity:0.92;margin-bottom:11px;">OTB forecastı Haziran’da €5,101,540 (‑1yıl €7,280,149) ve Temmuz’da €7,049,406 (‑1yıl €9,628,048) olarak %30 civarında düşüş gösteriyor; erken rezervasyonları teşvik etmek için doğrudan (Direct) ve OTA kanallarına özel promosyon paketleri oluşturulmalı.</li><li style="font-size:13.5px;line-height:1.65;color:var(--text-white);opacity:0.92;margin-bottom:11px;">ADR €437, rakip otellerin fiyatları €227‑€236 arasında; fiyat konumlamasını gözden geçirerek katmanlı fiyatlandırma ve değer‑ekli paketler sunulmalı, böylece yüksek fiyatın gerekçesi netleştirilmeli.</li><li style="font-size:13.5px;line-height:1.65;color:var(--text-white);opacity:0.92;margin-bottom:11px;">7‑gün pick‑up verisi B2B üzerinden 633 rezervasyon (€2,207,675) ağırlıklı; kanal çeşitliliğini artırmak için B2B bağımlılığını azaltacak şekilde Direct ve OTA rezervasyonları için komisyon iyileştirmeleri ve pazarlama desteği sağlanmalı.</li><li style="font-size:13.5px;line-height:1.65;color:var(--text-white);opacity:0.92;margin-bottom:11px;">Reklam harcaması sadece €7, 501 tıklama ve 0 dönüşüm; dijital kampanyalar yeniden yapılandırılarak dönüşüm odaklı hedefleme, landing page optimizasyonu ve bütçenin daha etkili kanallara yönlendirilmesi gerekir.</li><li style="font-size:13.5px;line-height:1.65;color:var(--text-white);opacity:0.92;margin-bottom:11px;">Pazar dağılımı Rusya (%58) ağırlıklı; riskleri dengelemek için Almanya, Polonya ve Birleşik Krallık gibi Avrupa pazarlarına özel paketler ve kampanyalar geliştirilerek pazar çeşitliliği artırılmalı.</li></ul>
+      </div>
+      <div class="slide-footer">
+        <span>PPG MASTER SİSTEM RAPORU &bull; <strong>Belconti Resort</strong></span>
+        <span>AI ANALİZİ</span>
+      </div>
+    </div>
+    
+    <div class="slide">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">DÜN</span><h2 class="slide-heading">Dün Performans (Z) & Forecast</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/tr/admin/sales-monitor" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ Görüntüle</a><div class="slide-pma-badge">PPG NEWS</div></div></div>
+      <div class="slide-body">
+        <div class="metrics-summary-cards" style="grid-template-columns:repeat(5,1fr);margin-bottom:22px;">
+          
+      <div class="metric-card-visual" style="padding:18px 12px;">
+        <div class="metric-visual-val" style="font-size:28px;">566</div>
+        <div class="metric-visual-lbl">Oda</div>
+        <div class="metric-visual-foot">Ö.Gün: 593</div>
+        <div style="font-size:11px;font-weight:700;margin-top:3px;color:#ef4444;">▼ %5</div>
+      </div>
+          
+      <div class="metric-card-visual" style="padding:18px 12px;">
+        <div class="metric-visual-val" style="font-size:28px;">564</div>
+        <div class="metric-visual-lbl">Rezv</div>
+        <div class="metric-visual-foot">Ö.Gün: 591</div>
+        <div style="font-size:11px;font-weight:700;margin-top:3px;color:#ef4444;">▼ %5</div>
+      </div>
+          
+      <div class="metric-card-visual" style="padding:18px 12px;">
+        <div class="metric-visual-val" style="font-size:28px;">1.554</div>
+        <div class="metric-visual-lbl">Konuk</div>
+        <div class="metric-visual-foot">Ö.Gün: 1.632</div>
+        <div style="font-size:11px;font-weight:700;margin-top:3px;color:#ef4444;">▼ %5</div>
+      </div>
+          
+      <div class="metric-card-visual" style="padding:18px 12px;">
+        <div class="metric-visual-val" style="font-size:28px;">€438</div>
+        <div class="metric-visual-lbl">ADR</div>
+        <div class="metric-visual-foot">Ö.Gün: €437</div>
+        <div style="font-size:11px;font-weight:700;margin-top:3px;color:#0E7C86;">▲ %0</div>
+      </div>
+          
+      <div class="metric-card-visual" style="padding:18px 12px;">
+        <div class="metric-visual-val" style="font-size:28px;">€247.998</div>
+        <div class="metric-visual-lbl">Ciro</div>
+        <div class="metric-visual-foot">Ö.Gün: €258.875</div>
+        <div style="font-size:11px;font-weight:700;margin-top:3px;color:#ef4444;">▼ %4</div>
+      </div>
+        </div>
+        <div style="background:var(--bg-black);padding:20px;border-radius:12px;border:1px solid var(--border-card);">
+          <h3 style="font-family:'Sora', sans-serif;font-size:15px;color:var(--primary-gold);margin-bottom:12px;text-transform:uppercase;letter-spacing:1px;">Forecast — Cari Ay & Gelecek Ay (OTB, varış bazlı)</h3>
+          <table class="report-table"><thead><tr><th>Ay</th><th style="text-align:right;">Oda-gece</th><th style="text-align:right;">Ciro (OTB)</th><th style="text-align:right;">−1 Yıl</th><th style="text-align:right;">%Δ</th></tr></thead><tbody>
+            <tr><td>2026-06</td><td style="text-align:right;">1.680</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€5.101.540</td><td style="text-align:right;color:var(--text-muted);">€7.280.149</td><td style="text-align:right;font-weight:700;color:#ef4444;">-30%</td></tr>
+            <tr><td>2026-07</td><td style="text-align:right;">1.822</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€7.049.406</td><td style="text-align:right;color:var(--text-muted);">€9.628.048</td><td style="text-align:right;font-weight:700;color:#ef4444;">-27%</td></tr>
+          </tbody></table>
+        </div>
+      </div>
+      <div class="slide-footer"><span>PPG MASTER SİSTEM RAPORU &bull; <strong>Belconti Resort</strong></span><span>GERÇEK PMS VERİSİ</span></div>
+    </div>
+    <div class="slide">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">PICK-UP</span><h2 class="slide-heading">Son 7 Gün Pick-Up & Oda Durumu</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/tr/admin/sales-monitor" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ Görüntüle</a><div class="slide-pma-badge">PPG NEWS</div></div></div>
+      <div class="slide-body">
+        <div class="split-grid">
+          <div class="table-container">
+            <div style="padding:12px 16px;font-weight:700;font-size:11px;color:var(--primary-gold);text-transform:uppercase;letter-spacing:1px;background:var(--bg-black);border-bottom:1px solid var(--border-card);display:flex;justify-content:space-between;align-items:center;"><span>Kanal Grubu (7 gün üretim €)</span><a href="https://ppg.pmapartner.com/tr/admin/sales-monitor" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ Görüntüle</a></div>
+            <table class="report-table"><thead><tr><th>Grup</th><th style="text-align:right;">Adet</th><th style="text-align:right;">Ciro</th></tr></thead><tbody><tr><td>D2C</td><td style="text-align:right;">69</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€96.654</td></tr><tr><td>B2C</td><td style="text-align:right;">61</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€102.336</td></tr><tr><td>B2B</td><td style="text-align:right;">633</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€2.207.675</td></tr><tr><td>MICE</td><td style="text-align:right;">0</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€0</td></tr>
+              <tr><td style="font-weight:700;">Toplam</td><td style="text-align:right;font-weight:700;">763</td><td style="text-align:right;font-weight:800;color:var(--primary-gold);">€2.406.665</td></tr></tbody></table>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div style="background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:16px;">
+              <h3 style="font-family:'Sora', sans-serif;font-size:13px;color:var(--primary-gold);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;">D2C (Web / Call Center / Münferit)</h3>
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center;">
+                <div><div style="font-size:20px;font-weight:800;color:var(--text-white);">0</div><div style="font-size:10px;color:var(--text-muted);">Web · €0</div></div>
+                <div><div style="font-size:20px;font-weight:800;color:var(--text-white);">56</div><div style="font-size:10px;color:var(--text-muted);">Call C. · €92.675</div></div>
+                <div><div style="font-size:20px;font-weight:800;color:var(--text-white);">13</div><div style="font-size:10px;color:var(--text-muted);">Münferit · €3.980</div></div>
+              </div></div>
+            <div style="background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:16px;">
+              <h3 style="font-family:'Sora', sans-serif;font-size:13px;color:var(--primary-gold);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;">Oda Durumu</h3>
+              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center;">
+                <div><div style="font-size:20px;font-weight:800;color:var(--primary-gold);">566</div><div style="font-size:10px;color:var(--text-muted);">SOLD</div></div>
+                <div><div style="font-size:20px;font-weight:800;color:var(--text-white);">0</div><div style="font-size:10px;color:var(--text-muted);">COMP</div></div>
+                <div><div style="font-size:20px;font-weight:800;color:var(--text-white);">—</div><div style="font-size:10px;color:var(--text-muted);">OOO</div></div>
+                <div><div style="font-size:20px;font-weight:800;color:var(--text-white);">—</div><div style="font-size:10px;color:var(--text-muted);">HU</div></div>
+              </div>
+              <div style="font-size:10px;color:var(--text-muted);margin-top:8px;">OOO/HU bu PMS için mevcut değil</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>PPG MASTER SİSTEM RAPORU &bull; <strong>Belconti Resort</strong></span><span>GERÇEK PMS VERİSİ</span></div>
+    </div>
+
+    <!-- Slide 3: Trend & Channels -->
+    <div class="slide" id="slide-3">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-tag">TREND</span>
+          <h2 class="slide-heading">Ciro Trendi ve Rezervasyon Kanalları</h2>
+        </div>
+        <div class="slide-pma-badge">PPG NEWS</div>
+      </div>
+      <div class="slide-body">
+        <div class="split-grid">
+          <div class="chart-box" style="height:320px;">
+            <div class="chart-title">Son 7 Günlük Ciro Dağılımı (EUR)</div>
+            <div style="display:flex; align-items:center; justify-content:center; height:100%; padding-top:15px;">
+              <svg width="392" height="155" style="max-width:100%;">
+                <defs>
+                  <linearGradient id="barGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#247D76;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#38ADA4;stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                
+            <g>
+                <rect x="0" y="42" width="40" height="78" rx="4" fill="url(#barGrad)" />
+                <text x="20" y="136" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="'Sora', sans-serif">19/6</text>
+                <text x="20" y="38" text-anchor="middle" font-size="10" fill="var(--text-white)" font-weight="700" font-family="'Sora', sans-serif">€358.431</text>
+            </g>
+        
+            <g>
+                <rect x="56" y="15" width="40" height="105" rx="4" fill="url(#barGrad)" />
+                <text x="76" y="136" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="'Sora', sans-serif">20/6</text>
+                <text x="76" y="11" text-anchor="middle" font-size="10" fill="var(--text-white)" font-weight="700" font-family="'Sora', sans-serif">€483.377</text>
+            </g>
+        
+            <g>
+                <rect x="112" y="119" width="40" height="1" rx="4" fill="url(#barGrad)" />
+                <text x="132" y="136" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="'Sora', sans-serif">21/6</text>
+                <text x="132" y="115" text-anchor="middle" font-size="10" fill="var(--text-white)" font-weight="700" font-family="'Sora', sans-serif">€4.434</text>
+            </g>
+        
+            <g>
+                <rect x="168" y="42" width="40" height="78" rx="4" fill="url(#barGrad)" />
+                <text x="188" y="136" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="'Sora', sans-serif">22/6</text>
+                <text x="188" y="38" text-anchor="middle" font-size="10" fill="var(--text-white)" font-weight="700" font-family="'Sora', sans-serif">€361.898</text>
+            </g>
+        
+            <g>
+                <rect x="224" y="1" width="40" height="119" rx="4" fill="url(#barGrad)" />
+                <text x="244" y="136" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="'Sora', sans-serif">23/6</text>
+                <text x="244" y="-3" text-anchor="middle" font-size="10" fill="var(--text-white)" font-weight="700" font-family="'Sora', sans-serif">€550.889</text>
+            </g>
+        
+            <g>
+                <rect x="280" y="0" width="40" height="120" rx="4" fill="url(#barGrad)" />
+                <text x="300" y="136" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="'Sora', sans-serif">24/6</text>
+                <text x="300" y="-4" text-anchor="middle" font-size="10" fill="var(--text-white)" font-weight="700" font-family="'Sora', sans-serif">€553.985</text>
+            </g>
+        
+            <g>
+                <rect x="336" y="100" width="40" height="20" rx="4" fill="url(#barGrad)" />
+                <text x="356" y="136" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="'Sora', sans-serif">25/6</text>
+                <text x="356" y="96" text-anchor="middle" font-size="10" fill="var(--text-white)" font-weight="700" font-family="'Sora', sans-serif">€93.652</text>
+            </g>
+        
+              </svg>
+            </div>
+          </div>
+          
+          <div class="table-container" style="height:320px; overflow-y:auto;">
+            <div style="padding:14px 18px; font-weight:700; font-size:11px; color:var(--primary-gold); text-transform:uppercase; letter-spacing:1px; background:var(--bg-black); border-bottom:1px solid var(--border-card); display:flex; justify-content:space-between; align-items:center;">
+              <span>Kanal Rezervasyon Payları</span>
+              <a href="https://ppg.pmapartner.com/tr/admin/revenue-manager" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;">→ Görüntüle</a>
+            </div>
+            <table class="report-table">
+              <thead>
+                <tr>
+                  <th>Kanal</th>
+                  <th style="text-align:right;">Rez. Adet</th>
+                  <th style="text-align:right;">Toplam Ciro</th>
+                </tr>
+              </thead>
+              <tbody>
+        <tr>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);">Tur Operatörü</td>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);text-align:right;color:var(--text-muted);">121</td>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€498.861</td>
+        </tr>
+    
+        <tr>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);">OTA</td>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);text-align:right;color:var(--text-muted);">19</td>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€29.660</td>
+        </tr>
+    
+        <tr>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);">Call Center</td>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);text-align:right;color:var(--text-muted);">10</td>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€23.617</td>
+        </tr>
+    
+        <tr>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);">Direct</td>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);text-align:right;color:var(--text-muted);">3</td>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€1.847</td>
+        </tr>
+    </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>PPG MASTER SİSTEM RAPORU &bull; <strong>Belconti Resort</strong></span>
+        <span>SLAYT 3</span>
+      </div>
+    </div>
+
+    <!-- Slide 4: Agencies & Reviews -->
+    <div class="slide" id="slide-4">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-tag">ACENTE</span>
+          <h2 class="slide-heading">Acente Dağılımı ve Misafir Değerlendirmeleri</h2>
+        </div>
+        <div class="slide-pma-badge">PPG NEWS</div>
+      </div>
+      <div class="slide-body">
+        <div class="split-grid">
+          <div class="table-container" style="height:320px; overflow-y:auto;">
+            <div style="padding:14px 18px; font-weight:700; font-size:11px; color:var(--primary-gold); text-transform:uppercase; letter-spacing:1px; background:var(--bg-black); border-bottom:1px solid var(--border-card); display:flex; justify-content:space-between; align-items:center;">
+              <span>En Çok Üreten Acenteler</span>
+              <a href="https://ppg.pmapartner.com/tr/admin/revenue-manager" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;">→ Görüntüle</a>
+            </div>
+            <table class="report-table">
+              <thead>
+                <tr>
+                  <th>Acente</th>
+                  <th style="text-align:right;">Rez. Adet</th>
+                  <th style="text-align:right;">Toplam Ciro</th>
+                </tr>
+              </thead>
+              <tbody>
+        <tr>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);">ROCKET DMC</td>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);text-align:right;color:var(--text-muted);">33</td>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€113.811</td>
+        </tr>
+    
+        <tr>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);">ODEON TURIZM</td>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);text-align:right;color:var(--text-muted);">27</td>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€87.375</td>
+        </tr>
+    
+        <tr>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);">HERREZ TOUR</td>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);text-align:right;color:var(--text-muted);">1</td>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€87.180</td>
+        </tr>
+    
+        <tr>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);">FIT HOLIDAYS</td>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);text-align:right;color:var(--text-muted);">14</td>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€72.282</td>
+        </tr>
+    
+        <tr>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);">AKAY TRAVEL</td>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);text-align:right;color:var(--text-muted);">19</td>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€62.754</td>
+        </tr>
+    </tbody>
+            </table>
+          </div>
+          
+          <div style="background:var(--bg-card); border:1px solid var(--border-card); border-radius:12px; padding:35px; height:320px; display:flex; flex-direction:column; justify-content:center;">
+            <h3 style="font-family:'Playfair Display', serif; font-size:16px; color:var(--primary-gold); margin-bottom:15px; text-transform:uppercase; letter-spacing:1px;">Misafir Memnuniyeti</h3>
+            <div style="display:flex; align-items:center; gap:20px; margin-bottom:20px;">
+              <div style="font-size:50px; line-height:1;">⭐</div>
+              <div>
+                <div style="font-size:38px; font-weight:800; color:var(--text-white); font-family:'Playfair Display', serif; line-height:1.1;">8.6<span style="font-size:16px; color:var(--text-muted); font-weight:500;">/10</span></div>
+                <div style="font-size:12px; color:var(--text-muted); font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-top:2px;">Ortalama Yorum Skoru</div>
+              </div>
+            </div>
+            <div style="font-size:13px; color:var(--text-white); line-height:1.6; opacity:0.9;">
+              Toplam <strong>855</strong> misafir yorumu incelenmiştir.
+              Bugün yeni bir yorum eklenmemiştir.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>PPG MASTER SİSTEM RAPORU &bull; <strong>Belconti Resort</strong></span>
+        <span>SLAYT 4</span>
+      </div>
+    </div>
+
+    <!-- Slide 5: Demographics -->
+    <div class="slide" id="slide-5">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-tag">DEMOGRAFİ</span>
+          <h2 class="slide-heading">Ziyaretçi Coğrafi Dağılımı</h2>
+        </div>
+        <div class="slide-pma-badge">PPG NEWS</div>
+      </div>
+      <div class="slide-body">
+        <div class="split-grid">
+          <div class="table-container" style="height:320px; overflow-y:auto;">
+            <div style="padding:14px 18px; font-weight:700; font-size:11px; color:var(--primary-gold); text-transform:uppercase; letter-spacing:1px; background:var(--bg-black); border-bottom:1px solid var(--border-card); display:flex; justify-content:space-between; align-items:center;">
+              <span>Aktif Ziyaretçi Uyrukları</span>
+              <a href="https://ppg.pmapartner.com/tr/admin" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;">→ Görüntüle</a>
+            </div>
+            <table class="report-table">
+              <thead>
+                <tr>
+                  <th>Ülke</th>
+                  <th style="text-align:right;">Aktif Konaklama Adedi</th>
+                </tr>
+              </thead>
+              <tbody>
+        <tr>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);">Russia</td>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">331</td>
+        </tr>
+    
+        <tr>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);">Germany</td>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">109</td>
+        </tr>
+    
+        <tr>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);">Poland</td>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">40</td>
+        </tr>
+    
+        <tr>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);">Turkey</td>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">24</td>
+        </tr>
+    
+        <tr>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);">United Kingdom</td>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">24</td>
+        </tr>
+    </tbody>
+            </table>
+          </div>
+          
+          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-card); border-radius:12px; padding:30px; display:flex; flex-direction:column; justify-content:center; height:320px;">
+            <h3 style="font-family:'Playfair Display', serif; font-size:15px; color:var(--primary-gold); margin-bottom:12px; text-transform:uppercase; letter-spacing:1px;">Pazar Yorumu</h3>
+            <p style="font-size:13px; line-height:1.6; color:var(--text-white); opacity:0.85; margin-bottom:12px;">
+              Giriş yapan ve konaklayan misafir profiline göre en çok hacim üreten pazar <strong>Russia</strong> pazarından gelmektedir.
+            </p>
+            <p style="font-size:13px; line-height:1.6; color:var(--text-white); opacity:0.85;">
+              Bu veriler, tesis içi dil destekleri, operasyonel planlamalar ve bölgesel reklam kampanyalarında öncelikli olarak değerlendirilmelidir.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>PPG MASTER SİSTEM RAPORU &bull; <strong>Belconti Resort</strong></span>
+        <span>SLAYT 5</span>
+      </div>
+    </div>
+    
+    <div class="slide" id="slide-6">
+      <div class="slide-header">
+        <div class="slide-title-area"><span class="slide-tag">DİJİTAL</span>
+          <h2 class="slide-heading">Dijital Pazarlama, SEO & Piyasa</h2></div>
+        <div class="slide-pma-badge">PPG NEWS</div>
+      </div>
+      <div class="slide-body">
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px;">
+          
+      <a href="https://ppg.pmapartner.com/tr/admin/ads-manager" target="_blank" rel="noopener" style="display:block;text-decoration:none;color:inherit;background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:18px;">
+        <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;font-weight:700;">Reklam Harcaması</div>
+        <div style="font-size:26px;font-weight:800;color:var(--text-white);font-family:'Playfair Display',serif;line-height:1.2;margin-top:4px;">€7</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">501 tıklama</div>
+      </a>
+          
+      <a href="https://ppg.pmapartner.com/tr/admin/ads-manager" target="_blank" rel="noopener" style="display:block;text-decoration:none;color:inherit;background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:18px;">
+        <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;font-weight:700;">Gösterim</div>
+        <div style="font-size:26px;font-weight:800;color:var(--text-white);font-family:'Playfair Display',serif;line-height:1.2;margin-top:4px;">5.553</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Dönüşüm 0</div>
+      </a>
+          
+      <a href="https://ppg.pmapartner.com/tr/admin/ads-manager" target="_blank" rel="noopener" style="display:block;text-decoration:none;color:inherit;background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:18px;">
+        <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;font-weight:700;">Web Ziyaretçi</div>
+        <div style="font-size:26px;font-weight:800;color:var(--text-white);font-family:'Playfair Display',serif;line-height:1.2;margin-top:4px;">11.907</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Oturum 16.696</div>
+      </a>
+          
+      <a href="https://ppg.pmapartner.com/tr/admin/ads-manager" target="_blank" rel="noopener" style="display:block;text-decoration:none;color:inherit;background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:18px;">
+        <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;font-weight:700;">Hemen Çıkma</div>
+        <div style="font-size:26px;font-weight:800;color:var(--text-white);font-family:'Playfair Display',serif;line-height:1.2;margin-top:4px;">%95.8</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Sayfa Gör. 23.556</div>
+      </a>
+        </div>
+        <div class="split-grid">
+          <div class="table-container" style="height:280px;overflow-y:auto;">
+            <div style="padding:14px 18px;font-weight:700;font-size:11px;color:var(--primary-gold);text-transform:uppercase;letter-spacing:1px;background:var(--bg-black);border-bottom:1px solid var(--border-card);">Rakip Fiyat Konumu (gece/oda)</div>
+            <table class="report-table"><tbody>
+      <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-card);color:#38ADA4;font-weight:700;">★ Belconti Resort Hotel</td>
+      <td style="padding:9px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€243</td></tr>
+      <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);font-weight:400;">Innvista Hotel Belek</td>
+      <td style="padding:9px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€227</td></tr>
+      <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);font-weight:400;">Asteria Family Resort Belek</td>
+      <td style="padding:9px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€230</td></tr>
+      <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);font-weight:400;">Green Max Hotel</td>
+      <td style="padding:9px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€230</td></tr>
+      <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);font-weight:400;">The X Belek</td>
+      <td style="padding:9px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€233</td></tr>
+      <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);font-weight:400;">Selectum Noa Belek</td>
+      <td style="padding:9px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€236</td></tr></tbody></table></div>
+          <div style="background:rgba(255,255,255,0.02);border:1px solid var(--border-card);border-radius:12px;padding:22px;height:280px;overflow-y:auto;">
+            <h3 style="font-family:'Playfair Display',serif;font-size:14px;color:var(--primary-gold);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;">Hava & Talep Etkenleri</h3>
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:5px 0;border-bottom:1px solid var(--border-card);"><span style="color:var(--text-muted);">25 Per ⛅</span><span style="color:var(--text-white);font-weight:600;">23° / 30°</span></div><div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:5px 0;border-bottom:1px solid var(--border-card);"><span style="color:var(--text-muted);">26 Cum ☁️</span><span style="color:var(--text-white);font-weight:600;">23° / 32°</span></div><div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:5px 0;border-bottom:1px solid var(--border-card);"><span style="color:var(--text-muted);">27 Cmt ⛅</span><span style="color:var(--text-white);font-weight:600;">24° / 33°</span></div><div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:5px 0;border-bottom:1px solid var(--border-card);"><span style="color:var(--text-muted);">28 Paz ☀️</span><span style="color:var(--text-white);font-weight:600;">25° / 35°</span></div><div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:5px 0;border-bottom:1px solid var(--border-card);"><span style="color:var(--text-muted);">29 Pzt ☀️</span><span style="color:var(--text-white);font-weight:600;">23° / 36°</span></div>
+            <ul style="margin-top:12px;padding-left:16px;"><li style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:5px;">Belek Summer Music Festival</li><li style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:5px;">International Golf Tournament Belek Open</li><li style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:5px;">Belek Art & Craft Exhibition</li><li style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:5px;">Rock Night Antalya</li><li style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:5px;">Mediterranean Food Festival</li><li style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:5px;">Battle of the Boyne (tatil)</li></ul>
+          </div>
+        </div>
+        <p style="font-size:11px;color:var(--text-muted);margin-top:14px;">SEO (Google Search Console): 100 sorgu satırı</p>
+      </div>
+      <div class="slide-footer">
+        <span>PPG MASTER SİSTEM RAPORU &bull; <strong>Belconti Resort</strong></span>
+        <span>DİJİTAL EK</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div style="border-top:1px solid var(--border-card); padding:30px 60px; text-align:center; color:var(--text-muted); font-size:11px; font-weight:500; background:var(--bg-dark);">
+    PPG News — Otomatik Günlük Bülten Raporu &bull; Raporlama Zamanı: 25.06.2026 12:25:48<br>
+    <strong style="color:var(--text-white); font-weight:700;">PPG Hospitality Technology &copy; 2026</strong>
+  </div>
+
+</body>
+</html>

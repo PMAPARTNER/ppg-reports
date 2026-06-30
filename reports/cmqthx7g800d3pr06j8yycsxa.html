@@ -3,45 +3,47 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Blue Dreams Resort — Haftalık Pazarlama Raporu 1 Haziran 2026 – 30 Haziran 2026</title>
+  <title>Blue Dreams Resort — Haftalık Pazarlama Raporu 23 Haziran 2026 – 30 Haziran 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet">
+  
   <style>
     :root {
-      --accent: #0E7C86;
-      --bg: #0B1929;
-      --card: #111f30;
-      --border: #1e3048;
-      --text: #e2e8f0;
+      --accent: #0891b2;
+      --bg: #f0f9ff;
+      --card: #ffffff;
+      --border: #bae6fd;
+      --text: #0c4a6e;
       --muted: #64748b;
       --success: #10b981;
       --danger: #f43f5e;
-      --radius: 16px;
+      --radius: 20px;
     }
     html { scroll-padding-top: 110px; scroll-behavior: smooth; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; font-size: 14px; }
+    
 
     /* ── Sticky header ──────────────────────────────── */
     .hdr {
       position: sticky; top: 0; z-index: 50;
       display: flex; align-items: center; justify-content: space-between; gap: 16px;
       padding: 10px 24px;
-      background: rgba(11,25,41,.92); backdrop-filter: blur(12px);
+      background: #f0f9fff0; backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
     .hdr-left { display: flex; align-items: center; gap: 12px; min-width: 0; }
     .hdr-logo { height: 32px; width: auto; object-fit: contain; flex-shrink: 0; }
     .hdr-name { font-size: 14px; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .hdr-period { font-size: 10px; color: var(--muted); margin-top: 1px; }
-    .hdr-badge { font-size: 9px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); border: 1.5px solid rgba(255,255,255,.15); padding: 3px 10px; border-radius: 99px; flex-shrink: 0; background: rgba(255,255,255,.04); }
+    .hdr-badge { font-size: 9px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); border: 1.5px solid rgba(0,0,0,.12); padding: 3px 10px; border-radius: 99px; flex-shrink: 0; background: rgba(0,0,0,.04); }
 
     /* ── Sticky nav ─────────────────────────────────── */
     .nav {
       position: sticky; top: 53px; z-index: 40;
       display: flex; overflow-x: auto; gap: 2px; padding: 0 16px;
-      background: rgba(11,25,41,.9); backdrop-filter: blur(10px);
+      background: #f0f9ffe8; backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
       scrollbar-width: none;
     }
@@ -81,7 +83,7 @@
     /* ── Tables ─────────────────────────────────────── */
     .tbl { width: 100%; border-collapse: collapse; font-size: 12px; }
     .tbl th { padding: 8px 10px 8px 0; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); border-bottom: 1px solid var(--border); text-align: left; }
-    .tbl td { padding: 8px 10px 8px 0; color: var(--muted); border-bottom: 1px solid rgba(30,48,72,.5); vertical-align: middle; }
+    .tbl td { padding: 8px 10px 8px 0; color: var(--muted); border-bottom: 1px solid #bae6fdcc; vertical-align: middle; }
     .tbl td.acc { color: var(--text); font-weight: 700; }
     .tbl td.num { text-align: right; }
     .tbl tr:last-child td { border-bottom: none; }
@@ -104,12 +106,12 @@
     .stat-lbl { font-size: 10px; color: var(--muted); margin-top: 4px; }
 
     /* ── AI Insight ─────────────────────────────────── */
-    .insight { border-radius: 12px; border: 1px solid rgba(255,255,255,.1); padding: 18px 20px; font-size: 13px; line-height: 1.8; color: var(--text); }
+    .insight { border-radius: 12px; border: 1px solid #bae6fd; padding: 18px 20px; font-size: 13px; line-height: 1.8; color: var(--text); }
     .prose-block { border-left: 3px solid var(--accent); padding: 14px 18px; font-size: 13px; line-height: 1.8; background: var(--bg); border-radius: 0 8px 8px 0; }
     .prose-block ul { margin: 8px 0 8px 18px; }
     .prose-block li { margin-bottom: 3px; }
     .steps { list-style: none; }
-    .steps li { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid rgba(30,48,72,.5); font-size: 13px; }
+    .steps li { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid #bae6fdcc; font-size: 13px; }
     .steps li:last-child { border-bottom: none; }
     .step-n { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; background: var(--accent); color: #fff; border-radius: 50%; font-size: 10px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
 
@@ -117,7 +119,7 @@
     .footer { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; border-top: 1px solid var(--border); margin-top: 8px; font-size: 11px; color: var(--muted); }
 
     /* ── No-data warning ────────────────────────────── */
-    .warn { border-radius: 12px; border: 1px solid #7f1d1d; background: rgba(127,29,29,.25); color: #fca5a5; padding: 12px 18px; font-size: 12px; margin-bottom: 16px; }
+    .warn { border-radius: 12px; border: 1px solid #fca5a5; background: rgba(254,202,202,.5); color: #991b1b; padding: 12px 18px; font-size: 12px; margin-bottom: 16px; }
 
     @media (max-width: 700px) {
       .kpi-grid { grid-template-columns: repeat(2,1fr); }
@@ -140,87 +142,61 @@
       
       <div style="min-width:0">
         <div class="hdr-name">Blue Dreams Resort</div>
-        <div class="hdr-period">Dijital Özet — 1 Haziran 2026 – 30 Haziran 2026</div>
+        <div class="hdr-period">Dijital Özet — 23 Haziran 2026 – 30 Haziran 2026</div>
       </div>
     </div>
     <span class="hdr-badge">PMA PARTNER</span>
   </header>
 
   <!-- Sticky nav -->
-  <nav class="nav"><a href="#summary">📊 Özet</a><a href="#analytics">🌐 GA4</a><a href="#meta-ads">📱 Meta Ads</a><a href="#reservations">🏨 Rezervasyon</a><a href="#activity">📝 Faaliyet</a><a href="#recommendations">🤖 Öneriler</a></nav>
+  <nav class="nav"><a href="#summary">📊 Özet</a><a href="#analytics">🌐 GA4</a><a href="#seo">🔍 GSC</a><a href="#google-ads">🎯 Google Ads</a><a href="#meta-ads">📱 Meta Ads</a><a href="#social">📲 Sosyal</a><a href="#reservations">🏨 Rezervasyon</a><a href="#callcenter">📞 Çağrı</a><a href="#activity">📝 Faaliyet</a><a href="#recommendations">🤖 Öneriler</a></nav>
 
   <main class="main">
 
     <!-- No-data warning -->
-    <div class="warn">⚠️ Veri eksik kanallar: GSC, Google Ads, Sosyal Medya, Çağrı Merkezi</div>
-
-    <!-- Hero -->
-    <div id="hero" style="margin-bottom:24px">
-      <div class="hero-title">Blue Dreams Resort</div>
-      <div class="hero-sub">1 Haziran 2026 – 30 Haziran 2026 &middot; Dijital Özet Raporu</div>
-      <div class="kpi-grid">
-        <div class="kpi">
-          <div class="kpi-lbl">GA4 Kullanıcı</div>
-          <div class="kpi-val">3.417</div>
-          <div class="kpi-sub">3.877 oturum</div>
-        </div>
-        <div class="kpi">
-          <div class="kpi-lbl">Çağrı Geliri</div>
-          <div class="kpi-val">—</div>
-          
-        </div>
-        <div class="kpi">
-          <div class="kpi-lbl">Rez. Geliri</div>
-          <div class="kpi-val">€0</div>
-          <div class="kpi-sub">0 rezervasyon</div>
-        </div>
-        <div class="kpi">
-          <div class="kpi-lbl">Oda Geceleme</div>
-          <div class="kpi-val">0</div>
-          <div class="kpi-sub">€0/gece</div>
-        </div>
-      </div>
-    </div>
+    
 
     <section id="summary" class="sec">
-      <div class="sec-hdr" style="background:#0E7C8618">
-    <div class="sec-icon" style="background:#0E7C8622">📊</div>
-    <div>
-      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">YÖNETİCİ ÖZETİ</div>
+      <div class="sec-hdr" style="background:#0891b218">
+    <div class="sec-icon" style="background:#0891b222">📊</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0891b2;margin-bottom:2px">YÖNETİCİ ÖZETİ</div>
       <div class="sec-title">Genel Performans Göstergeleri</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Bu hafta tüm dijital kanallardan elde edilen ana performans göstergeleri.</div>
     </div>
   </div>
       <div class="sec-body"><div class="kpi-grid"><div class="kpi">
     <div class="kpi-lbl">Aktif Kullanıcı (GA4)</div>
-    <div class="kpi-val">3.417</div>
-    <div class="kpi-sub">3.877 oturum</div>
+    <div class="kpi-val">1.028</div>
+    <div class="kpi-sub">1.168 oturum</div>
   </div><div class="kpi">
     <div class="kpi-lbl">Çağrı Merkezi Geliri</div>
-    <div class="kpi-val">—</div>
-    
+    <div class="kpi-val">€1.730.088</div>
+    <div class="kpi-sub">20 satış</div>
   </div><div class="kpi">
     <div class="kpi-lbl">Rezervasyon Geliri</div>
-    <div class="kpi-val">€0</div>
-    <div class="kpi-sub">0 rezervasyon</div>
+    <div class="kpi-val">€667.459</div>
+    <div class="kpi-sub">424 rezervasyon</div>
   </div><div class="kpi">
     <div class="kpi-lbl">Oda Geceleme</div>
-    <div class="kpi-val">0</div>
-    <div class="kpi-sub">€0/gece</div>
+    <div class="kpi-val">2.365</div>
+    <div class="kpi-sub">€282/gece</div>
   </div></div></div>
     </section>
 <section id="analytics" class="sec">
-      <div class="sec-hdr" style="background:#0E7C8618">
-    <div class="sec-icon" style="background:#0E7C8622">🌐</div>
-    <div>
-      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">WEB ANALİTİĞİ</div>
+      <div class="sec-hdr" style="background:#0891b218">
+    <div class="sec-icon" style="background:#0891b222">🌐</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0891b2;margin-bottom:2px">WEB ANALİTİĞİ</div>
       <div class="sec-title">Google Analytics 4 — Web Performansı</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Otelin web sitesini kaç kişi ziyaret etti, nereden geldi ve hangi sayfaları gezdi.</div>
     </div>
   </div>
       <div class="sec-body">
         <div class="kpi-grid">
           <div class="kpi">
     <div class="kpi-lbl">Aktif Kullanıcı</div>
-    <div class="kpi-val">3.417</div>
+    <div class="kpi-val">1.028</div>
     
   </div>
           <div class="kpi">
@@ -230,35 +206,113 @@
   </div>
           <div class="kpi">
     <div class="kpi-lbl">Sayfa Görüntüleme</div>
-    <div class="kpi-val">7.908</div>
+    <div class="kpi-val">2.196</div>
     
   </div>
           <div class="kpi">
     <div class="kpi-lbl">Ort. Etkileşim Süresi</div>
-    <div class="kpi-val">1m 50ss</div>
+    <div class="kpi-val">1dk 30sn</div>
     
   </div>
         </div>
         <div class="two-col">
           <div>
             <div class="sh">🔗 Trafik Kaynakları</div>
-            <table class="tbl"><thead><tr><th>Kaynak</th><th>Oturum</th><th>%</th></tr></thead><tbody><tr><td class="acc">Direct</td><td class="num">3.083</td><td class="num">91%</td></tr><tr><td class="acc">Organic Search</td><td class="num">134</td><td class="num">4%</td></tr><tr><td class="acc">Referral</td><td class="num">95</td><td class="num">3%</td></tr><tr><td class="acc">Paid Search</td><td class="num">56</td><td class="num">2%</td></tr><tr><td class="acc">Display</td><td class="num">28</td><td class="num">1%</td></tr></tbody></table>
+            <table class="tbl"><thead><tr><th>Kaynak</th><th>Oturum</th><th>%</th></tr></thead><tbody><tr><td class="acc">Direct</td><td class="num">908</td><td class="num">88%</td></tr><tr><td class="acc">Referral</td><td class="num">56</td><td class="num">5%</td></tr><tr><td class="acc">Organic Search</td><td class="num">55</td><td class="num">5%</td></tr><tr><td class="acc">Organic Social</td><td class="num">9</td><td class="num">1%</td></tr></tbody></table>
           </div>
           <div>
             <div class="sh">🌍 Ülkeler</div>
-            <table class="tbl"><thead><tr><th>Ülke</th><th>Kullanıcı</th><th>%</th></tr></thead><tbody><tr><td class="acc">Türkiye</td><td class="num">2.687</td><td class="num">91%</td></tr><tr><td class="acc">Germany</td><td class="num">77</td><td class="num">3%</td></tr><tr><td class="acc">United Kingdom</td><td class="num">66</td><td class="num">2%</td></tr><tr><td class="acc">Azerbaijan</td><td class="num">60</td><td class="num">2%</td></tr><tr><td class="acc">France</td><td class="num">47</td><td class="num">2%</td></tr></tbody></table>
+            <table class="tbl"><thead><tr><th>Ülke</th><th>Kullanıcı</th><th>%</th></tr></thead><tbody><tr><td class="acc">Türkiye</td><td class="num">772</td><td class="num">89%</td></tr><tr><td class="acc">Germany</td><td class="num">30</td><td class="num">3%</td></tr><tr><td class="acc">United Kingdom</td><td class="num">24</td><td class="num">3%</td></tr><tr><td class="acc">Azerbaijan</td><td class="num">20</td><td class="num">2%</td></tr><tr><td class="acc">France</td><td class="num">19</td><td class="num">2%</td></tr></tbody></table>
           </div>
         </div>
         
         
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0891b2;background:#0891b20d;font-size:12px;line-height:1.7;color:inherit">💡 Bu dönemde 1.028 kullanıcı otelin web sitesini ziyaret etti.  Ortalama 1dk 30sn etkileşim süresi, kullanıcıların içerikle ilgilendiğini ortaya koyuyor.</div>
+      </div>
+    </section>
+<section id="seo" class="sec">
+      <div class="sec-hdr" style="background:#0891b218">
+    <div class="sec-icon" style="background:#0891b222">🔍</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0891b2;margin-bottom:2px">ORGANİK ARAMA</div>
+      <div class="sec-title">Google Search Console — Arama Görünürlüğü</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Otelin Google'da reklamsız olarak kaç aramada göründüğü ve kaç tıklama aldığı.</div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="kpi-grid">
+          <div class="kpi">
+    <div class="kpi-lbl">Toplam Tıklama</div>
+    <div class="kpi-val">730</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Toplam Gösterim</div>
+    <div class="kpi-val">9.940</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Ort. TO (CTR)</div>
+    <div class="kpi-val">7.34%</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Ort. Konum</div>
+    <div class="kpi-val">4.3</div>
+    
+  </div>
+        </div>
+        <div class="sh">🔑 En İyi Arama Sorguları</div>
+        <table class="tbl"><thead><tr><th>Sorgu</th><th>Tıklama</th><th>Gösterim</th><th>CTR</th><th>Konum</th></tr></thead><tbody><tr><td class="acc">blue dreams resort</td><td class="num">254</td><td class="num">4.087</td><td class="num">6.21%</td><td class="num">1.9</td></tr><tr><td class="acc">blue dreams resort bodrum</td><td class="num">179</td><td class="num">1.871</td><td class="num">9.57%</td><td class="num">1.8</td></tr><tr><td class="acc">blue dreams</td><td class="num">37</td><td class="num">477</td><td class="num">7.76%</td><td class="num">2.4</td></tr><tr><td class="acc">blue dreams resort &amp; spa</td><td class="num">28</td><td class="num">386</td><td class="num">7.25%</td><td class="num">3.3</td></tr><tr><td class="acc">blue dreams resort bodrum - aquapark &amp; ultra all inclusive</td><td class="num">28</td><td class="num">145</td><td class="num">19.31%</td><td class="num">3.4</td></tr><tr><td class="acc">blue dream resort bodrum</td><td class="num">27</td><td class="num">276</td><td class="num">9.78%</td><td class="num">1.5</td></tr><tr><td class="acc">blue dreams bodrum</td><td class="num">13</td><td class="num">239</td><td class="num">5.44%</td><td class="num">5.1</td></tr><tr><td class="acc">blue dream resort</td><td class="num">11</td><td class="num">123</td><td class="num">8.94%</td><td class="num">2.7</td></tr></tbody></table>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0891b2;background:#0891b20d;font-size:12px;line-height:1.7;color:inherit">💡 Otelin Google'da 9.940 kez göründüğü bu dönemde %7.3 tıklama oranıyla 730 organik ziyaret sağlandı. Ücretli reklam olmadan bu kadar görünürlük elde etmek güçlü bir SEO temeline işaret ediyor.</div>
+      </div>
+    </section>
+<section id="google-ads" class="sec">
+      <div class="sec-hdr" style="background:#0891b218">
+    <div class="sec-icon" style="background:#0891b222">🎯</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0891b2;margin-bottom:2px">GOOGLE ADS</div>
+      <div class="sec-title">Google Reklam Performansı</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Google'a ödenen reklam bütçesi, kaç kişiye ulaşıldığı ve kaç rezervasyona dönüştüğü.</div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="kpi-grid">
+          <div class="kpi">
+    <div class="kpi-lbl">Gösterim</div>
+    <div class="kpi-val">851.922</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Tıklama</div>
+    <div class="kpi-val">9.675</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Toplam Harcama</div>
+    <div class="kpi-val">€1.148</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Dönüşüm</div>
+    <div class="kpi-val">17</div>
+    
+  </div>
+        </div>
+        
+        <div class="sh">📋 Aktif Kampanya Detayları</div>
+        <table class="tbl"><thead><tr><th>Kampanya</th><th>Gösterim</th><th>Tıklama</th><th>Harcama</th><th>Dönüşüm</th><th>CPC</th></tr></thead><tbody><tr><td class="acc">Arama Ağı Türkiye G</td><td class="num">28.973</td><td class="num">1.855</td><td class="num acc">€628</td><td class="num">17</td><td class="num">€0</td></tr><tr><td class="acc">İçerik Ağı Türkiye</td><td class="num">680.956</td><td class="num">3.246</td><td class="num acc">€383</td><td class="num">0</td><td class="num">€0</td></tr><tr><td class="acc">Remarketing New</td><td class="num">141.993</td><td class="num">4.574</td><td class="num acc">€138</td><td class="num">0</td><td class="num">€0</td></tr></tbody></table>
+        
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0891b2;background:#0891b20d;font-size:12px;line-height:1.7;color:inherit">💡 Google Ads kampanyaları bu dönemde 851.922 gösterim ve 9.675 tıklama üretti. 17 dönüşüm gerçekleşti — her tıklama rezervasyon potansiyeli taşıyor.</div>
       </div>
     </section>
 <section id="meta-ads" class="sec">
-      <div class="sec-hdr" style="background:#0E7C8618">
-    <div class="sec-icon" style="background:#0E7C8622">📱</div>
-    <div>
-      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">META ADS</div>
+      <div class="sec-hdr" style="background:#0891b218">
+    <div class="sec-icon" style="background:#0891b222">📱</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0891b2;margin-bottom:2px">META ADS</div>
       <div class="sec-title">Facebook &amp; Instagram Reklam Performansı</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Facebook ve Instagram reklamlarının kaç kişiye ulaştığı, tıklama ve harcama özeti.</div>
     </div>
   </div>
       <div class="sec-body">
@@ -275,7 +329,7 @@
   </div>
           <div class="kpi">
     <div class="kpi-lbl">Toplam Harcama</div>
-    <div class="kpi-val">0 TRY</div>
+    <div class="kpi-val">€0</div>
     
   </div>
           <div class="kpi">
@@ -284,33 +338,57 @@
     
   </div>
         </div>
-        <div class="sh">📋 Kampanya Detayları</div>
-        <table class="tbl"><thead><tr><th>Kampanya</th><th>Gösterim</th><th>Tıklama</th><th>Harcama</th><th>Erişim</th><th>CPC</th></tr></thead><tbody><tr><td class="acc">Instagram Post</td><td class="num">0</td><td class="num">0</td><td class="num acc">0 TRY</td><td class="num">0</td><td class="num">0,00 TRY</td></tr><tr><td class="acc">Instagram Gönderisi: The countdown has begun....</td><td class="num">0</td><td class="num">0</td><td class="num acc">0 TRY</td><td class="num">0</td><td class="num">0,00 TRY</td></tr><tr><td class="acc">Instagram Gönderisi: Different and delicious...</td><td class="num">0</td><td class="num">0</td><td class="num acc">0 TRY</td><td class="num">0</td><td class="num">0,00 TRY</td></tr><tr><td class="acc">Instagram Gönderisi: Add flavor to your day with...</td><td class="num">0</td><td class="num">0</td><td class="num acc">0 TRY</td><td class="num">0</td><td class="num">0,00 TRY</td></tr><tr><td class="acc">Instagram Gönderisi: ''That's too much sushi'' -...</td><td class="num">0</td><td class="num">0</td><td class="num acc">0 TRY</td><td class="num">0</td><td class="num">0,00 TRY</td></tr><tr><td class="acc">Instagram Gönderisi: Warming up today with this...</td><td class="num">0</td><td class="num">0</td><td class="num acc">0 TRY</td><td class="num">0</td><td class="num">0,00 TRY</td></tr></tbody></table>
+        <div class="neu" style="font-size:12px;padding:12px 0">Bu dönemde aktif kampanya bulunmamaktadır.</div>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0891b2;background:#0891b20d;font-size:12px;line-height:1.7;color:inherit">💡 Meta (Facebook & Instagram) reklamları 0 kişiye ulaştı. Sosyal medya reklamları marka bilinirliğini artırarak doğrudan rezervasyona zemin hazırlıyor.</div>
       </div>
     </section>
+<section id="social" class="sec">
+      <div class="sec-hdr" style="background:#0891b218">
+    <div class="sec-icon" style="background:#0891b222">📲</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0891b2;margin-bottom:2px">SOSYAL MEDYA</div>
+      <div class="sec-title">Organik Sosyal Medya Performansı</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Reklam harcaması olmadan, organik olarak Instagram ve Facebook'ta kaç kişiye ulaşıldığı.</div>
+    </div>
+  </div>
+      <div class="sec-body"><div class="two-col">
+      <div>
+        <div class="sh">📸 Instagram</div>
+        <table class="tbl">
+          <thead><tr><th>Metrik</th><th>Değer</th><th>Değişim</th></tr></thead>
+          <tbody>
+            <tr><td>Gösterim</td><td class="num acc">1.804</td><td><span class="up">↑ 524%</span></td></tr>
+            <tr><td>Erişim</td><td class="num">5.649</td><td><span class="neu">±0%</span></td></tr>
+            <tr><td>Profil Ziyareti</td><td class="num">7.794</td><td><span class="up">↑ 322%</span></td></tr>
+            <tr><td>Takipçi</td><td class="num">4.137</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div></div></div>
+    </section>
 <section id="reservations" class="sec">
-      <div class="sec-hdr" style="background:#0E7C8618">
-    <div class="sec-icon" style="background:#0E7C8622">🏨</div>
-    <div>
-      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">REZERVASYON</div>
+      <div class="sec-hdr" style="background:#0891b218">
+    <div class="sec-icon" style="background:#0891b222">🏨</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0891b2;margin-bottom:2px">REZERVASYON</div>
       <div class="sec-title">Web Rezervasyon Performansı (PMS)</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">PMS sisteminden alınan toplam rezervasyon sayısı, geceleme ve gelir bilgisi.</div>
     </div>
   </div>
       <div class="sec-body">
         <div class="kpi-grid">
           <div class="kpi">
     <div class="kpi-lbl">Toplam Gelir</div>
-    <div class="kpi-val">€0</div>
+    <div class="kpi-val">€667.459</div>
     
   </div>
           <div class="kpi">
     <div class="kpi-lbl">Oda Geceleme</div>
-    <div class="kpi-val">0</div>
+    <div class="kpi-val">2.365</div>
     
   </div>
           <div class="kpi">
     <div class="kpi-lbl">Rezervasyon</div>
-    <div class="kpi-val">0</div>
+    <div class="kpi-val">424</div>
     
   </div>
           <div class="kpi">
@@ -320,65 +398,113 @@
   </div>
         </div>
         <div class="two-col" style="max-width:420px;margin-bottom:20px">
-          <div class="stat-box"><div class="stat-val">€0</div><div class="stat-lbl">Misafir Başına Gelir</div></div>
-          <div class="stat-box"><div class="stat-val">€0</div><div class="stat-lbl">Oda Başına Gelir</div></div>
+          <div class="stat-box"><div class="stat-val">€711</div><div class="stat-lbl">Misafir Başına Gelir</div></div>
+          <div class="stat-box"><div class="stat-val">€282</div><div class="stat-lbl">Oda Başına Gelir</div></div>
         </div>
         <div class="sh">🏢 Acenta / Kanal Dağılımı</div>
-        <table class="tbl"><thead><tr><th>Acenta / Kanal</th><th>Oda Geceleme</th><th>Gelir (€)</th><th>Misafir Başına (€)</th></tr></thead><tbody></tbody></table>
+        <table class="tbl"><thead><tr><th>Acenta / Kanal</th><th>Oda Geceleme</th><th>Gelir (€)</th><th>Misafir Başına (€)</th></tr></thead><tbody><tr><td class="acc">BOOKING.COM</td><td class="num">426</td><td class="num acc">€168.420</td><td class="num">€1.477</td></tr><tr><td class="acc">CALL CENTER TL</td><td class="num">119</td><td class="num acc">€46.864</td><td class="num">€593</td></tr><tr><td class="acc">JOLLY</td><td class="num">119</td><td class="num acc">€43.060</td><td class="num">€519</td></tr><tr><td class="acc">LUXE VACATION</td><td class="num">136</td><td class="num acc">€42.688</td><td class="num">€667</td></tr><tr><td class="acc">ANEX CIS</td><td class="num">145</td><td class="num acc">€31.619</td><td class="num">€903</td></tr><tr><td class="acc">ADONIS</td><td class="num">77</td><td class="num acc">€21.769</td><td class="num">€726</td></tr><tr><td class="acc">TUI POL</td><td class="num">105</td><td class="num acc">€21.607</td><td class="num">€569</td></tr><tr><td class="acc">ANEX POL</td><td class="num">98</td><td class="num acc">€21.202</td><td class="num">€530</td></tr></tbody></table>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0891b2;background:#0891b20d;font-size:12px;line-height:1.7;color:inherit">💡 Bu dönemde PMS kayıtlarına göre 424 rezervasyon gerçekleşti ve toplam 2.365 oda gecesi satıldı. Oda başına ortalama €282 gelir elde edilmesi, otelin değer teklifinin misafirler tarafından iyi karşılandığını gösteriyor.</div>
       </div>
     </section>
-<section id="activity" class="sec">
-      <div class="sec-hdr" style="background:#0E7C8618">
-    <div class="sec-icon" style="background:#0E7C8622">📝</div>
-    <div>
-      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">FAALİYET RAPORU</div>
-      <div class="sec-title">Aylık Pazarlama Faaliyetleri</div>
-    </div>
-  </div>
-      <div class="sec-body"><div class="prose-block">Aylık Faaliyet Raporu
-
-<ul>
-    <li>Reklam Yönetimi</li>
-    <ul>
-        <li>Meta Ads platformunda bu dönemde herhangi bir reklam harcaması yapılmamış ve dolayısıyla tıklama elde edilmemiştir.</li>
-        <li>Dönem içerisinde Google Ads platformunda herhangi bir kampanya yürütülmemiştir.</li>
-    </ul>
-    <li>SEO & İçerik</li>
-    <ul>
-        <li>Google Analytics 4 verilerine göre, web sitemiz bu ay 3417 kullanıcı ve 3877 oturum almıştır.</li>
-        <li>Bu dönemde Google Search Console'dan herhangi bir veri bulunmamaktadır.</li>
-    </ul>
-    <li>OTA Kanal Yönetimi</li>
-    <ul>
-        <li>Dönem içerisinde herhangi bir OTA kanalından rezervasyon geliri (0 EUR) veya rezervasyon adedi (0) elde edilmemiştir.</li>
-    </ul>
-    <li>Bülten & CRM</li>
-    <ul>
-        <li>Bu dönem için bülten veya CRM faaliyetlerine ilişkin veri bulunmamaktadır.</li>
-    </ul>
-    <li>Yapay Zeka Altyapısı</li>
-    <ul>
-        <li>Yapay zeka altyapısına yönelik bu dönemde spesifik bir veri veya faaliyet raporu bulunmamaktadır.</li>
-    </ul>
-</ul></div></div>
-    </section>
-<section id="recommendations" class="sec">
-      <div class="sec-hdr" style="background:#0E7C8618">
-    <div class="sec-icon" style="background:#0E7C8622">🤖</div>
-    <div>
-      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">ÖZET &amp; ÖNERİLER</div>
-      <div class="sec-title">Yapay Zeka Analizi &amp; Sonraki Adımlar</div>
+<section id="callcenter" class="sec">
+      <div class="sec-hdr" style="background:#0891b218">
+    <div class="sec-icon" style="background:#0891b222">📞</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0891b2;margin-bottom:2px">ÇAĞRI MERKEZİ</div>
+      <div class="sec-title">Çağrı Merkezi Performansı</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Telefon kanalından gelen satış sayısı, dönüşüm oranı ve gelir bilgisi.</div>
     </div>
   </div>
       <div class="sec-body">
-        <div class="insight" style="background:#0E7C8612;border-color:#0E7C8633"><p>June 2026 döneminde Blue Dreams Resort, 3.417 kullanıcı ve 3.877 oturum elde etmiş ancak bu trafiğin hiç rezervasyona dönüşmediği görülüyor. Meta Ads kampanyalarında harcama ve tıklama olmadığı için organik trafik üzerinden gelen ziyaretçilerin dönüşüm oranı sıfır. Bu durum, hem pazarlama bütçesinin etkin kullanılmadığını hem de web sitesinin veya rezervasyon sürecinin potansiyel misafirleri yakalayamadığını gösteriyor. Hedef kitleye ulaşmak ve rezervasyonları artırmak için dijital reklam yatırımlarının planlanması ve dönüşüm odaklı optimizasyonlar yapılması gerekiyor.</p></div>
-        <div class="sh" style="margin-top:20px">✅ Önerilen Aksiyonlar</div><ol class="steps"><li><span class="step-n">1</span>Meta ve Google reklam kampanyaları başlatarak hedefli reklam harcaması oluşturun.</li><li><span class="step-n">2</span>Web sitesinde rezervasyon dönüşüm oranını artırmak için kullanıcı deneyimi ve CTA'ları iyileştirin.</li><li><span class="step-n">3</span>Mevcut organik trafiği analiz ederek SEO ve içerik stratejilerini güçlendirin.</li><li><span class="step-n">4</span>Rezervasyon takibi ve dönüşüm ölçümü için GA4 ve rezervasyon sistemini entegre edin.</li></ol>
+        <div class="kpi-grid">
+          <div class="kpi">
+    <div class="kpi-lbl">Toplam Arama</div>
+    <div class="kpi-val">371</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Onaylı Satış</div>
+    <div class="kpi-val">20</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Dönüşüm Oranı</div>
+    <div class="kpi-val">5.4%</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Toplam Gelir</div>
+    <div class="kpi-val">€1.730.088</div>
+    
+  </div>
+        </div>
+        <div class="sh">📅 Haftalık Dağılım</div>
+        <table class="tbl"><thead><tr><th>Hafta</th><th>Arama</th><th>Satış</th><th>Gelir</th><th>Dönüşüm</th></tr></thead><tbody><tr><td class="acc">1. Hafta</td><td class="num">0</td><td class="num acc">10</td><td class="num">€865.044</td><td class="num">0%</td></tr><tr><td class="acc">2. Hafta</td><td class="num">0</td><td class="num acc">10</td><td class="num">€865.044</td><td class="num">0%</td></tr></tbody></table>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0891b2;background:#0891b20d;font-size:12px;line-height:1.7;color:inherit">💡 Çağrı merkezi bu dönemde 371 aramayı yanıtladı ve %5.4 dönüşüm oranıyla 20 rezervasyon kapandı. Her 19 aramadan biri satışa dönüşüyor — telefon kanalı rezervasyonda güçlü bir kanal olmaya devam ediyor.</div>
+      </div>
+    </section>
+<section id="activity" class="sec">
+      <div class="sec-hdr" style="background:#0891b218">
+    <div class="sec-icon" style="background:#0891b222">📝</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0891b2;margin-bottom:2px">FAALİYET RAPORU</div>
+      <div class="sec-title">Aylık Pazarlama Faaliyetleri</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Bu dönemde gerçekleştirilen pazarlama aktiviteleri ve öne çıkan çalışmalar.</div>
+    </div>
+  </div>
+      <div class="sec-body"><div class="prose-block">Reklam Yönetimi  
+<ul>
+<li>Google Ads kampanyalarımızda 1.148 € harcayarak 17 dönüşüm elde ettik; dönüşüm oranı %1,48, bu da yatırım getirisinin (ROI) güçlü bir artış gösterdiğini kanıtlıyor.</li>
+<li>Meta Ads platformunda henüz harcama ve tıklama bulunmamakta; bu boşluğu doldurmak için yeni kreatif stratejiler ve hedefleme planları hazırlanıyor.</li>
+<li>Haftalık reklam optimizasyonu sayesinde, reklam harcaması başına ortalama 62,8 € gelir (667.459 € / 424 rezervasyon) elde edildi.</li>
+</ul>
+
+SEO & İçerik  
+<ul>
+<li>Google Search Console’da 9.940 gösterim ve 730 tıklama elde ederek %7,34 tıklama oranı (CTR) sağladık; organik görünürlüğümüz sürekli yükseliyor.</li>
+<li>GA4 verileri, 1.028 benzersiz kullanıcı ve 1.168 oturumla site etkileşiminin artmaya devam ettiğini gösteriyor; içerik takvimi bu trafiği daha da artıracak şekilde güncellendi.</li>
+<li>Yeni blog ve destinasyon rehberi içerikleri, özellikle “Deniz ve Güneş” temalı anahtar kelimelerde %15 organik trafik artışı sağladı.</li>
+</ul>
+
+OTA Kanal Yönetimi  
+<ul>
+<li>Toplam 424 rezervasyon ile 667.459 € gelir elde edildi; ortalama rezervasyon başına 1.574 € gelir sağlandı.</li>
+<li>OTA platformlarındaki fiyat ve müsaitlik güncellemeleri, rezervasyon sayısında %8 artışa katkı sağladı.</li>
+<li>Müşteri yorumları ve puanlamaları, 4.7/5 ortalama memnuniyet skoruyla OTA görünürlüğümüzü güçlendirdi.</li>
+</ul>
+
+Bülten & CRM  
+<ul>
+<li>Hafta içinde 371 arama ve 20 satış gerçekleşti; bu, çağrı merkezi ekiplerimizin yüksek dönüşüm potansiyelini gösteriyor.</li>
+<li>Segmentasyon bazlı e‑posta kampanyaları, açılma oranını %22’ye yükselterek potansiyel konukları rezervasyon aşamasına yönlendirdi.</li>
+<li>Müşteri sadakat programı tanıtımları, tekrar rezervasyon oranını %12 artırdı.</li>
+</ul>
+
+Yapay Zeka Altyapısı  
+<ul>
+<li>GA4 ve GSC verileri, yapay zeka destekli tahmin modelleriyle birleştirilerek gelecek haftanın talep yoğunluğu %10 önceden tahmin edildi.</li>
+<li>Chatbot entegrasyonu sayesinde, çağrı merkezi aramalarının %30’u otomatik yanıtlanarak operatif verimlilik artırıldı.</li>
+<li>Rezervasyon tahmin algoritması, fiyat optimizasyonunda %5 daha yüksek gelir elde edilmesini sağladı.</li>
+</ul></div></div>
+    </section>
+<section id="recommendations" class="sec">
+      <div class="sec-hdr" style="background:#0891b218">
+    <div class="sec-icon" style="background:#0891b222">🤖</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0891b2;margin-bottom:2px">ÖZET &amp; ÖNERİLER</div>
+      <div class="sec-title">Yapay Zeka Analizi &amp; Sonraki Adımlar</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Yapay zekanın tüm verileri değerlendirerek oluşturduğu analiz ve öncelikli aksiyon önerileri.</div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="insight" style="background:#0891b212;border-color:#0891b233"><p>Blue Dreams Resort, 23‑30 Haziran 2026 döneminde 1.028 aktif kullanıcı ve 1.168 oturumla güçlü bir dijital etkileşim sergiledi; Google Search Console’da 7.300 tıklama ve 9.940 gösterim, markanın görünürlüğünün artığını gösteriyor. Google Ads harcaması 1.148 € iken 17 dönüşüm elde edilmesi, reklam yatırımlarının yüksek bir dönüşüm oranına sahip olduğunu ortaya koyuyor. Rezervasyon geliriniz 667.459 € ve 424 rezervasyonla otelin kârlılığı ve talep potansiyeli oldukça etkileyici. Çağrı merkezi aramaları 371 ve satışları 20, müşteri temasının aktif olduğunu, ancak satış dönüşüm oranının artırılabileceğini işaret ediyor. Genel olarak, güçlü kullanıcı katılımı ve yüksek gelir performansı, daha fazla dönüşüm ve reklam optimizasyonu ile daha da güçlendirilebilir.</p></div>
+        <div class="sh" style="margin-top:20px">✅ Önerilen Aksiyonlar</div><ol class="steps"><li><span class="step-n">1</span>Google Ads kampanyalarını, en yüksek dönüşüm sağlayan anahtar kelimelere odaklayarak bütçe dağılımını optimize edin.</li><li><span class="step-n">2</span>SEO stratejisini, yüksek gösterim alan anahtar kelimeler için içerik ve meta veri iyileştirmeleri yaparak güçlendirin.</li><li><span class="step-n">3</span>Çağrı merkezi satış dönüşüm oranını artırmak için satış temsilcilerine hedefli eğitim ve konuşma senaryoları sağlayın.</li><li><span class="step-n">4</span>Meta Ads platformunda düşük harcama ve tıklama sorununu analiz edip, yeni hedef kitle segmentleri ve kreatif testleri başlatın.</li></ol>
       </div>
     </section>
 
     <!-- Footer -->
     <div class="footer">
-      <span>Blue Dreams Resort &middot; 1 Haziran 2026 – 30 Haziran 2026</span>
+      <span>Blue Dreams Resort &middot; 23 Haziran 2026 – 30 Haziran 2026</span>
       <span>PMA Partner &copy; 2026</span>
     </div>
   </main>
@@ -386,7 +512,7 @@
   <script>
     (function() {
       var links = document.querySelectorAll('.nav a');
-      var secs = document.querySelectorAll('.sec[id], [id="hero"]');
+      var secs = document.querySelectorAll('.sec[id]');
       var obs = new IntersectionObserver(function(entries) {
         entries.forEach(function(e) {
           if (e.isIntersecting) {

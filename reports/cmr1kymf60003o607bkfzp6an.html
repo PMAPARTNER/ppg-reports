@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Salamis Bay Conti — Aylık Performans Raporu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg-dark: #FFFFFF;
+      --bg-black: #F5F7FA;
+      --bg-light: #FFFFFF;
+      --primary-gold: #0E7C86;
+      --gold-hover: #0E7C86;
+      --gold-light: rgba(0, 139, 139, 0.15);
+      --text-white: #1A1A1A;
+      --text-muted: #666666;
+      --text-dark: #0F1B29;
+      --text-muted-light: #999999;
+      --bg-card: rgba(14, 124, 134, 0.08);
+      --border-card: rgba(14, 124, 134, 0.2);
+      --border-light: #CCCCCC;
+      --aegean-blue: #0E7C86;
+      --danger: #DC2626;
+      --success: #0E7C86;
+      --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      --card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.12);
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Sora', sans-serif;
+      color: var(--text-white);
+      background-color: var(--bg-black);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* ── PMA CO-BRANDING HEADER BANNER ── */
+    .pma-top-bar {
+      background-color: var(--bg-black);
+      color: var(--text-white);
+      padding: 12px 60px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-card);
+      z-index: 1000;
+      position: relative;
+    }
+
+    .pma-partner-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .pma-logo-text {
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ── HOTEL WEBSITE HEADER ── */
+    .cavo-header {
+      background: rgba(15, 31, 40, 0.95);
+      backdrop-filter: blur(15px);
+      padding: 18px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      border-bottom: 1px solid var(--border-card);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .cavo-book-btn {
+      background-color: var(--primary-gold);
+      color: var(--bg-dark);
+      border: none;
+      padding: 10px 24px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: var(--transition);
+      border-radius: 99px;
+    }
+
+    .cavo-book-btn:hover {
+      background-color: var(--gold-hover);
+      box-shadow: 0 0 15px rgba(56, 173, 164, 0.4);
+    }
+
+    /* ── SLIDE DECK CONTAINER (16:9 ASPECT RATIO) ── */
+    .deck-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    .slide {
+      background: var(--bg-dark);
+      border: 1px solid var(--border-card);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 60px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+      min-height: 600px;
+      transition: var(--transition);
+    }
+
+    .slide:hover {
+      border-color: rgba(56, 173, 164, 0.3);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Cover Slide Specifics */
+    .slide-cover {
+      background-image: 
+        linear-gradient(rgba(15, 31, 40, 0.75) 0%, rgba(15, 31, 40, 0.95) 100%),
+        url('https://image-tc.galaxy.tf/wijpeg-7kppa0lzf1jd60cpcx0dap4vd/general-view-with-beach-web.jpg?width=1200');
+      background-size: cover;
+      background-position: center;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+
+    .slide-cover-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide-cover-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--text-white);
+    }
+
+    .slide-cover-subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    /* Slide Header */
+    .slide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-card);
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+      height: 45px;
+      flex-shrink: 0;
+    }
+
+    .slide-title-area {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .slide-tag {
+      font-size: 9px;
+      font-weight: 700;
+      background: rgba(56, 173, 164, 0.15);
+      color: var(--primary-gold);
+      border: 1px solid var(--primary-gold);
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .slide-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--text-white);
+    }
+
+    .slide-pma-badge {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 9px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--primary-gold);
+      font-weight: 700;
+    }
+
+    /* Slide Body & Footer */
+    .slide-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    .slide-footer {
+      border-top: 1px solid var(--border-card);
+      padding-top: 15px;
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      height: 30px;
+      flex-shrink: 0;
+    }
+
+    .slide-footer span strong {
+      color: var(--primary-gold);
+    }
+
+    /* ── SPLIT GRID (FOR SLIDE USE) ── */
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+      height: 100%;
+    }
+
+    /* ── HIGH-SEASON STATS & METRICS CARDS ── */
+    .metrics-summary-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .metric-card-visual {
+      background: var(--bg-card);
+      border-radius: 12px;
+      border: 1px solid var(--border-card);
+      padding: 24px 16px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .metric-card-visual:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: var(--primary-gold);
+    }
+
+    .metric-visual-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--primary-gold);
+      margin-bottom: 5px;
+    }
+
+    .metric-visual-lbl {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-white);
+    }
+
+    .metric-visual-foot {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* ── TABLES ── */
+    .table-container {
+      background: var(--bg-card);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-card);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .report-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      text-align: left;
+    }
+
+    .report-table th {
+      background: var(--bg-black);
+      color: var(--primary-gold);
+      padding: 12px 18px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border-card);
+    }
+
+    .report-table td {
+      padding: 10px 18px;
+      border-bottom: 1px solid var(--border-card);
+      color: var(--text-white);
+    }
+
+    .report-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .report-table tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 0;
+      }
+      body {
+        background-color: var(--bg-black) !important;
+        color: var(--text-white) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .pma-top-bar, .cavo-header {
+        display: none !important;
+      }
+      .slide {
+        width: 297mm !important;
+        height: 210mm !important;
+        max-width: 297mm !important;
+        max-height: 210mm !important;
+        margin: 0 !important;
+        padding: 20mm !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background-color: var(--bg-dark) !important;
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PMA CO-BRANDING HEADER BANNER -->
+  <div class="pma-top-bar">
+    <div class="pma-partner-brand">
+      <span class="pma-logo-text">PMA PARTNER</span>
+    </div>
+    <div>OTOMATİK PERFORMANS BİLGİLENDİRME RAPORU</div>
+  </div>
+
+  <!-- HOTEL HEADER -->
+  <div class="cavo-header">
+    <span style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--text-white);">Salamis Bay Conti</span>
+    <button class="cavo-book-btn">AYLIK PERFORMANS RAPORU</button>
+  </div>
+
+  <div class="deck-container">
+    
+            <div class="slide slide-cover" id="slide-1">
+              <div class="slide-cover-body">
+                <div style="font-size:12px; font-weight:700; color:var(--primary-gold); letter-spacing:2.5px; text-transform:uppercase; margin-bottom:20px;">PPG NEWS &bull; PERFORMANCE BRIEFING</div>
+                <h1 class="slide-cover-title" style="font-size:52px; font-family:'Playfair Display', serif;">Esneklik Testi — Özel Konu (Kanal & ADR Analizi)</h1>
+                <div class="slide-cover-subtitle" style="font-size:16px;">Salamis Bay Conti &bull; 2026-06-01 — 2026-06-30</div>
+                <div style="font-size:13px; color:var(--text-muted); margin-top:15px; font-weight:500;">PPG-01 Series Performance Report</div>
+              </div>
+              <div style="font-size:10px; color:var(--text-muted); letter-spacing:1px; text-transform:uppercase;">PPG Hospitality Technology &bull; Automated Briefing System</div>
+            </div>
+        
+
+                <div class="slide" id="slide-2">
+                  <div class="slide-header">
+                    <div class="slide-title-area">
+                      <span class="slide-tag">AI ANALYSIS</span>
+                      <h2 class="slide-heading">Yapay Zeka Performans Yorumu</h2>
+                    </div>
+                    <div class="slide-pma-badge">PPG-01 SERIES</div>
+                  </div>
+                  <div class="slide-body">
+                    <div style="background:var(--bg-black); border:1px solid var(--border-card); border-radius:12px; padding:30px 40px; font-size:14px; line-height:1.7; color:var(--text-white); overflow-y:auto; max-height:360px;">
+                      <p><strong>Yönetici Özeti: Salamis Bay Conti Oteli - 2026 Haziran Ayı Doluluk ve Rezervasyon Analizi</strong></p>
+
+<p>Bu rapor, Salamis Bay Conti Oteli'nin 1 Haziran 2026 - 29 Haziran 2026 tarihleri arasındaki doluluk performansını ve genel rezervasyon verilerini analiz etmektedir. Veriler, otelin Haziran ayında oldukça güçlü bir performans sergilediğini, ancak belirli günlerdeki doluluk dalgalanmaları ve yüksek iptal oranı gibi iyileştirilebilecek alanların bulunduğunu göstermektedir.</p>
+
+<ul>
+    <li><strong>Genel Doluluk Performansı:</strong> Haziran ayı boyunca ortalama doluluk oranı %89.12 gibi oldukça yüksek bir seviyede gerçekleşmiştir. Bu durum, otelin genel olarak güçlü bir taleple karşılaştığını ve bölgedeki popülaritesini koruduğunu işaret etmektedir.</li>
+    <li><strong>Yüksek Talep Dönemleri:</strong> Ayın büyük bir kısmı, özellikle 8-12 Haziran ve 18-29 Haziran tarihleri arası, %95'in üzerinde doluluk oranlarıyla olağanüstü bir talep göstermiştir. 10, 11, 12, 23, 24, 26, 28 ve 29 Haziran gibi birçok günde doluluk oranı %99 ve üzerine çıkarak tam kapasiteye yakın veya tam kapasite çalıştığı görülmüştür (11, 23 ve 24 Haziran'da %100 doluluk). Bu, otelin bu dönemlerde fiyatlandırma gücünü yüksek tutabildiğini göstermektedir.</li>
+    <li><strong>Dolulukta Fırsat Alanları:</strong> Güçlü ortalamaya rağmen, ay içinde bazı günler ortalamanın altında kalarak iyileştirme potansiyeli sunmaktadır. Özellikle 6 Haziran (%77.1), 13 Haziran (%73 - ayın en düşük günü), 16 Haziran (%77.6) ve 17 Haziran (%78.5) gibi günler, ortalamanın altında kalarak ek stratejik müdahaleler gerektirmektedir. Özellikle 6 ve 13 Haziran'ın Cumartesi günleri olmasına rağmen nispeten düşük doluluk göstermesi dikkat çekicidir.</li>
+    <li><strong>Rezervasyon ve İptal Analizi:</strong> Otelin toplam 6811 rezervasyonu bulunmaktadır. Bunların 5908'i aktifken, 903'ü iptal edilmiştir. Bu, %13.26'lık önemli bir iptal oranına işaret etmektedir. Toplam rezervasyonlardan elde edilebilecek potansiyel gelir 6,904,704.11 EUR iken, aktif rezervasyonlardan elde edilen gelir (Booked Income) 5,182,750 EUR'dur. Bu durum, iptallerden kaynaklanan potansiyel gelir kaybının yaklaşık 1,721,954.11 EUR olduğunu göstermektedir. Yüksek iptal oranı, gelir yönetimi açısından önemli bir risk faktörüdür ve üzerinde durulması gereken bir alandır.</li>
+</ul>
+
+<p><strong>Stratejik Aksiyon Önerileri:</strong></p>
+
+<p>Mevcut verilere dayanarak Salamis Bay Conti Oteli için aşağıdaki üç stratejik aksiyon önerilmektedir:</p>
+
+<ol>
+    <li>
+        <p><strong>Düşük Doluluk Günlerine Yönelik Hedeflenmiş Promosyon ve Paket Stratejileri:</strong> Haziran ayında ortalama doluluk oranının altında kalan günlere (özellikle 6 Haziran %77.1, 13 Haziran %73, 16 Haziran %77.6 ve 17 Haziran %78.5) odaklanılmalıdır. Özellikle 6 ve 13 Haziran Cumartesileri gibi hafta sonu günlerdeki düşüşler dikkat çekicidir. Bu günlere özel olarak, otel kapasitesini doldurmaya yönelik esnek ve cazip fiyatlandırma politikaları (örneğin, minimum kalış süresi kısıtlaması olmayan kısa konaklama paketleri, belirli pazar segmentlerine özel indirimler veya ek hizmetler içeren paketler) oluşturulmalıdır. Bu, genel ortalama doluluğu artırırken, bu günlerdeki oda gelirini yükseltmeye yardımcı olacaktır.</p>
+    </li>
+    <li>
+        <p><strong>Yüksek Talep Dönemlerinde Gelir Optimizasyonu ve Kontrollü Overbooking Yönetimi:</strong> Haziran ayının geneli ve özellikle 8-12 Haziran ile 18-29 Haziran arasındaki %95 ve üzeri doluluk oranlarına sahip günlerdeki güçlü talep, otelin ortalama oda fiyatını (ADR) maksimize etmesi için önemli bir fırsat sunmaktadır. Bu dönemlerde, dinamik fiyatlandırma stratejileri daha agresif uygulanmalı, erken rezervasyon indirimleri kademeli olarak kaldırılmalı ve son dakika rezervasyonları için daha yüksek fiyatlar hedeflenmelidir. Ayrıca, veri setindeki bazı günler için (örn: 11 Haziran 667 oda, 23 Haziran 670 oda gibi) toplam oda sayısının üzerinde gerçekleşen doluluklar göz önüne alındığında, potansiyel "no-show" veya son dakika iptalleri için kontrollü ve titiz bir overbooking stratejisi geliştirilerek gelir kaybı minimize edilebilir ve otelin doluluk potansiyeli maksimum düzeyde değerlendirilebilir. Bu stratejinin misafir memnuniyetini riske atmadan uygulanması kritik öneme sahiptir.</p>
+    </li>
+    <li>
+        <p><strong>İptal Oranını Düşürmeye Yönelik Proaktif İletişim ve Güvence Programları:</strong> Toplam rezervasyonların %13.26'sına tekabül eden 903 adet iptal ve bunun sonucunda oluşan 1.721.954,11 EUR'luk potansiyel gelir kaybı, otelin öncelikli olarak ele alması gereken bir konudur. Bu oranı düşürmek için misafirlerle rezervasyon sonrası ve iptal öncesi proaktif iletişim stratejileri geliştirilmelidir. Rezervasyon teyitlerinde iptal politikaları daha net vurgulanmalı, alternatif tarih veya otel kredisi gibi esnek iptal seçenekleri sunularak misafirlerin rezervasyonlarını tamamen iptal etmek yerine değiştirmeleri teşvik edilmelidir. Ayrıca, caydırıcılık yaratmak amacıyla ön ödeme zorunluluğu, kredi kartı garanti provizyonu veya "daha az esnek ama daha uygun fiyatlı" rezervasyon kategorileri sunularak rezervasyon taahhüdü artırılabilir. İptal nedenlerinin derinlemesine analiz edilmesi (eğer bu veri toplanıyorsa), bu nedenlere yönelik yapısal çözümler geliştirmek için yol gösterici olacaktır.</p>
+    </li>
+</ol>
+                    </div>
+                  </div>
+                  <div class="slide-footer">
+                    <span>PPG MASTER SYSTEM REPORT &bull; <strong>Salamis Bay Conti</strong></span>
+                    <span>SLIDE 2</span>
+                  </div>
+                </div>
+            
+
+                <div class="slide" id="slide-3">
+                  <div class="slide-header">
+                    <div class="slide-title-area">
+                      <span class="slide-tag">ÖZEL</span>
+                      <h2 class="slide-heading">Özel Analiz / Talep</h2>
+                    </div>
+                    <div class="slide-pma-badge">PPG-01 SERIES</div>
+                  </div>
+                  <div class="slide-body">
+                    <div style="font-size:12px;color:var(--text-muted);font-style:italic;margin-bottom:14px;">Talep: &ldquo;Haziran ayında kanal segment dağılımını (B2B/OTA/D2C) ve ADR trendini revenue-manager bakışıyla analiz et; en kârlı kanalı belirle ve gelecek ay için 3 somut fiyatlama/pickup aksiyonu öner.&rdquo;</div>
+                    <div style="background:var(--bg-black);border:1px solid var(--border-card);border-radius:12px;padding:26px 32px;font-size:14px;line-height:1.7;color:var(--text-white);overflow-y:auto;max-height:400px;">
+                      <h3>Haziran Ayı Kanal Segment Dağılımı ve ADR Analizi</h3>
+
+<p>Salamis Bay Conti Oteli'nin kıdemli Gelir Yöneticisi olarak, otel yöneticimizin 2026 Haziran ayı kanal segment dağılımı ve ADR trendi analizi talebini değerlendiriyorum. Veriler, otelin Haziran ayında genel olarak güçlü bir doluluk performansı sergilediğini, ancak bazı alanlarda optimizasyon potansiyeli bulunduğunu göstermektedir.</p>
+
+<h4>Kanal Segment Dağılımı ve ADR (Son 7 Günlük Pickup Verisi)</h4>
+<p>Kanal segment dağılımını ve ADR performansını analiz etmek için, mevcut veri setinde yer alan son 7 günlük pickup verilerini kullanabiliyoruz. Bu veriler, rezervasyon adetleri ve elde edilen gelir üzerinden kanal performansına ışık tutmaktadır:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Kanal</th>
+      <th>Pickup Oda Adedi (Son 7 Gün)</th>
+      <th>Pickup Gelir (EUR, Son 7 Gün)</th>
+      <th>Ortalama Oda Fiyatı (ADR, EUR)</th>
+      <th>Oda Payı (%)</th>
+      <th>Gelir Payı (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>OTA</td>
+      <td>53</td>
+      <td>87,811</td>
+      <td>1,656.81</td>
+      <td>8.67%</td>
+      <td>10.03%</td>
+    </tr>
+    <tr>
+      <td>B2B</td>
+      <td>529</td>
+      <td>752,984</td>
+      <td>1,423.41</td>
+      <td>86.58%</td>
+      <td>86.00%</td>
+    </tr>
+    <tr>
+      <td>D2C (Münferit)</td>
+      <td>27</td>
+      <td>33,433</td>
+      <td>1,238.26</td>
+      <td>4.42%</td>
+      <td>3.82%</td>
+    </tr>
+    <tr>
+      <td>MICE</td>
+      <td>2</td>
+      <td>1,317</td>
+      <td>658.50</td>
+      <td>0.33%</td>
+      <td>0.15%</td>
+    </tr>
+    <tr>
+      <td><strong>Toplam</strong></td>
+      <td><strong>611</strong></td>
+      <td><strong>875,545</strong></td>
+      <td><strong>1,432.97</strong></td>
+      <td><strong>100%</strong></td>
+      <td><strong>100%</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Analiz:</strong></p>
+<ul>
+    <li><strong>B2B Dominasyonu:</strong> Son 7 günlük pickup verilerine göre B2B kanalı, hem rezervasyon adedi (86.58%) hem de gelir (86.00%) açısından açık ara en dominant kanaldır. Bu durum, otelin büyük ölçüde toptancılar veya kurumsal anlaşmalar üzerinden doluluk sağladığını göstermektedir.</li>
+    <li><strong>OTA ADR Liderliği:</strong> Miktar olarak daha az paya sahip olmasına rağmen, OTA kanalı, 1,656.81 EUR ile en yüksek ortalama oda fiyatına (ADR) sahiptir. Bu, OTA aracılığıyla daha yüksek gelir marjına sahip misafirleri çekebildiğimizi göstermektedir.</li>
+    <li><strong>D2C Potansiyeli:</strong> D2C (Münferit) kanalı, B2B'den daha düşük, ancak MICE'den daha yüksek bir ADR (1,238.26 EUR) sunmaktadır. Bu kanalın hacmi henüz düşük olsa da, yüksek ADR potansiyeli, direkt rezervasyonların komisyon maliyeti olmaması nedeniyle net gelir açısından önemini artırmaktadır.</li>
+    <li><strong>MICE Performansı:</strong> MICE segmenti hem adet hem de gelir payında en düşük seviyededir ve ADR'si (658.50 EUR) diğer kanallara göre önemli ölçüde düşüktür. Bu, MICE işlerinin genellikle grup indirimleriyle geldiğini ve yüksek ADR stratejilerine tam olarak uymadığını göstermektedir.</li>
+</ul>
+
+<h4>ADR Trend Analizi (Haziran 2026)</h4>
+<p>Haziran 2026 ayı için günlük bazda veya kanal bazında detaylı ADR trend verileri elimizde mevcut değildir. Ancak, ay genelindeki performans için aşağıdaki verileri değerlendirebiliriz:</p>
+<ul>
+    <li><strong>Genel Haziran ADR (Aktif Rezervasyonlar):</strong> Ay boyunca aktif rezervasyonlardan elde edilen toplam gelir (Booked Income) 5,182,750 EUR ve aktif rezervasyon adedi 5,908'dir. Bu verilere göre, Haziran ayı genelinde aktif rezervasyonlar için ortalama ADR yaklaşık <strong>877.29 EUR</strong> (5,182,750 / 5,908) olarak gerçekleşmiştir.</li>
+    <li><strong>Günlük Z-Raporu ADR'si:</strong> Sağlanan Z-Raporu verisinde, güncel gün için ADR 296 EUR, bir önceki gün için ise 294 EUR olarak belirtilmiştir. Bu rakamlar, genel Haziran ortalamasının çok altında olup, büyük olasılıkla belirli bir segmentin veya tek bir günün verisini temsil etmektedir ve tüm ayın trendini yansıtmamaktadır. Bu sınırlı veriden genelleşmiş bir trend çıkarmak mümkün değildir.</li>
+    <li><strong>Doluluk Trendi:</strong> Haziran ayı doluluk verilerine bakıldığında, ayın büyük bir kısmında, özellikle 8-12 Haziran ve 18-29 Haziran tarihlerinde doluluk oranlarının %95'in üzerinde seyrettiği, hatta birçok günde %99-100'e ulaştığı görülmektedir. Yüksek doluluk dönemleri, otelin teorik olarak daha yüksek ADR'ler talep etme gücüne sahip olduğunu gösterir. Ancak, bu dolulukların hangi kanallar ve hangi fiyatlandırma seviyeleriyle geldiğini gösteren detaylı ADR verisi mevcut değildir.</li>
+</ul>
+<p>Özetle, Haziran ayı için kanal bazında veya günlük bazda kapsamlı bir ADR trend analizi yapmak için yeterli veri mevcut değildir. Sadece son 7 günlük pickup verileri üzerinden kanal ADR'lerini değerlendirebilmekteyiz.</p>
+
+<h3>En Kârlı Kanal Belirlemesi</h3>
+<p>Mevcut veri setinde kanal başına komisyon veya satış maliyeti (Cost of Acquisition - COA) bilgisi bulunmadığı için, "en kârlı kanal" tanımımızı, elde edilen en yüksek ADR'ye sahip ve görece düşük komisyon oranına sahip olması muhtemel kanallar üzerinden yapabiliriz. Bu bağlamda:</p>
+<ul>
+    <li><strong>OTA kanalı, son 7 günlük pickup verilerinde 1,656.81 EUR ile en yüksek ADR'ye sahip kanaldır.</strong> Yüksek ADR, brüt gelir açısından oldukça caziptir. Ancak, OTA komisyon maliyetlerinin B2B'ye göre daha yüksek olabileceği göz önünde bulundurulmalıdır. Veri eksikliği nedeniyle net karlılığı belirlemek mümkün olmasa da, yüksek getirisi nedeniyle stratejik bir öneme sahiptir.</li>
+    <li><strong>B2B kanalı</strong>, 1,423.41 EUR ADR ile OTA'dan sonra ikinci en yüksek ADR'ye sahiptir ve açık ara en yüksek hacmi sağlamaktadır. Komisyon oranları genellikle OTA'lara göre daha düşük olabilir. Dolayısıyla, hacmi ve görece yüksek ADR'si ile net gelir katkısı çok büyüktür.</li>
+    <li><strong>D2C (Münferit) kanalı</strong>, 1,238.26 EUR ADR ile ortalamanın üzerinde bir performans sergilemektedir ve doğrudan rezervasyon olması nedeniyle genellikle en düşük dağıtım maliyetine (komisyonsuz veya çok düşük maliyetli) sahiptir. Bu nedenle, potansiyel olarak en yüksek net kârlılığı sunma potansiyeli taşımaktadır.</li>
+</ul>
+<p><strong>Sonuç olarak, brüt ADR'ye bakıldığında OTA kanalı lider konumdadır. Ancak dağıtım maliyetleri (COA) dikkate alındığında, yüksek ADR potansiyeli ve düşük/sıfır komisyon maliyeti nedeniyle D2C (Münferit) kanalının uzun vadede en kârlı kanal olması beklenir. B2B ise, hacim ve görece iyi ADR dengesi ile toplam gelirde kilit rol oynamaktadır.</strong></p>
+
+<h3>Gelecek Ay (Temmuz 2026) İçin 3 Somut Fiyatlama/Pickup Aksiyonu</h3>
+<p>Temmuz 2026 forecast verilerine göre, mevcut OTB'de (On The Books) 3,768 oda geceleme ve 5,507,504 EUR gelir beklenirken, geçen yıla göre (6,035,573 EUR) toplam gelirde yaklaşık 528,069 EUR'luk bir düşüş öngörülmektedir. Ancak, mevcut Temmuz OTB ADR'si (5,507,504 / 3,768 = 1,461.65 EUR) Haziran ayı genel ADR'sinden (877.29 EUR) önemli ölçüde yüksektir, bu da talep ve fiyatlandırma gücünün Temmuz ayında daha iyi olduğunu göstermektedir. Haziran ayındaki yüksek doluluk ve %13.26'lık iptal oranı da dikkate alınarak, Temmuz ayı için aşağıdaki somut aksiyonları öneriyorum:</p>
+
+<ol>
+    <li>
+        <p><strong>Dinamik Fiyatlandırma ve OTA/D2C Kanal Optimizasyonu:</strong> Temmuz ayı için mevcut OTB ADR'sinin yüksek olması olumlu bir göstergedir. Bu avantajı korumak ve artırmak için, kalan müsaitlik üzerindeki dinamik fiyatlandırma stratejilerini daha agresif hale getirin. Özellikle en yüksek ADR'ye sahip OTA kanalı ve en düşük maliyetle yüksek net gelir potansiyeli sunan D2C (münferit) kanalı üzerindeki odak noktamızı artırmalıyız.
+        <ul>
+            <li><strong>Aksiyon:</strong> OTA'da erken rezervasyon indirimlerini kademeli olarak sonlandırın ve yüksek talep dönemlerinde fiyatları daha hızlı yükseltin. D2C kanalı için otel web sitesine özel, OTA fiyatlarını hafifçe altında tutacak "Direkt Rezervasyon Garantisi" veya ek avantajlar (ücretsiz upgrade, otel kredisi vb.) sunan özel paketler oluşturarak direkt rezervasyonları teşvik edin. Bu, hem yüksek ADR'yi koruyacak hem de dağıtım maliyetlerini düşürerek net kârlılığı artıracaktır.</li>
+        </ul>
+        </p>
+    </li>
+    <li>
+        <p><strong>Temmuz Ayı Pickup Hızlandırma ve Geçen Yıl Geri Kalmışlığı Giderme:</strong> Temmuz ayı için mevcut oda geceleme adedimiz (3,768) ve geçen yıla göre gelirdeki geri kalmışlık (-528,069 EUR) önemli bir endişe kaynağıdır. Bu durum, önümüzdeki dönemde hızlı bir pickup ihtiyacına işaret etmektedir.
+        <ul>
+            <li><strong>Aksiyon:</strong> Haftalık pickup raporlarını yakından takip ederek, Temmuz ayının hangi tarihlerinin düşük pace'de olduğunu belirleyin. Bu tarihler için B2B partnerlerle iletişime geçerek anlık kampanya ve allotment artırma fırsatlarını değerlendirin. Ayrıca, önceden otelde konaklamış misafirlere (CRM veritabanı kullanılarak) özel, "son dakika" veya "sadakat" indirimleri sunan e-posta kampanyaları düzenleyerek D2C üzerinden hızlı pickup sağlamayı hedefleyin.</li>
+        </ul>
+        </p>
+    </li>
+    <li>
+        <p><strong>Yüksek İptal Oranını Azaltmaya Yönelik Fiyatlandırma ve Politika Ayarlamaları:</strong> Haziran ayında %13.26'lık iptal oranı önemli bir gelir kaybına (1.7M EUR potansiyel) neden olmuştur. Bu durum, rezervasyon kalitesini artırma ve misafir taahhüdünü güçlendirme gerekliliğini ortaya koymaktadır.
+        <ul>
+            <li><strong>Aksiyon:</strong> Temmuz ayı rezervasyonları için, özellikle yüksek talep dönemlerinde "Non-Refundable" (iade edilmez) veya "Limited Flexibility" (sınırlı esneklik) fiyat kategorilerini daha cazip indirimlerle sunun. Bu tür fiyatlar, misafirlerin rezervasyon yaparken daha kararlı olmalarını sağlayacak ve iptal riskini düşürecektir. Aynı zamanda, esnek rezervasyonlarda ön ödeme zorunluluğunu veya daha yüksek bir depozito talep etme politikasını uygulamaya koyun. Rezervasyon teyit e-postalarında iptal politikalarını daha görünür ve anlaşılır hale getirin.</li>
+        </ul>
+        </p>
+    </li>
+</ol>
+                    </div>
+                  </div>
+                  <div class="slide-footer">
+                    <span>PPG MASTER SYSTEM REPORT &bull; <strong>Salamis Bay Conti</strong></span>
+                    <span>SLIDE 3</span>
+                  </div>
+                </div>
+            
+
+                <div class="slide" id="slide-4">
+                  <div class="slide-header">
+                    <div class="slide-title-area">
+                      <span class="slide-tag">REVENUE</span>
+                      <h2 class="slide-heading">Rezervasyon ve Gelir Analizi</h2>
+                    </div>
+                    <div class="slide-pma-badge">PPG-01 SERIES</div>
+                  </div>
+                  <div class="slide-body">
+                    <div class="split-grid">
+                      <div class="metrics-summary-cards" style="grid-template-columns: 1fr; gap: 15px;">
+                        <div class="metric-card-visual" style="padding: 16px;">
+                          <div class="metric-visual-val">6.811</div>
+                          <div class="metric-visual-lbl">Toplam Rezervasyon</div>
+                        </div>
+                        <div class="metric-card-visual" style="padding: 16px;">
+                          <div class="metric-visual-val">5.908</div>
+                          <div class="metric-visual-lbl" style="color:var(--primary-gold);">Aktif Rezervasyon</div>
+                        </div>
+                        <div class="metric-card-visual" style="padding: 16px; border-color: rgba(239, 68, 68, 0.2)">
+                          <div class="metric-visual-val" style="color:#ef4444;">903</div>
+                          <div class="metric-visual-lbl" style="color:#ef4444;">İptal Rezervasyon</div>
+                        </div>
+                      </div>
+                      
+                      <div style="background:var(--bg-card); border:1px solid var(--border-card); border-radius:12px; padding:30px; display:flex; flex-direction:column; justify-content:center; height:100%;">
+                        <div style="font-size:12px; color:var(--text-muted); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:6px;">Toplam Rezervasyon Cirosu</div>
+                        <div style="font-size:44px; font-weight:800; color:var(--primary-gold); font-family:'Playfair Display', serif; line-height:1.1; margin-bottom:20px;">
+                          €5.182.750
+                        </div>
+                        
+                        <div style="font-size:13px; color:var(--text-white); opacity:0.9; line-height:1.6;">
+                          <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--primary-gold); margin-right:6px;"></span>
+                          <strong>Canlı PMS Verisi (Kesin Kaynak):</strong> Ciro tutarı doğrudan veritabanı denetimi ile doğrulanmıştır.
+                          <br>Önbellek (Cache) değeri: €6.904.704 (Sapma: 24.9%)
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slide-footer">
+                    <span>PPG MASTER SYSTEM REPORT &bull; <strong>Salamis Bay Conti</strong></span>
+                    <span>SLIDE 4</span>
+                  </div>
+                </div>
+            
+
+                <div class="slide" id="slide-5">
+                  <div class="slide-header">
+                    <div class="slide-title-area">
+                      <span class="slide-tag">OCCUPANCY</span>
+                      <h2 class="slide-heading">Doluluk ve ADR Detayları</h2>
+                    </div>
+                    <div class="slide-pma-badge">PPG-01 SERIES</div>
+                  </div>
+                  <div class="slide-body">
+                    <div class="table-container" style="max-height:340px; overflow-y:auto;">
+                      <table class="report-table">
+                        <thead>
+                          <tr>
+                            <th>Tarih</th>
+                            <th style="text-align:right;">Toplam Oda</th>
+                            <th style="text-align:right;">Dolu Oda</th>
+                            <th style="text-align:right;">Doluluk Oranı</th>
+                            <th style="text-align:right;">ADR</th>
+                            <th style="text-align:right;">RevPAR</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">1 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">526</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%79.2</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">2 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">533</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%80.3</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">3 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">530</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%79.8</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">4 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">530</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%79.8</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">5 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">558</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%84</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">6 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">512</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%77.1</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">7 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">562</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%84.6</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">8 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">613</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%92.3</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">9 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">617</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%92.9</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">10 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">662</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%99.7</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">11 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">667</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%100</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">12 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">661</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%99.5</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">13 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">485</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%73</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">14 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">545</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%82.1</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">15 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">529</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%79.7</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">16 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">515</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%77.6</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">17 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">521</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%78.5</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">18 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">565</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%85.1</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">19 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">619</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%93.2</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">20 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">579</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%87.2</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">21 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">635</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%95.6</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">22 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">653</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%98.3</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">23 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">670</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%100</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">24 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">667</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%100</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">25 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">656</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%98.8</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">26 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">661</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%99.5</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">27 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">657</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%98.9</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">28 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">660</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%99.4</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">29 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">664</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">661</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%99.5</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="slide-footer">
+                    <span>PPG MASTER SYSTEM REPORT &bull; <strong>Salamis Bay Conti</strong></span>
+                    <span>SLIDE 5</span>
+                  </div>
+                </div>
+            
+
+    <div class="slide" id="sec-pickup">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">PICK-UP</span><h2 class="slide-heading">Son 7 Gün Pick-Up</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/tr/admin/sales-monitor?currency=EUR" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ Görüntüle</a><div class="slide-pma-badge">PPG NEWS</div></div></div>
+      <div class="slide-body">
+        <p style="font-size:11px;color:var(--text-muted);margin-bottom:14px;font-style:italic;">Segment kırılımı — B2B, B2C, D2C, MICE (tutarlar € / varsayılan EUR).</p>
+        <div class="table-container">
+          <table class="report-table"><thead><tr><th>Segment</th><th style="text-align:right;">Adet</th><th style="text-align:right;">Ciro (€)</th></tr></thead><tbody><tr><td>B2B</td><td style="text-align:right;">529</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€752.984</td></tr><tr><td>B2C</td><td style="text-align:right;">53</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€87.811</td></tr><tr><td>D2C</td><td style="text-align:right;">27</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€33.433</td></tr><tr><td>MICE</td><td style="text-align:right;">2</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€1.317</td></tr>
+            <tr><td style="font-weight:700;">Toplam</td><td style="text-align:right;font-weight:700;">611</td><td style="text-align:right;font-weight:800;color:var(--primary-gold);">€875.545</td></tr></tbody></table>
+        </div>
+      </div>
+      <div class="slide-footer"><span>PPG MASTER SİSTEM RAPORU &bull; <strong>Salamis Bay Conti</strong></span><span>GERÇEK PMS VERİSİ</span></div>
+    </div>
+    <div class="slide" id="sec-forecast">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">FORECAST</span><h2 class="slide-heading">FORECAST — Cari Ay + 1 Ay (V.s. −1 Yıl)</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/tr/admin/sales-monitor?currency=EUR" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ Görüntüle</a><div class="slide-pma-badge">PPG NEWS</div></div></div>
+      <div class="slide-body">
+        <p style="font-size:11px;color:var(--text-muted);margin-bottom:14px;font-style:italic;">OTB (varış bazlı) ciro, geçen yılın aynı dönemiyle karşılaştırma — yüzdesel oranlar (%Δ) vurgulanmıştır.</p>
+        <div class="table-container">
+          <table class="report-table"><thead><tr><th>Ay</th><th style="text-align:right;">Oda-gece</th><th style="text-align:right;">Ciro (OTB)</th><th style="text-align:right;">−1 Yıl</th><th style="text-align:right;">%Δ</th></tr></thead><tbody>
+            <tr><td style="font-weight:700;">2026-06</td><td style="text-align:right;">4.478</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€4.854.372</td><td style="text-align:right;color:var(--text-muted);">€4.760.694</td><td style="text-align:right;font-weight:800;font-size:18px;color:#0E7C86;">▲ +2%</td></tr>
+            <tr><td style="font-weight:700;">2026-07</td><td style="text-align:right;">3.768</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€5.507.504</td><td style="text-align:right;color:var(--text-muted);">€6.035.573</td><td style="text-align:right;font-weight:800;font-size:18px;color:#ef4444;">▼ -9%</td></tr>
+          </tbody></table>
+        </div>
+      </div>
+      <div class="slide-footer"><span>PPG MASTER SİSTEM RAPORU &bull; <strong>Salamis Bay Conti</strong></span><span>GERÇEK PMS VERİSİ</span></div>
+    </div>
+    <div class="slide" id="sec-roomstatus">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">ODA DURUMU</span><h2 class="slide-heading">OOO – HU – COMP – SOLD</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/tr/admin?currency=EUR" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ Görüntüle</a><div class="slide-pma-badge">PPG NEWS</div></div></div>
+      <div class="slide-body">
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:center;background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:24px;">
+          <div><div style="font-size:26px;font-weight:800;color:var(--text-white);">—</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:1px;">OOO</div></div>
+          <div><div style="font-size:26px;font-weight:800;color:var(--text-white);">—</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:1px;">HU</div></div>
+          <div><div style="font-size:26px;font-weight:800;color:var(--text-white);">0</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:1px;">COMP</div></div>
+          <div><div style="font-size:26px;font-weight:800;color:var(--primary-gold);">686</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:1px;">SOLD</div></div>
+        </div>
+        <div style="font-size:10px;color:var(--text-muted);margin-top:10px;">OOO/HU bu PMS için mevcut değil (housekeeping verisi yok).</div>
+      </div>
+      <div class="slide-footer"><span>PPG MASTER SİSTEM RAPORU &bull; <strong>Salamis Bay Conti</strong></span><span>GERÇEK PMS VERİSİ</span></div>
+    </div>
+    <div class="slide" id="sec-d2c">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">D2C</span><h2 class="slide-heading">D2C (Call Center + Münferit + Web)</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/tr/admin/sales-monitor?currency=EUR" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ Görüntüle</a><div class="slide-pma-badge">PPG NEWS</div></div></div>
+      <div class="slide-body">
+        <p style="font-size:11px;color:var(--text-muted);margin-bottom:14px;font-style:italic;">Son 7 Gün Pickup — € tutar + işlem/rezervasyon sayısı.</p>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:22px;">
+          <div style="text-align:center;"><div style="font-size:24px;font-weight:800;color:var(--text-white);">0</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Call Center</div><div style="font-size:13px;font-weight:700;color:var(--primary-gold);margin-top:4px;">€0</div></div>
+          <div style="text-align:center;"><div style="font-size:24px;font-weight:800;color:var(--text-white);">27</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Münferit</div><div style="font-size:13px;font-weight:700;color:var(--primary-gold);margin-top:4px;">€33.433</div></div>
+          <div style="text-align:center;"><div style="font-size:24px;font-weight:800;color:var(--text-white);">0</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Web</div><div style="font-size:13px;font-weight:700;color:var(--primary-gold);margin-top:4px;">€0</div></div>
+        </div>
+        <div style="margin-top:12px;text-align:right;font-size:13px;color:var(--text-muted);">Toplam: <strong style="color:var(--text-white);">27</strong> · <strong style="color:var(--primary-gold);">€33.433</strong></div>
+      </div>
+      <div class="slide-footer"><span>PPG MASTER SİSTEM RAPORU &bull; <strong>Salamis Bay Conti</strong></span><span>GERÇEK PMS VERİSİ</span></div>
+    </div>
+    <div class="slide" id="sec-flights">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">✈️ UÇUŞ</span><h2 class="slide-heading">Uçuş Analizi — 7 / 14 / 21 Gelen Uçak Sayısı</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/tr/admin/demand-forecast?currency=EUR" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ Görüntüle</a><div class="slide-pma-badge">PPG NEWS</div></div></div>
+      <div class="slide-body">
+        <div style="font-size:12px;color:var(--text-muted);margin-bottom:14px;">Varış havalimanı: <strong style="color:var(--text-white);">ECN</strong></div>
+        <div class="metrics-summary-cards" style="grid-template-columns:repeat(3,1fr);">
+          <div class="metric-card-visual"><div class="metric-visual-val">6</div><div class="metric-visual-lbl">7 Gün — Gelen Uçak</div><div class="metric-visual-foot">0 koltuk</div></div>
+          <div class="metric-card-visual"><div class="metric-visual-val">6</div><div class="metric-visual-lbl">14 Gün — Gelen Uçak</div><div class="metric-visual-foot">0 koltuk</div></div>
+          <div class="metric-card-visual"><div class="metric-visual-val">6</div><div class="metric-visual-lbl">21 Gün — Gelen Uçak</div><div class="metric-visual-foot">0 koltuk</div></div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>PPG MASTER SİSTEM RAPORU &bull; <strong>Salamis Bay Conti</strong></span><span>GERÇEK PMS VERİSİ</span></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="border-top:1px solid var(--border-card); padding:30px 60px; text-align:center; color:var(--text-muted); font-size:11px; font-weight:500; background:var(--bg-dark);">
+    PPG Performance — Otomatik Rapor &bull; Raporlama Zamanı: 01.07.2026 07:33:27<br>
+    <strong style="color:var(--text-white); font-weight:700;">PPG Hospitality Technology &copy; 2026</strong>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Belconti Resort — Aylık Performans Raporu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg-dark: #FFFFFF;
+      --bg-black: #F5F7FA;
+      --bg-light: #FFFFFF;
+      --primary-gold: #0E7C86;
+      --gold-hover: #0E7C86;
+      --gold-light: rgba(0, 139, 139, 0.15);
+      --text-white: #1A1A1A;
+      --text-muted: #666666;
+      --text-dark: #0F1B29;
+      --text-muted-light: #999999;
+      --bg-card: rgba(14, 124, 134, 0.08);
+      --border-card: rgba(14, 124, 134, 0.2);
+      --border-light: #CCCCCC;
+      --aegean-blue: #0E7C86;
+      --danger: #DC2626;
+      --success: #0E7C86;
+      --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      --card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.12);
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Sora', sans-serif;
+      color: var(--text-white);
+      background-color: var(--bg-black);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* ── PMA CO-BRANDING HEADER BANNER ── */
+    .pma-top-bar {
+      background-color: var(--bg-black);
+      color: var(--text-white);
+      padding: 12px 60px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-card);
+      z-index: 1000;
+      position: relative;
+    }
+
+    .pma-partner-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .pma-logo-text {
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ── HOTEL WEBSITE HEADER ── */
+    .cavo-header {
+      background: rgba(15, 31, 40, 0.95);
+      backdrop-filter: blur(15px);
+      padding: 18px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      border-bottom: 1px solid var(--border-card);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .cavo-book-btn {
+      background-color: var(--primary-gold);
+      color: var(--bg-dark);
+      border: none;
+      padding: 10px 24px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: var(--transition);
+      border-radius: 99px;
+    }
+
+    .cavo-book-btn:hover {
+      background-color: var(--gold-hover);
+      box-shadow: 0 0 15px rgba(56, 173, 164, 0.4);
+    }
+
+    /* ── SLIDE DECK CONTAINER (16:9 ASPECT RATIO) ── */
+    .deck-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    .slide {
+      background: var(--bg-dark);
+      border: 1px solid var(--border-card);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 60px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+      min-height: 600px;
+      transition: var(--transition);
+    }
+
+    .slide:hover {
+      border-color: rgba(56, 173, 164, 0.3);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Cover Slide Specifics */
+    .slide-cover {
+      background-image: 
+        linear-gradient(rgba(15, 31, 40, 0.75) 0%, rgba(15, 31, 40, 0.95) 100%),
+        url('https://image-tc.galaxy.tf/wijpeg-7kppa0lzf1jd60cpcx0dap4vd/general-view-with-beach-web.jpg?width=1200');
+      background-size: cover;
+      background-position: center;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+
+    .slide-cover-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide-cover-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--text-white);
+    }
+
+    .slide-cover-subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    /* Slide Header */
+    .slide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-card);
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+      height: 45px;
+      flex-shrink: 0;
+    }
+
+    .slide-title-area {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .slide-tag {
+      font-size: 9px;
+      font-weight: 700;
+      background: rgba(56, 173, 164, 0.15);
+      color: var(--primary-gold);
+      border: 1px solid var(--primary-gold);
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .slide-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--text-white);
+    }
+
+    .slide-pma-badge {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 9px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--primary-gold);
+      font-weight: 700;
+    }
+
+    /* Slide Body & Footer */
+    .slide-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    .slide-footer {
+      border-top: 1px solid var(--border-card);
+      padding-top: 15px;
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      height: 30px;
+      flex-shrink: 0;
+    }
+
+    .slide-footer span strong {
+      color: var(--primary-gold);
+    }
+
+    /* ── SPLIT GRID (FOR SLIDE USE) ── */
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+      height: 100%;
+    }
+
+    /* ── HIGH-SEASON STATS & METRICS CARDS ── */
+    .metrics-summary-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .metric-card-visual {
+      background: var(--bg-card);
+      border-radius: 12px;
+      border: 1px solid var(--border-card);
+      padding: 24px 16px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .metric-card-visual:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: var(--primary-gold);
+    }
+
+    .metric-visual-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--primary-gold);
+      margin-bottom: 5px;
+    }
+
+    .metric-visual-lbl {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-white);
+    }
+
+    .metric-visual-foot {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* ── TABLES ── */
+    .table-container {
+      background: var(--bg-card);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-card);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .report-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      text-align: left;
+    }
+
+    .report-table th {
+      background: var(--bg-black);
+      color: var(--primary-gold);
+      padding: 12px 18px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border-card);
+    }
+
+    .report-table td {
+      padding: 10px 18px;
+      border-bottom: 1px solid var(--border-card);
+      color: var(--text-white);
+    }
+
+    .report-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .report-table tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 0;
+      }
+      body {
+        background-color: var(--bg-black) !important;
+        color: var(--text-white) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .pma-top-bar, .cavo-header {
+        display: none !important;
+      }
+      .slide {
+        width: 297mm !important;
+        height: 210mm !important;
+        max-width: 297mm !important;
+        max-height: 210mm !important;
+        margin: 0 !important;
+        padding: 20mm !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background-color: var(--bg-dark) !important;
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PMA CO-BRANDING HEADER BANNER -->
+  <div class="pma-top-bar">
+    <div class="pma-partner-brand">
+      <span class="pma-logo-text">PMA PARTNER</span>
+    </div>
+    <div>OTOMATİK PERFORMANS BİLGİLENDİRME RAPORU</div>
+  </div>
+
+  <!-- HOTEL HEADER -->
+  <div class="cavo-header">
+    <span style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--text-white);">Belconti Resort</span>
+    <button class="cavo-book-btn">AYLIK PERFORMANS RAPORU</button>
+  </div>
+
+  <div class="deck-container">
+    
+            <div class="slide slide-cover" id="slide-1">
+              <div class="slide-cover-body">
+                <div style="font-size:12px; font-weight:700; color:var(--primary-gold); letter-spacing:2.5px; text-transform:uppercase; margin-bottom:20px;">PPG NEWS &bull; PERFORMANCE BRIEFING</div>
+                <h1 class="slide-cover-title" style="font-size:52px; font-family:'Playfair Display', serif;">PPG-01 Aylık Rapor Şablonu - 02.07.2026</h1>
+                <div class="slide-cover-subtitle" style="font-size:16px;">Belconti Resort &bull; 2026-05-31 — 2026-06-29</div>
+                <div style="font-size:13px; color:var(--text-muted); margin-top:15px; font-weight:500;">PPG-01 Series Performance Report</div>
+              </div>
+              <div style="font-size:10px; color:var(--text-muted); letter-spacing:1px; text-transform:uppercase;">PPG Hospitality Technology &bull; Automated Briefing System</div>
+            </div>
+        
+
+                <div class="slide" id="slide-2">
+                  <div class="slide-header">
+                    <div class="slide-title-area">
+                      <span class="slide-tag">REVENUE</span>
+                      <h2 class="slide-heading">Rezervasyon ve Gelir Analizi</h2>
+                    </div>
+                    <div class="slide-pma-badge">PPG-01 SERIES</div>
+                  </div>
+                  <div class="slide-body">
+                    <div class="split-grid">
+                      <div class="metrics-summary-cards" style="grid-template-columns: 1fr; gap: 15px;">
+                        <div class="metric-card-visual" style="padding: 16px;">
+                          <div class="metric-visual-val">2.797</div>
+                          <div class="metric-visual-lbl">Toplam Rezervasyon</div>
+                        </div>
+                        <div class="metric-card-visual" style="padding: 16px;">
+                          <div class="metric-visual-val">2.358</div>
+                          <div class="metric-visual-lbl" style="color:var(--primary-gold);">Aktif Rezervasyon</div>
+                        </div>
+                        <div class="metric-card-visual" style="padding: 16px; border-color: rgba(239, 68, 68, 0.2)">
+                          <div class="metric-visual-val" style="color:#ef4444;">439</div>
+                          <div class="metric-visual-lbl" style="color:#ef4444;">İptal Rezervasyon</div>
+                        </div>
+                      </div>
+                      
+                      <div style="background:var(--bg-card); border:1px solid var(--border-card); border-radius:12px; padding:30px; display:flex; flex-direction:column; justify-content:center; height:100%;">
+                        <div style="font-size:12px; color:var(--text-muted); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:6px;">Toplam Rezervasyon Cirosu</div>
+                        <div style="font-size:44px; font-weight:800; color:var(--primary-gold); font-family:'Playfair Display', serif; line-height:1.1; margin-bottom:20px;">
+                          €2.691.107
+                        </div>
+                        
+                        <div style="font-size:13px; color:var(--text-white); opacity:0.9; line-height:1.6;">
+                          <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--primary-gold); margin-right:6px;"></span>
+                          <strong>Canlı PMS Verisi (Kesin Kaynak):</strong> Ciro tutarı doğrudan veritabanı denetimi ile doğrulanmıştır.
+                          <br>Önbellek (Cache) değeri: €4.272.645 (Sapma: 37.0%)
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slide-footer">
+                    <span>PPG MASTER SYSTEM REPORT &bull; <strong>Belconti Resort</strong></span>
+                    <span>SLIDE 2</span>
+                  </div>
+                </div>
+            
+
+                <div class="slide" id="slide-3">
+                  <div class="slide-header">
+                    <div class="slide-title-area">
+                      <span class="slide-tag">OCCUPANCY</span>
+                      <h2 class="slide-heading">Doluluk ve ADR Detayları</h2>
+                    </div>
+                    <div class="slide-pma-badge">PPG-01 SERIES</div>
+                  </div>
+                  <div class="slide-body">
+                    <div class="table-container" style="max-height:340px; overflow-y:auto;">
+                      <table class="report-table">
+                        <thead>
+                          <tr>
+                            <th>Tarih</th>
+                            <th style="text-align:right;">Toplam Oda</th>
+                            <th style="text-align:right;">Dolu Oda</th>
+                            <th style="text-align:right;">Doluluk Oranı</th>
+                            <th style="text-align:right;">ADR</th>
+                            <th style="text-align:right;">RevPAR</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">31 May 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">402</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%67.4497</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">1 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">369</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%61.9128</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">2 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">368</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%61.745</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">3 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">361</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%60.5705</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">4 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">358</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%60.0671</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">5 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">350</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%58.7248</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">6 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">311</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%52.1812</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">7 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">268</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%44.9664</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">8 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">261</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%43.7919</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">9 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">269</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%45.1342</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">10 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">259</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%43.4564</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">11 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">295</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%49.4966</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">12 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">320</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%53.6913</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">13 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">327</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%54.8658</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">14 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">355</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%59.5638</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">15 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">352</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%59.0604</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">16 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">376</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%63.0872</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">17 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">434</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%72.8188</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">18 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">470</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%78.8591</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">19 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">499</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%83.7248</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">20 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">525</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%88.0872</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">21 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">540</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%90.604</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">22 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">587</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%98.4899</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">23 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">581</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%97.4832</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">24 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">585</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%98.1544</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">25 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">567</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%95.1342</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">26 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">533</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%89.4295</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">27 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">605</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%101.5101</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">28 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">582</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%97.651</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid rgba(255, 255, 255, 0.1);">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">29 Haz 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">564</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%94.6309</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">—</td>
+                </tr>
+            
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="slide-footer">
+                    <span>PPG MASTER SYSTEM REPORT &bull; <strong>Belconti Resort</strong></span>
+                    <span>SLIDE 3</span>
+                  </div>
+                </div>
+            
+
+    <div class="slide" id="sec-pickup">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">PICK-UP</span><h2 class="slide-heading">Son 7 Gün Pick-Up</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/tr/admin/sales-monitor?currency=EUR" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ Görüntüle</a><div class="slide-pma-badge">PPG NEWS</div></div></div>
+      <div class="slide-body">
+        <p style="font-size:11px;color:var(--text-muted);margin-bottom:14px;font-style:italic;">Segment kırılımı — B2B, B2C, D2C, MICE (tutarlar € / varsayılan EUR).</p>
+        <div class="table-container">
+          <table class="report-table"><thead><tr><th>Segment</th><th style="text-align:right;">Adet</th><th style="text-align:right;">Ciro (€)</th></tr></thead><tbody><tr><td>B2B</td><td style="text-align:right;">959</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€1.760.399</td></tr><tr><td>B2C</td><td style="text-align:right;">87</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€139.931</td></tr><tr><td>D2C</td><td style="text-align:right;">52</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€92.513</td></tr><tr><td>MICE</td><td style="text-align:right;">0</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€0</td></tr>
+            <tr><td style="font-weight:700;">Toplam</td><td style="text-align:right;font-weight:700;">1.098</td><td style="text-align:right;font-weight:800;color:var(--primary-gold);">€1.992.843</td></tr></tbody></table>
+        </div>
+      </div>
+      <div class="slide-footer"><span>PPG MASTER SİSTEM RAPORU &bull; <strong>Belconti Resort</strong></span><span>GERÇEK PMS VERİSİ</span></div>
+    </div>
+    <div class="slide" id="sec-forecast">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">FORECAST</span><h2 class="slide-heading">FORECAST — Cari Ay + 1 Ay (V.s. −1 Yıl)</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/tr/admin/demand-forecast?currency=EUR" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ Görüntüle</a><div class="slide-pma-badge">PPG NEWS</div></div></div>
+      <div class="slide-body">
+        <p style="font-size:11px;color:var(--text-muted);margin-bottom:14px;font-style:italic;">OTB (varış bazlı) ciro, geçen yılın aynı dönemiyle karşılaştırma — yüzdesel oranlar (%Δ) vurgulanmıştır.</p>
+        <div class="table-container">
+          <table class="report-table"><thead><tr><th>Ay</th><th style="text-align:right;">Oda-gece</th><th style="text-align:right;">Ciro (OTB)</th><th style="text-align:right;">−1 Yıl</th><th style="text-align:right;">%Δ</th></tr></thead><tbody>
+            <tr><td style="font-weight:700;">2026-06</td><td style="text-align:right;">1.693</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€2.638.810</td><td style="text-align:right;color:var(--text-muted);">€3.470.655</td><td style="text-align:right;font-weight:800;font-size:18px;color:#ef4444;">▼ -24%</td></tr>
+            <tr><td style="font-weight:700;">2026-07</td><td style="text-align:right;">2.351</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€4.630.033</td><td style="text-align:right;color:var(--text-muted);">€4.287.031</td><td style="text-align:right;font-weight:800;font-size:18px;color:#0E7C86;">▲ +8%</td></tr>
+          </tbody></table>
+        </div>
+        <div style="margin-top:18px;">
+          <div style="font-size:11px;color:var(--text-muted);margin-bottom:10px;font-style:italic;">Talep Tahmini — önümüzdeki 60 gün (web /admin/demand-forecast paneliyle aynı hesaplama): doluluk projeksiyonu, geçen yıl pace ve uçuş baskısı.</div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:center;background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:20px;">
+            <div><div style="font-size:24px;font-weight:800;color:var(--primary-gold);">%99</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:.5px;margin-top:2px;">Ort. Tahmini Doluluk</div></div>
+            <div><div style="font-size:24px;font-weight:800;color:var(--text-white);">%100</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:.5px;margin-top:2px;">Pik Doluluk</div><div style="font-size:10px;color:var(--text-muted);margin-top:2px;">06.07</div></div>
+            <div><div style="font-size:24px;font-weight:800;color:var(--text-white);">%95</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:.5px;margin-top:2px;">Pace (Geçen Yıl)</div><div style="font-size:10px;color:var(--text-muted);margin-top:2px;">100 = başabaş</div></div>
+            <div><div style="font-size:24px;font-weight:800;color:var(--text-white);">Yoğun (6.37x)</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:.5px;margin-top:2px;">Uçuş Sinyali</div></div>
+          </div>
+          <div style="font-size:12.5px;color:var(--text-white);margin-top:12px;line-height:1.5;">Önümüzdeki dönem ortalama tahmini doluluk %99 (otelin gerçek pickup eğrisiyle). Rezervasyon pace'i geçen yıla göre %5 geride. Uçuş kapasitesi sinyali: güçlü (baseline'a göre %537).</div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>PPG MASTER SİSTEM RAPORU &bull; <strong>Belconti Resort</strong></span><span>GERÇEK PMS VERİSİ</span></div>
+    </div>
+    <div class="slide" id="sec-roomstatus">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">ODA DURUMU</span><h2 class="slide-heading">OOO – HU – COMP – SOLD</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/tr/admin?currency=EUR" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ Görüntüle</a><div class="slide-pma-badge">PPG NEWS</div></div></div>
+      <div class="slide-body">
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:center;background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:24px;">
+          <div><div style="font-size:26px;font-weight:800;color:var(--text-white);">—</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:1px;">OOO</div></div>
+          <div><div style="font-size:26px;font-weight:800;color:var(--text-white);">—</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:1px;">HU</div></div>
+          <div><div style="font-size:26px;font-weight:800;color:var(--text-white);">0</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:1px;">COMP</div></div>
+          <div><div style="font-size:26px;font-weight:800;color:var(--primary-gold);">451</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:1px;">SOLD</div></div>
+        </div>
+        <div style="font-size:10px;color:var(--text-muted);margin-top:10px;">OOO/HU bu PMS için mevcut değil (housekeeping verisi yok).</div>
+      </div>
+      <div class="slide-footer"><span>PPG MASTER SİSTEM RAPORU &bull; <strong>Belconti Resort</strong></span><span>GERÇEK PMS VERİSİ</span></div>
+    </div>
+    <div class="slide" id="sec-d2c">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">D2C</span><h2 class="slide-heading">D2C (Call Center + Münferit + Web)</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/tr/admin/sales-monitor?currency=EUR" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ Görüntüle</a><div class="slide-pma-badge">PPG NEWS</div></div></div>
+      <div class="slide-body">
+        <p style="font-size:11px;color:var(--text-muted);margin-bottom:14px;font-style:italic;">Son 7 Gün Pickup — € tutar + işlem/rezervasyon sayısı.</p>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:22px;">
+          <div style="text-align:center;"><div style="font-size:24px;font-weight:800;color:var(--text-white);">43</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Call Center</div><div style="font-size:13px;font-weight:700;color:var(--primary-gold);margin-top:4px;">€84.729</div></div>
+          <div style="text-align:center;"><div style="font-size:24px;font-weight:800;color:var(--text-white);">9</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Münferit</div><div style="font-size:13px;font-weight:700;color:var(--primary-gold);margin-top:4px;">€7.784</div></div>
+          <div style="text-align:center;"><div style="font-size:24px;font-weight:800;color:var(--text-white);">0</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Web</div><div style="font-size:13px;font-weight:700;color:var(--primary-gold);margin-top:4px;">€0</div></div>
+        </div>
+        <div style="margin-top:12px;text-align:right;font-size:13px;color:var(--text-muted);">Toplam: <strong style="color:var(--text-white);">52</strong> · <strong style="color:var(--primary-gold);">€92.513</strong></div>
+      </div>
+      <div class="slide-footer"><span>PPG MASTER SİSTEM RAPORU &bull; <strong>Belconti Resort</strong></span><span>GERÇEK PMS VERİSİ</span></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="border-top:1px solid var(--border-card); padding:30px 60px; text-align:center; color:var(--text-muted); font-size:11px; font-weight:500; background:var(--bg-dark);">
+    PPG Performance — Otomatik Rapor &bull; Raporlama Zamanı: 02.07.2026 14:13:02<br>
+    <strong style="color:var(--text-white); font-weight:700;">PPG Hospitality Technology &copy; 2026</strong>
+  </div>
+
+</body>
+</html>

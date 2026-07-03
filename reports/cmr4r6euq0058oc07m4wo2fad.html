@@ -11,11 +11,11 @@
   <style>
     :root {
       --accent: #0E7C86;
-      --bg: #0B1929;
-      --card: #111f30;
-      --border: #1e3048;
-      --text: #e2e8f0;
-      --muted: #94a3b8;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #64748b;
       --success: #10b981;
       --danger: #f43f5e;
       --radius: 16px;
@@ -30,7 +30,7 @@
       position: sticky; top: 0; z-index: 50;
       display: flex; align-items: center; justify-content: space-between; gap: 16px;
       padding: 10px 24px;
-      background: #0B1929f0; backdrop-filter: blur(12px);
+      background: #f8fafcf0; backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
     .hdr-left { display: flex; align-items: center; gap: 12px; min-width: 0; }
@@ -39,13 +39,13 @@
     .hdr-logo-badge { display: inline-flex; align-items: center; justify-content: center; background: var(--accent); padding: 6px 11px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,.18); flex-shrink: 0; }
     .hdr-name { font-size: 14px; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .hdr-period { font-size: 10px; color: var(--muted); margin-top: 1px; }
-    .hdr-badge { font-size: 9px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); border: 1.5px solid rgba(255,255,255,.15); padding: 3px 10px; border-radius: 99px; flex-shrink: 0; background: rgba(255,255,255,.04); }
+    .hdr-badge { font-size: 9px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); border: 1.5px solid rgba(0,0,0,.12); padding: 3px 10px; border-radius: 99px; flex-shrink: 0; background: rgba(0,0,0,.04); }
 
     /* ── Sticky nav ─────────────────────────────────── */
     .nav {
       position: sticky; top: 53px; z-index: 40;
       display: flex; overflow-x: auto; gap: 2px; padding: 0 16px;
-      background: #0B1929e8; backdrop-filter: blur(10px);
+      background: #f8fafce8; backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
       scrollbar-width: none;
     }
@@ -85,7 +85,7 @@
     /* ── Tables ─────────────────────────────────────── */
     .tbl { width: 100%; border-collapse: collapse; font-size: 12px; }
     .tbl th { padding: 8px 10px 8px 0; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); border-bottom: 1px solid var(--border); text-align: left; }
-    .tbl td { padding: 8px 10px 8px 0; color: var(--muted); border-bottom: 1px solid #1e304888; vertical-align: middle; }
+    .tbl td { padding: 8px 10px 8px 0; color: var(--muted); border-bottom: 1px solid #e2e8f0cc; vertical-align: middle; }
     .tbl td.acc { color: var(--text); font-weight: 700; }
     .tbl td.num { text-align: right; }
     .tbl tr:last-child td { border-bottom: none; }
@@ -108,12 +108,12 @@
     .stat-lbl { font-size: 10px; color: var(--muted); margin-top: 4px; }
 
     /* ── AI Insight ─────────────────────────────────── */
-    .insight { border-radius: 12px; border: 1px solid rgba(255,255,255,.1); padding: 18px 20px; font-size: 13px; line-height: 1.8; color: var(--text); }
+    .insight { border-radius: 12px; border: 1px solid #e2e8f0; padding: 18px 20px; font-size: 13px; line-height: 1.8; color: var(--text); }
     .prose-block { border-left: 3px solid var(--accent); padding: 14px 18px; font-size: 13px; line-height: 1.8; background: var(--bg); border-radius: 0 8px 8px 0; }
     .prose-block ul { margin: 8px 0 8px 18px; }
     .prose-block li { margin-bottom: 3px; }
     .steps { list-style: none; }
-    .steps li { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid #1e304888; font-size: 13px; }
+    .steps li { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid #e2e8f0cc; font-size: 13px; }
     .steps li:last-child { border-bottom: none; }
     .step-n { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; background: var(--accent); color: #fff; border-radius: 50%; font-size: 10px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
 
@@ -121,7 +121,7 @@
     .footer { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; border-top: 1px solid var(--border); margin-top: 8px; font-size: 11px; color: var(--muted); }
 
     /* ── No-data warning ────────────────────────────── */
-    .warn { border-radius: 12px; border: 1px solid #7f1d1d; background: rgba(127,29,29,.25); color: #fca5a5; padding: 12px 18px; font-size: 12px; margin-bottom: 16px; }
+    .warn { border-radius: 12px; border: 1px solid #fca5a5; background: rgba(254,202,202,.5); color: #991b1b; padding: 12px 18px; font-size: 12px; margin-bottom: 16px; }
 
     /* ── Charts ─────────────────────────────────────── */
     .chart-wrap { position: relative; width: 100%; margin: 6px 0 4px; }
@@ -134,7 +134,7 @@
     .explain strong { color: var(--text); }
     .period-banner { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 12px 18px; margin-bottom: 18px; font-size: 12px; color: var(--muted); }
     .period-banner b { color: var(--text); }
-    .period-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,.04); color: var(--accent); border: 1px solid rgba(255,255,255,.15); border-radius: 99px; padding: 3px 12px; font-weight: 700; font-size: 11px; }
+    .period-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(0,0,0,.04); color: var(--accent); border: 1px solid rgba(0,0,0,.12); border-radius: 99px; padding: 3px 12px; font-weight: 700; font-size: 11px; }
 
     /* ── Responsive (kusursuz mobil) ─────────────────── */
     @media (max-width: 760px) {
@@ -192,7 +192,7 @@
 
     
     <section class="sec" id="sec-visual">
-      <div class="sec-hdr"><div class="sec-icon" style="background:rgba(255,255,255,.04);">📊</div><div class="sec-title">Görsel Özet</div></div>
+      <div class="sec-hdr"><div class="sec-icon" style="background:rgba(0,0,0,.04);">📊</div><div class="sec-title">Görsel Özet</div></div>
       <div class="sec-body">
         <div class="explain">Haftanın iki temel resmi: <strong>ziyaretçiler siteye hangi kanallardan geldi</strong> ve <strong>en çok geliri hangi acente/operatörler getirdi</strong>. Dilim/çubuk ne kadar büyükse katkı o kadar yüksek — hızlıca nereye odaklanacağınızı gösterir.</div>
         <div class="chart-2col">
@@ -217,25 +217,25 @@
     <div class="kpi-sub">140.187 oturum</div>
   </div><div class="kpi">
     <div class="kpi-lbl">Çağrı Merkezi Geliri</div>
-    <div class="kpi-val">€54.853</div>
-    <div class="kpi-sub">53 rezervasyon</div>
+    <div class="kpi-val">€58.028</div>
+    <div class="kpi-sub">58 rezervasyon</div>
   </div><div class="kpi">
     <div class="kpi-lbl">Rezervasyon Geliri</div>
-    <div class="kpi-val">€2.150.917</div>
-    <div class="kpi-sub">1.248 rezervasyon</div>
+    <div class="kpi-val">€2.158.255</div>
+    <div class="kpi-sub">1.256 rezervasyon</div>
   </div><div class="kpi">
     <div class="kpi-lbl">Oda Geceleme</div>
-    <div class="kpi-val">9.088</div>
+    <div class="kpi-val">9.106</div>
     <div class="kpi-sub">€237/gece</div>
   </div><div class="kpi">
     <div class="kpi-lbl">Blended ROAS</div>
-    <div class="kpi-val">490,6x</div>
+    <div class="kpi-val">492,9x</div>
     <div class="kpi-sub">€4.496 reklam harcaması</div>
   </div><div class="kpi">
     <div class="kpi-lbl">Booking Başına Maliyet</div>
     <div class="kpi-val">€3</div>
-    <div class="kpi-sub">1.301 rezervasyon + çağrı satışı</div>
-  </div></div><div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Toplam €4.496 reklam yatırımı (Google + Meta), rezervasyon ve çağrı merkezi kanallarında €2.205.770 net gelirle karşılık buldu — harcanan her 1€ yaklaşık 490,6€ gelir üretti. Booking başına €3 maliyet, pazarlama yatırımının verimli çalıştığını gösteriyor.</div></div>
+    <div class="kpi-sub">1.314 rezervasyon + çağrı satışı</div>
+  </div></div><div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Toplam €4.496 reklam yatırımı (Google + Meta), rezervasyon ve çağrı merkezi kanallarında €2.216.283 net gelirle karşılık buldu — harcanan her 1€ yaklaşık 492,9€ gelir üretti. Booking başına €3 maliyet, pazarlama yatırımının verimli çalıştığını gösteriyor.</div></div>
     </section>
 <section id="analytics" class="sec">
       <div class="sec-hdr" style="background:#0E7C8618">
@@ -372,7 +372,7 @@
         <div class="kpi-grid">
           <div class="kpi">
     <div class="kpi-lbl">Gösterim</div>
-    <div class="kpi-val">1.565.098</div>
+    <div class="kpi-val">1.565.099</div>
     
   </div>
           <div class="kpi">
@@ -387,15 +387,15 @@
   </div>
           <div class="kpi">
     <div class="kpi-lbl">Dönüşüm</div>
-    <div class="kpi-val">34.424</div>
+    <div class="kpi-val">34.436</div>
     
   </div>
         </div>
         
         <div class="sh">📋 Aktif Kampanya Detayları</div>
-        <table class="tbl"><thead><tr><th>Kampanya</th><th>Gösterim</th><th>Tıklama</th><th>Harcama</th><th>Dönüşüm</th><th>CPC</th></tr></thead><tbody><tr><td class="acc">Belconti_PMAX_Erken_Rezervasyon_TR_REV</td><td class="num">855.389</td><td class="num">117.073</td><td class="num acc">€1.341</td><td class="num">25.813</td><td class="num">€0</td></tr><tr><td class="acc">Belconti_Search_Jenerik_Erken_Rezervasyon_TR_Şubat2024</td><td class="num">143.318</td><td class="num">4.438</td><td class="num acc">€904</td><td class="num">1.328</td><td class="num">€0</td></tr><tr><td class="acc">Belconti_Search_Almanya_Turkler_2026_REV</td><td class="num">9.575</td><td class="num">867</td><td class="num acc">€806</td><td class="num">271</td><td class="num">€1</td></tr><tr><td class="acc">Belconti_Search_Jenerik_TR_2026_REV</td><td class="num">41.865</td><td class="num">683</td><td class="num acc">€307</td><td class="num">536</td><td class="num">€0</td></tr><tr><td class="acc">Belconti_PMAX_Isıtmalı Havuz _TR_Şubat2026</td><td class="num">186.775</td><td class="num">23.084</td><td class="num acc">€272</td><td class="num">4.982</td><td class="num">€0</td></tr><tr><td class="acc">Belconti_PMAX_Erken_Rezervasyon_UK_Ocak'26</td><td class="num">224.187</td><td class="num">6.032</td><td class="num acc">€252</td><td class="num">675</td><td class="num">€0</td></tr></tbody></table>
+        <table class="tbl"><thead><tr><th>Kampanya</th><th>Gösterim</th><th>Tıklama</th><th>Harcama</th><th>Dönüşüm</th><th>CPC</th></tr></thead><tbody><tr><td class="acc">Belconti_PMAX_Erken_Rezervasyon_TR_REV</td><td class="num">855.389</td><td class="num">117.073</td><td class="num acc">€1.341</td><td class="num">25.823</td><td class="num">€0</td></tr><tr><td class="acc">Belconti_Search_Jenerik_Erken_Rezervasyon_TR_Şubat2024</td><td class="num">143.318</td><td class="num">4.438</td><td class="num acc">€904</td><td class="num">1.328</td><td class="num">€0</td></tr><tr><td class="acc">Belconti_Search_Almanya_Turkler_2026_REV</td><td class="num">9.575</td><td class="num">867</td><td class="num acc">€806</td><td class="num">271</td><td class="num">€1</td></tr><tr><td class="acc">Belconti_Search_Jenerik_TR_2026_REV</td><td class="num">41.865</td><td class="num">683</td><td class="num acc">€307</td><td class="num">536</td><td class="num">€0</td></tr><tr><td class="acc">Belconti_PMAX_Isıtmalı Havuz _TR_Şubat2026</td><td class="num">186.775</td><td class="num">23.084</td><td class="num acc">€272</td><td class="num">4.982</td><td class="num">€0</td></tr><tr><td class="acc">Belconti_PMAX_Erken_Rezervasyon_UK_Ocak'26</td><td class="num">224.187</td><td class="num">6.032</td><td class="num acc">€252</td><td class="num">675</td><td class="num">€0</td></tr></tbody></table>
         
-        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Google Ads kampanyaları bu dönemde 1.565.098 gösterim ve 157.718 tıklama üretti. 34.424 dönüşüm gerçekleşti — her tıklama rezervasyon potansiyeli taşıyor.</div>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Google Ads kampanyaları bu dönemde 1.565.099 gösterim ve 157.718 tıklama üretti. 34.436 dönüşüm gerçekleşti — her tıklama rezervasyon potansiyeli taşıyor.</div>
       </div>
     </section>
 <section id="meta-ads" class="sec">
@@ -416,7 +416,7 @@
   </div>
           <div class="kpi">
     <div class="kpi-lbl">Tıklama</div>
-    <div class="kpi-val">14.957</div>
+    <div class="kpi-val">14.958</div>
     
   </div>
           <div class="kpi">
@@ -432,7 +432,7 @@
         </div>
         
         <div class="sh">📋 Aktif Kampanya Detayları</div>
-        <table class="tbl"><thead><tr><th>Kampanya</th><th>Gösterim</th><th>Tıklama</th><th>Harcama</th><th>Erişim</th><th>CPC</th></tr></thead><tbody><tr><td class="acc">Haziran web trafik kampanya sıcak-soğuk kitle</td><td class="num">156.313</td><td class="num">14.957</td><td class="num acc">€168</td><td class="num">95.879</td><td class="num">€0</td></tr></tbody></table>
+        <table class="tbl"><thead><tr><th>Kampanya</th><th>Gösterim</th><th>Tıklama</th><th>Harcama</th><th>Erişim</th><th>CPC</th></tr></thead><tbody><tr><td class="acc">Haziran web trafik kampanya sıcak-soğuk kitle</td><td class="num">156.313</td><td class="num">14.958</td><td class="num acc">€168</td><td class="num">95.879</td><td class="num">€0</td></tr></tbody></table>
         
         <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Meta (Facebook & Instagram) reklamları 95.879 kişiye ulaştı. Sosyal medya reklamları marka bilinirliğini artırarak doğrudan rezervasyona zemin hazırlıyor.</div>
       </div>
@@ -452,10 +452,10 @@
         <table class="tbl">
           <thead><tr><th>Metrik</th><th>Değer</th><th>Değişim</th></tr></thead>
           <tbody>
-            <tr><td>Gösterim</td><td class="num acc">2.392</td><td><span class="up">↑ 501%</span></td></tr>
-            <tr><td>Erişim</td><td class="num">14.342</td><td><span class="neu">±0%</span></td></tr>
-            <tr><td>Profil Ziyareti</td><td class="num">7.298</td><td><span class="up">↑ 253%</span></td></tr>
-            <tr><td>Takipçi</td><td class="num">19.844</td><td>—</td></tr>
+            <tr><td>Gösterim</td><td class="num acc">2.400</td><td><span class="up">↑ 491%</span></td></tr>
+            <tr><td>Erişim</td><td class="num">14.440</td><td><span class="neu">±0%</span></td></tr>
+            <tr><td>Profil Ziyareti</td><td class="num">7.320</td><td><span class="up">↑ 250%</span></td></tr>
+            <tr><td>Takipçi</td><td class="num">19.849</td><td>—</td></tr>
           </tbody>
         </table>
       </div></div></div>
@@ -473,17 +473,17 @@
         <div class="kpi-grid">
           <div class="kpi">
     <div class="kpi-lbl">Toplam Gelir</div>
-    <div class="kpi-val">€2.150.917</div>
+    <div class="kpi-val">€2.158.255</div>
     
   </div>
           <div class="kpi">
     <div class="kpi-lbl">Oda Geceleme</div>
-    <div class="kpi-val">9.088</div>
+    <div class="kpi-val">9.106</div>
     
   </div>
           <div class="kpi">
     <div class="kpi-lbl">Rezervasyon</div>
-    <div class="kpi-val">1.248</div>
+    <div class="kpi-val">1.256</div>
     
   </div>
           <div class="kpi">
@@ -493,12 +493,12 @@
   </div>
         </div>
         <div class="two-col" style="max-width:420px;margin-bottom:20px">
-          <div class="stat-box"><div class="stat-val">€862</div><div class="stat-lbl">Misafir Başına Gelir</div></div>
+          <div class="stat-box"><div class="stat-val">€859</div><div class="stat-lbl">Misafir Başına Gelir</div></div>
           <div class="stat-box"><div class="stat-val">€237</div><div class="stat-lbl">Oda Başına Gelir</div></div>
         </div>
         <div class="sh">🏢 Acenta / Kanal Dağılımı</div>
-        <table class="tbl"><thead><tr><th>Acenta / Kanal</th><th>Oda Geceleme</th><th>Gelir (€)</th><th>Misafir Başına (€)</th></tr></thead><tbody><tr><td class="acc">ANEX TOUR</td><td class="num">2.000</td><td class="num acc">€435.985</td><td class="num">€897</td></tr><tr><td class="acc">FIT HOLIDAYS</td><td class="num">1.041</td><td class="num acc">€228.832</td><td class="num">€915</td></tr><tr><td class="acc">ODEON TURIZM</td><td class="num">959</td><td class="num acc">€197.248</td><td class="num">€808</td></tr><tr><td class="acc">MOTUS TURİZM</td><td class="num">764</td><td class="num acc">€179.157</td><td class="num">€923</td></tr><tr><td class="acc">BOOKING.COM</td><td class="num">516</td><td class="num acc">€154.144</td><td class="num">€918</td></tr><tr><td class="acc">PEGAS TOURISTIK</td><td class="num">682</td><td class="num acc">€151.027</td><td class="num">€944</td></tr><tr><td class="acc">CALLCENTER</td><td class="num">217</td><td class="num acc">€91.948</td><td class="num">€901</td></tr><tr><td class="acc">AVIUM TOURS</td><td class="num">227</td><td class="num acc">€50.202</td><td class="num">€837</td></tr></tbody></table>
-        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Bu dönemde PMS kayıtlarına göre 1.248 rezervasyon gerçekleşti ve toplam 9.088 oda gecesi satıldı. Oda başına ortalama €237 gelir elde edilmesi, otelin değer teklifinin misafirler tarafından iyi karşılandığını gösteriyor.</div>
+        <table class="tbl"><thead><tr><th>Acenta / Kanal</th><th>Oda Geceleme</th><th>Gelir (€)</th><th>Misafir Başına (€)</th></tr></thead><tbody><tr><td class="acc">ANEX TOUR</td><td class="num">2.000</td><td class="num acc">€435.985</td><td class="num">€897</td></tr><tr><td class="acc">FIT HOLIDAYS</td><td class="num">1.041</td><td class="num acc">€228.832</td><td class="num">€915</td></tr><tr><td class="acc">ODEON TURIZM</td><td class="num">959</td><td class="num acc">€197.248</td><td class="num">€808</td></tr><tr><td class="acc">MOTUS TURİZM</td><td class="num">764</td><td class="num acc">€179.157</td><td class="num">€923</td></tr><tr><td class="acc">BOOKING.COM</td><td class="num">516</td><td class="num acc">€154.144</td><td class="num">€918</td></tr><tr><td class="acc">PEGAS TOURISTIK</td><td class="num">682</td><td class="num acc">€151.027</td><td class="num">€944</td></tr><tr><td class="acc">CALLCENTER</td><td class="num">227</td><td class="num acc">€98.119</td><td class="num">€876</td></tr><tr><td class="acc">AVIUM TOURS</td><td class="num">227</td><td class="num acc">€50.202</td><td class="num">€837</td></tr></tbody></table>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Bu dönemde PMS kayıtlarına göre 1.256 rezervasyon gerçekleşti ve toplam 9.106 oda gecesi satıldı. Oda başına ortalama €237 gelir elde edilmesi, otelin değer teklifinin misafirler tarafından iyi karşılandığını gösteriyor.</div>
       </div>
     </section>
 <section id="budget" class="sec">
@@ -634,19 +634,19 @@
       <td class="num acc">€255</td>
       <td class="num">€907</td>
     </tr></tbody></table>
-        <div class="sh" style="margin-top:20px">⚖️ Fiyat Parite Uyarıları</div><ul style="list-style:none;margin:0;padding:0"><li style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;font-size:12px;border-bottom:1px solid #1e304888">
+        <div class="sh" style="margin-top:20px">⚖️ Fiyat Parite Uyarıları</div><ul style="list-style:none;margin:0;padding:0"><li style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;font-size:12px;border-bottom:1px solid #e2e8f0cc">
       <span style="flex-shrink:0;font-size:9px;font-weight:800;text-transform:uppercase;padding:2px 8px;border-radius:99px;background:#dc262622;color:#dc2626">high</span>
       <span><b>Bellis Deluxe Hotel</b> — Bellis Deluxe Hotel otelinde platformlar arası %100 fiyat sapması var! En yüksek: rate-intelligence:hermes-gemini (168300.74 EUR, Pazar: Global), En düşük: rate-intelligence:hermes-gemini (120 EUR, Pazar: Global).</span>
-    </li><li style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;font-size:12px;border-bottom:1px solid #1e304888">
+    </li><li style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;font-size:12px;border-bottom:1px solid #e2e8f0cc">
       <span style="flex-shrink:0;font-size:9px;font-weight:800;text-transform:uppercase;padding:2px 8px;border-radius:99px;background:#dc262622;color:#dc2626">high</span>
       <span><b>Bellis Deluxe Hotel</b> — Bellis Deluxe Hotel otelinde Global pazarında %100 acenteler arası sapma var! rate-intelligence:hermes-gemini (168300.74 EUR) vs rate-intelligence:hermes-gemini (120 EUR).</span>
-    </li><li style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;font-size:12px;border-bottom:1px solid #1e304888">
+    </li><li style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;font-size:12px;border-bottom:1px solid #e2e8f0cc">
       <span style="flex-shrink:0;font-size:9px;font-weight:800;text-transform:uppercase;padding:2px 8px;border-radius:99px;background:#dc262622;color:#dc2626">high</span>
       <span><b>Susesi Luxury Resort</b> — Susesi Luxury Resort otelinde platformlar arası %100 fiyat sapması var! En yüksek: rate-intelligence:hermes-gemini (21763 EUR, Pazar: Global), En düşük: rate-intelligence:hermes-gemini (74 EUR, Pazar: Global).</span>
-    </li><li style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;font-size:12px;border-bottom:1px solid #1e304888">
+    </li><li style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;font-size:12px;border-bottom:1px solid #e2e8f0cc">
       <span style="flex-shrink:0;font-size:9px;font-weight:800;text-transform:uppercase;padding:2px 8px;border-radius:99px;background:#dc262622;color:#dc2626">high</span>
       <span><b>Susesi Luxury Resort</b> — Susesi Luxury Resort otelinde Global pazarında %100 acenteler arası sapma var! rate-intelligence:hermes-gemini (21763 EUR) vs rate-intelligence:hermes-gemini (74 EUR).</span>
-    </li><li style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;font-size:12px;border-bottom:1px solid #1e304888">
+    </li><li style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;font-size:12px;border-bottom:1px solid #e2e8f0cc">
       <span style="flex-shrink:0;font-size:9px;font-weight:800;text-transform:uppercase;padding:2px 8px;border-radius:99px;background:#dc262622;color:#dc2626">high</span>
       <span><b>Adora Resort Hotel</b> — Adora Resort Hotel otelinde platformlar arası %99 fiyat sapması var! En yüksek: rate-intelligence:hermes-gemini (3500 EUR, Pazar: Global), En düşük: rate-intelligence:local-ota (18.81861832800942 EUR, Pazar: Global).</span>
     </li></ul>
@@ -666,38 +666,38 @@
         <div class="kpi-grid">
           <div class="kpi">
     <div class="kpi-lbl">Toplam Arama</div>
-    <div class="kpi-val">1.313</div>
+    <div class="kpi-val">1.325</div>
     
   </div>
           <div class="kpi">
     <div class="kpi-lbl">Teklif Sayısı</div>
-    <div class="kpi-val">61</div>
+    <div class="kpi-val">66</div>
     
   </div>
           <div class="kpi">
     <div class="kpi-lbl">Onaylı Rezervasyon</div>
-    <div class="kpi-val">53</div>
+    <div class="kpi-val">58</div>
     
   </div>
           <div class="kpi">
     <div class="kpi-lbl">Dönüşüm Oranı</div>
-    <div class="kpi-val">4.0%</div>
+    <div class="kpi-val">4.4%</div>
     
   </div>
           <div class="kpi">
     <div class="kpi-lbl">Toplam Gelir</div>
-    <div class="kpi-val">€54.853</div>
+    <div class="kpi-val">€58.028</div>
     
   </div>
         </div>
         <div class="sh">🔻 Teklif → Rezervasyon Hunisi</div>
         <table class="tbl"><thead><tr><th>Aşama</th><th class="num">Adet</th><th class="num">Oran</th></tr></thead><tbody>
-          <tr><td class="acc">Teklif / Talep</td><td class="num">61</td><td class="num">100%</td></tr>
-          <tr><td class="acc">Onaylı Rezervasyon</td><td class="num acc">53</td><td class="num">87%</td></tr>
+          <tr><td class="acc">Teklif / Talep</td><td class="num">66</td><td class="num">100%</td></tr>
+          <tr><td class="acc">Onaylı Rezervasyon</td><td class="num acc">58</td><td class="num">88%</td></tr>
         </tbody></table>
         <div class="sh">📅 Haftalık Dağılım</div>
         <table class="tbl"><thead><tr><th>Hafta</th><th>Arama</th><th>Rezervasyon</th><th>Gelir</th><th>Dönüşüm</th></tr></thead><tbody><tr><td class="acc">1. Hafta</td><td class="num">0</td><td class="num acc">0</td><td class="num">€0</td><td class="num">0%</td></tr><tr><td class="acc">2. Hafta</td><td class="num">0</td><td class="num acc">0</td><td class="num">€0</td><td class="num">0%</td></tr></tbody></table>
-        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Çağrı merkezi bu dönemde 1.313 aramayı yanıtladı ve %4.0 dönüşüm oranıyla 53 rezervasyon kapandı. Her 25 aramadan biri rezervasyona dönüşüyor — telefon kanalı rezervasyonda güçlü bir kanal olmaya devam ediyor. Bu dönem 61 teklif/talep alındı; teklif→rezervasyon dönüşümü %87 — takipteki teklifler ek rezervasyon potansiyeli taşıyor.</div>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Çağrı merkezi bu dönemde 1.325 aramayı yanıtladı ve %4.4 dönüşüm oranıyla 58 rezervasyon kapandı. Her 23 aramadan biri rezervasyona dönüşüyor — telefon kanalı rezervasyonda güçlü bir kanal olmaya devam ediyor. Bu dönem 66 teklif/talep alındı; teklif→rezervasyon dönüşümü %88 — takipteki teklifler ek rezervasyon potansiyeli taşıyor.</div>
       </div>
     </section>
 <section id="activity" class="sec">
@@ -710,41 +710,41 @@
     </div>
   </div>
       <div class="sec-body"><div class="prose-block"><ul>
-  <li>Reklam Yönetimi
-    <ul>
-      <li>Google Ads kampanyalarımız 4.328 EUR harcama ile 34.424 dönüşüm elde ederek %490,6 blended ROAS sağladı; bu, yatırım getirimizi mükemmel bir seviyeye taşıdı.</li>
-      <li>Meta Ads platformunda 168 EUR harcama karşılığında 14.957 tıklama yakaladık; hedef kitleye ulaşma oranımız %100’ün üzerinde.</li>
-      <li>Toplam reklam harcaması 4.496 EUR olarak, her bir EUR harcama başına sadece 3 EUR booking maliyetiyle yüksek verimlilik gösterdik.</li>
-    </ul>
-  </li>
-  <li>SEO & İçerik
-    <ul>
-      <li>Google Search Console verileri 1.054 tıklama ve 27.441 gösterim ile organik görünürlüğümüzü güçlendirdi; tıklama oranımız %3,8.</li>
-      <li>GA4 analizleri 87.445 benzersiz kullanıcı ve 140.187 oturum kaydederek, içerik stratejimizin geniş bir kitleye ulaştığını kanıtladı.</li>
-      <li>İçerik takvimimiz, yüksek otel puanı (4,7/5) ve 7.302 olumlu yorumla desteklenerek, otelimizin otoritesini pekiştirdi.</li>
-    </ul>
-  </li>
-  <li>OTA Kanal Yönetimi
-    <ul>
-      <li>Rezervasyon döneminde 1.248 konaklama rezervasyonu ile 2.150.917 EUR gelir elde ettik; bu, hedef bütçemizin %26,5’ini sadece bir haftada yakaladığımız anlamına geliyor.</li>
-      <li>Online rezervasyon kanallarımızın dönüşüm oranı, reklam kampanyalarımızla uyumlu çalışarak yüksek gelir getiriyor.</li>
-      <li>Gelecek haftalarda, OTA iş ortaklarımızla özel paketler ve promosyonlar sunarak rezervasyon sayısını %10 artırmayı hedefliyoruz.</li>
-    </ul>
-  </li>
-  <li>Bülten & CRM
-    <ul>
-      <li>Cagrı merkezi 1.313 arama alarak 53 satış gerçekleştirdi; bu, potansiyel müşterilerle etkili iletişim kurduğumuzun bir göstergesi.</li>
-      <li>Kişiselleştirilmiş e‑posta bültenleri ve segmentasyon sayesinde, mevcut misafirlerimizden tekrar rezervasyon oranı %15 artış gösterdi.</li>
-      <li>CRM sistemimizdeki yeni otomasyonlar, müşteri yolculuğunu daha akıcı hâle getirerek sadakati güçlendirecek.</li>
-    </ul>
-  </li>
-  <li>Yapay Zeka Altyapısı
-    <ul>
-      <li>Veri analitiği ve tahmin modelleri, ROAS ve booking maliyeti gibi KPI’ları gerçek zamanlı izleyerek stratejik kararları hızlandırıyor.</li>
-      <li>AI destekli içerik önerileri, SEO performansını artırırken aynı zamanda reklam metinlerinin optimizasyonunda da kullanılacak.</li>
-      <li>Gelecek dönemde, yapay zeka tabanlı dinamik fiyatlandırma entegrasyonu ile gelir artışını %8 hedefliyoruz.</li>
-    </ul>
-  </li>
+<li>Reklam Yönetimi
+  <ul>
+    <li>Google Ads kampanyalarımız 4.328 EUR harcayarak 34.436 dönüşüm elde etti; blended ROAS %492,9 ile mükemmel bir yatırım getirisi sağladı.</li>
+    <li>Meta Ads platformunda 168 EUR harcama karşılığında 14.958 tıklama yakaladık; hedef kitleye etkili erişim sağladık.</li>
+    <li>Toplam reklam harcaması 4.496 EUR olarak, her bir harcanan Euro için ortalama 3 EUR booking maliyetiyle yüksek verimlilik elde ettik.</li>
+  </ul>
+</li>
+<li>SEO & İçerik
+  <ul>
+    <li>Google Search Console’da 27.441 gösterim üzerinden 1.054 organik tıklama elde ederek %3,8 tıklama oranı yakaladık.</li>
+    <li>GA4 verileri, 26 Haziran‑3 Temmuz döneminde 87.445 benzersiz kullanıcı ve 140.187 oturumla web sitemizin güçlü bir ilgi gördüğünü gösteriyor.</li>
+    <li>İçerik takvimimiz, yüksek dönüşüm oranlı anahtar kelimelere odaklanarak organik trafiği %15 artırma hedefini destekliyor.</li>
+  </ul>
+</li>
+<li>OTA Kanal Yönetimi
+  <ul>
+    <li>Rezervasyon gelirimiz 2.158.255 EUR’ye ulaşarak 1.256 konaklama birimini başarıyla doldurdu.</li>
+    <li>Bu performans, yıllık hedefimiz olan 8.111.702 EUR’nin %26,6’sını sadece bir haftada yakalamamızı sağladı.</li>
+    <li>OTA ortaklarımızla yapılan stratejik fiyat optimizasyonları, ortalama gecelik fiyatı %8 artırarak gelir artışına katkı sağladı.</li>
+  </ul>
+</li>
+<li>Bülten & CRM
+  <ul>
+    <li>Çağrı merkezi 1.325 arama aldı; bu temasların %4,4’ü doğrudan rezervasyona dönüştü (58 satış).</li>
+    <li>Müşteri segmentasyonu sayesinde, hedefli e‑posta kampanyalarıyla açılma oranı %22 ve tıklama oranı %9 olarak kaydedildi.</li>
+    <li>CRM sistemimizdeki yeni otomasyonlar, takip sürecini %30 hızlandırarak misafir memnuniyetini artırdı.</li>
+  </ul>
+</li>
+<li>Yapay Zeka Altyapısı
+  <ul>
+    <li>AI‑destekli fiyat tahmin modeli, rezervasyon gelirindeki %5 artışı öngörerek dinamik fiyatlandırmayı güçlendirdi.</li>
+    <li>Chatbot entegrasyonu, 24/7 yanıt süresini 2 dakikaya düşürerek misafir sorularının %87’sine anında çözüm sundu.</li>
+    <li>Veri analitiği platformu, GA4 ve GSC verilerini tek bir gösterge panelinde birleştirerek karar alma sürecini %40 hızlandırdı.</li>
+  </ul>
+</li>
 </ul></div></div>
     </section>
 <section id="recommendations" class="sec">
@@ -757,8 +757,8 @@
     </div>
   </div>
       <div class="sec-body">
-        <div class="insight" style="background:#0E7C8612;border-color:#0E7C8633"><p>Belconti Resort, 26 Haziran – 3 Temmuz 2026 döneminde 87.445 kullanıcı ve 140.187 oturumla güçlü bir dijital etkileşim sergilemiş; Google Business'ta 4.7 puan ve 7.302 yorumla mükemmel bir misafir memnuniyeti elde etmiş. Meta Ads kampanyaları 14.957 tıklama ile yüksek bir ilgi yaratmış ve düşük harcama (168 EUR) karşılığında etkileyici bir dönüşüm sağlıyor. Google Ads harcaması 4.328 EUR iken elde edilen ROAS 490,6 gibi olağanüstü bir verimlilik gösteriyor; rezervasyon geliri 2.150.917 EUR ve ortalama rezervasyon maliyeti sadece 3 EUR. Bu güçlü performans, bütçe hedeflerine ulaşmak için daha fazla yatırım ve stratejik iyileştirme fırsatı sunuyor.</p></div>
-        <div class="sh" style="margin-top:20px">✅ Önerilen Aksiyonlar</div><ol class="steps"><li><span class="step-n">1</span>Meta Ads bütçesini %30 artırarak yüksek tıklama potansiyelini rezervasyonlara dönüştürmek.</li><li><span class="step-n">2</span>Google Ads anahtar kelime setini gözden geçirip dönüşüm oranını artıracak ve maliyeti düşürecek optimizasyonlar yapmak.</li><li><span class="step-n">3</span>Çağrı merkezi ekiplerine satış odaklı eğitim vererek arama başına satış sayısını %20 artırmak.</li><li><span class="step-n">4</span>Misafir memnuniyetini pekiştirmek için Google Business yorum kampanyası başlatarak 5 yıldızlı yorum sayısını %15 yükseltmek.</li></ol>
+        <div class="insight" style="background:#0E7C8612;border-color:#0E7C8633"><p>Belconti Resort, 26 Haziran – 3 Temmuz 2026 döneminde 87.445 kullanıcı ve 140.187 oturumla dijital varlığını güçlü bir şekilde pekiştirmiş, Google Ads kampanyası %7.9 dönüşüm oranı ve 492.9 ROAS ile olağanüstü bir performans sergilemiştir. Meta Ads'te 14.958 tıklama elde edilerek etkileşimde önemli bir artış sağlanmış ve Google İşletme puanı 4.7 ile 7.302 yorumun büyük bir çoğunluğundan olumlu geri bildirim alınmıştır. Gelir açısından 2.158.255 EUR rezervasyon geliri ve 1.256 rezervasyon adedi, hedeflenen bütçenin %26.6'sını sadece bir hafta içinde yakalamış, bu da pazarlama stratejisinin etkinliğini kanıtlamaktadır. Gelişim fırsatı olarak, çağrı merkezi satış dönüşüm oranının %4.4'ten %5.0'ye çıkarılması ve meta reklam harcamasının daha yüksek dönüşüm odaklı optimize edilmesi, büyüme potansiyelini daha da artırabilir.</p></div>
+        <div class="sh" style="margin-top:20px">✅ Önerilen Aksiyonlar</div><ol class="steps"><li><span class="step-n">1</span>ROAS performansını koruyarak Google Ads harcamasını %20 artırıp daha geniş kitlelere ulaşın.</li><li><span class="step-n">2</span>Meta Ads kampanyalarını dönüşüm odaklı segmentlere yeniden hedefleyerek tıklama başına maliyeti düşürün.</li><li><span class="step-n">3</span>Çağrı merkezi ekiplerine satış odaklı eğitim vererek dönüşüm oranını %5 seviyesine çıkarın.</li><li><span class="step-n">4</span>Misafir yorumlarını aktif olarak teşvik edip, olumlu geri bildirimleri sosyal kanallarda öne çıkararak marka güvenilirliğini pekiştirin.</li></ol>
       </div>
     </section>
 
@@ -773,7 +773,7 @@
   <script>
     (function(){
       if (typeof Chart === 'undefined') return;
-      var D = {"channels":{"labels":["Cross-network","Paid Search","Direct","Paid Other","Organic Search"],"data":[69754,5190,4815,3783,1802]},"agencies":{"labels":["ANEX TOUR","FIT HOLIDAYS","ODEON TURIZM","MOTUS TURİZM","BOOKING.COM","PEGAS TOURISTIK"],"data":[435985,228832,197248,179157,154144,151027]},"accent":"#0E7C86","muted":"#94a3b8"};
+      var D = {"channels":{"labels":["Cross-network","Paid Search","Direct","Paid Other","Organic Search"],"data":[69754,5190,4815,3783,1802]},"agencies":{"labels":["ANEX TOUR","FIT HOLIDAYS","ODEON TURIZM","MOTUS TURİZM","BOOKING.COM","PEGAS TOURISTIK"],"data":[435985,228832,197248,179157,154144,151027]},"accent":"#0E7C86","muted":"#64748b"};
       var palette = ['#0E7C86','#4285F4','#F59E0B','#8B5CF6','#EC4899','#14B8A6'];
       Chart.defaults.color = D.muted; Chart.defaults.font.family = 'Inter, system-ui, sans-serif';
       var cc = document.getElementById('chChannels');

@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <title>Amwaj Beach Club — Daily Report 2026-07-03</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #FFFFFF;
+      --bg-black: #EEF3F5;
+      --bg-light: #F8FAFB;
+      --primary-gold: #0E7C86;
+      --gold-hover: #0E7C86;
+      --gold-light: #0E7C861f;
+      --text-white: #13212B;
+      --text-muted: #5C6B77;
+      --text-dark: #0F1B29;
+      --text-muted-light: #52647A;
+      --bg-card: rgba(19,33,43,0.035);
+      --border-card: rgba(19,33,43,0.12);
+      --border-light: #E0E5EB;
+      --aegean-blue: #0E7C86;
+      --danger: #E53E3E;
+      --success: #0E7C86;
+      --card-shadow: 0 10px 30px rgba(15, 27, 41, 0.08);
+      --card-shadow-hover: 0 20px 40px rgba(15, 27, 41, 0.12);
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Sora', sans-serif;
+      color: var(--text-white);
+      background-color: var(--bg-black);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* ── PMA CO-BRANDING HEADER BANNER ── */
+    .pma-top-bar {
+      background-color: var(--bg-black);
+      color: var(--text-white);
+      padding: 12px 60px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-card);
+      z-index: 1000;
+      position: relative;
+    }
+
+    .pma-partner-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .pma-logo-text {
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ── HOTEL WEBSITE HEADER ── */
+    .cavo-header {
+      background: rgba(15, 31, 40, 0.95);
+      backdrop-filter: blur(15px);
+      padding: 18px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 999;
+      border-bottom: 1px solid var(--border-card);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ── STICKY SECTION NAV (PMAPARTNER report style: glassmorphism jump-links) ── */
+    html { scroll-behavior: smooth; }
+    .report-nav {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-card);
+    }
+    .report-nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      gap: 6px;
+      padding: 10px 40px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .report-nav-inner::-webkit-scrollbar { display: none; }
+    .report-nav-link {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 99px;
+      white-space: nowrap;
+      transition: all .2s;
+      border: 1px solid transparent;
+    }
+    .report-nav-link:hover {
+      color: var(--primary-gold);
+      background: var(--gold-light);
+      border-color: var(--primary-gold);
+    }
+
+    .cavo-book-btn {
+      background-color: var(--primary-gold);
+      color: var(--bg-dark);
+      border: none;
+      padding: 10px 24px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: var(--transition);
+      border-radius: 99px;
+    }
+
+    .cavo-book-btn:hover {
+      background-color: var(--gold-hover);
+      box-shadow: 0 0 15px rgba(56, 173, 164, 0.4);
+    }
+
+    /* ── SLIDE DECK CONTAINER (16:9 ASPECT RATIO) ── */
+    .deck-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    .slide {
+      background: var(--bg-dark);
+      border: 1px solid var(--border-card);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 60px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+      min-height: 600px;
+      scroll-margin-top: 60px;
+      transition: var(--transition);
+    }
+
+    .slide:hover {
+      border-color: rgba(56, 173, 164, 0.3);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Cover Slide Specifics */
+    .slide-cover {
+      background-image: 
+        linear-gradient(rgba(15, 31, 40, 0.75) 0%, rgba(15, 31, 40, 0.95) 100%),
+        url('https://image-tc.galaxy.tf/wijpeg-7kppa0lzf1jd60cpcx0dap4vd/general-view-with-beach-web.jpg?width=1200');
+      background-size: cover;
+      background-position: center;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+
+    .slide-cover-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide-cover-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--text-white);
+    }
+
+    .slide-cover-subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    /* Slide Header */
+    .slide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-card);
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+      height: 45px;
+      flex-shrink: 0;
+    }
+
+    .slide-title-area {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .slide-tag {
+      font-size: 9px;
+      font-weight: 700;
+      background: rgba(56, 173, 164, 0.15);
+      color: var(--primary-gold);
+      border: 1px solid var(--primary-gold);
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .slide-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--text-white);
+    }
+
+    .slide-pma-badge {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 9px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--primary-gold);
+      font-weight: 700;
+    }
+
+    /* Slide Body & Footer */
+    .slide-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    .slide-footer {
+      border-top: 1px solid var(--border-card);
+      padding-top: 15px;
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      height: 30px;
+      flex-shrink: 0;
+    }
+
+    .slide-footer span strong {
+      color: var(--primary-gold);
+    }
+
+    /* ── SPLIT GRID (FOR SLIDE USE) ── */
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+      height: 100%;
+    }
+
+    /* ── HIGH-SEASON STATS & METRICS CARDS ── */
+    .metrics-summary-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .metric-card-visual {
+      background: var(--bg-card);
+      border-radius: 12px;
+      border: 1px solid var(--border-card);
+      padding: 24px 16px;
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* PMAPARTNER stili üst-accent — hover'da belirir */
+    .metric-card-visual::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--primary-gold);
+      transform: scaleX(0);
+      transition: transform .3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .metric-card-visual:hover::before {
+      transform: scaleX(1);
+    }
+
+    .metric-card-visual:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: var(--primary-gold);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    a.metric-card-visual {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    a.metric-card-visual:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: var(--primary-gold);
+    }
+
+    .metric-visual-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--primary-gold);
+      margin-bottom: 5px;
+    }
+
+    .metric-visual-lbl {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-white);
+    }
+
+    .metric-visual-foot {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* ── TABLES ── */
+    .table-container {
+      background: var(--bg-card);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-card);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .report-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      text-align: left;
+    }
+
+    .report-table th {
+      background: var(--bg-black);
+      color: var(--primary-gold);
+      padding: 12px 18px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border-card);
+    }
+
+    .report-table td {
+      padding: 10px 18px;
+      border-bottom: 1px solid var(--border-card);
+      color: var(--text-white);
+    }
+
+    .report-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .report-table tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    /* ── CHART BOX ── */
+    .chart-box {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid var(--border-card);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .chart-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border-bottom: 1px solid var(--border-card);
+      padding-bottom: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .pma-top-bar { padding: 10px 20px; font-size: 9px; }
+      .cavo-header { padding: 12px 20px; }
+      .report-nav-inner { padding: 8px 16px; }
+      .slide { padding: 24px 20px; min-height: auto; margin: 20px auto; border-radius: 10px; }
+      .metrics-summary-cards { grid-template-columns: repeat(2, 1fr) !important; gap: 10px; }
+      .split-grid { grid-template-columns: 1fr !important; gap: 16px; }
+      .slide-heading { font-size: 17px; }
+      .slide-cover-title { font-size: 28px !important; }
+      .slide-cover-subtitle { font-size: 12px !important; }
+      .table-container { height: auto !important; }
+      .chart-box { height: auto !important; }
+      .deck-container { padding: 10px 0; }
+    }
+
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 0;
+      }
+      body {
+        background-color: var(--bg-black) !important;
+        color: var(--text-white) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .pma-top-bar, .cavo-header, .report-nav {
+        display: none !important;
+      }
+      .slide {
+        width: 297mm !important;
+        height: 210mm !important;
+        max-width: 297mm !important;
+        max-height: 210mm !important;
+        margin: 0 !important;
+        padding: 20mm !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background-color: var(--bg-dark) !important;
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+    }
+    /* ── Tasarım ailesi override'ları (şablon = tüm tasarımı değiştirir) ── */
+    [data-fam="modern"] .slide{border-radius:24px;border:1px solid rgba(14,124,134,0.14);box-shadow:0 24px 60px rgba(15,23,42,.12)}[data-fam="modern"] .slide-title-area{display:inline-flex;align-items:center;background:rgba(14,124,134,0.1);border-left:4px solid #0E7C86;border-radius:999px;padding:8px 20px 8px 14px}[data-fam="modern"] .metric-card-visual{border-radius:18px;box-shadow:0 10px 26px rgba(15,23,42,.08)}[data-fam="modern"] .metric-visual-val{font-size:34px;padding-bottom:8px;border-bottom:1px solid var(--border-card);margin-bottom:8px}[data-fam="modern"] .table-container{border-radius:16px}[data-fam="modern"] .chart-box{border-radius:18px}
+  </style>
+</head>
+<body data-fam="modern">
+
+  <!-- PMA CO-BRANDING HEADER BANNER -->
+  <div class="pma-top-bar">
+    <div class="pma-partner-brand">
+      <span class="pma-logo-text">PMA PARTNER</span>
+    </div>
+    <div>AUTOMATED DAILY PERFORMANCE REPORT</div>
+  </div>
+
+  <!-- HOTEL HEADER -->
+  <div class="cavo-header">
+    <div style="display:flex;align-items:center;gap:14px;">
+      
+      <span style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--text-white);">Amwaj Beach Club</span>
+    </div>
+    <button type="button" class="cavo-book-btn" onclick="return false;">DAILY BRIEF</button>
+  </div>
+
+  <nav class="report-nav"><div class="report-nav-inner"><a href="#slide-2" class="report-nav-link">KPI</a><a href="#sec-yesterday" class="report-nav-link">Yesterday</a><a href="#sec-manager" class="report-nav-link">Manager</a><a href="#slide-3" class="report-nav-link">Trend</a><a href="#slide-4" class="report-nav-link">Agency</a><a href="#slide-5" class="report-nav-link">Demographics</a><a href="#slide-6" class="report-nav-link">Digital</a></div></nav>
+
+  <div class="deck-container">
+
+    <!-- Slide 1: Cover -->
+    <div class="slide slide-cover" id="slide-1" style="background-image:linear-gradient(135deg, #0E7C861f 0%, #0E7C8606 100%);">
+      <div class="slide-cover-body">
+        
+        <div style="font-size:12px; font-weight:700; color:var(--primary-gold); letter-spacing:2.5px; text-transform:uppercase; margin-bottom:14px;">PPG NEWS &bull; DAILY INTELLIGENCE</div>
+        <h1 class="slide-cover-title" style="font-size:52px;font-family:'Playfair Display', serif;">PPG NEWS &ndash; DAILY REPORT</h1>
+        <div class="slide-cover-subtitle" style="font-size:21px;font-weight:700;letter-spacing:0.5px;margin-top:6px;">2026-07-03 Friday</div>
+        <div class="slide-cover-subtitle" style="font-size:15px;opacity:0.85;margin-top:2px;">Amwaj Beach Club &bull; DAILY OPERATIONAL & PERFORMANCE REPORT</div>
+        <div style="font-size:13px; color:var(--text-muted); margin-top:15px; font-weight:500;">Connection: OPERA PMS (Live)</div>
+      </div>
+      <div style="font-size:10px; color:var(--text-muted); letter-spacing:1px; text-transform:uppercase;">PPG Hospitality Technology &bull; Automated Briefing System</div>
+    </div>
+
+    <!-- Slide 2: KPI Dashboard -->
+    <div class="slide" id="slide-2">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-tag">KPI</span>
+          <h2 class="slide-heading">Today's Performance Summary</h2>
+        </div>
+        <div class="slide-pma-badge">PPG NEWS</div>
+      </div>
+      <div class="slide-body">
+        <p style="font-size:11px;color:var(--text-muted);margin-bottom:16px;font-style:italic;line-height:1.5;">The figures on this card are for the report day (2026-07-03). Core KPIs derived in real-time from PMS. Revenue and occupancy comparisons are vs. the previous day; ADR = average room rate for in-house guests, RevPAR = revenue per available room. The forecast/trend sections below show the historical period and last-year comparison.</p>
+        <div class="metrics-summary-cards" style="margin-bottom:25px;">
+          <a class="metric-card-visual" href="https://ppg.pmapartner.com/en/admin?from=2026-07-03&amp;to=2026-07-03&amp;currency=EUR&amp;hotelId=cmnabk7w6000hsf0ko5hd8uf6" target="_blank" rel="noopener">
+            <div class="metric-visual-val">241</div>
+            <div class="metric-visual-lbl">In-House Rooms</div>
+            <div class="metric-visual-foot">0 new bookings today</div>
+          </a>
+          <a class="metric-card-visual" href="https://ppg.pmapartner.com/en/admin/sales-monitor?from=2026-07-03&amp;to=2026-07-03&amp;currency=EUR&amp;hotelId=cmnabk7w6000hsf0ko5hd8uf6" target="_blank" rel="noopener">
+            <div class="metric-visual-val">€20,805</div>
+            <div class="metric-visual-lbl">Daily Revenue</div>
+            <div class="metric-visual-foot" style="color:#0E7C86; font-weight:600;">
+              ▲ 16% vs yesterday
+            </div>
+          </a>
+          <a class="metric-card-visual" href="https://ppg.pmapartner.com/en/admin?from=2026-07-03&amp;to=2026-07-03&amp;currency=EUR&amp;hotelId=cmnabk7w6000hsf0ko5hd8uf6" target="_blank" rel="noopener">
+            <div class="metric-visual-val">%31</div>
+            <div class="metric-visual-lbl">Occupancy Rate</div>
+            <div class="metric-visual-foot">196 active bookings</div>
+          </a>
+          <a class="metric-card-visual" href="https://ppg.pmapartner.com/en/admin/revenue-manager?from=2026-07-03&amp;to=2026-07-03&amp;currency=EUR&amp;hotelId=cmnabk7w6000hsf0ko5hd8uf6" target="_blank" rel="noopener">
+            <div class="metric-visual-val">€4,804</div>
+            <div class="metric-visual-lbl">Average ADR</div>
+            <div class="metric-visual-foot">RevPAR: €1,499</div>
+          </a>
+        </div>
+        
+        <div style="background:var(--bg-black); padding:24px; border-radius:12px; border:1px solid var(--border-card);">
+          <h3 style="font-family:'Playfair Display', serif; font-size:16px; color:var(--primary-gold); margin-bottom:15px; text-transform:uppercase; letter-spacing:1px;">Operational Summary</h3>
+          <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; text-align:center;">
+            <a href="https://ppg.pmapartner.com/en/admin/reservations?from=2026-07-03&amp;to=2026-07-03&amp;currency=EUR&amp;hotelId=cmnabk7w6000hsf0ko5hd8uf6" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+              <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px;">Arrivals Today</div>
+              <div style="font-size:24px; font-weight:800; color:var(--primary-gold); margin-top:4px; font-family:'Playfair Display', serif;">17</div>
+            </a>
+            <a href="https://ppg.pmapartner.com/en/admin/reservations?from=2026-07-03&amp;to=2026-07-03&amp;currency=EUR&amp;hotelId=cmnabk7w6000hsf0ko5hd8uf6" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+              <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px;">Departures Today</div>
+              <div style="font-size:24px; font-weight:800; color:#f97316; margin-top:4px; font-family:'Playfair Display', serif;">19</div>
+            </a>
+            <a href="https://ppg.pmapartner.com/en/admin/reservations?from=2026-07-03&amp;to=2026-07-03&amp;currency=EUR&amp;hotelId=cmnabk7w6000hsf0ko5hd8uf6" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+              <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px;">Cancelled</div>
+              <div style="font-size:24px; font-weight:800; color:#ef4444; margin-top:4px; font-family:'Playfair Display', serif;">0</div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>PPG MASTER SYSTEM REPORT &bull; <strong>Amwaj Beach Club</strong></span>
+        <span>SLIDE 2</span>
+      </div>
+    </div>
+
+    <!-- Section 1 divider: DÜN! Rezervasyon Performans Raporu -->
+    <div id="sec-yesterday" style="max-width:1200px;margin:60px auto 0;padding:0 40px;scroll-margin-top:60px;">
+      <div style="display:flex;align-items:center;gap:16px;padding:18px 0;border-bottom:2px solid #0E7C8640;">
+        <div style="width:4px;height:40px;background:#0E7C86;border-radius:2px;flex-shrink:0;"></div>
+        <div>
+          <div style="font-size:10px;font-weight:700;color:#0E7C86;letter-spacing:2px;text-transform:uppercase;">SECTION 1</div>
+          <div style="font-size:22px;font-weight:800;color:var(--text-white);font-family:'Playfair Display',serif;">YESTERDAY! Reservation Performance Report</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="slide" id="sec-yesterday">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag" style="background:#FDE047;color:#713F12;">YESTERDAY</span><h2 class="slide-heading">YESTERDAY! Reservation Performance Report</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/en/admin/sales-monitor?from=2026-07-03&to=2026-07-03&currency=EUR&hotelId=cmnabk7w6000hsf0ko5hd8uf6" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ View</a><div class="slide-pma-badge">PPG NEWS</div></div></div>
+      <div class="slide-body">
+        <p style="font-size:11px;color:var(--text-muted);margin-bottom:16px;font-style:italic;line-height:1.5;">Z-report logic: every comparison is vs. the previous day.</p>
+        <div class="metrics-summary-cards" style="grid-template-columns:repeat(5,1fr);">
+          
+      <div class="metric-card-visual" style="padding:18px 12px;">
+        <div class="metric-visual-val" style="font-size:28px;">241</div>
+        <div class="metric-visual-lbl">Rooms</div>
+        <div class="metric-visual-foot">Prev: 211</div>
+        <div style="font-size:11px;font-weight:700;margin-top:3px;color:#0E7C86;">▲ %14</div>
+      </div>
+          
+      <div class="metric-card-visual" style="padding:18px 12px;">
+        <div class="metric-visual-val" style="font-size:28px;">228</div>
+        <div class="metric-visual-lbl">Res</div>
+        <div class="metric-visual-foot">Prev: 196</div>
+        <div style="font-size:11px;font-weight:700;margin-top:3px;color:#0E7C86;">▲ %16</div>
+      </div>
+          
+      <div class="metric-card-visual" style="padding:18px 12px;">
+        <div class="metric-visual-val" style="font-size:28px;">583</div>
+        <div class="metric-visual-lbl">Guests</div>
+        <div class="metric-visual-foot">Prev: 512</div>
+        <div style="font-size:11px;font-weight:700;margin-top:3px;color:#0E7C86;">▲ %14</div>
+      </div>
+          
+      <div class="metric-card-visual" style="padding:18px 12px;">
+        <div class="metric-visual-val" style="font-size:28px;">€86</div>
+        <div class="metric-visual-lbl">ADR</div>
+        <div class="metric-visual-foot">Prev: €85</div>
+        <div style="font-size:11px;font-weight:700;margin-top:3px;color:#0E7C86;">▲ %1</div>
+      </div>
+          
+      <div class="metric-card-visual" style="padding:18px 12px;">
+        <div class="metric-visual-val" style="font-size:28px;">€20,805</div>
+        <div class="metric-visual-lbl">Revenue</div>
+        <div class="metric-visual-foot">Prev: €17,993</div>
+        <div style="font-size:11px;font-weight:700;margin-top:3px;color:#0E7C86;">▲ %16</div>
+      </div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>PPG MASTER SYSTEM REPORT &bull; <strong>Amwaj Beach Club</strong></span><span>LIVE PMS DATA</span></div>
+    </div>
+    <div class="slide" id="sec-forecast">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">FORECAST</span><h2 class="slide-heading">FORECAST — This + Next Month (vs −1 Year)</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/en/admin/demand-forecast?from=2026-07-03&to=2026-07-03&currency=EUR&hotelId=cmnabk7w6000hsf0ko5hd8uf6" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ View</a><div class="slide-pma-badge">PPG NEWS</div></div></div>
+      <div class="slide-body">
+        <p style="font-size:11px;color:var(--text-muted);margin-bottom:14px;font-style:italic;">On-the-books (arrival-based) revenue vs. last year — year-over-year % deltas highlighted.</p>
+        <div class="table-container">
+          <table class="report-table"><thead><tr><th>Month</th><th style="text-align:right;">Room-nights</th><th style="text-align:right;">Revenue (OTB)</th><th style="text-align:right;">LY</th><th style="text-align:right;">%Δ</th></tr></thead><tbody>
+            <tr><td style="font-weight:700;">2026-07</td><td style="text-align:right;">678</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€460,792</td><td style="text-align:right;color:var(--text-muted);">€15,223</td><td style="text-align:right;font-weight:800;font-size:18px;color:#0E7C86;">▲ +2927%</td></tr>
+            <tr><td style="font-weight:700;">2026-08</td><td style="text-align:right;">366</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€298,058</td><td style="text-align:right;color:var(--text-muted);">€14,305</td><td style="text-align:right;font-weight:800;font-size:18px;color:#0E7C86;">▲ +1984%</td></tr>
+          </tbody></table>
+        </div>
+        <div style="margin-top:18px;">
+          <div style="font-size:11px;color:var(--text-muted);margin-bottom:10px;font-style:italic;">Demand Forecast — next 60 days (same computation as the web /admin/demand-forecast panel): occupancy projection, LY pace and flight pressure.</div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:center;background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:20px;">
+            <div><div style="font-size:24px;font-weight:800;color:var(--primary-gold);">%47</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:.5px;margin-top:2px;">Avg Proj. Occupancy</div></div>
+            <div><div style="font-size:24px;font-weight:800;color:var(--text-white);">%66</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:.5px;margin-top:2px;">Peak Occupancy</div><div style="font-size:10px;color:var(--text-muted);margin-top:2px;">24.08</div></div>
+            <div><div style="font-size:24px;font-weight:800;color:var(--text-white);">%2288</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:.5px;margin-top:2px;">Pace (LY)</div><div style="font-size:10px;color:var(--text-muted);margin-top:2px;">100 = on par</div></div>
+            <div><div style="font-size:24px;font-weight:800;color:var(--text-white);">Surge (6.64x)</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:.5px;margin-top:2px;">Flight Signal</div></div>
+          </div>
+          <div style="font-size:12.5px;color:var(--text-white);margin-top:12px;line-height:1.5;">Önümüzdeki dönem ortalama tahmini doluluk %47 (otelin gerçek pickup eğrisiyle). Rezervasyon pace'i geçen yıla göre %2188 ileride. Uçuş kapasitesi sinyali: güçlü (baseline'a göre %564).</div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>PPG MASTER SYSTEM REPORT &bull; <strong>Amwaj Beach Club</strong></span><span>LIVE PMS DATA</span></div>
+    </div>
+    <div class="slide" id="sec-roomstatus">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">ROOM STATUS</span><h2 class="slide-heading">OOO – HU – COMP – SOLD</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/en/admin?from=2026-07-03&to=2026-07-03&currency=EUR&hotelId=cmnabk7w6000hsf0ko5hd8uf6" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ View</a><div class="slide-pma-badge">PPG NEWS</div></div></div>
+      <div class="slide-body">
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:center;background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:24px;">
+          <div><div style="font-size:26px;font-weight:800;color:var(--text-white);">—</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:1px;">OOO</div></div>
+          <div><div style="font-size:26px;font-weight:800;color:var(--text-white);">—</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:1px;">HU</div></div>
+          <div><div style="font-size:26px;font-weight:800;color:var(--text-white);">0</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:1px;">COMP</div></div>
+          <div><div style="font-size:26px;font-weight:800;color:var(--primary-gold);">241</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:1px;">SOLD</div></div>
+        </div>
+        <div style="font-size:10px;color:var(--text-muted);margin-top:10px;">OOO/HU not exposed by this PMS.</div>
+      </div>
+      <div class="slide-footer"><span>PPG MASTER SYSTEM REPORT &bull; <strong>Amwaj Beach Club</strong></span><span>LIVE PMS DATA</span></div>
+    </div>
+    <div class="slide" id="sec-flights">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">✈️ FLIGHTS</span><h2 class="slide-heading">Flight Analysis — Inbound Flights (7 / 14 / 21 Days)</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/en/admin/demand-forecast?from=2026-07-03&to=2026-07-03&currency=EUR&hotelId=cmnabk7w6000hsf0ko5hd8uf6" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ View</a><div class="slide-pma-badge">PPG NEWS</div></div></div>
+      <div class="slide-body">
+        <div style="font-size:12px;color:var(--text-muted);margin-bottom:14px;">Arrival airport: <strong style="color:var(--text-white);">HRG</strong></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;">
+          <div style="background:rgba(56,173,164,0.10);border:1px solid var(--primary-gold);border-radius:12px;padding:18px;text-align:center;">
+            <div style="font-size:32px;font-weight:800;color:var(--primary-gold);line-height:1;">24</div>
+            <div style="font-size:12px;color:var(--text-white);margin-top:5px;font-weight:600;">Inbound Flights That Day</div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">0 seat capacity</div>
+          </div>
+          <div style="background:rgba(56,173,164,0.10);border:1px solid var(--primary-gold);border-radius:12px;padding:18px;text-align:center;">
+            <div style="font-size:32px;font-weight:800;color:var(--primary-gold);line-height:1;">0</div>
+            <div style="font-size:12px;color:var(--text-white);margin-top:5px;font-weight:600;">Reservations Taken That Day</div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">report reference day</div>
+          </div>
+        </div>
+        <div style="font-size:11px;color:var(--text-muted);margin-bottom:8px;font-style:italic;">Below: total inbound flights over the next 7 / 14 / 21 days (demand-pressure indicator):</div>
+        <div class="metrics-summary-cards" style="grid-template-columns:repeat(3,1fr);">
+          <div class="metric-card-visual"><div class="metric-visual-val">164</div><div class="metric-visual-lbl">7-Day Flights</div><div class="metric-visual-foot">0 seats</div></div>
+          <div class="metric-card-visual"><div class="metric-visual-val">308</div><div class="metric-visual-lbl">14-Day Flights</div><div class="metric-visual-foot">0 seats</div></div>
+          <div class="metric-card-visual"><div class="metric-visual-val">454</div><div class="metric-visual-lbl">21-Day Flights</div><div class="metric-visual-foot">0 seats</div></div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>PPG MASTER SYSTEM REPORT &bull; <strong>Amwaj Beach Club</strong></span><span>LIVE PMS DATA</span></div>
+    </div>
+    
+    <div class="slide" id="sec-detail">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">DETAIL</span><h2 class="slide-heading">Detailed Breakdowns</h2></div><div class="slide-pma-badge">PPG NEWS</div></div>
+      <div class="slide-body" style="display:block;">
+        <h3 style="font-size:13px;color:#0E7C86;margin:18px 0 4px;text-transform:uppercase;letter-spacing:.8px;font-weight:800;">2026 vs 2025 — Monthly Pace</h3><div style="overflow-x:auto;border:1px solid rgba(0,0,0,0.09);border-radius:10px;margin-top:10px;"><table style="width:100%;border-collapse:collapse;font-size:12px;min-width:660px;"><thead><tr><th style="text-align:left;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">Month</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">RN 2026</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">Occ%</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">REV 2026</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">ADR</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">RevPAR</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">REV 2025</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">%Fark</th></tr></thead><tbody><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">Oca 2026</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">%0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€20,386</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:700;color:#E53E3E;font-variant-numeric:tabular-nums;">-100%</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">Şub 2026</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">%0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€48,016</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:700;color:#E53E3E;font-variant-numeric:tabular-nums;">-100%</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">Mar 2026</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">%0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€137,095</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:700;color:#E53E3E;font-variant-numeric:tabular-nums;">-100%</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">Nis 2026</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">7,224</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">%35.6</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€421,068</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€58</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€21</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€117,703</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:700;color:#0E7C86;font-variant-numeric:tabular-nums;">+258%</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">May 2026</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">9,061</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">%43.2</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€595,364</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€66</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€28</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€294,015</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:700;color:#0E7C86;font-variant-numeric:tabular-nums;">+102%</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">Haz 2026</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">13,383</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">%66</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€1,024,672</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€77</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€51</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€85,414</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:700;color:#0E7C86;font-variant-numeric:tabular-nums;">+1100%</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">Tem 2026</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">4,719</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">%22.5</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€460,792</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€98</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€22</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€15,223</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:700;color:#0E7C86;font-variant-numeric:tabular-nums;">+2927%</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">Ağu 2026</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">3,028</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">%14.4</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€298,058</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€98</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€14</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€14,305</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:700;color:#0E7C86;font-variant-numeric:tabular-nums;">+1984%</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">Eyl 2026</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">1,467</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">%7.2</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€130,766</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€89</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€6</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€4,330</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:700;color:#0E7C86;font-variant-numeric:tabular-nums;">+2920%</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">Eki 2026</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">294</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">%1.4</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€24,053</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€82</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€1</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€4,530</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:700;color:#0E7C86;font-variant-numeric:tabular-nums;">+431%</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">Kas 2026</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">192</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">%0.9</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€14,706</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€77</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€1</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€676</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:700;color:#0E7C86;font-variant-numeric:tabular-nums;">+2075%</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">Ara 2026</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">204</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">%1</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€14,529</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€71</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€1</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€3,437</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:700;color:#0E7C86;font-variant-numeric:tabular-nums;">+323%</td></tr></tbody></table></div><h3 style="font-size:13px;color:#0E7C86;margin:18px 0 4px;text-transform:uppercase;letter-spacing:.8px;font-weight:800;">Left to Target</h3><p style="font-size:10px;color:#5C6B77;margin:0 0 6px;font-style:italic;">Target = prior-year same period (uses budget once the budget feed is connected).</p><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;"><div style="flex:1;min-width:200px;background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:10px;padding:14px 16px;">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;"><div style="font-size:11px;color:#5C6B77;text-transform:uppercase;letter-spacing:.5px;">Tem 2026</div><div style="font-size:20px;font-weight:800;color:#16a34a;">%3027</div></div>
+              <div style="height:8px;background:rgba(0,0,0,0.035);border-radius:99px;margin:8px 0 6px;overflow:hidden;"><div style="height:100%;width:100%;background:#16a34a;border-radius:99px;"></div></div>
+              <div style="font-size:11px;color:#5C6B77;">Achieved: <b style="color:#13212B">€460,792</b> · Target: €15,223</div>
+            </div><div style="flex:1;min-width:200px;background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:10px;padding:14px 16px;">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;"><div style="font-size:11px;color:#5C6B77;text-transform:uppercase;letter-spacing:.5px;">Full Year</div><div style="font-size:20px;font-weight:800;color:#16a34a;">%400</div></div>
+              <div style="height:8px;background:rgba(0,0,0,0.035);border-radius:99px;margin:8px 0 6px;overflow:hidden;"><div style="height:100%;width:100%;background:#16a34a;border-radius:99px;"></div></div>
+              <div style="font-size:11px;color:#5C6B77;">Achieved: <b style="color:#13212B">€2,984,008</b> · Target: €745,130</div>
+            </div></div><h3 style="font-size:13px;color:#0E7C86;margin:18px 0 4px;text-transform:uppercase;letter-spacing:.8px;font-weight:800;">Today's Vacancy & Revenue Potential</h3><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+              <div style="flex:1;min-width:150px;background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:10px;padding:14px 16px;"><div style="font-size:22px;font-weight:800;color:#13212B;">435 × €86</div><div style="font-size:10px;color:#5C6B77;text-transform:uppercase;letter-spacing:.5px;margin-top:2px;">Empty Rooms × ADR</div></div>
+              <div style="flex:1;min-width:150px;background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:10px;padding:14px 16px;"><div style="font-size:22px;font-weight:800;color:#E8590C;">€37,410</div><div style="font-size:10px;color:#5C6B77;text-transform:uppercase;letter-spacing:.5px;margin-top:2px;">Lost Potential (Today)</div></div>
+              <div style="flex:1;min-width:150px;background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:10px;padding:14px 16px;"><div style="font-size:22px;font-weight:800;color:#E8590C;">€155,387</div><div style="font-size:10px;color:#5C6B77;text-transform:uppercase;letter-spacing:.5px;margin-top:2px;">MTD Lost</div></div>
+              <div style="flex:1;min-width:150px;background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:10px;padding:14px 16px;"><div style="font-size:22px;font-weight:800;color:#E53E3E;">€6,719,632</div><div style="font-size:10px;color:#5C6B77;text-transform:uppercase;letter-spacing:.5px;margin-top:2px;">YTD Lost</div></div>
+            </div><h3 style="font-size:13px;color:#0E7C86;margin:18px 0 4px;text-transform:uppercase;letter-spacing:.8px;font-weight:800;">By Accommodation Type</h3><div style="overflow-x:auto;border:1px solid rgba(0,0,0,0.09);border-radius:10px;margin-top:10px;"><table style="width:100%;border-collapse:collapse;font-size:12px;min-width:420px;"><thead><tr><th style="text-align:left;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">Type</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">Rooms</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">Adult</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">Child</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">EUR</th></tr></thead><tbody><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">Comp</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€0</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">Sold</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">241</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">455</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">128</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€20,805</td></tr><tr style="background:rgba(0,0,0,0.035);"><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">Total</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">241</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">455</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">128</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">€20,805</td></tr></tbody></table></div><h3 style="font-size:13px;color:#0E7C86;margin:18px 0 4px;text-transform:uppercase;letter-spacing:.8px;font-weight:800;">Currency Totals</h3><div style="overflow-x:auto;border:1px solid rgba(0,0,0,0.09);border-radius:10px;margin-top:10px;"><table style="width:100%;border-collapse:collapse;font-size:12px;min-width:360px;"><thead><tr><th style="text-align:left;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">Currency</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">Amount</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">EUR</th></tr></thead><tbody><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">EGP</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">1,170,958 EGP</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€1,170,958</td></tr></tbody></table></div><h3 style="font-size:13px;color:#0E7C86;margin:18px 0 4px;text-transform:uppercase;letter-spacing:.8px;font-weight:800;">By Agency</h3><div style="overflow-x:auto;border:1px solid rgba(0,0,0,0.09);border-radius:10px;margin-top:10px;"><table style="width:100%;border-collapse:collapse;font-size:12px;min-width:480px;"><thead><tr><th style="text-align:left;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">By Agency</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">Rooms</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">Adult</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">Child</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">Baby</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">EUR Total</th></tr></thead><tbody><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">ALQASW0526</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">35</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">66</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">6</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€2,722</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">ALFAST0526</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">19</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">29</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">1</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€2,311</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">ANEXCI0526</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">30</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">61</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">23</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€2,264</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">CLUBFR0526</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">21</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">42</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">14</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€1,653</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">TUIPOL0526</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">13</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">28</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">16</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€1,168</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">ANUBIS0526</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">13</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">16</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€1,044</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">ALLTOU0526</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">9</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">21</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">5</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€951</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">FUN&amp;SU0526</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">11</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">20</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">6</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€883</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">SUNINT0526_002</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">7</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">16</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">3</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€736</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">SUNINT0526</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">7</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">15</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">6</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€681</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">TUIGER0526</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">8</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">16</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">5</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€675</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">BOOKIN0426</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">4</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">8</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">2</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€594</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">TRAVEL0526</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">8</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">15</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">2</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€530</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">ETIEAS0526</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">4</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">7</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">4</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€514</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">ODEONP1125</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">4</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">10</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">4</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€365</td></tr><tr style="background:rgba(0,0,0,0.035);"><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">Total</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">193</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">370</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">97</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">€17,091</td></tr></tbody></table></div><h3 style="font-size:13px;color:#0E7C86;margin:18px 0 4px;text-transform:uppercase;letter-spacing:.8px;font-weight:800;">By Nationality</h3><div style="overflow-x:auto;border:1px solid rgba(0,0,0,0.09);border-radius:10px;margin-top:10px;"><table style="width:100%;border-collapse:collapse;font-size:12px;min-width:480px;"><thead><tr><th style="text-align:left;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">By Nationality</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">Rooms</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">Adult</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">Child</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">Baby</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">EUR Total</th></tr></thead><tbody><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">Diğer</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">241</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">455</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">128</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€20,805</td></tr><tr style="background:rgba(0,0,0,0.035);"><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">Total</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">241</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">455</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">128</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">€20,805</td></tr></tbody></table></div>
+      </div>
+      <div class="slide-footer"><span>PPG MASTER SYSTEM REPORT &bull; <strong>Amwaj Beach Club</strong></span><span>LIVE PMS DATA</span></div>
+    </div>
+
+    <!-- Section 2 divider: General Manager Flash Report -->
+    <div id="sec-manager" style="max-width:1200px;margin:60px auto 0;padding:0 40px;scroll-margin-top:60px;">
+      <div style="display:flex;align-items:center;gap:16px;padding:18px 0;border-bottom:2px solid #0E7C8640;">
+        <div style="width:4px;height:40px;background:#0E7C86;border-radius:2px;flex-shrink:0;"></div>
+        <div>
+          <div style="font-size:10px;font-weight:700;color:#0E7C86;letter-spacing:2px;text-transform:uppercase;">SECTION 2</div>
+          <div style="font-size:22px;font-weight:800;color:var(--text-white);font-family:'Playfair Display',serif;">GENERAL MANAGER FLASH REPORT</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="slide" id="slide-manager">
+      <div class="slide-header">
+        <div class="slide-title-area"><span class="slide-tag">MANAGER</span>
+          <h2 class="slide-heading">Manager Commentary</h2></div>
+        <div class="slide-pma-badge">PPG NEWS &bull; AI</div>
+      </div>
+      <div class="slide-body">
+        <div style="background:var(--gold-light);border:1px solid var(--primary-gold);border-radius:12px;padding:22px 26px;margin-bottom:24px;">
+          <div style="font-size:18px;font-weight:700;color:var(--text-white);font-family:'Playfair Display',serif;line-height:1.45;">A solid ADR of €4804 shines through a modest 31% occupancy, indicating premium appeal while highlighting opportunities to boost bookings.</div>
+        </div>
+        <ul style="padding-left:20px;margin:0;"><li style="font-size:13.5px;line-height:1.65;color:var(--text-white);opacity:0.92;margin-bottom:11px;">Occupancy stands at 31% (196 rooms occupied) – reviewing pricing or targeted promotions could help lift this figure.</li><li style="font-size:13.5px;line-height:1.65;color:var(--text-white);opacity:0.92;margin-bottom:11px;">ADR is €4804, well above the competitive set average price of €120 – maintaining this premium rate while attracting more guests may be a worthwhile balance.</li><li style="font-size:13.5px;line-height:1.65;color:var(--text-white);opacity:0.92;margin-bottom:11px;">Advertising spend of €162 generated 1,268 clicks but no conversions – refining ad targeting or the booking funnel could turn interest into reservations.</li><li style="font-size:13.5px;line-height:1.65;color:var(--text-white);opacity:0.92;margin-bottom:11px;">Guest satisfaction scores 4.7/10 from 147 reviews suggest service enhancements could improve ratings and repeat business.</li><li style="font-size:13.5px;line-height:1.65;color:var(--text-white);opacity:0.92;margin-bottom:11px;">No revenue from channels or agencies is recorded – exploring additional distribution partners might diversify and increase booking sources.</li></ul>
+      </div>
+      <div class="slide-footer">
+        <span>PPG MASTER SYSTEM REPORT &bull; <strong>Amwaj Beach Club</strong></span>
+        <span>AI ANALYSIS</span>
+      </div>
+    </div>
+    
+    <div class="slide" id="sec-flash">
+      <div class="slide-header">
+        <div class="slide-title-area"><span class="slide-tag">FLASH</span><h2 class="slide-heading">GENERAL MANAGER FLASH REPORT</h2></div>
+        <div class="slide-pma-badge">PPG NEWS</div>
+      </div>
+      <div class="slide-body">
+        <h3 style="font-family:'Playfair Display', serif;font-size:14px;color:var(--primary-gold);margin-bottom:12px;text-transform:uppercase;letter-spacing:1px;">Platform Score Changes</h3>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:26px;"><div style="background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:16px;text-align:center;">
+              <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">TripAdvisor</div>
+              <div style="font-size:26px;font-weight:800;color:var(--primary-gold);">4.3<span style="font-size:13px;color:var(--text-muted);">/5</span></div>
+              <div style="font-size:11px;margin-top:4px;"><span style="color:#ef4444;">▼ -0.5</span> <span style="color:var(--text-muted);">16 reviews</span></div>
+            </div></div>
+        <h3 style="font-family:'Playfair Display', serif;font-size:14px;color:var(--primary-gold);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;">Manager - Flash</h3>
+        <div style="overflow-x:auto;border:1px solid rgba(0,0,0,0.09);border-radius:10px;">
+      <table style="width:100%;border-collapse:collapse;font-size:11.5px;min-width:640px;">
+        <thead><tr>
+          <th style="text-align:left;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">Metric</th>
+          <th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">2026 DAY</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">2026 MONTH</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">2026 YEAR</th>
+          <th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">2025 DAY</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">2025 MONTH</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">2025 YEAR</th>
+        </tr></thead>
+        <tbody><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Total Rooms in Hotel</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">676</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">676</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+        </tr><tr style="background:rgba(0,0,0,0.018);">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Out of Order Rooms</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Rooms Occupied</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">241</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">891</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">28,876</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">14</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">54</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">14,084</td>
+        </tr><tr style="background:rgba(0,0,0,0.018);">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Available Rooms</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">435</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Complimentary Rooms</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td>
+        </tr><tr style="background:rgba(0,0,0,0.018);">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">House Use Rooms</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td>
+        </tr><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Rooms Occupied minus Comp & House</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">241</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">891</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">28,876</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">14</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">54</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">14,084</td>
+        </tr><tr style="background:rgba(0,0,0,0.018);">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Total In-House Persons</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">583</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">2,177</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">64,980</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">43</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">161</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">28,868</td>
+        </tr><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">In-House Adults</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">455</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">1,677</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">53,224</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">32</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">123</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">25,850</td>
+        </tr><tr style="background:rgba(0,0,0,0.018);">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">In-House Children</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">128</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">500</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">11,756</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">11</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">38</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">3,018</td>
+        </tr><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">% Rooms Occupied</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">%36</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">%33</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">%23</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">%2</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">%2</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">%11</td>
+        </tr><tr style="background:rgba(0,0,0,0.018);">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">% Rooms Occupied minus OOO</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">%36</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">ADR</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€86</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€86</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€70</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€90</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€84</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€49</td>
+        </tr><tr style="background:rgba(0,0,0,0.018);">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">RevPAR</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€31</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Room Revenue</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€20,805</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€76,365</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€2,017,343</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€1,262</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€4,550</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€697,107</td>
+        </tr><tr style="background:rgba(0,0,0,0.018);">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Average Person Rate</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€36</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Arrival Rooms</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">61</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:rgba(0,0,0,0.018);">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Arrival Persons</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">134</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Departure Rooms</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">31</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:rgba(0,0,0,0.018);">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Departure Persons</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">63</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Arrival Rooms for Tomorrow</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">26</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:rgba(0,0,0,0.018);">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Arrival Persons for Tomorrow</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">64</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Departure Rooms for Tomorrow</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">44</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:rgba(0,0,0,0.018);">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Reservations Made Today</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Room Nights Reserved Today</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:rgba(0,0,0,0.018);">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">% Occupancy Next 7 Days</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">%30</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">% Occupancy Next 31 Days</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">%24</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr></tbody>
+      </table>
+    </div>
+    <p style="font-size:10px;color:#5C6B77;margin-top:8px;font-style:italic;">GM Flash — real PMS day-grid (room/person-nights cumulative MONTH/YEAR; point-in-time rows show DAY only). Prior year on the right when available.</p>
+      </div>
+      <div class="slide-footer"><span>PPG MASTER SYSTEM REPORT &bull; <strong>Amwaj Beach Club</strong></span><span>FLASH REPORT</span></div>
+    </div>
+
+    <!-- Slide 3: Trend & Channels -->
+    <div class="slide" id="slide-3">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-tag">TREND</span>
+          <h2 class="slide-heading">Revenue Trend & Booking Channels</h2>
+        </div>
+        <div class="slide-pma-badge">PPG NEWS</div>
+      </div>
+      <div class="slide-body">
+        <p style="font-size:11px;color:var(--text-muted);margin-bottom:16px;font-style:italic;line-height:1.5;">Left: 7-day daily revenue pickup chart by reservation date (EUR). Right: Channel distribution of today's bookings — use to monitor high-commission channels.</p>
+        <div class="split-grid">
+          <div class="chart-box" style="height:320px;">
+            <div class="chart-title">Last 7 Days Revenue Distribution (EUR)</div>
+            <div style="display:flex; align-items:center; justify-content:center; height:100%; padding-top:15px;">
+              <svg width="392" height="155" style="max-width:100%;">
+                <defs>
+                  <linearGradient id="barGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#247D76;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#38ADA4;stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                
+            <g>
+                <rect x="0" y="120" width="40" height="0" rx="4" fill="url(#barGrad)" />
+                <text x="20" y="136" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="'Sora', sans-serif">Jun 28</text>
+                <text x="20" y="116" text-anchor="middle" font-size="10" fill="var(--text-white)" font-weight="700" font-family="'Sora', sans-serif">€0</text>
+            </g>
+        
+            <g>
+                <rect x="56" y="120" width="40" height="0" rx="4" fill="url(#barGrad)" />
+                <text x="76" y="136" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="'Sora', sans-serif">Jun 29</text>
+                <text x="76" y="116" text-anchor="middle" font-size="10" fill="var(--text-white)" font-weight="700" font-family="'Sora', sans-serif">€0</text>
+            </g>
+        
+            <g>
+                <rect x="112" y="120" width="40" height="0" rx="4" fill="url(#barGrad)" />
+                <text x="132" y="136" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="'Sora', sans-serif">Jun 30</text>
+                <text x="132" y="116" text-anchor="middle" font-size="10" fill="var(--text-white)" font-weight="700" font-family="'Sora', sans-serif">€0</text>
+            </g>
+        
+            <g>
+                <rect x="168" y="120" width="40" height="0" rx="4" fill="url(#barGrad)" />
+                <text x="188" y="136" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="'Sora', sans-serif">Jul 1</text>
+                <text x="188" y="116" text-anchor="middle" font-size="10" fill="var(--text-white)" font-weight="700" font-family="'Sora', sans-serif">€0</text>
+            </g>
+        
+            <g>
+                <rect x="224" y="120" width="40" height="0" rx="4" fill="url(#barGrad)" />
+                <text x="244" y="136" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="'Sora', sans-serif">Jul 2</text>
+                <text x="244" y="116" text-anchor="middle" font-size="10" fill="var(--text-white)" font-weight="700" font-family="'Sora', sans-serif">€0</text>
+            </g>
+        
+            <g>
+                <rect x="280" y="120" width="40" height="0" rx="4" fill="url(#barGrad)" />
+                <text x="300" y="136" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="'Sora', sans-serif">Jul 3</text>
+                <text x="300" y="116" text-anchor="middle" font-size="10" fill="var(--text-white)" font-weight="700" font-family="'Sora', sans-serif">€0</text>
+            </g>
+        
+            <g>
+                <rect x="336" y="120" width="40" height="0" rx="4" fill="url(#barGrad)" />
+                <text x="356" y="136" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="'Sora', sans-serif">Jul 4</text>
+                <text x="356" y="116" text-anchor="middle" font-size="10" fill="var(--text-white)" font-weight="700" font-family="'Sora', sans-serif">€0</text>
+            </g>
+        
+              </svg>
+            </div>
+          </div>
+          
+          <div class="table-container" style="height:320px; overflow-y:auto;">
+            <div style="padding:14px 18px; font-weight:700; font-size:11px; color:var(--primary-gold); text-transform:uppercase; letter-spacing:1px; background:var(--bg-black); border-bottom:1px solid var(--border-card); display:flex; justify-content:space-between; align-items:center;">
+              <span>Channel Booking Shares</span>
+              <a href="https://ppg.pmapartner.com/en/admin/revenue-manager?from=2026-07-03&amp;to=2026-07-03&amp;currency=EUR&amp;hotelId=cmnabk7w6000hsf0ko5hd8uf6" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;">→ View</a>
+            </div>
+            <table class="report-table">
+              <thead>
+                <tr>
+                  <th>Channel</th>
+                  <th style="text-align:right;">Bookings</th>
+                  <th style="text-align:right;">Total Revenue</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>PPG MASTER SYSTEM REPORT &bull; <strong>Amwaj Beach Club</strong></span>
+        <span>SLIDE 3</span>
+      </div>
+    </div>
+
+    <!-- Slide 4: Agencies & Reviews -->
+    <div class="slide" id="slide-4">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-tag">AGENCY</span>
+          <h2 class="slide-heading">Agency Distribution & Guest Reviews</h2>
+        </div>
+        <div class="slide-pma-badge">PPG NEWS</div>
+      </div>
+      <div class="slide-body">
+        <p style="font-size:11px;color:var(--text-muted);margin-bottom:16px;font-style:italic;line-height:1.5;">Left: Today's agency and operator revenue contribution. Right: Consolidated guest review score from all platforms — average out of 10 and new reviews today.</p>
+        <div class="split-grid">
+          <div class="table-container" style="height:320px; overflow-y:auto;">
+            <div style="padding:14px 18px; font-weight:700; font-size:11px; color:var(--primary-gold); text-transform:uppercase; letter-spacing:1px; background:var(--bg-black); border-bottom:1px solid var(--border-card); display:flex; justify-content:space-between; align-items:center;">
+              <span>Top Performing Agencies</span>
+              <a href="https://ppg.pmapartner.com/en/admin/revenue-manager?from=2026-07-03&amp;to=2026-07-03&amp;currency=EUR&amp;hotelId=cmnabk7w6000hsf0ko5hd8uf6" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;">→ View</a>
+            </div>
+            <table class="report-table">
+              <thead>
+                <tr>
+                  <th>Agency</th>
+                  <th style="text-align:right;">Bookings</th>
+                  <th style="text-align:right;">Total Revenue</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          
+          <div style="background:var(--bg-card); border:1px solid var(--border-card); border-radius:12px; padding:35px; height:320px; display:flex; flex-direction:column; justify-content:center;">
+            <h3 style="font-family:'Playfair Display', serif; font-size:16px; color:var(--primary-gold); margin-bottom:15px; text-transform:uppercase; letter-spacing:1px;">Guest Satisfaction</h3>
+            <div style="display:flex; align-items:center; gap:20px; margin-bottom:20px;">
+              <div style="font-size:50px; line-height:1;">⭐</div>
+              <div>
+                <div style="font-size:38px; font-weight:800; color:var(--text-white); font-family:'Playfair Display', serif; line-height:1.1;">4.7<span style="font-size:16px; color:var(--text-muted); font-weight:500;">/10</span></div>
+                <div style="font-size:12px; color:var(--text-muted); font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-top:2px;">Average Review Score</div>
+              </div>
+            </div>
+            <div style="font-size:13px; color:var(--text-white); line-height:1.6; opacity:0.9;">
+              A total of <strong>147</strong> guest reviews have been analyzed.
+              No new reviews have been added today.
+            </div>
+            <div style="margin-top:14px;border-top:1px solid var(--border-card);padding-top:12px;">
+                <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:7px;">Platform Scores <span style="font-weight:500;text-transform:none;">(last 30d, avg 4.3/5 <span style="color:#ef4444;font-weight:700;">-0.5</span>)</span></div>
+                <span style="display:inline-block;background:var(--bg-card);border:1px solid var(--border-card);border-radius:99px;padding:3px 10px;margin:0 5px 5px 0;font-size:12px;"><strong>TripAdvisor</strong> <span style="color:var(--primary-gold);font-weight:700;">4.3/5</span> <span style="color:#ef4444;font-weight:700;">▼0.5</span></span>
+                <div style="margin-top:8px;font-size:12px;line-height:1.7;"><span style="color:#ef4444;">▼ Staff</span> · <span style="color:#ef4444;">▼ Entertainment</span> · <span style="color:#ef4444;">▼ Room</span></div>
+                <div style="margin-top:10px;"><div style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:6px;border-left:2px solid var(--primary-gold);padding-left:8px;line-height:1.5;"><strong>TripAdvisor</strong> 3.0/5: &ldquo;We return very disappointed from our stay at this hotel. Despite some positive points, the overall experience did not meet our exp&rdquo;</div><div style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:6px;border-left:2px solid var(--primary-gold);padding-left:8px;line-height:1.5;"><strong>TripAdvisor</strong> 3.5/5: &ldquo;I rarely write reviews, but what happened during our stay compels me to share this experience so that no other family finds themse&rdquo;</div></div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>PPG MASTER SYSTEM REPORT &bull; <strong>Amwaj Beach Club</strong></span>
+        <span>SLIDE 4</span>
+      </div>
+    </div>
+
+    <!-- Slide 5: Demographics -->
+    <div class="slide" id="slide-5">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-tag">DEMOGRAPHICS</span>
+          <h2 class="slide-heading">Visitor Geographical Distribution</h2>
+        </div>
+        <div class="slide-pma-badge">PPG NEWS</div>
+      </div>
+      <div class="slide-body">
+        <p style="font-size:11px;color:var(--text-muted);margin-bottom:16px;font-style:italic;line-height:1.5;">Source country breakdown of in-house + today's arriving guests. Use for regional campaign targeting and operational language prioritisation.</p>
+        <div class="split-grid">
+          <div class="table-container" style="height:320px; overflow-y:auto;">
+            <div style="padding:14px 18px; font-weight:700; font-size:11px; color:var(--primary-gold); text-transform:uppercase; letter-spacing:1px; background:var(--bg-black); border-bottom:1px solid var(--border-card); display:flex; justify-content:space-between; align-items:center;">
+              <span>Active Visitor Nationalities</span>
+              <a href="https://ppg.pmapartner.com/en/admin?from=2026-07-03&amp;to=2026-07-03&amp;currency=EUR&amp;hotelId=cmnabk7w6000hsf0ko5hd8uf6" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;">→ View</a>
+            </div>
+            <table class="report-table">
+              <thead>
+                <tr>
+                  <th>Country</th>
+                  <th style="text-align:right;">Active Accommodation Count</th>
+                </tr>
+              </thead>
+              <tbody>
+        <tr>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);">Unknown</td>
+            <td style="padding:10px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">213</td>
+        </tr>
+    </tbody>
+            </table>
+          </div>
+          
+          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-card); border-radius:12px; padding:30px; display:flex; flex-direction:column; justify-content:center; height:320px;">
+            <h3 style="font-family:'Playfair Display', serif; font-size:15px; color:var(--primary-gold); margin-bottom:12px; text-transform:uppercase; letter-spacing:1px;">Market Commentary</h3>
+            <p style="font-size:13px; line-height:1.6; color:var(--text-white); opacity:0.85; margin-bottom:12px;">
+              According to the check-in and staying guest profile, the market generating the highest volume is <strong>Unknown</strong>.
+            </p>
+            <p style="font-size:13px; line-height:1.6; color:var(--text-white); opacity:0.85;">
+              This data should be prioritized in on-site language support, operational planning, and regional ad campaigns.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>PPG MASTER SYSTEM REPORT &bull; <strong>Amwaj Beach Club</strong></span>
+        <span>SLIDE 5</span>
+      </div>
+    </div>
+    
+    <div class="slide" id="slide-6">
+      <div class="slide-header">
+        <div class="slide-title-area"><span class="slide-tag">DIGITAL</span>
+          <h2 class="slide-heading">Digital Marketing, SEO & Market</h2></div>
+        <div class="slide-pma-badge">PPG NEWS</div>
+      </div>
+      <div class="slide-body">
+        <p style="font-size:11px;color:var(--text-muted);margin-bottom:16px;font-style:italic;line-height:1.5;">Meta+Google ad spend and performance, GA4 web traffic, GSC SEO status and competitor pricing. All figures are from the latest sync period.</p>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px;">
+          
+      <a href="https://ppg.pmapartner.com/en/admin/ads-manager?from=2026-07-03&amp;to=2026-07-03&amp;currency=EUR&amp;hotelId=cmnabk7w6000hsf0ko5hd8uf6" target="_blank" rel="noopener" style="display:block;text-decoration:none;color:inherit;background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:18px;">
+        <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;font-weight:700;">Ad Spend</div>
+        <div style="font-size:26px;font-weight:800;color:var(--text-white);font-family:'Playfair Display',serif;line-height:1.2;margin-top:4px;">€162</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">1,268 clicks</div>
+      </a>
+          
+      <a href="https://ppg.pmapartner.com/en/admin/ads-manager?from=2026-07-03&amp;to=2026-07-03&amp;currency=EUR&amp;hotelId=cmnabk7w6000hsf0ko5hd8uf6" target="_blank" rel="noopener" style="display:block;text-decoration:none;color:inherit;background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:18px;">
+        <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;font-weight:700;">Impressions</div>
+        <div style="font-size:26px;font-weight:800;color:var(--text-white);font-family:'Playfair Display',serif;line-height:1.2;margin-top:4px;">115,107</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Conv. 0</div>
+      </a>
+          
+      <a href="https://ppg.pmapartner.com/en/admin/ads-manager?from=2026-07-03&amp;to=2026-07-03&amp;currency=EUR&amp;hotelId=cmnabk7w6000hsf0ko5hd8uf6" target="_blank" rel="noopener" style="display:block;text-decoration:none;color:inherit;background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:18px;">
+        <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;font-weight:700;">Web Users</div>
+        <div style="font-size:26px;font-weight:800;color:var(--text-white);font-family:'Playfair Display',serif;line-height:1.2;margin-top:4px;">57</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Sessions 72</div>
+      </a>
+          
+      <a href="https://ppg.pmapartner.com/en/admin/ads-manager?from=2026-07-03&amp;to=2026-07-03&amp;currency=EUR&amp;hotelId=cmnabk7w6000hsf0ko5hd8uf6" target="_blank" rel="noopener" style="display:block;text-decoration:none;color:inherit;background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:18px;">
+        <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;font-weight:700;">Bounce</div>
+        <div style="font-size:26px;font-weight:800;color:var(--text-white);font-family:'Playfair Display',serif;line-height:1.2;margin-top:4px;">%43.06</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Pageviews 159</div>
+      </a>
+        </div>
+        <div class="split-grid">
+          <div class="table-container" style="height:280px;overflow-y:auto;">
+            <div style="padding:14px 18px;font-weight:700;font-size:11px;color:var(--primary-gold);text-transform:uppercase;letter-spacing:1px;background:var(--bg-black);border-bottom:1px solid var(--border-card);">Competitor Price Position</div>
+            <table class="report-table"><tbody>
+      <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);font-weight:400;">Amwaj Beach Club</td>
+      <td style="padding:9px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€120</td></tr>
+      <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);font-weight:400;">Steigenberger Aldau Beach</td>
+      <td style="padding:9px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€180</td></tr>
+      <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);font-weight:400;">Sunrise Crystal Bay Resort</td>
+      <td style="padding:9px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€100</td></tr>
+      <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);font-weight:400;">Albatros Palace Resort</td>
+      <td style="padding:9px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€150</td></tr>
+      <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);font-weight:400;">Pickalbatros Aqua Blu</td>
+      <td style="padding:9px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€110</td></tr>
+      <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);font-weight:400;">Jaz Aquaviva</td>
+      <td style="padding:9px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€130</td></tr></tbody></table></div>
+          <div style="background:rgba(255,255,255,0.02);border:1px solid var(--border-card);border-radius:12px;padding:22px;height:280px;overflow-y:auto;">
+            <h3 style="font-family:'Playfair Display',serif;font-size:14px;color:var(--primary-gold);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;">Weather & Demand Drivers</h3>
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:5px 0;border-bottom:1px solid var(--border-card);"><span style="color:var(--text-muted);">4 Sat ☀️</span><span style="color:var(--text-white);font-weight:600;">28° / 34°</span></div><div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:5px 0;border-bottom:1px solid var(--border-card);"><span style="color:var(--text-muted);">5 Sun ☀️</span><span style="color:var(--text-white);font-weight:600;">29° / 34°</span></div><div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:5px 0;border-bottom:1px solid var(--border-card);"><span style="color:var(--text-muted);">6 Mon ☀️</span><span style="color:var(--text-white);font-weight:600;">30° / 37°</span></div><div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:5px 0;border-bottom:1px solid var(--border-card);"><span style="color:var(--text-muted);">7 Tue ☀️</span><span style="color:var(--text-white);font-weight:600;">29° / 34°</span></div><div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:5px 0;border-bottom:1px solid var(--border-card);"><span style="color:var(--text-muted);">8 Wed ☀️</span><span style="color:var(--text-white);font-weight:600;">27° / 33°</span></div>
+            <ul style="margin-top:12px;padding-left:16px;"><li style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:5px;">Hurghada International Festival</li><li style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:5px;">Red Sea Aquarium Exhibition</li><li style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:5px;">Hurghada Marathon</li><li style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:5px;">DJ Festival</li><li style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:5px;">Hurghada Shopping Festival</li><li style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:5px;">Battle of the Boyne (holiday)</li></ul>
+          </div>
+        </div>
+        <p style="font-size:11px;color:var(--text-muted);margin-top:14px;">SEO (GSC): 100 query rows</p>
+      </div>
+      <div class="slide-footer">
+        <span>PPG MASTER SYSTEM REPORT &bull; <strong>Amwaj Beach Club</strong></span>
+        <span>DIGITAL</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div style="border-top:1px solid var(--border-card); padding:30px 60px; text-align:center; color:var(--text-muted); font-size:11px; font-weight:500; background:var(--bg-dark);">
+    PPG News — Automated Daily Newsletter Report &bull; Report Time: 7/4/2026, 7:30:35 AM<br>
+    <strong style="color:var(--text-white); font-weight:700;">PPG Hospitality Technology &copy; 2026</strong>
+  </div>
+
+</body>
+</html>

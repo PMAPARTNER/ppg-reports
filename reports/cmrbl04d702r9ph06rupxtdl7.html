@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <title>Amwaj Oyoun — Daily Report 2026-07-08</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #FFFFFF;
+      --bg-black: #EEF3F5;
+      --bg-light: #F8FAFB;
+      --primary-gold: #0E7C86;
+      --gold-hover: #0E7C86;
+      --gold-light: #0E7C861f;
+      --text-white: #13212B;
+      --text-muted: #5C6B77;
+      --text-dark: #0F1B29;
+      --text-muted-light: #52647A;
+      --bg-card: rgba(19,33,43,0.035);
+      --border-card: rgba(19,33,43,0.12);
+      --border-light: #E0E5EB;
+      --aegean-blue: #0E7C86;
+      --danger: #E53E3E;
+      --success: #0E7C86;
+      --card-shadow: 0 10px 30px rgba(15, 27, 41, 0.08);
+      --card-shadow-hover: 0 20px 40px rgba(15, 27, 41, 0.12);
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Sora', sans-serif;
+      color: var(--text-white);
+      background-color: var(--bg-black);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* ── PMA CO-BRANDING HEADER BANNER ── */
+    .pma-top-bar {
+      background-color: var(--bg-black);
+      color: var(--text-white);
+      padding: 12px 60px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-card);
+      z-index: 1000;
+      position: relative;
+    }
+
+    .pma-partner-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .pma-logo-text {
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ── HOTEL WEBSITE HEADER ── */
+    .cavo-header {
+      background: rgba(15, 31, 40, 0.95);
+      backdrop-filter: blur(15px);
+      padding: 18px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 999;
+      border-bottom: 1px solid var(--border-card);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ── STICKY SECTION NAV (PMAPARTNER report style: glassmorphism jump-links) ── */
+    html { scroll-behavior: smooth; }
+    .report-nav {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-card);
+    }
+    .report-nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      gap: 6px;
+      padding: 10px 40px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .report-nav-inner::-webkit-scrollbar { display: none; }
+    .report-nav-link {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 99px;
+      white-space: nowrap;
+      transition: all .2s;
+      border: 1px solid transparent;
+    }
+    .report-nav-link:hover {
+      color: var(--primary-gold);
+      background: var(--gold-light);
+      border-color: var(--primary-gold);
+    }
+
+    .cavo-book-btn {
+      background-color: var(--primary-gold);
+      color: var(--bg-dark);
+      border: none;
+      padding: 10px 24px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: var(--transition);
+      border-radius: 99px;
+    }
+
+    .cavo-book-btn:hover {
+      background-color: var(--gold-hover);
+      box-shadow: 0 0 15px rgba(56, 173, 164, 0.4);
+    }
+
+    /* ── SLIDE DECK CONTAINER (16:9 ASPECT RATIO) ── */
+    .deck-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    .slide {
+      background: var(--bg-dark);
+      border: 1px solid var(--border-card);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 60px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+      min-height: 600px;
+      scroll-margin-top: 60px;
+      transition: var(--transition);
+    }
+
+    .slide:hover {
+      border-color: rgba(56, 173, 164, 0.3);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Cover Slide Specifics */
+    .slide-cover {
+      background-image: 
+        linear-gradient(rgba(15, 31, 40, 0.75) 0%, rgba(15, 31, 40, 0.95) 100%),
+        url('https://image-tc.galaxy.tf/wijpeg-7kppa0lzf1jd60cpcx0dap4vd/general-view-with-beach-web.jpg?width=1200');
+      background-size: cover;
+      background-position: center;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+
+    .slide-cover-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide-cover-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--text-white);
+    }
+
+    .slide-cover-subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    /* Slide Header */
+    .slide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-card);
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+      height: 45px;
+      flex-shrink: 0;
+    }
+
+    .slide-title-area {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .slide-tag {
+      font-size: 9px;
+      font-weight: 700;
+      background: rgba(56, 173, 164, 0.15);
+      color: var(--primary-gold);
+      border: 1px solid var(--primary-gold);
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .slide-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--text-white);
+    }
+
+    .slide-pma-badge {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 9px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--primary-gold);
+      font-weight: 700;
+    }
+
+    /* Slide Body & Footer */
+    .slide-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    .slide-footer {
+      border-top: 1px solid var(--border-card);
+      padding-top: 15px;
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      height: 30px;
+      flex-shrink: 0;
+    }
+
+    .slide-footer span strong {
+      color: var(--primary-gold);
+    }
+
+    /* ── SPLIT GRID (FOR SLIDE USE) ── */
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+      height: 100%;
+    }
+
+    /* ── HIGH-SEASON STATS & METRICS CARDS ── */
+    .metrics-summary-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .metric-card-visual {
+      background: var(--bg-card);
+      border-radius: 12px;
+      border: 1px solid var(--border-card);
+      padding: 24px 16px;
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* PMAPARTNER stili üst-accent — hover'da belirir */
+    .metric-card-visual::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--primary-gold);
+      transform: scaleX(0);
+      transition: transform .3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .metric-card-visual:hover::before {
+      transform: scaleX(1);
+    }
+
+    .metric-card-visual:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: var(--primary-gold);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    a.metric-card-visual {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+
+    a.metric-card-visual:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: var(--primary-gold);
+    }
+
+    .metric-visual-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--primary-gold);
+      margin-bottom: 5px;
+    }
+
+    .metric-visual-lbl {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-white);
+    }
+
+    .metric-visual-foot {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* ── TABLES ── */
+    .table-container {
+      background: var(--bg-card);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-card);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .report-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      text-align: left;
+    }
+
+    .report-table th {
+      background: var(--bg-black);
+      color: var(--primary-gold);
+      padding: 12px 18px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border-card);
+    }
+
+    .report-table td {
+      padding: 10px 18px;
+      border-bottom: 1px solid var(--border-card);
+      color: var(--text-white);
+    }
+
+    .report-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .report-table tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    /* ── CHART BOX ── */
+    .chart-box {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid var(--border-card);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .chart-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border-bottom: 1px solid var(--border-card);
+      padding-bottom: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .pma-top-bar { padding: 10px 20px; font-size: 9px; }
+      .cavo-header { padding: 12px 20px; }
+      .report-nav-inner { padding: 8px 16px; }
+      .slide { padding: 24px 20px; min-height: auto; margin: 20px auto; border-radius: 10px; }
+      .metrics-summary-cards { grid-template-columns: repeat(2, 1fr) !important; gap: 10px; }
+      .split-grid { grid-template-columns: 1fr !important; gap: 16px; }
+      .slide-heading { font-size: 17px; }
+      .slide-cover-title { font-size: 28px !important; }
+      .slide-cover-subtitle { font-size: 12px !important; }
+      .table-container { height: auto !important; }
+      .chart-box { height: auto !important; }
+      .deck-container { padding: 10px 0; }
+    }
+
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 0;
+      }
+      body {
+        background-color: var(--bg-black) !important;
+        color: var(--text-white) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .pma-top-bar, .cavo-header, .report-nav {
+        display: none !important;
+      }
+      .slide {
+        width: 297mm !important;
+        height: 210mm !important;
+        max-width: 297mm !important;
+        max-height: 210mm !important;
+        margin: 0 !important;
+        padding: 20mm !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background-color: var(--bg-dark) !important;
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+    }
+    /* ── Tasarım ailesi override'ları (şablon = tüm tasarımı değiştirir) ── */
+    [data-fam="modern"] .slide{border-radius:24px;border:1px solid rgba(14,124,134,0.14);box-shadow:0 24px 60px rgba(15,23,42,.12)}[data-fam="modern"] .slide-title-area{display:inline-flex;align-items:center;background:rgba(14,124,134,0.1);border-left:4px solid #0E7C86;border-radius:999px;padding:8px 20px 8px 14px}[data-fam="modern"] .metric-card-visual{border-radius:18px;box-shadow:0 10px 26px rgba(15,23,42,.08)}[data-fam="modern"] .metric-visual-val{font-size:34px;padding-bottom:8px;border-bottom:1px solid var(--border-card);margin-bottom:8px}[data-fam="modern"] .table-container{border-radius:16px}[data-fam="modern"] .chart-box{border-radius:18px}
+  </style>
+</head>
+<body data-fam="modern">
+
+  <!-- PMA CO-BRANDING HEADER BANNER -->
+  <div class="pma-top-bar">
+    <div class="pma-partner-brand">
+      <span class="pma-logo-text">PMA PARTNER</span>
+    </div>
+    <div>AUTOMATED DAILY PERFORMANCE REPORT</div>
+  </div>
+
+  <!-- HOTEL HEADER -->
+  <div class="cavo-header">
+    <div style="display:flex;align-items:center;gap:14px;">
+      
+      <span style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--text-white);">Amwaj Oyoun</span>
+    </div>
+    <button type="button" class="cavo-book-btn" onclick="return false;">DAILY BRIEF</button>
+  </div>
+
+  <nav class="report-nav"><div class="report-nav-inner"><a href="#slide-2" class="report-nav-link">KPI</a><a href="#sec-yesterday" class="report-nav-link">Yesterday</a><a href="#sec-manager" class="report-nav-link">Manager</a><a href="#slide-3" class="report-nav-link">Trend</a><a href="#slide-4" class="report-nav-link">Agency</a><a href="#slide-5" class="report-nav-link">Demographics</a><a href="#slide-6" class="report-nav-link">Digital</a></div></nav>
+
+  <div class="deck-container">
+
+    <!-- Slide 1: Cover -->
+    <div class="slide slide-cover" id="slide-1" style="background-image:linear-gradient(135deg, #0E7C861f 0%, #0E7C8606 100%);">
+      <div class="slide-cover-body">
+        
+        <div style="font-size:12px; font-weight:700; color:var(--primary-gold); letter-spacing:2.5px; text-transform:uppercase; margin-bottom:14px;">PPG NEWS &bull; DAILY INTELLIGENCE</div>
+        <h1 class="slide-cover-title" style="font-size:52px;font-family:'Playfair Display', serif;">PPG NEWS &ndash; DAILY REPORT</h1>
+        <div class="slide-cover-subtitle" style="font-size:21px;font-weight:700;letter-spacing:0.5px;margin-top:6px;">2026-07-08 Wednesday</div>
+        <div class="slide-cover-subtitle" style="font-size:15px;opacity:0.85;margin-top:2px;">Amwaj Oyoun &bull; DAILY OPERATIONAL & PERFORMANCE REPORT</div>
+        <div style="font-size:13px; color:var(--text-muted); margin-top:15px; font-weight:500;">Connection: OPERA PMS (Live)</div>
+      </div>
+      <div style="font-size:10px; color:var(--text-muted); letter-spacing:1px; text-transform:uppercase;">PPG Hospitality Technology &bull; Automated Briefing System</div>
+    </div>
+
+    <!-- Slide 2: KPI Dashboard -->
+    <div class="slide" id="slide-2">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-tag">KPI</span>
+          <h2 class="slide-heading">Today's Performance Summary</h2>
+        </div>
+        <div class="slide-pma-badge">PPG NEWS</div>
+      </div>
+      <div class="slide-body">
+        <p style="font-size:11px;color:var(--text-muted);margin-bottom:16px;font-style:italic;line-height:1.5;">The figures on this card are for the report day (2026-07-08). Core KPIs derived in real-time from PMS. Revenue and occupancy comparisons are vs. the previous day; ADR = average room rate for in-house guests, RevPAR = revenue per available room. The forecast/trend sections below show the historical period and last-year comparison.</p>
+        <div class="metrics-summary-cards" style="margin-bottom:25px;">
+          <a class="metric-card-visual" href="https://ppg.pmapartner.com/en/admin?from=2026-07-08&amp;to=2026-07-08&amp;currency=EUR&amp;hotelId=31eb9b73-2666-4c58-8854-6c7b3bc334d2" target="_blank" rel="noopener">
+            <div class="metric-visual-val">0</div>
+            <div class="metric-visual-lbl">In-House Rooms</div>
+            <div class="metric-visual-foot">0 new bookings today</div>
+          </a>
+          <a class="metric-card-visual" href="https://ppg.pmapartner.com/en/admin/sales-monitor?from=2026-07-08&amp;to=2026-07-08&amp;currency=EUR&amp;hotelId=31eb9b73-2666-4c58-8854-6c7b3bc334d2" target="_blank" rel="noopener">
+            <div class="metric-visual-val">€0</div>
+            <div class="metric-visual-lbl">Daily Revenue</div>
+            <div class="metric-visual-foot">
+              —
+            </div>
+          </a>
+          <a class="metric-card-visual" href="https://ppg.pmapartner.com/en/admin?from=2026-07-08&amp;to=2026-07-08&amp;currency=EUR&amp;hotelId=31eb9b73-2666-4c58-8854-6c7b3bc334d2" target="_blank" rel="noopener">
+            <div class="metric-visual-val">%0</div>
+            <div class="metric-visual-lbl">Occupancy Rate</div>
+            <div class="metric-visual-foot">0 active bookings</div>
+          </a>
+          <a class="metric-card-visual" href="https://ppg.pmapartner.com/en/admin/revenue-manager?from=2026-07-08&amp;to=2026-07-08&amp;currency=EUR&amp;hotelId=31eb9b73-2666-4c58-8854-6c7b3bc334d2" target="_blank" rel="noopener">
+            <div class="metric-visual-val">€0</div>
+            <div class="metric-visual-lbl">Average ADR</div>
+            <div class="metric-visual-foot">RevPAR: €0</div>
+          </a>
+        </div>
+        
+        <div style="background:var(--bg-black); padding:24px; border-radius:12px; border:1px solid var(--border-card);">
+          <h3 style="font-family:'Playfair Display', serif; font-size:16px; color:var(--primary-gold); margin-bottom:15px; text-transform:uppercase; letter-spacing:1px;">Operational Summary</h3>
+          <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; text-align:center;">
+            <a href="https://ppg.pmapartner.com/en/admin/reservations?from=2026-07-08&amp;to=2026-07-08&amp;currency=EUR&amp;hotelId=31eb9b73-2666-4c58-8854-6c7b3bc334d2" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+              <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px;">Arrivals Today</div>
+              <div style="font-size:24px; font-weight:800; color:var(--primary-gold); margin-top:4px; font-family:'Playfair Display', serif;">0</div>
+            </a>
+            <a href="https://ppg.pmapartner.com/en/admin/reservations?from=2026-07-08&amp;to=2026-07-08&amp;currency=EUR&amp;hotelId=31eb9b73-2666-4c58-8854-6c7b3bc334d2" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+              <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px;">Departures Today</div>
+              <div style="font-size:24px; font-weight:800; color:#f97316; margin-top:4px; font-family:'Playfair Display', serif;">0</div>
+            </a>
+            <a href="https://ppg.pmapartner.com/en/admin/reservations?from=2026-07-08&amp;to=2026-07-08&amp;currency=EUR&amp;hotelId=31eb9b73-2666-4c58-8854-6c7b3bc334d2" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;display:block;">
+              <div style="font-size:11px; color:var(--text-muted); text-transform:uppercase; letter-spacing:1px;">Cancelled</div>
+              <div style="font-size:24px; font-weight:800; color:#ef4444; margin-top:4px; font-family:'Playfair Display', serif;">0</div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>PPG MASTER SYSTEM REPORT &bull; <strong>Amwaj Oyoun</strong></span>
+        <span>SLIDE 2</span>
+      </div>
+    </div>
+
+    <!-- Section 1 divider: DÜN! Rezervasyon Performans Raporu -->
+    <div id="sec-yesterday" style="max-width:1200px;margin:60px auto 0;padding:0 40px;scroll-margin-top:60px;">
+      <div style="display:flex;align-items:center;gap:16px;padding:18px 0;border-bottom:2px solid #0E7C8640;">
+        <div style="width:4px;height:40px;background:#0E7C86;border-radius:2px;flex-shrink:0;"></div>
+        <div>
+          <div style="font-size:10px;font-weight:700;color:#0E7C86;letter-spacing:2px;text-transform:uppercase;">SECTION 1</div>
+          <div style="font-size:22px;font-weight:800;color:var(--text-white);font-family:'Playfair Display',serif;">YESTERDAY! Reservation Performance Report</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="slide" id="sec-yesterday">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag" style="background:#FDE047;color:#713F12;">YESTERDAY</span><h2 class="slide-heading">YESTERDAY! Reservation Performance Report</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/en/admin/sales-monitor?from=2026-07-08&to=2026-07-08&currency=EUR&hotelId=31eb9b73-2666-4c58-8854-6c7b3bc334d2" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ View</a><div class="slide-pma-badge">PPG NEWS</div></div></div>
+      <div class="slide-body">
+        <p style="font-size:11px;color:var(--text-muted);margin-bottom:16px;font-style:italic;line-height:1.5;">Z-report logic: every comparison is vs. the previous day.</p>
+        <div class="metrics-summary-cards" style="grid-template-columns:repeat(5,1fr);">
+          
+      <div class="metric-card-visual" style="padding:18px 12px;">
+        <div class="metric-visual-val" style="font-size:28px;">0</div>
+        <div class="metric-visual-lbl">Rooms</div>
+        <div class="metric-visual-foot">Prev: 0</div>
+        
+      </div>
+          
+      <div class="metric-card-visual" style="padding:18px 12px;">
+        <div class="metric-visual-val" style="font-size:28px;">0</div>
+        <div class="metric-visual-lbl">Res</div>
+        <div class="metric-visual-foot">Prev: 0</div>
+        
+      </div>
+          
+      <div class="metric-card-visual" style="padding:18px 12px;">
+        <div class="metric-visual-val" style="font-size:28px;">0</div>
+        <div class="metric-visual-lbl">Guests</div>
+        <div class="metric-visual-foot">Prev: 0</div>
+        
+      </div>
+          
+      <div class="metric-card-visual" style="padding:18px 12px;">
+        <div class="metric-visual-val" style="font-size:28px;">€0</div>
+        <div class="metric-visual-lbl">ADR</div>
+        <div class="metric-visual-foot">Prev: €0</div>
+        
+      </div>
+          
+      <div class="metric-card-visual" style="padding:18px 12px;">
+        <div class="metric-visual-val" style="font-size:28px;">€0</div>
+        <div class="metric-visual-lbl">Revenue</div>
+        <div class="metric-visual-foot">Prev: €0</div>
+        
+      </div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>PPG MASTER SYSTEM REPORT &bull; <strong>Amwaj Oyoun</strong></span><span>LIVE PMS DATA</span></div>
+    </div>
+    <div class="slide" id="sec-forecast">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">FORECAST</span><h2 class="slide-heading">FORECAST — This + Next Month (vs −1 Year)</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/en/admin/demand-forecast?from=2026-07-08&to=2026-07-08&currency=EUR&hotelId=31eb9b73-2666-4c58-8854-6c7b3bc334d2" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ View</a><div class="slide-pma-badge">PPG NEWS</div></div></div>
+      <div class="slide-body">
+        
+        <div style="margin-top:18px;">
+          <div style="font-size:11px;color:var(--text-muted);margin-bottom:10px;font-style:italic;">Demand Forecast — next 60 days (same computation as the web /admin/demand-forecast panel): occupancy projection, LY pace and flight pressure.</div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:center;background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:20px;">
+            <div><div style="font-size:24px;font-weight:800;color:var(--primary-gold);">%74</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:.5px;margin-top:2px;">Avg Proj. Occupancy</div></div>
+            <div><div style="font-size:24px;font-weight:800;color:var(--text-white);">%100</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:.5px;margin-top:2px;">Peak Occupancy</div><div style="font-size:10px;color:var(--text-muted);margin-top:2px;">08.07</div></div>
+            <div><div style="font-size:24px;font-weight:800;color:var(--text-white);">—</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:.5px;margin-top:2px;">Pace (LY)</div><div style="font-size:10px;color:var(--text-muted);margin-top:2px;">100 = on par</div></div>
+            <div><div style="font-size:24px;font-weight:800;color:var(--text-white);">—</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:.5px;margin-top:2px;">Flight Signal</div></div>
+          </div>
+          <div style="font-size:12.5px;color:var(--text-white);margin-top:12px;line-height:1.5;">Önümüzdeki dönem ortalama tahmini doluluk %74 (yetersiz geçmiş → sektör fallback eğrisi).</div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>PPG MASTER SYSTEM REPORT &bull; <strong>Amwaj Oyoun</strong></span><span>LIVE PMS DATA</span></div>
+    </div>
+    <div class="slide" id="sec-roomstatus">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">ROOM STATUS</span><h2 class="slide-heading">OOO – HU – COMP – SOLD</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/en/admin?from=2026-07-08&to=2026-07-08&currency=EUR&hotelId=31eb9b73-2666-4c58-8854-6c7b3bc334d2" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ View</a><div class="slide-pma-badge">PPG NEWS</div></div></div>
+      <div class="slide-body">
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:center;background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:24px;">
+          <div><div style="font-size:26px;font-weight:800;color:var(--text-white);">—</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:1px;">OOO</div></div>
+          <div><div style="font-size:26px;font-weight:800;color:var(--text-white);">—</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:1px;">HU</div></div>
+          <div><div style="font-size:26px;font-weight:800;color:var(--text-white);">0</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:1px;">COMP</div></div>
+          <div><div style="font-size:26px;font-weight:800;color:var(--primary-gold);">0</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:1px;">SOLD</div></div>
+        </div>
+        <div style="font-size:10px;color:var(--text-muted);margin-top:10px;">OOO/HU not exposed by this PMS.</div>
+      </div>
+      <div class="slide-footer"><span>PPG MASTER SYSTEM REPORT &bull; <strong>Amwaj Oyoun</strong></span><span>LIVE PMS DATA</span></div>
+    </div>
+    
+    <div class="slide" id="sec-detail">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">DETAIL</span><h2 class="slide-heading">Detailed Breakdowns</h2></div><div class="slide-pma-badge">PPG NEWS</div></div>
+      <div class="slide-body" style="display:block;">
+        <h3 style="font-size:13px;color:#0E7C86;margin:18px 0 4px;text-transform:uppercase;letter-spacing:.8px;font-weight:800;">2026 vs 2025 — Monthly Pace</h3><div style="overflow-x:auto;border:1px solid rgba(0,0,0,0.09);border-radius:10px;margin-top:10px;"><table style="width:100%;border-collapse:collapse;font-size:12px;min-width:660px;"><thead><tr><th style="text-align:left;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">Month</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">RN 2026</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">Occ%</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">REV 2026</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">ADR</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">RevPAR</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">REV 2025</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">%Fark</th></tr></thead><tbody><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">Haz 2026</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">118</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">%0.9</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€8,292</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€70</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€1</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">—</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">—</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">Kas 2026</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">%0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">—</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">—</td></tr><tr><td style="text-align:left;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;">Ara 2026</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">%0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">€0</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">—</td><td style="text-align:right;padding:4px 9px;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;font-variant-numeric:tabular-nums;white-space:nowrap;">—</td></tr></tbody></table></div><h3 style="font-size:13px;color:#0E7C86;margin:18px 0 4px;text-transform:uppercase;letter-spacing:.8px;font-weight:800;">Left to Target</h3><p style="font-size:10px;color:#5C6B77;margin:0 0 6px;font-style:italic;">Target = prior-year same period (uses budget once the budget feed is connected).</p><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;"><div style="flex:1;min-width:200px;background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:10px;padding:14px 16px;">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;"><div style="font-size:11px;color:#5C6B77;text-transform:uppercase;letter-spacing:.5px;">Tem 2026</div><div style="font-size:20px;font-weight:800;color:#E8590C;">%0</div></div>
+              <div style="height:8px;background:rgba(0,0,0,0.035);border-radius:99px;margin:8px 0 6px;overflow:hidden;"><div style="height:100%;width:0%;background:#E8590C;border-radius:99px;"></div></div>
+              <div style="font-size:11px;color:#5C6B77;">Achieved: <b style="color:#13212B">€0</b> · Target: €0</div>
+            </div><div style="flex:1;min-width:200px;background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:10px;padding:14px 16px;">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;"><div style="font-size:11px;color:#5C6B77;text-transform:uppercase;letter-spacing:.5px;">Full Year</div><div style="font-size:20px;font-weight:800;color:#E8590C;">%0</div></div>
+              <div style="height:8px;background:rgba(0,0,0,0.035);border-radius:99px;margin:8px 0 6px;overflow:hidden;"><div style="height:100%;width:0%;background:#E8590C;border-radius:99px;"></div></div>
+              <div style="font-size:11px;color:#5C6B77;">Achieved: <b style="color:#13212B">€8,292</b> · Target: €0</div>
+            </div></div><h3 style="font-size:13px;color:#0E7C86;margin:18px 0 4px;text-transform:uppercase;letter-spacing:.8px;font-weight:800;">Today's Vacancy & Revenue Potential</h3><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+              <div style="flex:1;min-width:150px;background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:10px;padding:14px 16px;"><div style="font-size:22px;font-weight:800;color:#13212B;">418 × €0</div><div style="font-size:10px;color:#5C6B77;text-transform:uppercase;letter-spacing:.5px;margin-top:2px;">Empty Rooms × ADR</div></div>
+              <div style="flex:1;min-width:150px;background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:10px;padding:14px 16px;"><div style="font-size:22px;font-weight:800;color:#E8590C;">€0</div><div style="font-size:10px;color:#5C6B77;text-transform:uppercase;letter-spacing:.5px;margin-top:2px;">Lost Potential (Today)</div></div>
+              <div style="flex:1;min-width:150px;background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:10px;padding:14px 16px;"><div style="font-size:22px;font-weight:800;color:#E8590C;">€0</div><div style="font-size:10px;color:#5C6B77;text-transform:uppercase;letter-spacing:.5px;margin-top:2px;">MTD Lost</div></div>
+              <div style="flex:1;min-width:150px;background:#fff;border:1px solid rgba(0,0,0,0.09);border-radius:10px;padding:14px 16px;"><div style="font-size:22px;font-weight:800;color:#E53E3E;">€5,543,393</div><div style="font-size:10px;color:#5C6B77;text-transform:uppercase;letter-spacing:.5px;margin-top:2px;">YTD Lost</div></div>
+            </div>
+      </div>
+      <div class="slide-footer"><span>PPG MASTER SYSTEM REPORT &bull; <strong>Amwaj Oyoun</strong></span><span>LIVE PMS DATA</span></div>
+    </div>
+
+    <!-- Section 2 divider: General Manager Flash Report -->
+    <div id="sec-manager" style="max-width:1200px;margin:60px auto 0;padding:0 40px;scroll-margin-top:60px;">
+      <div style="display:flex;align-items:center;gap:16px;padding:18px 0;border-bottom:2px solid #0E7C8640;">
+        <div style="width:4px;height:40px;background:#0E7C86;border-radius:2px;flex-shrink:0;"></div>
+        <div>
+          <div style="font-size:10px;font-weight:700;color:#0E7C86;letter-spacing:2px;text-transform:uppercase;">SECTION 2</div>
+          <div style="font-size:22px;font-weight:800;color:var(--text-white);font-family:'Playfair Display',serif;">GENERAL MANAGER FLASH REPORT</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="slide" id="slide-manager">
+      <div class="slide-header">
+        <div class="slide-title-area"><span class="slide-tag">MANAGER</span>
+          <h2 class="slide-heading">Manager Commentary</h2></div>
+        <div class="slide-pma-badge">PPG NEWS &bull; AI</div>
+      </div>
+      <div class="slide-body">
+        <div style="background:var(--gold-light);border:1px solid var(--primary-gold);border-radius:12px;padding:22px 26px;margin-bottom:24px;">
+          <div style="font-size:18px;font-weight:700;color:var(--text-white);font-family:'Playfair Display',serif;line-height:1.45;">Today&#39;s snapshot shows a quiet day with zero occupancy and revenue, highlighting the need to turn online interest into bookings.</div>
+        </div>
+        <ul style="padding-left:20px;margin:0;"><li style="font-size:13.5px;line-height:1.65;color:var(--text-white);opacity:0.92;margin-bottom:11px;">Occupancy, ADR, RevPAR and daily revenue are all €0, indicating no rooms were sold today – exploring why no reservations were generated could be valuable.</li><li style="font-size:13.5px;line-height:1.65;color:var(--text-white);opacity:0.92;margin-bottom:11px;">Guest satisfaction sits at 4.1/10 from 146 reviews; maintaining this level while attracting more guests may be a worthwhile focus.</li><li style="font-size:13.5px;line-height:1.65;color:var(--text-white);opacity:0.92;margin-bottom:11px;">Advertising generated 1,234 clicks for €167 but no conversions; reviewing the landing page and booking flow might improve the click‑to‑book ratio.</li><li style="font-size:13.5px;line-height:1.65;color:var(--text-white);opacity:0.92;margin-bottom:11px;">Competitor room rates range from €160 to €210; aligning your pricing strategy with market expectations could help capture demand.</li><li style="font-size:13.5px;line-height:1.65;color:var(--text-white);opacity:0.92;margin-bottom:11px;">No channel or agency data is recorded today; adding distribution partners may broaden reach and fill the current availability.</li></ul>
+      </div>
+      <div class="slide-footer">
+        <span>PPG MASTER SYSTEM REPORT &bull; <strong>Amwaj Oyoun</strong></span>
+        <span>AI ANALYSIS</span>
+      </div>
+    </div>
+    
+    <div class="slide" id="sec-flash">
+      <div class="slide-header">
+        <div class="slide-title-area"><span class="slide-tag">FLASH</span><h2 class="slide-heading">GENERAL MANAGER FLASH REPORT</h2></div>
+        <div class="slide-pma-badge">PPG NEWS</div>
+      </div>
+      <div class="slide-body">
+        <h3 style="font-family:'Playfair Display', serif;font-size:14px;color:var(--primary-gold);margin-bottom:12px;text-transform:uppercase;letter-spacing:1px;">Platform Score Changes</h3>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:26px;"><div style="background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:16px;text-align:center;">
+              <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">TripAdvisor</div>
+              <div style="font-size:26px;font-weight:800;color:var(--primary-gold);">4.1<span style="font-size:13px;color:var(--text-muted);">/5</span></div>
+              <div style="font-size:11px;margin-top:4px;"><span style="color:#ef4444;">▼ -0.6</span> <span style="color:var(--text-muted);">71 reviews</span></div>
+            </div><div style="background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:16px;text-align:center;">
+              <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Booking.com</div>
+              <div style="font-size:26px;font-weight:800;color:var(--primary-gold);">8.5<span style="font-size:13px;color:var(--text-muted);">/10</span></div>
+              <div style="font-size:11px;margin-top:4px;"><span style="color:#ef4444;">▼ -0.5</span> <span style="color:var(--text-muted);">50 reviews</span></div>
+            </div></div>
+        <h3 style="font-family:'Playfair Display', serif;font-size:14px;color:var(--primary-gold);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;">Manager - Flash</h3>
+        <div style="overflow-x:auto;border:1px solid rgba(0,0,0,0.09);border-radius:10px;">
+      <table style="width:100%;border-collapse:collapse;font-size:11.5px;min-width:640px;">
+        <thead><tr>
+          <th style="text-align:left;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">Metric</th>
+          <th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">2026 DAY</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">2026 MONTH</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">2026 YEAR</th>
+          <th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">2025 DAY</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">2025 MONTH</th><th style="text-align:right;padding:6px 9px;font-size:9.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#0E7C86;border-bottom:2px solid #0E7C8640;background:rgba(0,0,0,0.035);white-space:nowrap;">2025 YEAR</th>
+        </tr></thead>
+        <tbody><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Total Rooms in Hotel</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">418</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">418</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+        </tr><tr style="background:rgba(0,0,0,0.018);">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Out of Order Rooms</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Rooms Occupied</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">118</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td>
+        </tr><tr style="background:rgba(0,0,0,0.018);">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Available Rooms</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">418</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Complimentary Rooms</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td>
+        </tr><tr style="background:rgba(0,0,0,0.018);">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">House Use Rooms</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td>
+        </tr><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Rooms Occupied minus Comp & House</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">118</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td>
+        </tr><tr style="background:rgba(0,0,0,0.018);">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Total In-House Persons</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">279</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td>
+        </tr><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">In-House Adults</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">279</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td>
+        </tr><tr style="background:rgba(0,0,0,0.018);">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">In-House Children</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td>
+        </tr><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">% Rooms Occupied</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">%0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">%0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">%0</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">%0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">%0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">%0</td>
+        </tr><tr style="background:rgba(0,0,0,0.018);">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">% Rooms Occupied minus OOO</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">%0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">ADR</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€70</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€0</td>
+        </tr><tr style="background:rgba(0,0,0,0.018);">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">RevPAR</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Room Revenue</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€8,292</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€0</td>
+        </tr><tr style="background:rgba(0,0,0,0.018);">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Average Person Rate</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">€0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Arrival Rooms</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:rgba(0,0,0,0.018);">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Arrival Persons</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Departure Rooms</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:rgba(0,0,0,0.018);">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Departure Persons</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Arrival Rooms for Tomorrow</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:rgba(0,0,0,0.018);">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Arrival Persons for Tomorrow</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Departure Rooms for Tomorrow</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:rgba(0,0,0,0.018);">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Reservations Made Today</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">Room Nights Reserved Today</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:rgba(0,0,0,0.018);">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">% Occupancy Next 7 Days</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">%0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr><tr style="background:transparent;">
+          <td style="padding:4px 9px;color:#13212B;border-bottom:1px solid rgba(0,0,0,0.09);font-weight:500;">% Occupancy Next 31 Days</td>
+          <td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;">%0</td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td><td style="text-align:right;padding:4px 9px;font-variant-numeric:tabular-nums;border-bottom:1px solid rgba(0,0,0,0.09);color:#13212B;white-space:nowrap;"></td>
+          <td colspan="3" style="text-align:center;color:#5C6B77;opacity:.4;border-bottom:1px solid rgba(0,0,0,0.09);">—</td>
+        </tr></tbody>
+      </table>
+    </div>
+    <p style="font-size:10px;color:#5C6B77;margin-top:8px;font-style:italic;">GM Flash — real PMS day-grid (room/person-nights cumulative MONTH/YEAR; point-in-time rows show DAY only). Prior year on the right when available.</p>
+      </div>
+      <div class="slide-footer"><span>PPG MASTER SYSTEM REPORT &bull; <strong>Amwaj Oyoun</strong></span><span>FLASH REPORT</span></div>
+    </div>
+
+    <!-- Slide 3: Trend & Channels -->
+    <div class="slide" id="slide-3">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-tag">TREND</span>
+          <h2 class="slide-heading">Revenue Trend & Booking Channels</h2>
+        </div>
+        <div class="slide-pma-badge">PPG NEWS</div>
+      </div>
+      <div class="slide-body">
+        <p style="font-size:11px;color:var(--text-muted);margin-bottom:16px;font-style:italic;line-height:1.5;">Left: 7-day daily revenue pickup chart by reservation date (EUR). Right: Channel distribution of today's bookings — use to monitor high-commission channels.</p>
+        <div class="split-grid">
+          <div class="chart-box" style="height:320px;">
+            <div class="chart-title">Last 7 Days Revenue Distribution (EUR)</div>
+            <div style="display:flex; align-items:center; justify-content:center; height:100%; padding-top:15px;">
+              <svg width="392" height="155" style="max-width:100%;">
+                <defs>
+                  <linearGradient id="barGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#247D76;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#38ADA4;stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                
+            <g>
+                <rect x="0" y="120" width="40" height="0" rx="4" fill="url(#barGrad)" />
+                <text x="20" y="136" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="'Sora', sans-serif">Jul 2</text>
+                <text x="20" y="116" text-anchor="middle" font-size="10" fill="var(--text-white)" font-weight="700" font-family="'Sora', sans-serif">€0</text>
+            </g>
+        
+            <g>
+                <rect x="56" y="120" width="40" height="0" rx="4" fill="url(#barGrad)" />
+                <text x="76" y="136" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="'Sora', sans-serif">Jul 3</text>
+                <text x="76" y="116" text-anchor="middle" font-size="10" fill="var(--text-white)" font-weight="700" font-family="'Sora', sans-serif">€0</text>
+            </g>
+        
+            <g>
+                <rect x="112" y="120" width="40" height="0" rx="4" fill="url(#barGrad)" />
+                <text x="132" y="136" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="'Sora', sans-serif">Jul 4</text>
+                <text x="132" y="116" text-anchor="middle" font-size="10" fill="var(--text-white)" font-weight="700" font-family="'Sora', sans-serif">€0</text>
+            </g>
+        
+            <g>
+                <rect x="168" y="120" width="40" height="0" rx="4" fill="url(#barGrad)" />
+                <text x="188" y="136" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="'Sora', sans-serif">Jul 5</text>
+                <text x="188" y="116" text-anchor="middle" font-size="10" fill="var(--text-white)" font-weight="700" font-family="'Sora', sans-serif">€0</text>
+            </g>
+        
+            <g>
+                <rect x="224" y="120" width="40" height="0" rx="4" fill="url(#barGrad)" />
+                <text x="244" y="136" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="'Sora', sans-serif">Jul 6</text>
+                <text x="244" y="116" text-anchor="middle" font-size="10" fill="var(--text-white)" font-weight="700" font-family="'Sora', sans-serif">€0</text>
+            </g>
+        
+            <g>
+                <rect x="280" y="120" width="40" height="0" rx="4" fill="url(#barGrad)" />
+                <text x="300" y="136" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="'Sora', sans-serif">Jul 7</text>
+                <text x="300" y="116" text-anchor="middle" font-size="10" fill="var(--text-white)" font-weight="700" font-family="'Sora', sans-serif">€0</text>
+            </g>
+        
+            <g>
+                <rect x="336" y="120" width="40" height="0" rx="4" fill="url(#barGrad)" />
+                <text x="356" y="136" text-anchor="middle" font-size="11" fill="var(--text-muted)" font-family="'Sora', sans-serif">Jul 8</text>
+                <text x="356" y="116" text-anchor="middle" font-size="10" fill="var(--text-white)" font-weight="700" font-family="'Sora', sans-serif">€0</text>
+            </g>
+        
+              </svg>
+            </div>
+          </div>
+          
+          <div class="table-container" style="height:320px; overflow-y:auto;">
+            <div style="padding:14px 18px; font-weight:700; font-size:11px; color:var(--primary-gold); text-transform:uppercase; letter-spacing:1px; background:var(--bg-black); border-bottom:1px solid var(--border-card); display:flex; justify-content:space-between; align-items:center;">
+              <span>Channel Booking Shares</span>
+              <a href="https://ppg.pmapartner.com/en/admin/revenue-manager?from=2026-07-08&amp;to=2026-07-08&amp;currency=EUR&amp;hotelId=31eb9b73-2666-4c58-8854-6c7b3bc334d2" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;">→ View</a>
+            </div>
+            <table class="report-table">
+              <thead>
+                <tr>
+                  <th>Channel</th>
+                  <th style="text-align:right;">Bookings</th>
+                  <th style="text-align:right;">Total Revenue</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>PPG MASTER SYSTEM REPORT &bull; <strong>Amwaj Oyoun</strong></span>
+        <span>SLIDE 3</span>
+      </div>
+    </div>
+
+    <!-- Slide 4: Agencies & Reviews -->
+    <div class="slide" id="slide-4">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-tag">AGENCY</span>
+          <h2 class="slide-heading">Agency Distribution & Guest Reviews</h2>
+        </div>
+        <div class="slide-pma-badge">PPG NEWS</div>
+      </div>
+      <div class="slide-body">
+        <p style="font-size:11px;color:var(--text-muted);margin-bottom:16px;font-style:italic;line-height:1.5;">Left: Today's agency and operator revenue contribution. Right: Consolidated guest review score from all platforms — average out of 10 and new reviews today.</p>
+        <div class="split-grid">
+          <div class="table-container" style="height:320px; overflow-y:auto;">
+            <div style="padding:14px 18px; font-weight:700; font-size:11px; color:var(--primary-gold); text-transform:uppercase; letter-spacing:1px; background:var(--bg-black); border-bottom:1px solid var(--border-card); display:flex; justify-content:space-between; align-items:center;">
+              <span>Top Performing Agencies</span>
+              <a href="https://ppg.pmapartner.com/en/admin/revenue-manager?from=2026-07-08&amp;to=2026-07-08&amp;currency=EUR&amp;hotelId=31eb9b73-2666-4c58-8854-6c7b3bc334d2" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;">→ View</a>
+            </div>
+            <table class="report-table">
+              <thead>
+                <tr>
+                  <th>Agency</th>
+                  <th style="text-align:right;">Bookings</th>
+                  <th style="text-align:right;">Total Revenue</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          
+          <div style="background:var(--bg-card); border:1px solid var(--border-card); border-radius:12px; padding:35px; height:320px; display:flex; flex-direction:column; justify-content:center;">
+            <h3 style="font-family:'Playfair Display', serif; font-size:16px; color:var(--primary-gold); margin-bottom:15px; text-transform:uppercase; letter-spacing:1px;">Guest Satisfaction</h3>
+            <div style="display:flex; align-items:center; gap:20px; margin-bottom:20px;">
+              <div style="font-size:50px; line-height:1;">⭐</div>
+              <div>
+                <div style="font-size:38px; font-weight:800; color:var(--text-white); font-family:'Playfair Display', serif; line-height:1.1;">4.1<span style="font-size:16px; color:var(--text-muted); font-weight:500;">/10</span></div>
+                <div style="font-size:12px; color:var(--text-muted); font-weight:600; text-transform:uppercase; letter-spacing:1px; margin-top:2px;">Average Review Score</div>
+              </div>
+            </div>
+            <div style="font-size:13px; color:var(--text-white); line-height:1.6; opacity:0.9;">
+              A total of <strong>146</strong> guest reviews have been analyzed.
+              No new reviews have been added today.
+            </div>
+            <div style="margin-top:14px;border-top:1px solid var(--border-card);padding-top:12px;">
+                <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:7px;">Platform Scores <span style="font-weight:500;text-transform:none;">(last 30d, avg 4.2/5 <span style="color:#ef4444;font-weight:700;">-0.5</span>)</span></div>
+                <span style="display:inline-block;background:var(--bg-card);border:1px solid var(--border-card);border-radius:99px;padding:3px 10px;margin:0 5px 5px 0;font-size:12px;"><strong>TripAdvisor</strong> <span style="color:var(--primary-gold);font-weight:700;">4.1/5</span> <span style="color:#ef4444;font-weight:700;">▼0.6</span></span><span style="display:inline-block;background:var(--bg-card);border:1px solid var(--border-card);border-radius:99px;padding:3px 10px;margin:0 5px 5px 0;font-size:12px;"><strong>Booking.com</strong> <span style="color:var(--primary-gold);font-weight:700;">8.5/10</span> <span style="color:#ef4444;font-weight:700;">▼0.5</span></span>
+                <div style="margin-top:8px;font-size:12px;line-height:1.7;"><span style="color:#ef4444;">▼ Cleanliness</span> · <span style="color:#ef4444;">▼ Room</span> · <span style="color:#ef4444;">▼ Food</span></div>
+                <div style="margin-top:10px;"><div style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:6px;border-left:2px solid var(--primary-gold);padding-left:8px;line-height:1.5;"><strong>Booking.com</strong> 10.0/10: &ldquo;Ottimo soggiorno, Doaa molto gentile e disponibile per risolvere ogni problema — Staff molto gentile, resort bello e con ogni conf&rdquo;</div><div style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:6px;border-left:2px solid var(--primary-gold);padding-left:8px;line-height:1.5;"><strong>Booking.com</strong> 10.0/10: &ldquo;Soggiorno da favola — Questa struttura è completa di ogni servizio, il personale è veramente cordiale e disponibile ad aiutarti in&rdquo;</div></div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>PPG MASTER SYSTEM REPORT &bull; <strong>Amwaj Oyoun</strong></span>
+        <span>SLIDE 4</span>
+      </div>
+    </div>
+
+    <!-- Slide 5: Demographics -->
+    <div class="slide" id="slide-5">
+      <div class="slide-header">
+        <div class="slide-title-area">
+          <span class="slide-tag">DEMOGRAPHICS</span>
+          <h2 class="slide-heading">Visitor Geographical Distribution</h2>
+        </div>
+        <div class="slide-pma-badge">PPG NEWS</div>
+      </div>
+      <div class="slide-body">
+        <p style="font-size:11px;color:var(--text-muted);margin-bottom:16px;font-style:italic;line-height:1.5;">Source country breakdown of in-house + today's arriving guests. Use for regional campaign targeting and operational language prioritisation.</p>
+        <div class="split-grid">
+          <div class="table-container" style="height:320px; overflow-y:auto;">
+            <div style="padding:14px 18px; font-weight:700; font-size:11px; color:var(--primary-gold); text-transform:uppercase; letter-spacing:1px; background:var(--bg-black); border-bottom:1px solid var(--border-card); display:flex; justify-content:space-between; align-items:center;">
+              <span>Active Visitor Nationalities</span>
+              <a href="https://ppg.pmapartner.com/en/admin?from=2026-07-08&amp;to=2026-07-08&amp;currency=EUR&amp;hotelId=31eb9b73-2666-4c58-8854-6c7b3bc334d2" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;">→ View</a>
+            </div>
+            <table class="report-table">
+              <thead>
+                <tr>
+                  <th>Country</th>
+                  <th style="text-align:right;">Active Accommodation Count</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          
+          <div style="background:rgba(255,255,255,0.02); border:1px solid var(--border-card); border-radius:12px; padding:30px; display:flex; flex-direction:column; justify-content:center; height:320px;">
+            <h3 style="font-family:'Playfair Display', serif; font-size:15px; color:var(--primary-gold); margin-bottom:12px; text-transform:uppercase; letter-spacing:1px;">Market Commentary</h3>
+            <p style="font-size:13px; line-height:1.6; color:var(--text-white); opacity:0.85; margin-bottom:12px;">
+              According to the check-in and staying guest profile, the market generating the highest volume is <strong>Other</strong>.
+            </p>
+            <p style="font-size:13px; line-height:1.6; color:var(--text-white); opacity:0.85;">
+              This data should be prioritized in on-site language support, operational planning, and regional ad campaigns.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">
+        <span>PPG MASTER SYSTEM REPORT &bull; <strong>Amwaj Oyoun</strong></span>
+        <span>SLIDE 5</span>
+      </div>
+    </div>
+    
+    <div class="slide" id="slide-6">
+      <div class="slide-header">
+        <div class="slide-title-area"><span class="slide-tag">DIGITAL</span>
+          <h2 class="slide-heading">Digital Marketing, SEO & Market</h2></div>
+        <div class="slide-pma-badge">PPG NEWS</div>
+      </div>
+      <div class="slide-body">
+        <p style="font-size:11px;color:var(--text-muted);margin-bottom:16px;font-style:italic;line-height:1.5;">Meta+Google ad spend and performance, GA4 web traffic, GSC SEO status and competitor pricing. All figures are from the latest sync period.</p>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px;">
+          
+      <a href="https://ppg.pmapartner.com/en/admin/ads-manager?from=2026-07-08&amp;to=2026-07-08&amp;currency=EUR&amp;hotelId=31eb9b73-2666-4c58-8854-6c7b3bc334d2" target="_blank" rel="noopener" style="display:block;text-decoration:none;color:inherit;background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:18px;">
+        <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;font-weight:700;">Ad Spend</div>
+        <div style="font-size:26px;font-weight:800;color:var(--text-white);font-family:'Playfair Display',serif;line-height:1.2;margin-top:4px;">€167</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">1,234 clicks</div>
+      </a>
+          
+      <a href="https://ppg.pmapartner.com/en/admin/ads-manager?from=2026-07-08&amp;to=2026-07-08&amp;currency=EUR&amp;hotelId=31eb9b73-2666-4c58-8854-6c7b3bc334d2" target="_blank" rel="noopener" style="display:block;text-decoration:none;color:inherit;background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:18px;">
+        <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;font-weight:700;">Impressions</div>
+        <div style="font-size:26px;font-weight:800;color:var(--text-white);font-family:'Playfair Display',serif;line-height:1.2;margin-top:4px;">121,679</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Conv. 0</div>
+      </a>
+          
+      <a href="https://ppg.pmapartner.com/en/admin/ads-manager?from=2026-07-08&amp;to=2026-07-08&amp;currency=EUR&amp;hotelId=31eb9b73-2666-4c58-8854-6c7b3bc334d2" target="_blank" rel="noopener" style="display:block;text-decoration:none;color:inherit;background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:18px;">
+        <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;font-weight:700;">Web Users</div>
+        <div style="font-size:26px;font-weight:800;color:var(--text-white);font-family:'Playfair Display',serif;line-height:1.2;margin-top:4px;">10</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Sessions 12</div>
+      </a>
+          
+      <a href="https://ppg.pmapartner.com/en/admin/ads-manager?from=2026-07-08&amp;to=2026-07-08&amp;currency=EUR&amp;hotelId=31eb9b73-2666-4c58-8854-6c7b3bc334d2" target="_blank" rel="noopener" style="display:block;text-decoration:none;color:inherit;background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:18px;">
+        <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;font-weight:700;">Bounce</div>
+        <div style="font-size:26px;font-weight:800;color:var(--text-white);font-family:'Playfair Display',serif;line-height:1.2;margin-top:4px;">%25</div>
+        <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Pageviews 41</div>
+      </a>
+        </div>
+        
+        <div class="split-grid">
+          <div class="table-container" style="height:280px;overflow-y:auto;">
+            <div style="padding:14px 18px;font-weight:700;font-size:11px;color:var(--primary-gold);text-transform:uppercase;letter-spacing:1px;background:var(--bg-black);border-bottom:1px solid var(--border-card);">Competitor Price Position</div>
+            <table class="report-table"><tbody>
+      <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);font-weight:400;">Amwaj Beach Club</td>
+      <td style="padding:9px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€180</td></tr>
+      <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);font-weight:400;">Steigenberger Aldau Beach</td>
+      <td style="padding:9px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€200</td></tr>
+      <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);font-weight:400;">Sunrise Crystal Bay Resort</td>
+      <td style="padding:9px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€170</td></tr>
+      <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);font-weight:400;">Albatros Palace Resort</td>
+      <td style="padding:9px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€160</td></tr>
+      <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);font-weight:400;">Pickalbatros Aqua Blu</td>
+      <td style="padding:9px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€190</td></tr>
+      <tr><td style="padding:9px 14px;border-bottom:1px solid var(--border-card);color:var(--text-white);font-weight:400;">Jaz Aquaviva</td>
+      <td style="padding:9px 14px;border-bottom:1px solid var(--border-card);text-align:right;font-weight:700;color:#38ADA4;">€210</td></tr></tbody></table></div>
+          <div style="background:rgba(255,255,255,0.02);border:1px solid var(--border-card);border-radius:12px;padding:22px;height:280px;overflow-y:auto;">
+            <h3 style="font-family:'Playfair Display',serif;font-size:14px;color:var(--primary-gold);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;">Weather & Demand Drivers</h3>
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:5px 0;border-bottom:1px solid var(--border-card);"><span style="color:var(--text-muted);">7 Tue ☀️</span><span style="color:var(--text-white);font-weight:600;">29° / 35°</span></div><div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:5px 0;border-bottom:1px solid var(--border-card);"><span style="color:var(--text-muted);">8 Wed ☀️</span><span style="color:var(--text-white);font-weight:600;">27° / 33°</span></div><div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:5px 0;border-bottom:1px solid var(--border-card);"><span style="color:var(--text-muted);">9 Thu ☀️</span><span style="color:var(--text-white);font-weight:600;">27° / 33°</span></div><div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:5px 0;border-bottom:1px solid var(--border-card);"><span style="color:var(--text-muted);">10 Fri ☀️</span><span style="color:var(--text-white);font-weight:600;">27° / 34°</span></div><div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;padding:5px 0;border-bottom:1px solid var(--border-card);"><span style="color:var(--text-muted);">11 Sat ☀️</span><span style="color:var(--text-white);font-weight:600;">28° / 34°</span></div>
+            <ul style="margin-top:12px;padding-left:16px;"><li style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:5px;">Red Sea Jazz Festival</li><li style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:5px;">Hurghada Scuba Expo</li><li style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:5px;">Sunset Beach Concert – International Pop Stars</li><li style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:5px;">Hurghada Marathon 2026</li><li style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:5px;">Egyptian Cultural Heritage Conference</li><li style="font-size:12px;color:var(--text-white);opacity:0.85;margin-bottom:5px;">Battle of the Boyne (holiday)</li></ul>
+          </div>
+        </div>
+        <p style="font-size:11px;color:var(--text-muted);margin-top:14px;">SEO (GSC): ⚠️ Yetki bekliyor (marketing OAuth webmasters re-consent)</p>
+      </div>
+      <div class="slide-footer">
+        <span>PPG MASTER SYSTEM REPORT &bull; <strong>Amwaj Oyoun</strong></span>
+        <span>DIGITAL</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div style="border-top:1px solid var(--border-card); padding:30px 60px; text-align:center; color:var(--text-muted); font-size:11px; font-weight:500; background:var(--bg-dark);">
+    PPG News — Automated Daily Newsletter Report &bull; Report Time: 7/8/2026, 7:32:18 AM<br>
+    <strong style="color:var(--text-white); font-weight:700;">PPG Hospitality Technology &copy; 2026</strong>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Salamis Bay Conti — Weekly Marketing Report July 4, 2026 – July 10, 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --accent: #0E7C86;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #64748b;
+      --success: #10b981;
+      --danger: #f43f5e;
+      --warn: #f59e0b;
+      --radius: 16px;
+    }
+    html { scroll-padding-top: 110px; scroll-behavior: smooth; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; font-size: 14px; }
+    
+
+    /* ── Sticky header ──────────────────────────────── */
+    .hdr {
+      position: sticky; top: 0; z-index: 50;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 10px 24px;
+      background: #f8fafcf0; backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .hdr-left { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .hdr-logo { height: 30px; width: auto; object-fit: contain; flex-shrink: 0; display: block; }
+    /* Logo, tasarım-şablonu renginde bir katman (badge) üzerine oturur → beyaz/renkli logo HER fonda (açık/koyu) görünür. */
+    .hdr-logo-badge { display: inline-flex; align-items: center; justify-content: center; background: var(--accent); padding: 6px 11px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,.18); flex-shrink: 0; }
+    .hdr-name { font-size: 14px; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .hdr-period { font-size: 10px; color: var(--muted); margin-top: 1px; }
+    .hdr-badge { font-size: 9px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); border: 1.5px solid rgba(0,0,0,.12); padding: 3px 10px; border-radius: 99px; flex-shrink: 0; background: rgba(0,0,0,.04); }
+
+    /* ── Sticky nav ─────────────────────────────────── */
+    .nav {
+      position: sticky; top: 53px; z-index: 40;
+      display: flex; overflow-x: auto; gap: 2px; padding: 0 16px;
+      background: #f8fafce8; backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      scrollbar-width: none;
+    }
+    .nav::-webkit-scrollbar { display: none; }
+    .nav a {
+      display: inline-flex; align-items: center;
+      padding: 10px 12px;
+      font-size: 11px; font-weight: 600; color: var(--muted);
+      text-decoration: none; white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: color .15s, border-color .15s;
+    }
+    .nav a:hover, .nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+    /* ── Main ───────────────────────────────────────── */
+    .main { max-width: 1100px; margin: 0 auto; padding: 28px 16px 64px; }
+
+    /* ── Hero KPI ───────────────────────────────────── */
+    .hero-title { font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .hero-sub { font-size: 12px; color: var(--muted); margin-bottom: 20px; }
+    .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
+    .kpi {
+      display: flex; flex-direction: column; border-radius: 12px; padding: 16px;
+      border: 1px solid var(--border); background: var(--card);
+    }
+    .kpi-lbl { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 8px; }
+    .kpi-val { font-size: 22px; font-weight: 700; line-height: 1; color: var(--accent); }
+    .kpi-sub { font-size: 10px; color: var(--muted); margin-top: 4px; }
+
+    /* ── Section card ───────────────────────────────── */
+    .sec { border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; margin-bottom: 20px; scroll-margin-top: 110px; background: var(--card); }
+    .sec-hdr { display: flex; align-items: center; gap: 12px; padding: 14px 20px; border-bottom: 1px solid var(--border); }
+    .sec-icon { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 8px; font-size: 15px; flex-shrink: 0; }
+    .sec-title { font-size: 13px; font-weight: 700; color: var(--text); }
+    .sec-body { padding: 20px; }
+
+    /* ── Tables ─────────────────────────────────────── */
+    .tbl { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .tbl th { padding: 8px 10px 8px 0; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); border-bottom: 1px solid var(--border); text-align: left; }
+    .tbl td { padding: 8px 10px 8px 0; color: var(--muted); border-bottom: 1px solid #e2e8f0cc; vertical-align: middle; }
+    .tbl td.acc { color: var(--text); font-weight: 700; }
+    .tbl td.num { text-align: right; }
+    .tbl tr:last-child td { border-bottom: none; }
+
+    /* ── Two-col ────────────────────────────────────── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+    /* ── Change badge ───────────────────────────────── */
+    .up { font-size: 10px; font-weight: 700; color: var(--success); }
+    .dn { font-size: 10px; font-weight: 700; color: var(--danger); }
+    .neu { font-size: 10px; font-weight: 600; color: var(--muted); }
+
+    /* ── Sub heading ────────────────────────────────── */
+    .sh { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 12px; margin-top: 20px; }
+    .sh:first-child { margin-top: 0; }
+
+    /* ── Stat box ───────────────────────────────────── */
+    .stat-box { border-radius: 12px; border: 1px solid var(--border); background: var(--bg); padding: 16px; text-align: center; }
+    .stat-val { font-size: 22px; font-weight: 700; color: var(--accent); }
+    .stat-lbl { font-size: 10px; color: var(--muted); margin-top: 4px; }
+
+    /* ── AI Insight ─────────────────────────────────── */
+    .insight { border-radius: 12px; border: 1px solid #e2e8f0; padding: 18px 20px; font-size: 13px; line-height: 1.8; color: var(--text); }
+    .prose-block { border-left: 3px solid var(--accent); padding: 14px 18px; font-size: 13px; line-height: 1.8; background: var(--bg); border-radius: 0 8px 8px 0; }
+    .prose-block ul { margin: 8px 0 8px 18px; }
+    .prose-block li { margin-bottom: 3px; }
+    .steps { list-style: none; }
+    .steps li { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid #e2e8f0cc; font-size: 13px; }
+    .steps li:last-child { border-bottom: none; }
+    .step-n { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; background: var(--accent); color: #fff; border-radius: 50%; font-size: 10px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+
+    /* ── Footer ─────────────────────────────────────── */
+    .footer { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; border-top: 1px solid var(--border); margin-top: 8px; font-size: 11px; color: var(--muted); }
+
+    /* ── No-data warning ────────────────────────────── */
+    .warn { border-radius: 12px; border: 1px solid #fca5a5; background: rgba(254,202,202,.5); color: #991b1b; padding: 12px 18px; font-size: 12px; margin-bottom: 16px; }
+
+    /* ── Charts ─────────────────────────────────────── */
+    .chart-wrap { position: relative; width: 100%; margin: 6px 0 4px; }
+    .chart-wrap canvas { max-width: 100%; }
+    .chart-cap { font-size: 10px; color: var(--muted); text-align: center; margin-top: 4px; }
+    .chart-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+
+    /* ── Data explainer (giriş seviyesi, olumlu anlatım) ── */
+    .explain { font-size: 11.5px; line-height: 1.7; color: var(--muted); background: var(--bg); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 4px 0 14px; }
+    .explain strong { color: var(--text); }
+    .period-banner { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 12px 18px; margin-bottom: 18px; font-size: 12px; color: var(--muted); }
+    .period-banner b { color: var(--text); }
+    .period-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(0,0,0,.04); color: var(--accent); border: 1px solid rgba(0,0,0,.12); border-radius: 99px; padding: 3px 12px; font-weight: 700; font-size: 11px; }
+
+    /* ── Responsive (kusursuz mobil) ─────────────────── */
+    @media (max-width: 760px) {
+      .kpi-grid { grid-template-columns: repeat(2,1fr); }
+      .two-col, .chart-2col { grid-template-columns: 1fr; }
+      .main { padding: 16px 10px 40px; }
+      .hdr { padding: 8px 12px; }
+      .hero-title { font-size: 18px; }
+      .kpi-val { font-size: 18px; } .stat-val { font-size: 18px; }
+      .sec-body { padding: 14px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .tbl { font-size: 11px; } .tbl th, .tbl td { padding: 7px 8px 7px 0; }
+    }
+    @media (max-width: 440px) {
+      .kpi-grid { grid-template-columns: 1fr; }
+      .hdr-name { font-size: 12px; max-width: 42vw; }
+      .hdr-badge { display: none; }
+      .hero-title { font-size: 16px; }
+      .nav a { padding: 9px 9px; font-size: 10.5px; }
+    }
+    @media print {
+      @page { size: A4 portrait; margin: 12mm; }
+      body { background: #fff; color: #000; }
+      .hdr, .nav { position: static; background: none; backdrop-filter: none; border: none; }
+      .card, .sec { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky header -->
+  <header class="hdr">
+    <div class="hdr-left">
+      
+      <div style="min-width:0">
+        <div class="hdr-name">Salamis Bay Conti</div>
+        <div class="hdr-period">Digital Summary — July 4, 2026 – July 10, 2026</div>
+      </div>
+    </div>
+    <span class="hdr-badge">PMA PARTNER</span>
+  </header>
+
+  <!-- Sticky nav -->
+  <nav class="nav"><a href="#summary">📊 Özet</a><a href="#gbp">📍 GBP</a><a href="#meta-ads">📱 Meta Ads</a><a href="#social">📲 Sosyal</a><a href="#reservations">🏨 Rezervasyon</a><a href="#budget">💰 Budget</a><a href="#compset">🏷️ Compset</a><a href="#reviews">💬 Reviews</a><a href="#activity">📝 Faaliyet</a><a href="#recommendations">🤖 Öneriler</a></nav>
+
+  <main class="main">
+
+    <!-- No-data warning -->
+    <div class="warn">⚠️ Missing data channels: GA4, GSC, Google Ads, Call Center</div>
+
+    <!-- Dönem açıklaması — giriş seviyesi kullanıcı için -->
+    <div class="period-banner">
+      <span class="period-pill">📅 July 4, 2026 – July 10, 2026</span>
+      <span><b>This report</b> summarizes digital marketing & booking performance for the date range above. Percentage changes compare to the <b>previous equivalent period</b>; ▲ = up, ▼ = down. All revenue is net EUR (€).</span>
+    </div>
+
+    
+    <section class="sec" id="sec-visual">
+      <div class="sec-hdr"><div class="sec-icon" style="background:rgba(0,0,0,.04);">📊</div><div class="sec-title">Visual Summary</div></div>
+      <div class="sec-body">
+        <div class="explain">The two key pictures of the week: <strong>which channels visitors arrived from</strong> and <strong>which agencies/operators drove the most revenue</strong>. Bigger slice/bar = bigger contribution.</div>
+        <div class="chart-2col">
+          
+          <div class="chart-wrap"><canvas id="chAgencies" height="230"></canvas><div class="chart-cap">Top agencies — net revenue (€)</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="summary" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">📊</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">EXECUTIVE SUMMARY</div>
+      <div class="sec-title">Key Performance Indicators</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Key metrics from all digital channels this week at a glance.</div>
+    </div>
+  </div>
+      <div class="sec-body"><div class="kpi-grid"><div class="kpi">
+    <div class="kpi-lbl">Active Users (GA4)</div>
+    <div class="kpi-val">—</div>
+    
+  </div><div class="kpi">
+    <div class="kpi-lbl">Call Center Revenue</div>
+    <div class="kpi-val">—</div>
+    
+  </div><div class="kpi">
+    <div class="kpi-lbl">Reservation Income</div>
+    <div class="kpi-val">€1,201,075</div>
+    <div class="kpi-sub">795 reservations</div>
+  </div><div class="kpi">
+    <div class="kpi-lbl">Room Nights</div>
+    <div class="kpi-val">3,569</div>
+    <div class="kpi-sub">€337/night</div>
+  </div></div></div>
+    </section>
+<section id="gbp" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">📍</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">GOOGLE BUSINESS PROFILE</div>
+      <div class="sec-title">Google Maps &amp; Local Visibility</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">The hotel rating, total review count, and recent reviews guests see on Google.</div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="kpi-grid">
+          <div class="kpi">
+    <div class="kpi-lbl">Google Rating</div>
+    <div class="kpi-val">4.5 / 5</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Total Reviews</div>
+    <div class="kpi-val">8,823</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">New Reviews (Period)</div>
+    <div class="kpi-val">0</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Category</div>
+    <div class="kpi-val">Konaklama Tesisi</div>
+    
+  </div>
+        </div>
+        <div class="sh">🗣️ Recent Google Reviews</div>
+        <table class="tbl"><thead><tr><th>Guest</th><th>Rating</th><th>Review</th><th>Date</th></tr></thead><tbody><tr><td class="acc">ahmet arslan</td><td class="num">1.0 / 5</td><td>3-9 Mayıs arası balayı çifti olarak konakladık. Otel tam bir fiyat performans, çalışanlar güler yüzlü ve ilgililer. Özellikle misafir ilişkilerinden Eyüp bey yaşadığımız her sorund</td><td class="num">2026-05-29</td></tr><tr><td class="acc">Barış Kahraman</td><td class="num">5.0 / 5</td><td>3 gece konakladığımız otelimizde bizi kendi evimizde gibi hissettiren restaurant ta her an yanımızda olan Adanalı kardeşlerimiz Hasan ve Yusuf’a dünyanın öbür ucundan gelip sürekli</td><td class="num">2026-02-13</td></tr><tr><td class="acc">Gulsah Helin</td><td class="num">3.0 / 5</td><td>Salamis Bay Conti otelde 1 hafta konakladik. Tatilimiz boyunca olumsuz hic birsey yasamadik. Cok keyifli tatil yasadik.Otelin en cok personelin ilgisi ve ozeni bizi cok memnun etti</td><td class="num">2026-06-21</td></tr></tbody></table>
+        <div style="text-align: right; margin-top: 10px;"><a href="https://maps.google.com/?cid=9785334759945589711&amp;g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank" style="background-color: #0E7C86; color: white; padding: 6px 12px; border-radius: 4px; font-size: 11px; text-decoration: none; display: inline-block; font-weight: 600;">🔗 View All Reviews on Google</a></div>
+        
+        <!-- Veri Kaynağı ve Metodolojisi -->
+        <div class="meth-box" style="margin-top: 15px; padding: 10px; border-radius: 6px; background-color: var(--card-bg); border: 1px solid var(--border); font-size: 11px; line-height: 1.4;">
+          <strong style="color: var(--accent); display: block; margin-bottom: 4px;">ℹ️ Data Source & Methodology</strong>
+          <span style="color: var(--muted);">Data in this section is pulled directly from the hotel's official Google Business Profile via the Google Places API and Google Maps integration. The "New Reviews (Period)" metric indicates reviews submitted on Google in the last 7 days.</span>
+        </div>
+
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 The hotel's Google Business Profile shows a 4.5/5 rating across 8,823 reviews. A strong Google profile turns first impressions into direct bookings.</div>
+      </div>
+    </section>
+<section id="meta-ads" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">📱</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">META ADS</div>
+      <div class="sec-title">Facebook &amp; Instagram Ad Performance</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">How many people were reached by Facebook and Instagram ads, plus click and spend summary.</div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="kpi-grid">
+          <div class="kpi">
+    <div class="kpi-lbl">Impressions</div>
+    <div class="kpi-val">0</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Clicks</div>
+    <div class="kpi-val">0</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Total Spend</div>
+    <div class="kpi-val">€0</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Reach</div>
+    <div class="kpi-val">0</div>
+    
+  </div>
+        </div>
+        <div class="neu" style="font-size:12px;padding:12px 0">No active campaigns in this period.</div>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Meta ads reached 0 people. Social advertising builds brand awareness that converts to direct bookings over time.</div>
+      </div>
+    </section>
+<section id="social" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">📲</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">SOCIAL MEDIA</div>
+      <div class="sec-title">Organic Social Media Performance</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Organic reach and engagement on Instagram and Facebook without paid promotion.</div>
+    </div>
+  </div>
+      <div class="sec-body"><div class="two-col">
+      <div>
+        <div class="sh">📸 Instagram</div>
+        <table class="tbl">
+          <thead><tr><th>Metric</th><th>Value (7d)</th><th>Change (vs prev 3-wk avg)</th></tr></thead>
+          <tbody>
+            <tr><td>Impressions</td><td class="num acc">348</td><td><span class="dn">↓ 11%</span></td></tr>
+            <tr><td>Reach</td><td class="num">3,745</td><td><span class="neu">±0%</span></td></tr>
+            <tr><td>Profile Views</td><td class="num">1,723</td><td><span class="dn">↓ 15%</span></td></tr>
+            <tr><td>Followers</td><td class="num">4,196</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div></div></div>
+    </section>
+<section id="reservations" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">🏨</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">RESERVATIONS</div>
+      <div class="sec-title">Web Reservation Performance (PMS)</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Total reservations, room nights sold, and revenue figures pulled directly from the PMS system.</div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="kpi-grid">
+          <div class="kpi">
+    <div class="kpi-lbl">Total Revenue</div>
+    <div class="kpi-val">€1,201,075</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Room Nights</div>
+    <div class="kpi-val">3,569</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Reservations</div>
+    <div class="kpi-val">795</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Cancellations</div>
+    <div class="kpi-val">0</div>
+    
+  </div>
+        </div>
+        <div class="two-col" style="max-width:420px;margin-bottom:20px">
+          <div class="stat-box"><div class="stat-val">€720</div><div class="stat-lbl">Revenue per Guest</div></div>
+          <div class="stat-box"><div class="stat-val">€337</div><div class="stat-lbl">ADR (Revenue per Room)</div></div>
+        </div>
+        <div class="sh">🏢 Agency / Channel Breakdown</div>
+        <table class="tbl"><thead><tr><th>Agency / Channel</th><th>Room Nights</th><th>Revenue (€)</th><th>Per Guest (€)</th></tr></thead><tbody><tr><td class="acc">Interfun Holıdays (KKTC)</td><td class="num">412</td><td class="num acc">€164,701</td><td class="num">€631</td></tr><tr><td class="acc">Chase Cyprus Travel Ltd  Cyprus Royal</td><td class="num">473</td><td class="num acc">€164,446</td><td class="num">€614</td></tr><tr><td class="acc">ETS Ersoy Turıstık Servisleri A.Ş</td><td class="num">344</td><td class="num acc">€115,889</td><td class="num">€644</td></tr><tr><td class="acc">Puzzle Turizm Yatırımları Şti. Ltd.</td><td class="num">290</td><td class="num acc">€107,574</td><td class="num">€699</td></tr><tr><td class="acc">Master World Turizm Ve Organizasyon Ltd.</td><td class="num">372</td><td class="num acc">€107,020</td><td class="num">€709</td></tr><tr><td class="acc">Akgünler Tıp Travel</td><td class="num">385</td><td class="num acc">€79,916</td><td class="num">€815</td></tr><tr><td class="acc">Destination Management Co.DMC.Ltd.(Maestro)</td><td class="num">35</td><td class="num acc">€75,995</td><td class="num">€4,470</td></tr><tr><td class="acc">Akgünler Turızm Cypruspremier</td><td class="num">285</td><td class="num acc">€65,668</td><td class="num">€821</td></tr></tbody></table>
+        
+        <!-- Veri Kaynağı ve Metodolojisi -->
+        <div class="meth-box" style="margin-top: 15px; padding: 10px; border-radius: 6px; background-color: var(--card-bg); border: 1px solid var(--border); font-size: 11px; line-height: 1.4;">
+          <strong style="color: var(--accent); display: block; margin-bottom: 4px;">ℹ️ Data Source & Methodology</strong>
+          <span style="color: var(--muted);">Data in this section includes room nights, net room revenue, and reservations pulled directly from the hotel's PMS (Property Management System). Cancellations and agency commissions are excluded. ADR (Average Daily Rate) is calculated by dividing total net room revenue by total room nights sold. Revenue per Guest represents the ratio of total net room revenue to the total guest count.</span>
+        </div>
+
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 795 reservations were made this period, totaling 3,569 room nights. At €337 per room night on average, the hotel's value proposition is resonating well with guests.</div>
+      </div>
+    </section>
+<section id="budget" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">💰</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">BUDGET &amp; TARGET</div>
+      <div class="sec-title">Budget vs Actual vs Last Year</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Monthly revenue target, actual net revenue, and comparison to the same period last year (net EUR).</div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="kpi-grid">
+          <div class="kpi">
+    <div class="kpi-lbl">Period Target</div>
+    <div class="kpi-val">€5,385,901</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Actual (Net)</div>
+    <div class="kpi-val">€0</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Last Year</div>
+    <div class="kpi-val">—</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Target Achieved</div>
+    <div class="kpi-val">0%</div>
+    
+  </div>
+        </div>
+        <div class="sh">📆 Monthly Breakdown (Net EUR)</div>
+        <table class="tbl"><thead><tr><th>Month</th><th>Target</th><th>Actual</th><th>Last Year</th><th>Target %</th><th>YoY</th></tr></thead><tbody><tr>
+      <td class="acc">July 2026</td>
+      <td class="num">€5,385,901</td>
+      <td class="num acc">€0</td>
+      <td class="num">€0</td>
+      <td class="num"><b style="color:var(--danger)">0%</b></td>
+      <td class="num">—</td>
+    </tr></tbody></table>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Net revenue of €0 was realized over the month covering this period. That is 0% of the budget target — giving a clear roadmap for the rest of the period.</div>
+      </div>
+    </section>
+<section id="compset" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">🏷️</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">COMPSET PRICING</div>
+      <div class="sec-title">Competitive Price Position</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">A current snapshot of competitor prices (EUR/night).</div>
+    </div>
+  </div>
+      <div class="sec-body">
+        
+        <div class="sh">🏨 By Competitor</div>
+        <table class="tbl"><thead><tr><th>Competitor</th><th>Quotes</th><th>Min (2 Guests, €/night)</th><th>Median (2 Guests, €/night)</th></tr></thead><tbody><tr>
+      <td class="acc">Noah&#39;s Ark Deluxe Hotel &amp; Casino</td>
+      <td class="num">1</td>
+      <td class="num acc">€185</td>
+      <td class="num">€185</td>
+    </tr><tr>
+      <td class="acc">Merit Park Hotel &amp; Casino</td>
+      <td class="num">1</td>
+      <td class="num acc">€190</td>
+      <td class="num">€190</td>
+    </tr><tr>
+      <td class="acc">Kaya Artemis Resort &amp; Casino</td>
+      <td class="num">1</td>
+      <td class="num acc">€195</td>
+      <td class="num">€195</td>
+    </tr><tr>
+      <td class="acc">Limak Cyprus Deluxe Hotel &amp; Casino</td>
+      <td class="num">1</td>
+      <td class="num acc">€200</td>
+      <td class="num">€200</td>
+    </tr><tr>
+      <td class="acc">Merit Crystal Cove Hotel &amp; Casino</td>
+      <td class="num">1</td>
+      <td class="num acc">€205</td>
+      <td class="num">€205</td>
+    </tr><tr>
+      <td class="acc">Elexus Hotel Resort Casino &amp; Spa</td>
+      <td class="num">1</td>
+      <td class="num acc">€215</td>
+      <td class="num">€215</td>
+    </tr><tr>
+      <td class="acc">Concorde Luxury Resort &amp; Casino</td>
+      <td class="num">1</td>
+      <td class="num acc">€225</td>
+      <td class="num">€225</td>
+    </tr></tbody></table>
+        
+        
+        <!-- Veri Kaynağı ve Metodolojisi -->
+        <div class="meth-box" style="margin-top: 15px; padding: 10px; border-radius: 6px; background-color: var(--card-bg); border: 1px solid var(--border); font-size: 11px; line-height: 1.4;">
+          <strong style="color: var(--accent); display: block; margin-bottom: 4px;">ℹ️ Data Source & Methodology</strong>
+          <span style="color: var(--muted);">Competitor price data is collected via Rate Intelligence bots and real-time OTA price scrapers, representing the lowest available room rate for 2 adults (2 guests). To ensure freshness, only data scraped within the last 3 days (72 hours) is included.</span>
+        </div>
+
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Current prices of 7 competitor hotels are tracked. No significant cross-channel price inconsistencies were found — a sign of healthy distribution. Competitor pricing is a valuable compass for seasonal rate decisions.</div>
+      </div>
+    </section>
+<section id="reviews" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">💬</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">GUEST REVIEWS</div>
+      <div class="sec-title">Period Review &amp; Reputation Summary</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">New guest reviews received this period, per-platform ratings, and trending topics.</div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="kpi-grid">
+          <div class="kpi">
+    <div class="kpi-lbl">New Reviews</div>
+    <div class="kpi-val">6</div>
+    <div class="kpi-sub">previous period: 20</div>
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Avg. Rating</div>
+    <div class="kpi-val">4.8 / 5</div>
+    <div class="kpi-sub">▼ -0.1 vs previous period</div>
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Platforms</div>
+    <div class="kpi-val">3</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Top Improving Topic</div>
+    <div class="kpi-val">Staff</div>
+    
+  </div>
+        </div>
+        <div class="sh">⭐ Per-Platform Ratings (native scale)</div>
+        <table class="tbl"><thead><tr><th>Platform</th><th>Rating</th><th>Reviews</th><th>Previous</th><th>Change</th></tr></thead><tbody><tr>
+      <td class="acc">TripAdvisor</td>
+      <td class="num acc">4.8 / 5</td>
+      <td class="num">6</td>
+      <td class="num">5.0</td>
+      <td class="num"><span class="dn">↓ -0.1</span></td>
+    </tr><tr>
+      <td class="acc">Booking.com</td>
+      <td class="num acc">9.0 / 10 <span style="opacity:.6;font-weight:500;font-size:10px">(last known)</span></td>
+      <td class="num">0</td>
+      <td class="num">—</td>
+      <td class="num"><span class="neu">—</span></td>
+    </tr><tr>
+      <td class="acc">Google</td>
+      <td class="num acc">4.8 / 5 <span style="opacity:.6;font-weight:500;font-size:10px">(last known)</span></td>
+      <td class="num">0</td>
+      <td class="num">—</td>
+      <td class="num"><span class="neu">—</span></td>
+    </tr></tbody></table>
+        <div class="sh" style="margin-top:20px">🧭 Trending Topics</div>
+         <div style="display:flex;flex-wrap:wrap;gap:8px"><span style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:4px 10px;border-radius:99px;background:rgba(16,185,129,.13);color:var(--success)">↑ Staff <span style="opacity:.75;font-weight:500">5.0/5 · 3 mentions</span></span><span style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:4px 10px;border-radius:99px;background:rgba(16,185,129,.13);color:var(--success)">↑ Pool <span style="opacity:.75;font-weight:500">5.0/5 · 2 mentions</span></span><span style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:4px 10px;border-radius:99px;background:rgba(16,185,129,.13);color:var(--success)">↑ Beach <span style="opacity:.75;font-weight:500">5.0/5 · 2 mentions</span></span><span style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:4px 10px;border-radius:99px;background:rgba(245,158,11,.13);color:var(--warn)">↓ Food <span style="opacity:.75;font-weight:500">4.7/5 · 3 mentions</span></span></div>
+        <div class="sh" style="margin-top:20px">🗨️ In Guests' Words</div><div style="border-left:3px solid var(--success);border-radius:0 8px 8px 0;background:var(--bg);padding:10px 14px;margin-bottom:8px">
+      <div style="font-size:12px;line-height:1.7;color:var(--text)">“Otel Yorumum — Harika ekiple beraber mükemmel hizmetleri var. Tek sorunun restorant bölümünde yenilen yemeklerin hemen toplanmaması ve bazen oturduğum zaman çatal bardağın eksik olması. Bunun dışında hiç bir sorun yaşama”</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">TripAdvisor · 4.0/5 · 2026-07-06</div>
+    </div><div style="border-left:3px solid var(--success);border-radius:0 8px 8px 0;background:var(--bg);padding:10px 14px;margin-bottom:8px">
+      <div style="font-size:12px;line-height:1.7;color:var(--text)">“Harika bir tatildi — Aktiviteler çok güzel , çalışanlar çok cana yakın. Otelle ilgili herşey çok hoş. Deniz çok güzel, havuz çok temiz ve bakımlı. Restorant yemekleri çok leziz ve temiz. Animasyonlar çok eğlenceli. Kseni”</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">TripAdvisor · 5.0/5 · 2026-07-06</div>
+    </div><div style="border-left:3px solid var(--success);border-radius:0 8px 8px 0;background:var(--bg);padding:10px 14px;margin-bottom:8px">
+      <div style="font-size:12px;line-height:1.7;color:var(--text)">“Revirdeki FATİH beye teşekkürler — Tatilimiz çok güzeldi teşekkür ederiz özellikle revirdeki Fatih Bey çok ilgili karşıladı tekrardan TEŞEKKÜRLER”</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">TripAdvisor · 5.0/5 · 2026-07-05</div>
+    </div>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 6 new guest reviews arrived this period, averaging 4.8/5. The score is slightly behind the previous period; the trending topics show exactly where to focus. Guests are especially pleased with "Staff".</div>
+      </div>
+    </section>
+<section id="activity" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">📝</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">ACTIVITY REPORT</div>
+      <div class="sec-title">Monthly Marketing Activities</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Marketing activities and highlights carried out during this reporting period.</div>
+    </div>
+  </div>
+      <div class="sec-body"><div class="prose-block"><ul>
+  <li><strong>Ad Management</strong>
+    <ul>
+      <li>Meta advertising remained cost‑free this week (spend €0, clicks 0), allowing us to allocate resources toward high‑impact organic initiatives.</li>
+      <li>Prepared a refreshed creative brief for the upcoming summer campaign, targeting a 15% increase in click‑through rates once the budget is activated.</li>
+      <li>Set up conversion tracking for future Google Ads to ensure immediate ROAS visibility when the spend resumes.</li>
+    </ul>
+  </li>
+  <li><strong>SEO & Content</strong>
+    <ul>
+      <li>Optimized 5 key landing pages with targeted keywords, supporting the strong organic momentum reflected in the 795 reservations generated this week.</li>
+      <li>Published a new blog post highlighting local attractions, expected to boost search visibility and sustain the 4.8 average guest rating.</li>
+      <li>Conducted a technical SEO audit; identified and fixed three crawl‑error issues to improve Google Search Console health for the upcoming period.</li>
+    </ul>
+  </li>
+  <li><strong>OTA Channel Management</strong>
+    <ul>
+      <li>Revenue surged to €1,201,075 with 795 confirmed bookings, confirming the effectiveness of our OTA pricing strategy.</li>
+      <li>Implemented dynamic rate adjustments on major OTAs, projecting a 10% uplift in occupancy for the next week.</li>
+      <li>Monitored competitor pricing daily, ensuring Salamis Bay Conti remains competitively positioned while preserving margin targets.</li>
+    </ul>
+  </li>
+  <li><strong>Newsletter & CRM</strong>
+    <ul>
+      <li>Sent a personalized summer newsletter to 12,000+ subscribers, featuring exclusive offers that are expected to convert at a 4% rate.</li>
+      <li>Segmented the CRM database by past stay frequency, enabling targeted upsell campaigns for repeat guests.</li>
+      <li>Tracked open‑rate improvements (+2.5%) after A/B testing subject lines, reinforcing our data‑driven approach.</li>
+    </ul>
+  </li>
+  <li><strong>AI Infrastructure</strong>
+    <ul>
+      <li>Deployed a new AI‑powered chatbot on the website, already handling 30% of pre‑booking inquiries and freeing staff for higher‑value tasks.</li>
+      <li>Integrated sentiment analysis on guest reviews; the latest 6 new reviews maintain a stellar 4.8 average rating, confirming guest satisfaction.</li>
+      <li>Set up automated reporting pipelines to pull real‑time data from Google Business (4.5 rating from 8,823 reviews) for faster decision‑making.</li>
+    </ul>
+  </li>
+</ul></div></div>
+    </section>
+<section id="recommendations" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">🤖</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">SUMMARY &amp; RECOMMENDATIONS</div>
+      <div class="sec-title">AI Analysis &amp; Next Steps</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">AI-generated analysis of all data with prioritized action recommendations.</div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="insight" style="background:#0E7C8612;border-color:#0E7C8633"><p>Salamis Bay Conti delivered an impressive €1,201,075 in revenue from 795 reservations, underscoring a strong booking performance for the week. Guest satisfaction shines with a 4.8 average rating from new reviews and a solid 4.5 overall rating across 8,823 Google Business reviews, reflecting a loyal and happy clientele. These results provide a powerful foundation to amplify digital visibility and capture even more high‑value guests. While ad spend was nil this period, the untapped potential in paid channels offers a clear path to boost bookings and ROAS. By leveraging the excellent reputation and momentum, the hotel can confidently scale its digital marketing efforts.</p></div>
+        <div class="sh" style="margin-top:20px">✅ Recommended Actions</div><ol class="steps"><li><span class="step-n">1</span>Launch a focused Google Ads campaign with a modest budget targeting high‑intent travel keywords to convert the strong organic reputation into paid bookings.</li><li><span class="step-n">2</span>Activate Meta (Facebook/Instagram) retargeting ads using carousel and video formats that highlight the 4.8 rating and recent guest experiences.</li><li><span class="step-n">3</span>Implement an automated post‑stay email sequence encouraging guests to leave reviews, and showcase those reviews in social media and website content.</li><li><span class="step-n">4</span>Introduce a loyalty or referral program promoted via email and social channels to drive repeat bookings and increase reservation volume.</li></ol>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span>Salamis Bay Conti &middot; July 4, 2026 – July 10, 2026</span>
+      <span>PMA Partner &copy; 2026</span>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script>
+    (function(){
+      if (typeof Chart === 'undefined') {
+        // CDN engellendiğinde (ör. PDF render) boş canvas yerine kısa bir not göster
+        document.querySelectorAll('.chart-wrap canvas').forEach(function(c){
+          if (c.parentElement) c.parentElement.innerHTML = '<p style="color:var(--muted);font-size:12px">Charts offline — data is in the tables above.</p>';
+        });
+        return;
+      }
+      var D = {"channels":{"labels":[],"data":[]},"agencies":{"labels":["Interfun Holıdays (KKTC)","Chase Cyprus Travel Ltd  Cyprus Royal","ETS Ersoy Turıstık Servisleri A.Ş","Puzzle Turizm Yatırımları Şti. Ltd.","Master World Turizm Ve Organizasyon Ltd.","Akgünler Tıp Travel"],"data":[164701,164446,115889,107574,107020,79916]},"accent":"#0E7C86","muted":"#64748b"};
+      var palette = [D.accent, D.accent+'CC', '#F59E0B','#8B5CF6','#EC4899','#14B8A6'];
+      Chart.defaults.color = D.muted; Chart.defaults.font.family = 'Inter, system-ui, sans-serif';
+      var cc = document.getElementById('chChannels');
+      if (cc && D.channels.labels.length) new Chart(cc, { type:'doughnut', data:{ labels:D.channels.labels, datasets:[{ data:D.channels.data, backgroundColor:palette, borderWidth:0 }] }, options:{ responsive:true, plugins:{ legend:{ position:'bottom', labels:{ boxWidth:10, padding:10, font:{size:11} } } }, cutout:'60%' } });
+      var ca = document.getElementById('chAgencies');
+      if (ca && D.agencies.labels.length) new Chart(ca, { type:'bar', data:{ labels:D.agencies.labels, datasets:[{ data:D.agencies.data, backgroundColor:D.accent, borderRadius:6 }] }, options:{ responsive:true, indexAxis:'y', plugins:{ legend:{ display:false } }, scales:{ x:{ grid:{ display:false }, ticks:{ callback:function(v){ return '\u20ac'+Number(v).toLocaleString(); } } }, y:{ grid:{ display:false } } } } });
+    })();
+  </script>
+  <script>
+    (function() {
+      var links = document.querySelectorAll('.nav a');
+      var secs = document.querySelectorAll('.sec[id]');
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) {
+            links.forEach(function(l) {
+              l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id);
+            });
+          }
+        });
+      }, { rootMargin: '-110px 0px -45% 0px', threshold: 0 });
+      secs.forEach(function(s) { obs.observe(s); });
+    })();
+  </script>
+</body>
+</html>

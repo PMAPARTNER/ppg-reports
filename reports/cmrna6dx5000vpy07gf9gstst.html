@@ -9,16 +9,16 @@
     --bg:#F7F9FA; --bg-card:#FFFFFF; --bg-soft:#F0F3F4; --border:#E1E7E9;
     --text:#152029; --text-muted:#5B6B74; --gold:#1E8C82; --gold-soft:rgba(30,140,130,.10);
     --ru:#B4454F; --ru-soft:rgba(180,69,79,.08); --warn:#C0392B; --warn-soft:rgba(192,57,43,.08);
-    --shadow:0 4px 16px rgba(20,30,40,.06);
+    --amber:#C98A00; --shadow:0 4px 16px rgba(20,30,40,.06);
   }
   :root[data-theme="dark"]{
     --bg:#0A141A; --bg-card:#0F1F28; --bg-soft:rgba(255,255,255,.04); --border:rgba(255,255,255,.1);
     --text:rgba(255,255,255,.95); --text-muted:rgba(255,255,255,.65); --gold:#38ADA4; --gold-soft:rgba(56,173,164,.12);
     --ru:#E8B4B8; --ru-soft:rgba(232,180,184,.08); --warn:#ff9b9b; --warn-soft:rgba(229,62,62,.08);
-    --shadow:0 10px 30px rgba(0,0,0,.35);
+    --amber:#E0A300; --shadow:0 10px 30px rgba(0,0,0,.35);
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;transition:background .2s,color .2s}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;transition:background .2s,color .2s}
   .toolbar{position:sticky;top:0;z-index:50;background:var(--bg-card);border-bottom:1px solid var(--border);display:flex;justify-content:flex-end;gap:8px;padding:10px 20px;box-shadow:var(--shadow)}
   .toolbar button{font-family:inherit;font-size:12px;font-weight:600;border:1px solid var(--border);background:var(--bg-soft);color:var(--text);padding:7px 14px;border-radius:8px;cursor:pointer}
   .toolbar button:hover{border-color:var(--gold)}
@@ -27,16 +27,16 @@
   #approveBtn.approved{background:#2e9e56;border-color:#2e9e56}
   .top-banner{background:linear-gradient(90deg,#c98a00,#e0a300);color:#fff;padding:12px 24px;font-size:13px;font-weight:700;text-align:center;letter-spacing:.4px}
   .top-banner.approved{background:linear-gradient(90deg,#237a45,#2e9e56)}
-  .wrap{max-width:1040px;margin:0 auto;padding:30px 22px 80px}
+  .wrap{max-width:1060px;margin:0 auto;padding:30px 22px 80px}
   .pma-bar{display:flex;justify-content:space-between;align-items:center;padding:12px 4px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--border);margin-bottom:24px}
   h1{font-family:Georgia,serif;font-size:31px;margin:16px 0 6px;color:var(--text)}
   .sub{color:var(--text-muted);font-size:14px;margin-bottom:10px}
-  .card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:26px 30px;margin-bottom:22px;box-shadow:var(--shadow)}
-  .card h2{font-family:Georgia,serif;font-size:19px;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+  .card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px 30px;margin-bottom:22px;box-shadow:var(--shadow)}
+  .card h2{font-family:Georgia,serif;font-size:19px;color:var(--text);margin:0}
   .card h3{font-size:14px;margin-bottom:6px}
   .tag{font-size:9px;font-weight:700;background:var(--gold-soft);color:var(--gold);border:1px solid var(--gold);padding:3px 8px;border-radius:4px;letter-spacing:1.5px;text-transform:uppercase}
   .tag-ru{background:var(--ru-soft);color:var(--ru);border-color:var(--ru)}
-  .summary-box{background:var(--bg-card);border:2px solid var(--gold);border-radius:14px;padding:24px 30px;margin-bottom:24px;box-shadow:var(--shadow)}
+  .summary-box{background:var(--bg-card);border:2px solid var(--gold);border-radius:16px;padding:26px 30px;margin-bottom:24px;box-shadow:var(--shadow)}
   .summary-box h2{font-size:18px;margin-bottom:14px;color:var(--text)}
   .summary-box ol{margin-left:20px}
   .summary-box li{margin-bottom:10px;font-size:14px}
@@ -92,6 +92,75 @@
   .hbar-fill.meta{background:#8b5cf6}
   .lang-doc{display:none}
   .lang-doc.active{display:block}
+
+  /* ── advanced-design additions ── */
+  .hero-band{background:linear-gradient(135deg, var(--gold) 0%, #123f3b 100%);border-radius:20px;padding:40px 36px;color:#fff;margin-bottom:24px;position:relative;overflow:hidden}
+  :root[data-theme="dark"] .hero-band{background:linear-gradient(135deg,#12403c 0%,#081615 100%)}
+  .hero-band::after{content:'';position:absolute;top:-70px;right:-70px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.07)}
+  .hero-band::before{content:'';position:absolute;bottom:-90px;left:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.05)}
+  .hero-band .eyebrow{font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;opacity:.85;margin-bottom:10px;position:relative;z-index:1}
+  .hero-band h1{color:#fff;font-size:32px;margin:0 0 10px;position:relative;z-index:1}
+  .hero-band .sub{color:rgba(255,255,255,.92);font-size:14.5px;max-width:680px;position:relative;z-index:1}
+  .confidence-pill{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:6px 16px;font-size:12px;font-weight:700;margin-top:16px;position:relative;z-index:1;color:#fff}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;position:relative;z-index:1}
+  .hero-stat{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);border-radius:12px;padding:16px 14px}
+  .hero-stat .v{font-family:Georgia,serif;font-size:23px;font-weight:800;color:#fff;line-height:1.15}
+  .hero-stat .l{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.85);margin-top:5px;font-weight:700}
+
+  .section-head{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+  .section-icon{width:40px;height:40px;border-radius:11px;background:var(--gold-soft);display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
+  .section-icon.ru{background:var(--ru-soft)}
+  .section-head .kicker{font-size:10px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--text-muted);display:block;margin-bottom:2px}
+
+  .outcome-band{background:linear-gradient(160deg, var(--gold-soft), transparent 70%);border:2px solid var(--gold);border-radius:18px;padding:30px 32px;margin-bottom:24px;text-align:center}
+  .outcome-band .big{font-family:Georgia,serif;font-size:44px;font-weight:800;color:var(--gold);line-height:1.15}
+  .outcome-band .big small{font-size:17px;font-weight:700}
+  .outcome-band .cap{font-size:13.5px;color:var(--text);margin-top:8px;font-weight:600}
+  .outcome-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+  .outcome-grid .cell{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:15px}
+  .outcome-grid .cell .v{font-size:19px;font-weight:800;color:var(--gold);font-family:Georgia,serif}
+  .outcome-grid .cell .l{font-size:10px;text-transform:uppercase;color:var(--text-muted);margin-top:4px;font-weight:700;letter-spacing:.4px}
+
+  .donut-wrap{display:flex;gap:34px;align-items:center;flex-wrap:wrap;margin:14px 0 8px}
+  .donut{width:186px;height:186px;border-radius:50%;position:relative;flex-shrink:0;box-shadow:var(--shadow)}
+  .donut .hole{position:absolute;inset:26px;background:var(--bg-card);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px var(--border)}
+  .donut .hole .v{font-family:Georgia,serif;font-size:19px;font-weight:800;color:var(--text)}
+  .donut .hole .l{font-size:8.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-top:2px;text-align:center}
+  .legend{flex:1;min-width:250px;display:flex;flex-direction:column;gap:10px}
+  .legend-row{display:flex;align-items:center;gap:10px;font-size:13px}
+  .legend-dot{width:12px;height:12px;border-radius:3px;flex-shrink:0}
+  .legend-row .name{flex:1}
+  .legend-row .amt{font-weight:700;color:var(--text);white-space:nowrap}
+  .legend-row .pct{color:var(--text-muted);font-size:11.5px;width:34px;text-align:right}
+
+  .roadmap{display:flex;justify-content:space-between;position:relative;margin:26px 0 6px;gap:8px}
+  .roadmap::before{content:'';position:absolute;top:18px;left:6%;right:6%;height:2px;background:var(--border);z-index:0}
+  .roadmap .node{flex:1;text-align:center;position:relative;z-index:1;padding:0 4px}
+  .roadmap .dot{width:36px;height:36px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-weight:800;font-size:13px;box-shadow:0 0 0 5px var(--bg-card)}
+  .roadmap .node h4{font-size:12px;margin-bottom:5px}
+  .roadmap .node p{font-size:10.5px;color:var(--text-muted);line-height:1.45}
+
+  .compare{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;margin:16px 0 4px}
+  .compare .box{background:var(--bg-soft);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center}
+  .compare .box.now{border-color:var(--gold);background:var(--gold-soft)}
+  .compare .arrow{font-size:24px;color:var(--gold);text-align:center}
+  .compare .box .t{font-size:9.5px;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);font-weight:700;margin-bottom:6px}
+  .compare .box .v{font-size:18px;font-weight:800;color:var(--text);font-family:Georgia,serif}
+
+  .stepper{counter-reset:step}
+  .step{display:flex;gap:14px;margin-bottom:16px}
+  .step:last-child{margin-bottom:0}
+  .step .num{counter-increment:step;width:30px;height:30px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0}
+  .step .num::before{content:counter(step)}
+  .step .body b{display:block;font-size:13.5px;margin-bottom:2px}
+  .step .body span{font-size:12.5px;color:var(--text-muted)}
+
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+  .why-cell{background:var(--bg-soft);border:1px solid var(--border);border-radius:12px;padding:16px}
+  .why-cell .ico{font-size:20px;margin-bottom:8px}
+  .why-cell h4{font-size:13px;margin-bottom:5px}
+  .why-cell p{font-size:12px;color:var(--text-muted);line-height:1.55}
+  @media (max-width:720px){ .grid4,.grid3,.hero-stats,.outcome-grid,.why-grid{grid-template-columns:repeat(2,1fr)} .compare{grid-template-columns:1fr} .compare .arrow{transform:rotate(90deg)} }
 </style>
 </head>
 <body>
@@ -108,76 +177,111 @@
 <div class="lang-doc active" id="doc-tr">
 <div class="wrap">
   <div class="pma-bar"><span>PMA PARTNER · MARKETING BRIEFING</span><span>BELCONTI RESORT</span></div>
-  <h1>Temmuz 2026 Pazarlama Planı</h1>
-  <div class="sub">Google Ads + Meta Ads (canlı veri) + GA4 + pazar araştırması ile hazırlandı · Toplam bütçe: <strong>700.000 TL ± 50.000 TL</strong> · <strong>KDV hariç</strong> · SEO planı dahil</div>
-  <div class="note" style="margin-top:-4px;margin-bottom:10px">Bütçe 650.000–750.000 TL aralığında esnek tutulmuştur (platform teklif optimizasyonu gün içinde küçük dalgalanmalar yaratabilir); belirtilen tüm tutarlar <b>KDV hariçtir</b>, faturalarda ayrıca eklenir.</div>
 
-  <div class="grid2">
-    <div class="metric-hero"><div class="v">700.000 ₺</div><div class="l">Temmuz Bütçe Tavanı</div><div class="f">±50.000 ₺ esneklik · KDV hariç</div></div>
-    <div class="metric-hero"><div class="v">598.500 ₺</div><div class="l">Son 30 Günün Gerçek Harcaması</div><div class="f">Google+Meta, tüm kanallar</div></div>
+  <div class="hero-band">
+    <div class="eyebrow">Temmuz 2026 · Reklam &amp; Pazarlama Planı</div>
+    <h1>Doğru zamanda, doğru pazarlarda büyüme fırsatı</h1>
+    <div class="sub">Türkiye 2025'te tarihinin en yüksek turist sayısını gördü; Temmuz 2026'da 3 ana pazarımızın uçuş kapasitesi büyüyor. Bu planın amacı: aynı bütçeyle daha akıllı harcamak, yeni bir pazarı (Rusya) ilk kez açmak ve organik büyümeyi de yanına eklemek.</div>
+    <div class="confidence-pill">📈 3 pazarda büyüme sinyali · rekor turizm yılı · aynı bütçe, daha akıllı dağılım</div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="v">700.000 ₺</div><div class="l">Temmuz Bütçesi (±50.000)</div></div>
+      <div class="hero-stat"><div class="v">~17,8 Milyon ₺</div><div class="l">Hedeflenen Ciro (5 bölüm)</div></div>
+      <div class="hero-stat"><div class="v">1 TL → 25,5 TL</div><div class="l">Hedeflenen Getiri Oranı</div></div>
+    </div>
   </div>
 
   <div class="summary-box">
-    <h2>🎯 4 maddede plan</h2>
+    <h2>🎯 Plan 4 basit maddede</h2>
     <ol>
-      <li><b>Bütçeyi artırmıyoruz, akıllıca paylaştırıyoruz.</b> Son 30 günün gerçek harcaması zaten ~598.500 TL — 700.000 TL (±50.000 TL, KDV hariç) zaten "şu an harcadığımız kadar." Fark: zayıf kampanyalardan güçlü olanlara para kaydırıyoruz.</li>
-      <li><b>Yeni bir pazar açıyoruz: Rusya.</b> Aeroflot Temmuz'un tamamını kapsayan dönemde Moskova-Antalya hattına günde 2 ek uçuş koydu (+105.000 koltuk). Meta Rusya'da kapalı — Yandex Ads bunu değiştirecek.</li>
-      <li><b>Reklamın yanına organik büyüme de ekliyoruz.</b> Ayrı bir SEO çalışma planı var — reklam bütçesini tüketmez, ücretsiz/organik trafiği büyütür.</li>
-      <li><b>6 basit reklam bölümü + grafiklerle.</b> Her şey tek para biriminde (TL), sade dilde, sayılarla gösteriliyor. Sağ üstten <b>Dark/Light</b> ve <b>TR/EN</b> değiştirebilir, onayladığınızda <b>Onayla</b> butonuna basabilirsiniz.</li>
+      <li><b>Bütçeyi artırmıyoruz, akıllıca paylaştırıyoruz.</b> Son 30 günün gerçek harcaması zaten ~598.500 TL — yani 700.000 TL (±50.000, KDV hariç) "şu an zaten harcadığımız kadar." Tek fark: parayı zayıf kampanyalardan güçlü olanlara kaydırıyoruz.</li>
+      <li><b>Yeni bir pazar açıyoruz: Rusya.</b> Aeroflot, Temmuz'un tamamını kapsayan dönemde Moskova–Antalya hattına günde 2 ek uçuş koydu (+105.000 koltuk). Bugüne kadar bu talebe hiç dokunamıyorduk (Meta Rusya'da kapalı) — Yandex Ads bunu ilk kez açıyor.</li>
+      <li><b>Reklamın yanına ücretsiz büyümeyi de ekliyoruz.</b> Ayrı bir SEO çalışma planı var — reklam bütçesini hiç tüketmeden, organik trafiği büyütüyor.</li>
+      <li><b>Her şey sade, sayılarla ve görsel olarak anlatılıyor.</b> 6 basit bölüm, tek para birimi (TL), grafiklerle. Sağ üstten <b>Dark/Light</b> ve <b>TR/EN</b> değiştirebilir, onayladığınızda <b>Onayla</b> butonuna basabilirsiniz.</li>
     </ol>
   </div>
 
+  <div class="outcome-band">
+    <div class="cap" style="margin-top:0;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;color:var(--gold)">🚀 Toplam Beklenen Sonuç — Büyük Resim</div>
+    <div class="big">1 TL → <small>hedef</small> 25,5 TL</div>
+    <div class="cap">Yatırılan her 1 TL reklam harcamasına karşılık hedeflenen ciro — 5 ölçülebilir bölümün toplamı</div>
+    <div class="outcome-grid">
+      <div class="cell"><div class="v">~17,8 milyon ₺</div><div class="l">Toplam İddialı Ciro Hedefi</div></div>
+      <div class="cell"><div class="v">~324</div><div class="l">Hedeflenen Rezervasyon</div></div>
+      <div class="cell"><div class="v">%3,9</div><div class="l">Ortalama Reklam/Ciro Oranı</div></div>
+    </div>
+    <p class="note" style="text-align:left;margin-top:16px">Bu rakamlar <b>iddialı hedeflerdir</b>, garanti değildir; ay içinde gerçek sonuçlarla karşılaştırılacaktır. Rusya (Yandex) pilot bölümü bu toplama <b>dahil değildir</b> — yepyeni bir kanal olduğu için henüz geçmiş performans verisi yok, ilk sonuçlar Ağustos'ta bu tabloya eklenecek.</p>
+  </div>
+
   <div class="card">
-    <h2><span class="tag">1</span> Nereden geldik — Mayıs → Temmuz</h2>
+    <div class="section-head">
+      <div class="section-icon">📊</div>
+      <div><span class="kicker">Bölüm 1</span><h2>Nereden geldik — momentum zaten bizden yana</h2></div>
+    </div>
     <div class="chart-trend">
       <div class="col"><div class="val">3.296 ₺</div><div class="bar" style="height:10%"></div><div class="lbl">Mayıs</div></div>
       <div class="col"><div class="val">14.142 ₺</div><div class="bar" style="height:42%"></div><div class="lbl">Haziran</div></div>
       <div class="col"><div class="val">~46.750 ₺</div><div class="bar est" style="height:100%"></div><div class="lbl">Temmuz<br><span style="font-size:9px">(ilk 2 günün hızıyla tahmin)</span></div></div>
     </div>
-    <div class="grid4" style="margin-top:18px">
+    <p class="note" style="margin-top:2px">Yukarıdaki 3 rakam, o ayın <b>günlük ortalama</b> reklam harcamasını gösterir (aylık toplam değil).</p>
+    <div class="compare">
+      <div class="box"><div class="t">Mayıs → Haziran</div><div class="v" style="color:#2e9e56">%329 artış</div></div>
+      <div class="arrow">➜</div>
+      <div class="box now"><div class="t">Temmuz hedefi</div><div class="v">Aynı ivmeyi korumak</div></div>
+    </div>
+    <div class="grid4" style="margin-top:20px">
       <div class="metric"><div class="v">7,91%</div><div class="l">Haziran Tıklama Oranı</div><div class="f">21.683 tıklama / 274K gösterim</div></div>
-      <div class="metric"><div class="v">0,65 ₺</div><div class="l">Ortalama Tıklama Maliyeti</div><div class="f">Mayıs-Haziran sabit</div></div>
+      <div class="metric"><div class="v">0,65 ₺</div><div class="l">Ortalama Tıklama Maliyeti</div><div class="f">Mayıs-Haziran sabit — ucuz ve öngörülebilir</div></div>
       <div class="metric"><div class="v">~598.500 ₺</div><div class="l">Toplam (30 gün, tüm kanal)</div><div class="f">Google+Meta, güncel kurla TL'ye çevrildi</div></div>
       <div class="metric"><div class="v">%329</div><div class="l">Mayıs→Haziran artış</div><div class="f">8 Haziran'da başlayan kampanya sayesinde</div></div>
     </div>
-    <div class="warn">⚠️ Şeffaflık notu: Sistem "79.995 dönüşüm" diyor ama büyük kısmı gerçek rezervasyon değil, link tıklama/beğeni gibi küçük etkileşimler. Gerçek rezervasyon-benzeri olay sayısı çok daha az (Haziran'da Meta'da ~15 civarı). Aşağıdaki "beklenen sonuç" rakamları <b>iddialı hedef</b> olarak okunmalı, garanti değil.</div>
+    <div class="warn">⚠️ Şeffaflık notu: Sistem "79.995 dönüşüm" diyor ama büyük kısmı gerçek rezervasyon değil, link tıklama/beğeni gibi küçük etkileşimler. Gerçek rezervasyon-benzeri olay sayısı çok daha az (Haziran'da Meta'da ~15 civarı). Bu, iyi haberin gölgesinde kalmasın istediğim tek nokta — aşağıdaki "beklenen sonuç" rakamları bu yüzden <b>iddialı hedef</b> olarak okunmalı, garanti değil. Bunu düzeltmek (Meta Pixel doğrulaması) İhtiyaç Listesi'nde.</div>
 
     <h3 style="margin-top:24px;color:#4285F4">🔵 Google Ads tarafı — aylık değişim</h3>
     <div class="chart-trend small">
       <div class="col"><div class="val">~635.000 ₺</div><div class="bar google" style="height:100%"></div><div class="lbl">Orta Haziran<br><span style="font-size:9px">(13 Haz. itibarıyla, son 30 gün)</span></div></div>
       <div class="col"><div class="val">~581.000 ₺</div><div class="bar google" style="height:91%"></div><div class="lbl">Başı Temmuz<br><span style="font-size:9px">(2 Tem. itibarıyla, son 30 gün)</span></div></div>
     </div>
-    <p class="note">Google Ads tarafında Meta gibi net 3 aylık nokta yok — sistem "son 30 gün" hareketli pencere kullanıyor, o yüzden 2 farklı tarihte aldığım gerçek ölçümü karşılaştırdım. Sonuç: Google harcaması hafif düşüş eğiliminde (~%9), Meta ise sert yükseliş trendinde (%329) — toplam bütçe bu ikisinin dengesiyle oluşuyor.</p>
+    <p class="note">Google Ads tarafında Meta gibi net 3 aylık nokta yok — sistem "son 30 gün" hareketli pencere kullanıyor, o yüzden 2 farklı tarihte aldığım gerçek ölçümü karşılaştırdım. Sonuç: Google harcaması hafif düşüş eğiliminde (~%9), Meta ise sert yükseliş trendinde (%329) — toplam bütçe bu ikisinin dengesiyle oluşuyor ve bu denge tam da Temmuz planının kurgusu.</p>
   </div>
 
   <div class="card">
-    <h2><span class="tag">2</span> Talep nasıl değişiyor? — Uçuş kapasitesi + pazar verisi</h2>
+    <div class="section-head">
+      <div class="section-icon">✈️</div>
+      <div><span class="kicker">Bölüm 2</span><h2>Talep büyüyor — uçuş kapasitesi + pazar verisi</h2></div>
+    </div>
     <div class="grid4">
       <div class="metric"><div class="v">64 milyon</div><div class="l">Türkiye 2025 toplam ziyaretçi</div><div class="f">Tarihi rekor, $65,2 milyar gelir</div></div>
       <div class="metric"><div class="v">~39 milyon</div><div class="l">Antalya Havalimanı yolcu (2025)</div><div class="f">Belconti'nin bölgesi</div></div>
       <div class="metric"><div class="v">6,9 milyon</div><div class="l">Rusya — Türkiye'nin #1 kaynak pazarı</div><div class="f">Almanya #2 (6,75M), İngiltere #3 (4,2M+)</div></div>
       <div class="metric"><div class="v">~3 milyon</div><div class="l">2026 yaz Rus turist tahmini</div><div class="f">Antalya+İstanbul+Ege toplamı</div></div>
     </div>
-    <p class="note" style="font-size:12.5px;color:var(--text)">
-      Bu 3 pazarın hepsinde <b>2026 yazı için uçuş kapasitesi büyüyor</b>:<br>
-      • <b>Rusya:</b> Aeroflot 2026 yazında Türkiye seferlerine <b>105.000'den fazla ek koltuk</b> ekliyor; Moskova–Antalya hattında 26 Haziran–11 Ekim arası <b>her gün 2 ek uçuş</b> (Temmuz'un tamamını kapsıyor). Pegasus ayrıca Moskova'dan Bodrum/Dalaman'a blok koltuk açtı.<br>
-      • <b>İngiltere:</b> TUI koltuk kapasitesini <b>1 milyon</b> artırıyor.<br>
-      • <b>Almanya:</b> Lufthansa, Frankfurt/Münih–İstanbul/Antalya hatlarında sefer sıklığını artırıyor.
-    </p>
+    <div class="why-grid">
+      <div class="why-cell"><div class="ico">🇷🇺</div><h4>Rusya</h4><p>Aeroflot 2026 yazında Türkiye seferlerine <b>105.000'den fazla ek koltuk</b> ekliyor; Moskova–Antalya hattında 26 Haziran–11 Ekim arası <b>her gün 2 ek uçuş</b> (Temmuz'un tamamını kapsıyor). Pegasus da Moskova'dan Bodrum/Dalaman'a blok koltuk açtı.</p></div>
+      <div class="why-cell"><div class="ico">🇬🇧</div><h4>İngiltere</h4><p>TUI koltuk kapasitesini <b>1 milyon</b> artırıyor — bu pazarda halihazırda varız, büyümeye hazır konumdayız.</p></div>
+      <div class="why-cell"><div class="ico">🇩🇪</div><h4>Almanya</h4><p>Lufthansa, Frankfurt/Münih–İstanbul/Antalya hatlarında sefer sıklığını artırıyor — istikrarlı, büyüyen bir pazar.</p></div>
+    </div>
     <div class="ru-box">
-      <b>Sonuç:</b> Uçuş arzı artınca fiyatlar erişilebilir olur, talep büyür — 3 pazarın hepsi Temmuz için büyüme sinyali veriyor. Rusya'da bu büyümeye Belconti şu an <b>hiç dokunamıyor</b> (Meta Rusya'da kapalı) — bu yüzden Rusya yeni bölüm; Almanya/İngiltere'de zaten varız, bütçeyi bu sinyalle koruyoruz.
+      <b>Sonuç:</b> Uçuş arzı artınca fiyatlar erişilebilir olur, talep büyür — 3 pazarın hepsi Temmuz için büyüme sinyali veriyor. Rusya'da bu büyümeye Belconti şu an <b>hiç dokunamıyor</b> (Meta Rusya'da kapalı) — bu yüzden Rusya yeni bölüm; Almanya/İngiltere'de zaten varız, bütçeyi bu sinyalle koruyoruz. Kısacası: rüzgar arkamızdan esiyor, planın işi bu rüzgarı doğru yakalamak.
     </div>
   </div>
 
   <div class="card">
-    <h2><span class="tag">3</span> 700.000 TL nasıl paylaşılıyor? — 6 basit bölüm</h2>
-    <div style="margin:6px 0 18px">
-      <div class="hbar-row"><div>Türkiye Arama</div><div class="hbar-track"><div class="hbar-fill" style="width:100%"></div></div><div class="right gold">196.000 ₺</div></div>
-      <div class="hbar-row"><div>Son Dakika / Teklif</div><div class="hbar-track"><div class="hbar-fill" style="width:71%"></div></div><div class="right gold">140.000 ₺</div></div>
-      <div class="hbar-row"><div>PMAX</div><div class="hbar-track"><div class="hbar-fill" style="width:64%"></div></div><div class="right gold">126.000 ₺</div></div>
-      <div class="hbar-row"><div>Remarketing (Meta)</div><div class="hbar-track"><div class="hbar-fill meta" style="width:57%"></div></div><div class="right gold">112.000 ₺</div></div>
-      <div class="hbar-row"><div>Rusya (Yandex, YENİ)</div><div class="hbar-track"><div class="hbar-fill ru" style="width:36%"></div></div><div class="right gold">70.000 ₺</div></div>
-      <div class="hbar-row"><div>Avrupa (DE+UK)</div><div class="hbar-track"><div class="hbar-fill" style="width:29%"></div></div><div class="right gold">56.000 ₺</div></div>
+    <div class="section-head">
+      <div class="section-icon">💰</div>
+      <div><span class="kicker">Bölüm 3</span><h2>700.000 TL nasıl paylaşılıyor? — 6 basit bölüm</h2></div>
+    </div>
+    <div class="donut-wrap">
+      <div class="donut" style="background:conic-gradient(#1E8C82 0deg 100.8deg, #C98A00 100.8deg 172.8deg, #4285F4 172.8deg 237.6deg, #8b5cf6 237.6deg 295.2deg, #B4454F 295.2deg 331.2deg, #2E86AB 331.2deg 360deg)">
+        <div class="hole"><div class="v">700.000 ₺</div><div class="l">Temmuz Toplam</div></div>
+      </div>
+      <div class="legend">
+        <div class="legend-row"><span class="legend-dot" style="background:#1E8C82"></span><span class="name">Türkiye Arama</span><span class="amt">196.000 ₺</span><span class="pct">%28</span></div>
+        <div class="legend-row"><span class="legend-dot" style="background:#C98A00"></span><span class="name">Son Dakika / Teklif</span><span class="amt">140.000 ₺</span><span class="pct">%20</span></div>
+        <div class="legend-row"><span class="legend-dot" style="background:#4285F4"></span><span class="name">PMAX</span><span class="amt">126.000 ₺</span><span class="pct">%18</span></div>
+        <div class="legend-row"><span class="legend-dot" style="background:#8b5cf6"></span><span class="name">Remarketing (Meta)</span><span class="amt">112.000 ₺</span><span class="pct">%16</span></div>
+        <div class="legend-row"><span class="legend-dot" style="background:#B4454F"></span><span class="name">Rusya (Yandex, YENİ)</span><span class="amt">70.000 ₺</span><span class="pct">%10</span></div>
+        <div class="legend-row"><span class="legend-dot" style="background:#2E86AB"></span><span class="name">Avrupa (DE+UK)</span><span class="amt">56.000 ₺</span><span class="pct">%8</span></div>
+      </div>
     </div>
     <table>
       <thead><tr><th>Bölüm</th><th>Ne işe yarar</th><th class="right">Bütçe</th></tr></thead>
@@ -195,7 +299,24 @@
   </div>
 
   <div class="card">
-    <h2><span class="tag">4</span> Kampanya kurgusu — her bölüm nasıl kurulacak?</h2>
+    <div class="section-head">
+      <div class="section-icon">🗓️</div>
+      <div><span class="kicker">Yol Haritası</span><h2>Temmuz'un 4 haftası — plan hareket halinde</h2></div>
+    </div>
+    <div class="roadmap">
+      <div class="node"><div class="dot">1</div><h4>Kurulum</h4><p>1-7 Temmuz<br>Google kampanyaları yeniden düzenlenir, Yandex Rusya kampanyası hazırlanır (PAUSED), Meta remarketing güncellenir.</p></div>
+      <div class="node"><div class="dot">2</div><h4>İlk Sinyaller</h4><p>8-14 Temmuz<br>Rusya kampanyası küçük günlük limitle canlıya alınır; ilk tıklama/maliyet verisi izlenir.</p></div>
+      <div class="node"><div class="dot">3</div><h4>Ayarlama</h4><p>15-21 Temmuz<br>En iyi giden bölümlere bütçe kaydırılır, zayıf reklam metinleri değiştirilir.</p></div>
+      <div class="node"><div class="dot">4</div><h4>Sonuç &amp; Karar</h4><p>22-31 Temmuz<br>Ay sonu sonuçları çıkarılır; Rusya pilotunun Ağustos'ta büyütülüp büyütülmeyeceğine karar verilir.</p></div>
+    </div>
+    <p class="note" style="margin-top:18px">Bu, "bütçeyi ayır, ayın sonunu bekle" değil — her hafta bir kontrol noktası var. Zayıf giden bir bölüm görürsek 3. haftayı beklemeden müdahale ederiz.</p>
+  </div>
+
+  <div class="card">
+    <div class="section-head">
+      <div class="section-icon">⚙️</div>
+      <div><span class="kicker">Bölüm 4</span><h2>Kampanya kurgusu — her bölüm nasıl kurulacak?</h2></div>
+    </div>
     <p class="note" style="font-size:12.5px;color:var(--text);margin-top:0">
       Basit huni mantığı: <b>PMAX + Türkiye Arama + Avrupa + Rusya</b> = hiç tanımayanı ilk kez getiren "yeni misafir" bölümleri. <b>Remarketing</b> = bizi tanıyan kitle (en ucuz/verimli). <b>Son Dakika</b> = "şimdi karar ver" dürtüsü.
     </p>
@@ -267,12 +388,20 @@
   </div>
 
   <div class="card">
-    <h2><span class="tag tag-ru">RUSYA / YANDEX</span> Neden pilot bütçe?</h2>
-    <p class="note">Yepyeni ve test edilmemiş bir kanal olduğu için 70.000 TL'yi <b>pilot bütçe</b> olarak ayırdım — ilk 2-3 hafta sonuçlara göre (Ağustos'ta) büyütmeyi ya da küçültmeyi öneririm. Geçmiş performans verisi olmadığından "beklenen rezervasyon" rakamı vermiyorum.</p>
+    <div class="section-head">
+      <div class="section-icon ru">🇷🇺</div>
+      <div><span class="kicker">Rusya / Yandex</span><h2>Neden heyecanlıyız — ilk hareket eden avantajı</h2></div>
+    </div>
+    <p class="note" style="font-size:13px;color:var(--text);margin-top:0">Belconti bugüne kadar Rusya pazarına <b>hiç doğrudan reklam vermedi</b> — Meta orada kapalı olduğu için bu talebe tamamen kapalıydık. Yandex Ads bu kapıyı ilk kez açıyor, tam da Aeroflot'un günde 2 ek uçuş koyduğu bir dönemde. Bu, rakiplerin çoğu henüz Yandex'te değilken erken giriş yapma fırsatı.</p>
+    <p class="note">Yepyeni ve test edilmemiş bir kanal olduğu için 70.000 TL'yi <b>pilot bütçe</b> olarak ayırdım — küçük ve kontrollü başlıyoruz. İlk 2-3 haftanın sonuçlarına göre (Ağustos'ta) büyütmeyi öneririm. Geçmiş performans verisi olmadığından "beklenen rezervasyon" rakamı vermiyorum — ama tam da bunun için küçük başlayıp veriyle büyütüyoruz.</p>
   </div>
 
   <div class="card">
-    <h2><span class="tag">DETAYLAR</span> İsteyen için: hedef maliyet oranları</h2>
+    <div class="section-head">
+      <div class="section-icon">🧮</div>
+      <div><span class="kicker">Detaylar</span><h2>Yatırımın karşılığı ne olacak?</h2></div>
+    </div>
+    <p class="note" style="margin-top:0">Basitçe: "Reklam/Ciro Oranı" her 100 TL cirodan ne kadarını reklama harcadığımızı gösterir — <b>ne kadar düşükse o kadar verimli.</b> Aşağıdaki tablo, her bölümün hedeflediği bu oranı ve buna karşılık gelen iddialı ciro hedefini gösteriyor.</p>
     <table>
       <thead><tr><th>Bölüm</th><th class="right">Hedef Reklam/Ciro Oranı</th><th class="right">İddialı Hedef Ciro</th></tr></thead>
       <tbody>
@@ -282,19 +411,23 @@
         <tr><td>Remarketing</td><td class="right gold">%2,5</td><td class="right">4.480.000 ₺</td></tr>
         <tr><td>Avrupa (DE+UK)</td><td class="right gold">%4,5</td><td class="right">1.244.444 ₺</td></tr>
         <tr><td>Rusya (pilot)</td><td class="right">— (veri yok)</td><td class="right">—</td></tr>
+        <tr class="total-row"><td>Toplam (5 ölçülebilir bölüm)</td><td class="right gold">%3,9 (ortalama)</td><td class="right gold">~17.844.444 ₺</td></tr>
       </tbody>
     </table>
     <p class="note">Ortalama rezervasyon sepet değeri 55.000 ₺ varsayımıyla hesaplanmıştır (platform varsayılanı). Bunlar tavan hedeflerdir, ay içinde gerçek ROI ile karşılaştırılacaktır.</p>
   </div>
 
   <div class="card">
-    <h2><span class="tag">SEO</span> Organik büyüme planı (reklam bütçesini tüketmez)</h2>
+    <div class="section-head">
+      <div class="section-icon">🌱</div>
+      <div><span class="kicker">SEO</span><h2>Organik büyüme planı — reklam bütçesini hiç tüketmez</h2></div>
+    </div>
     <div class="grid3">
       <div class="metric"><div class="v">130.000</div><div class="l">Google gösterimi (30 gün)</div><div class="f">Google zaten gösteriyor</div></div>
       <div class="metric"><div class="v">3.341</div><div class="l">Tıklama (30 gün)</div><div class="f">%2,6 tıklama oranı — düşük</div></div>
-      <div class="metric"><div class="v">%4</div><div class="l">Trafiğin organik payı</div><div class="f">Reklama bağımlılık yüksek</div></div>
+      <div class="metric"><div class="v">%4</div><div class="l">Trafiğin organik payı</div><div class="f">Büyüme alanı burada</div></div>
     </div>
-    <p class="note" style="font-size:12.5px;color:var(--text)">Google, Belconti'yi 130.000 kez gösteriyor ama sadece 3.341 kişi tıklıyor — bu genelde <b>sıralamanın düşük olduğunun</b> işareti (insanlar ilk sayfanın altını az tıklar). Reklam bütçesi bunu hızlı çözer ama pahalıdır; SEO ücretsiz ve kalıcı çözer, sadece zaman alır.</p>
+    <p class="note" style="font-size:12.5px;color:var(--text)">Google, Belconti'yi 130.000 kez gösteriyor ama sadece 3.341 kişi tıklıyor — bu genelde <b>sıralamanın düşük olduğunun</b> işareti (insanlar ilk sayfanın altını az tıklar). İyi haber: bu, ücretsiz ve kalıcı bir büyüme fırsatı demek. Reklam bütçesi bunu hızlı çözer ama pahalıdır; SEO ücretsiz çözer, sadece biraz zaman ister.</p>
     <table style="margin-top:14px">
       <thead><tr><th>Adım</th><th>Ne yapılacak</th><th>Ne zaman</th></tr></thead>
       <tbody>
@@ -309,7 +442,10 @@
   </div>
 
   <div class="card">
-    <h2><span class="tag">SONRA</span> Ayrıca yapılacaklar</h2>
+    <div class="section-head">
+      <div class="section-icon">🧹</div>
+      <div><span class="kicker">Sonra</span><h2>Ayrıca yapılacaklar</h2></div>
+    </div>
     <ul class="next">
       <li>En iyi giden Google PMAX kampanyasına öncelik ver, bütçesini artır.</li>
       <li>2024 tarihli eski Google kampanya adını temizle/arşivle.</li>
@@ -319,18 +455,21 @@
   </div>
 
   <div class="card">
-    <h2><span class="tag">ONAYLARSANIZ</span> Ne yapacağım</h2>
-    <div class="cta">
-      <div><b>1 — Kayıt</b>Bu plan <code>/admin/marketing → Raporlar</code>'a kaydedilir.</div>
-      <div><b>2 — Meta</b>6 bölüm için Meta'da <b>PAUSED (taslak)</b> kampanyalar oluşturulur — otomatik harcama başlamaz.</div>
-      <div><b>3 — Yandex</b>Hesap bağlandığında Rusya bölümü otomatik kurulur (Rusça, PAUSED).</div>
-      <div><b>4 — Google</b>Mevcut kampanyaların bütçesini panelden adım adım manuel güncellerim.</div>
+    <div class="section-head">
+      <div class="section-icon">✅</div>
+      <div><span class="kicker">Onaylarsanız</span><h2>Ne yapacağım</h2></div>
+    </div>
+    <div class="stepper">
+      <div class="step"><div class="num"></div><div class="body"><b>Kayıt</b><span>Bu plan <code>/admin/marketing → Raporlar</code>'a kaydedilir.</span></div></div>
+      <div class="step"><div class="num"></div><div class="body"><b>Meta</b><span>6 bölüm için Meta'da <b>PAUSED (taslak)</b> kampanyalar oluşturulur — otomatik harcama başlamaz.</span></div></div>
+      <div class="step"><div class="num"></div><div class="body"><b>Yandex</b><span>Hesap bağlandığında Rusya bölümü otomatik kurulur (Rusça, PAUSED).</span></div></div>
+      <div class="step"><div class="num"></div><div class="body"><b>Google</b><span>Mevcut kampanyaların bütçesini panelden adım adım manuel güncellerim.</span></div></div>
     </div>
     <p class="note">Sağ üstteki <b>"Onayla"</b> butonuna basmanız bu sayfada onay kaydı oluşturur; gerçek sistem işlemlerini (kayıt+kampanya oluşturma) başlatmam için ayrıca sohbette "onaylıyorum" demeniz gerekiyor — bu statik sayfa doğrudan sunucuya bağlanamıyor.</p>
     <p class="note">Not: Belconti panelinin para birimi ayarı EUR — raporlarda tutar "13.134 €" (=700.000 TL bugünkü kurla) görünecek, sadece etiket farkı.</p>
   </div>
 
-  <footer>PMA Partner Pazarlama Raporu · Hazırlanma: 03.07.2026 · Bu bir taslaktır, onayınız olmadan hiçbir bütçe/kampanya değişikliği yapılmamıştır.</footer>
+  <footer>PMA Partner Pazarlama Raporu · Hazırlanma: 03.07.2026 · Güncellenme: 16.07.2026 · Bu bir taslaktır, onayınız olmadan hiçbir bütçe/kampanya değişikliği yapılmamıştır.</footer>
 </div>
 </div>
 
@@ -338,76 +477,111 @@
 <div class="lang-doc" id="doc-en">
 <div class="wrap">
   <div class="pma-bar"><span>PMA PARTNER · MARKETING BRIEFING</span><span>BELCONTI RESORT</span></div>
-  <h1>July 2026 Marketing Plan</h1>
-  <div class="sub">Built from live Google Ads + Meta Ads data + GA4 + market research · Total budget: <strong>₺700,000 ± ₺50,000</strong> · <strong>excludes VAT</strong> · Includes an SEO plan</div>
-  <div class="note" style="margin-top:-4px;margin-bottom:10px">Budget is kept flexible in a ₺650,000–₺750,000 range (platform bid optimization can cause small day-to-day swings); all figures below are <b>exclusive of VAT</b>, which will be added separately on invoices.</div>
 
-  <div class="grid2">
-    <div class="metric-hero"><div class="v">₺700,000</div><div class="l">July Budget Cap</div><div class="f">±₺50,000 flex · excl. VAT</div></div>
-    <div class="metric-hero"><div class="v">₺598,500</div><div class="l">Actual Spend, Last 30 Days</div><div class="f">Google+Meta, all channels</div></div>
+  <div class="hero-band">
+    <div class="eyebrow">July 2026 · Advertising &amp; Marketing Plan</div>
+    <h1>The right moment, in the right markets, for growth</h1>
+    <div class="sub">Turkey saw its highest-ever visitor count in 2025; for July 2026, flight capacity is growing in 3 of our core markets. This plan's goal: spend the same budget more intelligently, open a brand-new market (Russia) for the first time, and add organic growth alongside it.</div>
+    <div class="confidence-pill">📈 Growth signal in 3 markets · record tourism year · same budget, smarter split</div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="v">₺700,000</div><div class="l">July Budget (±50,000)</div></div>
+      <div class="hero-stat"><div class="v">~₺17.8 Million</div><div class="l">Revenue Target (5 sections)</div></div>
+      <div class="hero-stat"><div class="v">₺1 → ₺25.5</div><div class="l">Target Return Ratio</div></div>
+    </div>
   </div>
 
   <div class="summary-box">
-    <h2>🎯 The plan in 4 points</h2>
+    <h2>🎯 The plan in 4 simple points</h2>
     <ol>
-      <li><b>We're not increasing budget, we're reallocating it smartly.</b> Real spend over the last 30 days is already ~₺598,500 — so ₺700,000 (±₺50,000, excl. VAT) is basically "what we're already spending." The change: shifting money from weak campaigns to strong ones.</li>
-      <li><b>We're opening a new market: Russia.</b> Aeroflot added 2 extra daily flights on the Moscow–Antalya route for a period covering all of July (+105,000 seats). Meta is blocked in Russia — Yandex Ads will fix that gap.</li>
-      <li><b>We're adding organic growth alongside paid.</b> A separate SEO plan is included — it doesn't consume the ad budget, it grows free/organic traffic.</li>
-      <li><b>6 simple ad sections + charts.</b> Everything is in one currency (TRY), plain language, backed by numbers. Use the top-right toggles for <b>Dark/Light</b> and <b>TR/EN</b>, and the <b>Approve</b> button once you're ready.</li>
+      <li><b>We're not increasing budget, we're reallocating it smartly.</b> Real spend over the last 30 days is already ~₺598,500 — so ₺700,000 (±₺50,000, excl. VAT) is basically "what we're already spending." The only change: shifting money from weak campaigns to strong ones.</li>
+      <li><b>We're opening a new market: Russia.</b> Aeroflot added 2 extra daily flights on the Moscow–Antalya route for a period covering all of July (+105,000 seats). Until now we couldn't touch this demand at all (Meta is blocked in Russia) — Yandex Ads opens this door for the first time.</li>
+      <li><b>We're adding free growth alongside paid.</b> A separate SEO plan is included — it doesn't consume the ad budget at all, it grows organic traffic.</li>
+      <li><b>Everything is explained simply, with numbers and visuals.</b> 6 simple sections, one currency (TRY), charts throughout. Use the top-right toggles for <b>Dark/Light</b> and <b>TR/EN</b>, and the <b>Approve</b> button once you're ready.</li>
     </ol>
   </div>
 
+  <div class="outcome-band">
+    <div class="cap" style="margin-top:0;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;color:var(--gold)">🚀 Total Expected Outcome — The Big Picture</div>
+    <div class="big">₺1 → <small>target</small> ₺25.5</div>
+    <div class="cap">Targeted revenue for every 1 TRY of ad spend — combined across the 5 measurable sections</div>
+    <div class="outcome-grid">
+      <div class="cell"><div class="v">~₺17.8 million</div><div class="l">Total Ambitious Revenue Target</div></div>
+      <div class="cell"><div class="v">~324</div><div class="l">Targeted Bookings</div></div>
+      <div class="cell"><div class="v">3.9%</div><div class="l">Average Ad-Cost-of-Sale</div></div>
+    </div>
+    <p class="note" style="text-align:left;margin-top:16px">These figures are <b>ambitious targets</b>, not guarantees; they'll be checked against real results during the month. The Russia (Yandex) pilot section is <b>not included</b> in this total — since it's a brand-new channel with no historical data yet, its first results will be added to this table in August.</p>
+  </div>
+
   <div class="card">
-    <h2><span class="tag">1</span> Where we came from — May → July</h2>
+    <div class="section-head">
+      <div class="section-icon">📊</div>
+      <div><span class="kicker">Section 1</span><h2>Where we came from — momentum is already on our side</h2></div>
+    </div>
     <div class="chart-trend">
       <div class="col"><div class="val">₺3,296</div><div class="bar" style="height:10%"></div><div class="lbl">May</div></div>
       <div class="col"><div class="val">₺14,142</div><div class="bar" style="height:42%"></div><div class="lbl">June</div></div>
       <div class="col"><div class="val">~₺46,750</div><div class="bar est" style="height:100%"></div><div class="lbl">July<br><span style="font-size:9px">(projected from first 2 days' pace)</span></div></div>
     </div>
-    <div class="grid4" style="margin-top:18px">
+    <p class="note" style="margin-top:2px">The 3 figures above show that month's <b>average daily</b> ad spend (not a monthly total).</p>
+    <div class="compare">
+      <div class="box"><div class="t">May → June</div><div class="v" style="color:#2e9e56">+329%</div></div>
+      <div class="arrow">➜</div>
+      <div class="box now"><div class="t">July's goal</div><div class="v">Keep this momentum</div></div>
+    </div>
+    <div class="grid4" style="margin-top:20px">
       <div class="metric"><div class="v">7.91%</div><div class="l">June Click-Through Rate</div><div class="f">21,683 clicks / 274K impressions</div></div>
-      <div class="metric"><div class="v">₺0.65</div><div class="l">Average Cost-Per-Click</div><div class="f">Steady May–June</div></div>
+      <div class="metric"><div class="v">₺0.65</div><div class="l">Average Cost-Per-Click</div><div class="f">Steady May–June — cheap and predictable</div></div>
       <div class="metric"><div class="v">~₺598,500</div><div class="l">Total (30 days, all channels)</div><div class="f">Google+Meta, converted to TRY at today's rate</div></div>
       <div class="metric"><div class="v">+329%</div><div class="l">May→June growth</div><div class="f">Driven by the campaign launched June 8</div></div>
     </div>
-    <div class="warn">⚠️ Transparency note: the system reports "79,995 conversions," but most of these are minor engagements (link clicks, likes), not real bookings. Actual booking-like events are far fewer (roughly ~15 in June on Meta). The "expected results" figures below should be read as <b>ambitious targets</b>, not guarantees.</div>
+    <div class="warn">⚠️ Transparency note: the system reports "79,995 conversions," but most of these are minor engagements (link clicks, likes), not real bookings. Actual booking-like events are far fewer (roughly ~15 in June on Meta). I don't want this fine print to hide the good news, but it's why the "expected results" figures below should be read as <b>ambitious targets</b>, not guarantees. Fixing this (verifying the Meta Pixel) is on the Requirements list.</div>
 
     <h3 style="margin-top:24px;color:#4285F4">🔵 Google Ads side — monthly change</h3>
     <div class="chart-trend small">
       <div class="col"><div class="val">~₺635,000</div><div class="bar google" style="height:100%"></div><div class="lbl">Mid-June<br><span style="font-size:9px">(as of Jun 13, trailing 30 days)</span></div></div>
       <div class="col"><div class="val">~₺581,000</div><div class="bar google" style="height:91%"></div><div class="lbl">Early July<br><span style="font-size:9px">(as of Jul 2, trailing 30 days)</span></div></div>
     </div>
-    <p class="note">Unlike Meta, Google Ads doesn't have 3 clean monthly points — the system uses a rolling "last 30 days" window, so I compared two real measurements taken on different dates. Result: Google spend is trending slightly down (~-9%), while Meta is trending sharply up (+329%) — the total budget is the balance of these two.</p>
+    <p class="note">Unlike Meta, Google Ads doesn't have 3 clean monthly points — the system uses a rolling "last 30 days" window, so I compared two real measurements taken on different dates. Result: Google spend is trending slightly down (~-9%), while Meta is trending sharply up (+329%) — the total budget is the balance of these two, and getting that balance right is exactly what July's plan is about.</p>
   </div>
 
   <div class="card">
-    <h2><span class="tag">2</span> How is demand changing? — Flight capacity + market data</h2>
+    <div class="section-head">
+      <div class="section-icon">✈️</div>
+      <div><span class="kicker">Section 2</span><h2>Demand is growing — flight capacity + market data</h2></div>
+    </div>
     <div class="grid4">
       <div class="metric"><div class="v">64 million</div><div class="l">Turkey's total 2025 visitors</div><div class="f">All-time record, $65.2B revenue</div></div>
       <div class="metric"><div class="v">~39 million</div><div class="l">Antalya Airport passengers (2025)</div><div class="f">Belconti's region</div></div>
       <div class="metric"><div class="v">6.9 million</div><div class="l">Russia — Turkey's #1 source market</div><div class="f">Germany #2 (6.75M), UK #3 (4.2M+)</div></div>
       <div class="metric"><div class="v">~3 million</div><div class="l">Forecast Russian visitors, summer 2026</div><div class="f">Antalya+Istanbul+Aegean combined</div></div>
     </div>
-    <p class="note" style="font-size:12.5px;color:var(--text)">
-      All three markets have <b>growing flight capacity for summer 2026</b>:<br>
-      • <b>Russia:</b> Aeroflot is adding <b>over 105,000 seats</b> to Turkey routes this summer; the Moscow–Antalya route gets <b>2 extra flights daily</b> from June 26 to Oct 11 (covers all of July). Pegasus also opened block seats from Moscow to Bodrum/Dalaman.<br>
-      • <b>UK:</b> TUI is increasing seat capacity by <b>1 million</b>.<br>
-      • <b>Germany:</b> Lufthansa is increasing frequency on Frankfurt/Munich–Istanbul/Antalya routes.
-    </p>
+    <div class="why-grid">
+      <div class="why-cell"><div class="ico">🇷🇺</div><h4>Russia</h4><p>Aeroflot is adding <b>over 105,000 seats</b> to Turkey routes this summer; the Moscow–Antalya route gets <b>2 extra flights daily</b> from June 26 to Oct 11 (covers all of July). Pegasus also opened block seats from Moscow to Bodrum/Dalaman.</p></div>
+      <div class="why-cell"><div class="ico">🇬🇧</div><h4>UK</h4><p>TUI is increasing seat capacity by <b>1 million</b> — we're already established in this market and well-positioned to capture the growth.</p></div>
+      <div class="why-cell"><div class="ico">🇩🇪</div><h4>Germany</h4><p>Lufthansa is increasing frequency on Frankfurt/Munich–Istanbul/Antalya routes — a stable, growing market.</p></div>
+    </div>
     <div class="ru-box">
-      <b>Bottom line:</b> more flight supply means more accessible prices and stronger demand — all three markets signal growth for July. Belconti currently <b>cannot reach any of Russia's growth</b> (Meta is blocked there) — that's why Russia is a new section; we're already present in Germany/UK, so we're protecting that budget given the same growth signal.
+      <b>Bottom line:</b> more flight supply means more accessible prices and stronger demand — all three markets signal growth for July. Belconti currently <b>cannot reach any of Russia's growth</b> (Meta is blocked there) — that's why Russia is a new section; we're already present in Germany/UK, so we're protecting that budget given the same growth signal. In short: the wind is at our back — this plan's job is to catch it.
     </div>
   </div>
 
   <div class="card">
-    <h2><span class="tag">3</span> How is 700,000 TRY split? — 6 simple sections</h2>
-    <div style="margin:6px 0 18px">
-      <div class="hbar-row"><div>Turkey Search</div><div class="hbar-track"><div class="hbar-fill" style="width:100%"></div></div><div class="right gold">₺196,000</div></div>
-      <div class="hbar-row"><div>Last-Minute / Offer</div><div class="hbar-track"><div class="hbar-fill" style="width:71%"></div></div><div class="right gold">₺140,000</div></div>
-      <div class="hbar-row"><div>PMAX</div><div class="hbar-track"><div class="hbar-fill" style="width:64%"></div></div><div class="right gold">₺126,000</div></div>
-      <div class="hbar-row"><div>Remarketing (Meta)</div><div class="hbar-track"><div class="hbar-fill meta" style="width:57%"></div></div><div class="right gold">₺112,000</div></div>
-      <div class="hbar-row"><div>Russia (Yandex, NEW)</div><div class="hbar-track"><div class="hbar-fill ru" style="width:36%"></div></div><div class="right gold">₺70,000</div></div>
-      <div class="hbar-row"><div>Europe (DE+UK)</div><div class="hbar-track"><div class="hbar-fill" style="width:29%"></div></div><div class="right gold">₺56,000</div></div>
+    <div class="section-head">
+      <div class="section-icon">💰</div>
+      <div><span class="kicker">Section 3</span><h2>How is ₺700,000 split? — 6 simple sections</h2></div>
+    </div>
+    <div class="donut-wrap">
+      <div class="donut" style="background:conic-gradient(#1E8C82 0deg 100.8deg, #C98A00 100.8deg 172.8deg, #4285F4 172.8deg 237.6deg, #8b5cf6 237.6deg 295.2deg, #B4454F 295.2deg 331.2deg, #2E86AB 331.2deg 360deg)">
+        <div class="hole"><div class="v">₺700,000</div><div class="l">July Total</div></div>
+      </div>
+      <div class="legend">
+        <div class="legend-row"><span class="legend-dot" style="background:#1E8C82"></span><span class="name">Turkey Search</span><span class="amt">₺196,000</span><span class="pct">28%</span></div>
+        <div class="legend-row"><span class="legend-dot" style="background:#C98A00"></span><span class="name">Last-Minute / Offer</span><span class="amt">₺140,000</span><span class="pct">20%</span></div>
+        <div class="legend-row"><span class="legend-dot" style="background:#4285F4"></span><span class="name">PMAX</span><span class="amt">₺126,000</span><span class="pct">18%</span></div>
+        <div class="legend-row"><span class="legend-dot" style="background:#8b5cf6"></span><span class="name">Remarketing (Meta)</span><span class="amt">₺112,000</span><span class="pct">16%</span></div>
+        <div class="legend-row"><span class="legend-dot" style="background:#B4454F"></span><span class="name">Russia (Yandex, NEW)</span><span class="amt">₺70,000</span><span class="pct">10%</span></div>
+        <div class="legend-row"><span class="legend-dot" style="background:#2E86AB"></span><span class="name">Europe (DE+UK)</span><span class="amt">₺56,000</span><span class="pct">8%</span></div>
+      </div>
     </div>
     <table>
       <thead><tr><th>Section</th><th>What it does</th><th class="right">Budget</th></tr></thead>
@@ -425,7 +599,24 @@
   </div>
 
   <div class="card">
-    <h2><span class="tag">4</span> Campaign setup — how each section will be built</h2>
+    <div class="section-head">
+      <div class="section-icon">🗓️</div>
+      <div><span class="kicker">Roadmap</span><h2>July's 4 weeks — a plan in motion</h2></div>
+    </div>
+    <div class="roadmap">
+      <div class="node"><div class="dot">1</div><h4>Setup</h4><p>Jul 1-7<br>Google campaigns get reorganized, the Yandex Russia campaign is prepared (PAUSED), Meta remarketing is refreshed.</p></div>
+      <div class="node"><div class="dot">2</div><h4>First Signals</h4><p>Jul 8-14<br>The Russia campaign goes live with a small daily cap; early click/cost data is monitored.</p></div>
+      <div class="node"><div class="dot">3</div><h4>Fine-Tuning</h4><p>Jul 15-21<br>Budget shifts toward the best-performing sections; weak ad copy gets replaced.</p></div>
+      <div class="node"><div class="dot">4</div><h4>Results &amp; Decision</h4><p>Jul 22-31<br>End-of-month results are tallied; we decide whether to scale the Russia pilot in August.</p></div>
+    </div>
+    <p class="note" style="margin-top:18px">This isn't "set the budget and wait until month-end" — there's a checkpoint every week. If a section underperforms, we act on it without waiting for week 3.</p>
+  </div>
+
+  <div class="card">
+    <div class="section-head">
+      <div class="section-icon">⚙️</div>
+      <div><span class="kicker">Section 4</span><h2>Campaign setup — how each section will be built</h2></div>
+    </div>
     <p class="note" style="font-size:12.5px;color:var(--text);margin-top:0">
       Simple funnel logic: <b>PMAX + Turkey Search + Europe + Russia</b> = "new guest" sections reaching people who don't know Belconti yet. <b>Remarketing</b> = the audience that already knows us (cheapest/most efficient). <b>Last-Minute</b> = the "decide now" urgency push in between.
     </p>
@@ -497,12 +688,20 @@
   </div>
 
   <div class="card">
-    <h2><span class="tag tag-ru">RUSSIA / YANDEX</span> Why a pilot budget?</h2>
-    <p class="note">Since this is a brand-new, untested channel, I set aside ₺70,000 as a <b>pilot budget</b> — I recommend scaling up or down in August based on the first 2-3 weeks of results. I'm not giving an "expected bookings" figure since there's no historical performance data yet.</p>
+    <div class="section-head">
+      <div class="section-icon ru">🇷🇺</div>
+      <div><span class="kicker">Russia / Yandex</span><h2>Why we're excited — the first-mover advantage</h2></div>
+    </div>
+    <p class="note" style="font-size:13px;color:var(--text);margin-top:0">Belconti has never run direct ads to Russia before — since Meta is blocked there, we've been completely shut out of this demand. Yandex Ads opens that door for the first time, right as Aeroflot adds 2 extra daily flights. Most competitors aren't on Yandex yet — this is a chance to get there early.</p>
+    <p class="note">Since this is a brand-new, untested channel, I set aside ₺70,000 as a <b>pilot budget</b> — small and controlled to start. I recommend scaling up in August based on the first 2-3 weeks of results. I'm not giving an "expected bookings" figure since there's no historical performance data yet — that's exactly why we're starting small and letting the data guide the scale-up.</p>
   </div>
 
   <div class="card">
-    <h2><span class="tag">DETAILS</span> For the curious: target cost ratios</h2>
+    <div class="section-head">
+      <div class="section-icon">🧮</div>
+      <div><span class="kicker">Details</span><h2>What will the return on this investment look like?</h2></div>
+    </div>
+    <p class="note" style="margin-top:0">In plain terms: "Ad-Cost-of-Sale" shows how much of every 100 TRY in revenue we spend on ads — <b>the lower it is, the more efficient.</b> The table below shows each section's target ratio and the ambitious revenue target that goes with it.</p>
     <table>
       <thead><tr><th>Section</th><th class="right">Target Ad-Cost-of-Sale</th><th class="right">Ambitious Revenue Target</th></tr></thead>
       <tbody>
@@ -512,19 +711,23 @@
         <tr><td>Remarketing</td><td class="right gold">2.5%</td><td class="right">₺4,480,000</td></tr>
         <tr><td>Europe (DE+UK)</td><td class="right gold">4.5%</td><td class="right">₺1,244,444</td></tr>
         <tr><td>Russia (pilot)</td><td class="right">— (no data)</td><td class="right">—</td></tr>
+        <tr class="total-row"><td>Total (5 measurable sections)</td><td class="right gold">3.9% (average)</td><td class="right gold">~₺17,844,444</td></tr>
       </tbody>
     </table>
     <p class="note">Calculated assuming an average booking value of ₺55,000 (platform default). These are ceiling targets, to be checked against real ROI during the month.</p>
   </div>
 
   <div class="card">
-    <h2><span class="tag">SEO</span> Organic growth plan (does not touch the ad budget)</h2>
+    <div class="section-head">
+      <div class="section-icon">🌱</div>
+      <div><span class="kicker">SEO</span><h2>Organic growth plan — never touches the ad budget</h2></div>
+    </div>
     <div class="grid3">
       <div class="metric"><div class="v">130,000</div><div class="l">Google impressions (30 days)</div><div class="f">Google is already showing us</div></div>
       <div class="metric"><div class="v">3,341</div><div class="l">Clicks (30 days)</div><div class="f">2.6% click-through rate — low</div></div>
-      <div class="metric"><div class="v">4%</div><div class="l">Organic share of traffic</div><div class="f">Heavy reliance on paid ads</div></div>
+      <div class="metric"><div class="v">4%</div><div class="l">Organic share of traffic</div><div class="f">Growth headroom is here</div></div>
     </div>
-    <p class="note" style="font-size:12.5px;color:var(--text)">Google shows Belconti 130,000 times but only 3,341 people click — usually a sign of <b>low ranking position</b> (people rarely click past the first page). Paid ads fix this fast but cost money; SEO fixes it for free and permanently, it just takes time.</p>
+    <p class="note" style="font-size:12.5px;color:var(--text)">Google shows Belconti 130,000 times but only 3,341 people click — usually a sign of <b>low ranking position</b> (people rarely click past the first page). The good news: that's a free, lasting growth opportunity. Paid ads fix this fast but cost money; SEO fixes it for free, it just takes a bit of time.</p>
     <table style="margin-top:14px">
       <thead><tr><th>Step</th><th>What we'll do</th><th>When</th></tr></thead>
       <tbody>
@@ -539,7 +742,10 @@
   </div>
 
   <div class="card">
-    <h2><span class="tag">NEXT</span> Also on the list</h2>
+    <div class="section-head">
+      <div class="section-icon">🧹</div>
+      <div><span class="kicker">Next</span><h2>Also on the list</h2></div>
+    </div>
     <ul class="next">
       <li>Prioritize and scale up the best-performing Google PMAX campaign.</li>
       <li>Clean up/archive the old Google campaign still dated 2024.</li>
@@ -549,18 +755,21 @@
   </div>
 
   <div class="card">
-    <h2><span class="tag">ONCE APPROVED</span> What I'll do</h2>
-    <div class="cta">
-      <div><b>1 — Save</b>This plan gets saved to <code>/admin/marketing → Reports</code>.</div>
-      <div><b>2 — Meta</b><b>PAUSED (draft)</b> campaigns get created for the 6 sections — no spend starts automatically.</div>
-      <div><b>3 — Yandex</b>Once the account is connected, the Russia section is set up automatically (Russian, PAUSED).</div>
-      <div><b>4 — Google</b>I'll manually update existing campaign budgets in the panel, step by step.</div>
+    <div class="section-head">
+      <div class="section-icon">✅</div>
+      <div><span class="kicker">Once Approved</span><h2>What I'll do</h2></div>
+    </div>
+    <div class="stepper">
+      <div class="step"><div class="num"></div><div class="body"><b>Save</b><span>This plan gets saved to <code>/admin/marketing → Reports</code>.</span></div></div>
+      <div class="step"><div class="num"></div><div class="body"><b>Meta</b><span><b>PAUSED (draft)</b> campaigns get created for the 6 sections — no spend starts automatically.</span></div></div>
+      <div class="step"><div class="num"></div><div class="body"><b>Yandex</b><span>Once the account is connected, the Russia section is set up automatically (Russian, PAUSED).</span></div></div>
+      <div class="step"><div class="num"></div><div class="body"><b>Google</b><span>I'll manually update existing campaign budgets in the panel, step by step.</span></div></div>
     </div>
     <p class="note">Clicking <b>"Approve"</b> top-right records approval on this page; to actually trigger the system actions (saving the report, creating campaigns), please also confirm in chat — this static page can't reach the server directly.</p>
     <p class="note">Note: Belconti's panel currency setting is EUR — reports will show "€13,134" (= ₺700,000 at today's rate), just a label difference.</p>
   </div>
 
-  <footer>PMA Partner Marketing Report · Prepared: 2026-07-03 · This is a draft — no budget or campaign has been changed without your approval.</footer>
+  <footer>PMA Partner Marketing Report · Prepared: 2026-07-03 · Updated: 2026-07-16 · This is a draft — no budget or campaign has been changed without your approval.</footer>
 </div>
 </div>
 
@@ -615,4 +824,3 @@ function toggleApprove(){
 </script>
 
 </body></html>
-</html>

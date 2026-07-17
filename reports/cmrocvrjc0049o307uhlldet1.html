@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ghazala Resort &amp; Spa — Weekly Marketing Report July 6, 2026 – July 11, 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --accent: #0E7C86;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #64748b;
+      --success: #10b981;
+      --danger: #f43f5e;
+      --warn: #f59e0b;
+      --radius: 16px;
+    }
+    html { scroll-padding-top: 110px; scroll-behavior: smooth; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; font-size: 14px; }
+    
+
+    /* ── Sticky header ──────────────────────────────── */
+    .hdr {
+      position: sticky; top: 0; z-index: 50;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 10px 24px;
+      background: #f8fafcf0; backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .hdr-left { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .hdr-logo { height: 30px; width: auto; object-fit: contain; flex-shrink: 0; display: block; }
+    /* Logo, tasarım-şablonu renginde bir katman (badge) üzerine oturur → beyaz/renkli logo HER fonda (açık/koyu) görünür. */
+    .hdr-logo-badge { display: inline-flex; align-items: center; justify-content: center; background: var(--accent); padding: 6px 11px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,.18); flex-shrink: 0; }
+    .hdr-name { font-size: 14px; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .hdr-period { font-size: 10px; color: var(--muted); margin-top: 1px; }
+    .hdr-badge { font-size: 9px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); border: 1.5px solid rgba(0,0,0,.12); padding: 3px 10px; border-radius: 99px; flex-shrink: 0; background: rgba(0,0,0,.04); }
+
+    /* ── Sticky nav ─────────────────────────────────── */
+    .nav {
+      position: sticky; top: 53px; z-index: 40;
+      display: flex; overflow-x: auto; gap: 2px; padding: 0 16px;
+      background: #f8fafce8; backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      scrollbar-width: none;
+    }
+    .nav::-webkit-scrollbar { display: none; }
+    .nav a {
+      display: inline-flex; align-items: center;
+      padding: 10px 12px;
+      font-size: 11px; font-weight: 600; color: var(--muted);
+      text-decoration: none; white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: color .15s, border-color .15s;
+    }
+    .nav a:hover, .nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+    /* ── Main ───────────────────────────────────────── */
+    .main { max-width: 1100px; margin: 0 auto; padding: 28px 16px 64px; }
+
+    /* ── Hero KPI ───────────────────────────────────── */
+    .hero-title { font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .hero-sub { font-size: 12px; color: var(--muted); margin-bottom: 20px; }
+    .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
+    .kpi {
+      display: flex; flex-direction: column; border-radius: 12px; padding: 16px;
+      border: 1px solid var(--border); background: var(--card);
+    }
+    .kpi-lbl { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 8px; }
+    .kpi-val { font-size: 22px; font-weight: 700; line-height: 1; color: var(--accent); }
+    .kpi-sub { font-size: 10px; color: var(--muted); margin-top: 4px; }
+
+    /* ── Section card ───────────────────────────────── */
+    .sec { border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; margin-bottom: 20px; scroll-margin-top: 110px; background: var(--card); }
+    .sec-hdr { display: flex; align-items: center; gap: 12px; padding: 14px 20px; border-bottom: 1px solid var(--border); }
+    .sec-icon { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 8px; font-size: 15px; flex-shrink: 0; }
+    .sec-title { font-size: 13px; font-weight: 700; color: var(--text); }
+    .sec-body { padding: 20px; }
+
+    /* ── Tables ─────────────────────────────────────── */
+    .tbl { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .tbl th { padding: 8px 10px 8px 0; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); border-bottom: 1px solid var(--border); text-align: left; }
+    .tbl td { padding: 8px 10px 8px 0; color: var(--muted); border-bottom: 1px solid #e2e8f0cc; vertical-align: middle; }
+    .tbl td.acc { color: var(--text); font-weight: 700; }
+    .tbl td.num { text-align: right; }
+    .tbl tr:last-child td { border-bottom: none; }
+
+    /* ── Two-col ────────────────────────────────────── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+    /* ── Change badge ───────────────────────────────── */
+    .up { font-size: 10px; font-weight: 700; color: var(--success); }
+    .dn { font-size: 10px; font-weight: 700; color: var(--danger); }
+    .neu { font-size: 10px; font-weight: 600; color: var(--muted); }
+
+    /* ── Sub heading ────────────────────────────────── */
+    .sh { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 12px; margin-top: 20px; }
+    .sh:first-child { margin-top: 0; }
+
+    /* ── Stat box ───────────────────────────────────── */
+    .stat-box { border-radius: 12px; border: 1px solid var(--border); background: var(--bg); padding: 16px; text-align: center; }
+    .stat-val { font-size: 22px; font-weight: 700; color: var(--accent); }
+    .stat-lbl { font-size: 10px; color: var(--muted); margin-top: 4px; }
+
+    /* ── AI Insight ─────────────────────────────────── */
+    .insight { border-radius: 12px; border: 1px solid #e2e8f0; padding: 18px 20px; font-size: 13px; line-height: 1.8; color: var(--text); }
+    .prose-block { border-left: 3px solid var(--accent); padding: 14px 18px; font-size: 13px; line-height: 1.8; background: var(--bg); border-radius: 0 8px 8px 0; }
+    .prose-block ul { margin: 8px 0 8px 18px; }
+    .prose-block li { margin-bottom: 3px; }
+    .steps { list-style: none; }
+    .steps li { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid #e2e8f0cc; font-size: 13px; }
+    .steps li:last-child { border-bottom: none; }
+    .step-n { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; background: var(--accent); color: #fff; border-radius: 50%; font-size: 10px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+
+    /* ── Footer ─────────────────────────────────────── */
+    .footer { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; border-top: 1px solid var(--border); margin-top: 8px; font-size: 11px; color: var(--muted); }
+
+    /* ── No-data warning ────────────────────────────── */
+    .warn { border-radius: 12px; border: 1px solid #fca5a5; background: rgba(254,202,202,.5); color: #991b1b; padding: 12px 18px; font-size: 12px; margin-bottom: 16px; }
+
+    /* ── Charts ─────────────────────────────────────── */
+    .chart-wrap { position: relative; width: 100%; margin: 6px 0 4px; }
+    .chart-wrap canvas { max-width: 100%; }
+    .chart-cap { font-size: 10px; color: var(--muted); text-align: center; margin-top: 4px; }
+    .chart-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+
+    /* ── Data explainer (giriş seviyesi, olumlu anlatım) ── */
+    .explain { font-size: 11.5px; line-height: 1.7; color: var(--muted); background: var(--bg); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 4px 0 14px; }
+    .explain strong { color: var(--text); }
+    .period-banner { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 12px 18px; margin-bottom: 18px; font-size: 12px; color: var(--muted); }
+    .period-banner b { color: var(--text); }
+    .period-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(0,0,0,.04); color: var(--accent); border: 1px solid rgba(0,0,0,.12); border-radius: 99px; padding: 3px 12px; font-weight: 700; font-size: 11px; }
+
+    /* ── Responsive (kusursuz mobil) ─────────────────── */
+    @media (max-width: 760px) {
+      .kpi-grid { grid-template-columns: repeat(2,1fr); }
+      .two-col, .chart-2col { grid-template-columns: 1fr; }
+      .main { padding: 16px 10px 40px; }
+      .hdr { padding: 8px 12px; }
+      .hero-title { font-size: 18px; }
+      .kpi-val { font-size: 18px; } .stat-val { font-size: 18px; }
+      .sec-body { padding: 14px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .tbl { font-size: 11px; } .tbl th, .tbl td { padding: 7px 8px 7px 0; }
+    }
+    @media (max-width: 440px) {
+      .kpi-grid { grid-template-columns: 1fr; }
+      .hdr-name { font-size: 12px; max-width: 42vw; }
+      .hdr-badge { display: none; }
+      .hero-title { font-size: 16px; }
+      .nav a { padding: 9px 9px; font-size: 10.5px; }
+    }
+    @media print {
+      @page { size: A4 portrait; margin: 12mm; }
+      body { background: #fff; color: #000; }
+      .hdr, .nav { position: static; background: none; backdrop-filter: none; border: none; }
+      .card, .sec { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky header -->
+  <header class="hdr">
+    <div class="hdr-left">
+      
+      <div style="min-width:0">
+        <div class="hdr-name">Ghazala Resort &amp; Spa</div>
+        <div class="hdr-period">Digital Summary — July 6, 2026 – July 11, 2026</div>
+      </div>
+    </div>
+    <span class="hdr-badge">PMA PARTNER</span>
+  </header>
+
+  <!-- Sticky nav -->
+  <nav class="nav"><a href="#summary">📊 Özet</a><a href="#reservations">🏨 Rezervasyon</a><a href="#budget">💰 Budget</a><a href="#compset">🏷️ Compset</a><a href="#reviews">💬 Reviews</a><a href="#activity">📝 Faaliyet</a><a href="#recommendations">🤖 Öneriler</a></nav>
+
+  <main class="main">
+
+    <!-- No-data warning — distinguishes "no data" from "needs OAuth re-consent" -->
+    <div class="warn">⚠️ Missing data channels: GA4, GSC, Google Ads, Meta Ads, Social Media, Call Center<br><span style="font-weight:normal;font-size:11px;opacity:.85;">GA4 and GSC are connected via service account; Google Ads and Meta Ads require ppg@ OAuth re-consent.</span></div>
+
+    <!-- Dönem açıklaması — giriş seviyesi kullanıcı için -->
+    <div class="period-banner">
+      <span class="period-pill">📅 July 6, 2026 – July 11, 2026</span>
+      <span><b>This report</b> summarizes digital marketing & booking performance for the date range above. Percentage changes compare to the <b>previous equivalent period</b>; ▲ = up, ▼ = down. All revenue is net EUR (€).</span>
+    </div>
+
+    
+    <section class="sec" id="sec-visual">
+      <div class="sec-hdr"><div class="sec-icon" style="background:rgba(0,0,0,.04);">📊</div><div class="sec-title">Visual Summary</div></div>
+      <div class="sec-body">
+        <div class="explain">The two key pictures of the week: <strong>which channels visitors arrived from</strong> and <strong>which agencies/operators drove the most revenue</strong>. Bigger slice/bar = bigger contribution.</div>
+        <div class="chart-2col">
+          
+          <div class="chart-wrap"><canvas id="chAgencies" height="230"></canvas><div class="chart-cap">Top agencies — net revenue (€)</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="summary" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">📊</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">EXECUTIVE SUMMARY</div>
+      <div class="sec-title">Key Performance Indicators</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Key metrics from all digital channels this week at a glance.</div>
+    </div>
+  </div>
+      <div class="sec-body"><div class="kpi-grid"><div class="kpi">
+    <div class="kpi-lbl">Active Users (GA4)</div>
+    <div class="kpi-val">—</div>
+    
+  </div><div class="kpi">
+    <div class="kpi-lbl">Call Center Revenue</div>
+    <div class="kpi-val">—</div>
+    
+  </div><div class="kpi">
+    <div class="kpi-lbl">Reservation Income</div>
+    <div class="kpi-val">€214,819</div>
+    <div class="kpi-sub">362 reservations</div>
+  </div><div class="kpi">
+    <div class="kpi-lbl">Room Nights</div>
+    <div class="kpi-val">1,795</div>
+    <div class="kpi-sub">€120/night</div>
+  </div></div></div>
+    </section>
+<section id="reservations" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">🏨</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">RESERVATIONS &amp; REVENUE</div>
+      <div class="sec-title">Booking-Date Pick-Up Performance (PMS)</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Total stay value, room nights, and channel contribution of reservations created in the report period; this is not stay-date room revenue.</div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="kpi-grid">
+          <div class="kpi">
+    <div class="kpi-lbl">Net Booking Pick-Up Value</div>
+    <div class="kpi-val">€214,819</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Room Nights</div>
+    <div class="kpi-val">1,795</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Reservations</div>
+    <div class="kpi-val">362</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Cancellations</div>
+    <div class="kpi-val">0</div>
+    
+  </div>
+        </div>
+        <div class="two-col" style="max-width:420px;margin-bottom:20px">
+          <div class="stat-box"><div class="stat-val">€288</div><div class="stat-lbl">Revenue per Guest</div></div>
+          <div class="stat-box"><div class="stat-val">€120</div><div class="stat-lbl">Average Room-Night Value</div></div>
+        </div>
+        <div class="sh">🏢 Agency / Channel Breakdown</div>
+        <table class="tbl"><thead><tr><th>Agency / Channel</th><th>Room Nights</th><th>Revenue (€)</th><th>Per Guest (€)</th></tr></thead><tbody><tr><td class="acc">TO</td><td class="num">275</td><td class="num acc">€65,383</td><td class="num">€674</td></tr><tr><td class="acc">Emirati Diwan | TTH USD</td><td class="num">68</td><td class="num acc">€43,067</td><td class="num">€2,267</td></tr><tr><td class="acc">TOUR_OPERATOR</td><td class="num">100</td><td class="num acc">€27,709</td><td class="num">€644</td></tr><tr><td class="acc">Expedia</td><td class="num">56</td><td class="num acc">€9,016</td><td class="num">€153</td></tr><tr><td class="acc">DIRECT</td><td class="num">96</td><td class="num acc">€6,944</td><td class="num">€161</td></tr><tr><td class="acc">T- Expedia</td><td class="num">29</td><td class="num acc">€5,687</td><td class="num">€437</td></tr><tr><td class="acc">Sun International</td><td class="num">186</td><td class="num acc">€5,104</td><td class="num">€72</td></tr><tr><td class="acc">ODEON Tours | TTH USD</td><td class="num">14</td><td class="num acc">€4,320</td><td class="num">€1,080</td></tr></tbody></table>
+        
+        <!-- Veri Kaynağı ve Metodolojisi -->
+        <div class="meth-box" style="margin-top: 15px; padding: 10px; border-radius: 6px; background-color: var(--card-bg); border: 1px solid var(--border); font-size: 11px; line-height: 1.4;">
+          <strong style="color: var(--accent); display: block; margin-bottom: 4px;">ℹ️ Data Source & Methodology</strong>
+          <span style="color: var(--muted);">Basis: PMS booking creation date. The amount is the net booking value for the full stay; it is not stay-date room revenue or ad-attributed revenue. Average room-night value = net value divided by room nights. Cancellations are excluded and EUR values reflect configured commission rules.</span>
+        </div>
+
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 362 new reservations generated 1,795 room nights and €214,819 net booking pick-up. Average room-night value is €120; assess it alongside channel share, commission, and stay-date occupancy pressure.</div>
+      </div>
+    </section>
+<section id="budget" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">💰</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">BUDGET &amp; TARGET</div>
+      <div class="sec-title">Budget vs Actual vs Last Year</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Monthly revenue target, actual net revenue, and comparison to the same period last year (net EUR).</div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="kpi-grid">
+          <div class="kpi">
+    <div class="kpi-lbl">Period Target</div>
+    <div class="kpi-val">—</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Actual (Net)</div>
+    <div class="kpi-val">€982,906</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Last Year</div>
+    <div class="kpi-val">€31,868</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Target Achieved</div>
+    <div class="kpi-val">—</div>
+    
+  </div>
+        </div>
+        <div class="sh">📆 Monthly Breakdown (Net EUR)</div>
+        <table class="tbl"><thead><tr><th>Month</th><th>Target</th><th>Actual</th><th>Last Year</th><th>Target %</th><th>YoY</th></tr></thead><tbody><tr>
+      <td class="acc">July 2026</td>
+      <td class="num">—</td>
+      <td class="num acc">€982,906</td>
+      <td class="num">€31,868</td>
+      <td class="num">—</td>
+      <td class="num"><b style="color:var(--success)">▲ +2984%</b></td>
+    </tr></tbody></table>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Net revenue of €982,906 was realized over the month covering this period. Versus the same period last year, growth of 2984% was recorded.</div>
+      </div>
+    </section>
+<section id="compset" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">🏷️</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">COMPSET PRICING</div>
+      <div class="sec-title">Competitive Price Position</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">A current snapshot of competitor prices (EUR/night).</div>
+    </div>
+  </div>
+      <div class="sec-body">
+        
+        <div class="sh">🏨 By Competitor</div>
+        <table class="tbl"><thead><tr><th>Competitor</th><th>Quotes</th><th>Min (2 Guests, €/night)</th><th>Median (2 Guests, €/night)</th></tr></thead><tbody><tr>
+      <td class="acc">Jaz Aquaviva</td>
+      <td class="num">1</td>
+      <td class="num acc">€175</td>
+      <td class="num">€175</td>
+    </tr><tr>
+      <td class="acc">Amwaj Beach Club</td>
+      <td class="num">1</td>
+      <td class="num acc">€180</td>
+      <td class="num">€180</td>
+    </tr><tr>
+      <td class="acc">Albatros Palace Resort</td>
+      <td class="num">1</td>
+      <td class="num acc">€190</td>
+      <td class="num">€190</td>
+    </tr><tr>
+      <td class="acc">Sunrise Crystal Bay Resort</td>
+      <td class="num">1</td>
+      <td class="num acc">€200</td>
+      <td class="num">€200</td>
+    </tr><tr>
+      <td class="acc">Pickalbatros Aqua Blu</td>
+      <td class="num">1</td>
+      <td class="num acc">€210</td>
+      <td class="num">€210</td>
+    </tr><tr>
+      <td class="acc">Steigenberger Aldau Beach</td>
+      <td class="num">1</td>
+      <td class="num acc">€220</td>
+      <td class="num">€220</td>
+    </tr></tbody></table>
+        
+        
+        <!-- Veri Kaynağı ve Metodolojisi -->
+        <div class="meth-box" style="margin-top: 15px; padding: 10px; border-radius: 6px; background-color: var(--card-bg); border: 1px solid var(--border); font-size: 11px; line-height: 1.4;">
+          <strong style="color: var(--accent); display: block; margin-bottom: 4px;">ℹ️ Data Source & Methodology</strong>
+          <span style="color: var(--muted);">Competitor price data is collected via Rate Intelligence bots and real-time OTA price scrapers, representing the lowest available room rate for 2 adults (2 guests). To ensure freshness, only data scraped within the last 3 days (72 hours) is included.</span>
+        </div>
+
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Current prices of 6 competitor hotels are tracked. No significant cross-channel price inconsistencies were found — a sign of healthy distribution. Competitor pricing is a valuable compass for seasonal rate decisions.</div>
+      </div>
+    </section>
+<section id="reviews" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">💬</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">GUEST REVIEWS</div>
+      <div class="sec-title">Period Review &amp; Reputation Summary</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">New guest reviews received this period, per-platform ratings, and trending topics.</div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="kpi-grid">
+          <div class="kpi">
+    <div class="kpi-lbl">New Reviews</div>
+    <div class="kpi-val">8</div>
+    <div class="kpi-sub">previous period: 3</div>
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Avg. Rating</div>
+    <div class="kpi-val">5.0 / 5</div>
+    <div class="kpi-sub">▲ +2.5 vs previous period</div>
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Platforms</div>
+    <div class="kpi-val">3</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Top Improving Topic</div>
+    <div class="kpi-val">Staff</div>
+    
+  </div>
+        </div>
+        <div class="sh">⭐ Per-Platform Ratings (native scale)</div>
+        <table class="tbl"><thead><tr><th>Platform</th><th>Rating</th><th>Reviews</th><th>Previous</th><th>Change</th></tr></thead><tbody><tr>
+      <td class="acc">Google</td>
+      <td class="num acc">5.0 / 5</td>
+      <td class="num">8</td>
+      <td class="num">—</td>
+      <td class="num"><span class="neu">—</span></td>
+    </tr><tr>
+      <td class="acc">Booking.com</td>
+      <td class="num acc">4.7 / 10 <span style="opacity:.6;font-weight:500;font-size:10px">(last known)</span></td>
+      <td class="num">0</td>
+      <td class="num">—</td>
+      <td class="num"><span class="neu">—</span></td>
+    </tr><tr>
+      <td class="acc">TripAdvisor</td>
+      <td class="num acc">4.9 / 5 <span style="opacity:.6;font-weight:500;font-size:10px">(last known)</span></td>
+      <td class="num">0</td>
+      <td class="num">—</td>
+      <td class="num"><span class="neu">—</span></td>
+    </tr></tbody></table>
+        <div class="sh" style="margin-top:20px">🧭 Trending Topics</div>
+         <div style="display:flex;flex-wrap:wrap;gap:8px"><span style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:4px 10px;border-radius:99px;background:rgba(16,185,129,.13);color:var(--success)">↑ Staff <span style="opacity:.75;font-weight:500">5.0/5 · 2 mentions</span></span></div>
+        <div class="sh" style="margin-top:20px">🗨️ In Guests' Words</div><div style="border-left:3px solid var(--success);border-radius:0 8px 8px 0;background:var(--bg);padding:10px 14px;margin-bottom:8px">
+      <div style="font-size:12px;line-height:1.7;color:var(--text)">“Všichni byli moc příjemní.”</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">Google · 5.0/5 · 2026-07-11</div>
+    </div><div style="border-left:3px solid var(--success);border-radius:0 8px 8px 0;background:var(--bg);padding:10px 14px;margin-bottom:8px">
+      <div style="font-size:12px;line-height:1.7;color:var(--text)">“Everything was perfect! Habiba was so nice with the children’s!”</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">Google · 5.0/5 · 2026-07-11</div>
+    </div><div style="border-left:3px solid var(--success);border-radius:0 8px 8px 0;background:var(--bg);padding:10px 14px;margin-bottom:8px">
+      <div style="font-size:12px;line-height:1.7;color:var(--text)">“Terenul pentru copii este foarte frumos amenajat și băiatului nostru Mark i-a plăcut mult. Mulțumim Habiba și Marim”</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">Google · 5.0/5 · 2026-07-11</div>
+    </div>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 8 new guest reviews arrived this period, averaging 5.0/5. The score is trending up versus the previous period — improvements in the guest experience are showing in reviews. Guests are especially pleased with "Staff".</div>
+      </div>
+    </section>
+<section id="activity" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">📝</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">VERIFIED PERIOD RECORD</div>
+      <div class="sec-title">Results Measured in Source Systems</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Only results measured in connected PMS, advertising, GA4, and review sources; unverified activities are excluded.</div>
+    </div>
+  </div>
+      <div class="sec-body"><div class="prose-block"><ul><li><strong>Booking pick-up:</strong> 362 new reservations generated 1795 room nights and €214,819 net booking value.</li><li><strong>Reputation:</strong> 8 new reviews and a normalized 5.0/5 average were monitored.</li></ul></div></div>
+    </section>
+<section id="recommendations" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">🤖</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">SUMMARY &amp; RECOMMENDATIONS</div>
+      <div class="sec-title">AI Analysis &amp; Next Steps</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">AI-generated analysis of all data with prioritized action recommendations.</div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="insight" style="background:#0E7C8612;border-color:#0E7C8633"><p>Ghazala Resort & Spa achieved strong revenue performance with €982,906 realized against a €0 target, alongside 362 reservations generating €214,819. Guest satisfaction remained high with 8 new reviews averaging a perfect 5.0 rating. Digital analytics (GA4, GSC, ads) and call center data were unavailable, limiting visibility into traffic and campaign performance. Budget tracking shows significant growth compared to the previous year (€31,868).</p></div>
+        <div class="sh" style="margin-top:20px">✅ Recommended Actions</div><ol class="steps"><li><span class="step-n">1</span>Investigate GA4, GSC, and ad platform data gaps to restore digital performance tracking</li><li><span class="step-n">2</span>Analyze reservation sources to identify high-value channels and optimize marketing spend</li><li><span class="step-n">3</span>Leverage positive reviews in promotional materials to reinforce brand reputation</li><li><span class="step-n">4</span>Set a realistic budget target for future periods based on current performance</li></ol>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span>Ghazala Resort &amp; Spa &middot; July 6, 2026 – July 11, 2026</span>
+      <span>PMA Partner &copy; 2026</span>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script>
+    (function(){
+      if (typeof Chart === 'undefined') {
+        // CDN engellendiğinde (ör. PDF render) boş canvas yerine kısa bir not göster
+        document.querySelectorAll('.chart-wrap canvas').forEach(function(c){
+          if (c.parentElement) c.parentElement.innerHTML = '<p style="color:var(--muted);font-size:12px">Charts offline — data is in the tables above.</p>';
+        });
+        return;
+      }
+      var D = {"channels":{"labels":[],"data":[]},"agencies":{"labels":["TO","Emirati Diwan | TTH USD","TOUR_OPERATOR","Expedia","DIRECT","T- Expedia"],"data":[65383,43067,27709,9016,6944,5687]},"accent":"#0E7C86","muted":"#64748b"};
+      var palette = [D.accent, D.accent+'CC', '#F59E0B','#8B5CF6','#EC4899','#14B8A6'];
+      Chart.defaults.color = D.muted; Chart.defaults.font.family = 'Inter, system-ui, sans-serif';
+      var cc = document.getElementById('chChannels');
+      if (cc && D.channels.labels.length) new Chart(cc, { type:'doughnut', data:{ labels:D.channels.labels, datasets:[{ data:D.channels.data, backgroundColor:palette, borderWidth:0 }] }, options:{ responsive:true, plugins:{ legend:{ position:'bottom', labels:{ boxWidth:10, padding:10, font:{size:11} } } }, cutout:'60%' } });
+      var ca = document.getElementById('chAgencies');
+      if (ca && D.agencies.labels.length) new Chart(ca, { type:'bar', data:{ labels:D.agencies.labels, datasets:[{ data:D.agencies.data, backgroundColor:D.accent, borderRadius:6 }] }, options:{ responsive:true, indexAxis:'y', plugins:{ legend:{ display:false } }, scales:{ x:{ grid:{ display:false }, ticks:{ callback:function(v){ return '\u20ac'+Number(v).toLocaleString(); } } }, y:{ grid:{ display:false } } } } });
+    })();
+  </script>
+  <script>
+    (function() {
+      var links = document.querySelectorAll('.nav a');
+      var secs = document.querySelectorAll('.sec[id]');
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) {
+            links.forEach(function(l) {
+              l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id);
+            });
+          }
+        });
+      }, { rootMargin: '-110px 0px -45% 0px', threshold: 0 });
+      secs.forEach(function(s) { obs.observe(s); });
+    })();
+  </script>
+</body>
+</html>

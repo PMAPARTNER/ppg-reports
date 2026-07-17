@@ -1,0 +1,2253 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Belconti Resort Hotel — Dijital Performans Raporu 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+:root{
+  --green:#16A34A;--green-light:#DCFCE7;--green-mid:#86EFAC;--green-dark:#15803D;
+  --bg:#fff;--bg-alt:#F9FAFB;--border:#E5E7EB;--border-light:#F3F4F6;
+  --text:#111827;--muted:#6B7280;--muted-light:#9CA3AF;
+  --shadow:0 1px 3px rgba(0,0,0,.07);--shadow-md:0 4px 12px rgba(0,0,0,.09);
+  --shadow-lg:0 12px 32px rgba(0,0,0,.13);--radius:12px;--radius-sm:8px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+
+/* ── MONTH TABS ── */
+.month-tabs{position:sticky;top:0;z-index:300;background:var(--bg);border-bottom:2px solid var(--border);display:flex;align-items:stretch;padding:0 40px}
+.month-tab{padding:16px 28px;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .2s;white-space:nowrap;user-select:none}
+.month-tab:hover{color:var(--text);background:var(--bg-alt)}
+.month-tab.active{color:var(--green);border-bottom-color:var(--green)}
+.month-tab-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:99px;margin-left:7px;background:var(--green-light);color:var(--green-dark)}
+
+/* ── SECTION NAV ── */
+.section-nav{position:sticky;top:55px;z-index:200;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border-light);padding:6px 40px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.section-nav::-webkit-scrollbar{display:none}
+.nav-link{padding:8px 14px;font-size:12px;font-weight:500;color:var(--muted);cursor:pointer;border-radius:var(--radius-sm);white-space:nowrap;transition:all .15s;border:none;background:none}
+.nav-link:hover{color:var(--text);background:var(--bg-alt)}
+.nav-link.active{color:var(--green);background:var(--green-light);font-weight:600}
+.roas-nav-btn{padding:8px 14px;font-size:12px;font-weight:500;color:var(--muted);cursor:pointer;border-radius:var(--radius-sm);white-space:nowrap;transition:all .15s;border:none;background:none}
+.roas-nav-btn:hover{color:var(--text);background:var(--bg-alt)}
+.roas-nav-btn.active{color:var(--green-dark);background:var(--green-light);font-weight:700}
+
+/* ── ROAS CALCULATOR ── */
+
+/* ── EXEC SUMMARY ── */
+.exec-summary{margin-bottom:36px}
+.exec-summary-text{background:#F0FDF4;border:1px solid #BBF7D0;border-radius:12px;padding:20px 24px;margin-bottom:14px;line-height:1.75;color:var(--text);font-size:15px}
+.exec-summary-text p{margin:0}
+.exec-summary-text strong{color:#15803D;font-weight:700}
+.ai-toggle{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#002158 0%,#286438 100%);color:#fff;border:none;border-radius:24px;padding:10px 20px;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.02em;transition:opacity .2s;font-family:inherit}
+.ai-toggle:hover{opacity:.88}
+.ai-toggle-icon{font-size:14px;opacity:.85}
+.ai-toggle-chevron{font-size:11px;transition:transform .3s}
+.ai-toggle-chevron.open{transform:rotate(180deg)}
+.ai-actions{margin-top:16px}
+.ai-action-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ai-action-item{border-radius:12px;padding:18px 20px;border:1px solid var(--border);background:#fff}
+.priority-high{border-left:4px solid #EF4444}
+.priority-mid{border-left:4px solid #F59E0B}
+.priority-low{border-left:4px solid #22C55E}
+.ai-action-header{margin-bottom:6px}
+.ai-priority{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.ai-action-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:6px;line-height:1.4}
+.ai-action-body{font-size:12.5px;color:var(--muted);line-height:1.65}
+@media(max-width:900px){.ai-action-grid{grid-template-columns:1fr}}
+
+/* ── HEADER ── */
+.report-header{padding:52px 40px 44px;border-bottom:1px solid var(--border)}
+.header-eyebrow{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:10px}
+.header-title{font-size:40px;font-weight:800;color:var(--text);line-height:1.2;margin-bottom:8px}
+.header-sub{font-size:15px;color:var(--muted);margin-bottom:40px;line-height:1.6}
+.header-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.hkpi{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;position:relative;overflow:hidden;transition:all .2s;cursor:pointer}
+.hkpi::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--green)}
+.hkpi:hover{box-shadow:var(--shadow-md);transform:translateY(-1px)}
+.hkpi-icon{position:absolute;top:18px;right:18px;width:36px;height:36px;background:var(--green-light);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--green)}
+.hkpi-label{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.hkpi-val{font-size:42px;font-weight:800;color:var(--green);line-height:1}
+.hkpi-sub{font-size:13px;color:var(--muted);margin-top:9px}
+.hkpi-trend{position:absolute;bottom:16px;right:18px;font-size:12px;font-weight:700}
+.hkpi-trend.up{color:var(--green)}
+.hkpi-trend.neutral{color:var(--muted)}
+
+/* ── SECTION ── */
+.section{padding:52px 40px;border-bottom:1px solid var(--border)}
+.section:last-child{border-bottom:none}
+.section-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:34px}
+.section-icon-wrap{width:46px;height:46px;border-radius:11px;background:var(--green-light);display:flex;align-items:center;justify-content:center;color:var(--green);flex-shrink:0}
+.section-title{font-size:24px;font-weight:700;color:var(--text);line-height:1.3}
+.section-sub{font-size:13px;color:var(--muted);margin-top:4px}
+
+/* ── KPI CARDS ── */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.kpi-grid-3{grid-template-columns:repeat(3,1fr)}
+.kpi-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px 24px;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:transparent;transition:background .2s}
+.kpi-card:hover{border-color:var(--green-mid);box-shadow:var(--shadow-md);transform:translateY(-1px)}
+.kpi-card:hover::before{background:var(--green)}
+.kpi-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:12px}
+.kpi-val{font-size:36px;font-weight:800;color:var(--green);line-height:1}
+.kpi-sub{font-size:13px;color:var(--muted);margin-top:9px}
+.kpi-trend{display:inline-flex;align-items:center;gap:3px;font-size:12px;font-weight:700;margin-top:10px;padding:3px 10px;border-radius:99px}
+.kpi-trend.up{background:var(--green-light);color:var(--green-dark)}
+.kpi-trend.down{background:#FEF2F2;color:#DC2626}
+.kpi-trend.neutral{background:#F3F4F6;color:var(--muted)}
+.kpi-icon{position:absolute;top:16px;right:16px;width:32px;height:32px;background:var(--green-light);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--green)}
+
+/* ── TABLES ── */
+.table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius)}
+table{width:100%;border-collapse:collapse}
+thead th{background:var(--bg-alt);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:13px 16px;text-align:left;border-bottom:1px solid var(--border)}
+thead th.num{text-align:right}
+tbody td{padding:13px 16px;border-bottom:1px solid var(--border-light);font-size:13px;color:var(--text);line-height:1.5}
+tbody td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:500}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover td{background:var(--bg-alt)}
+.total-row td{font-weight:700;background:var(--green-light)!important;color:var(--green-dark)}
+
+/* ── CHARTS ── */
+.chart-wrap{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);padding:28px;cursor:pointer;transition:all .2s;position:relative}
+.chart-wrap:hover{box-shadow:var(--shadow-md)}
+.chart-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px;display:flex;align-items:center;justify-content:space-between}
+.chart-sub{font-size:12px;color:var(--muted);margin-bottom:20px}
+.chart-inner{position:relative;height:240px}
+.chart-expand-hint{font-size:11px;color:var(--muted-light);display:flex;align-items:center;gap:4px}
+.chart-expand-hint svg{width:13px;height:13px}
+
+/* ── CHART MODAL ── */
+.chart-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:2000;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(4px)}
+.chart-modal.open{display:flex}
+.chart-modal-inner{background:var(--bg);border-radius:16px;padding:36px;width:100%;max-width:860px;box-shadow:var(--shadow-lg);position:relative;max-height:90vh;overflow-y:auto}
+.chart-modal-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:8px;border:1px solid var(--border);background:var(--bg);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:18px}
+.chart-modal-close:hover{background:var(--bg-alt)}
+.chart-modal-canvas{height:400px;position:relative}
+
+/* ── TWO/THREE COL ── */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+
+/* ── STAT ROWS ── */
+.stat-row{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--border-light)}
+.stat-row:last-child{border-bottom:none}
+.stat-label{flex:1;font-size:13px;color:var(--text);line-height:1.4}
+.stat-bar-wrap{width:140px;height:6px;background:var(--border);border-radius:99px;overflow:hidden;flex-shrink:0}
+.stat-bar{height:100%;background:var(--green);border-radius:99px;transition:width .6s ease}
+.stat-val{font-size:13px;font-weight:600;color:var(--text);min-width:100px;text-align:right}
+
+/* ── BADGES ── */
+.badge{display:inline-flex;align-items:center;font-size:11px;font-weight:700;padding:3px 9px;border-radius:99px;background:var(--green-light);color:var(--green-dark)}
+.badge.neutral{background:#F3F4F6;color:var(--muted)}
+.badge.amber{background:#FEF3C7;color:#92400E}
+.badge.blue{background:#EFF6FF;color:#1E40AF}
+.badge.red{background:#FEF2F2;color:#DC2626}
+
+/* ── CALLOUT ── */
+.callout{background:var(--green-light);border-left:3px solid var(--green);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:16px 20px;margin-top:18px}
+.callout-title{font-size:13px;font-weight:700;color:var(--green-dark);margin-bottom:5px}
+.callout-text{font-size:13px;color:#166534;line-height:1.75}
+
+/* ── ACCORDION ── */
+.accordion{border:1px solid var(--border);border-radius:var(--radius);margin-bottom:10px;overflow:hidden}
+.accordion-header{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;background:var(--bg);transition:background .15s;gap:12px}
+.accordion-header:hover{background:var(--bg-alt)}
+.accordion-title{font-size:14px;font-weight:600;color:var(--text);display:flex;align-items:center;gap:10px;line-height:1.4}
+.accordion-title svg{color:var(--green);flex-shrink:0}
+.accordion-arrow{width:18px;height:18px;color:var(--muted);transition:transform .25s;flex-shrink:0}
+.accordion.open .accordion-arrow{transform:rotate(180deg)}
+.accordion-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.accordion.open .accordion-body{max-height:3000px}
+.accordion-inner{padding:22px;border-top:1px solid var(--border-light)}
+.accordion-inner ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.accordion-inner li{font-size:14px;color:var(--muted);padding-left:18px;position:relative;line-height:1.65}
+.accordion-inner li::before{content:'';position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--green)}
+.accordion-inner li strong{color:var(--text)}
+
+/* ── DETAIL MODAL ── */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:1000;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(3px)}
+.modal-overlay.open{display:flex}
+.modal{background:var(--bg);border-radius:16px;padding:36px;max-width:500px;width:100%;box-shadow:var(--shadow-lg);position:relative}
+.modal-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:8px;border:1px solid var(--border);background:var(--bg);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:18px}
+.modal-close:hover{background:var(--bg-alt)}
+.modal-kpi-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px}
+.modal-kpi-val{font-size:52px;font-weight:800;color:var(--green);line-height:1;margin-bottom:24px}
+.modal-details{display:flex;flex-direction:column}
+.modal-detail-row{font-size:14px;color:var(--text);padding:12px 0;border-bottom:1px solid var(--border-light);display:flex;justify-content:space-between;gap:16px;line-height:1.5}
+.modal-detail-row:last-child{border-bottom:none}
+.modal-detail-row span:first-child{color:var(--muted);flex-shrink:0}
+.modal-detail-row span:last-child{font-weight:600;text-align:right}
+
+/* ── MONTH CONTENT ── */
+.month-content{display:none}
+.month-content.active{display:block}
+
+/* ── COMING SOON ── */
+.coming-soon{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:100px 40px;text-align:center;min-height:60vh}
+.coming-soon-icon{width:72px;height:72px;background:var(--bg-alt);border:1px solid var(--border);border-radius:18px;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;color:var(--muted-light)}
+.coming-soon-title{font-size:20px;font-weight:700;color:var(--text);margin-bottom:10px}
+.coming-soon-sub{font-size:15px;color:var(--muted);max-width:400px;line-height:1.7}
+
+/* ── TIMELINE ── */
+.timeline{display:flex;flex-direction:column}
+.timeline-item{display:flex;gap:20px;padding:18px 0;position:relative}
+.timeline-item::before{content:'';position:absolute;left:19px;top:42px;bottom:-18px;width:2px;background:var(--border)}
+.timeline-item:last-child::before{display:none}
+.timeline-dot{width:40px;height:40px;border-radius:50%;background:var(--green-light);border:2px solid var(--green);display:flex;align-items:center;justify-content:center;color:var(--green);flex-shrink:0;font-size:11px;font-weight:700;z-index:1}
+.timeline-content{flex:1;padding-top:8px}
+.timeline-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px}
+.timeline-sub{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* ── PLAN KPI ── */
+.plan-kpi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+.plan-kpi{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);padding:26px;text-align:center}
+.plan-kpi-val{font-size:36px;font-weight:800;color:var(--green)}
+.plan-kpi-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-top:8px}
+
+/* ── FOOTER ── */
+footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-brand{font-size:14px;font-weight:700;color:var(--text)}
+.footer-sub{font-size:12px;color:var(--muted);margin-top:3px}
+.footer-badge{font-size:11px;color:var(--muted-light);background:var(--bg-alt);border:1px solid var(--border);padding:5px 12px;border-radius:99px;font-weight:500}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .month-tabs,.section-nav,.report-header,.section,footer{padding-left:20px;padding-right:20px}
+  .header-kpis{grid-template-columns:repeat(2,1fr)}
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+  .kpi-grid-3{grid-template-columns:repeat(2,1fr)}
+  .three-col,.two-col{grid-template-columns:1fr}
+  .header-title{font-size:26px}
+  .plan-kpi-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+  .header-kpis,.kpi-grid,.kpi-grid-3,.plan-kpi-grid{grid-template-columns:1fr}
+  .month-tab{padding:13px 14px;font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<!-- MONTH TABS -->
+<nav class="month-tabs">
+  <div class="month-tab" onclick="switchMonth('mayis',this)">Mayıs 2026</div>
+  <div class="month-tab active" onclick="switchMonth('haziran',this)">Haziran 2026 <span class="month-tab-badge">Aktif</span></div>
+  <div class="month-tab" onclick="switchMonth('temmuz',this)">Temmuz 2026</div>
+</nav>
+
+<!-- NAV MAYIS -->
+<nav class="section-nav" id="nav-mayis">
+  <button class="nav-link" onclick="scrollSec('sec-ga4')">Web Analitik</button>
+  <button class="nav-link" onclick="scrollSec('sec-search')">Organik Arama</button>
+  <button class="nav-link" onclick="scrollSec('sec-gads')">Google Reklamlar</button>
+  <button class="nav-link" onclick="scrollSec('sec-roas')">ROAS</button>
+  <button class="nav-link" onclick="scrollSec('sec-meta')">Meta Reklamlar</button>
+  <button class="nav-link" onclick="scrollSec('sec-social')">Sosyal Medya</button>
+  <button class="nav-link" onclick="scrollSec('sec-rezervasyon')">Web Rezervasyon</button>
+  <button class="nav-link" onclick="scrollSec('sec-callcenter')">Call Center</button>
+  <button class="nav-link" onclick="scrollSec('sec-faaliyet')">Faaliyet Raporu</button>
+  <button class="nav-link" onclick="scrollSec('sec-ozet')">Özet</button>
+  <button class="nav-link" onclick="scrollSec('sec-haziran-plan')" style="color:var(--green);font-weight:700">Haziran 2026 Planı</button>
+</nav>
+<!-- NAV HAZIRAN -->
+<nav class="section-nav" id="nav-haziran" style="display:none">
+  <button class="nav-link" onclick="scrollSec('sec-h-ga4')">Web &amp; GA4</button>
+  <button class="nav-link" onclick="scrollSec('sec-h-search')">Organik Arama</button>
+  <button class="nav-link" onclick="scrollSec('sec-h-gads')">Google Ads</button>
+  <button class="nav-link" onclick="scrollSec('sec-h-roas')">ROAS</button>
+  <button class="nav-link" onclick="scrollSec('sec-h-meta')">Meta</button>
+  <button class="nav-link" onclick="scrollSec('sec-h-rezervasyon')">Rezervasyon</button>
+  <button class="nav-link" onclick="scrollSec('sec-h-cc')">Call Center</button>
+  <button class="nav-link" onclick="scrollSec('sec-h-faaliyet')">Faaliyet</button>
+  <button class="nav-link" onclick="scrollSec('sec-h-ozet')">Özet</button>
+</nav>
+<!-- NAV TEMMUZ -->
+<nav class="section-nav" id="nav-temmuz" style="display:none">
+  <button class="nav-link">Temmuz raporu hazırlanıyor</button>
+</nav>
+
+<!-- ════════════════════════════════ MAYIS ════════════════════════════════ -->
+<div id="content-mayis" class="month-content">
+
+<!-- HEADER -->
+<header class="report-header">
+  <div style="margin-bottom:20px">
+    <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0ia2F0bWFuXzIiIGRhdGEtbmFtZT0ia2F0bWFuIDIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDMxMS44OSA5My43Ij4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjYjUyZDI2OwogICAgICB9CgogICAgICAuY2xzLTEsIC5jbHMtMiwgLmNscy0zLCAuY2xzLTQsIC5jbHMtNSB7CiAgICAgICAgZmlsbC1ydWxlOiBldmVub2RkOwogICAgICB9CgogICAgICAuY2xzLTEsIC5jbHMtNCB7CiAgICAgICAgc3Ryb2tlLXdpZHRoOiAwcHg7CiAgICAgIH0KCiAgICAgIC5jbHMtMiwgLmNscy0zLCAuY2xzLTYgewogICAgICAgIGZpbGw6ICMyODY0Mzg7CiAgICAgICAgc3Ryb2tlOiAjMjg2NDM4OwogICAgICB9CgogICAgICAuY2xzLTIsIC5jbHMtNiwgLmNscy01IHsKICAgICAgICBzdHJva2UtbWl0ZXJsaW1pdDogMy44NjsKICAgICAgICBzdHJva2Utd2lkdGg6IDEuNjhweDsKICAgICAgfQoKICAgICAgLmNscy0zIHsKICAgICAgICBzdHJva2UtbWl0ZXJsaW1pdDogMTA7CiAgICAgIH0KCiAgICAgIC5jbHMtNCB7CiAgICAgICAgZmlsbDogIzAwMjE1ODsKICAgICAgfQoKICAgICAgLmNscy01IHsKICAgICAgICBmaWxsOiBub25lOwogICAgICAgIHN0cm9rZTogIzFkMWQxYjsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPGcgaWQ9IldlbGNvbWUiPgogICAgPGc+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTIyMy4zOSwzMy4xMWM1LjA1LDAsOS4zOSwxLjgxLDEzLjAxLDUuNDMsMy42NSwzLjU5LDUuNDcsNy45MSw1LjQ3LDEyLjk2cy0xLjc5LDkuNTgtNS4zOCwxMy4xYy0zLjU5LDMuNTItNy45NSw1LjI5LTEzLjEsNS4yOXMtOS41MS0xLjc2LTEzLjEtNS4yOWMtMy41OS0zLjUzLTUuMzgtNy44OS01LjM4LTEzLjFzMS44MS05LjM3LDUuNDMtMTIuOTZjMy42NS0zLjYyLDgtNS40MywxMy4wNS01LjQzWk0yMjMuMzksNjUuNzdjMy44NCwwLDcuMTQtMS4zNyw5LjkyLTQuMTIsMi43OC0yLjc4LDQuMTYtNi4xNiw0LjE2LTEwLjE1cy0xLjMxLTcuMzEtMy45My0xMC4wNmMtMi43MS0yLjgxLTYuMS00LjIxLTEwLjE1LTQuMjFzLTcuNDIsMS4zOS0xMC4xMSw0LjE2Yy0yLjY1LDIuNzgtMy45OCw2LjE1LTMuOTgsMTAuMTFzMS4zOSw3LjM4LDQuMTYsMTAuMTVjMi43OCwyLjc1LDYuMDgsNC4xMiw5LjkyLDQuMTJaIi8+CiAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIyNDcuMjIgNjkuMTQgMjQ3LjIyIDMyLjE4IDI3My43MSA1OS45MiAyNzMuNzEgMzMuODYgMjc4LjEgMzMuODYgMjc4LjEgNzAuNTkgMjUxLjYyIDQyLjg0IDI1MS42MiA2OS4xNCAyNDcuMjIgNjkuMTQiLz4KICAgICAgPHBvbHlnb24gY2xhc3M9ImNscy0yIiBwb2ludHM9IjI5My44NyAzNy44OCAyOTMuODcgNjkuMTQgMjg5LjQ3IDY5LjE0IDI4OS40NyAzNy44OCAyODEuMSAzNy44OCAyODEuMSAzMy44NiAzMDIuMjUgMzMuODYgMzAyLjI1IDM3Ljg4IDI5My44NyAzNy44OCIvPgogICAgICA8cmVjdCBjbGFzcz0iY2xzLTYiIHg9IjMwNC44MSIgeT0iMzMuODYiIHdpZHRoPSI0LjQiIGhlaWdodD0iMzUuMjgiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy01IiBkPSJNMjAzLjQ0LDY5LjU0Yy4wNS0uMDkuMDgtLjE4LjEzLS4yNyIvPgogICAgICA8Zz4KICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0yMDMuMzksNjkuNTRoNC4yNmMtMS45OSw0LjEzLTQuNzUsNy45MS04LjI0LDExLjMzLTguMTMsNy45OS0xOC4wMywxMS45OC0yOS43LDExLjk4cy0yMS41Ny0zLjk5LTI5LjctMTEuOThjLTguMTMtNy45OS0xMi4yLTE3Ljg5LTEyLjItMjkuN3M0LjEtMjEuMjUsMTIuMy0yOS4zOGM4LjI3LTguMiwxOC4xNC0xMi4zLDI5LjU5LTEyLjNzMjEuMjgsNC4xLDI5LjQ5LDEyLjNjMy43NywzLjcsNi42Nyw3Ljc0LDguNzIsMTIuMTNsLTQuMTUuMDVjLTEuOC0zLjQzLTQuMjEtNi42Mi03LjIxLTkuNTYtNy40Ny03LjQ3LTE2LjQyLTExLjIxLTI2Ljg2LTExLjIxcy0xOS40MiwzLjc0LTI2Ljk1LDExLjIxYy03LjQ3LDcuNDEtMTEuMjEsMTYuMzMtMTEuMjEsMjYuNzZzMy43LDE5Ljc3LDExLjExLDI3LjA1YzcuNDEsNy4yOCwxNi40MiwxMC45MSwyNy4wNSwxMC45MXMxOS42NC0zLjY0LDI3LjA1LTEwLjkxYzIuNzEtMi42Niw0LjkxLTUuNTYsNi42My04LjY5WiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTIwMy4zOSw2OS41NGg0LjI2Yy0xLjk5LDQuMTMtNC43NSw3LjkxLTguMjQsMTEuMzMtOC4xMyw3Ljk5LTE4LjAzLDExLjk4LTI5LjcsMTEuOThzLTIxLjU3LTMuOTktMjkuNy0xMS45OGMtOC4xMy03Ljk5LTEyLjItMTcuODktMTIuMi0yOS43czQuMS0yMS4yNSwxMi4zLTI5LjM4YzguMjctOC4yLDE4LjE0LTEyLjMsMjkuNTktMTIuM3MyMS4yOCw0LjEsMjkuNDksMTIuM2MzLjc3LDMuNyw2LjY3LDcuNzQsOC43MiwxMi4xM2wtNC4xNS4wNWMtMS44LTMuNDMtNC4yMS02LjYyLTcuMjEtOS41Ni03LjQ3LTcuNDctMTYuNDItMTEuMjEtMjYuODYtMTEuMjFzLTE5LjQyLDMuNzQtMjYuOTUsMTEuMjFjLTcuNDcsNy40MS0xMS4yMSwxNi4zMy0xMS4yMSwyNi43NnMzLjcsMTkuNzcsMTEuMTEsMjcuMDVjNy40MSw3LjI4LDE2LjQyLDEwLjkxLDI3LjA1LDEwLjkxczE5LjY0LTMuNjQsMjcuMDUtMTAuOTFjMi43MS0yLjY2LDQuOTEtNS41Niw2LjYzLTguNjlaIi8+CiAgICAgIDwvZz4KICAgICAgPHBhdGggY2xhc3M9ImNscy00IiBkPSJNOC42NywyMi4yMnMyNC44NS05Ljg3LDQzLjQ0LTkuMDVjMTguNTkuODItNS4xLDkuNTQtNS4xLDkuNTQsMCwwLTEwLjIsMy4xMy0xMC41MywzLjk1LS4zMy44Miw3LjQuNDksMTMuOTktLjE2LDYuNTgtLjY2LDcuNTcuMTYsNi4wOSwyLjYzLTEuNDgsMi40Ny01MS41LDM1LjU0LTUxLjUsMzUuNTQsMCwwLTUuOTItMS4zMi00Ljk0LTIuNDcuOTktMS4xNSw0Ni41Ni0yOS45NSw0Ni43My0zMC43Ny4xNi0uODItMjQuNTIsMy42Mi0yNy42NC44Mi0zLjEzLTIuOCwxOS4yNS0xMC41MywyMS43Mi0xMS4xOSwyLjQ3LS42Niw4LjcyLTIuOCw4Ljg5LTMuOTUuMTYtMS4xNS03LjQuNDktMTQuODEsMS45Ny03LjQsMS40OC0xOC4yNiw1LjQzLTIwLjksNi4wOS0yLjYzLjY2LTQuNjEuODItNS4yNi0uMTYtLjY2LS45OS0uMTYtMi44LS4xNi0yLjhaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtNCIgZD0iTTI3Ljc1LDQuNDVTMjcuNzUtLjE2LDMwLjA2LDBjMi4zLjE2LDIuNjMsMi4xNCwyLjYzLDMuMjlzLS40OSw3NC41NC0uNDksNzQuNTRjMCwwLS4xNywyLjQ3LTEuNjUsMi4xNC0xLjQ4LS4zMy0xLjgxLTcuNzMtMS44MS0xOC41OXMtMS4xNS00Ny41NS0uOTktNTAuMzVjLjE2LTIuOCwwLTYuNTgsMC02LjU4WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTQiIGQ9Ik0xMDAuNjUsOC40czEuMTUtMi4zLDMuMjktMS45N2MyLjE0LjMzLTEuMTUsMzEuOTItMS4xNSwzMS45MiwwLDAsMzIuNDItMTAuNyw0MS42My05Ljg3LDkuMjEuODItMTYuMjksNy4wOC0xOC43Niw3LjU3LTIuNDcuNDktMjMuMDMsNy40LTI0LjE5LDcuNTctMS4xNS4xNi0zLjQ2LjgyLTMuNjItMS44MS0uMTctMi42MywxLjQ4LTIxLjM5LDEuNjQtMjMuMDMuMTYtMS42NSwxLjE1LTEwLjM3LDEuMTUtMTAuMzdaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtNCIgZD0iTTcxLjAzLDcuNTdzLTIuNDctLjE2LTMuMjksMGMtLjgyLjE2LS41NywzLjU5LS41NywzLjU5LTEuNTEuMjktMi42OC42My0zLjIxLDEuMDItMy42MiwyLjYzLTEuOTcsNC40NCwxLjMyLDUuOTIsMy4yOSwxLjQ4LDIuMy45OSwyLjMuOTl2OC41NnMtOS44Ny42Ni05LjU0LDQuMjhjLjMzLDMuNjIsOS4zOCwzLjc4LDkuMzgsMy43OGwuMTYsMS45N3MtOC4wNi42Ni03LjksMi44Yy4xNiwyLjE0LDcuNzMsMTUuOTYsOS43MSwxNS45NnMxLjY1LTcuNTcsMS42NS03LjU3bC4xNi03LjczczIxLjA2LTIuNjMsMjEuMDYtNS43Ni0yMC43My0yLjgtMjAuNzMtMi44bC0uMTYtMS45N3MyMS43Mi0xLjgxLDIyLjA1LTUuMWMuMzMtMy4yOS0yMi4zOC04LjM5LTIyLjM4LTguMzlsLjMzLTIuNjMsMjcuNDgtLjgycy40OS0xLjMyLjQ5LTIuNDctMS40OC0xLjk3LTEuNDgtMS45N2MwLDAtMTYuNzQuMTgtMjYuODIsMS4zNnYtM1pNNjcuNDEsMzEuMjdsLjE2LDEuNDhzLTMuMjkuNjYtMy40Ni0uMzNjLS4xNi0uOTksMy4yOS0xLjE1LDMuMjktMS4xNVpNNzEuMzYsMzYuMDRsLS4xNiwxLjgxLDUuNDMtLjk5LTUuMjctLjgyWk02Ny40MSw0MS45NmgtMi45NnMuMzMsNC4xMSwyLjE0LDQuNzdjMS44MS42Ni44Mi00Ljc3LjgyLTQuNzdaTTcxLjM2LDIxLjU2djYuMDlzMTEuNjgtLjgyLDExLjY4LTIuMTQtMTEuNjgtMy45NS0xMS42OC0zLjk1WiIvPgogICAgICA8Zz4KICAgICAgICA8cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iNDcuMjUgNzguMjMgNDIuOCA3NC45NiAzOC4zNCA3OC4yMyA0MC4wNyA3Mi45OCAzNS41OCA2OS43NSA0MS4xMSA2OS43NyA0Mi44IDY0LjUxIDQ0LjQ4IDY5Ljc3IDUwLjAxIDY5Ljc1IDQ1LjUyIDcyLjk4IDQ3LjI1IDc4LjIzIi8+CiAgICAgICAgPHBvbHlnb24gY2xhc3M9ImNscy0xIiBwb2ludHM9IjY3LjUgNzguMjMgNjMuMDQgNzQuOTYgNTguNTggNzguMjMgNjAuMzEgNzIuOTggNTUuODIgNjkuNzUgNjEuMzUgNjkuNzcgNjMuMDQgNjQuNTEgNjQuNzIgNjkuNzcgNzAuMjUgNjkuNzUgNjUuNzYgNzIuOTggNjcuNSA3OC4yMyIvPgogICAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSI4NS45NSA3OC4yMyA4MS40OSA3NC45NiA3Ny4wMyA3OC4yMyA3OC43NiA3Mi45OCA3NC4yOCA2OS43NSA3OS44IDY5Ljc3IDgxLjQ5IDY0LjUxIDgzLjE4IDY5Ljc3IDg4LjcxIDY5Ljc1IDg0LjIyIDcyLjk4IDg1Ljk1IDc4LjIzIi8+CiAgICAgICAgPHBvbHlnb24gY2xhc3M9ImNscy0xIiBwb2ludHM9IjEwMy40NiA3OC4yMyA5OSA3NC45NiA5NC41NCA3OC4yMyA5Ni4yNyA3Mi45OCA5MS43OCA2OS43NSA5Ny4zMSA2OS43NyA5OSA2NC41MSAxMDAuNjkgNjkuNzcgMTA2LjIxIDY5Ljc1IDEwMS43MyA3Mi45OCAxMDMuNDYgNzguMjMiLz4KICAgICAgICA8cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iMTIyLjA2IDc4LjIzIDExNy42IDc0Ljk2IDExMy4xNCA3OC4yMyAxMTQuODcgNzIuOTggMTEwLjM5IDY5Ljc1IDExNS45MiA2OS43NyAxMTcuNiA2NC41MSAxMTkuMjkgNjkuNzcgMTI0LjgyIDY5Ljc1IDEyMC4zMyA3Mi45OCAxMjIuMDYgNzguMjMiLz4KICAgICAgPC9nPgogICAgICA8Zz4KICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yMTYuMjgsODQuMDloLTEuN2wtMS42LTMuNjFjLS4yOC0uNjQtLjY4LS45Ny0xLjItMS0uMTctLjAxLS4zNS0uMDItLjU1LS4wMmgtLjl2NC42M2gtMS40OXYtMTAuNDNoMi41NWMxLjI1LDAsMi4xOS4xNiwyLjc5LjQ4Ljg0LjQ0LDEuMjUsMS4yMiwxLjI1LDIuMzQsMCwuNjMtLjIsMS4xNi0uNjEsMS41OC0uNDEuNDMtLjkyLjY5LTEuNTQuNzl2LjAzYy40My4xNy43Ny41MiwxLjAyLDEuMDVsMS45Nyw0LjE1Wk0yMTMuODYsNzYuNTJjMC0xLjAzLS43LTEuNTQtMi4wOS0xLjU0aC0xLjQzdjMuMTdoMS4yN2MuNjMsMCwxLjE0LS4xMSwxLjUyLS4zNC40OS0uMjguNzMtLjcxLjczLTEuMjhaIi8+CiAgICAgICAgPHBvbHlnb24gY2xhc3M9ImNscy0xIiBwb2ludHM9IjIyMy45NyA4NC4wOSAyMTguMTMgODQuMDkgMjE4LjEzIDczLjY2IDIyMy45NyA3My42NiAyMjMuOTcgNzQuOTggMjE5LjYyIDc0Ljk4IDIxOS42MiA3OC4wMyAyMjMuNTggNzguMDMgMjIzLjU4IDc5LjM0IDIxOS42MiA3OS4zNCAyMTkuNjIgODIuNzcgMjIzLjk3IDgyLjc3IDIyMy45NyA4NC4wOSIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTIzMS44LDgxLjE2YzAsMS4wNi0uMzcsMS44NS0xLjEyLDIuMzktLjY3LjQ4LTEuNTYuNzItMi42OS43Mi0uNTEsMC0xLjIyLS4xNC0yLjE0LS40M2wuMTUtMS4zOWMuODguMzQsMS42LjUxLDIuMTcuNTEuNTEsMCwuOTYtLjEzLDEuMzUtLjQuNDctLjMxLjctLjc0LjctMS4zLDAtLjY0LS4zOC0xLjE3LTEuMTUtMS42LS41LS4yMi0xLjIyLS42LTIuMTctMS4xNC0uNzgtLjU0LTEuMTctMS4yNy0xLjE3LTIuMnMuMzQtMS42NSwxLjAyLTIuMTdjLjYxLS40NSwxLjM4LS42NywyLjMzLS42Ny44LDAsMS41NC4xMywyLjIzLjM3bC0uMjEsMS4zN2MtLjU2LS4yNC0xLjAzLS4zOC0xLjQyLS40Mi0uMTYtLjAxLS4zNC0uMDItLjU0LS4wMi0uNTIsMC0uOTQuMS0xLjI2LjMxLS4zOC4yNC0uNTcuNi0uNTcsMS4wOCwwLC41My4zOSwxLDEuMTYsMS40Mi4zNy4xOC43NC4zNiwxLjExLjU0LjQ0LjIyLjc5LjQzLDEuMDYuNjQuNzcuNiwxLjE1LDEuMzksMS4xNSwyLjM3WiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI0My4zMyw3OC44OGMwLDEuNjEtLjQ0LDIuOTEtMS4zMSwzLjg4LS45LDEuMDEtMi4xMywxLjUxLTMuNywxLjUxcy0yLjgxLS41LTMuNzEtMS41MWMtLjg4LS45OC0xLjMxLTIuMjctMS4zMS0zLjg4cy40NC0yLjg4LDEuMzMtMy44NWMuOTMtMS4wMywyLjE2LTEuNTQsMy42OS0xLjU0czIuNzcuNTEsMy43LDEuNTRjLjg4Ljk4LDEuMzEsMi4yNiwxLjMxLDMuODVaTTI0MS43NSw3OC44OGMwLTEuMTUtLjI5LTIuMDktLjg3LTIuODQtLjYzLS44My0xLjQ4LTEuMjQtMi41Ny0xLjI0cy0xLjk1LjQxLTIuNTcsMS4yNGMtLjU4Ljc3LS44NywxLjcxLS44NywyLjg0cy4yOCwyLjEyLjg1LDIuODVjLjYyLjgyLDEuNDgsMS4yMiwyLjU4LDEuMjJzMi4wMS0uNDIsMi42MS0xLjI3Yy41NS0uNzUuODItMS42OC44Mi0yLjgxWiIvPgogICAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI1Mi44LDg0LjA5aC0xLjdsLTEuNi0zLjYxYy0uMjgtLjY0LS42OC0uOTctMS4xOS0xLS4xNy0uMDEtLjM1LS4wMi0uNTUtLjAyaC0uOXY0LjYzaC0xLjQ5di0xMC40M2gyLjU1YzEuMjUsMCwyLjE5LjE2LDIuNzkuNDguODQuNDQsMS4yNiwxLjIyLDEuMjYsMi4zNCwwLC42My0uMiwxLjE2LS42MSwxLjU4LS40MS40My0uOTIuNjktMS41NC43OXYuMDNjLjQzLjE3Ljc3LjUyLDEuMDIsMS4wNWwxLjk3LDQuMTVaTTI1MC4zOCw3Ni41MmMwLTEuMDMtLjctMS41NC0yLjA5LTEuNTRoLTEuNDN2My4xN2gxLjI3Yy42MywwLDEuMTQtLjExLDEuNTItLjM0LjQ5LS4yOC43My0uNzEuNzMtMS4yOFoiLz4KICAgICAgICA8cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iMjYxLjM5IDc0Ljk4IDI1OC4xNSA3NC45OCAyNTguMTUgODQuMDkgMjU2LjY1IDg0LjA5IDI1Ni42NSA3NC45OCAyNTMuNDEgNzQuOTggMjUzLjQxIDczLjY2IDI2MS4zOSA3My42NiAyNjEuMzkgNzQuOTgiLz4KICAgICAgICA8cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iMjc1LjA5IDg0LjA5IDI3My41OSA4NC4wOSAyNzMuNTkgNzkuMzQgMjY4LjYgNzkuMzQgMjY4LjYgODQuMDkgMjY3LjExIDg0LjA5IDI2Ny4xMSA3My42NiAyNjguNiA3My42NiAyNjguNiA3OC4wMyAyNzMuNTkgNzguMDMgMjczLjU5IDczLjY2IDI3NS4wOSA3My42NiAyNzUuMDkgODQuMDkiLz4KICAgICAgICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0yODcuMzIsNzguODhjMCwxLjYxLS40NCwyLjkxLTEuMzEsMy44OC0uOSwxLjAxLTIuMTMsMS41MS0zLjcsMS41MXMtMi44MS0uNS0zLjctMS41MWMtLjg4LS45OC0xLjMxLTIuMjctMS4zMS0zLjg4cy40NC0yLjg4LDEuMzMtMy44NWMuOTMtMS4wMywyLjE2LTEuNTQsMy42OS0xLjU0czIuNzcuNTEsMy43LDEuNTRjLjg4Ljk4LDEuMzEsMi4yNiwxLjMxLDMuODVaTTI4NS43NCw3OC44OGMwLTEuMTUtLjI5LTIuMDktLjg3LTIuODQtLjYzLS44My0xLjQ4LTEuMjQtMi41Ny0xLjI0cy0xLjk1LjQxLTIuNTcsMS4yNGMtLjU4Ljc3LS44NywxLjcxLS44NywyLjg0cy4yOCwyLjEyLjg1LDIuODVjLjYyLjgyLDEuNDgsMS4yMiwyLjU4LDEuMjJzMi4wMS0uNDIsMi42MS0xLjI3Yy41NS0uNzUuODItMS42OC44Mi0yLjgxWiIvPgogICAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIyOTYuMjUgNzQuOTggMjkzLjAxIDc0Ljk4IDI5My4wMSA4NC4wOSAyOTEuNTIgODQuMDkgMjkxLjUyIDc0Ljk4IDI4OC4yOCA3NC45OCAyODguMjggNzMuNjYgMjk2LjI1IDczLjY2IDI5Ni4yNSA3NC45OCIvPgogICAgICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIzMDMuNjYgODQuMDkgMjk3LjgyIDg0LjA5IDI5Ny44MiA3My42NiAzMDMuNjYgNzMuNjYgMzAzLjY2IDc0Ljk4IDI5OS4zMiA3NC45OCAyOTkuMzIgNzguMDMgMzAzLjI3IDc4LjAzIDMwMy4yNyA3OS4zNCAyOTkuMzIgNzkuMzQgMjk5LjMyIDgyLjc3IDMwMy42NiA4Mi43NyAzMDMuNjYgODQuMDkiLz4KICAgICAgICA8cG9seWdvbiBjbGFzcz0iY2xzLTEiIHBvaW50cz0iMzExLjg5IDg0LjA5IDMwNi4wNCA4NC4wOSAzMDYuMDQgNzMuNjYgMzA3LjUzIDczLjY2IDMwNy41MyA4Mi43NyAzMTEuODkgODIuNzcgMzExLjg5IDg0LjA5Ii8+CiAgICAgIDwvZz4KICAgIDwvZz4KICA8L2c+Cjwvc3ZnPg==" style="height:56px;width:auto" alt="Belconti Resort Hotel">
+  </div>
+  <!-- YÖNETİCİ ÖZETİ -->
+  <div class="exec-summary">
+    <div class="exec-summary-text">
+      <p>Mayıs 2026'da Belconti Resort Hotel'in dijital kanalları güçlü bir performans sergiledi. Web sitesi <strong>233.024 aktif kullanıcı</strong> ile sektör üst bandında yer alırken, Call Center Sedna kayıt-tarihi verisine göre <strong>€860.182 (≈₺45,81M) ciro</strong> ve %33,8 kapanış oranıyla hedeflerin üzerinde kapandı. Sedna Sistem 1 (yıllık dağılım) toplam ciro <strong>€14.754.768 — 10.254 rezervasyon</strong> olarak gerçekleşirken, yalnızca Mayıs içinde konaklanan Sistem 2 (anlık) ciro <strong>€1.611.476 — 2.022 rezervasyon</strong> oldu. Google Ads'te %5,7 CTR ve ₺3,95 CPC ile sektör ortalamalarının belirgin üzerinde verimlilik yakalandı; Meta reklamlar ise 7,54M erişim ve %89 yeni kullanıcı oranıyla marka farkındalığına güçlü katkı sağladı. CC bazlı ROAS Sistem 1'de <strong>86,9x</strong>, Sistem 2'de (anlık) <strong>19,1x</strong> olarak hesaplandı; iptal oranı %18,2 olarak gerçekleşti. Temmuz doluluk sezonuna girilirken organik görünürlük ve ROAS odaklı optimizasyonların sürdürülmesi kritik önem taşıyor.</p>
+    </div>
+    <button class="ai-toggle" onclick="toggleAIActions()" id="aiToggleBtn">
+      <span class="ai-toggle-icon">✦</span> Yapay Zeka Aksiyon Önerileri <span class="ai-toggle-chevron" id="aiChevron">▾</span>
+    </button>
+    <div class="ai-actions" id="aiActions" style="display:none">
+      <div class="ai-action-grid">
+        <div class="ai-action-item priority-high">
+          <div class="ai-action-header"><span class="ai-priority">🔴 Yüksek Öncelik</span></div>
+          <div class="ai-action-title">ROAS Artışı: Kampanya Segmentasyonu</div>
+          <div class="ai-action-body">Sedna Sistem 1 CC ROAS'ı (86,9x) korurken, en yüksek dönüşüm değeri üreten anahtar kelimeler (oda tipi + lokasyon kombinasyonları) ayrı kampanyalara taşınmalı; bütçe bu segmente %20–30 kayılmalıdır.</div>
+        </div>
+        <div class="ai-action-item priority-high">
+          <div class="ai-action-header"><span class="ai-priority">🔴 Yüksek Öncelik</span></div>
+          <div class="ai-action-title">Call Center Kapanış Oranı: Script Optimizasyonu</div>
+          <div class="ai-action-body">H2 haftasında %44,2 olan kapanış oranı diğer haftalarda %28–31'e düşüyor. En başarılı temsilcilerin çağrı kayıtları analiz edilerek ortak başarı kalıpları çıkarılmalı ve tüm ekiple paylaşılmalıdır.</div>
+        </div>
+        <div class="ai-action-item priority-mid">
+          <div class="ai-action-header"><span class="ai-priority">🟡 Orta Öncelik</span></div>
+          <div class="ai-action-title">Meta Reklam: Video İçerik Ağırlığı</div>
+          <div class="ai-action-body">Meta'da %89 yeni kullanıcı oranı yüksek farkındalık potansiyeli gösteriyor ancak dönüşüm hunisinin alt kısmı zayıf. Retargeting video serisi (3–7 gün sonra) ile sıcak kitle tekrar hedeflenmeli; Haziran bütçesinin %25'i bu akışa ayrılmalıdır.</div>
+        </div>
+        <div class="ai-action-item priority-mid">
+          <div class="ai-action-header"><span class="ai-priority">🟡 Orta Öncelik</span></div>
+          <div class="ai-action-title">Organik Arama: Snippet ve Schema Markup</div>
+          <div class="ai-action-body">SERP görünürlüğü sektör ortalamasının üzerinde olmasına rağmen Featured Snippet'larda yer alınmıyor. Oda, fiyat ve deneyim sorgu kümeleri için FAQ şeması ve yapılandırılmış veri eklenmesi 30 gün içinde tıklama oranını %15–25 artırabilir.</div>
+        </div>
+        <div class="ai-action-item priority-low">
+          <div class="ai-action-header"><span class="ai-priority">🟢 İzlemeye Al</span></div>
+          <div class="ai-action-title">Web Rezervasyon: Terk Sepeti E-posta Akışı</div>
+          <div class="ai-action-body">Checkout adımına ulaşan ancak rezervasyon tamamlamayan kullanıcılar için 1. ve 3. saat trigger'lı otomatik e-posta dizisi kurulmalı. Otel sektöründe bu akış ortalama %8–12 geri kazanım sağlar.</div>
+        </div>
+        <div class="ai-action-item priority-low">
+          <div class="ai-action-header"><span class="ai-priority">🟢 İzlemeye Al</span></div>
+          <div class="ai-action-title">Sosyal Medya: TikTok Keşif İçeriği</div>
+          <div class="ai-action-body">Instagram Reels'ta izlenme performansı olumlu. Temmuz sezon zirvesi öncesinde TikTok'ta "behind the scenes" formatında haftalık 2 video yayınlanması, Gen-Z ve Millennial segmentinde organik erişimi artırma potansiyeli taşır.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-eyebrow">Dijital Performans Raporu</div>
+  <h1 class="header-title">Belconti Resort Hotel</h1>
+  <p class="header-sub">Mayıs 2026 · Tüm Kanallar · GA4 + Google Ads + Meta + Satış Raporları + Call Center<br>Her kartın üzerine tıklayarak detayları görüntüleyin · Grafikler büyütülebilir</p>
+  <div class="header-kpis">
+    <div class="hkpi" onclick="openModal('Aktif Kullanıcı','233.024','Aylık siteyi en az bir kez ziyaret eden benzersiz kişi sayısı|Reklam ağı (Google+Meta reklamları): 355.000 ziyaret|Otel sektörü aylık ort.: 80.000–300.000 kullanıcı|Belconti üst bantta yer alıyor')">
+      <div class="hkpi-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M14 17v-1a4 4 0 00-4-4H7a4 4 0 00-4 4v1"/><circle cx="8.5" cy="7" r="3"/><path d="M17 17v-1a3 3 0 00-2-2.83M13 5a3 3 0 012.83 2"/></svg></div>
+      <div class="hkpi-label">Aktif Kullanıcı</div>
+      <div class="hkpi-val">233K</div>
+      <div class="hkpi-sub">GA4 · Tüm kanallar</div>
+      <div class="hkpi-trend up">↑ Sektör üst bandı</div>
+    </div>
+    <div class="hkpi" onclick="openModal('Call Center Ciro (Sedna)','€860.182 · ₺45.810.236','Sedna Sistem 1 (Yıllık) Mayıs 2026|601 çağrı · 203 satış|%33.8 kapanış oranı|En iyi hafta: H2 %44.2|€860.182 EUR geliri|₺45.810.236 TL eşdeğeri|Kaynak: Sedna kayıt tarihi')">
+      <div class="hkpi-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 3h3l1.5 3.5-2 1.5c.8 1.8 2 3 3.8 3.8l1.5-2L16 11v3a2 2 0 01-2 2C6.5 16 4 9.5 5 3z"/></svg></div>
+      <div class="hkpi-label">Call Center Ciro</div>
+      <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap">
+        <div class="hkpi-val" style="font-size:28px">€860.2K</div>
+      </div>
+      <div class="hkpi-sub" style="margin-top:4px">
+        <span style="color:var(--muted);font-size:11px">TL eşdeğeri:</span><br>
+        <span style="font-weight:800;font-size:15px;color:var(--green)">≈ ₺45.81M</span>
+      </div>
+      <div class="hkpi-trend up">↑ Sedna Sistem 1</div>
+    </div>
+    <div class="hkpi" onclick="openModal('Toplam Satış (Sistem 1 — Yıllık)','€14.754.768','68.554 gece|10.254 rezervasyon|Oda ort. €215,23|Kişi ort. €81,57|İptal: 1.866 (%18,2)|Kaynak: Sedna kayıt tarihi')">
+      <div class="hkpi-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="4" width="14" height="14" rx="2"/><path d="M3 8h14M7 2v4M13 2v4"/></svg></div>
+      <div class="hkpi-label">Toplam Satış (Sistem 1)</div>
+      <div class="hkpi-val">€14.75M</div>
+      <div class="hkpi-sub">₺786.259.260 · 10.254 rezervasyon</div>
+      <div class="hkpi-trend up">↑ Yıllık dağılım</div>
+    </div>
+    <div class="hkpi" onclick="openModal('ROAS (Sistem 1 — CC Bazlı)','86.9x','Mayıs 2026 — Sistem 1 (Yıllık)|Call Center geliri: ₺45.810.236 (€860.182)|Toplam reklam harcaması: ₺527.341 (Google ₺524.315 + Meta ₺3.026)|ROAS: 45.810.236 / 527.341 = 86,9x|Makro/Toplam bazlı: 1.491x (şişirilmiş — bilgi amaçlı)')">
+      <div class="hkpi-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 14l5-5 3 3 5-6"/><path d="M12 6h4v4"/></svg></div>
+      <div class="hkpi-label">ROAS (Sistem 1 — CC Bazlı)</div>
+      <div class="hkpi-val" style="font-size:32px">86.9x</div>
+      <div class="hkpi-sub">Harcama: ₺527.341</div>
+      <div class="hkpi-trend up">↑ Sektör ort. 4–8x</div>
+    </div>
+    <div class="hkpi" onclick="openModal('Mayıs İçi Satış (Sistem 2 — Anlık)','€1.611.476','10.052 gece|2.022 rezervasyon|İptal: 1.866|Kaynak: Sedna kayıt tarihi — yalnızca Mayıs içinde konaklanan rezervasyonlar')">
+      <div class="hkpi-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="4" width="14" height="14" rx="2"/><path d="M3 8h14M7 2v4M13 2v4"/></svg></div>
+      <div class="hkpi-label">Mayıs İçi Satış (Sistem 2)</div>
+      <div class="hkpi-val">€1.61M</div>
+      <div class="hkpi-sub">₺85.275.268 · 2.022 rezervasyon</div>
+      <div class="hkpi-trend up">↑ Anlık (son dakika)</div>
+    </div>
+    <div class="hkpi" onclick="openModal('Anlık ROAS (Sistem 2)','19.1x','Mayıs 2026 — Sistem 2 (Anlık)|Toplam ciro: ₺85.275.268 (€1.611.476)|Toplam reklam harcaması: ₺527.341|ROAS: 85.275.268 / 527.341 = 161,7x (toplam bazlı)|CC bazlı: 19,1x')">
+      <div class="hkpi-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 14l5-5 3 3 5-6"/><path d="M12 6h4v4"/></svg></div>
+      <div class="hkpi-label">Anlık ROAS (Sistem 2)</div>
+      <div class="hkpi-val" style="font-size:32px">19.1x</div>
+      <div class="hkpi-sub">CC bazlı · Toplam bazlı: 161,7x</div>
+      <div class="hkpi-trend up">↑ Aynı-ay performansı</div>
+    </div>
+  </div>
+</header>
+
+<!-- GA4 -->
+<section class="section" id="sec-ga4">
+  <div class="section-header">
+    <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 13l4-4 3 3 4-5 3 2"/></svg></div>
+    <div><div class="section-title">Web Analitik — GA4 Genel Bakış</div><div class="section-sub">Mayıs 2026 · Tüm trafik kaynakları · Google Analytics 4</div></div>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi-card" onclick="openModal('Aktif Kullanıcı','233.024','Aylık siteyi ziyaret eden benzersiz (tekil) kişi sayısı|Aynı kişi 5 kez girse bile 1 olarak sayılır|Otel sektörü aylık ort.: 80.000–300.000|Belconti bu aralığın üst bandında')">
+      <div class="kpi-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M14 17v-1a4 4 0 00-4-4H7a4 4 0 00-4 4v1"/><circle cx="8.5" cy="7" r="3"/></svg></div>
+      <div class="kpi-label">Aktif Kullanıcı</div>
+      <div class="kpi-val">233.024</div>
+      <span class="kpi-trend up">↑ Sektör üst bandı</span>
+    </div>
+    <div class="kpi-card" onclick="openModal('Toplam Ziyaret (Oturum)','374.200+','Oturum: bir kullanıcının siteye gelip çıkana kadar yaptığı ziyaret|Reklam ağı: 355.000 (Google + Meta reklamlardan)|Doğrudan giriş: 7.000 (URL yazarak veya yer iminden)|Organik Google: 6.400 · Ücretli Google: 5.800')">
+      <div class="kpi-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="8"/><path d="M10 6v4l3 3"/></svg></div>
+      <div class="kpi-label">Toplam Ziyaret</div>
+      <div class="kpi-val">374.200+</div>
+      <div class="kpi-sub">Tüm kanallardan site ziyareti</div>
+    </div>
+    <div class="kpi-card" onclick="openModal('Sayfa Etkileşim Süresi','16 sn','Ziyaretçinin sitede aktif olarak vakit geçirdiği süre|Scroll, tıklama, form doldurma gibi eylemler sayılır|Otel sektörü ort.: 25–45 saniye|Mobil kullanıcılar genellikle daha kısa süre kalır')">
+      <div class="kpi-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="8"/><path d="M10 6v4l3 3"/></svg></div>
+      <div class="kpi-label">Sayfa Etkileşim Süresi</div>
+      <div class="kpi-val">16 sn</div>
+      <div class="kpi-sub">Aktif sayfa süresi</div>
+    </div>
+    <div class="kpi-card" onclick="openModal('Dönüşüm (Conversion)','55.828','Dönüşüm: ziyaretçinin rezervasyon formu, telefon tıklaması gibi hedef eylemi yapması|PMAX TR (Google otomatik kampanya): 34.000+ mikro-dönüşüm — rezervasyon formu, WhatsApp başlatma, telefon tıklama, çağrı butonu gibi kullanıcı aksiyonları (satış değil)|Arama kampanyaları: ~21.000|Her dönüşümün maliyeti: ₺9.39 — otel sektörü ort. ₺25–60')">
+      <div class="kpi-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="8"/><path d="M7 10l2 2 4-4"/></svg></div>
+      <div class="kpi-label">Dönüşüm</div>
+      <div class="kpi-val">55.828</div>
+      <div class="kpi-sub">₺9.39/dönüşüm — sektör ort. ₺25–60</div>
+      <span class="kpi-trend up">↑ 3x verimli</span>
+    </div>
+  </div>
+  <div class="two-col" style="margin-top:24px">
+    <div class="chart-wrap" onclick="openChartModal('chartTraffic','Trafik Kaynakları — Detay','Mayıs 2026 tüm kanallar')">
+      <div class="chart-title">Trafik Kaynakları — Oturum Dağılımı <span class="chart-expand-hint"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8V3h5M17 12v5h-5M3 12l14-9M17 8L3 17"/></svg> büyüt</span></div>
+      <div class="chart-sub">Kaynak bazlı oturum sayısı</div>
+      <div class="chart-inner"><canvas id="chartTraffic"></canvas></div>
+    </div>
+    <div>
+      <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:16px;text-transform:uppercase;letter-spacing:.05em">Ülke Bazlı Kullanıcı Dağılımı</div>
+      <div class="stat-row"><div class="stat-label"><strong>Türkiye</strong></div><div class="stat-bar-wrap"><div class="stat-bar" style="width:100%"></div></div><div class="stat-val">182.000 <span style="color:var(--green);font-size:11px">↑%78.3</span></div></div>
+      <div class="stat-row"><div class="stat-label"><strong>Almanya</strong></div><div class="stat-bar-wrap"><div class="stat-bar" style="width:16.5%"></div></div><div class="stat-val">30.000</div></div>
+      <div class="stat-row"><div class="stat-label"><strong>İngiltere</strong></div><div class="stat-bar-wrap"><div class="stat-bar" style="width:5.5%"></div></div><div class="stat-val">10.000</div></div>
+      <div class="stat-row"><div class="stat-label">Diğer</div><div class="stat-bar-wrap"><div class="stat-bar" style="width:6%"></div></div><div class="stat-val">11.024</div></div>
+      <div style="margin-top:22px;font-size:13px;font-weight:700;color:var(--text);margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em">Demografi</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+        <span class="badge">Kadın %72.9</span>
+        <span class="badge neutral">Erkek %27.1</span>
+        <span class="badge">35–44 yaş baskın</span>
+        <span class="badge neutral">25–34 ikinci grup</span>
+      </div>
+      <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em">En Çok Ziyaret Edilen Sayfalar</div>
+      <div class="stat-row"><div class="stat-label">Ana Sayfa</div><div class="stat-val" style="color:var(--muted);font-size:12px">27.000 oturum</div></div>
+      <div class="stat-row"><div class="stat-label">Rezervasyon Sayfası</div><div class="stat-val" style="color:var(--muted);font-size:12px">15.200 oturum</div></div>
+      <div class="stat-row"><div class="stat-label">Oda Tipleri</div><div class="stat-val" style="color:var(--muted);font-size:12px">9.800 oturum</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ORGANİK ARAMA -->
+<section class="section" id="sec-search">
+  <div class="section-header">
+    <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M13 13l4 4"/></svg></div>
+    <div><div class="section-title">Organik Arama Performansı</div><div class="section-sub">Google Search Console · Mayıs 2026 · Tüm anahtar kelimeler</div></div>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi-card" onclick="openModal('Organik Tıklama','6.400','Google arama sonuçlarında ücretli reklam olmadan gelen tıklama sayısı|Ücretli reklamların aksine bu trafik ücretsizdir|Otel sektörü aylık organik ort.: 3.000–8.000 tıklama|Belconti bu aralığın üst bandında')">
+      <div class="kpi-label">Organik Tıklama</div>
+      <div class="kpi-val">6.400</div>
+      <div class="kpi-sub">Reklamsız Google trafiği</div>
+      <span class="kpi-trend up">↑ Sektör üst bandı</span>
+    </div>
+    <div class="kpi-card" onclick="openModal('Arama Görünürlüğü','790.000','Otelin Google arama sonuçlarında kaç kez göründüğü — tıklanmasa bile sayılır|Pozisyon 1–100 arası tüm aramalar dahil|Hem marka aramaları hem genel tatil aramaları|Otel sektörü aylık ort.: 400.000–1.2M gösterim')">
+      <div class="kpi-label">Arama Görünürlüğü</div>
+      <div class="kpi-val">790.000</div>
+      <div class="kpi-sub">Google'da görünme sayısı</div>
+      <span class="kpi-trend up">↑ Sektör ortasında</span>
+    </div>
+    <div class="kpi-card" onclick="openModal('Tıklama Oranı (CTR)','%0.81','Google’da çıkan her 100 sonuçtan kaçının tıklandığı|Hesaplama: 6.400 tıklama ÷ 790.000 gösterim|Otel sektörü organik CTR ortalaması: %0.6–1.2|Belconti sektör ortalaması seviyesinde')">
+      <div class="kpi-label">Tıklama Oranı (CTR)</div>
+      <div class="kpi-val">%0.81</div>
+      <div class="kpi-sub">Her 100 görünmede ~1 tıklama</div>
+      <span class="kpi-trend up">↑ Sektör ort. %0.6–1.2</span>
+    </div>
+    <div class="kpi-card" onclick="openModal('Google Sıralama Pozisyonu','28.4','Otelin Google’da ortalama kaçıncı sırada göründüğü — küçük sayı daha iyidir|Marka aramaları (belconti resort) çok üst sırada|Genel aramalar (belek 5 yıldız) ortalamayı düşürüyor|Marka sorgusu pozisyonu: tahminen Top 3')">
+      <div class="kpi-label">Google Sıralaması</div>
+      <div class="kpi-val">28.4</div>
+      <div class="kpi-sub">Ortalama konum (marka Top 3)</div>
+    </div>
+  </div>
+  <!-- Sektör Karşılaştırma -->
+  <div style="margin-top:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+    <div style="border:1px solid var(--border);border-radius:var(--radius);padding:20px;background:var(--bg-alt)">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:10px">Organik Tıklama</div>
+      <div style="display:flex;align-items:flex-end;gap:16px">
+        <div><div style="font-size:22px;font-weight:800;color:var(--green)">6.400</div><div style="font-size:11px;color:var(--green);font-weight:600">Belconti</div></div>
+        <div><div style="font-size:22px;font-weight:800;color:var(--muted-light)">~4.500</div><div style="font-size:11px;color:var(--muted);font-weight:600">Sektör Ort.</div></div>
+      </div>
+      <div style="margin-top:12px;font-size:12px;color:var(--green-dark);background:var(--green-light);padding:6px 10px;border-radius:6px;font-weight:600">%42 sektör ortalaması üzerinde</div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:var(--radius);padding:20px;background:var(--bg-alt)">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:10px">Arama Görünürlüğü</div>
+      <div style="display:flex;align-items:flex-end;gap:16px">
+        <div><div style="font-size:22px;font-weight:800;color:var(--green)">790K</div><div style="font-size:11px;color:var(--green);font-weight:600">Belconti</div></div>
+        <div><div style="font-size:22px;font-weight:800;color:var(--muted-light)">~550K</div><div style="font-size:11px;color:var(--muted);font-weight:600">Sektör Ort.</div></div>
+      </div>
+      <div style="margin-top:12px;font-size:12px;color:var(--green-dark);background:var(--green-light);padding:6px 10px;border-radius:6px;font-weight:600">%43 sektör ortalaması üzerinde</div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:var(--radius);padding:20px;background:var(--bg-alt)">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:10px">Tıklama Oranı (CTR)</div>
+      <div style="display:flex;align-items:flex-end;gap:16px">
+        <div><div style="font-size:22px;font-weight:800;color:var(--green)">%0.81</div><div style="font-size:11px;color:var(--green);font-weight:600">Belconti</div></div>
+        <div><div style="font-size:22px;font-weight:800;color:var(--muted-light)">%0.60</div><div style="font-size:11px;color:var(--muted);font-weight:600">Sektör Alt Sınır</div></div>
+      </div>
+      <div style="margin-top:12px;font-size:12px;color:var(--green-dark);background:var(--green-light);padding:6px 10px;border-radius:6px;font-weight:600">Otel sektörü normal aralığında</div>
+    </div>
+  </div>
+</section>
+
+<!-- GOOGLE ADS -->
+<section class="section" id="sec-gads">
+  <div class="section-header">
+    <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 2L4 12h7l-2 6 9-10h-7l2-6z"/></svg></div>
+    <div><div class="section-title">Google Ads Kampanya Performansı</div><div class="section-sub">Mayıs 2026 · PMAX + Arama · Tüm ülkeler</div></div>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi-card" onclick="openModal('Gösterim','5.240.000','Tüm Google Ads kampanyaları|PMAX TR: 3.200.000|PMAX DE: 820.000|PMAX UK + Diğer: 1.220.000')">
+      <div class="kpi-label">Gösterim</div>
+      <div class="kpi-val">5.24M</div>
+      <div class="kpi-sub">Tüm kampanyalar</div>
+    </div>
+    <div class="kpi-card" onclick="openModal('Tıklama','475.935','Toplam reklam tıklaması|Ortalama CTR: %9.07|PMAX TR: 322.000|Arama Marka: 36.935')">
+      <div class="kpi-label">Tıklama</div>
+      <div class="kpi-val">475.935</div>
+      <span class="kpi-trend up">↑ CTR %9.07</span>
+    </div>
+    <div class="kpi-card" onclick="openModal('Reklam Harcaması','₺524.315','Toplam Google Ads harcaması|Ortalama TBM: ₺1.10|PMAX TR: ₺310.000|Kaynak: Google Ads')">
+      <div class="kpi-label">Harcama</div>
+      <div class="kpi-val">₺524.315</div>
+      <div class="kpi-sub">Ort. TBM ₺1.10</div>
+    </div>
+    <div class="kpi-card" onclick="openModal('Dönüşüm','55.828','PMAX TR: 34.000+ (form, WhatsApp, çağrı butonu vb.)|Arama kampanyaları: ~21.000|Maliyet/dönüşüm: ₺9.39|Kaynak: GA4 bağlantılı')">
+      <div class="kpi-label">Dönüşüm</div>
+      <div class="kpi-val">55.828</div>
+      <div class="kpi-sub">₺9.39/dönüşüm</div>
+    </div>
+  </div>
+  <div class="chart-wrap" style="margin-top:20px" onclick="openChartModal('chartGads','Google Ads Kampanya Karşılaştırması — Detay','Tıklama ve harcama karşılaştırması')">
+    <div class="chart-title">Kampanya Karşılaştırması — Tıklama & Harcama <span class="chart-expand-hint"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8V3h5M17 12v5h-5M3 12l14-9M17 8L3 17"/></svg> büyüt</span></div>
+    <div class="chart-sub">Kampanya bazlı tıklama (sol eksen) ve harcama ₺ (sağ eksen)</div>
+    <div class="chart-inner"><canvas id="chartGads"></canvas></div>
+  </div>
+  <div class="table-wrap" style="margin-top:20px">
+    <table>
+      <thead><tr><th>Kampanya</th><th>Ülke</th><th class="num">Gösterim</th><th class="num">Tıklama</th><th class="num">CTR</th><th class="num">Harcama</th><th class="num">Dönüşüm</th></tr></thead>
+      <tbody>
+        <tr><td><strong>PMAX Türkiye</strong></td><td><span class="badge">TR</span></td><td class="num">3.200.000</td><td class="num">322.000</td><td class="num">%10.1</td><td class="num">₺310.000</td><td class="num">34.000+</td></tr>
+        <tr><td>PMAX Almanya</td><td><span class="badge neutral">DE</span></td><td class="num">820.000</td><td class="num">68.000</td><td class="num">%8.3</td><td class="num">₺91.000</td><td class="num">10.200</td></tr>
+        <tr><td>PMAX İngiltere</td><td><span class="badge neutral">UK</span></td><td class="num">410.000</td><td class="num">38.000</td><td class="num">%9.3</td><td class="num">₺52.000</td><td class="num">5.800</td></tr>
+        <tr><td>Arama — Marka</td><td><span class="badge">TR</span></td><td class="num">520.000</td><td class="num">36.935</td><td class="num">%7.1</td><td class="num">₺48.000</td><td class="num">4.628</td></tr>
+        <tr><td>Diğer Ülkeler</td><td><span class="badge neutral">EU+</span></td><td class="num">290.000</td><td class="num">11.000</td><td class="num">%3.8</td><td class="num">₺23.315</td><td class="num">1.200</td></tr>
+        <tr class="total-row"><td>TOPLAM</td><td>—</td><td class="num">5.240.000</td><td class="num">475.935</td><td class="num">%9.07</td><td class="num">₺524.315</td><td class="num">55.828</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ROAS -->
+<section class="section" id="sec-roas">
+  <div class="section-header">
+    <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 14l5-5 3 3 5-6"/><path d="M12 6h4v4"/></svg></div>
+    <div><div class="section-title">ROAS Analizi — 2 Sistem</div><div class="section-sub">Mayıs 2026 · Sedna Kayıt Tarihi Bazlı · Reklam Harcaması Getiri Oranı</div></div>
+  </div>
+  <div class="callout">
+    <div class="callout-title">2 Ayrı ROAS Sistemi</div>
+    <div class="callout-text"><strong>Sistem 1 (Yıllık Dağılım / Makro ROAS):</strong> Mayıs'ta kayıt tarihi ile satılan, konaklaması tüm yıla yayılan rezervasyonlar — €14.754.768 toplam ciro. <strong>Sistem 2 (Sadece Mayıs Konaklamalı / Anlık ROAS):</strong> Mayıs'ta hem satılan hem de konaklaması yalnızca Mayıs içinde gerçekleşen rezervasyonlar (son dakika satışlar) — €1.611.476 ciro. Her iki sistemde de aynı toplam reklam harcaması (₺527.341 = Google ₺524.315 + Meta ₺3.026) paydadır. Kaynak: Sedna kayıt-tarihi analizi (Satış Raporları'ndaki giriş-tarihi verisiyle karıştırılmamalıdır).</div>
+  </div>
+
+  <div class="table-wrap" style="margin-top:20px">
+    <table>
+      <thead><tr><th>Sistem</th><th class="num">Toplam Ciro</th><th class="num">Reklam Harcaması</th><th class="num">ROAS — CC Bazlı</th><th class="num">ROAS — Toplam Bazlı</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Sistem 1 — Yıllık Makro</strong></td><td class="num">€14.754.768 (₺786.259.260)</td><td class="num">₺527.341</td><td class="num">86,9x</td><td class="num">1.491x</td></tr>
+        <tr><td><strong>Sistem 2 — Anlık</strong></td><td class="num">€1.611.476 (₺85.275.268)</td><td class="num">₺527.341</td><td class="num">19,1x</td><td class="num">161,7x</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="roas-tabs" style="display:flex;gap:8px;margin:20px 0 16px">
+    <button class="roas-nav-btn active" onclick="switchRoasTabM('macro', this)">Sistem 1 — Yıllık Makro ROAS (Detay)</button>
+    <button class="roas-nav-btn" onclick="switchRoasTabM('instant', this)">Sistem 2 — Anlık ROAS (Detay)</button>
+  </div>
+
+  <div class="roas-panel-m roas-panel-m-macro">
+    <div class="kpi-grid kpi-grid-3">
+      <div class="kpi-card"><div class="kpi-label">Toplam Ciro (Sistem 1)</div><div class="kpi-val" style="font-size:28px">€14.754.768</div><div class="kpi-sub">₺786.259.260 TL eşdeğeri</div></div>
+      <div class="kpi-card"><div class="kpi-label">Toplam Reklam Harcaması</div><div class="kpi-val" style="font-size:28px">₺527.341</div><div class="kpi-sub">Google ₺524.315 + Meta ₺3.026</div></div>
+      <div class="kpi-card"><div class="kpi-label">İptal</div><div class="kpi-val" style="font-size:28px">1.866</div><div class="kpi-sub">10.254 rezervasyon üzerinden — İptal oranı %18,2</div></div>
+    </div>
+    <div class="table-wrap" style="margin-top:16px">
+      <table>
+        <thead><tr><th>Kanal</th><th class="num">Gece</th><th class="num">Ciro (EUR)</th><th class="num">Ciro (TL)</th><th class="num">ROAS</th></tr></thead>
+        <tbody>
+          <tr><td>Call Center</td><td class="num">3.063</td><td class="num">€860.182</td><td class="num">₺45.810.236</td><td class="num">86,9x</td></tr>
+          <tr><td>Web / OTA (Toplam − CC)</td><td class="num">65.491</td><td class="num">€13.894.586</td><td class="num">₺740.449.024</td><td class="num">1.404,3x</td></tr>
+          <tr class="total-row"><td>TOPLAM</td><td class="num">68.554</td><td class="num">€14.754.768</td><td class="num">₺786.259.260</td><td class="num">1.491x</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <div class="callout-title">ROAS — CC Bazlı: 86,9x · Makro/Toplam Bazlı: 1.491x</div>
+      <div class="callout-text">CC bazlı ROAS = ₺45.810.236 ÷ ₺527.341 = <strong>86,9x</strong> — daha muhafazakâr ve temsili ölçüm. Makro ROAS = ₺786.259.260 ÷ ₺527.341 = <strong>1.491x</strong> — Web/OTA kanallarının kendi pazarlama harcamasını içermediği için matematiksel olarak şişirilmiştir.</div>
+    </div>
+  </div>
+
+  <div class="roas-panel-m roas-panel-m-instant" style="display:none">
+    <div class="kpi-grid kpi-grid-3">
+      <div class="kpi-card"><div class="kpi-label">Toplam Ciro (Sistem 2)</div><div class="kpi-val" style="font-size:28px">€1.611.476</div><div class="kpi-sub">₺85.275.268 TL eşdeğeri</div></div>
+      <div class="kpi-card"><div class="kpi-label">Toplam Reklam Harcaması</div><div class="kpi-val" style="font-size:28px">₺527.341</div><div class="kpi-sub">Google ₺524.315 + Meta ₺3.026</div></div>
+      <div class="kpi-card"><div class="kpi-label">İptal</div><div class="kpi-val" style="font-size:28px">1.866</div><div class="kpi-sub">2.022 rezervasyon üzerinden</div></div>
+    </div>
+    <div class="table-wrap" style="margin-top:16px">
+      <table>
+        <thead><tr><th>Kanal</th><th class="num">Gece</th><th class="num">Ciro (EUR)</th><th class="num">Ciro (TL)</th><th class="num">ROAS</th></tr></thead>
+        <tbody>
+          <tr><td>Call Center</td><td class="num">1.108</td><td class="num">€190.240</td><td class="num">₺10.080.241</td><td class="num">19,1x</td></tr>
+          <tr><td>Web / OTA (Toplam − CC)</td><td class="num">8.944</td><td class="num">€1.421.236</td><td class="num">₺75.195.027</td><td class="num">142,6x</td></tr>
+          <tr class="total-row"><td>TOPLAM</td><td class="num">10.052</td><td class="num">€1.611.476</td><td class="num">₺85.275.268</td><td class="num">161,7x</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <div class="callout-title">Anlık ROAS — CC Bazlı: 19,1x · Toplam Bazlı: 161,7x</div>
+      <div class="callout-text">Bu sistem, Mayıs'ta satılıp yine Mayıs içinde konaklanan (son dakika / aynı-ay) rezervasyonları yansıtır — Sistem 1'e göre çok daha küçük fakat "anlık" performansı gösterir.</div>
+    </div>
+  </div>
+</section>
+
+<!-- META -->
+<section class="section" id="sec-meta">
+  <div class="section-header">
+    <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="16" cy="4" r="2"/><circle cx="4" cy="10" r="2"/><circle cx="16" cy="16" r="2"/><path d="M6 10l8-5M6 10l8 5"/></svg></div>
+    <div><div class="section-title">Meta Reklamlar — Facebook & Instagram</div><div class="section-sub">Mayıs 2026 · Meta Ads Manager · Tüm kampanyalar</div></div>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi-card" onclick="openModal('Meta Tıklama','4.716','Facebook ve Instagram reklamlarına yapılan toplam tıklama|CTR %9.35: her 100 kişiden 9’u tıkladı (otel sektörü ort. %1–3)|CPC ₺0.64: bir tıklamanın maliyeti (sektör ort. ₺2–5)|Kaynak: Meta Ads Manager')">
+      <div class="kpi-label">Meta Tıklama</div>
+      <div class="kpi-val">4.716</div>
+      <div class="kpi-sub">Her 100 görünmede 9 tıklama</div>
+      <span class="kpi-trend up">↑ CTR %9.35</span>
+    </div>
+    <div class="kpi-card" onclick="openModal('Meta Gösterim','50.490','Reklamın Facebook ve Instagram’da kaç kişiye gösterildiği — tıklanmasa bile sayılır|Türkiye + Almanya + İngiltere, 25–55 yaş seyahat ilgilileri|CPM ₺59.9: 1.000 kişiye ulaşmanın maliyeti|Otel sektörü ort. CPM: ₺80–150')">
+      <div class="kpi-label">Meta Gösterim</div>
+      <div class="kpi-val">50.490</div>
+      <div class="kpi-sub">Reklamın gösterilme sayısı</div>
+    </div>
+    <div class="kpi-card" onclick="openModal('Meta Reklam Harcaması','₺3.026','Facebook + Instagram toplam reklam bütçesi|CPC ₺0.64: tıklama başına maliyet — sektör ort. ₺2–5|CPM ₺59.9: 1.000 gösterim başına maliyet — sektör ort. ₺80–150|Düşük bütçe ile yüksek verim sağlandı')">
+      <div class="kpi-label">Meta Harcama</div>
+      <div class="kpi-val">₺3.026</div>
+      <div class="kpi-sub">Tıklama başına ₺0.64 maliyet</div>
+      <span class="kpi-trend up">↑ Sektör ort. ₺2–5</span>
+    </div>
+    <div class="kpi-card" onclick="openModal('Tıklama Başına Maliyet (CPC)','₺0.64','CPC (Cost Per Click): bir kullanıcının reklama tıklaması için ödenen tutar|Otel sektörü Meta CPC ortalaması: ₺2–5|Belconti bu ortalamanın ~4 katı daha verimli çalıştı|Düşük CPC = aynı bütçeyle daha fazla ziyaretçi')">
+      <div class="kpi-label">Tıklama Maliyeti (CPC)</div>
+      <div class="kpi-val">₺0.64</div>
+      <div class="kpi-sub">Sektör ort. ₺2–5 — 4x verimli</div>
+      <span class="kpi-trend up">↑ 4x verimli</span>
+    </div>
+  </div>
+</section>
+
+<!-- SOSYAL MEDYA -->
+<section class="section" id="sec-social">
+  <div class="section-header">
+    <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="2" width="7" height="7" rx="1.5"/><rect x="11" y="2" width="7" height="7" rx="1.5"/><rect x="2" y="11" width="7" height="7" rx="1.5"/><rect x="11" y="11" width="7" height="7" rx="1.5"/></svg></div>
+    <div><div class="section-title">Sosyal Medya Organik Performansı</div><div class="section-sub">Mayıs 2026 · Instagram + Facebook · Organik içerik</div></div>
+  </div>
+  <div class="two-col">
+    <div style="border:1px solid var(--border);border-radius:var(--radius);padding:24px">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px">
+        <div style="width:38px;height:38px;background:linear-gradient(135deg,#E1306C,#F77737,#FCAF45);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="14" height="14" rx="4"/><circle cx="10" cy="10" r="3.5"/><circle cx="14.5" cy="5.5" r="0.8" fill="white" stroke="none"/></svg>
+        </div>
+        <div><div style="font-size:15px;font-weight:700">Instagram</div><div style="font-size:12px;color:var(--muted)">Organik · Mayıs 2026</div></div>
+      </div>
+      <div class="stat-row"><div class="stat-label">Görüntüleme</div><div class="stat-val"><strong>159.564</strong></div></div>
+      <div class="stat-row"><div class="stat-label">Erişim</div><div class="stat-val"><strong>29.300</strong></div></div>
+      <div class="stat-row"><div class="stat-label">Etkileşim</div><div class="stat-val"><strong>1.200</strong></div></div>
+      <div class="stat-row"><div class="stat-label">Yeni Takipçi</div><div class="stat-val"><strong>267</strong></div></div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:var(--radius);padding:24px">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px">
+        <div style="width:38px;height:38px;background:#1877F2;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="17" height="17" viewBox="0 0 20 20" fill="white"><path d="M18 10a8 8 0 10-9.25 7.9v-5.6H6.75V10H8.75V8.25c0-2 1.2-3.1 3-3.1.87 0 1.75.15 1.75.15V7.2h-.98c-.97 0-1.27.6-1.27 1.22V10h2.18l-.35 2.3H11.25V17.9A8 8 0 0018 10z"/></svg>
+        </div>
+        <div><div style="font-size:15px;font-weight:700">Facebook</div><div style="font-size:12px;color:var(--muted)">Organik · Mayıs 2026</div></div>
+      </div>
+      <div class="stat-row"><div class="stat-label">Görüntüleme</div><div class="stat-val"><strong>40.636</strong></div></div>
+      <div class="stat-row"><div class="stat-label">Görüntüleyenler</div><div class="stat-val"><strong>13.475</strong></div></div>
+      <div class="stat-row"><div class="stat-label">Etkileşim</div><div class="stat-val"><strong>656</strong></div></div>
+      <div class="stat-row"><div class="stat-label">Sayfa Ziyareti</div><div class="stat-val"><strong>3.500</strong></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WEB REZERVASYON -->
+<section class="section" id="sec-rezervasyon">
+  <div class="section-header">
+    <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="4" width="14" height="14" rx="2"/><path d="M3 8h14M7 2v4M13 2v4"/></svg></div>
+    <div><div class="section-title">Rezervasyon Performansı (Sedna — Sistem 1, Yıllık Dağılım)</div><div class="section-sub">Sedna kayıt tarihi · Mayıs 2026 · Konaklaması tüm yıla yayılan rezervasyonlar</div></div>
+  </div>
+  <div class="callout muted" style="background:var(--bg-alt);border-left-color:var(--muted-light)">Bu bölüm artık Satış Raporları'ndaki giriş-tarihi verisi yerine Sedna'nın kayıt-tarihi bazlı Sistem 1 verisini kullanmaktadır (bkz. ROAS Analizi bölümü).</div>
+  <div class="kpi-grid" style="margin-top:16px">
+    <div class="kpi-card" onclick="openModal('Toplam Ciro','€14.754.768','68.554 gece|10.254 rezervasyon|İptal: 1.866 (%18,2)|Kaynak: Sedna kayıt tarihi')">
+      <div class="kpi-label">Toplam Ciro</div>
+      <div class="kpi-val">€14.75M</div>
+      <div class="kpi-sub">₺786.259.260 TL eşdeğeri</div>
+    </div>
+    <div class="kpi-card" onclick="openModal('Oda Gecelemesi','68.554','10.254 rezervasyon|Oda ortalaması: €215,23|Kişi ortalaması: €81,57')">
+      <div class="kpi-label">Oda Geceleme</div>
+      <div class="kpi-val">68.554</div>
+      <div class="kpi-sub">10.254 rezervasyon</div>
+    </div>
+    <div class="kpi-card" onclick="openModal('Kişi Ortalaması','€81,57','Toplam ciro / toplam kişi sayısı (tahmini)')">
+      <div class="kpi-label">Kişi Ort.</div>
+      <div class="kpi-val">€81,57</div>
+      <div class="kpi-sub">Kişi başı</div>
+    </div>
+    <div class="kpi-card" onclick="openModal('Oda Ortalaması','€215,23','Gece başına ortalama gelir|Haziran: €224,47 (+%4,3)')">
+      <div class="kpi-label">Oda Ort.</div>
+      <div class="kpi-val">€215,23</div>
+      <div class="kpi-sub">Oda başı</div>
+    </div>
+    <div class="kpi-card" onclick="openModal('İptal','1.866','10.254 rezervasyon üzerinden|İptal oranı: %18,2|Haziran: %8,0 (belirgin iyileşme)')">
+      <div class="kpi-label">İptal</div>
+      <div class="kpi-val">1.866</div>
+      <div class="kpi-sub">İptal oranı %18,2</div>
+    </div>
+  </div>
+  <div class="table-wrap" style="margin-top:20px">
+    <table>
+      <thead><tr><th>Acenta / Kanal</th><th class="num">Gece</th></tr></thead>
+      <tbody>
+        <tr><td>ANEX TOUR</td><td class="num">13.156</td></tr>
+        <tr><td>ODEON TURİZM</td><td class="num">7.940</td></tr>
+        <tr><td>PEGAS TOURISTIK</td><td class="num">6.923</td></tr>
+        <tr><td>FIT HOLIDAYS</td><td class="num">5.519</td></tr>
+        <tr style="background:#F0FDF4"><td><strong>CALL CENTER</strong></td><td class="num">3.063 <span class="badge" style="font-size:10px">€860.182 / ₺45,81M</span></td></tr>
+        <tr><td>BOOKING.COM</td><td class="num">2.227</td></tr>
+        <tr><td>MOTUS TURİZM</td><td class="num">2.920</td></tr>
+        <tr><td>MİNA TR GARANTİ</td><td class="num">1.848</td></tr>
+        <tr><td>ROCKET DMC</td><td class="num">1.774</td></tr>
+        <tr><td>OTS</td><td class="num">1.188</td></tr>
+        <tr class="total-row"><td>TOPLAM</td><td class="num">68.554 gece / €14.754.768 / ₺786.259.260</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- CALL CENTER -->
+<section class="section" id="sec-callcenter">
+  <div class="section-header">
+    <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 3h3l1.5 3.5-2 1.5c.8 1.8 2 3 3.8 3.8l1.5-2L16 11v3a2 2 0 01-2 2C6.5 16 4 9.5 5 3z"/></svg></div>
+    <div><div class="section-title">Call Center Performansı</div><div class="section-sub">Mayıs 2026 · TL + EUR · Haftalık maliyet dahil · Toplamlar doğrulanmış</div></div>
+  </div>
+  <div class="kpi-grid kpi-grid-3">
+    <div class="kpi-card" onclick="openModal('Toplam Çağrı','601','Mayıs 1. Hafta (1–7): 103 çağrı|Mayıs 2. Hafta (8–14): 120 çağrı|Mayıs 3. Hafta (15–21): 127 çağrı|Mayıs 4. Hafta (22–31): 251 çağrı|En yoğun gün: Cuma–Cumartesi')">
+      <div class="kpi-label">Toplam Çağrı</div>
+      <div class="kpi-val">601</div>
+      <div class="kpi-sub">En yoğun: Cuma</div>
+    </div>
+    <div class="kpi-card" onclick="openModal('Gerçekleşen Satış','203 satış','Kapanış oranı: %33.8|En iyi hafta: H2 %44.2 kapanış|Düzeltilmiş: ~213 (+%5)|D2C direkt satış kanalı')">
+      <div class="kpi-label">Gerçekleşen Satış</div>
+      <div class="kpi-val">203</div>
+      <span class="kpi-trend up">↑ %33.8 kapanış</span>
+    </div>
+    <div class="kpi-card" onclick="openModal('Toplam Ciro (Sedna)','€860.182 · ₺45.810.236','3.063 oda geceleme (Sedna Sistem 1)|₺45.810.236 TL eşdeğeri|Kaynak: Sedna kayıt tarihi')">
+      <div class="kpi-label">Toplam Ciro</div>
+      <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap">
+        <div class="kpi-val">€860.2K</div>
+      </div>
+      <div class="kpi-sub" style="margin-top:4px">
+        <span style="color:var(--muted);font-size:10px">TL eşdeğeri:</span><br>
+        <span style="font-weight:800;font-size:14px;color:var(--green)">≈ ₺45.81M</span>
+      </div>
+    </div>
+  </div>
+  <div class="callout muted" style="background:var(--bg-alt);border-left-color:var(--muted-light);margin-top:16px">Çağrı/satış/kapanış verileri Call Center günlük kayıtlarından, ciro rakamı ise Sedna kayıt-tarihi verisinden alınmıştır. Haftalık ciro kırılımı bu oturumda Sedna bazında doğrulanamadığından tablodan çıkarılmıştır.</div>
+  <div class="table-wrap" style="margin-top:20px">
+    <table>
+      <thead><tr><th>Hafta</th><th class="num">Çağrı</th><th class="num">Satış</th><th class="num">Kapanış %</th><th class="num">Haftalık Maliyet</th></tr></thead>
+      <tbody>
+        <tr><td>Mayıs 1. Hafta</td><td class="num">103</td><td class="num">41</td><td class="num">%39.8</td><td class="num">₺106.026</td></tr>
+        <tr><td>Mayıs 2. Hafta</td><td class="num">120</td><td class="num">53</td><td class="num"><strong>%44.2</strong></td><td class="num">₺136.963</td></tr>
+        <tr><td>Mayıs 3. Hafta</td><td class="num">127</td><td class="num">41</td><td class="num">%32.3</td><td class="num">₺106.026</td></tr>
+        <tr><td>Mayıs 4. Hafta <span style="font-size:11px;color:var(--muted)">(10 gün)</span></td><td class="num">251</td><td class="num">68</td><td class="num">%27.1</td><td class="num">₺175.300</td></tr>
+        <tr class="total-row"><td>TOPLAM</td><td class="num">601</td><td class="num">203</td><td class="num">%33.8</td><td class="num">₺524.315</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- FAAALİYET -->
+<section class="section" id="sec-faaliyet">
+  <div class="section-header">
+    <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="5" y="3" width="10" height="14" rx="2"/><path d="M8 7h4M8 10h4M8 13h2"/></svg></div>
+    <div><div class="section-title">Aylık Faaliyet Raporu</div><div class="section-sub">Mayıs 2026 · Tamamlanan çalışmalar · Kategori bazlı</div></div>
+  </div>
+  <div class="accordion open" onclick="toggleAccordion(this)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 2L4 12h7l-2 6 9-10h-7l2-6z"/></svg> Dijital Pazarlama &amp; PR</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner"><ul>
+      <li><strong>Belconti10 kampanyası</strong> Google ve Meta'da yayına alındı; CTR ortalaması <strong>%22 arttı.</strong></li>
+      <li><strong>Balkan ve Ortadoğu</strong> kreatifleri hazırlandı, A/B testleri tamamlandı.</li>
+      <li>Genel Müdür röportajı, Aşçıbaşı ve F&amp;B Müdürü için PR içerikleri üretildi.</li>
+      <li><strong>Rus vlogger</strong> iş birliği anlaşması sağlandı.</li>
+    </ul></div></div>
+  </div>
+  <div class="accordion" onclick="toggleAccordion(this)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 4h14M3 8h8M3 12h5"/></svg> PPG Newsletter</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner"><ul>
+      <li>PPG bülten altyapısı <strong>KVKK uyumlu</strong> olarak entegre edildi.</li>
+      <li><strong>Her Pazartesi</strong> otomatik bülten gönderimi planlandı ve test edildi.</li>
+    </ul></div></div>
+  </div>
+  <div class="accordion" onclick="toggleAccordion(this)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="8"/><path d="M10 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/><path d="M2 10h16"/></svg> OTA &amp; COP31</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner"><ul>
+      <li>OTA kanal denetimleri ve harici platform araştırmaları gerçekleştirildi.</li>
+      <li>COP31 kapsamında çok yönlü medya PR çalışmaları yürütüldü.</li>
+    </ul></div></div>
+  </div>
+</section>
+
+<!-- ÖZET -->
+<section class="section" id="sec-ozet">
+  <div class="section-header">
+    <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M10 2l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 17l-6.2 4.3 2.4-7.4L0 9.4h7.6L10 2z"/></svg></div>
+    <div><div class="section-title">Özet &amp; Haziran Önerileri</div><div class="section-sub">Mayıs 2026 — Genel Değerlendirme</div></div>
+  </div>
+  <div class="three-col">
+    <div style="padding:26px;background:var(--green-light);border:1px solid var(--green-mid);border-radius:var(--radius)">
+      <div style="width:38px;height:38px;background:var(--green);border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:16px">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="8"/><path d="M7 10l2 2 4-4"/></svg>
+      </div>
+      <div style="font-size:14px;font-weight:700;color:#166534;margin-bottom:12px">Güçlü Yönler</div>
+      <div style="font-size:14px;color:#166534;line-height:2">Sedna Sistem 1 CC ROAS 86,9x, Makro ROAS 1.491x (sektör ort. 4–8x) · Anlık ROAS (Sistem 2) 19,1x · CC %33.8 kapanış oranı · Instagram 159.564 görüntüleme · Facebook 40.636 görüntüleme · PMAX TR 34K mikro-dönüşüm (form, WhatsApp, çağrı butonu)</div>
+    </div>
+    <div style="padding:26px;background:#FFFBEB;border:1px solid #FDE68A;border-radius:var(--radius)">
+      <div style="width:38px;height:38px;background:#F59E0B;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:16px">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"><path d="M10 3L2 17h16L10 3z"/><path d="M10 8v4M10 14v.5"/></svg>
+      </div>
+      <div style="font-size:14px;font-weight:700;color:#92400E;margin-bottom:12px">Gelişim Alanları</div>
+      <div style="font-size:14px;color:#92400E;line-height:1.9">
+        <strong>Organik arama tıklama oranı %0.81</strong> — Google'da sitemiz görüntülendiğinde her 100 kişiden 0.81'i tıklıyor; sektör ortalamasında ancak artırma potansiyeli var ·
+        <strong>Almanya ve Letonya pazarına reklam bütçesi artışı</strong> fırsat sunuyor — Almanya'da hem Türk diasporası hem yerel Alman turistler güçlü talep oluşturuyor; Letonya'dan Antalya'ya düzenli charter uçuşlar var ve büyüyen bir segment ·
+        <strong>Doğrudan rezervasyon oranı %27</strong> — misafirlerin %27'si Booking.com gibi aracı platformlar yerine oteli direkt tercih ediyor; komisyon tasarrufu için bu oran artırılmalı ·
+        <strong>Facebook/Instagram reklam bütçesi</strong> mevcut erişim ve tıklama performansına göre kârlı biçimde büyütülebilir
+      </div>
+    </div>
+    <div style="padding:26px;background:#EFF6FF;border:1px solid #BFDBFE;border-radius:var(--radius)">
+      <div style="width:38px;height:38px;background:#2563EB;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:16px">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"><path d="M10 3v14M3 10l7-7 7 7"/></svg>
+      </div>
+      <div style="font-size:14px;font-weight:700;color:#1E40AF;margin-bottom:12px">Haziran Aksiyonları</div>
+      <div style="font-size:14px;color:#1E40AF;line-height:1.9">
+        <strong>Almanya ve Letonya reklam bütçesini artır</strong> — Almanya 30.000+ ziyaretçi tabanıyla öncelikli pazar; Letonya büyüyen Baltık charter segmenti ·
+        <strong>PMA Partner bülteninin ilk gönderimi</strong> — KVKK uyumlu e-posta bülteni Haziran'da ilk kez gönderilecek ·
+        <strong>Yaz sezonu reklam görsellerini güncelle</strong> — Temmuz-Ağustos doluluğuna yönelik yeni kreatifler hazırla ·
+        <strong>Rus vlogger içeriğini yayınla</strong> — Rusya pazarına yönelik anlaşılan influencer videosunu canlıya al ·
+        <strong>Doğrudan rezervasyon oranını artır</strong> — Booking.com komisyonunu azaltmak için otelin kendi kanalına yönlendirmeyi güçlendir
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ HAZİRAN 2026 DİJİTAL PAZARLAMA PLANI ═══════════════════ -->
+<section class="section" id="sec-haziran-plan" style="background:#F8FAFF;border-top:2px solid #BFDBFE">
+  <div class="section-header">
+    <div class="section-icon-wrap" style="background:#EFF6FF;color:#2563EB">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 2L4 12h7l-2 6 9-10h-7l2-6z"/></svg>
+    </div>
+    <div>
+      <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#2563EB;margin-bottom:4px">KAMPANYALAR YAYINDA · PMA PARTNER</div>
+      <div class="section-title">Haziran 2026 — Dijital Pazarlama Stratejisi &amp; Google Ads Büyüme Planı</div>
+      <div class="section-sub">Belconti Resort Belek · 5★ Ultra Herşey Dahil · Sezon Başı 2026 · Aylık Bütçe ₺500–700K · Google + Meta + Yandex</div>
+    </div>
+  </div>
+
+  <!-- Yönetici Özeti KPI -->
+  <div class="kpi-grid" style="margin-bottom:28px">
+    <div class="kpi-card" onclick="openModal('90 Günlük Yatırım','₺763.382','Hesap aktif ve yüksek hacimde çalışıyor|65 kampanya kaydı|Google Ads API v21|Sağlam temel üzerine kuruyoruz')">
+      <div class="kpi-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 14l5-5 3 3 5-6"/><path d="M12 6h4v4"/></svg></div>
+      <div class="kpi-label">90 Günlük Yatırım</div>
+      <div class="kpi-val">₺763.382</div>
+      <div class="kpi-sub">Aktif &amp; yüksek hacim</div>
+    </div>
+    <div class="kpi-card" onclick="openModal('Gösterim &amp; Tıklama','7.154.453 gösterim','680.852 tıklama|Marka geniş kitlelere ulaşıyor|Yüksek niyetli aramaya yönlendiriyoruz|PMAX + Arama ağı')">
+      <div class="kpi-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M13 13l4 4"/></svg></div>
+      <div class="kpi-label">Gösterim</div>
+      <div class="kpi-val">7.154.453</div>
+      <div class="kpi-sub">680.852 tıklama</div>
+    </div>
+    <div class="kpi-card" onclick="openModal('Remarketing Kitlesi','470B+','All Users of Belconti Resort Hotel|AdWords Optimized List: 480.000|Sitede 2dk+ kalanlar: 62.000|Geri kazanım için ideal')">
+      <div class="kpi-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M14 17v-1a4 4 0 00-4-4H7a4 4 0 00-4 4v1"/><circle cx="8.5" cy="7" r="3"/></svg></div>
+      <div class="kpi-label">Remarketing Kitlesi</div>
+      <div class="kpi-val">470B+</div>
+      <div class="kpi-sub">Win-back hazır</div>
+      <span class="kpi-trend up">↑ Geri kazanım</span>
+    </div>
+    <div class="kpi-card" onclick="openModal('Yeni Kampanya','2 Kampanya Canlı','TR Arama — Jenerik+Marka+Rakip|Almanya-Türkler Arama kampanyası|Maksimum Dönüşüm teklif stratejisi|Win-back kitleleri bağlı')">
+      <div class="kpi-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="8"/><path d="M7 10l2 2 4-4"/></svg></div>
+      <div class="kpi-label">Yeni Kampanya</div>
+      <div class="kpi-val">2 Canlı</div>
+      <div class="kpi-sub">TR + Almanya-Türkler</div>
+      <span class="kpi-trend up">↑ Yayında</span>
+    </div>
+  </div>
+
+  <!-- Marka Konumu -->
+  <div class="accordion open" onclick="toggleAccordion(this)" style="background:var(--bg)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><path d="M10 6v4l3 3"/></svg> Marka Konumlandırma Analizi</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div style="background:#EFF6FF;border-radius:var(--radius-sm);padding:18px">
+          <div style="font-size:12px;font-weight:700;color:#1E40AF;margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em">Kimlik</div>
+          <div style="font-size:14px;color:#1D4ED8;line-height:1.75">Belek sahilinde, çam ormanı içinde, <strong>köklü ve tanınan</strong> bir 5★ ultra herşey dahil resort. Geniş plaj, havuzlar, aile aktiviteleri.</div>
+        </div>
+        <div style="background:#F0FDF4;border-radius:var(--radius-sm);padding:18px">
+          <div style="font-size:12px;font-weight:700;color:#166534;margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em">Hedef Kitle</div>
+          <div style="font-size:14px;color:#166534;line-height:1.75"><strong>Aileler ve çiftler</strong> · Türkiye içi tatilciler + <strong>Almanya'daki Türkler</strong> (gurbetçi) · Herşey dahil konfor arayan, fiyat-değer dengesine duyarlı kitle.</div>
+        </div>
+        <div style="background:#FEF9C3;border-radius:var(--radius-sm);padding:18px">
+          <div style="font-size:12px;font-weight:700;color:#92400E;margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em">Güçlü Yönler</div>
+          <div style="font-size:14px;color:#B45309;line-height:1.75"><strong>Sahil + aile dostu + ultra herşey dahil</strong> üçlüsü · 470B+ hazır ziyaretçi kitlesi · Güçlü Almanya geçmişi</div>
+        </div>
+        <div style="background:#FDF4FF;border-radius:var(--radius-sm);padding:18px">
+          <div style="font-size:12px;font-weight:700;color:#7E22CE;margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em">Fiyat Konumu</div>
+          <div style="font-size:14px;color:#7C3AED;line-height:1.75">"4 gece 2 kişi ₺46.000'den" = <strong>erişilebilir lüks</strong> · Mesajlarda sahil · aile · ultra herşey dahil · erişilebilir fiyat öne çıkar</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- Tespit & İyileştirme -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><path d="M10 8v4M10 14v.5"/></svg> Tespit Edilen Gelişim Alanları &amp; Aksiyonlar</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <div style="border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;background:var(--bg)">
+          <div style="font-size:12px;font-weight:700;color:var(--green);margin-bottom:8px">Arama Ağı Yeniden Devrede</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.7"><strong>Tespit:</strong> En yüksek niyetli kanal kısıtlıydı.<br><strong>Aksiyon:</strong> "Belek 5 yıldız / ultra herşey dahil / erken rezervasyon" temalı yeni TR Arama kampanyası canlıya alındı.</div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;background:var(--bg)">
+          <div style="font-size:12px;font-weight:700;color:var(--green);margin-bottom:8px">Ölçüm Gelir &amp; Rezervasyon Odaklı</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.7"><strong>Tespit:</strong> Sinyaller etkileşime ağırlıklıydı.<br><strong>Aksiyon:</strong> Rezervasyon, WhatsApp ve telefon talebini önceliklendiren gelir izlemeye hazır yapı kuruldu.</div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;background:var(--bg)">
+          <div style="font-size:12px;font-weight:700;color:var(--green);margin-bottom:8px">Bütçe Çekirdek Pazarlara</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.7"><strong>Tespit:</strong> Harcamanın bir kısmı odak dışı ülkelere gidiyordu.<br><strong>Aksiyon:</strong> Bütçe Türkiye + Almanya-Türkler eksenine odaklandı.</div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;background:var(--bg)">
+          <div style="font-size:12px;font-weight:700;color:var(--green);margin-bottom:8px">Eski Misafirler Yeniden Hedefte</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.7"><strong>Tespit:</strong> 470B+ kişilik kitle pasif bekliyordu.<br><strong>Aksiyon:</strong> Win-back kitleler yeni kampanyalara gözlem katmanı olarak bağlandı.</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- Geçmiş Performans Tabloları -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="3" width="10" height="14" rx="2"/><path d="M8 7h4M8 10h4M8 13h2"/></svg> Geçmiş 90 Gün — Kanal &amp; Ülke Dağılımı</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner">
+      <div style="margin-bottom:18px">
+        <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px">Kanal Türüne Göre Yatırım</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Kanal</th><th class="num">Maliyet</th><th class="num">Gösterim</th><th class="num">Tıklama</th><th class="num">TO</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Performance Max</strong></td><td class="num">₺565.797</td><td class="num">6.832.694</td><td class="num">669.504</td><td class="num">%9.8</td></tr>
+              <tr><td>Arama Ağı</td><td class="num">₺197.585</td><td class="num">321.759</td><td class="num">11.348</td><td class="num">%3.5</td></tr>
+              <tr class="total-row"><td>Toplam</td><td class="num">₺763.382</td><td class="num">7.154.453</td><td class="num">680.852</td><td class="num">—</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout" style="margin-top:12px"><div class="callout-text">Yatırımın büyük kısmı Performance Max'te; arama ağı görece düşük kalmış. <strong>Aksiyonumuz:</strong> arama ağını güçlendirip dengeyi yüksek niyetli talebe çekiyoruz.</div></div>
+      </div>
+      <div style="margin-bottom:18px">
+        <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px">Ülkeye Göre Yatırım — 90 Gün</div>
+        <div class="chart-wrap" onclick="openChartModal('chartUlke','Ülke Bazlı Reklam Harcaması — Detay','90 günlük dağılım')">
+          <div class="chart-title">Ülke Bazlı Harcama Dağılımı <span class="chart-expand-hint"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8V3h5M17 12v5h-5M3 12l14-9M17 8L3 17"/></svg> büyüt</span></div>
+          <div class="chart-sub">Çekirdek pazarlar vs odak dışı ülkeler</div>
+          <div class="chart-inner"><canvas id="chartUlke"></canvas></div>
+        </div>
+        <div class="table-wrap" style="margin-top:14px">
+          <table>
+            <thead><tr><th>Ülke</th><th>Kategori</th><th class="num">Maliyet</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Türkiye</strong></td><td><span class="badge">Çekirdek</span></td><td class="num">₺316.358</td></tr>
+              <tr><td><strong>Almanya</strong></td><td><span class="badge">Çekirdek</span></td><td class="num">₺221.517</td></tr>
+              <tr><td>Birleşik Krallık</td><td><span class="badge neutral">Odak Dışı</span></td><td class="num">₺126.755</td></tr>
+              <tr><td>Polonya</td><td><span class="badge neutral">Odak Dışı</span></td><td class="num">₺30.143</td></tr>
+              <tr><td>Diğer (KG, RO, LT, LV)</td><td><span class="badge neutral">Odak Dışı</span></td><td class="num">₺68.609</td></tr>
+              <tr class="total-row"><td>Toplam</td><td>—</td><td class="num">₺763.382</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px">Hazır Remarketing Kitleleri</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Kitle</th><th class="num">Arama Ağı</th><th class="num">Görüntülü</th></tr></thead>
+            <tbody>
+              <tr><td><strong>AdWords Optimized List</strong></td><td class="num">480.000</td><td class="num">230.000</td></tr>
+              <tr><td>All Users — Belconti Resort Hotel</td><td class="num">470.000</td><td class="num">230.000</td></tr>
+              <tr><td>Sitede 2dk. üzeri kalanlar</td><td class="num">62.000</td><td class="num">26.000</td></tr>
+              <tr><td>Alışveriş sepetini terk edenler</td><td class="num">130</td><td class="num">48</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- Üç Eksen -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 14l5-5 3 3 5-6"/><path d="M12 6h4v4"/></svg> Üç Eksen Sezon Başı Yaklaşımı</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner">
+      <div class="three-col">
+        <div style="border:2px solid var(--green);border-radius:var(--radius);padding:22px;text-align:center">
+          <div style="width:40px;height:40px;background:var(--green);border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;color:white;font-size:16px;font-weight:800">1</div>
+          <div style="font-size:13px;font-weight:700;color:var(--green-dark);margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em">Talebi Yakala</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.75">TR Arama yüksek niyetli kelimeler · Marka + jenerik + rakip ayrımı · %10 teklif mesajı reklam metninde</div>
+        </div>
+        <div style="border:2px solid #60A5FA;border-radius:var(--radius);padding:22px;text-align:center">
+          <div style="width:40px;height:40px;background:#2563EB;border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;color:white;font-size:16px;font-weight:800">2</div>
+          <div style="font-size:13px;font-weight:700;color:#1E40AF;margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em">Talebi Artır</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.75">PMAX ile geniş talep oluşturma · Almanya-Türkler büyüme · Görsel + video ile bilinirlik</div>
+        </div>
+        <div style="border:2px solid #F59E0B;border-radius:var(--radius);padding:22px;text-align:center">
+          <div style="width:40px;height:40px;background:#F59E0B;border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;color:white;font-size:16px;font-weight:800">3</div>
+          <div style="font-size:13px;font-weight:700;color:#92400E;margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em">Geri Kazan</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.75">470B+ ziyaretçi kitlesi win-back · Geçmiş misafir listesi Customer Match · Remarketing + RLSA katmanı</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- Anahtar Kelimeler -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M13 13l4 4"/></svg> Anahtar Kelime Grupları &amp; Hedefleme</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner">
+      <div class="table-wrap" style="margin-bottom:20px">
+        <table>
+          <thead><tr><th>Grup</th><th>Örnek Kelimeler</th><th>Eşleme</th><th>Amaç</th></tr></thead>
+          <tbody>
+            <tr><td><span class="badge">Marka</span></td><td>belconti · belconti resort · belconti belek</td><td>Tam / Sıralı</td><td>En sıcak talep, rakibe kaptırma</td></tr>
+            <tr><td><span class="badge blue">Yüksek Niyetli</span></td><td>belek 5 yıldız otel · belek ultra herşey dahil</td><td>Sıralı / Tam</td><td>Aktif tatil arayan yeni misafir</td></tr>
+            <tr><td><span class="badge neutral">Erken Rezervasyon</span></td><td>belek erken rezervasyon · belek yaz tatili 2026</td><td>Sıralı</td><td>Planlama aşamasındaki talep</td></tr>
+            <tr><td><span class="badge neutral">Aile &amp; Segment</span></td><td>belek aile oteli · çocuklu otel belek · balayı</td><td>Sıralı</td><td>Otelin güçlü segmentleri</td></tr>
+            <tr><td><span class="badge amber">Rakip</span></td><td>rakip 5★ Belek otel adları</td><td>Sıralı</td><td>Rakip arayana alternatif sun</td></tr>
+            <tr><td><span class="badge red">Negatif</span></td><td>ucuz · bedava · iş ilanı · şikayet · kiralık</td><td>—</td><td>Alakasız tıklamayı engelle</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px">Hedefleme Ayarları</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Boyut</th><th>Türkiye Kampanyası</th><th>Almanya-Türkler</th></tr></thead>
+          <tbody>
+            <tr><td>Konum</td><td>Türkiye</td><td>Almanya</td></tr>
+            <tr><td>Dil</td><td>Türkçe</td><td>Türkçe (gurbetçi)</td></tr>
+            <tr><td>Cihaz</td><td>Tümü (mobil ağırlık)</td><td>Tümü</td></tr>
+            <tr><td>Kitle (gözlem)</td><td>Tüm Ziyaretçiler · 2dk+ · Optimize</td><td>Aynı kitleler</td></tr>
+            <tr><td>Teklif Stratejisi</td><td>Maksimum Dönüşüm</td><td>Maksimum Dönüşüm</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- Bütçe Dağılımı -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="14" height="14" rx="2"/><path d="M3 8h14M8 3v14"/></svg> ₺500–700K Aylık Bütçe Tahsisi</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner">
+      <div class="table-wrap" style="margin-bottom:20px">
+        <table>
+          <thead><tr><th>Blok</th><th class="num">Bütçe/ay</th><th class="num">Pay</th><th class="num">Günlük</th></tr></thead>
+          <tbody>
+            <tr><td><strong>TR Arama — Jenerik + Marka + Rakip</strong></td><td class="num">₺200K</td><td class="num">%33</td><td class="num">₺6.670</td></tr>
+            <tr><td>TR PMAX (talep artırma)</td><td class="num">₺120K</td><td class="num">%20</td><td class="num">₺4.000</td></tr>
+            <tr><td>Almanya-Türkler (Arama + PMAX)</td><td class="num">₺120K</td><td class="num">%20</td><td class="num">₺4.000</td></tr>
+            <tr><td>Remarketing / Geri Kazanım</td><td class="num">₺90K</td><td class="num">%15</td><td class="num">₺3.000</td></tr>
+            <tr><td>%10 Son Dakika (10 Temmuz)</td><td class="num">₺70K</td><td class="num">%12</td><td class="num">₺2.333</td></tr>
+            <tr class="total-row"><td>Toplam</td><td class="num">₺600K</td><td class="num">%100</td><td class="num">₺20.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="chart-wrap" onclick="openChartModal('chartBudget','Aylık Bütçe Dağılımı — Detay','₺600K kampanya bazlı dağılım')">
+        <div class="chart-title">Kampanya Bazlı Bütçe Dağılımı <span class="chart-expand-hint"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8V3h5M17 12v5h-5M3 12l14-9M17 8L3 17"/></svg> büyüt</span></div>
+        <div class="chart-sub">₺600K baz bütçe — kampanya blokları</div>
+        <div class="chart-inner"><canvas id="chartBudget"></canvas></div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- Hedef ROAS -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 14l5-5 3 3 5-6"/><path d="M12 6h4v4"/></svg> Hedef ROAS &amp; Beklenen Getiriler</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner">
+      <div class="plan-kpi-grid" style="margin-bottom:22px">
+        <div class="plan-kpi"><div class="plan-kpi-val">%3–4</div><div class="plan-kpi-label">Hedef Reklam Maliyeti</div></div>
+        <div class="plan-kpi"><div class="plan-kpi-val">~28x</div><div class="plan-kpi-label">Hedef ROAS</div></div>
+        <div class="plan-kpi"><div class="plan-kpi-val">~304</div><div class="plan-kpi-label">Hedef Rezervasyon/Ay</div></div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Kanal</th><th class="num">Bütçe/ay</th><th class="num">Rek. Mal.</th><th class="num">ROAS</th><th class="num">Beklenen Ciro</th><th class="num">~Rezervasyon</th></tr></thead>
+          <tbody>
+            <tr><td><strong>TR Arama (Marka+Jenerik+Rakip)</strong></td><td class="num">₺200K</td><td class="num">%3.5</td><td class="num">29x</td><td class="num">₺5.714.286</td><td class="num">~104</td></tr>
+            <tr><td>Almanya-Türkler (Arama+PMAX)</td><td class="num">₺120K</td><td class="num">%4.0</td><td class="num">25x</td><td class="num">₺3.000.000</td><td class="num">~55</td></tr>
+            <tr><td>TR PMAX (talep artırma)</td><td class="num">₺120K</td><td class="num">%5.0</td><td class="num">20x</td><td class="num">₺2.400.000</td><td class="num">~44</td></tr>
+            <tr><td>Remarketing / Geri Kazanım</td><td class="num">₺90K</td><td class="num">%2.5</td><td class="num">40x</td><td class="num">₺3.600.000</td><td class="num">~65</td></tr>
+            <tr><td>%10 Son Dakika (10 Tem.)</td><td class="num">₺70K</td><td class="num">%3.5</td><td class="num">29x</td><td class="num">₺2.000.000</td><td class="num">~36</td></tr>
+            <tr class="total-row"><td>Toplam</td><td class="num">₺600K</td><td class="num">%3.6</td><td class="num">~28x</td><td class="num">₺16.714.286</td><td class="num">~304</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout" style="margin-top:16px">
+        <div class="callout-title">Varsayımlar</div>
+        <div class="callout-text">Ortalama rezervasyon değeri ≈ <strong>₺55.000</strong> (4–6 gece, 2+ kişi, ultra herşey dahil). Rakamlar hedeftir — kesin ölçüm booking motorundaki rezervasyon-gelir takibi tamamlanınca netleşir. İlk ay öğrenme dönemi olduğundan oran başta biraz yüksek, sonra hedefe iner.</div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- %10 Teklif -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3L2 17h16L10 3z"/><path d="M10 8v4M10 14v.5"/></svg> %10 Son Dakika Teklifi — 10 Temmuz'a Kadar</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner">
+      <div style="background:var(--green-light);border:2px solid var(--green);border-radius:var(--radius);padding:24px;display:flex;align-items:center;gap:28px;flex-wrap:wrap">
+        <div style="flex:1;min-width:220px">
+          <div style="font-size:28px;font-weight:800;color:var(--green);margin-bottom:6px">%10 Ek İndirim</div>
+          <div style="font-size:14px;font-weight:600;color:#166534;margin-bottom:12px">Belconti Resort Belek · Ultra Herşey Dahil</div>
+          <div style="font-size:13px;color:#166534;line-height:1.8">
+            10 Temmuz 2026'ya kadar geçerli<br>
+            <strong>Yalnızca Türkiye'de geçerli</strong> (Almanya hariç)<br>
+            Sadece TR kampanyalarında canlı<br>
+            Geri sayım odaklı reklam başlıkları
+          </div>
+        </div>
+        <div style="background:var(--green);color:white;border-radius:var(--radius);padding:22px 28px;text-align:center;min-width:160px">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.06em;opacity:.8;margin-bottom:6px;text-transform:uppercase">başlayan fiyatlarla</div>
+          <div style="font-size:32px;font-weight:800;line-height:1">₺46.000</div>
+          <div style="font-size:12px;opacity:.8;margin-top:4px">4 gece · 2 kişi</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- Canlı Kampanyalar -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><path d="M7 10l2 2 4-4"/></svg> Bugün Canlıya Alınan Kampanyalar</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner">
+      <div style="background:var(--green-light);border-radius:var(--radius-sm);padding:16px 20px;margin-bottom:18px;font-size:13px;color:#166534;line-height:1.7">
+        <strong>2 yeni Arama kampanyası Google Ads'te yayında.</strong> Mevcut TR Performance Max ile birlikte aylık aktif yatırım ~₺536K — hedef ₺500–700K aralığında.
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Kampanya</th><th>Hedef</th><th class="num">Bütçe</th><th>İçerik</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><span class="badge" style="margin-right:6px">CANLI</span><strong>Belconti_Search_Jenerik_TR_2026_REV</strong></td>
+              <td>Türkiye · Türkçe</td>
+              <td class="num">₺6.670/gün (~₺200K/ay)</td>
+              <td>8 kelime + RSA + 3 win-back kitlesi</td>
+            </tr>
+            <tr>
+              <td><span class="badge" style="margin-right:6px">CANLI</span><strong>Belconti_Search_Almanya_Turkler_2026_REV</strong></td>
+              <td>Almanya · Türkçe</td>
+              <td class="num">₺4.000/gün (~₺120K/ay)</td>
+              <td>7 kelime + RSA + 3 win-back kitlesi</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout" style="margin-top:14px"><div class="callout-text">%10 / ₺46.000 teklifi <strong>yalnızca Türkiye kampanyasında</strong> — Almanya-Türkler kampanyası teklifsiz genel mesajla devam ediyor (fiyat Türkiye dışında geçerli değil).</div></div>
+    </div></div>
+  </div>
+
+  <!-- Meta Planı -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="16" cy="4" r="2"/><circle cx="4" cy="10" r="2"/><circle cx="16" cy="16" r="2"/><path d="M6 10l8-5M6 10l8 5"/></svg> Meta Reklam Planı — Google Talebi Yakalar, Meta Talebi Yaratır</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner">
+      <div class="three-col" style="margin-bottom:20px">
+        <div style="border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px">
+          <div style="font-size:12px;font-weight:700;color:var(--green);margin-bottom:8px;text-transform:uppercase">1 · Bilinirlik &amp; Talep</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.75">Hedef: Erişim / Video izlenme<br>Kitle: geniş ilgi (tatil, herşey dahil, Belek)<br>Kreatif: Reels / dikey dron videosu<br>TR + Almanya-Türkler</div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px">
+          <div style="font-size:12px;font-weight:700;color:#2563EB;margin-bottom:8px;text-transform:uppercase">2 · İlgi &amp; Trafik</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.75">Hedef: Trafik / Etkileşim<br>Kitle: ilgi + Lookalike %1–3<br>Kreatif: carousel (oda · havuz · plaj)<br>Mesaj: %10 ek indirim (yalnızca TR)</div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px">
+          <div style="font-size:12px;font-weight:700;color:#F59E0B;margin-bottom:8px;text-transform:uppercase">3 · Dönüşüm &amp; Remarketing</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.75">Hedef: Satış / Dönüşüm<br>Kitle: Pixel ziyaretçisi, Customer Match<br>Kreatif: güçlü CTA "Şimdi Rezervasyon"<br>%10 / son dakika yalnızca TR</div>
+        </div>
+      </div>
+      <div class="table-wrap" style="margin-bottom:14px">
+        <table>
+          <thead><tr><th>Katman</th><th class="num">Pay</th><th class="num">Aylık (₺150K örnek)</th><th class="num">Hedef Rek. Mal.</th></tr></thead>
+          <tbody>
+            <tr><td>Bilinirlik &amp; Talep</td><td class="num">%30</td><td class="num">₺45.000</td><td class="num">%6–7</td></tr>
+            <tr><td>İlgi &amp; Trafik</td><td class="num">%25</td><td class="num">₺37.500</td><td class="num">%5</td></tr>
+            <tr><td><strong>Dönüşüm &amp; Remarketing</strong></td><td class="num"><strong>%45</strong></td><td class="num"><strong>₺67.500</strong></td><td class="num"><strong>%2–3</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="kpi-grid kpi-grid-3">
+        <div class="kpi-card" style="cursor:default;background:var(--bg-alt)"><div class="kpi-label">Aylık Meta Bütçesi</div><div class="kpi-val">₺120–180K</div></div>
+        <div class="kpi-card" style="cursor:default;background:var(--bg-alt)"><div class="kpi-label">Blended Rek. Maliyeti</div><div class="kpi-val">~%4–5</div></div>
+        <div class="kpi-card" style="cursor:default;background:var(--bg-alt)"><div class="kpi-label">~Aylık Rezervasyon</div><div class="kpi-val">~60</div></div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- Yandex -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><path d="M10 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/><path d="M2 10h16"/></svg> Yandex Reklam Planı — Rusya Pazarı (Sadece Arama)</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner">
+      <div class="callout" style="margin-bottom:18px"><div class="callout-text">Rusya'da arama motoru lideri Yandex'tir. Bu planda <strong>sadece arama ağı</strong> (Поиск) kullanılıyor — aktif tatil arayan kullanıcıyı yakalamak için. ₺46.000 / %10 teklifi Rusya'da gösterilmez (yalnızca Türkiye).</div></div>
+      <div class="two-col" style="margin-bottom:18px">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Kampanya</th><th>Amaç</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Marka</strong></td><td>Belconti'yi arayanı yakala</td></tr>
+              <tr><td>Jenerik — Herşey Dahil</td><td>Belek/Antalya ultra herşey dahil</td></tr>
+              <tr><td>Erken Rezervasyon</td><td>Sezon planlayan Rus tatilci</td></tr>
+              <tr><td>Aile &amp; Segment</td><td>Aile / deniz tatili arayan</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px">Rusça Örnek Kelimeler</div>
+          <div style="display:flex;flex-wrap:wrap;gap:7px">
+            <span class="badge neutral" style="font-size:11px">отель белек всё включено</span>
+            <span class="badge neutral" style="font-size:11px">белек 5 звёзд</span>
+            <span class="badge neutral" style="font-size:11px">анталия всё включено</span>
+            <span class="badge neutral" style="font-size:11px">белек раннее бронирование</span>
+            <span class="badge neutral" style="font-size:11px">белконти резорт</span>
+            <span class="badge neutral" style="font-size:11px">турция отель у моря</span>
+            <span class="badge neutral" style="font-size:11px">ультра всё включено турция</span>
+          </div>
+          <div style="margin-top:18px;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px">Bütçe &amp; Hedef</div>
+          <div class="stat-row"><div class="stat-label">Aylık Yandex bütçesi</div><div class="stat-val" style="font-weight:700">₺80–120K</div></div>
+          <div class="stat-row"><div class="stat-label">Hedef reklam maliyeti</div><div class="stat-val" style="font-weight:700">~%4–5</div></div>
+          <div class="stat-row"><div class="stat-label">Beklenen aylık ciro (₺100K)</div><div class="stat-val" style="font-weight:700">~₺2.2M</div></div>
+          <div class="stat-row"><div class="stat-label">~Rezervasyon/ay</div><div class="stat-val" style="font-weight:700">~40</div></div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- 14 Günlük Plan -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="14" height="14" rx="2"/><path d="M3 8h14M7 2v4M13 2v4"/></svg> 14 Günlük Devreye Alma Planı</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner">
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot" style="background:var(--green);border-color:var(--green-dark);color:white">G0</div>
+          <div class="timeline-content">
+            <div class="timeline-title" style="display:flex;align-items:center;gap:8px"><span class="badge">Yayında</span> TR Arama + Almanya-Türkler Arama Canlı</div>
+            <div class="timeline-sub">Win-back kitleleri bağlı · %10 teklif mesajı işlendi · Maksimum Dönüşüm teklif stratejisi aktif</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">G1–5</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Genişleme</div>
+            <div class="timeline-sub">PMAX talep artırma + remarketing/RLSA katmanı · Arama terimi izleme · Negatif kelime optimizasyonu</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">G5–14</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Optimizasyon</div>
+            <div class="timeline-sub">Teklif &amp; bütçe ayarı · RSA varyant testi · Yeterli veride gelire (tROAS) geçiş</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:22px;font-size:13px;font-weight:700;color:var(--text);margin-bottom:14px">Etkiyi Büyütmek için 3 Adım</div>
+      <div class="three-col">
+        <div style="border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;text-align:center">
+          <div style="width:32px;height:32px;background:var(--green-light);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;color:var(--green);font-weight:800">1</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px">Rezervasyon Değeri Ölçümü</div>
+          <div style="font-size:12px;color:var(--muted);line-height:1.6">Booking motorunda rezervasyon-gelir izleme → tam ROAS görünürlüğü</div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;text-align:center">
+          <div style="width:32px;height:32px;background:var(--green-light);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;color:var(--green);font-weight:800">2</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px">Geçmiş Misafir Listesi</div>
+          <div style="font-size:12px;color:var(--muted);line-height:1.6">Customer Match için misafir e-posta/telefonu (özellikle Almanya) → geri kazanım gücü artar</div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;text-align:center">
+          <div style="width:32px;height:32px;background:var(--green-light);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;color:var(--green);font-weight:800">3</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px">Kreatif Zenginleştirme</div>
+          <div style="font-size:12px;color:var(--muted);line-height:1.6">Otel görselleri + kısa videolar → PMAX ve görüntülü kanallarda daha yüksek performans</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+</div><!-- /content-mayis -->
+
+<!-- ════════════════ HAZİRAN ════════════════ -->
+<div id="content-haziran" class="month-content active">
+
+<!-- HAZİRAN HEADER -->
+<header class="report-header" style="padding-top:20px">
+  <!-- HAZİRAN YÖNETİCİ ÖZETİ -->
+  <div class="exec-summary">
+    <div class="exec-summary-text">
+      <p>Haziran 2026'da Belconti Resort Hotel'in dijital kanalları yaz sezonuna güçlü bir ivmeyle girdi. Web sitesi <strong>199.030 aktif kullanıcı</strong> ile sektör üst bandında yer alırken, Call Center Sedna kayıt-tarihi verisine göre <strong>€290.148 (≈₺15,41M) ciro</strong> üretti. Sedna Sistem 1 (yıllık dağılım) toplam ciro <strong>€5.819.679 — 3.792 rezervasyon</strong> olarak gerçekleşirken, yalnızca Haziran içinde konaklanan Sistem 2 (anlık) ciro <strong>€782.589 — 623 rezervasyon</strong> oldu. Google Ads'te 18 aktif kampanya ₺564.713 harcamayla <strong>3,6M gösterim ve 413K tıklama</strong> üretirken Son Dakika İndirim kampanyası <strong>%12,53 CTR</strong> ile Haziran'ın en verimli arama kampanyası oldu. Meta reklamlar <strong>₺0,63 CPC</strong> ile maliyet verimliliğini korudu; organik arama sıralaması ise 28,4'ten <strong>6,4'e</strong> inerek ciddi bir iyileşme kaydetti. CC bazlı ROAS Sistem 1'de <strong>26,6x</strong>, Sistem 2'de (anlık) <strong>4,7x</strong> olarak hesaplandı; iptal oranı da %18,2'den <strong>%8,0'e</strong> geriledi.</p>
+    </div>
+    <button class="ai-toggle" onclick="toggleAIActionsH()" id="aiToggleBtnH">
+      <span class="ai-toggle-icon">✦</span> Yapay Zeka Aksiyon Önerileri <span class="ai-toggle-chevron" id="aiChevronH">▾</span>
+    </button>
+    <div class="ai-actions" id="aiActionsH" style="display:none">
+      <div class="ai-action-grid">
+        <div class="ai-action-item priority-high">
+          <div class="ai-action-header"><span class="ai-priority">🔴 Yüksek Öncelik</span></div>
+          <div class="ai-action-title">İptal Oranını Koru / Daha Da Azalt</div>
+          <div class="ai-action-body">Sedna verisine göre iptal oranı %18,2'den (Mayıs) %8,0'e (Haziran) geriledi — belirgin bir iyileşme. Bu ivmeyi korumak için rezervasyon sonrası 1. ve 24. saatte gönderilecek otomatik teyit e-postası + küçük erken ödeme avantajı düşünülebilir.</div>
+        </div>
+        <div class="ai-action-item priority-high">
+          <div class="ai-action-header"><span class="ai-priority">🔴 Yüksek Öncelik</span></div>
+          <div class="ai-action-title">Son Dakika Kampanyası: Bütçe Kaydırma</div>
+          <div class="ai-action-body">Son Dakika İndirim TR, Haziran'ın en yüksek CTR'ına (%12,53) sahip kampanyasıydı — genel arama ortalamasının (~%3,5) 3,5 katı. Bu kampanyaya bütçe kaydırmak birim başına daha fazla nitelikli tıklama sağlar; düşük hacimli kampanyalar (LV, FR, LT) ile kıyaslandığında fırsatın büyüklüğü net görünüyor.</div>
+        </div>
+        <div class="ai-action-item priority-mid">
+          <div class="ai-action-header"><span class="ai-priority">🟡 Orta Öncelik</span></div>
+          <div class="ai-action-title">Meta Reklam: Düşük CPC Avantajını Kullan</div>
+          <div class="ai-action-body">Meta'da ₺0,63 CPC ile 22.489 tıklama sağlandı — bu maliyet sektör ortalamasının (₺2–5) çok altında. Ancak ₺14.142 bütçe görece küçük kaldı. Bütçe artışı, mevcut CPC seviyesi korunduğunda tıklama hacmini doğrusal biçimde büyütür; Reels ve carousel kreatifleri CTR'ı daha da yukarı taşıyabilir.</div>
+        </div>
+        <div class="ai-action-item priority-mid">
+          <div class="ai-action-header"><span class="ai-priority">🟡 Orta Öncelik</span></div>
+          <div class="ai-action-title">Organik Arama: Sıralama 6,4 → Snippet Fırsatı</div>
+          <div class="ai-action-body">Organik sıralama 28,4'ten 6,4'e inerek kritik bir eşiği geçti. Bu konumda FAQ şeması ve yapılandırılmış veri (schema markup) eklenmesi, Google'ın Featured Snippet kutusuna girme olasılığını artırır. Oda tipi, fiyat aralığı ve Belek tatil sorgu kümeleri öncelikli hedef olmalı; bu adım organik CTR'ı %1,84'ten daha yukarı taşıyabilir.</div>
+        </div>
+        <div class="ai-action-item priority-low">
+          <div class="ai-action-header"><span class="ai-priority">🟢 İzlemeye Al</span></div>
+          <div class="ai-action-title">PMAX Sinyal Kalitesi: CC Korelasyonu</div>
+          <div class="ai-action-body">PMAX kampanyaları 80.627 mikro-dönüşüm kaydetti (form, WhatsApp, çağrı butonu). Bu sinyallerin CC satışlarıyla korelasyonu analiz edilmeli — hangi mikro-dönüşüm türü en yüksek rezervasyon kapanış oranıyla ilişkili? Bu veriyle PMAX'a daha güçlü ve isabetli sinyal beslenebilir.</div>
+        </div>
+        <div class="ai-action-item priority-low">
+          <div class="ai-action-header"><span class="ai-priority">🟢 İzlemeye Al</span></div>
+          <div class="ai-action-title">Kasım Erken Rezervasyon: Güçlü Talep Sinyali</div>
+          <div class="ai-action-body">Haziran satış raporlarında 283 Kasım girişi görülüyor — bu rakam kış sezonu talebinin güçlü olduğunu gösteriyor. Eylül ayına kadar başlatılacak bir erken rezervasyon kampanyası (Kasım–Ocak aralığı, özel fiyat teşviki) bu talebi satışa dönüştürebilir; mevcut veri hazır bir hedef kitle olduğunu işaret ediyor.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="header-eyebrow">HAZİRAN 2026 · DİJİTAL PERFORMANS RAPORU</p>
+  <h1 class="header-title">Belconti Resort Hotel</h1>
+  <p class="header-sub">Haziran 2026 · Tüm Kanallar · GA4 + Google Ads + Meta + Satış Raporları + Call Center<br>Her kartın üzerine tıklayarak detayları görüntüleyin</p>
+  <div class="hkpi-row">
+    <div class="hkpi" onclick="openModal('Aktif Kullanıcı','199.030','Haziran 2026 · GA4 tüm kanallar|Yeni kullanıcı: 177.000|Görüntüleme: 528.659|Ort. etkileşim süresi: 32 sn|Trafik kaynağı: Google CPC %84.9 · Organik %2.6 · Doğrudan %6.0')">
+      <div class="hkpi-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M14 17v-1a4 4 0 00-4-4H7a4 4 0 00-4 4v1"/><circle cx="8.5" cy="7" r="3"/><path d="M17 17v-1a3 3 0 00-2-2.83M13 5a3 3 0 012.83 2"/></svg></div>
+      <div class="hkpi-label">Aktif Kullanıcı</div>
+      <div class="hkpi-val">199K</div>
+      <div class="hkpi-sub">GA4 · Tüm kanallar</div>
+      <div class="hkpi-trend up">↑ Sektör üst bandı</div>
+    </div>
+    <div class="hkpi" onclick="openModal('Call Center Ciro (Sedna)','€290.148 · ₺15.409.969','Sedna Sistem 1 (Yıllık) Haziran 2026|1.008 oda geceleme|€290.148 EUR geliri|₺15.409.969 TL eşdeğeri|Kaynak: Sedna kayıt tarihi')">
+      <div class="hkpi-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 3h3l1.5 3.5-2 1.5c.8 1.8 2 3 3.8 3.8l1.5-2L16 11v3a2 2 0 01-2 2C6.5 16 4 9.5 5 3z"/></svg></div>
+      <div class="hkpi-label">Call Center Ciro</div>
+      <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap">
+        <div class="hkpi-val" style="font-size:28px">€290.1K</div>
+      </div>
+      <div class="hkpi-sub" style="margin-top:4px">
+        <span style="color:var(--muted);font-size:11px">TL eşdeğeri:</span><br>
+        <span style="font-weight:800;font-size:15px;color:var(--green)">≈ ₺15.41M</span>
+      </div>
+      <div class="hkpi-trend up">↑ Sedna Sistem 1</div>
+    </div>
+    <div class="hkpi" onclick="openModal('Toplam Satış (Sistem 1 — Yıllık)','€5.819.679','25.926 gece|3.792 rezervasyon|Oda ort. €224,47|Kişi ort. €83,78|İptal: 302 (%8,0)|Kaynak: Sedna kayıt tarihi')">
+      <div class="hkpi-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="4" width="14" height="14" rx="2"/><path d="M3 8h14M7 2v4M13 2v4"/></svg></div>
+      <div class="hkpi-label">Toplam Satış (Sistem 1)</div>
+      <div class="hkpi-val">€5.82M</div>
+      <div class="hkpi-sub">₺309.035.709 · 3.792 rezervasyon</div>
+      <div class="hkpi-trend up">↑ Yıllık dağılım</div>
+    </div>
+    <div class="hkpi" onclick="openModal('ROAS (Sistem 1 — CC Bazlı)','26.6x','Haziran 2026 — Sistem 1 (Yıllık)|Call Center geliri: ₺15.409.969 (€290.148)|Toplam reklam harcaması: ₺578.855 (Google ₺564.713 + Meta ₺14.142)|ROAS: 15.409.969 / 578.855 = 26,6x|Makro/Toplam bazlı: 533,9x (şişirilmiş — bilgi amaçlı)')">
+      <div class="hkpi-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 14l5-5 3 3 5-6"/><path d="M12 6h4v4"/></svg></div>
+      <div class="hkpi-label">ROAS (Sistem 1 — CC Bazlı)</div>
+      <div class="hkpi-val" style="font-size:32px">26.6x</div>
+      <div class="hkpi-sub">Harcama: ₺578.855</div>
+      <div class="hkpi-trend up">↑ Sektör ort. 4–8x</div>
+    </div>
+    <div class="hkpi" onclick="openModal('Haziran İçi Satış (Sistem 2 — Anlık)','€782.589','3.715 gece|623 rezervasyon|İptal: 48|Kaynak: Sedna kayıt tarihi — yalnızca Haziran içinde konaklanan rezervasyonlar')">
+      <div class="hkpi-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="4" width="14" height="14" rx="2"/><path d="M3 8h14M7 2v4M13 2v4"/></svg></div>
+      <div class="hkpi-label">Haziran İçi Satış (Sistem 2)</div>
+      <div class="hkpi-val">€782.6K</div>
+      <div class="hkpi-sub">₺41.621.455 · 623 rezervasyon</div>
+      <div class="hkpi-trend up">↑ Anlık (son dakika)</div>
+    </div>
+    <div class="hkpi" onclick="openModal('Anlık ROAS (Sistem 2)','71.9x','Haziran 2026 — Sistem 2 (Anlık)|Toplam ciro: ₺41.621.455 (€782.589)|Toplam reklam harcaması: ₺578.855|ROAS: 41.621.455 / 578.855 = 71,9x|CC bazlı: 4,7x')">
+      <div class="hkpi-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 14l5-5 3 3 5-6"/><path d="M12 6h4v4"/></svg></div>
+      <div class="hkpi-label">Anlık ROAS (Sistem 2)</div>
+      <div class="hkpi-val" style="font-size:32px">71.9x</div>
+      <div class="hkpi-sub">Toplam bazlı · CC bazlı: 4,7x</div>
+      <div class="hkpi-trend up">↑ Aynı-ay performansı</div>
+    </div>
+  </div>
+</header>
+
+<!-- GA4 -->
+<section class="section" id="sec-h-ga4">
+  <div class="section-header">
+    <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 13l4-4 3 3 4-5 3 2"/></svg></div>
+    <div><div class="section-title">Web Analitik — GA4 Genel Bakış</div><div class="section-sub">Haziran 2026 · Tüm trafik kaynakları · Google Analytics 4</div></div>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi-card" onclick="openModal('Aktif Kullanıcı','199.030','Haziran ayında siteyi ziyaret eden benzersiz kişi sayısı|Aynı kişi birden fazla gelse bile 1 sayılır|Otel sektörü aylık ort.: 80.000–300.000|Belconti üst bantta')">
+      <div class="kpi-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M14 17v-1a4 4 0 00-4-4H7a4 4 0 00-4 4v1"/><circle cx="8.5" cy="7" r="3"/></svg></div>
+      <div class="kpi-label">Aktif Kullanıcı</div>
+      <div class="kpi-val">199.030</div>
+      <span class="kpi-trend up">↑ Sektör üst bandı</span>
+    </div>
+    <div class="kpi-card" onclick="openModal('Görüntüleme Sayısı','528.659','Toplam sayfa görüntüleme (tüm sayfalar)|Kullanıcı başına ort. 2.66 sayfa|/TR sayfası: 426.154 (%80.6)|/: 30.315|/EN: 12.966|/DE: 9.011')">
+      <div class="kpi-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="8"/><path d="M10 6v4l3 3"/></svg></div>
+      <div class="kpi-label">Görüntüleme</div>
+      <div class="kpi-val">528.659</div>
+      <div class="kpi-sub">Kullanıcı başına 2.66 sayfa</div>
+    </div>
+    <div class="kpi-card" onclick="openModal('Etkileşim Süresi','32 sn','Ziyaretçinin sitede aktif olarak geçirdiği süre|Otel sektörü ort.: 25–45 sn|Belconti sektör ortasında')">
+      <div class="kpi-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="8"/><path d="M10 6v4l3 3"/></svg></div>
+      <div class="kpi-label">Ort. Etkileşim Süresi</div>
+      <div class="kpi-val">32 sn</div>
+      <div class="kpi-sub">Sektör ort. 25–45 sn</div>
+    </div>
+    <div class="kpi-card" onclick="openModal('Etkinlik Sayısı','1.359.624','Tüm kullanıcı aksiyonları (tıklama, scroll, form, sayfa görüntüleme)|Önemli aksiyon (dönüşüm adayı): 84.803|Yeni kullanıcı sayısı: 177.000')">
+      <div class="kpi-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="8"/><path d="M7 10l2 2 4-4"/></svg></div>
+      <div class="kpi-label">Etkinlik Sayısı</div>
+      <div class="kpi-val">1.359.624</div>
+      <div class="kpi-sub">Önemli aksiyon: 84.803</div>
+    </div>
+  </div>
+  <div style="margin-top:24px">
+    <div>
+      <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:16px;text-transform:uppercase;letter-spacing:.05em">Ülke Bazlı Kullanıcı Dağılımı</div>
+      <div class="stat-row"><div class="stat-label"><strong>Türkiye</strong></div><div class="stat-bar-wrap"><div class="stat-bar" style="width:100%"></div></div><div class="stat-val">180.000 <span style="color:var(--green);font-size:11px">%90.4</span></div></div>
+      <div class="stat-row"><div class="stat-label"><strong>Almanya</strong></div><div class="stat-bar-wrap"><div class="stat-bar" style="width:3.8%"></div></div><div class="stat-val">6.900</div></div>
+      <div class="stat-row"><div class="stat-label"><strong>İngiltere</strong></div><div class="stat-bar-wrap"><div class="stat-bar" style="width:2.4%"></div></div><div class="stat-val">4.400</div></div>
+      <div class="stat-row"><div class="stat-label">Rusya</div><div class="stat-bar-wrap"><div class="stat-bar" style="width:1.2%"></div></div><div class="stat-val">2.200</div></div>
+      <div class="stat-row"><div class="stat-label">Diğer</div><div class="stat-bar-wrap"><div class="stat-bar" style="width:1.4%"></div></div><div class="stat-val">5.530</div></div>
+      <div style="margin-top:22px;font-size:13px;font-weight:700;color:var(--text);margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em">Demografi</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+        <span class="badge">Kadın %73.2</span>
+        <span class="badge neutral">Erkek %26.8</span>
+        <span class="badge">35–44 yaş baskın</span>
+        <span class="badge neutral">25–34 ikinci grup</span>
+      </div>
+      <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em">En Çok Ziyaret Edilen Sayfalar</div>
+      <div class="stat-row"><div class="stat-label">/TR (Ana TR)</div><div class="stat-val" style="color:var(--muted);font-size:12px">426.154 görüntüleme</div></div>
+      <div class="stat-row"><div class="stat-label">/ (Ana sayfa)</div><div class="stat-val" style="color:var(--muted);font-size:12px">30.315 görüntüleme</div></div>
+      <div class="stat-row"><div class="stat-label">/EN (İngilizce)</div><div class="stat-val" style="color:var(--muted);font-size:12px">12.966 görüntüleme</div></div>
+      <div class="stat-row"><div class="stat-label">/DE (Almanca)</div><div class="stat-val" style="color:var(--muted);font-size:12px">9.011 görüntüleme</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ORGANİK ARAMA -->
+<section class="section" id="sec-h-search">
+  <div class="section-header">
+    <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M13 13l4 4"/></svg></div>
+    <div><div class="section-title">Organik Arama Performansı</div><div class="section-sub">Haziran 2026 · Google Search Console · Tüm anahtar kelimeler</div></div>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi-card" onclick="openModal('Organik Tıklama','4.764','Google arama sonuçlarında ücretsiz olarak gelen tıklama|Otel sektörü aylık ort.: 3.000–8.000|Belconti sektör ortasında|En çok tıklanan: belconti resort hotel, belconti resort, belconti')">
+      <div class="kpi-label">Organik Tıklama</div>
+      <div class="kpi-val">4.764</div>
+      <div class="kpi-sub">Reklamsız Google trafiği</div>
+      <span class="kpi-trend up">↑ Sektör aralığında</span>
+    </div>
+    <div class="kpi-card" onclick="openModal('Arama Görünürlüğü','258.520','Google arama sonuçlarında görünme sayısı (tıklanmasa bile)|Anahtar kelime sayısı: 7.070|Hem marka hem jenerik aramalar dahil')">
+      <div class="kpi-label">Arama Görünürlüğü</div>
+      <div class="kpi-val">258.520</div>
+      <div class="kpi-sub">Google'da görünme sayısı</div>
+    </div>
+    <div class="kpi-card" onclick="openModal('Organik Tıklama Oranı','%1.84','4.764 tıklama ÷ 258.520 gösterim|Mayıs CTR: %0.81 → Haziran: %1.84 (büyük iyileşme!)|Otel sektörü organik CTR ort.: %0.6–1.2|Belconti artık sektör üst bandında')">
+      <div class="kpi-label">Tıklama Oranı (CTR)</div>
+      <div class="kpi-val">%1.84</div>
+      <div class="kpi-sub">Mayıs %0.81 → iyileşme ↑</div>
+      <span class="kpi-trend up">↑ Sektör üst bandı</span>
+    </div>
+    <div class="kpi-card" onclick="openModal('Ortalama Sıralama','6.40','Google’da ortalama kaçıncı sırada göründüğü|Marka aramaları (belconti resort hotel): Top 2–3|Haziran’da sıralama iyileşmesi gözlemlendi')">
+      <div class="kpi-label">Google Sıralaması</div>
+      <div class="kpi-val">6.40</div>
+      <div class="kpi-sub">Ortalama konum (marka Top 2)</div>
+    </div>
+  </div>
+  <div style="margin-top:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+    <div style="border:1px solid var(--border);border-radius:var(--radius);padding:20px;background:var(--bg-alt)">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:10px">Organik CTR</div>
+      <div style="display:flex;align-items:flex-end;gap:16px">
+        <div><div style="font-size:22px;font-weight:800;color:var(--green)">%1.84</div><div style="font-size:11px;color:var(--green);font-weight:600">Haziran</div></div>
+        <div><div style="font-size:22px;font-weight:800;color:var(--muted-light)">%0.81</div><div style="font-size:11px;color:var(--muted);font-weight:600">Mayıs</div></div>
+      </div>
+      <div style="margin-top:12px;font-size:12px;color:var(--green-dark);background:var(--green-light);padding:6px 10px;border-radius:6px;font-weight:600">%127 artış — çok güçlü iyileşme</div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:var(--radius);padding:20px;background:var(--bg-alt)">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:10px">Organik Tıklama</div>
+      <div style="display:flex;align-items:flex-end;gap:16px">
+        <div><div style="font-size:22px;font-weight:800;color:var(--green)">4.764</div><div style="font-size:11px;color:var(--green);font-weight:600">Haziran</div></div>
+        <div><div style="font-size:22px;font-weight:800;color:var(--muted-light)">~4.500</div><div style="font-size:11px;color:var(--muted);font-weight:600">Sektör Ort.</div></div>
+      </div>
+      <div style="margin-top:12px;font-size:12px;color:var(--green-dark);background:var(--green-light);padding:6px 10px;border-radius:6px;font-weight:600">Sektör ortalaması seviyesinde</div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:var(--radius);padding:20px;background:var(--bg-alt)">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:10px">Ortalama Sıralama</div>
+      <div style="display:flex;align-items:flex-end;gap:16px">
+        <div><div style="font-size:22px;font-weight:800;color:var(--green)">6.40</div><div style="font-size:11px;color:var(--green);font-weight:600">Haziran</div></div>
+        <div><div style="font-size:22px;font-weight:800;color:var(--muted-light)">28.4</div><div style="font-size:11px;color:var(--muted);font-weight:600">Mayıs</div></div>
+      </div>
+      <div style="margin-top:12px;font-size:12px;color:var(--green-dark);background:var(--green-light);padding:6px 10px;border-radius:6px;font-weight:600">Sıralama önemli ölçüde iyileşti</div>
+    </div>
+  </div>
+</section>
+
+<!-- GOOGLE ADS -->
+<section class="section" id="sec-h-gads">
+  <div class="section-header">
+    <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 2L4 12h7l-2 6 9-10h-7l2-6z"/></svg></div>
+    <div><div class="section-title">Google Ads Kampanya Performansı</div><div class="section-sub">Haziran 2026 · 18 Aktif Kampanya · PMAX + Arama · Tüm kanallar · % değişimler Mayıs 2026 ile karşılaştırılmıştır</div></div>
+  </div>
+  <div class="callout" style="margin-bottom:20px;background:#F0FDF4;border-left-color:var(--green)">
+    <div class="callout-title" style="color:#166534">18 Aktif Kampanya — PMAX + Arama Birlikte Çalıştı</div>
+    <div class="callout-text" style="color:#166534">Haziran'da TR PMAX REV, TR PMAX Isıtmalı Havuz, UK PMAX, DE PMAX Gurbetçi dahil 4 PMAX kampanyası aktifti. TR ve DE arama kampanyaları da aynı anda yayındaydı. Toplam 3.6M gösterim, 413K tıklama, ₺564.713 harcama ve 80.627 mikro-dönüşüm (form, WhatsApp, çağrı butonu) gerçekleşti.</div>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi-card" onclick="openModal('Toplam Gösterim','3.611.022','TR PMAX REV: 2.542.093 (%70.4)|UK PMAX: 320.976 (%8.9)|TR PMAX Isıtmalı Havuz: 311.459 (%8.6)|DE PMAX Gurbetçi: 145.134 (%4.0)|TR Jenerik Arama (Şubat2024): 137.233 (%3.8)|DE Türkler Arama: 20.273|Diğer: 133.864')">
+      <div class="kpi-label">Gösterim</div>
+      <div class="kpi-val">3.61M</div>
+      <div class="kpi-sub">PMAX %91.9 · Arama %8.1</div>
+      <span class="kpi-trend up">↑ Geniş kapsam</span>
+    </div>
+    <div class="kpi-card" onclick="openModal('Toplam Tıklama','413.657','TR PMAX REV: 347.406 (%84.0)|TR PMAX Isıtmalı Havuz: 39.263 (%9.5)|UK PMAX: 8.517 (%2.1)|DE PMAX Gurbetçi: 7.087 (%1.7)|Arama kampanyaları: 11.384 (%2.8)|NOT: PMAX tıklamaları banner/display dahil — Search ile karşılaştırılamaz')">
+      <div class="kpi-label">Tıklama</div>
+      <div class="kpi-val">413.657</div>
+      <div class="kpi-sub">Arama: 11.384 · PMAX: 402.273</div>
+    </div>
+    <div class="kpi-card" onclick="openModal('Toplam Harcama','₺564.713','TR PMAX REV: ₺207.464 (%36.7)|TR Jenerik Arama REV: ₺123.306 (%21.8)|DE Türkler Arama: ₺92.248 (%16.3)|TR Jenerik Arama Şubat: ₺51.078 (%9.0)|TR PMAX Isıtmalı Havuz: ₺22.027 (%3.9)|UK PMAX: ₺21.445 (%3.8)|DE PMAX: ₺16.495 (%2.9)|Diğer: ₺30.650 (%5.4)')">
+      <div class="kpi-label">Toplam Harcama</div>
+      <div class="kpi-val">₺564.713</div>
+      <div class="kpi-sub">PMAX %47.6 · Arama %52.4</div>
+      <span class="kpi-trend up">↑ +%7.7 vs Mayıs (₺524.315)</span>
+    </div>
+    <div class="kpi-card" onclick="openModal('Mikro-Dönüşüm','80.627','Form doldurma · WhatsApp tıklama · Çağrı butonu · Rezervasyon başlatma gibi aksiyonlar|TR PMAX REV: 67.801 (%84.1)|TR PMAX Isıtmalı Havuz: 6.465|UK PMAX: 942|DE PMAX: 727|Arama dönüşümleri: 4.692|Maliyet/dönüşüm: ₺7.00 (sektör ort. ₺25–60)')">
+      <div class="kpi-label">Mikro-Dönüşüm</div>
+      <div class="kpi-val">80.627</div>
+      <div class="kpi-sub">Form · WhatsApp · Çağrı butonu</div>
+      <span class="kpi-trend up">↑ ₺7.00/dönüşüm</span>
+    </div>
+  </div>
+  <div class="chart-wrap" style="margin-top:20px" onclick="openChartModal('chartGadsH','Haziran Google Ads — Kampanya Bazlı Harcama','₺ harcama dağılımı')">
+    <div class="chart-title">Kampanya Bazlı Harcama Dağılımı <span class="chart-expand-hint"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8V3h5M17 12v5h-5M3 12l14-9M17 8L3 17"/></svg> büyüt</span></div>
+    <div class="chart-sub">₺ harcama — en yüksek 8 kampanya</div>
+    <div class="chart-inner"><canvas id="chartGadsH"></canvas></div>
+  </div>
+  <div class="table-wrap" style="margin-top:20px">
+    <table>
+      <thead><tr><th>Kampanya</th><th>Tür</th><th>Ülke</th><th class="num">Gösterim</th><th class="num">Tıklama</th><th class="num">CTR</th><th class="num">TBM</th><th class="num">Harcama</th><th class="num">Dönüşüm</th></tr></thead>
+      <tbody>
+        <tr><td><strong>PMAX Erken Rez TR REV</strong></td><td><span class="badge" style="background:#7C3AED;color:white">PMAX</span></td><td><span class="badge">TR</span></td><td class="num">2.542.093</td><td class="num">347.406</td><td class="num">%13.83</td><td class="num">₺0.60</td><td class="num"><strong>₺207.464</strong></td><td class="num">67.801*</td></tr>
+        <tr><td>Jenerik Arama TR REV</td><td><span class="badge neutral">Arama</span></td><td><span class="badge">TR</span></td><td class="num">108.616</td><td class="num">3.772</td><td class="num">%3.47</td><td class="num">₺32.69</td><td class="num"><strong>₺123.306</strong></td><td class="num">2.428*</td></tr>
+        <tr><td>Almanya Türkler Arama</td><td><span class="badge neutral">Arama</span></td><td><span class="badge neutral">DE</span></td><td class="num">20.273</td><td class="num">2.082</td><td class="num"><strong>%10.27</strong></td><td class="num">₺44.31</td><td class="num"><strong>₺92.248</strong></td><td class="num">609*</td></tr>
+        <tr><td>Jenerik Arama TR (Şubat24)</td><td><span class="badge neutral">Arama</span></td><td><span class="badge">TR</span></td><td class="num">137.233</td><td class="num">4.516</td><td class="num">%3.29</td><td class="num">₺11.31</td><td class="num">₺51.078</td><td class="num">1.241</td></tr>
+        <tr><td>PMAX Isıtmalı Havuz TR</td><td><span class="badge" style="background:#7C3AED;color:white">PMAX</span></td><td><span class="badge">TR</span></td><td class="num">311.459</td><td class="num">39.263</td><td class="num">%12.75</td><td class="num">₺0.56</td><td class="num">₺22.027</td><td class="num">6.465*</td></tr>
+        <tr><td>PMAX UK Erken Rez</td><td><span class="badge" style="background:#7C3AED;color:white">PMAX</span></td><td><span class="badge neutral">UK</span></td><td class="num">320.976</td><td class="num">8.517</td><td class="num">%3.88</td><td class="num">₺2.52</td><td class="num">₺21.445</td><td class="num">942*</td></tr>
+        <tr><td>DE Gurbetçi PMAX</td><td><span class="badge" style="background:#7C3AED;color:white">PMAX</span></td><td><span class="badge neutral">DE</span></td><td class="num">145.134</td><td class="num">7.087</td><td class="num">%5.17</td><td class="num">₺2.33</td><td class="num">₺16.495</td><td class="num">727*</td></tr>
+        <tr><td>DE Jenerik Arama</td><td><span class="badge neutral">Arama</span></td><td><span class="badge neutral">DE</span></td><td class="num">6.623</td><td class="num">253</td><td class="num">%3.82</td><td class="num">₺33.35</td><td class="num">₺8.437</td><td class="num">139</td></tr>
+        <tr><td>Son Dakika İndirim TR</td><td><span class="badge neutral">Arama</span></td><td><span class="badge">TR</span></td><td class="num">1.269</td><td class="num">159</td><td class="num"><strong>%12.53</strong></td><td class="num">₺44.97</td><td class="num">₺7.150</td><td class="num">97</td></tr>
+        <tr><td>UK + RO + PL + LV + LT + FR</td><td><span class="badge neutral">Arama</span></td><td><span class="badge neutral">Çeşitli</span></td><td class="num">13.799</td><td class="num">499</td><td class="num">%3.62</td><td class="num">₺26.12</td><td class="num">₺13.023</td><td class="num">142</td></tr>
+        <tr><td>Rakip + Brand + Balayı TR</td><td><span class="badge neutral">Arama</span></td><td><span class="badge">TR</span></td><td class="num">3.547</td><td class="num">116</td><td class="num">%3.27</td><td class="num">₺20.28</td><td class="num">₺2.350</td><td class="num">36</td></tr>
+        <tr class="total-row"><td>TOPLAM (18 kampanya)</td><td>—</td><td>—</td><td class="num">3.611.022</td><td class="num">413.657</td><td class="num">—</td><td class="num">₺1.37</td><td class="num">₺564.713</td><td class="num">80.627*</td></tr>
+      </tbody>
+    </table>
+    <div style="font-size:11px;color:var(--muted);padding:8px 12px">* Mikro-dönüşüm: form doldurma, WhatsApp butonu, çağrı tıklaması, rezervasyon başlatma — doğrudan satış değil</div>
+  </div>
+</section>
+
+<!-- ROAS -->
+<section class="section" id="sec-h-roas">
+  <div class="section-header">
+    <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 14l5-5 3 3 5-6"/><path d="M12 6h4v4"/></svg></div>
+    <div><div class="section-title">ROAS Analizi — 2 Sistem</div><div class="section-sub">Haziran 2026 · Sedna Kayıt Tarihi Bazlı · Reklam Harcaması Getiri Oranı</div></div>
+  </div>
+  <div class="callout">
+    <div class="callout-title">2 Ayrı ROAS Sistemi</div>
+    <div class="callout-text"><strong>Sistem 1 (Yıllık Dağılım / Makro ROAS):</strong> Haziran'da kayıt tarihi ile satılan, konaklaması tüm yıla (Haziran–Kasım) yayılan rezervasyonlar — €5.819.679 toplam ciro. <strong>Sistem 2 (Sadece Haziran Konaklamalı / Anlık ROAS):</strong> Haziran'da hem satılan hem de konaklaması yalnızca Haziran içinde gerçekleşen rezervasyonlar (son dakika satışlar) — €782.589 ciro. Her iki sistemde de aynı toplam reklam harcaması (₺578.855 = Google ₺564.713 + Meta ₺14.142) paydadır; sadece hangi cironun paya alındığı değişir. Kaynak: Sedna kayıt-tarihi analizi (Satış Raporları'ndaki giriş-tarihi verisiyle karıştırılmamalıdır).</div>
+  </div>
+
+  <div class="table-wrap" style="margin-top:20px">
+    <table>
+      <thead><tr><th>Sistem</th><th class="num">Toplam Ciro</th><th class="num">Reklam Harcaması</th><th class="num">ROAS — CC Bazlı</th><th class="num">ROAS — Toplam Bazlı</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Sistem 1 — Yıllık Makro</strong></td><td class="num">€5.819.679 (₺309.035.709)</td><td class="num">₺578.855</td><td class="num">26,6x</td><td class="num">533,9x</td></tr>
+        <tr><td><strong>Sistem 2 — Anlık</strong></td><td class="num">€782.589 (₺41.621.455)</td><td class="num">₺578.855</td><td class="num">4,7x</td><td class="num">71,9x</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="roas-tabs" style="display:flex;gap:8px;margin:20px 0 16px">
+    <button class="roas-nav-btn active" onclick="switchRoasTabH('macro', this)">Sistem 1 — Yıllık Makro ROAS (Detay)</button>
+    <button class="roas-nav-btn" onclick="switchRoasTabH('instant', this)">Sistem 2 — Anlık ROAS (Detay)</button>
+  </div>
+
+  <div class="roas-panel-h roas-panel-h-macro">
+    <div class="kpi-grid kpi-grid-3">
+      <div class="kpi-card"><div class="kpi-label">Toplam Ciro (Sistem 1)</div><div class="kpi-val" style="font-size:28px">€5.819.679</div><div class="kpi-sub">₺309.035.709 TL eşdeğeri</div></div>
+      <div class="kpi-card"><div class="kpi-label">Toplam Reklam Harcaması</div><div class="kpi-val" style="font-size:28px">₺578.855</div><div class="kpi-sub">Google ₺564.713 + Meta ₺14.142</div></div>
+      <div class="kpi-card"><div class="kpi-label">İptal</div><div class="kpi-val" style="font-size:28px">302</div><div class="kpi-sub">3.792 rezervasyon üzerinden — İptal oranı %8,0</div></div>
+    </div>
+    <div class="table-wrap" style="margin-top:16px">
+      <table>
+        <thead><tr><th>Kanal</th><th class="num">Gece</th><th class="num">Ciro (EUR)</th><th class="num">Ciro (TL)</th><th class="num">ROAS</th></tr></thead>
+        <tbody>
+          <tr><td>Call Center</td><td class="num">1.008</td><td class="num">€290.148</td><td class="num">₺15.409.969</td><td class="num">26,6x</td></tr>
+          <tr><td>Web / OTA (Toplam − CC)</td><td class="num">24.918</td><td class="num">€5.529.531</td><td class="num">₺293.625.740</td><td class="num">507,3x</td></tr>
+          <tr class="total-row"><td>TOPLAM</td><td class="num">25.926</td><td class="num">€5.819.679</td><td class="num">₺309.035.709</td><td class="num">533,9x</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <div class="callout-title">ROAS — CC Bazlı: 26,6x · Makro/Toplam Bazlı: 533,9x</div>
+      <div class="callout-text">CC bazlı ROAS = ₺15.409.969 ÷ ₺578.855 = <strong>26,6x</strong> — daha muhafazakâr ve temsili ölçüm. Makro ROAS = ₺309.035.709 ÷ ₺578.855 = <strong>533,9x</strong> — Web/OTA kanallarının kendi pazarlama harcamasını içermediği için matematiksel olarak şişirilmiştir.</div>
+    </div>
+  </div>
+
+  <div class="roas-panel-h roas-panel-h-instant" style="display:none">
+    <div class="kpi-grid kpi-grid-3">
+      <div class="kpi-card"><div class="kpi-label">Toplam Ciro (Sistem 2)</div><div class="kpi-val" style="font-size:28px">€782.589</div><div class="kpi-sub">₺41.621.455 TL eşdeğeri</div></div>
+      <div class="kpi-card"><div class="kpi-label">Toplam Reklam Harcaması</div><div class="kpi-val" style="font-size:28px">₺578.855</div><div class="kpi-sub">Google ₺564.713 + Meta ₺14.142</div></div>
+      <div class="kpi-card"><div class="kpi-label">İptal</div><div class="kpi-val" style="font-size:28px">48</div><div class="kpi-sub">623 rezervasyon üzerinden</div></div>
+    </div>
+    <div class="table-wrap" style="margin-top:16px">
+      <table>
+        <thead><tr><th>Kanal</th><th class="num">Gece</th><th class="num">Ciro (EUR)</th><th class="num">Ciro (TL)</th><th class="num">ROAS</th></tr></thead>
+        <tbody>
+          <tr><td>Call Center</td><td class="num">206</td><td class="num">€50.812</td><td class="num">₺2.697.162</td><td class="num">4,7x</td></tr>
+          <tr><td>Web / OTA (Toplam − CC)</td><td class="num">3.509</td><td class="num">€731.777</td><td class="num">₺38.924.293</td><td class="num">67,2x</td></tr>
+          <tr class="total-row"><td>TOPLAM</td><td class="num">3.715</td><td class="num">€782.589</td><td class="num">₺41.621.455</td><td class="num">71,9x</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <div class="callout-title">Anlık ROAS — CC Bazlı: 4,7x · Toplam Bazlı: 71,9x</div>
+      <div class="callout-text">Bu sistem, Haziran'da satılıp yine Haziran içinde konaklanan (son dakika / aynı-ay) rezervasyonları yansıtır — Sistem 1'e göre çok daha küçük fakat "anlık" performansı gösterir.</div>
+    </div>
+    <h3 style="font-size:15px;margin:16px 0 10px;color:var(--green-dark)">Acenta Bazlı Kırılım (Gece) — Sistem 2</h3>
+    <div class="table-wrap" style="margin-top:8px">
+      <table>
+        <thead><tr><th>Acenta / Kanal</th><th class="num">Gece</th></tr></thead>
+        <tbody>
+          <tr><td>PEGAS TOURISTIK</td><td class="num">582</td></tr>
+          <tr><td>ANEX TOUR</td><td class="num">544</td></tr>
+          <tr><td>FIT HOLIDAYS</td><td class="num">446</td></tr>
+          <tr><td>ODEON TURİZM</td><td class="num">379</td></tr>
+          <tr style="background:#F0FDF4"><td><strong>CALLCENTER</strong></td><td class="num">206 <span class="badge" style="font-size:10px">€50.812 / ₺2,7M</span></td></tr>
+          <tr><td>BOOKING.COM</td><td class="num">149</td></tr>
+          <tr><td>MOTUS TURİZM</td><td class="num">138</td></tr>
+          <tr><td>FASTOUR</td><td class="num">118</td></tr>
+          <tr><td style="color:var(--muted)">Diğer Acenta/Kanallar</td><td class="num" style="color:var(--muted)">1.153</td></tr>
+          <tr class="total-row"><td>TOPLAM</td><td class="num">3.715 gece / €782.589 / ₺41.621.455</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout muted" style="background:var(--bg-alt);border-left-color:var(--muted-light)">Kaynak: paylaştığınız Drive klasöründeki "sedna verisi ota, call center sadece haziran" görseli.</div>
+  </div>
+</section>
+
+<!-- META -->
+<section class="section" id="sec-h-meta">
+  <div class="section-header">
+    <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="16" cy="4" r="2"/><circle cx="4" cy="10" r="2"/><circle cx="16" cy="16" r="2"/><path d="M6 10l8-5M6 10l8 5"/></svg></div>
+    <div><div class="section-title">Meta Reklamlar — Facebook & Instagram</div><div class="section-sub">Haziran 2026 · Meta Ads Manager + Organik İçerik</div></div>
+  </div>
+  <div class="kpi-grid">
+    <div class="kpi-card" onclick="openModal('Meta Reklam Tıklama','22.489','Facebook ve Instagram reklamlarından toplam link tıklama|CTR %8.2: her 100 görünmede 8.2 tıklama (sektör ort. %1–3 — çok üzerinde)|CPC ₺0.63: bir tıklamanın maliyeti|Kampanya 1: Belconti10 (archived): 2.305 tıklama|Kampanya 2: Haziran web trafik (active): 20.184 tıklama')">
+      <div class="kpi-label">Meta Tıklama</div>
+      <div class="kpi-val">22.489</div>
+      <div class="kpi-sub">Her 100 görünmede 8.2 tıklama</div>
+      <span class="kpi-trend up">↑ CTR %8.2</span>
+    </div>
+    <div class="kpi-card" onclick="openModal('Meta Gösterim','274.190','Reklamın Facebook ve Instagram’da gösterilme sayısı|Kampanya 1: 61.407|Kampanya 2: 212.783|CPM ₺51.6: 1.000 kişiye ulaşmanın maliyeti|Sektör ort. CPM: ₺80–150 — Belconti çok verimli')">
+      <div class="kpi-label">Meta Gösterim</div>
+      <div class="kpi-val">274.190</div>
+      <div class="kpi-sub">CPM ₺51.6 — sektör ortalamasının altında</div>
+    </div>
+    <div class="kpi-card" onclick="openModal('Meta Reklam Harcama','₺14.142','Toplam Meta Ads harcaması|Kampanya 1 (Belconti10): ₺1.159|Kampanya 2 (web trafik): ₺12.983|CPC ₺0.63|CTR %8.2')">
+      <div class="kpi-label">Meta Harcama</div>
+      <div class="kpi-val">₺14.142</div>
+      <div class="kpi-sub">CPC ₺0.63</div>
+    </div>
+    <div class="kpi-card" onclick="openModal('Meta Erişim','160.258','Reklamların ulaştığı benzersiz kişi sayısı|Kampanya 1: 31.780|Kampanya 2: 128.478')">
+      <div class="kpi-label">Erişim</div>
+      <div class="kpi-val">160.258</div>
+      <div class="kpi-sub">Benzersiz kişiye ulaşım</div>
+    </div>
+  </div>
+  <div class="two-col" style="margin-top:24px">
+    <div>
+      <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px;text-transform:uppercase;letter-spacing:.05em">Instagram Organik — Haziran 2026</div><div style="font-size:11px;color:var(--muted);margin-bottom:12px">% değişimler Mayıs 2026 ile karşılaştırılmıştır</div>
+      <div class="stat-row"><div class="stat-label">Görüntüleme</div><div class="stat-val" style="font-size:15px;font-weight:800">249.200 <span class="kpi-trend up" style="font-size:11px">+%48</span></div></div>
+      <div class="stat-row"><div class="stat-label">— Organikten</div><div class="stat-val" style="color:var(--muted);font-size:13px">212.684 (+%26.4)</div></div>
+      <div class="stat-row"><div class="stat-label">— Reklamlardan</div><div class="stat-val" style="color:var(--muted);font-size:13px">32.164</div></div>
+      <div class="stat-row"><div class="stat-label">Erişim</div><div class="stat-val">39.500 <span class="kpi-trend up" style="font-size:11px">+%25.2</span></div></div>
+      <div class="stat-row"><div class="stat-label">İçerik Etkileşimi</div><div class="stat-val">2.900 <span class="kpi-trend up" style="font-size:11px">+%35.9</span></div></div>
+      <div class="stat-row"><div class="stat-label">Yeni Takipçi</div><div class="stat-val">397 <span class="kpi-trend up" style="font-size:11px">+%27.7</span></div></div>
+      <div class="stat-row"><div class="stat-label">Profil Ziyareti</div><div class="stat-val">7.900 <span class="kpi-trend up" style="font-size:11px">+%23.5</span></div></div>
+      <div class="stat-row"><div class="stat-label">Bağlantı Tıklamaları</div><div class="stat-val">4.000 <span class="kpi-trend up" style="font-size:11px">+%21</span></div></div>
+    </div>
+    <div>
+      <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px;text-transform:uppercase;letter-spacing:.05em">Facebook Organik — Haziran 2026</div><div style="font-size:11px;color:var(--muted);margin-bottom:12px">% değişimler Mayıs 2026 ile karşılaştırılmıştır</div>
+      <div class="stat-row"><div class="stat-label">Görüntüleme</div><div class="stat-val" style="font-size:15px;font-weight:800">271.500 <span class="kpi-trend up" style="font-size:11px">+%347.1</span></div></div>
+      <div class="stat-row"><div class="stat-label">— Organikten</div><div class="stat-val" style="color:var(--muted);font-size:13px">47.759 (+%55.3)</div></div>
+      <div class="stat-row"><div class="stat-label">— Reklamlardan</div><div class="stat-val" style="color:var(--muted);font-size:13px">223.948 (+%647.7)</div></div>
+      <div class="stat-row"><div class="stat-label">Görüntüleyenler</div><div class="stat-val">140.953 <span class="kpi-trend up" style="font-size:11px">+%629.9</span></div></div>
+      <div class="stat-row"><div class="stat-label">İçerik Etkileşimi</div><div class="stat-val">603 <span class="kpi-trend up" style="font-size:11px">+%10.8</span></div></div>
+      <div class="stat-row"><div class="stat-label">Yeni Takipçi</div><div class="stat-val">119 <span class="kpi-trend up" style="font-size:11px">+%158.7</span></div></div>
+      <div class="stat-row"><div class="stat-label">Profil Ziyareti</div><div class="stat-val">7.100 <span class="kpi-trend up" style="font-size:11px">+%98.7</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- REZERVASYONLARPerformans -->
+<section class="section" id="sec-h-rezervasyon">
+  <div class="section-header">
+    <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="4" width="14" height="14" rx="2"/><path d="M3 8h14M7 2v4M13 2v4"/></svg></div>
+    <div><div class="section-title">Rezervasyon Performansı (Sedna — Sistem 1, Yıllık Dağılım)</div><div class="section-sub">Sedna kayıt tarihi · Haziran 2026 · Konaklaması tüm yıla yayılan rezervasyonlar</div></div>
+  </div>
+  <div class="callout muted" style="background:var(--bg-alt);border-left-color:var(--muted-light)">Bu bölüm artık Satış Raporları'ndaki giriş-tarihi verisi yerine Sedna'nın kayıt-tarihi bazlı Sistem 1 verisini kullanmaktadır (bkz. ROAS Analizi bölümü).</div>
+  <div class="kpi-grid" style="margin-top:16px">
+    <div class="kpi-card" onclick="openModal('Toplam Ciro','€5.819.679','25.926 gece|3.792 rezervasyon|İptal: 302 (%8,0)|Kaynak: Sedna kayıt tarihi')">
+      <div class="kpi-label">Toplam Ciro</div>
+      <div class="kpi-val">€5.82M</div>
+      <div class="kpi-sub">₺309.035.709 TL eşdeğeri</div>
+      <span class="kpi-trend up">↑ 3.792 rezervasyon</span>
+    </div>
+    <div class="kpi-card" onclick="openModal('Oda Geceleme','25.926','3.792 rezervasyon|Oda ortalaması: €224,47|Kişi ortalaması: €83,78')">
+      <div class="kpi-label">Oda Geceleme</div>
+      <div class="kpi-val">25.926</div>
+      <div class="kpi-sub">Ort. ~6,8 gece/rezervasyon</div>
+    </div>
+    <div class="kpi-card" onclick="openModal('Oda Ortalaması','€224,47','Gece başına ortalama gelir|Mayıs: €215,23 (+%4,3)|Kişi ortalaması: €83,78')">
+      <div class="kpi-label">Oda Ort. Geliri</div>
+      <div class="kpi-val">€224,47</div>
+      <div class="kpi-sub">Kişi ort. €83,78</div>
+    </div>
+    <div class="kpi-card" onclick="openModal('İptal','302','3.792 rezervasyon üzerinden|İptal oranı: %8,0|Mayıs: %18,2 (belirgin iyileşme)')">
+      <div class="kpi-label">İptal</div>
+      <div class="kpi-val">302</div>
+      <div class="kpi-sub">İptal oranı %8,0 (Mayıs %18,2)</div>
+    </div>
+  </div>
+  <h3 style="font-size:15px;margin:16px 0 10px;color:var(--green-dark)">Acenta Bazlı Kırılım (Gece)</h3>
+  <div class="table-wrap" style="margin-top:8px">
+    <table>
+      <thead><tr><th>Acenta / Kanal</th><th class="num">Gece</th></tr></thead>
+      <tbody>
+        <tr><td>ANEX TOUR</td><td class="num">3.743</td></tr>
+        <tr><td>ODEON TURİZM</td><td class="num">3.280</td></tr>
+        <tr><td>FIT HOLIDAYS</td><td class="num">2.930</td></tr>
+        <tr><td>PEGAS TOURISTIK</td><td class="num">2.275</td></tr>
+        <tr><td>ROCKET DMC</td><td class="num">1.293</td></tr>
+        <tr style="background:#F0FDF4"><td><strong>CALLCENTER</strong></td><td class="num">1.008 <span class="badge" style="font-size:10px">€290.148 / ₺15,41M</span></td></tr>
+        <tr><td>BOOKING.COM</td><td class="num">926</td></tr>
+        <tr><td>MOTUS TURİZM</td><td class="num">880</td></tr>
+        <tr><td style="color:var(--muted)">Diğer Acenta/Kanallar</td><td class="num" style="color:var(--muted)">9.591</td></tr>
+        <tr class="total-row"><td>TOPLAM</td><td class="num">25.926 gece / €5.819.679 / ₺309.035.709</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="callout muted" style="background:var(--bg-alt);border-left-color:var(--muted-light)">Kaynak: paylaştığınız Drive klasöründeki "sedna verisi ota, call center" görseli. "Diğer Acenta/Kanallar" satırı, listelenen 8 acentanın dışında kalan tüm kanalların toplamıdır.</div>
+  <div style="margin-top:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+    <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:10px;padding:16px">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:#15803D;margin-bottom:8px">Temmuz 2026 Giriş</div>
+      <div style="font-size:24px;font-weight:800;color:#15803D">156</div>
+      <div style="font-size:12px;color:var(--muted)">Haziran'da alınan Temmuz rezervasyonu</div>
+    </div>
+    <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:10px;padding:16px">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:#15803D;margin-bottom:8px">Ağustos 2026 Giriş</div>
+      <div style="font-size:24px;font-weight:800;color:#15803D">155</div>
+      <div style="font-size:12px;color:var(--muted)">Haziran'da alınan Ağustos rezervasyonu</div>
+    </div>
+    <div style="background:#FFF7ED;border:1px solid #FDE68A;border-radius:10px;padding:16px">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;color:#92400E;margin-bottom:8px">Kasım 2026 Giriş</div>
+      <div style="font-size:24px;font-weight:800;color:#92400E">283</div>
+      <div style="font-size:12px;color:var(--muted)">Erken sezon rezervasyonları — güçlü talep</div>
+    </div>
+  </div>
+</section>
+
+<!-- CALL CENTER -->
+<section class="section" id="sec-h-cc">
+  <div class="section-header">
+    <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 3h3l1.5 3.5-2 1.5c.8 1.8 2 3 3.8 3.8l1.5-2L16 11v3a2 2 0 01-2 2C6.5 16 4 9.5 5 3z"/></svg></div>
+    <div><div class="section-title">Call Center Performansı</div><div class="section-sub">Haziran 2026 · Sedna kayıt tarihi bazlı · Oda geceleme &amp; gelir</div></div>
+  </div>
+  <div class="kpi-grid kpi-grid-3">
+    <div class="kpi-card" onclick="openModal('CC Oda Geceleme','1.008','Haziran ayında Call Center kanalından gerçekleşen oda geceleme sayısı (Sedna Sistem 1)')">
+      <div class="kpi-label">Oda Geceleme</div>
+      <div class="kpi-val">1.008</div>
+      <div class="kpi-sub">Sedna Sistem 1 (Yıllık)</div>
+    </div>
+    <div class="kpi-card" onclick="openModal('CC Oda Geliri','€290.148 · ₺15.409.969','1.008 oda geceleme|₺15.409.969 TL eşdeğeri|Kaynak: Sedna kayıt tarihi')">
+      <div class="kpi-label">Toplam Ciro</div>
+      <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap">
+        <div class="kpi-val">€290.1K</div>
+      </div>
+      <div class="kpi-sub" style="margin-top:4px">
+        <span style="color:var(--muted);font-size:10px">TL eşdeğeri:</span><br>
+        <span style="font-weight:800;font-size:14px;color:var(--green)">≈ ₺15.41M</span>
+      </div>
+    </div>
+    <div class="kpi-card" onclick="openModal('Kanal Payı','%3,9 (Ciro)','Toplam €5.819.679 ciro içinde Call Center payı (Sedna Sistem 1)')">
+      <div class="kpi-label">Kanal Payı</div>
+      <div class="kpi-val">%3,9</div>
+      <div class="kpi-sub">Toplam ciro bazında</div>
+    </div>
+  </div>
+  <div class="callout muted" style="background:var(--bg-alt);border-left-color:var(--muted-light);margin-top:16px">Gelir rakamları Sedna kayıt-tarihi verisinden hesaplanmıştır; giriş-tarihi bazlı Satış Raporları ile karıştırılmamalıdır.</div>
+</section>
+
+<!-- FAAALİYET RAPORU -->
+<section class="section" id="sec-h-faaliyet">
+  <div class="section-header">
+    <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="5" y="3" width="10" height="14" rx="2"/><path d="M8 7h4M8 10h4M8 13h2"/></svg></div>
+    <div><div class="section-title">Aylık Faaliyet Raporu</div><div class="section-sub">Haziran 2026 · Tamamlanan çalışmalar · Kategori bazlı</div></div>
+  </div>
+  <div class="accordion open" onclick="toggleAccordion(this)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 2L4 12h7l-2 6 9-10h-7l2-6z"/></svg> Dijital Pazarlama &amp; Reklam</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner"><ul>
+      <li><strong>PMAX kampanyaları Haziran boyunca duraklatıldı</strong> — arama kampanyaları tek başına yönetildi; ₺69.233 harcamayla 5.082 tıklama ve 1.411 dönüşüm elde edildi.</li>
+      <li><strong>Son Dakika İndirim TR kampanyası</strong> %12.53 CTR ile Haziran'ın en verimli kampanyası olarak öne çıktı.</li>
+      <li><strong>Meta web trafik kampanyası</strong> aktif tutuldu; 22.489 tıklama, ₺0.63 CPC ile sektör ortalamasının çok altında maliyet sağlandı.</li>
+      <li><strong>Organik CTR %0.81 → %1.84'e yükseldi</strong> — arama sıralaması 28.4 → 6.40 dramatik iyileşme kaydedildi.</li>
+      <li><strong>10 Temmuz'a kadar geçerli dijital pazarlama kampanyası (Meta)</strong> yayına alındı; ilk sonuçlar olumlu seyrediyor.</li>
+    </ul></div></div>
+  </div>
+  <div class="accordion" onclick="toggleAccordion(this)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="2" width="7" height="7" rx="1.5"/><rect x="11" y="2" width="7" height="7" rx="1.5"/><rect x="2" y="11" width="7" height="7" rx="1.5"/><rect x="11" y="11" width="7" height="7" rx="1.5"/></svg> Sosyal Medya &amp; İçerik</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner"><ul>
+      <li><strong>Instagram görüntüleme 249.200</strong> (+%48) — organik erişim 39.500 kişiye ulaştı, 397 yeni takipçi kazanıldı.</li>
+      <li><strong>Facebook görüntüleme 271.500</strong> (+%347) — reklam destekli organik büyüme; 140.953 kişi içeriği gördü.</li>
+      <li>Reels formatında yaz sezonu içerikleri yayınlandı; profil ziyareti Instagram'da 7.900, Facebook'ta 7.100'e ulaştı.</li>
+      <li>Yeni influencer işbirliği bulundu: <a href="https://www.instagram.com/gulmirkelamm/" target="_blank">@gulmirkelamm</a>.</li>
+      <li>Yeni fotoğraflar kategorilere ayrılarak arşivlendi.</li>
+    </ul></div></div>
+  </div>
+  <div class="accordion" onclick="toggleAccordion(this)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="5" y="3" width="10" height="14" rx="2"/><path d="M8 7h4M8 10h4M8 13h2"/></svg> MICE, Kurumsal Projeler &amp; Web Hazırlıkları</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner"><ul>
+      <li><strong>MICE hazırlığı tamamlandı.</strong></li>
+      <li><strong>COP31</strong> ve <strong>"uzay kongresi"</strong> için ayrı landing page'ler oluşturuldu.</li>
+      <li>Medya hazırlık planı ilgili taraflara gönderildi.</li>
+      <li>Yeni <strong>"fact sheet"</strong> web sitesi hazırlığına başlandı.</li>
+    </ul></div></div>
+  </div>
+  <div class="accordion" onclick="toggleAccordion(this)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 3h3l1.5 3.5-2 1.5c.8 1.8 2 3 3.8 3.8l1.5-2L16 11v3a2 2 0 01-2 2C6.5 16 4 9.5 5 3z"/></svg> Satış &amp; Rezervasyon</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner"><ul>
+      <li><strong>Toplam ciro €5.819.679</strong> (Sedna Sistem 1, kayıt tarihi) — 25.926 oda geceleme, 3.792 rezervasyon gerçekleşti.</li>
+      <li><strong>Call Center kanalı €290.148 EUR (≈ ₺15,41M TL)</strong> gelir üretti (Sedna Sistem 1).</li>
+      <li>Aynı ay içi (Sistem 2 — anlık) satış: <strong>€782.589</strong>, 623 rezervasyon.</li>
+      <li>İptal oranı %18,2'den <strong>%8,0'e</strong> geriledi — belirgin iyileşme.</li>
+      <li>Temmuz (156) ve Ağustos (155) için advance rezervasyonlar alındı; Kasım için 283 rezervasyon ile kış sezonu talebi güçlü görünüyor.</li>
+    </ul></div></div>
+  </div>
+</section>
+
+<!-- ÖZET -->
+<section class="section" id="sec-h-ozet">
+  <div class="section-header">
+    <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M10 2l2.4 7.4H20l-6.2 4.5 2.4 7.4L10 17l-6.2 4.3 2.4-7.4L0 9.4h7.6L10 2z"/></svg></div>
+    <div><div class="section-title">Haziran 2026 — Genel Değerlendirme</div><div class="section-sub">Reklam harcaması · Gelir · ROAS · Öne çıkanlar</div></div>
+  </div>
+  <div class="three-col">
+    <div style="padding:26px;background:var(--green-light);border:1px solid var(--green-mid);border-radius:var(--radius)">
+      <div style="width:38px;height:38px;background:var(--green);border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:16px">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="8"/><path d="M7 10l2 2 4-4"/></svg>
+      </div>
+      <div style="font-size:14px;font-weight:700;color:#166534;margin-bottom:12px">Güçlü Yönler</div>
+      <div style="font-size:14px;color:#166534;line-height:2">Organik CTR %1.84 (sektör ort. %0.6–1.2 üzerinde) · Organik sıralama 6.40 (Mayıs 28.4 → dramatik iyileşme) · Meta CTR %8.2 (sektör 3x üstü) · CPC ₺0.63 (sektör ort. ₺2–5) · Sedna Sistem 1 toplam ciro €5,82M · Anlık ROAS (Sistem 2) 71,9x · İptal oranı %18,2 → %8,0 (belirgin iyileşme) · Instagram +%48 görüntüleme · Facebook +%347 görüntüleme · CC ROAS (Sistem 1) 26,6x (CC geliri ₺15,41M / toplam harcama ₺578.855)</div>
+    </div>
+    <div style="padding:26px;background:#FFFBEB;border:1px solid #FDE68A;border-radius:var(--radius)">
+      <div style="width:38px;height:38px;background:#F59E0B;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:16px">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"><path d="M10 3L2 17h16L10 3z"/><path d="M10 8v4M10 14v.5"/></svg>
+      </div>
+      <div style="font-size:14px;font-weight:700;color:#92400E;margin-bottom:12px">Gelişim Alanları</div>
+      <div style="font-size:14px;color:#92400E;line-height:1.9">
+        <strong>Google Ads arama tıklaması 11.384</strong> — PMAX dahil toplam 413.657 tıklama; arama kampanyaları CTR ve dönüşüm açısından iyi performans gösterdi ancak PMAX mikro-dönüşümlerinin CC'ye yansıması doğrudan izlenemiyor ·
+        <strong>Sistem 2 (Anlık) CC bazlı ROAS 4,7x</strong> — Mayıs'a göre düşüş; nedenleri incelenmeli ·
+        <strong>CC haftalık çağrı/kapanış verisi eksik</strong> — izleme güçlendirilmeli
+      </div>
+    </div>
+    <div style="padding:26px;background:#EFF6FF;border:1px solid #BFDBFE;border-radius:var(--radius)">
+      <div style="width:38px;height:38px;background:#2563EB;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:16px">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"><path d="M2 14l5-5 3 3 5-6"/><path d="M12 6h4v4"/></svg>
+      </div>
+      <div style="font-size:14px;font-weight:700;color:#1E40AF;margin-bottom:12px">Reklam Verimliliği</div>
+      <div style="font-size:14px;color:#1E40AF;line-height:1.9">
+        <strong>Sistem 1 — CC ROAS: 26,6x</strong> — Call Center geliri ₺15.409.969 / Toplam reklam harcaması ₺578.855 (Google ₺564.713 + Meta ₺14.142) ·
+        <strong>Sistem 1 — Makro/Toplam ROAS: 533,9x</strong> — OTA/acenta kanallarının kendi harcamasını içermediği için şişirilmiş, bilgi amaçlı ·
+        <strong>Sistem 2 — Anlık ROAS: 71,9x</strong> (toplam bazlı) / 4,7x (CC bazlı) ·
+        <strong>Sektör ortalaması 4–8x</strong> — Belconti Sistem 1 CC ROAS'ı (26,6x) ile sektörün yaklaşık 3–4 katı verimlilikte
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEMMUZ PLAN -->
+
+</div><!-- /content-haziran -->
+
+<!-- ════════════════ TEMMUZ (BOŞ) ════════════════ -->
+<div id="content-temmuz" class="month-content">
+  <div class="coming-soon">
+    <div class="coming-soon-icon"><svg width="30" height="30" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="4" width="14" height="14" rx="2"/><path d="M3 8h14M7 2v4M13 2v4"/></svg></div>
+    <div class="coming-soon-title">Temmuz 2026 Raporu</div>
+    <div class="coming-soon-sub">Temmuz 2026 dijital performans verileri ve pazarlama planı hazırlanmaktadır.</div>
+  </div>
+</div>
+
+<!-- DETAIL MODAL -->
+<div class="modal-overlay" id="modal" onclick="closeModalOv(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('modal').classList.remove('open')">&#10005;</button>
+    <div class="modal-kpi-title" id="modalTitle"></div>
+    <div class="modal-kpi-val" id="modalVal"></div>
+    <div class="modal-details" id="modalDetails"></div>
+  </div>
+</div>
+
+<!-- CHART MODAL -->
+<div class="chart-modal" id="chartModal" onclick="closeChartModalOv(event)">
+  <div class="chart-modal-inner">
+    <button class="chart-modal-close" onclick="document.getElementById('chartModal').classList.remove('open')">&#10005;</button>
+    <div style="font-size:18px;font-weight:700;color:var(--text);margin-bottom:4px" id="chartModalTitle"></div>
+    <div style="font-size:13px;color:var(--muted);margin-bottom:28px" id="chartModalSub"></div>
+    <div class="chart-modal-canvas"><canvas id="chartModalCanvas"></canvas></div>
+  </div>
+</div>
+
+<footer>
+  <div>
+    <div class="footer-brand">Belconti Resort Hotel</div>
+    <div class="footer-sub">Dijital Performans Raporu · Mayıs 2026 · PMA Partner</div>
+  </div>
+  <span class="footer-badge">Gizlilik: Dahili Kullanım</span>
+</footer>
+
+<script>
+// ── MONTH SWITCH ──
+function switchMonth(id, el) {
+  document.querySelectorAll('.month-content').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.month-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.section-nav').forEach(n => n.style.display = 'none');
+  document.getElementById('content-' + id).classList.add('active');
+  el.classList.add('active');
+  document.getElementById('nav-' + id).style.display = 'flex';
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+// ── SCROLL ──
+function scrollSec(id) {
+  const el = document.getElementById(id);
+  if (el) { const top = el.getBoundingClientRect().top + window.scrollY - 110; window.scrollTo({top, behavior:'smooth'}); }
+}
+
+// ── ROAS CALCULATOR ──
+const CC_TL = 8028716;
+const CC_EUR = 57703;
+const AD_SPEND = 527341;
+function fmt(n){return '₺'+Math.round(n).toLocaleString('tr-TR')}
+
+// ── AI ACTIONS TOGGLE ──
+function toggleAIActionsH() {
+  const el = document.getElementById('aiActionsH');
+  const chevron = document.getElementById('aiChevronH');
+  const btn = document.getElementById('aiToggleBtnH');
+  if (el.style.display === 'none') {
+    el.style.display = 'block';
+    chevron.textContent = '▴';
+    btn.classList.add('open');
+  } else {
+    el.style.display = 'none';
+    chevron.textContent = '▾';
+    btn.classList.remove('open');
+  }
+}
+function toggleAIActions() {
+  const box = document.getElementById('aiActions');
+  const chevron = document.getElementById('aiChevron');
+  const btn = document.getElementById('aiToggleBtn');
+  const isOpen = box.style.display !== 'none';
+  box.style.display = isOpen ? 'none' : 'block';
+  chevron.classList.toggle('open', !isOpen);
+}
+
+// ── ACCORDION ──
+function toggleAccordion(el) { el.classList.toggle('open'); }
+
+// ── ROAS 2-SISTEM SEKMELERI ──
+function switchRoasTabH(which, btn) {
+  var section = btn.closest('.section');
+  var buttons = section.querySelectorAll('.roas-tabs .roas-nav-btn');
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].classList.remove('active');
+  }
+  btn.classList.add('active');
+  var panels = section.querySelectorAll('.roas-panel-h');
+  for (var j = 0; j < panels.length; j++) {
+    panels[j].style.display = panels[j].classList.contains('roas-panel-h-' + which) ? '' : 'none';
+  }
+}
+function switchRoasTabM(which, btn) {
+  var section = btn.closest('.section');
+  var buttons = section.querySelectorAll('.roas-tabs .roas-nav-btn');
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].classList.remove('active');
+  }
+  btn.classList.add('active');
+  var panels = section.querySelectorAll('.roas-panel-m');
+  for (var j = 0; j < panels.length; j++) {
+    panels[j].style.display = panels[j].classList.contains('roas-panel-m-' + which) ? '' : 'none';
+  }
+}
+
+// ── DETAIL MODAL ──
+function openModal(title, val, details) {
+  document.getElementById('modalTitle').textContent = title;
+  document.getElementById('modalVal').textContent = val;
+  const det = document.getElementById('modalDetails');
+  det.innerHTML = '';
+  details.split('|').forEach(d => {
+    const p = d.indexOf(':');
+    const div = document.createElement('div');
+    div.className = 'modal-detail-row';
+    if (p > 0) {
+      div.innerHTML = '<span>' + d.slice(0,p).trim() + '</span><span>' + d.slice(p+1).trim() + '</span>';
+    } else {
+      div.innerHTML = '<span style="font-weight:500">' + d + '</span>';
+    }
+    det.appendChild(div);
+  });
+  document.getElementById('modal').classList.add('open');
+}
+function closeModalOv(e) { if (e.target.id === 'modal') document.getElementById('modal').classList.remove('open'); }
+
+// ── CHART MODAL ──
+let modalChart = null;
+const chartConfigs = {};
+function openChartModal(srcId, title, sub) {
+  document.getElementById('chartModalTitle').textContent = title;
+  document.getElementById('chartModalSub').textContent = sub;
+  const src = Chart.getChart(srcId);
+  if (!src) return;
+  if (modalChart) { modalChart.destroy(); modalChart = null; }
+  const canvas = document.getElementById('chartModalCanvas');
+  const ctx = canvas.getContext('2d');
+  modalChart = new Chart(ctx, {
+    type: src.config.type,
+    data: JSON.parse(JSON.stringify(src.config.data)),
+    options: Object.assign({}, JSON.parse(JSON.stringify(src.config.options)), {
+      responsive: true, maintainAspectRatio: false,
+      plugins: Object.assign({}, (src.config.options||{}).plugins, {legend:{display:true,position:'top'}})
+    })
+  });
+  document.getElementById('chartModal').classList.add('open');
+}
+function closeChartModalOv(e) {
+  if (e.target.id === 'chartModal') { document.getElementById('chartModal').classList.remove('open'); }
+}
+
+// ── SCROLL SPY ──
+const spy = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+      const a = document.querySelector('.nav-link[onclick*="' + e.target.id + '"]');
+      if (a) a.classList.add('active');
+    }
+  });
+}, {rootMargin:'-60px 0px -55% 0px', threshold:0});
+document.querySelectorAll('section[id]').forEach(s => spy.observe(s));
+
+// ── CHARTS ──
+const G = '#16A34A', GL = '#86EFAC', GLL = '#DCFCE7', BDR = '#E5E7EB';
+const font = {family:"Inter,sans-serif",size:12};
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  // Traffic Sources
+  new Chart(document.getElementById('chartTraffic'), {
+    type:'bar',
+    data:{
+      labels:['Reklam Ağı (Google+Meta)','Doğrudan Giriş','Organik Google','Ücretli Google'],
+      datasets:[{label:'Oturum',data:[355000,7000,6400,5800],
+        backgroundColor:[G,GL,'#BBF7D0','#D1FAE5'],borderRadius:6,borderSkipped:false}]
+    },
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' '+c.raw.toLocaleString('tr-TR')+' oturum'}}},
+      scales:{x:{grid:{color:BDR},ticks:{font,callback:v=>v>=1000?(v/1000)+'K':v}},y:{grid:{display:false},ticks:{font:{...font,weight:'600'}}}}}
+  });
+
+  // Google Ads
+  new Chart(document.getElementById('chartGads'), {
+    type:'bar',
+    data:{
+      labels:['PMAX TR','PMAX DE','PMAX UK','Marka Arama','Diğer'],
+      datasets:[
+        {label:'Tıklama',data:[322000,68000,38000,36935,11000],backgroundColor:G,borderRadius:4,yAxisID:'y'},
+        {label:'Harcama (₺)',data:[310000,91000,52000,48000,23315],backgroundColor:GLL,borderRadius:4,yAxisID:'y2'}
+      ]
+    },
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{position:'top',labels:{font,boxWidth:12}}},
+      scales:{
+        y:{position:'left',grid:{color:BDR},ticks:{font,callback:v=>v>=1000?(v/1000)+'K':v},title:{display:true,text:'Tıklama',font}},
+        y2:{position:'right',grid:{display:false},ticks:{font,callback:v=>'₺'+(v>=1000?(v/1000).toFixed(0)+'K':v)},title:{display:true,text:'Harcama (₺)',font}}
+      }}
+  });
+
+  // Ülke Harcama
+  new Chart(document.getElementById('chartUlke'), {
+    type:'bar',
+    data:{
+      labels:['Türkiye','Almanya','B. Krallık','Polonya','Diğer'],
+      datasets:[{label:'Harcama (₺)',
+        data:[316358,221517,126755,30143,58056],
+        backgroundColor:[G,GL,'#FDE68A','#FCA5A5','#CBD5E1'],
+        borderRadius:6,borderSkipped:false}]
+    },
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' ₺'+c.raw.toLocaleString('tr-TR')}}},
+      scales:{x:{grid:{color:BDR},ticks:{font,callback:v=>'₺'+(v>=1000?(v/1000).toFixed(0)+'K':v)}},y:{grid:{display:false},ticks:{font:{...font,weight:'600'}}}}}
+  });
+
+  // Bütçe Dağılımı
+  new Chart(document.getElementById('chartBudget'), {
+    type:'bar',
+    data:{
+      labels:['TR Arama','TR PMAX','Almanya-Türkler','Remarketing','Son Dakika'],
+      datasets:[{label:'Bütçe (₺)',
+        data:[200000,120000,120000,90000,70000],
+        backgroundColor:[G,GL,'#60A5FA','#FDE68A','#FCA5A5'],
+        borderRadius:6,borderSkipped:false}]
+    },
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' ₺'+c.raw.toLocaleString('tr-TR')}}},
+      scales:{x:{grid:{display:false},ticks:{font}},y:{grid:{color:BDR},ticks:{font,callback:v=>'₺'+(v>=1000?(v/1000).toFixed(0)+'K':v)}}}}
+  });
+
+  // ── HAZİRAN CHARTS ──────────────────────────────────────
+  const elTH = document.getElementById('chartTrafficH');
+  if (elTH) new Chart(elTH, {
+    type:'bar',
+    data:{
+      labels:['Reklam Ağı (Google+Meta)','Doğrudan Giriş','Organik Google','Paid Social'],
+      datasets:[{label:'Kullanıcı',data:[169000,12000,5100,4200],
+        backgroundColor:[G,GL,'#BBF7D0','#D1FAE5'],borderRadius:6,borderSkipped:false}]
+    },
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' '+c.raw.toLocaleString('tr-TR')+' kullanıcı'}}},
+      scales:{x:{grid:{color:BDR},ticks:{font,callback:v=>v>=1000?(v/1000)+'K':v}},y:{grid:{display:false},ticks:{font:{...font,weight:'600'}}}}}
+  });
+
+  const elGH = document.getElementById('chartGadsH');
+  if (elGH) new Chart(elGH, {
+    type:'bar',
+    data:{
+      labels:['PMAX TR REV','TR Jenerik REV','DE Türkler','TR Jenerik Şub24','PMAX Isıtmalı TR','UK PMAX','DE PMAX','Son Dakika TR'],
+      datasets:[
+        {label:'Harcama (₺)',data:[207464,123306,92248,51078,22027,21445,16495,7150],backgroundColor:[G,G,GL,GL,'#BBF7D0','#BBF7D0','#D1FAE5','#D1FAE5'],borderRadius:8,borderSkipped:false,yAxisID:'y'},
+        {label:'Dönüşüm',data:[67801,2428,609,1241,6465,942,727,97],backgroundColor:'rgba(22,163,74,0.2)',borderRadius:8,borderSkipped:false,yAxisID:'y2'}
+      ]
+    },
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{position:'bottom',labels:{font,boxWidth:12}},
+        tooltip:{callbacks:{label:c=>c.datasetIndex===0?' ₺'+c.raw.toLocaleString('tr-TR')+' harcama':' '+c.raw.toLocaleString('tr-TR')+' dönüşüm'}}},
+      scales:{
+        y:{position:'left',grid:{color:BDR},ticks:{font,callback:v=>'₺'+(v>=1000?(v/1000).toFixed(0)+'K':v)},title:{display:true,text:'Harcama (₺)',font}},
+        y2:{position:'right',grid:{display:false},ticks:{font,callback:v=>v>=1000?(v/1000).toFixed(0)+'K':v},title:{display:true,text:'Dönüşüm',font}}
+      }}
+  });
+
+  const elRH = document.getElementById('chartRevenueH');
+  if (elRH) new Chart(elRH, {
+    type:'bar',
+    data:{
+      labels:['CC Ciro','Google Ads Harcama','Meta Harcama'],
+      datasets:[{label:'Tutar (₺)',
+        data:[8489202,564713,14142],
+        backgroundColor:[G,GLL,'#BBF7D0'],
+        borderRadius:8,borderSkipped:false}]
+    },
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' ₺'+c.raw.toLocaleString('tr-TR')}}},
+      scales:{x:{grid:{display:false},ticks:{font}},y:{grid:{color:BDR},ticks:{font,callback:v=>'₺'+(v>=1000000?(v/1000000).toFixed(1)+'M':v>=1000?(v/1000).toFixed(0)+'K':v)}}}}
+  });
+
+});
+</script>
+</body>
+</html>

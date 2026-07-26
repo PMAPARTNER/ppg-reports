@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cavomarina Beach — Monthly Marketing Report June 1, 2026 – July 1, 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --accent: #0E7C86;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #64748b;
+      --success: #10b981;
+      --danger: #f43f5e;
+      --warn: #f59e0b;
+      --radius: 16px;
+    }
+    html { scroll-padding-top: 110px; scroll-behavior: smooth; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; font-size: 14px; }
+    
+
+    /* ── Sticky header ──────────────────────────────── */
+    .hdr {
+      position: sticky; top: 0; z-index: 50;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 10px 24px;
+      background: #f8fafcf0; backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .hdr-left { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .hdr-logo { height: 30px; width: auto; object-fit: contain; flex-shrink: 0; display: block; }
+    /* Logo, tasarım-şablonu renginde bir katman (badge) üzerine oturur → beyaz/renkli logo HER fonda (açık/koyu) görünür. */
+    .hdr-logo-badge { display: inline-flex; align-items: center; justify-content: center; background: var(--accent); padding: 6px 11px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,.18); flex-shrink: 0; }
+    .hdr-name { font-size: 14px; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .hdr-period { font-size: 10px; color: var(--muted); margin-top: 1px; }
+    .hdr-badge { font-size: 9px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); border: 1.5px solid rgba(0,0,0,.12); padding: 3px 10px; border-radius: 99px; flex-shrink: 0; background: rgba(0,0,0,.04); }
+
+    /* ── Sticky nav ─────────────────────────────────── */
+    .nav {
+      position: sticky; top: 53px; z-index: 40;
+      display: flex; overflow-x: auto; gap: 2px; padding: 0 16px;
+      background: #f8fafce8; backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      scrollbar-width: none;
+    }
+    .nav::-webkit-scrollbar { display: none; }
+    .nav a {
+      display: inline-flex; align-items: center;
+      padding: 10px 12px;
+      font-size: 11px; font-weight: 600; color: var(--muted);
+      text-decoration: none; white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: color .15s, border-color .15s;
+    }
+    .nav a:hover, .nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+    /* ── Main ───────────────────────────────────────── */
+    .main { max-width: 1100px; margin: 0 auto; padding: 28px 16px 64px; }
+
+    /* ── Hero KPI ───────────────────────────────────── */
+    .hero-title { font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .hero-sub { font-size: 12px; color: var(--muted); margin-bottom: 20px; }
+    .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
+    .kpi {
+      display: flex; flex-direction: column; border-radius: 12px; padding: 16px;
+      border: 1px solid var(--border); background: var(--card);
+    }
+    .kpi-lbl { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 8px; }
+    .kpi-val { font-size: 22px; font-weight: 700; line-height: 1; color: var(--accent); }
+    .kpi-sub { font-size: 10px; color: var(--muted); margin-top: 4px; }
+
+    /* ── Section card ───────────────────────────────── */
+    .sec { border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; margin-bottom: 20px; scroll-margin-top: 110px; background: var(--card); }
+    .sec-hdr { display: flex; align-items: center; gap: 12px; padding: 14px 20px; border-bottom: 1px solid var(--border); }
+    .sec-icon { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 8px; font-size: 15px; flex-shrink: 0; }
+    .sec-title { font-size: 13px; font-weight: 700; color: var(--text); }
+    .sec-body { padding: 20px; }
+
+    /* ── Tables ─────────────────────────────────────── */
+    .tbl { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .tbl th { padding: 8px 10px 8px 0; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); border-bottom: 1px solid var(--border); text-align: left; }
+    .tbl td { padding: 8px 10px 8px 0; color: var(--muted); border-bottom: 1px solid #e2e8f0cc; vertical-align: middle; }
+    .tbl td.acc { color: var(--text); font-weight: 700; }
+    .tbl td.num { text-align: right; }
+    .tbl tr:last-child td { border-bottom: none; }
+
+    /* ── Two-col ────────────────────────────────────── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+    /* ── Change badge ───────────────────────────────── */
+    .up { font-size: 10px; font-weight: 700; color: var(--success); }
+    .dn { font-size: 10px; font-weight: 700; color: var(--danger); }
+    .neu { font-size: 10px; font-weight: 600; color: var(--muted); }
+
+    /* ── Sub heading ────────────────────────────────── */
+    .sh { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 12px; margin-top: 20px; }
+    .sh:first-child { margin-top: 0; }
+
+    /* ── Stat box ───────────────────────────────────── */
+    .stat-box { border-radius: 12px; border: 1px solid var(--border); background: var(--bg); padding: 16px; text-align: center; }
+    .stat-val { font-size: 22px; font-weight: 700; color: var(--accent); }
+    .stat-lbl { font-size: 10px; color: var(--muted); margin-top: 4px; }
+
+    /* ── AI Insight ─────────────────────────────────── */
+    .insight { border-radius: 12px; border: 1px solid #e2e8f0; padding: 18px 20px; font-size: 13px; line-height: 1.8; color: var(--text); }
+    .prose-block { border-left: 3px solid var(--accent); padding: 14px 18px; font-size: 13px; line-height: 1.8; background: var(--bg); border-radius: 0 8px 8px 0; }
+    .prose-block ul { margin: 8px 0 8px 18px; }
+    .prose-block li { margin-bottom: 3px; }
+    .steps { list-style: none; }
+    .steps li { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid #e2e8f0cc; font-size: 13px; }
+    .steps li:last-child { border-bottom: none; }
+    .step-n { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; background: var(--accent); color: #fff; border-radius: 50%; font-size: 10px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+
+    /* ── Footer ─────────────────────────────────────── */
+    .footer { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; border-top: 1px solid var(--border); margin-top: 8px; font-size: 11px; color: var(--muted); }
+
+    /* ── No-data warning ────────────────────────────── */
+    .warn { border-radius: 12px; border: 1px solid #fca5a5; background: rgba(254,202,202,.5); color: #991b1b; padding: 12px 18px; font-size: 12px; margin-bottom: 16px; }
+
+    /* ── Charts ─────────────────────────────────────── */
+    .chart-wrap { position: relative; width: 100%; margin: 6px 0 4px; }
+    .chart-wrap canvas { max-width: 100%; }
+    .chart-cap { font-size: 10px; color: var(--muted); text-align: center; margin-top: 4px; }
+    .chart-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+
+    /* ── Data explainer (giriş seviyesi, olumlu anlatım) ── */
+    .explain { font-size: 11.5px; line-height: 1.7; color: var(--muted); background: var(--bg); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 4px 0 14px; }
+    .explain strong { color: var(--text); }
+    .period-banner { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 12px 18px; margin-bottom: 18px; font-size: 12px; color: var(--muted); }
+    .period-banner b { color: var(--text); }
+    .period-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(0,0,0,.04); color: var(--accent); border: 1px solid rgba(0,0,0,.12); border-radius: 99px; padding: 3px 12px; font-weight: 700; font-size: 11px; }
+
+    /* ── Responsive (kusursuz mobil) ─────────────────── */
+    @media (max-width: 760px) {
+      .kpi-grid { grid-template-columns: repeat(2,1fr); }
+      .two-col, .chart-2col { grid-template-columns: 1fr; }
+      .main { padding: 16px 10px 40px; }
+      .hdr { padding: 8px 12px; }
+      .hero-title { font-size: 18px; }
+      .kpi-val { font-size: 18px; } .stat-val { font-size: 18px; }
+      .sec-body { padding: 14px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .tbl { font-size: 11px; } .tbl th, .tbl td { padding: 7px 8px 7px 0; }
+    }
+    @media (max-width: 440px) {
+      .kpi-grid { grid-template-columns: 1fr; }
+      .hdr-name { font-size: 12px; max-width: 42vw; }
+      .hdr-badge { display: none; }
+      .hero-title { font-size: 16px; }
+      .nav a { padding: 9px 9px; font-size: 10.5px; }
+    }
+    @media print {
+      @page { size: A4 portrait; margin: 12mm; }
+      body { background: #fff; color: #000; }
+      .hdr, .nav { position: static; background: none; backdrop-filter: none; border: none; }
+      .card, .sec { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky header -->
+  <header class="hdr">
+    <div class="hdr-left">
+      
+      <div style="min-width:0">
+        <div class="hdr-name">Cavomarina Beach</div>
+        <div class="hdr-period">Digital Summary — June 1, 2026 – July 1, 2026</div>
+      </div>
+    </div>
+    <span class="hdr-badge">PMA PARTNER</span>
+  </header>
+
+  <!-- Sticky nav -->
+  <nav class="nav"><a href="#summary">📊 Özet</a><a href="#analytics">🌐 GA4</a><a href="#google-ads">🎯 Google Ads</a><a href="#meta-ads">📱 Meta Ads</a><a href="#reservations">🏨 Rezervasyon</a><a href="#budget">💰 Budget</a><a href="#reviews">💬 Reviews</a><a href="#activity">📝 Faaliyet</a><a href="#recommendations">🤖 Öneriler</a></nav>
+
+  <main class="main">
+
+    <!-- No-data warning — distinguishes "no data" from "needs OAuth re-consent" -->
+    <div class="warn">⚠️ Missing data channels: GSC, Social Media<br><span style="font-weight:normal;font-size:11px;opacity:.85;">GSC, Social Media returned no data for this period.</span></div>
+
+    <!-- Dönem açıklaması — giriş seviyesi kullanıcı için -->
+    <div class="period-banner">
+      <span class="period-pill">📅 June 1, 2026 – July 1, 2026</span>
+      <span><b>This report</b> summarizes digital marketing & booking performance for the date range above. Percentage changes compare to the <b>previous equivalent period</b>; ▲ = up, ▼ = down. All revenue is net EUR (€).</span>
+    </div>
+
+    
+    <section class="sec" id="sec-visual">
+      <div class="sec-hdr"><div class="sec-icon" style="background:rgba(0,0,0,.04);">📊</div><div class="sec-title">Visual Summary</div></div>
+      <div class="sec-body">
+        <div class="explain">The two key pictures of the week: <strong>which channels visitors arrived from</strong> and <strong>which agencies/operators drove the most revenue</strong>. Bigger slice/bar = bigger contribution.</div>
+        <div class="chart-2col">
+          <div class="chart-wrap"><canvas id="chChannels" height="230"></canvas><div class="chart-cap">Traffic channels — session share</div></div>
+          <div class="chart-wrap"><canvas id="chAgencies" height="230"></canvas><div class="chart-cap">Top agencies — net revenue (€)</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="summary" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">📊</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">EXECUTIVE SUMMARY</div>
+      <div class="sec-title">Key Performance Indicators</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Key metrics from all digital channels this month at a glance. <span style="opacity:.7">(June 1, 2026 – July 1, 2026)</span></div>
+    </div>
+  </div>
+      <div class="sec-body"><div class="kpi-grid"><div class="kpi">
+    <div class="kpi-lbl">Active Users (GA4)</div>
+    <div class="kpi-val">467</div>
+    <div class="kpi-sub">631 sessions</div>
+  </div><div class="kpi">
+    <div class="kpi-lbl">Reservation Income</div>
+    <div class="kpi-val">€278,770</div>
+    <div class="kpi-sub">204 reservations</div>
+  </div><div class="kpi">
+    <div class="kpi-lbl">Room Nights</div>
+    <div class="kpi-val">1,430</div>
+    <div class="kpi-sub">€195/night</div>
+  </div></div></div>
+    </section>
+<section id="analytics" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">🌐</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">WEB ANALYTICS</div>
+      <div class="sec-title">Google Analytics 4 — Web Performance</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">How many people visited the hotel website, where they came from, and which pages they viewed. <span style="opacity:.7">(June 1, 2026 – July 1, 2026)</span></div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="kpi-grid">
+          <div class="kpi">
+    <div class="kpi-lbl">Active Users</div>
+    <div class="kpi-val">467</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">New Users</div>
+    <div class="kpi-val">85</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Page Views</div>
+    <div class="kpi-val">1,806</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Avg. Engagement Duration</div>
+    <div class="kpi-val">3m 20s</div>
+    
+  </div>
+        </div>
+        <div style="margin-top:12px;padding:10px 14px;border-radius:10px;background:rgba(127,127,127,0.08);font-size:12px;line-height:1.6;color:var(--muted)"><b style="color:var(--text)">Year-over-Year (YoY)</b> — Users <b style="color:var(--danger)">▼ -67%</b> · Sessions <b style="color:var(--danger)">▼ -77%</b> · Page Views <b style="color:var(--danger)">▼ -70%</b> <span style="opacity:.8">(same period last year: 1,436 users)</span></div>
+        <div class="two-col">
+          <div>
+            <div class="sh">🔗 Traffic Sources</div>
+            <table class="tbl"><thead><tr><th>Source</th><th>Sessions</th><th>%</th></tr></thead><tbody><tr><td class="acc">Organic Search</td><td class="num">244</td><td class="num">54%</td></tr><tr><td class="acc">Direct</td><td class="num">85</td><td class="num">19%</td></tr><tr><td class="acc">Unassigned</td><td class="num">78</td><td class="num">17%</td></tr><tr><td class="acc">Paid Search</td><td class="num">26</td><td class="num">6%</td></tr><tr><td class="acc">Referral</td><td class="num">20</td><td class="num">4%</td></tr></tbody></table>
+          </div>
+          <div>
+            <div class="sh">🌍 Countries</div>
+            <table class="tbl"><thead><tr><th>Country</th><th>Users</th><th>%</th></tr></thead><tbody><tr><td class="acc">Germany</td><td class="num">125</td><td class="num">39%</td></tr><tr><td class="acc">United Kingdom</td><td class="num">89</td><td class="num">28%</td></tr><tr><td class="acc">Slovakia</td><td class="num">43</td><td class="num">13%</td></tr><tr><td class="acc">Greece</td><td class="num">33</td><td class="num">10%</td></tr><tr><td class="acc">Italy</td><td class="num">30</td><td class="num">9%</td></tr></tbody></table>
+          </div>
+        </div>
+        
+        
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 467 users and 631 sessions were measured. Revenue decisions should also track source/medium and booking conversion matching.</div>
+      </div>
+    </section>
+<section id="google-ads" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">🎯</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">GOOGLE ADS</div>
+      <div class="sec-title">Google Ads Performance</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Ad budget spent on Google, how many people were reached, and how many converted to reservations. <span style="opacity:.7">(June 1, 2026 – July 1, 2026)</span></div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="kpi-grid">
+          <div class="kpi">
+    <div class="kpi-lbl">Impressions</div>
+    <div class="kpi-val">0</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Clicks</div>
+    <div class="kpi-val">0</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Total Spend</div>
+    <div class="kpi-val">€0</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Conversions</div>
+    <div class="kpi-val">0</div>
+    
+  </div>
+        </div>
+        <div class="neu" style="font-size:12px;padding:12px 0">No active campaigns in this period.</div>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Google Ads generated 0 impressions and 0 clicks this period. Campaigns are actively reaching potential guests.</div>
+      </div>
+    </section>
+<section id="meta-ads" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">📱</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">META ADS</div>
+      <div class="sec-title">Facebook &amp; Instagram Ad Performance</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">How many people were reached by Facebook and Instagram ads, plus click and spend summary. <span style="opacity:.7">(June 1, 2026 – July 1, 2026)</span></div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="kpi-grid">
+          <div class="kpi">
+    <div class="kpi-lbl">Impressions</div>
+    <div class="kpi-val">0</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Clicks</div>
+    <div class="kpi-val">0</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Total Spend</div>
+    <div class="kpi-val">€0</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Reach</div>
+    <div class="kpi-val">0</div>
+    
+  </div>
+        </div>
+        <div class="neu" style="font-size:12px;padding:12px 0">No active campaigns in this period.</div>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Meta ads reached 0 people. Social advertising builds brand awareness that converts to direct bookings over time.</div>
+      </div>
+    </section>
+<section id="reservations" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">🏨</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">RESERVATIONS &amp; REVENUE</div>
+      <div class="sec-title">Booking-Date Pick-Up Performance (PMS)</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Total stay value, room nights, and channel contribution of reservations created in the report period; this is not stay-date room revenue. <span style="opacity:.7">(June 1, 2026 – July 1, 2026)</span></div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="kpi-grid">
+          <div class="kpi">
+    <div class="kpi-lbl">Net Booking Pick-Up Value</div>
+    <div class="kpi-val">€278,770</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Room Nights</div>
+    <div class="kpi-val">1,430</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Reservations</div>
+    <div class="kpi-val">204</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Cancellations</div>
+    <div class="kpi-val">0</div>
+    
+  </div>
+        </div>
+        <div class="two-col" style="max-width:420px;margin-bottom:20px">
+          <div class="stat-box"><div class="stat-val">€732</div><div class="stat-lbl">Revenue per Guest</div></div>
+          <div class="stat-box"><div class="stat-val">€195</div><div class="stat-lbl">Average Room-Night Value</div></div>
+        </div>
+        <div class="sh">🏢 Agency / Channel Breakdown</div>
+        <table class="tbl"><thead><tr><th>Agency / Channel</th><th>Room Nights</th><th>Revenue (€)</th><th>Per Guest (€)</th></tr></thead><tbody><tr><td class="acc">Schauinsland reisen</td><td class="num">436</td><td class="num acc">€90,308</td><td class="num">€941</td></tr><tr><td class="acc">DERTOUR Deutschland GmbH</td><td class="num">250</td><td class="num acc">€50,350</td><td class="num">€763</td></tr><tr><td class="acc">TUI DE</td><td class="num">153</td><td class="num acc">€30,553</td><td class="num">€826</td></tr><tr><td class="acc">OTS</td><td class="num">64</td><td class="num acc">€10,694</td><td class="num">€629</td></tr><tr><td class="acc">BYE BYE</td><td class="num">42</td><td class="num acc">€10,626</td><td class="num">€1,063</td></tr><tr><td class="acc">Cretan Holidays</td><td class="num">52</td><td class="num acc">€10,486</td><td class="num">€749</td></tr><tr><td class="acc">EasyJet</td><td class="num">66</td><td class="num acc">€10,299</td><td class="num">€542</td></tr><tr><td class="acc">ALLTOURS</td><td class="num">40</td><td class="num acc">€8,244</td><td class="num">€1,031</td></tr></tbody></table>
+        <div class="sh" style="margin-top:16px">🏷️ Rate Plan Breakdown (Non-Ref / ADR)</div>
+        <table class="tbl"><thead><tr><th>Rate Plan</th><th>Res.</th><th>Room Nights</th><th>Revenue (€)</th><th>ADR (€)</th></tr></thead><tbody><tr><td class="acc">BAR</td><td class="num">204</td><td class="num">1,430</td><td class="num acc">€278,770</td><td class="num acc">€197</td></tr></tbody></table>
+        <div class="sh" style="margin-top:16px">🛏️ Average Rate by Room Type (ADR)</div>
+        <table class="tbl"><thead><tr><th>Room Type</th><th>Room Nights</th><th>Revenue (€)</th><th>ADR (€)</th></tr></thead><tbody><tr><td class="acc">Standard Mountain View Room</td><td class="num">650</td><td class="num">€118,229</td><td class="num acc">€182</td></tr><tr><td class="acc">Standard Sea View Room</td><td class="num">359</td><td class="num">€81,264</td><td class="num acc">€226</td></tr><tr><td class="acc">Superior Swim Up Room</td><td class="num">135</td><td class="num">€27,347</td><td class="num acc">€226</td></tr><tr><td class="acc">Superior Sea View Room</td><td class="num">78</td><td class="num">€15,959</td><td class="num acc">€205</td></tr><tr><td class="acc">Superior SPA Room</td><td class="num">71</td><td class="num">€14,040</td><td class="num acc">€198</td></tr><tr><td class="acc">Anex Sup Swim Up Room</td><td class="num">48</td><td class="num">€8,576</td><td class="num acc">€179</td></tr><tr><td class="acc">Rooftop Penthouse Room</td><td class="num">48</td><td class="num">€7,325</td><td class="num acc">€153</td></tr><tr><td class="acc">Junior Suite Mountain View</td><td class="num">31</td><td class="num">€4,873</td><td class="num acc">€157</td></tr><tr><td class="acc">Garden Villa</td><td class="num">10</td><td class="num">€1,157</td><td class="num acc">€116</td></tr></tbody></table>
+
+        <!-- Veri Kaynağı ve Metodolojisi -->
+        <div class="meth-box" style="margin-top: 15px; padding: 10px; border-radius: 6px; background-color: var(--card-bg); border: 1px solid var(--border); font-size: 11px; line-height: 1.4;">
+          <strong style="color: var(--accent); display: block; margin-bottom: 4px;">ℹ️ Data Source & Methodology</strong>
+          <span style="color: var(--muted);">Basis: PMS booking creation date. The amount is the net booking value for the full stay; it is not stay-date room revenue or ad-attributed revenue. Average room-night value = net value divided by room nights. Cancellations are excluded and EUR values reflect configured commission rules.</span>
+        </div>
+
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 204 new reservations generated 1,430 room nights and €278,770 net booking pick-up. Average room-night value is €195; assess it alongside channel share, commission, and stay-date occupancy pressure.</div>
+      </div>
+    </section>
+<section id="budget" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">💰</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">BUDGET &amp; TARGET</div>
+      <div class="sec-title">Budget vs Actual vs Last Year</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Monthly revenue target, actual net revenue, and comparison to the same period last year (net EUR). <span style="opacity:.7">(June 1, 2026 – July 1, 2026)</span></div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="kpi-grid">
+          <div class="kpi">
+    <div class="kpi-lbl">Period Target</div>
+    <div class="kpi-val">€1,070,325</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Actual (Net)</div>
+    <div class="kpi-val">€1,026,680</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Last Year</div>
+    <div class="kpi-val">—</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Target Achieved</div>
+    <div class="kpi-val">96%</div>
+    
+  </div>
+        </div>
+        <div class="sh">📆 Monthly Breakdown (Net EUR)</div>
+        <table class="tbl"><thead><tr><th>Month</th><th>Target</th><th>Actual</th><th>Last Year</th><th>Target %</th><th>YoY</th></tr></thead><tbody><tr>
+      <td class="acc">June 2026</td>
+      <td class="num">€465,753</td>
+      <td class="num acc">€474,589</td>
+      <td class="num">€0</td>
+      <td class="num"><b style="color:var(--success)">102%</b></td>
+      <td class="num">—</td>
+    </tr><tr>
+      <td class="acc">July 2026</td>
+      <td class="num">€604,572</td>
+      <td class="num acc">€552,091</td>
+      <td class="num">€0</td>
+      <td class="num"><b style="color:var(--warn)">91%</b></td>
+      <td class="num">—</td>
+    </tr></tbody></table>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Net revenue of €1,026,680 was realized over the 2 months covering this period. That is 96% of the budget target — giving a clear roadmap for the rest of the period.</div>
+      </div>
+    </section>
+<section id="reviews" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">💬</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">GUEST REVIEWS</div>
+      <div class="sec-title">Period Review &amp; Reputation Summary</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">New guest reviews received this period, per-platform ratings, and trending topics. <span style="opacity:.7">(June 1, 2026 – July 1, 2026)</span></div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="kpi-grid">
+          <div class="kpi">
+    <div class="kpi-lbl">New Reviews</div>
+    <div class="kpi-val">19</div>
+    <div class="kpi-sub">previous period: 17</div>
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Avg. Rating</div>
+    <div class="kpi-val">4.0 / 5</div>
+    <div class="kpi-sub">▼ -0.6 vs previous period</div>
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Platforms</div>
+    <div class="kpi-val">4</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Top Improving Topic</div>
+    <div class="kpi-val">—</div>
+    
+  </div>
+        </div>
+        <div class="sh">⭐ Per-Platform Ratings (native scale)</div>
+        <table class="tbl"><thead><tr><th>Platform</th><th>Rating</th><th>Reviews</th><th>Previous</th><th>Change</th></tr></thead><tbody><tr>
+      <td class="acc">TripAdvisor</td>
+      <td class="num acc">4.4 / 5</td>
+      <td class="num">14</td>
+      <td class="num">5.0</td>
+      <td class="num"><span class="dn">↓ -0.6</span></td>
+    </tr><tr>
+      <td class="acc">Booking.com</td>
+      <td class="num acc">3.8 / 10</td>
+      <td class="num">3</td>
+      <td class="num">4.0</td>
+      <td class="num"><span class="dn">↓ -0.2</span></td>
+    </tr><tr>
+      <td class="acc">Google</td>
+      <td class="num acc">5.0 / 5</td>
+      <td class="num">1</td>
+      <td class="num">5.0</td>
+      <td class="num"><span class="neu">±0.0</span></td>
+    </tr><tr>
+      <td class="acc">Trip.com</td>
+      <td class="num acc">4.0 / 5</td>
+      <td class="num">1</td>
+      <td class="num">4.2</td>
+      <td class="num"><span class="dn">↓ -0.2</span></td>
+    </tr></tbody></table>
+        <div class="sh" style="margin-top:20px">🧭 Trending Topics</div>
+         <div style="display:flex;flex-wrap:wrap;gap:8px"><span style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:4px 10px;border-radius:99px;background:rgba(245,158,11,.13);color:var(--warn)">↓ Location <span style="opacity:.75;font-weight:500">4.2/5 · 7 mentions</span></span><span style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:4px 10px;border-radius:99px;background:rgba(245,158,11,.13);color:var(--warn)">↓ Beach <span style="opacity:.75;font-weight:500">4.3/5 · 17 mentions</span></span><span style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:4px 10px;border-radius:99px;background:rgba(245,158,11,.13);color:var(--warn)">↓ Room <span style="opacity:.75;font-weight:500">4.0/5 · 13 mentions</span></span></div>
+        <div class="sh" style="margin-top:20px">🗨️ In Guests' Words</div><div style="border-left:3px solid var(--success);border-radius:0 8px 8px 0;background:var(--bg);padding:10px 14px;margin-bottom:8px">
+      <div style="font-size:12px;line-height:1.7;color:var(--text)">“Great hotel - right by the sea. — Beautiful, small hotel right on the beach. Kavos is lively, but since the hotel is located on a side street right by the sea, you can easily avoid the hustle and bustle if you wish. The ”</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">TripAdvisor · 4.0/5 · 2026-06-30</div>
+    </div><div style="border-left:3px solid var(--border);border-radius:0 8px 8px 0;background:var(--bg);padding:10px 14px;margin-bottom:8px">
+      <div style="font-size:12px;line-height:1.7;color:var(--text)">“Pleasant”</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">Booking.com · 3.0/10 · 2026-06-27</div>
+    </div><div style="border-left:3px solid var(--success);border-radius:0 8px 8px 0;background:var(--bg);padding:10px 14px;margin-bottom:8px">
+      <div style="font-size:12px;line-height:1.7;color:var(--text)">“Great hotel, happy people, super good vibe, clean and in front of an amazing beach. Cavomarina highly recommend 👌”</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">Google · 5.0/5 · 2026-06-26</div>
+    </div>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 19 new guest reviews arrived this period, averaging 4.0/5. The score is slightly behind the previous period; the trending topics show exactly where to focus.</div>
+      </div>
+    </section>
+<section id="activity" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">📝</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">VERIFIED PERIOD RECORD</div>
+      <div class="sec-title">Results Measured in Source Systems</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Only results measured in connected PMS, advertising, GA4, and review sources; unverified activities are excluded. <span style="opacity:.7">(June 1, 2026 – July 1, 2026)</span></div>
+    </div>
+  </div>
+      <div class="sec-body"><div class="prose-block"><ul><li><strong>Booking pick-up:</strong> 204 new reservations generated 1430 room nights and €278,770 net booking value.</li><li><strong>Ad delivery:</strong> Reported spend, impressions, clicks, and platform conversions were monitored across Meta and Google. PMS revenue is attributed only when an explicit campaign match exists.</li><li><strong>Web analytics:</strong> The GA4 connection was validated; 467 users and 631 sessions were reported.</li><li><strong>Reputation:</strong> 19 new reviews and a normalized 4.0/5 average were monitored.</li></ul></div></div>
+    </section>
+<section id="recommendations" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">🤖</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">SUMMARY &amp; RECOMMENDATIONS</div>
+      <div class="sec-title">AI Analysis &amp; Next Steps</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">AI-generated analysis of all data with prioritized action recommendations. <span style="opacity:.7">(June 1, 2026 – July 1, 2026)</span></div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="insight" style="background:#0E7C8612;border-color:#0E7C8633"><p>Cavomarina Beach generated solid PMS revenue of €278,770 from 204 reservations and earned 19 new guest reviews with an average rating of 4, indicating strong on‑site performance and guest satisfaction. GA4 recorded 467 users and 631 sessions, showing decent digital engagement. However, ad spend was €0, resulting in no ad‑attributed bookings and a missed opportunity to boost revenue. Overall revenue reached 96% of the €1,070,325 target, falling short of the budget goal.</p></div>
+        <div class="sh" style="margin-top:20px">✅ Recommended Actions</div><ol class="steps"><li><span class="step-n">1</span>Launch targeted Google Ads and Meta campaigns with a defined budget to drive additional bookings.</li><li><span class="step-n">2</span>Set up conversion tracking to link ad clicks directly to PMS reservations, enabling future ROAS calculation.</li><li><span class="step-n">3</span>Improve website SEO and monitor organic performance once GSC data becomes available.</li><li><span class="step-n">4</span>Encourage guests to leave reviews and actively respond to maintain and improve the average rating.</li></ol>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span>Cavomarina Beach &middot; June 1, 2026 – July 1, 2026</span>
+      <span>PMA Partner &copy; 2026</span>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script>
+    (function(){
+      if (typeof Chart === 'undefined') {
+        // CDN engellendiğinde (ör. PDF render) boş canvas yerine kısa bir not göster
+        document.querySelectorAll('.chart-wrap canvas').forEach(function(c){
+          if (c.parentElement) c.parentElement.innerHTML = '<p style="color:var(--muted);font-size:12px">Charts offline — data is in the tables above.</p>';
+        });
+        return;
+      }
+      var D = {"channels":{"labels":["Organic Search","Direct","Unassigned","Paid Search","Referral"],"data":[244,85,78,26,20]},"agencies":{"labels":["Schauinsland reisen","DERTOUR Deutschland GmbH","TUI DE","OTS","BYE BYE","Cretan Holidays"],"data":[90308,50350,30553,10694,10626,10486]},"accent":"#0E7C86","muted":"#64748b"};
+      var palette = [D.accent, D.accent+'CC', '#F59E0B','#8B5CF6','#EC4899','#14B8A6'];
+      Chart.defaults.color = D.muted; Chart.defaults.font.family = 'Inter, system-ui, sans-serif';
+      var cc = document.getElementById('chChannels');
+      if (cc && D.channels.labels.length) new Chart(cc, { type:'doughnut', data:{ labels:D.channels.labels, datasets:[{ data:D.channels.data, backgroundColor:palette, borderWidth:0 }] }, options:{ responsive:true, plugins:{ legend:{ position:'bottom', labels:{ boxWidth:10, padding:10, font:{size:11} } } }, cutout:'60%' } });
+      var ca = document.getElementById('chAgencies');
+      if (ca && D.agencies.labels.length) new Chart(ca, { type:'bar', data:{ labels:D.agencies.labels, datasets:[{ data:D.agencies.data, backgroundColor:D.accent, borderRadius:6 }] }, options:{ responsive:true, indexAxis:'y', plugins:{ legend:{ display:false } }, scales:{ x:{ grid:{ display:false }, ticks:{ callback:function(v){ return '\u20ac'+Number(v).toLocaleString(); } } }, y:{ grid:{ display:false } } } } });
+    })();
+  </script>
+  <script>
+    (function() {
+      var links = document.querySelectorAll('.nav a');
+      var secs = document.querySelectorAll('.sec[id]');
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) {
+            links.forEach(function(l) {
+              l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id);
+            });
+          }
+        });
+      }, { rootMargin: '-110px 0px -45% 0px', threshold: 0 });
+      secs.forEach(function(s) { obs.observe(s); });
+    })();
+  </script>
+</body>
+</html>

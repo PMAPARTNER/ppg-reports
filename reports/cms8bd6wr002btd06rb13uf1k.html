@@ -7,23 +7,42 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  
   <style>
     :root {
       --accent: #0E7C86;
-      --bg: #1a0f05;
-      --card: #2a1a08;
-      --border: #4a3018;
-      --text: #f5e6d0;
+      --bg: #0b1220;
+      --card: #131c2e;
+      --border: #27354d;
+      --text: #e2e8f0;
       --muted: #94a3b8;
       --success: #10b981;
       --danger: #f43f5e;
       --warn: #f59e0b;
-      --radius: 8px;
+      --radius: 12px;
     }
     html { scroll-padding-top: 110px; scroll-behavior: smooth; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Merriweather', Georgia, serif, 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; font-size: 14px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; font-size: 14px; }
+    
+      :root{ --navy:#0d2b4e; --soft:#f7f8fa; }
+      .hdr{ background:#ffffff !important; backdrop-filter:none !important; }
+      .hdr-name{ color:#0d2b4e !important; }
+      .hdr-badge{ color:#0f5ea8 !important; background:#eef4fb !important; border-color:#cfe0f2 !important; }
+      .nav{ background:#ffffff !important; backdrop-filter:none !important; gap:6px !important; padding:12px 16px !important; border-bottom:none !important; }
+      .nav a{ border:1px solid var(--border) !important; border-radius:20px !important; padding:8px 14px !important; font-weight:700 !important; text-transform:uppercase; letter-spacing:.04em; }
+      .nav a:hover, .nav a.active{ color:#0f5ea8 !important; border-color:#0f5ea8 !important; border-bottom-color:#0f5ea8 !important; }
+      .hero-title{ color:#0d2b4e !important; font-size:24px !important; }
+      .sec{ border:none !important; background:transparent !important; border-radius:0 !important; overflow:visible !important; margin-bottom:10px !important; }
+      .sec-hdr{ border-bottom:1px solid var(--border) !important; padding:0 0 8px !important; margin:42px 0 16px !important; }
+      .sec-icon{ display:none !important; }
+      .sec-title{ text-transform:uppercase; letter-spacing:.06em; color:#0f5ea8 !important; font-size:15px !important; }
+      .sec-body{ padding:0 !important; }
+      .kpi, .stat-box{ background:var(--soft) !important; border:1px solid var(--border) !important; border-radius:10px !important; }
+      .kpi-val, .stat-val{ color:#0d2b4e !important; }
+      .sh{ color:#0d2b4e !important; font-size:12px !important; letter-spacing:.04em; }
+      .prose-block, .explain, .insight{ border-left-color:#0f5ea8 !important; }
+      .footer{ border-top:1px solid var(--border) !important; }
     
 
     /* ── Sticky header ──────────────────────────────── */
@@ -31,7 +50,7 @@
       position: sticky; top: 0; z-index: 50;
       display: flex; align-items: center; justify-content: space-between; gap: 16px;
       padding: 10px 24px;
-      background: #1a0f05f0; backdrop-filter: blur(12px);
+      background: #0b1220f0; backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
     .hdr-left { display: flex; align-items: center; gap: 12px; min-width: 0; }
@@ -46,7 +65,7 @@
     .nav {
       position: sticky; top: 53px; z-index: 40;
       display: flex; overflow-x: auto; gap: 2px; padding: 0 16px;
-      background: #1a0f05e8; backdrop-filter: blur(10px);
+      background: #0b1220e8; backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
       scrollbar-width: none;
     }
@@ -86,7 +105,7 @@
     /* ── Tables ─────────────────────────────────────── */
     .tbl { width: 100%; border-collapse: collapse; font-size: 12px; }
     .tbl th { padding: 8px 10px 8px 0; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); border-bottom: 1px solid var(--border); text-align: left; }
-    .tbl td { padding: 8px 10px 8px 0; color: var(--muted); border-bottom: 1px solid #4a301888; vertical-align: middle; }
+    .tbl td { padding: 8px 10px 8px 0; color: var(--muted); border-bottom: 1px solid #27354d88; vertical-align: middle; }
     .tbl td.acc { color: var(--text); font-weight: 700; }
     .tbl td.num { text-align: right; }
     .tbl tr:last-child td { border-bottom: none; }
@@ -122,7 +141,7 @@
     .prose-block ul { margin: 8px 0 8px 18px; }
     .prose-block li { margin-bottom: 3px; }
     .steps { list-style: none; }
-    .steps li { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid #4a301888; font-size: 13px; }
+    .steps li { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid #27354d88; font-size: 13px; }
     .steps li:last-child { border-bottom: none; }
     .step-n { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; background: var(--accent); color: #fff; border-radius: 50%; font-size: 10px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
 
@@ -593,10 +612,10 @@ Günün tüm yorgunluğunu Bodrum’un berrak sularında bırakıp, denizle bulu
       <td class="num acc">€115</td>
       <td class="num">€154</td>
     </tr></tbody></table>
-        <div class="sh" style="margin-top:20px">⚖️ Fiyat Parite Uyarıları</div><ul style="list-style:none;margin:0;padding:0"><li style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;font-size:12px;border-bottom:1px solid #4a301888">
+        <div class="sh" style="margin-top:20px">⚖️ Fiyat Parite Uyarıları</div><ul style="list-style:none;margin:0;padding:0"><li style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;font-size:12px;border-bottom:1px solid #27354d88">
       <span style="flex-shrink:0;font-size:9px;font-weight:800;text-transform:uppercase;padding:2px 8px;border-radius:99px;background:rgba(245,158,11,.13);color:var(--warn)">medium</span>
       <span><b>La Blanche Resort &amp; Spa</b> — La Blanche Resort &amp; Spa otelinde platformlar arası %18 fiyat sapması var (2026-09-23 girişli)! En yüksek: Jolly Tur (150 EUR, Pazar: TR), En düşük: tripadvisor:Booking.com (123 EUR, Pazar: Global).</span>
-    </li><li style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;font-size:12px;border-bottom:1px solid #4a301888">
+    </li><li style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;font-size:12px;border-bottom:1px solid #27354d88">
       <span style="flex-shrink:0;font-size:9px;font-weight:800;text-transform:uppercase;padding:2px 8px;border-radius:99px;background:rgba(100,116,139,.13);color:var(--muted)">info</span>
       <span><b>La Blanche Resort &amp; Spa</b> — La Blanche Resort &amp; Spa otelinde Global pazarında %12 acenteler arası sapma var (2026-09-10 girişli)! tripadvisor:TripAdvisor (165 EUR) vs tripadvisor:Booking.com (145 EUR).</span>
     </li></ul>
@@ -706,8 +725,8 @@ Günün tüm yorgunluğunu Bodrum’un berrak sularında bırakıp, denizle bulu
     </div>
   </div>
       <div class="sec-body">
-        <div class="insight" style="background:#0E7C8612;border-color:#0E7C8633"><p>Blue Dreams Resort, 24‑30 Temmuz 2026 döneminde bütçeyi %106 oranında aşarak 3,02 M EUR gelir elde etmiş ve bir önceki yıla göre %37 artış göstermiştir; bu, PMS üzerinden 526 k EUR gelir ve 327 rezervasyonla da güçlü bir performansın işaretidir. Dijital kanallarda GA4 oturumları (971) ve GSC tıklamaları (636) ile %7,2 CTR elde edilmiştir, ancak reklam harcamasının (1.075 EUR) rezervasyonlarla doğrudan eşleşmediği görülmektedir. Gelişim fırsatı, bu dijital trafiği daha yüksek rezervasyon dönüşümüne yönlendirmek ve reklam harcamasının geri dönüşünü artırmaktır.</p></div>
-        <div class="sh" style="margin-top:20px">✅ Önerilen Aksiyonlar</div><ol class="steps"><li><span class="step-n">1</span>GA4 oturumlarından rezervasyona dönüşüm oranını analiz edip, dönüşüm hunisini iyileştirecek sayfa ve teklif optimizasyonları yapın.</li><li><span class="step-n">2</span>Google Ads kampanyalarında anahtar kelime ve reklam metni performansını gözden geçirerek, dönüşüm başına maliyeti düşürün ve ROAS&#39;ı artırın.</li><li><span class="step-n">3</span>Organik arama trafiğinin yüksek CTR&#39;sını desteklemek için SEO odaklı içerik ve yerel hedefleme stratejileri geliştirin.</li><li><span class="step-n">4</span>Çağrı merkezi satış oranını yükseltmek için ekip eğitimleri ve satış scripti iyileştirmeleri uygulayın.</li></ol>
+        <div class="insight" style="background:#0E7C8612;border-color:#0E7C8633"><p>Blue Dreams Resort, 24‑30 Temmuz 2026 döneminde PMS gelirini 526,177 EUR olarak gerçekleştirerek bütçe hedefini %106 oranında aşmış ve geçen yıla göre %37 büyüme kaydetmiştir. GA4 üzerinden 854 kullanıcı ve 971 oturum elde edilmiş, Google Search Console’da 636 tıklama ve 8,854 gösterim sağlanmıştır; Google Ads harcaması 1,075 EUR karşılığında 21.5 dönüşüm elde edilmiştir. Bu sonuçlar, organik görünürlük ve reklam harcamasının etkili bir kombinasyonunu göstermektedir. Ancak ROAS hesaplaması yapılamadığı için reklam yatırımının verimliliği tam olarak ölçülememekte ve çağrı merkezi satış dönüşüm oranı düşük kalmaktadır; bu alanlarda iyileştirme fırsatları mevcuttur.</p></div>
+        <div class="sh" style="margin-top:20px">✅ Önerilen Aksiyonlar</div><ol class="steps"><li><span class="step-n">1</span>ROAS hesaplaması için booking maliyeti verisini temin edip blended ROAS’ı hesaplayın</li><li><span class="step-n">2</span>Google Ads kampanyalarında dönüşüm izleme ve hedefleme ayarlarını iyileştirerek dönüşüm sayısını artırın</li><li><span class="step-n">3</span>Çağrı merkezi satış oranını yükseltmek için personel eğitimleri ve satış scripti revizyonu yapın</li><li><span class="step-n">4</span>Organik arama görünürlüğünü artırmak üzere meta başlık ve açıklamaları SEO odaklı yeniden düzenleyin</li></ol>
       </div>
     </section>
 

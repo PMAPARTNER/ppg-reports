@@ -7,42 +7,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --accent: #0E7C86;
-      --bg: #0b1220;
-      --card: #131c2e;
-      --border: #27354d;
-      --text: #e2e8f0;
+      --bg: #1a0f05;
+      --card: #2a1a08;
+      --border: #4a3018;
+      --text: #f5e6d0;
       --muted: #94a3b8;
       --success: #10b981;
       --danger: #f43f5e;
       --warn: #f59e0b;
-      --radius: 12px;
+      --radius: 8px;
     }
     html { scroll-padding-top: 110px; scroll-behavior: smooth; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; font-size: 14px; }
-    
-      :root{ --navy:#0d2b4e; --soft:#f7f8fa; }
-      .hdr{ background:#ffffff !important; backdrop-filter:none !important; }
-      .hdr-name{ color:#0d2b4e !important; }
-      .hdr-badge{ color:#0f5ea8 !important; background:#eef4fb !important; border-color:#cfe0f2 !important; }
-      .nav{ background:#ffffff !important; backdrop-filter:none !important; gap:6px !important; padding:12px 16px !important; border-bottom:none !important; }
-      .nav a{ border:1px solid var(--border) !important; border-radius:20px !important; padding:8px 14px !important; font-weight:700 !important; text-transform:uppercase; letter-spacing:.04em; }
-      .nav a:hover, .nav a.active{ color:#0f5ea8 !important; border-color:#0f5ea8 !important; border-bottom-color:#0f5ea8 !important; }
-      .hero-title{ color:#0d2b4e !important; font-size:24px !important; }
-      .sec{ border:none !important; background:transparent !important; border-radius:0 !important; overflow:visible !important; margin-bottom:10px !important; }
-      .sec-hdr{ border-bottom:1px solid var(--border) !important; padding:0 0 8px !important; margin:42px 0 16px !important; }
-      .sec-icon{ display:none !important; }
-      .sec-title{ text-transform:uppercase; letter-spacing:.06em; color:#0f5ea8 !important; font-size:15px !important; }
-      .sec-body{ padding:0 !important; }
-      .kpi, .stat-box{ background:var(--soft) !important; border:1px solid var(--border) !important; border-radius:10px !important; }
-      .kpi-val, .stat-val{ color:#0d2b4e !important; }
-      .sh{ color:#0d2b4e !important; font-size:12px !important; letter-spacing:.04em; }
-      .prose-block, .explain, .insight{ border-left-color:#0f5ea8 !important; }
-      .footer{ border-top:1px solid var(--border) !important; }
+    body { font-family: 'Merriweather', Georgia, serif, 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; font-size: 14px; }
     
 
     /* ── Sticky header ──────────────────────────────── */
@@ -50,7 +31,7 @@
       position: sticky; top: 0; z-index: 50;
       display: flex; align-items: center; justify-content: space-between; gap: 16px;
       padding: 10px 24px;
-      background: #0b1220f0; backdrop-filter: blur(12px);
+      background: #1a0f05f0; backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
     .hdr-left { display: flex; align-items: center; gap: 12px; min-width: 0; }
@@ -65,7 +46,7 @@
     .nav {
       position: sticky; top: 53px; z-index: 40;
       display: flex; overflow-x: auto; gap: 2px; padding: 0 16px;
-      background: #0b1220e8; backdrop-filter: blur(10px);
+      background: #1a0f05e8; backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
       scrollbar-width: none;
     }
@@ -105,7 +86,7 @@
     /* ── Tables ─────────────────────────────────────── */
     .tbl { width: 100%; border-collapse: collapse; font-size: 12px; }
     .tbl th { padding: 8px 10px 8px 0; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); border-bottom: 1px solid var(--border); text-align: left; }
-    .tbl td { padding: 8px 10px 8px 0; color: var(--muted); border-bottom: 1px solid #27354d88; vertical-align: middle; }
+    .tbl td { padding: 8px 10px 8px 0; color: var(--muted); border-bottom: 1px solid #4a301888; vertical-align: middle; }
     .tbl td.acc { color: var(--text); font-weight: 700; }
     .tbl td.num { text-align: right; }
     .tbl tr:last-child td { border-bottom: none; }
@@ -141,7 +122,7 @@
     .prose-block ul { margin: 8px 0 8px 18px; }
     .prose-block li { margin-bottom: 3px; }
     .steps { list-style: none; }
-    .steps li { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid #27354d88; font-size: 13px; }
+    .steps li { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid #4a301888; font-size: 13px; }
     .steps li:last-child { border-bottom: none; }
     .step-n { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; background: var(--accent); color: #fff; border-radius: 50%; font-size: 10px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
 
@@ -363,7 +344,7 @@
         <div class="kpi-grid">
           <div class="kpi">
     <div class="kpi-lbl">Gösterim</div>
-    <div class="kpi-val">932.133</div>
+    <div class="kpi-val">932.134</div>
     
   </div>
           <div class="kpi">
@@ -384,9 +365,9 @@
         </div>
         
         <div class="sh">📋 Aktif Kampanya Detayları</div>
-        <table class="tbl"><thead><tr><th>Kampanya</th><th>Gösterim</th><th>Tıklama</th><th>Harcama</th><th>Dönüşüm</th><th>CPC</th></tr></thead><tbody><tr><td class="acc">Arama Ağı Türkiye G</td><td class="num">10.593</td><td class="num">1.021</td><td class="num acc">€609</td><td class="num">22</td><td class="num">€1</td></tr><tr><td class="acc">İçerik Ağı Türkiye</td><td class="num">899.213</td><td class="num">3.644</td><td class="num acc">€353</td><td class="num">0</td><td class="num">€0</td></tr><tr><td class="acc">Remarketing New</td><td class="num">22.327</td><td class="num">1.310</td><td class="num acc">€113</td><td class="num">0</td><td class="num">€0</td></tr></tbody></table>
+        <table class="tbl"><thead><tr><th>Kampanya</th><th>Gösterim</th><th>Tıklama</th><th>Harcama</th><th>Dönüşüm</th><th>CPC</th></tr></thead><tbody><tr><td class="acc">Arama Ağı Türkiye G</td><td class="num">10.593</td><td class="num">1.021</td><td class="num acc">€609</td><td class="num">22</td><td class="num">€1</td></tr><tr><td class="acc">İçerik Ağı Türkiye</td><td class="num">899.214</td><td class="num">3.644</td><td class="num acc">€353</td><td class="num">0</td><td class="num">€0</td></tr><tr><td class="acc">Remarketing New</td><td class="num">22.327</td><td class="num">1.310</td><td class="num acc">€113</td><td class="num">0</td><td class="num">€0</td></tr></tbody></table>
         
-        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Google Ads kampanyaları bu dönemde 932.133 gösterim ve 5.975 tıklama üretti. 22 dönüşüm gerçekleşti — her tıklama rezervasyon potansiyeli taşıyor.</div>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Google Ads kampanyaları bu dönemde 932.134 gösterim ve 5.975 tıklama üretti. 22 dönüşüm gerçekleşti — her tıklama rezervasyon potansiyeli taşıyor.</div>
       </div>
     </section>
 <section id="social" class="sec">
@@ -612,10 +593,10 @@ Günün tüm yorgunluğunu Bodrum’un berrak sularında bırakıp, denizle bulu
       <td class="num acc">€115</td>
       <td class="num">€154</td>
     </tr></tbody></table>
-        <div class="sh" style="margin-top:20px">⚖️ Fiyat Parite Uyarıları</div><ul style="list-style:none;margin:0;padding:0"><li style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;font-size:12px;border-bottom:1px solid #27354d88">
+        <div class="sh" style="margin-top:20px">⚖️ Fiyat Parite Uyarıları</div><ul style="list-style:none;margin:0;padding:0"><li style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;font-size:12px;border-bottom:1px solid #4a301888">
       <span style="flex-shrink:0;font-size:9px;font-weight:800;text-transform:uppercase;padding:2px 8px;border-radius:99px;background:rgba(245,158,11,.13);color:var(--warn)">medium</span>
       <span><b>La Blanche Resort &amp; Spa</b> — La Blanche Resort &amp; Spa otelinde platformlar arası %18 fiyat sapması var (2026-09-23 girişli)! En yüksek: Jolly Tur (150 EUR, Pazar: TR), En düşük: tripadvisor:Booking.com (123 EUR, Pazar: Global).</span>
-    </li><li style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;font-size:12px;border-bottom:1px solid #27354d88">
+    </li><li style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;font-size:12px;border-bottom:1px solid #4a301888">
       <span style="flex-shrink:0;font-size:9px;font-weight:800;text-transform:uppercase;padding:2px 8px;border-radius:99px;background:rgba(100,116,139,.13);color:var(--muted)">info</span>
       <span><b>La Blanche Resort &amp; Spa</b> — La Blanche Resort &amp; Spa otelinde Global pazarında %12 acenteler arası sapma var (2026-09-10 girişli)! tripadvisor:TripAdvisor (165 EUR) vs tripadvisor:Booking.com (145 EUR).</span>
     </li></ul>
@@ -725,8 +706,8 @@ Günün tüm yorgunluğunu Bodrum’un berrak sularında bırakıp, denizle bulu
     </div>
   </div>
       <div class="sec-body">
-        <div class="insight" style="background:#0E7C8612;border-color:#0E7C8633"><p>Blue Dreams Resort, 24‑30 Temmuz 2026 dönemi, hedeflenen 2,840,435 EUR bütçesini %106 oranında aşarak 3,024,070 EUR gerçek gelir elde etti ve geçen yıla göre %37 büyüme sağladı. Dijital kanallarda Google Search Console üzerinden %7,2 CTR ile 636 tıklık elde edildi; GA4 oturumları 971 ve kullanıcı sayısı 854 olarak istikrarlı bir trafik gösterdi. Google Ads harcaması 1,075 EUR karşılığında 21,5 dönüşüm sağladı, ancak ROAS verisi eksik olduğu için yatırım getirisi net olarak değerlendirilemedi. Çağrı merkezi aramaları 392 iken satışa dönüşen sadece 34 adet, dönüşüm oranının artırılması gerektiğini gösteriyor. Genel olarak güçlü bir gelir performansı ve istikrarlı dijital ziyaretçi akışı görülürken, dönüşüm oranlarını ve ROAS takibini iyileştirmek gelecek dönem için kritik fırsatlardır.</p></div>
-        <div class="sh" style="margin-top:20px">✅ Önerilen Aksiyonlar</div><ol class="steps"><li><span class="step-n">1</span>Google Ads kampanya dönüşüm takibini netleştirerek ROAS hesaplaması için gerekli dönüşüm değerlerini (booking_maliyeti) sisteme entegre edin.</li><li><span class="step-n">2</span>Çağrı merkezi satış oranını artırmak amacıyla web sitesinde canlı sohbet ve dönüşüm odaklı CTA&#39;lar ekleyerek telefon aramalarını satışa yönlendirin.</li><li><span class="step-n">3</span>Google Search Console ve GA4 verilerini senkronize ederek organik trafik kalitesini artırmak için yüksek performanslı anahtar kelimelere odaklı SEO çalışmaları başlatın.</li><li><span class="step-n">4</span>Dönemsel promosyon ve paket tekliflerini, yüksek gelir getiren PMS rezervasyonlarıyla uyumlu şekilde, reklam harcamasını optimize ederek daha yüksek dönüşüm oranı elde edin.</li></ol>
+        <div class="insight" style="background:#0E7C8612;border-color:#0E7C8633"><p>Blue Dreams Resort, 24‑30 Temmuz 2026 döneminde hedeflenen bütçeyi %106 oranında aşarak 3.024.070 EUR gerçekleşen gelir elde etti ve geçen yıla göre %37 büyüme sağladı; bu, PMS toplam gelirinin 530.812 EUR olmasıyla da destekleniyor. Dijital kanallarda GA4 üzerinden 854 kullanıcı ve 971 oturum, Google Search Console’da %7,2 CTR ve Google Ads üzerinden %3,4 dönüşüm oranı güçlü performans göstergeleri. Ancak, reklam harcamasının (1.075 EUR) PMS rezervasyonlarıyla doğrudan ilişkilendirilememesi (blended ROAS null) ve çağrı merkezi satışlarının (34) düşük olması, dönüşüm optimizasyonu fırsatı sunuyor.</p></div>
+        <div class="sh" style="margin-top:20px">✅ Önerilen Aksiyonlar</div><ol class="steps"><li><span class="step-n">1</span>Google Ads kampanyalarında dönüşüm izleme entegrasyonunu güçlendirerek reklam harcamasının PMS rezervasyonlarıyla eşleşmesini sağlayın.</li><li><span class="step-n">2</span>Çağrı merkezi satış oranını artırmak için web sitesi üzerinden ön‑satış chat ve dönüşüm odaklı landing page&#39;ler ekleyin.</li><li><span class="step-n">3</span>Google Search Console’da yüksek CTR’yi korurken, anahtar kelime optimizasyonu ve negatif anahtar kelime listesiyle maliyet verimliliğini yükseltin.</li><li><span class="step-n">4</span>GA4 oturum başına ortalama oturum süresi ve sayfa görüntüleme gibi etkileşim metriklerini izleyerek kullanıcı yolculuğunu iyileştirin.</li></ol>
       </div>
     </section>
 

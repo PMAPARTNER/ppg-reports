@@ -7,31 +7,31 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --accent: #0E7C86;
-      --bg: #0b0f19;
-      --card: #111827;
-      --border: #334155;
-      --text: #e5e7eb;
+      --bg: #1a0f05;
+      --card: #2a1a08;
+      --border: #4a3018;
+      --text: #f5e6d0;
       --muted: #94a3b8;
       --success: #10b981;
       --danger: #f43f5e;
       --warn: #f59e0b;
-      --radius: 0px;
+      --radius: 8px;
     }
     html { scroll-padding-top: 110px; scroll-behavior: smooth; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; font-size: 14px; }
-    .sec { border: 3px solid #0f172a; }
+    body { font-family: 'Merriweather', Georgia, serif, 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; font-size: 14px; }
+    
 
     /* ── Sticky header ──────────────────────────────── */
     .hdr {
       position: sticky; top: 0; z-index: 50;
       display: flex; align-items: center; justify-content: space-between; gap: 16px;
       padding: 10px 24px;
-      background: #0b0f19f0; backdrop-filter: blur(12px);
+      background: #1a0f05f0; backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
     .hdr-left { display: flex; align-items: center; gap: 12px; min-width: 0; }
@@ -46,7 +46,7 @@
     .nav {
       position: sticky; top: 53px; z-index: 40;
       display: flex; overflow-x: auto; gap: 2px; padding: 0 16px;
-      background: #0b0f19e8; backdrop-filter: blur(10px);
+      background: #1a0f05e8; backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
       scrollbar-width: none;
     }
@@ -86,7 +86,7 @@
     /* ── Tables ─────────────────────────────────────── */
     .tbl { width: 100%; border-collapse: collapse; font-size: 12px; }
     .tbl th { padding: 8px 10px 8px 0; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); border-bottom: 1px solid var(--border); text-align: left; }
-    .tbl td { padding: 8px 10px 8px 0; color: var(--muted); border-bottom: 1px solid #33415588; vertical-align: middle; }
+    .tbl td { padding: 8px 10px 8px 0; color: var(--muted); border-bottom: 1px solid #4a301888; vertical-align: middle; }
     .tbl td.acc { color: var(--text); font-weight: 700; }
     .tbl td.num { text-align: right; }
     .tbl tr:last-child td { border-bottom: none; }
@@ -122,7 +122,7 @@
     .prose-block ul { margin: 8px 0 8px 18px; }
     .prose-block li { margin-bottom: 3px; }
     .steps { list-style: none; }
-    .steps li { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid #33415588; font-size: 13px; }
+    .steps li { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid #4a301888; font-size: 13px; }
     .steps li:last-child { border-bottom: none; }
     .step-n { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; background: var(--accent); color: #fff; border-radius: 50%; font-size: 10px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
 
@@ -230,12 +230,12 @@
     <div class="kpi-sub">34 rezervasyon</div>
   </div><div class="kpi">
     <div class="kpi-lbl">Rezervasyon Geliri</div>
-    <div class="kpi-val">€526.177</div>
-    <div class="kpi-sub">327 rezervasyon</div>
+    <div class="kpi-val">€530.812</div>
+    <div class="kpi-sub">329 rezervasyon</div>
   </div><div class="kpi">
     <div class="kpi-lbl">Oda Geceleme</div>
-    <div class="kpi-val">1.707</div>
-    <div class="kpi-sub">€308/gece</div>
+    <div class="kpi-val">1.716</div>
+    <div class="kpi-sub">€309/gece</div>
   </div><div class="kpi">
     <div class="kpi-lbl">Atfedilmiş ROAS</div>
     <div class="kpi-val">—</div>
@@ -344,7 +344,7 @@
         <div class="kpi-grid">
           <div class="kpi">
     <div class="kpi-lbl">Gösterim</div>
-    <div class="kpi-val">932.133</div>
+    <div class="kpi-val">932.134</div>
     
   </div>
           <div class="kpi">
@@ -365,9 +365,9 @@
         </div>
         
         <div class="sh">📋 Aktif Kampanya Detayları</div>
-        <table class="tbl"><thead><tr><th>Kampanya</th><th>Gösterim</th><th>Tıklama</th><th>Harcama</th><th>Dönüşüm</th><th>CPC</th></tr></thead><tbody><tr><td class="acc">Arama Ağı Türkiye G</td><td class="num">10.593</td><td class="num">1.021</td><td class="num acc">€609</td><td class="num">22</td><td class="num">€1</td></tr><tr><td class="acc">İçerik Ağı Türkiye</td><td class="num">899.213</td><td class="num">3.644</td><td class="num acc">€353</td><td class="num">0</td><td class="num">€0</td></tr><tr><td class="acc">Remarketing New</td><td class="num">22.327</td><td class="num">1.310</td><td class="num acc">€113</td><td class="num">0</td><td class="num">€0</td></tr></tbody></table>
+        <table class="tbl"><thead><tr><th>Kampanya</th><th>Gösterim</th><th>Tıklama</th><th>Harcama</th><th>Dönüşüm</th><th>CPC</th></tr></thead><tbody><tr><td class="acc">Arama Ağı Türkiye G</td><td class="num">10.593</td><td class="num">1.021</td><td class="num acc">€609</td><td class="num">22</td><td class="num">€1</td></tr><tr><td class="acc">İçerik Ağı Türkiye</td><td class="num">899.214</td><td class="num">3.644</td><td class="num acc">€353</td><td class="num">0</td><td class="num">€0</td></tr><tr><td class="acc">Remarketing New</td><td class="num">22.327</td><td class="num">1.310</td><td class="num acc">€113</td><td class="num">0</td><td class="num">€0</td></tr></tbody></table>
         
-        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Google Ads kampanyaları bu dönemde 932.133 gösterim ve 5.975 tıklama üretti. 22 dönüşüm gerçekleşti — her tıklama rezervasyon potansiyeli taşıyor.</div>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Google Ads kampanyaları bu dönemde 932.134 gösterim ve 5.975 tıklama üretti. 22 dönüşüm gerçekleşti — her tıklama rezervasyon potansiyeli taşıyor.</div>
       </div>
     </section>
 <section id="social" class="sec">
@@ -479,35 +479,35 @@ Günün tüm yorgunluğunu Bodrum’un berrak sularında bırakıp, denizle bulu
         <div class="kpi-grid">
           <div class="kpi">
     <div class="kpi-lbl">Net Booking Pick-Up Değeri</div>
-    <div class="kpi-val">€526.177</div>
+    <div class="kpi-val">€530.812</div>
     
   </div>
           <div class="kpi">
     <div class="kpi-lbl">Oda Geceleme</div>
-    <div class="kpi-val">1.707</div>
+    <div class="kpi-val">1.716</div>
     
   </div>
           <div class="kpi">
     <div class="kpi-lbl">Rezervasyon</div>
-    <div class="kpi-val">327</div>
+    <div class="kpi-val">329</div>
     
   </div>
           <div class="kpi">
     <div class="kpi-lbl">İptal</div>
-    <div class="kpi-val">23</div>
+    <div class="kpi-val">24</div>
     
   </div>
         </div>
         <div class="two-col" style="max-width:420px;margin-bottom:20px">
-          <div class="stat-box"><div class="stat-val">€691</div><div class="stat-lbl">Misafir Başına Gelir</div></div>
-          <div class="stat-box"><div class="stat-val">€308</div><div class="stat-lbl">Ortalama Oda-Gece Değeri</div></div>
+          <div class="stat-box"><div class="stat-val">€696</div><div class="stat-lbl">Misafir Başına Gelir</div></div>
+          <div class="stat-box"><div class="stat-val">€309</div><div class="stat-lbl">Ortalama Oda-Gece Değeri</div></div>
         </div>
         <div class="sh">🏢 Acenta / Kanal Dağılımı</div>
-        <table class="tbl"><thead><tr><th>Acenta / Kanal</th><th>Oda Geceleme</th><th>Gelir (€)</th><th>Misafir Başına (€)</th></tr></thead><tbody><tr><td class="acc">BOOKING.COM</td><td class="num">359</td><td class="num acc">€158.890</td><td class="num">€1.826</td></tr><tr><td class="acc">CALL CENTER TL</td><td class="num">187</td><td class="num acc">€75.313</td><td class="num">€468</td></tr><tr><td class="acc">JOLLY</td><td class="num">99</td><td class="num acc">€37.264</td><td class="num">€518</td></tr><tr><td class="acc">ETS</td><td class="num">74</td><td class="num acc">€28.468</td><td class="num">€508</td></tr><tr><td class="acc">CALL CENTER EUR</td><td class="num">65</td><td class="num acc">€24.046</td><td class="num">€601</td></tr><tr><td class="acc">TUI POL</td><td class="num">129</td><td class="num acc">€20.877</td><td class="num">€497</td></tr><tr><td class="acc">ATIK TOUR</td><td class="num">70</td><td class="num acc">€14.036</td><td class="num">€484</td></tr><tr><td class="acc">TUI DEU</td><td class="num">69</td><td class="num acc">€13.097</td><td class="num">€569</td></tr></tbody></table>
+        <table class="tbl"><thead><tr><th>Acenta / Kanal</th><th>Oda Geceleme</th><th>Gelir (€)</th><th>Misafir Başına (€)</th></tr></thead><tbody><tr><td class="acc">BOOKING.COM</td><td class="num">364</td><td class="num acc">€160.992</td><td class="num">€1.829</td></tr><tr><td class="acc">CALL CENTER TL</td><td class="num">187</td><td class="num acc">€75.313</td><td class="num">€468</td></tr><tr><td class="acc">JOLLY</td><td class="num">99</td><td class="num acc">€37.264</td><td class="num">€518</td></tr><tr><td class="acc">ETS</td><td class="num">74</td><td class="num acc">€28.468</td><td class="num">€508</td></tr><tr><td class="acc">CALL CENTER EUR</td><td class="num">65</td><td class="num acc">€24.046</td><td class="num">€601</td></tr><tr><td class="acc">TUI POL</td><td class="num">129</td><td class="num acc">€20.877</td><td class="num">€497</td></tr><tr><td class="acc">ATIK TOUR</td><td class="num">70</td><td class="num acc">€14.036</td><td class="num">€484</td></tr><tr><td class="acc">TUI DEU</td><td class="num">69</td><td class="num acc">€13.097</td><td class="num">€569</td></tr></tbody></table>
         <div class="sh" style="margin-top:16px">🏷️ Fiyat Planı Dağılımı (İADESİZ / ADR)</div>
-        <table class="tbl"><thead><tr><th>Fiyat Planı</th><th>Rez.</th><th>Oda Geceleme</th><th>Gelir (€)</th><th>ADR (€)</th></tr></thead><tbody><tr><td class="acc">STANDART</td><td class="num">327</td><td class="num">1.707</td><td class="num acc">€526.177</td><td class="num acc">€310</td></tr></tbody></table>
+        <table class="tbl"><thead><tr><th>Fiyat Planı</th><th>Rez.</th><th>Oda Geceleme</th><th>Gelir (€)</th><th>ADR (€)</th></tr></thead><tbody><tr><td class="acc">STANDART</td><td class="num">329</td><td class="num">1.716</td><td class="num acc">€530.812</td><td class="num acc">€312</td></tr></tbody></table>
         <div class="sh" style="margin-top:16px">🛏️ Oda Tipine Göre Ort. Fiyat (ADR)</div>
-        <table class="tbl"><thead><tr><th>Oda Tipi</th><th>Oda Geceleme</th><th>Gelir (€)</th><th>ADR (€)</th></tr></thead><tbody><tr><td class="acc">CR</td><td class="num">585</td><td class="num">€179.959</td><td class="num acc">€308</td></tr><tr><td class="acc">CSEA</td><td class="num">673</td><td class="num">€173.407</td><td class="num acc">€258</td></tr><tr><td class="acc">CFM</td><td class="num">226</td><td class="num">€90.209</td><td class="num acc">€399</td></tr><tr><td class="acc">DLX</td><td class="num">131</td><td class="num">€42.155</td><td class="num acc">€327</td></tr><tr><td class="acc">PROMO</td><td class="num">56</td><td class="num">€21.280</td><td class="num acc">€380</td></tr><tr><td class="acc">DLX FAM</td><td class="num">36</td><td class="num">€19.167</td><td class="num acc">€737</td></tr></tbody></table>
+        <table class="tbl"><thead><tr><th>Oda Tipi</th><th>Oda Geceleme</th><th>Gelir (€)</th><th>ADR (€)</th></tr></thead><tbody><tr><td class="acc">CR</td><td class="num">590</td><td class="num">€182.061</td><td class="num acc">€309</td></tr><tr><td class="acc">CSEA</td><td class="num">673</td><td class="num">€173.407</td><td class="num acc">€258</td></tr><tr><td class="acc">CFM</td><td class="num">230</td><td class="num">€92.742</td><td class="num acc">€403</td></tr><tr><td class="acc">DLX</td><td class="num">131</td><td class="num">€42.155</td><td class="num acc">€327</td></tr><tr><td class="acc">PROMO</td><td class="num">56</td><td class="num">€21.280</td><td class="num acc">€380</td></tr><tr><td class="acc">DLX FAM</td><td class="num">36</td><td class="num">€19.167</td><td class="num acc">€737</td></tr></tbody></table>
 
         <!-- Veri Kaynağı ve Metodolojisi -->
         <div class="meth-box" style="margin-top: 15px; padding: 10px; border-radius: 6px; background-color: var(--card-bg); border: 1px solid var(--border); font-size: 11px; line-height: 1.4;">
@@ -515,7 +515,7 @@ Günün tüm yorgunluğunu Bodrum’un berrak sularında bırakıp, denizle bulu
           <span style="color: var(--muted);">Kaynak: PMS booking creation tarihi. Tutar, rezervasyonların tüm konaklama süresine ait net booking değeridir; stay-date oda geliri veya reklama atfedilmiş gelir değildir. Ortalama oda-gece değeri = net değer ÷ oda gecesi. İptaller hariç, uygulanmış komisyon kuralları sonrasındaki EUR değerleri kullanılır.</span>
         </div>
 
-        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 327 yeni rezervasyon 1.707 oda gecesi ve €526.177 net booking pick-up üretti. Ortalama oda-gece değeri €308; kanal payı, komisyon ve kalış tarihi doluluk baskısıyla birlikte değerlendirilmelidir.</div>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 329 yeni rezervasyon 1.716 oda gecesi ve €530.812 net booking pick-up üretti. Ortalama oda-gece değeri €309; kanal payı, komisyon ve kalış tarihi doluluk baskısıyla birlikte değerlendirilmelidir.</div>
       </div>
     </section>
 <section id="budget" class="sec">
@@ -574,29 +574,23 @@ Günün tüm yorgunluğunu Bodrum’un berrak sularında bırakıp, denizle bulu
       <div class="sec-body">
         <div class="sh">📅 Dönem Bazında Rakip Fiyat Seviyesi</div>
         <table class="tbl"><thead><tr><th>Dönem</th><th>Rakip</th><th>Fiyat Noktası</th><th>En Düşük (2 Kişilik, €/gece)</th><th>Medyan (2 Kişilik, €/gece)</th></tr></thead><tbody><tr>
-      <td class="acc">1–30 gün</td>
-      <td class="num">1</td>
-      <td class="num">4</td>
-      <td class="num acc">€245</td>
-      <td class="num">€255</td>
-    </tr><tr>
       <td class="acc">31–60 gün</td>
       <td class="num">1</td>
-      <td class="num">24</td>
+      <td class="num">23</td>
       <td class="num acc">€115</td>
-      <td class="num">€151</td>
+      <td class="num">€152</td>
     </tr></tbody></table>
         <div class="sh" style="margin-top:20px">🏨 Rakip Bazında Özet</div>
         <table class="tbl"><thead><tr><th>Rakip Otel</th><th>Fiyat Noktası</th><th>En Düşük (2 Kişilik, €/gece)</th><th>Medyan (2 Kişilik, €/gece)</th></tr></thead><tbody><tr>
       <td class="acc">La Blanche Resort &amp; Spa</td>
-      <td class="num">28</td>
+      <td class="num">23</td>
       <td class="num acc">€115</td>
-      <td class="num">€154</td>
+      <td class="num">€152</td>
     </tr></tbody></table>
-        <div class="sh" style="margin-top:20px">⚖️ Fiyat Parite Uyarıları</div><ul style="list-style:none;margin:0;padding:0"><li style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;font-size:12px;border-bottom:1px solid #33415588">
+        <div class="sh" style="margin-top:20px">⚖️ Fiyat Parite Uyarıları</div><ul style="list-style:none;margin:0;padding:0"><li style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;font-size:12px;border-bottom:1px solid #4a301888">
       <span style="flex-shrink:0;font-size:9px;font-weight:800;text-transform:uppercase;padding:2px 8px;border-radius:99px;background:rgba(245,158,11,.13);color:var(--warn)">medium</span>
       <span><b>La Blanche Resort &amp; Spa</b> — La Blanche Resort &amp; Spa otelinde platformlar arası %18 fiyat sapması var (2026-09-23 girişli)! En yüksek: Jolly Tur (150 EUR, Pazar: TR), En düşük: tripadvisor:Booking.com (123 EUR, Pazar: Global).</span>
-    </li><li style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;font-size:12px;border-bottom:1px solid #33415588">
+    </li><li style="display:flex;align-items:flex-start;gap:8px;padding:7px 0;font-size:12px;border-bottom:1px solid #4a301888">
       <span style="flex-shrink:0;font-size:9px;font-weight:800;text-transform:uppercase;padding:2px 8px;border-radius:99px;background:rgba(100,116,139,.13);color:var(--muted)">info</span>
       <span><b>La Blanche Resort &amp; Spa</b> — La Blanche Resort &amp; Spa otelinde Global pazarında %12 acenteler arası sapma var (2026-09-10 girişli)! tripadvisor:TripAdvisor (165 EUR) vs tripadvisor:Booking.com (145 EUR).</span>
     </li></ul>
@@ -694,7 +688,7 @@ Günün tüm yorgunluğunu Bodrum’un berrak sularında bırakıp, denizle bulu
       <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Yalnız bağlı PMS, reklam, GA4 ve yorum kaynaklarında ölçülen sonuçlar; yapılmış olduğu doğrulanmayan faaliyetler bu bölüme eklenmez. <span style="opacity:.7">(24 Temmuz 2026 – 30 Temmuz 2026)</span></div>
     </div>
   </div>
-      <div class="sec-body"><div class="prose-block"><ul><li><strong>Booking pick-up:</strong> 327 yeni rezervasyon, 1707 oda gecesi ve €526.177 net booking değeri kaydedildi.</li><li><strong>Reklam teslimatı:</strong> Meta ve Google kaynaklarında raporlanan harcama, gösterim, tıklama ve platform dönüşümleri izlendi. PMS geliri yalnız açık kampanya eşleşmesi varsa reklama atfedilir.</li><li><strong>Web analitiği:</strong> GA4 bağlantısı doğrulandı; 854 kullanıcı ve 971 oturum raporlandı.</li></ul></div></div>
+      <div class="sec-body"><div class="prose-block"><ul><li><strong>Booking pick-up:</strong> 329 yeni rezervasyon, 1716 oda gecesi ve €530.812 net booking değeri kaydedildi.</li><li><strong>Reklam teslimatı:</strong> Meta ve Google kaynaklarında raporlanan harcama, gösterim, tıklama ve platform dönüşümleri izlendi. PMS geliri yalnız açık kampanya eşleşmesi varsa reklama atfedilir.</li><li><strong>Web analitiği:</strong> GA4 bağlantısı doğrulandı; 854 kullanıcı ve 971 oturum raporlandı.</li></ul></div></div>
     </section>
 <section id="recommendations" class="sec">
       <div class="sec-hdr" style="background:#0E7C8618">
@@ -706,8 +700,8 @@ Günün tüm yorgunluğunu Bodrum’un berrak sularında bırakıp, denizle bulu
     </div>
   </div>
       <div class="sec-body">
-        <div class="insight" style="background:#0E7C8612;border-color:#0E7C8633"><p>Blue Dreams Resort, GA4 oturum sayısının kullanıcı sayısına oranı yüksek ve GSC’de %7,2 oranında iyi bir tıklama oranına sahip olarak dijital görünürlüğünü güçlü tutmuş. Google Ads harcaması karşılığında 21,5 dönüşüm elde edilerek reklam harcamasının etkinliği kanıtlanmış ve çağrı merkezi aramalarından elde edilen 34 satış, potansiyel müşterileri satışa dönüştürmede olumlu bir sinyal veriyor. Ancak PMS üzerinden elde edilen toplam gelir hedefin çok altında kalmış; bu durum, dönüşüm oranlarını artırma ve ek kanal çeşitliliği sağlama ihtiyacını ortaya koyuyor. Ayrıca Meta Ads gibi sosyal medya reklam kanallarının eksikliği, dijital pazarlama stratejisinin genişletilmesi gerektiğini gösteriyor.</p></div>
-        <div class="sh" style="margin-top:20px">✅ Önerilen Aksiyonlar</div><ol class="steps"><li><span class="step-n">1</span>Google Ads kampanya yapılandırmasını gözden geçirerek anahtar kelime ve reklam metinlerini optimize edip dönüşüm oranını yükseltmek.</li><li><span class="step-n">2</span>Meta Ads platformunda hedefli reklam kampanyaları başlatarak yeni müşteri segmentlerine ulaşmak ve rezervasyonları artırmak.</li><li><span class="step-n">3</span>Doğrudan rezervasyon teşvikleri (ör. erken rezervasyon indirimleri, paket teklifleri) sunarak PMS gelirini artırmak.</li><li><span class="step-n">4</span>Çağrı merkezi performansını analiz edip, arama sonrası satış oranını yükseltmek için eğitim ve script iyileştirmeleri yapmak.</li></ol>
+        <div class="insight" style="background:#0E7C8612;border-color:#0E7C8633"><p>Blue Dreams Resort, 24‑30 Temmuz 2026 döneminde bütçesini %106 oranında aşarak hedefin üzerinde performans sergilemiş ve geçen yıla göre %37 gelir artışı elde etmiştir; bu, rezervasyon gelirindeki güçlü büyümeyi gösteriyor. GA4 kullanıcı sayısı 854, oturum sayısı 971 iken, Google Search Console’da 8 854 gösterim ve 636 tıklama (≈%7,2 CTR) elde edilerek organik görünürlüğün etkili olduğu görülüyor. Ancak reklam harcaması için ROAS verisi eksik olduğu için, reklam harcamasının PMS rezervasyonlarıyla doğrudan ilişkilendirilmesi ve dönüşüm ölçümünün iyileştirilmesi gerekir.</p></div>
+        <div class="sh" style="margin-top:20px">✅ Önerilen Aksiyonlar</div><ol class="steps"><li><span class="step-n">1</span>Google Ads dönüşüm izleme ve PMS rezervasyonları arasındaki eşleşmeyi sağlayacak bir etiketleme sistemi kurarak blended ROAS hesaplamasını mümkün kılmak.</li><li><span class="step-n">2</span>Google Ads kampanya yapılandırmasını, yüksek dönüşüm oranı sağlayan anahtar kelimeler ve reklam metinleri üzerine odaklayarak dönüşüm sayısını artırmak.</li><li><span class="step-n">3</span>Meta Ads platformunda eksik olan veri setini tamamlamak için yeni kampanyalar başlatıp, çok kanallı trafik ve dönüşüm fırsatlarını değerlendirmek.</li><li><span class="step-n">4</span>Çağrı merkezi performansını artırmak amacıyla arama verilerini analiz edip, satış temsilcileri için hedefli eğitim ve upsell scriptleri geliştirmek.</li></ol>
       </div>
     </section>
 
@@ -728,7 +722,7 @@ Günün tüm yorgunluğunu Bodrum’un berrak sularında bırakıp, denizle bulu
         });
         return;
       }
-      var D = {"channels":{"labels":["Direct"],"data":[854]},"agencies":{"labels":["BOOKING.COM","CALL CENTER TL","JOLLY","ETS","CALL CENTER EUR","TUI POL"],"data":[158890,75313,37264,28468,24046,20877]},"callCenter":{"labels":["07-24","07-25","07-26","07-27","07-28","07-29","07-30"],"calls":[52,50,57,56,48,79,50],"conv":[8,14,12,4,10,6,10]},"accent":"#0E7C86","muted":"#94a3b8"};
+      var D = {"channels":{"labels":["Direct"],"data":[854]},"agencies":{"labels":["BOOKING.COM","CALL CENTER TL","JOLLY","ETS","CALL CENTER EUR","TUI POL"],"data":[160992,75313,37264,28468,24046,20877]},"callCenter":{"labels":["07-24","07-25","07-26","07-27","07-28","07-29","07-30"],"calls":[52,50,57,56,48,79,50],"conv":[8,14,12,4,10,6,10]},"accent":"#0E7C86","muted":"#94a3b8"};
       var palette = [D.accent, D.accent+'CC', '#F59E0B','#8B5CF6','#EC4899','#14B8A6'];
       Chart.defaults.color = D.muted; Chart.defaults.font.family = 'Inter, system-ui, sans-serif';
       var cc = document.getElementById('chChannels');

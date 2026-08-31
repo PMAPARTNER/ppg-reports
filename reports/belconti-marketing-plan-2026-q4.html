@@ -1,0 +1,1644 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Belconti Resort — 3 Aylık Pazarlama Planı Ağustos–Ekim 2026 / Three-Month Marketing Plan</title>
+<style>
+  :root[data-theme="light"], :root{
+    --bg:#F7F9FA; --bg-card:#FFFFFF; --bg-soft:#F0F3F4; --border:#E1E7E9;
+    --text:#152029; --text-muted:#5B6B74; --gold:#1E8C82; --gold-soft:rgba(30,140,130,.10);
+    --ru:#B4454F; --ru-soft:rgba(180,69,79,.08); --warn:#C0392B; --warn-soft:rgba(192,57,43,.08);
+    --amber:#C98A00; --shadow:0 4px 16px rgba(20,30,40,.06);
+  }
+  :root[data-theme="dark"]{
+    --bg:#0A141A; --bg-card:#0F1F28; --bg-soft:rgba(255,255,255,.04); --border:rgba(255,255,255,.1);
+    --text:rgba(255,255,255,.95); --text-muted:rgba(255,255,255,.65); --gold:#38ADA4; --gold-soft:rgba(56,173,164,.12);
+    --ru:#E8B4B8; --ru-soft:rgba(232,180,184,.08); --warn:#ff9b9b; --warn-soft:rgba(229,62,62,.08);
+    --amber:#E0A300; --shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;transition:background .2s,color .2s}
+  .toolbar{position:sticky;top:0;z-index:50;background:var(--bg-card);border-bottom:1px solid var(--border);display:flex;justify-content:flex-end;gap:8px;padding:10px 20px;box-shadow:var(--shadow)}
+  .toolbar button{font-family:inherit;font-size:12px;font-weight:600;border:1px solid var(--border);background:var(--bg-soft);color:var(--text);padding:7px 14px;border-radius:8px;cursor:pointer}
+  .toolbar button:hover{border-color:var(--gold)}
+  .toolbar button.active{background:var(--gold);color:#fff;border-color:var(--gold)}
+  #approveBtn{background:var(--gold);color:#fff;border-color:var(--gold);font-weight:700}
+  #approveBtn.approved{background:#2e9e56;border-color:#2e9e56}
+  .top-banner{background:linear-gradient(90deg,#c98a00,#e0a300);color:#fff;padding:12px 24px;font-size:13px;font-weight:700;text-align:center;letter-spacing:.4px}
+  .top-banner.approved{background:linear-gradient(90deg,#237a45,#2e9e56)}
+  .wrap{max-width:1060px;margin:0 auto;padding:30px 22px 80px}
+  .pma-bar{display:flex;justify-content:space-between;align-items:center;padding:12px 4px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--border);margin-bottom:24px}
+  h1{font-family:Georgia,serif;font-size:31px;margin:16px 0 6px;color:var(--text)}
+  .sub{color:var(--text-muted);font-size:14px;margin-bottom:10px}
+  .card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:28px 30px;margin-bottom:22px;box-shadow:var(--shadow)}
+  .card h2{font-family:Georgia,serif;font-size:19px;color:var(--text);margin:0}
+  .card h3{font-size:14px;margin-bottom:6px}
+  .tag{font-size:9px;font-weight:700;background:var(--gold-soft);color:var(--gold);border:1px solid var(--gold);padding:3px 8px;border-radius:4px;letter-spacing:1.5px;text-transform:uppercase}
+  .tag-ru{background:var(--ru-soft);color:var(--ru);border-color:var(--ru)}
+  .summary-box{background:var(--bg-card);border:2px solid var(--gold);border-radius:16px;padding:26px 30px;margin-bottom:24px;box-shadow:var(--shadow)}
+  .summary-box h2{font-size:18px;margin-bottom:14px;color:var(--text)}
+  .summary-box ol{margin-left:20px}
+  .summary-box li{margin-bottom:10px;font-size:14px}
+  .summary-box b{color:var(--gold)}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:6px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:6px}
+  .metric{background:var(--bg-soft);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-align:center}
+  .metric .v{font-family:Georgia,serif;font-size:28px;font-weight:700;color:var(--gold)}
+  .metric .l{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--text);margin-top:6px;font-weight:600}
+  .metric .f{font-size:11px;color:var(--text-muted);margin-top:5px}
+  .metric-hero{background:var(--gold-soft);border:2px solid var(--gold);border-radius:14px;padding:26px 18px;text-align:center}
+  .metric-hero .v{font-family:Georgia,serif;font-size:40px;font-weight:800;color:var(--gold);line-height:1.1}
+  .metric-hero .l{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--text);margin-top:8px;font-weight:700}
+  .metric-hero .f{font-size:12px;color:var(--text-muted);margin-top:6px}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:14px}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+  th{background:var(--bg-soft);color:var(--gold);padding:10px 12px;font-size:9px;text-transform:uppercase;letter-spacing:1px;text-align:left;border-bottom:1px solid var(--border)}
+  td{padding:11px 12px;border-bottom:1px solid var(--border);color:var(--text)}
+  tr:last-child td{border-bottom:none}
+  .right{text-align:right}
+  .gold{color:var(--gold);font-weight:700}
+  .total-row td{font-weight:800;background:var(--gold-soft)}
+  .badge{font-size:8.5px;font-weight:700;padding:2px 7px;border-radius:4px;letter-spacing:.5px;text-transform:uppercase}
+  .b-google{background:rgba(66,133,244,.13);color:#4285F4;border:1px solid rgba(66,133,244,.3)}
+  .b-meta{background:rgba(139,92,246,.13);color:#8b5cf6;border:1px solid rgba(139,92,246,.3)}
+  .b-yandex{background:var(--ru-soft);color:var(--ru);border:1px solid var(--ru)}
+  ul.next{margin-left:18px}
+  ul.next li{margin-bottom:9px;font-size:13.5px}
+  .note{font-size:11.5px;color:var(--text-muted);margin-top:10px;line-height:1.65}
+  .warn{background:var(--warn-soft);border:1px solid var(--warn);border-radius:10px;padding:14px 18px;font-size:12.5px;color:var(--warn);margin-top:10px}
+  .ok-box{background:var(--gold-soft);border:1px solid var(--gold);border-radius:10px;padding:14px 18px;font-size:12.5px;margin-top:10px}
+  .ru-box{background:var(--ru-soft);border:1px solid var(--ru);border-radius:10px;padding:14px 18px;font-size:12.5px;margin-top:10px}
+  .checklist{list-style:none;margin-top:8px}
+  .checklist li{padding:7px 0;font-size:12.5px;border-bottom:1px dashed var(--border);display:flex;gap:8px}
+  .checklist li:last-child{border-bottom:none}
+  .cta{display:flex;gap:14px;margin-top:14px;flex-wrap:wrap}
+  .cta div{flex:1;min-width:220px;background:var(--bg-soft);border:1px solid var(--border);border-radius:12px;padding:16px 18px;font-size:12.5px}
+  .cta div b{color:var(--gold);display:block;margin-bottom:4px;font-size:12px}
+  footer{text-align:center;color:var(--text-muted);font-size:11px;padding:24px 0;border-top:1px solid var(--border);margin-top:10px}
+  /* charts */
+  .chart-trend{display:flex;align-items:flex-end;gap:22px;height:150px;margin:18px 6px 6px;padding:0 10px}
+  .chart-trend .col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+  .chart-trend .bar{width:56%;border-radius:6px 6px 0 0;background:var(--gold)}
+  .chart-trend .bar.est{background:repeating-linear-gradient(45deg,var(--gold),var(--gold) 6px,var(--gold-soft) 6px,var(--gold-soft) 12px);opacity:.85}
+  .chart-trend .bar.google{background:#4285F4}
+  .chart-trend.small{height:110px;gap:40px}
+  .chart-trend .val{font-size:12px;font-weight:700;color:var(--text);margin-bottom:6px}
+  .chart-trend .lbl{font-size:10.5px;color:var(--text-muted);margin-top:8px;text-align:center}
+  .hbar-row{display:grid;grid-template-columns:170px 1fr 90px;align-items:center;gap:10px;margin-bottom:10px;font-size:12.5px}
+  .hbar-track{background:var(--bg-soft);border-radius:6px;height:20px;position:relative;overflow:hidden}
+  .hbar-fill{height:100%;border-radius:6px;background:var(--gold)}
+  .hbar-fill.ru{background:var(--ru)}
+  .hbar-fill.meta{background:#8b5cf6}
+  .lang-doc{display:none}
+  .lang-doc.active{display:block}
+
+  /* ── advanced-design additions ── */
+  .hero-band{background:linear-gradient(135deg, var(--gold) 0%, #123f3b 100%);border-radius:20px;padding:40px 36px;color:#fff;margin-bottom:24px;position:relative;overflow:hidden}
+  :root[data-theme="dark"] .hero-band{background:linear-gradient(135deg,#12403c 0%,#081615 100%)}
+  .hero-band::after{content:'';position:absolute;top:-70px;right:-70px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,.07)}
+  .hero-band::before{content:'';position:absolute;bottom:-90px;left:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.05)}
+  .hero-band .eyebrow{font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;opacity:.85;margin-bottom:10px;position:relative;z-index:1}
+  .hero-band h1{color:#fff;font-size:32px;margin:0 0 10px;position:relative;z-index:1}
+  .hero-band .sub{color:rgba(255,255,255,.92);font-size:14.5px;max-width:680px;position:relative;z-index:1}
+  .confidence-pill{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:6px 16px;font-size:12px;font-weight:700;margin-top:16px;position:relative;z-index:1;color:#fff}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px;position:relative;z-index:1}
+  .hero-stat{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);border-radius:12px;padding:16px 14px}
+  .hero-stat .v{font-family:Georgia,serif;font-size:23px;font-weight:800;color:#fff;line-height:1.15}
+  .hero-stat .l{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.85);margin-top:5px;font-weight:700}
+
+  .section-head{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+  .section-icon{width:40px;height:40px;border-radius:11px;background:var(--gold-soft);display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
+  .section-icon.ru{background:var(--ru-soft)}
+  .section-head .kicker{font-size:10px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--text-muted);display:block;margin-bottom:2px}
+
+  .outcome-band{background:linear-gradient(160deg, var(--gold-soft), transparent 70%);border:2px solid var(--gold);border-radius:18px;padding:30px 32px;margin-bottom:24px;text-align:center}
+  .outcome-band .big{font-family:Georgia,serif;font-size:44px;font-weight:800;color:var(--gold);line-height:1.15}
+  .outcome-band .big small{font-size:17px;font-weight:700}
+  .outcome-band .cap{font-size:13.5px;color:var(--text);margin-top:8px;font-weight:600}
+  .outcome-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+  .outcome-grid .cell{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:15px}
+  .outcome-grid .cell .v{font-size:19px;font-weight:800;color:var(--gold);font-family:Georgia,serif}
+  .outcome-grid .cell .l{font-size:10px;text-transform:uppercase;color:var(--text-muted);margin-top:4px;font-weight:700;letter-spacing:.4px}
+
+  .donut-wrap{display:flex;gap:34px;align-items:center;flex-wrap:wrap;margin:14px 0 8px}
+  .donut{width:186px;height:186px;border-radius:50%;position:relative;flex-shrink:0;box-shadow:var(--shadow)}
+  .donut .hole{position:absolute;inset:26px;background:var(--bg-card);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px var(--border)}
+  .donut .hole .v{font-family:Georgia,serif;font-size:19px;font-weight:800;color:var(--text)}
+  .donut .hole .l{font-size:8.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-top:2px;text-align:center}
+  .legend{flex:1;min-width:250px;display:flex;flex-direction:column;gap:10px}
+  .legend-row{display:flex;align-items:center;gap:10px;font-size:13px}
+  .legend-dot{width:12px;height:12px;border-radius:3px;flex-shrink:0}
+  .legend-row .name{flex:1}
+  .legend-row .amt{font-weight:700;color:var(--text);white-space:nowrap}
+  .legend-row .pct{color:var(--text-muted);font-size:11.5px;width:34px;text-align:right}
+
+  .roadmap{display:flex;justify-content:space-between;position:relative;margin:26px 0 6px;gap:8px}
+  .roadmap::before{content:'';position:absolute;top:18px;left:6%;right:6%;height:2px;background:var(--border);z-index:0}
+  .roadmap .node{flex:1;text-align:center;position:relative;z-index:1;padding:0 4px}
+  .roadmap .dot{width:36px;height:36px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-weight:800;font-size:13px;box-shadow:0 0 0 5px var(--bg-card)}
+  .roadmap .node h4{font-size:12px;margin-bottom:5px}
+  .roadmap .node p{font-size:10.5px;color:var(--text-muted);line-height:1.45}
+
+  .compare{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;margin:16px 0 4px}
+  .compare .box{background:var(--bg-soft);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center}
+  .compare .box.now{border-color:var(--gold);background:var(--gold-soft)}
+  .compare .arrow{font-size:24px;color:var(--gold);text-align:center}
+  .compare .box .t{font-size:9.5px;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);font-weight:700;margin-bottom:6px}
+  .compare .box .v{font-size:18px;font-weight:800;color:var(--text);font-family:Georgia,serif}
+
+  .stepper{counter-reset:step}
+  .step{display:flex;gap:14px;margin-bottom:16px}
+  .step:last-child{margin-bottom:0}
+  .step .num{counter-increment:step;width:30px;height:30px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0}
+  .step .num::before{content:counter(step)}
+  .step .body b{display:block;font-size:13.5px;margin-bottom:2px}
+  .step .body span{font-size:12.5px;color:var(--text-muted)}
+
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+  .why-cell{background:var(--bg-soft);border:1px solid var(--border);border-radius:12px;padding:16px}
+  .why-cell .ico{font-size:20px;margin-bottom:8px}
+  .why-cell h4{font-size:13px;margin-bottom:5px}
+  .why-cell p{font-size:12px;color:var(--text-muted);line-height:1.55}
+
+  .chart-title{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted);margin:4px 0 12px}
+  .funnel{margin:6px 0 4px}
+  .funnel-row{display:grid;grid-template-columns:128px 1fr;align-items:center;gap:12px;margin-bottom:12px}
+  .funnel-row:last-child{margin-bottom:0}
+  .funnel-label{font-size:12px;font-weight:600;color:var(--text)}
+  .funnel-track{background:var(--bg-soft);border:1px solid var(--border);border-radius:8px;height:36px;position:relative;overflow:hidden}
+  .funnel-fill{height:100%;border-radius:7px;background:var(--gold);display:flex;align-items:center;justify-content:flex-end;padding-right:10px;min-width:44px}
+  .funnel-fill span{font-size:11.5px;font-weight:800;color:#fff;white-space:nowrap}
+  .funnel-fill.thin{background:var(--warn)}
+  .funnel-fill.thin span{color:var(--warn);padding-left:8px;position:absolute;left:100%}
+  @media (max-width:720px){ .grid4,.grid3,.hero-stats,.outcome-grid,.why-grid{grid-template-columns:repeat(2,1fr)} .compare{grid-template-columns:1fr} .compare .arrow{transform:rotate(90deg)} .funnel-row{grid-template-columns:90px 1fr} }
+</style>
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet"></head>
+<body>
+
+
+<div class="toolbar">
+  <button id="themeBtn" onclick="toggleTheme()">🌙 Dark</button>
+  <button id="langBtn" onclick="toggleLang()">EN</button>
+  <button id="approveBtn" onclick="toggleApprove()">✅ Onayla / Approve</button>
+</div>
+<div class="top-banner" id="banner">⏳ ONAY BEKLENİYOR — hiçbir kampanya bütçesi değiştirilmedi, hiçbir para harcanmadı / AWAITING APPROVAL — no budget changed, no money spent</div>
+
+<!-- ══════════════════════════ TÜRKÇE ══════════════════════════ -->
+
+<div class="lang-doc active" id="doc-tr">
+<div class="wrap">
+  <div class="pma-bar"><span>PMA PARTNER · MARKETING BRIEFING</span><span>BELCONTI RESORT</span></div>
+
+  <div class="hero-band">
+    <div class="eyebrow">Ağustos – Eylül – Ekim 2026 · 3 Aylık Reklam &amp; Pazarlama Planı</div>
+    <h1>Güçlü sezonun kazanımını sonbahara taşıma planı</h1>
+    <div class="sub">Belconti Resort, Ağustos ayını defterde <b>%99,3</b>, Eylül'ü <b>%91,0</b> doluluk düzeyinde tamamlamaktadır. Bu güçlü performans, önümüzdeki üç ay için değerli bir imkân yaratmaktadır: yakın tarihlerin kalan kapasitesi call center tarafından değerlendirilirken, reklam bütçesi <b>1–18 Ekim'deki 4.610 oda gecelik büyüme penceresine</b> yönlendirilebilecektir. Plan, iki net hedef üzerine kurulmuştur — <b>nitelikli çağrı üretimi</b> ve <b>online rezervasyon</b> — ve her iki hedef de hesapta hâlihazırda canlı olan dönüşüm ölçümlerine bağlanmaktadır.</div>
+    <div class="confidence-pill">🎯 Öncelikli Pencere 1–18 Ekim · Çağrı + Online Rezervasyon · 56 Kampanya Devreye Alınmaya Hazır</div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="v">1.590.000 ₺</div><div class="l">3 Aylık Toplam Bütçe</div></div>
+      <div class="hero-stat"><div class="v">≈48,3 Milyon ₺</div><div class="l">1–18 Ekim Büyüme Potansiyeli</div></div>
+      <div class="hero-stat"><div class="v">2.800 Çağrı</div><div class="l">Call Center Hedefi</div></div>
+    </div>
+  </div>
+
+  <div class="summary-box">
+    <h2>🎯 Planın Özeti — 4 Temel Başlık</h2>
+    <ol>
+      <li><b>Bütçe, gün bazlı ölçüme dayanarak en yüksek getirili pencerelere yönlendirilmektedir.</b> Ağustos'un 17–27 aralığı defterde %100'ün üzerinde bir doluluğa ulaşmıştır; bu tarihlerde kapasite tamamlandığı için kaynak, doğrudan daha yüksek getiri sunan sonbahar pencerelerine aktarılabilmektedir. Değerlendirilecek pencereler net biçimde belirlenmiştir: 28–31 Ağustos (182 oda gecesi), 16–30 Eylül (1.418) ve <b>1–18 Ekim (4.610)</b>.</li>
+      <li><b>Öncelikli büyüme penceresi 1–18 Ekim'dir.</b> Bu dönem defterde %73 doluluk düzeyindedir ve <b>4.610 oda gecelik</b> satılabilir kapasite (≈912.780 € / ≈48,3 milyon ₺) barındırmaktadır. Rezervasyon öncü süresi dikkate alındığında bu kapasitenin değerlendirileceği ay <b>Eylül</b>'dür; bu nedenle bütçenin ağırlığı Eylül'e verilmiştir (850.000 TL). Ekim'in son bölümü ve Kasım için ise promosyon kodu, uzun konaklama paketleri ve tur operatörü iş birlikleri gibi tamamlayıcı kanallar planlanmıştır.</li>
+      <li><b>Plan iki hedef üzerine kurulmuştur: çağrı ve online rezervasyon.</b> Bütçenin <b>%27,8'i (442.650 TL)</b> call center'a nitelikli çağrı üretimine, <b>%72,2'si (1.147.350 TL)</b> online rezervasyona ayrılmıştır. Her iki hedef de hesapta canlı ve doğrulanmış dönüşüm ölçümlerine bağlanmaktadır — çağrı için "Kişi", online rezervasyon için "Ödeme başlatma".</li>
+      <li><b>Hazır kapasite, planın hızla hayata geçirilmesini sağlamaktadır.</b> Hesapta bulunan 70 kampanyadan 56'sı devreye alınmaya hazır durumdadır ve bunların içinde sonbahar envanterine birebir uyan varlıklar yer almaktadır: Isıtmalı Havuz DE ve UK, Kasım Ara Tatil, Alman ve İngiliz erken rezervasyon kampanyaları. Ayrıca sistemdeki <b>onay akışlı promosyon kodu altyapısı</b> kullanıma hazır beklemektedir ve düşük sezon için doğrudan bir kaldıraç sunmaktadır.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>Planın İki Hedefi — Çağrı ve Online Rezervasyon</h2>
+    <div class="sub">Her kampanya kalemi bu iki hedeften birine bağlanmakta ve hesapta canlı olan ilgili dönüşüm ölçümüne göre optimize edilmektedir. Böylece bütçenin hangi hedefe ne kadar katkı sağladığı kanal bazında izlenebilir hâle gelmektedir.</div>
+
+    <div class="grid2" style="margin-top:18px">
+      <div class="metric-hero" style="text-align:left">
+        <div class="l" style="margin-top:0">Hedef 1 · Nitelikli Çağrı</div>
+        <div class="v" style="font-size:32px">442.650 ₺</div>
+        <div class="f">Bütçenin %27,8'i · 3 aylık hedef 2.800 çağrı</div>
+        <div class="f" style="margin-top:10px"><b>Dönüşüm:</b> "Kişi" — WhatsApp + telefon tıklaması<br><code>AW-452928081 / mMeWCL-Nn7kcENHE_NcB</code><br><b>Durum:</b> canlı ve doğrulanmış</div>
+      </div>
+      <div class="metric-hero" style="text-align:left">
+        <div class="l" style="margin-top:0">Hedef 2 · Online Rezervasyon</div>
+        <div class="v" style="font-size:32px">1.147.350 ₺</div>
+        <div class="f">Bütçenin %72,2'si · rezervasyon motoru üzerinden doğrudan satış</div>
+        <div class="f" style="margin-top:10px"><b>Dönüşüm:</b> "Ödeme başlatma" — rezervasyon motoru tıklaması<br><code>AW-452928081 / cboACO77nrkcENHE_NcB</code><br><b>Durum:</b> canlı ve doğrulanmış</div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:24px">Hedeflerin aylara dağılımı</h3>
+    <div class="chart-trend">
+      <div class="col"><div class="val">78.000 ₺</div><div class="bar" style="height:32%;background:#8b5cf6"></div><div class="lbl">Ağustos<br>Çağrı</div></div>
+      <div class="col"><div class="val">182.000 ₺</div><div class="bar" style="height:75%"></div><div class="lbl">Ağustos<br>Online</div></div>
+      <div class="col"><div class="val">242.250 ₺</div><div class="bar" style="height:40%;background:#8b5cf6"></div><div class="lbl">Eylül<br>Çağrı</div></div>
+      <div class="col"><div class="val">607.750 ₺</div><div class="bar" style="height:100%"></div><div class="lbl">Eylül<br>Online</div></div>
+      <div class="col"><div class="val">122.400 ₺</div><div class="bar" style="height:20%;background:#8b5cf6"></div><div class="lbl">Ekim<br>Çağrı</div></div>
+      <div class="col"><div class="val">357.600 ₺</div><div class="bar" style="height:59%"></div><div class="lbl">Ekim<br>Online</div></div>
+    </div>
+    <div class="legend" style="display:flex;gap:20px;font-size:12px;margin-top:6px;color:var(--text-muted)">
+      <span><b style="color:#8b5cf6">■</b> Nitelikli çağrı</span><span><b style="color:var(--gold)">■</b> Online rezervasyon</span>
+    </div>
+
+    <table>
+      <thead><tr><th>Ay</th><th class="right">Çağrı hedefi bütçesi</th><th class="right">Online rezervasyon bütçesi</th><th class="right">Toplam</th><th class="right">Çağrı payı</th></tr></thead>
+      <tbody>
+        <tr><td>Ağustos (17–31)</td><td class="right">78.000 ₺</td><td class="right">182.000 ₺</td><td class="right">260.000 ₺</td><td class="right">%30,0</td></tr>
+        <tr><td>Eylül</td><td class="right">242.250 ₺</td><td class="right">607.750 ₺</td><td class="right">850.000 ₺</td><td class="right">%28,5</td></tr>
+        <tr><td>Ekim</td><td class="right">122.400 ₺</td><td class="right">357.600 ₺</td><td class="right">480.000 ₺</td><td class="right">%25,5</td></tr>
+        <tr class="total-row"><td>Toplam</td><td class="right">442.650 ₺</td><td class="right">1.147.350 ₺</td><td class="right">1.590.000 ₺</td><td class="right">%27,8</td></tr>
+      </tbody>
+    </table>
+    <div class="ok-box"><b>Hedef ağırlığının aylar içindeki seyri planlıdır.</b> Ağustos'ta çağrı payı en yüksektir (%30), çünkü yakın tarihli kapasitenin değerlendirilmesinde call center'ın kapatma gücü belirleyicidir. Ekim'e doğru ağırlık online rezervasyona kaymaktadır (%74,5), çünkü bu dönemde satılan tarihler ileri vadelidir ve misafir kendi araştırmasını çevrimiçi tamamlamaktadır.</div>
+  </div>
+  <div class="card">
+    <h2>Durum Analizi — Doluluk Defteri ve Satılabilir Kapasite</h2>
+    <div class="note">Kaynak: PPG <b>DailySnapshot</b>. Defter ileriye dönüktür; son güncelleme 15 Ağustos 02:42. Otel kapasitesi ölçülen verilerden <b>≈596 oda/gece</b> olarak türetilmiştir (Ağustos: 18.353 oda gecesi ÷ %99,3 ÷ 31 gün). Senkron ufku 12 Aralık 2026'da sona ermektedir; bu tarihten sonrası ve 2027 için sistemde henüz veri bulunmamaktadır.</div>
+
+    <div class="chart-trend" style="margin-top:20px">
+      <div class="col"><div class="val">%99,3</div><div class="bar" style="height:99%"></div><div class="lbl">Ağustos<br>18.353 oda</div></div>
+      <div class="col"><div class="val">%91,0</div><div class="bar" style="height:91%"></div><div class="lbl">Eylül<br>16.270 oda</div></div>
+      <div class="col"><div class="val">%42,2</div><div class="bar est" style="height:42%"></div><div class="lbl">Ekim<br>7.789 oda</div></div>
+      <div class="col"><div class="val">%10,0</div><div class="bar est" style="height:10%"></div><div class="lbl">Kasım<br>1.789 oda</div></div>
+    </div>
+    <div class="legend" style="display:flex;gap:20px;font-size:12px;margin-top:4px;color:var(--text-muted)">
+      <span><b style="color:var(--gold)">■</b> Kapasitesi tamamlanmış aylar</span><span>▨ Büyüme kapasitesi taşıyan aylar</span>
+    </div>
+
+    <table>
+      <thead><tr><th>Ay</th><th class="right">Doluluk</th><th class="right">ADR (€)</th><th class="right">Defterdeki oda gecesi</th><th class="right">Satılabilir kapasite</th><th class="right">Potansiyel gelir (€)</th></tr></thead>
+      <tbody>
+        <tr><td>Ağustos</td><td class="right">%99,3</td><td class="right">256</td><td class="right">18.353</td><td class="right">123</td><td class="right">31.488</td></tr>
+        <tr><td>Eylül</td><td class="right">%91,0</td><td class="right">203</td><td class="right">16.270</td><td class="right">1.610</td><td class="right">326.830</td></tr>
+        <tr><td><b>Ekim</b></td><td class="right">%42,2</td><td class="right">207</td><td class="right">7.789</td><td class="right gold">10.687</td><td class="right gold">2.212.209</td></tr>
+        <tr><td><b>Kasım</b></td><td class="right">%10,0</td><td class="right">175</td><td class="right">1.789</td><td class="right gold">16.091</td><td class="right gold">2.815.925</td></tr>
+        <tr><td>Aralık (1–12)</td><td class="right">%11,4</td><td class="right">106</td><td class="right">678</td><td class="right">—</td><td class="right">—</td></tr>
+      </tbody>
+    </table>
+    <div class="note">Bu tablo aylık toplamları göstermektedir. Bütçenin hangi tarihlere yönlendirileceğinin belirlenmesi için gün ve hafta bazlı kırılım gerekmektedir; bir sonraki bölüm bu kırılımı sunmaktadır.</div>
+  </div>
+
+  <div class="card">
+    <h2>Satılabilir Kapasite Haritası — Gün ve Hafta Bazlı</h2>
+    <div class="sub">Aylık ortalama doluluk, bütçenin hangi tarihe yönlendirileceğini tek başına göstermemektedir. Gün bazlı kırılım, Ağustos ve Eylül'deki kapasitenin belirli hafta sonlarında yoğunlaştığını; Ekim'in ise <b>iki ayrı dönem olarak</b> değerlendirilmesi gerektiğini ortaya koymaktadır.</div>
+    <div class="note">Kaynak: PPG <b>DailySnapshot</b>, gün bazlı. Kapasite ≈596 oda/gece. <b>%100'ün üzerindeki değerler</b> ek yatak ve oda yükseltmeleriyle oluşan fazla doluluğu göstermekte olup, bu tarihlerde kapasite tamamlanmıştır.</div>
+
+    <table>
+      <thead><tr><th>Pencere</th><th class="right">Doluluk</th><th class="right">Satılabilir kapasite</th><th class="right">ADR (€)</th><th>Değerlendirme</th></tr></thead>
+      <tbody>
+        <tr><td>17–22 Ağustos</td><td class="right">%100,2–101,0</td><td class="right">—</td><td class="right">253–269</td><td>Kapasite tamamlanmıştır</td></tr>
+        <tr><td>23–27 Ağustos</td><td class="right">%97,5–99,3</td><td class="right">38</td><td class="right">256–272</td><td>Kapasite büyük ölçüde tamamlanmıştır</td></tr>
+        <tr><td><b>28–31 Ağustos</b></td><td class="right">%90,4–95,8</td><td class="right gold">182</td><td class="right">225–293</td><td>Hafta sonu ağırlıklı; 157'si Cuma–Pazar</td></tr>
+        <tr><td>1–15 Eylül</td><td class="right">%90,9–101,2</td><td class="right">206</td><td class="right">188–245</td><td>Dağınık; 146'sı 11–13 Eylül hafta sonunda</td></tr>
+        <tr><td><b>16–30 Eylül</b></td><td class="right">%68,6–93,6</td><td class="right gold">1.418</td><td class="right">170–205</td><td>Ay sonuna doğru genişleyen kapasite</td></tr>
+        <tr><td><b>1–18 Ekim</b></td><td class="right">%73 → %32</td><td class="right gold">4.610</td><td class="right">198</td><td><b>Öncelikli büyüme penceresi</b></td></tr>
+        <tr><td>19–31 Ekim</td><td class="right">%31,5 → %11,6</td><td class="right">6.077</td><td class="right">186–243</td><td>Promosyon kodu ve paket odaklı</td></tr>
+        <tr><td>Kasım</td><td class="right">%5,9–14,5</td><td class="right">≈15.000</td><td class="right">102–281</td><td>Sezon geçişi — tamamlayıcı kanallar</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:24px">Değerlendirilecek kapasitenin pencerelere dağılımı</h3>
+    <div class="chart-trend">
+      <div class="col"><div class="val">182</div><div class="bar" style="height:4%;background:#8b5cf6"></div><div class="lbl">28–31 Ağu</div></div>
+      <div class="col"><div class="val">206</div><div class="bar" style="height:5%;background:#8b5cf6"></div><div class="lbl">1–15 Eyl</div></div>
+      <div class="col"><div class="val">1.418</div><div class="bar" style="height:23%;background:#8b5cf6"></div><div class="lbl">16–30 Eyl</div></div>
+      <div class="col"><div class="val">4.610</div><div class="bar" style="height:76%"></div><div class="lbl">1–18 Eki<br><b>öncelikli</b></div></div>
+      <div class="col"><div class="val">6.077</div><div class="bar est" style="height:100%"></div><div class="lbl">19–31 Eki</div></div>
+    </div>
+    <div class="legend" style="display:flex;gap:20px;font-size:12px;margin-top:4px;color:var(--text-muted)">
+      <span><b style="color:#8b5cf6">■</b> Call center odaklı</span><span><b style="color:var(--gold)">■</b> Reklam odaklı</span><span>▨ Promosyon/paket odaklı</span>
+    </div>
+
+    <h3 style="margin-top:26px">Ekim'in iki dönemi — haftalık doluluk seyri</h3>
+    <div style="margin-top:12px">
+      <div class="hbar-row"><span>1–4 Ekim · %71,5</span><div class="hbar-track"><div class="hbar-fill" style="width:71.5%"></div></div><span class="right">679</span></div>
+      <div class="hbar-row"><span>5–11 Ekim · %73,8</span><div class="hbar-track"><div class="hbar-fill" style="width:73.8%"></div></div><span class="right">1.093</span></div>
+      <div class="hbar-row"><span>12–18 Ekim · %32,0</span><div class="hbar-track"><div class="hbar-fill meta" style="width:32%"></div></div><span class="right">2.838</span></div>
+      <div class="hbar-row"><span>19–25 Ekim · %31,5</span><div class="hbar-track"><div class="hbar-fill ru" style="width:31.5%"></div></div><span class="right">2.859</span></div>
+      <div class="hbar-row"><span>26 Eki–1 Kas · %11,6</span><div class="hbar-track"><div class="hbar-fill ru" style="width:11.6%"></div></div><span class="right">3.689</span></div>
+      <div class="hbar-row"><span>2–8 Kasım · %11,6</span><div class="hbar-track"><div class="hbar-fill ru" style="width:11.6%"></div></div><span class="right">3.686</span></div>
+      <div class="hbar-row"><span>9–15 Kasım · %9,9</span><div class="hbar-track"><div class="hbar-fill ru" style="width:9.9%"></div></div><span class="right">3.756</span></div>
+      <div class="hbar-row"><span>16–22 Kasım · %5,9</span><div class="hbar-track"><div class="hbar-fill ru" style="width:5.9%"></div></div><span class="right">3.927</span></div>
+      <div class="hbar-row"><span>23–29 Kasım · %14,5</span><div class="hbar-track"><div class="hbar-fill ru" style="width:14.5%"></div></div><span class="right">3.567</span></div>
+    </div>
+    <div class="legend" style="display:flex;gap:20px;font-size:12px;margin-top:6px;color:var(--text-muted)">
+      <span><b style="color:var(--gold)">■</b> Reklam odaklı</span><span><b style="color:#8b5cf6">■</b> Isıtmalı havuz argümanı</span><span><b style="color:var(--ru)">■</b> Promosyon/paket ve tamamlayıcı kanallar</span>
+    </div>
+
+    <div class="ok-box"><b>Bu kırılımın plana kazandırdığı netlik.</b> Ekim'in ilk 18 günü %73 doluluktan başlayan, standart erken rezervasyon taktikleriyle değerlendirilebilecek bir omuz sezonu niteliğindedir ve <b>4.610 oda gecelik</b> kapasitesiyle üç ayın en yüksek getirili penceresidir. 19 Ekim'den itibaren doluluk kademeli olarak azalmakta olduğundan, bu dönem için reklam yatırımı yerine <b>promosyon kodu, uzun konaklama paketleri ve tur operatörü iş birlikleri</b> daha verimli araçlar olarak planlanmıştır. Böylece bütçenin tamamı, dönüşüm olasılığının en yüksek olduğu tarihlerde çalışmaktadır.</div>
+  </div>
+
+  <div class="card">
+    <h2>Kapasite Değerlendirme Stratejisi — Pencere Bazlı</h2>
+    <div class="sub">Her pencerenin sahibi, aracı ve mesajı ayrı olarak tanımlanmıştır. Bu yapı, bütçenin dönüşüm olasılığı en yüksek tarihlerde yoğunlaşmasını sağlamaktadır.</div>
+
+    <table>
+      <thead><tr><th>Pencere</th><th class="right">Kapasite</th><th>Sahip</th><th>Hedef</th><th>Araç ve mesaj</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>17–27 Ağustos</b></td><td class="right">—</td><td>—</td><td>—</td>
+          <td>Kapasite tamamlanmıştır. Kampanya tarih hedefleri 28 Ağustos ve sonrasını kapsayacak şekilde ayarlanacak, böylece bütçe doğrudan getirili pencerelere yönlendirilecektir.</td>
+        </tr>
+        <tr>
+          <td><b>28–31 Ağustos</b></td><td class="right">182</td><td>Call center</td><td><span class="badge b-meta">Çağrı</span></td>
+          <td>Hafta sonu ağırlıklı kapasite. Google çağrı kampanyaları ve Meta WhatsApp reklam setleri devrede olacaktır. ADR 225–293 € düzeyinde olduğundan, fiyat korunarak <b>değer paketi</b> (oda yükseltme, geç çıkış, spa kredisi) öne çıkarılacaktır.</td>
+        </tr>
+        <tr>
+          <td><b>1–15 Eylül</b></td><td class="right">206</td><td>Call center</td><td><span class="badge b-meta">Çağrı</span></td>
+          <td>Kapasite dağınık ve sınırlıdır; 146'sı 11–13 Eylül hafta sonunda yoğunlaşmaktadır. Mevcut gelen çağrı hacmi bu kapasiteyi karşılamaya yeterli olduğundan ek bütçe ayrılmamıştır.</td>
+        </tr>
+        <tr>
+          <td><b>16–30 Eylül</b></td><td class="right gold">1.418</td><td>Call center + reklam</td><td><span class="badge b-meta">Çağrı</span> <span class="badge b-google">Online</span></td>
+          <td>Sezon sonu konumlandırması: sakin otel, geniş plaj, ılıman deniz. Bu pencerede <b>promosyon kodu devreye girer</b> (bkz. Promosyon Kodu Kurgusu) ve son dakika arama kampanyaları yoğunlaştırılır.</td>
+        </tr>
+        <tr>
+          <td><b>1–11 Ekim</b></td><td class="right gold">1.772</td><td>Reklam</td><td><span class="badge b-google">Online</span></td>
+          <td>%73 dolulukta omuz sezonu. Almanya (%37,6) ve İngiltere (%11,6) birincil pazarlardır; Türkiye'de okul ara tatili talebi bu pencereye denk gelmektedir. Standart erken rezervasyon kurgusu uygulanacaktır.</td>
+        </tr>
+        <tr>
+          <td><b>12–18 Ekim</b></td><td class="right gold">2.838</td><td>Reklam</td><td><span class="badge b-google">Online</span> <span class="badge b-meta">Çağrı</span></td>
+          <td>Ürün argümanı bu tarihten itibaren <b>ısıtmalı havuza</b> geçmektedir. Hesapta hazır bulunan Isıtmalı Havuz DE ve UK kampanyaları tam bu pencere için tasarlanmıştır ve devreye alınacaktır.</td>
+        </tr>
+        <tr>
+          <td><b>19–31 Ekim</b></td><td class="right">6.077</td><td>Promosyon + paket</td><td><span class="badge b-google">Online</span> <span class="badge b-meta">Çağrı</span></td>
+          <td>Hedef, gelir katkısını en üst düzeye çıkarmaktır: promosyon kodları, uzun konaklama paketleri (7 gece 6 öde) ve Kasım ara tatili teklifleri. Bütçeden ölçülü bir pay ayrılmıştır.</td>
+        </tr>
+        <tr>
+          <td><b>Kasım</b></td><td class="right">≈15.000</td><td>Ticari kanallar</td><td>Tamamlayıcı</td>
+          <td>Sezon geçiş dönemi. Bu kapasite için tur operatörü ve charter iş birlikleri, grup ve kongre satışı ile promosyon kodlu uzun konaklama teklifleri planlanmaktadır; reklam bütçesi bu döneme yönlendirilmemiştir.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="ok-box"><b>Stratejinin özeti.</b> Ağustos'un kalanı ve Eylül'de <b>call center</b> öncelikli konumdadır ve reklamın görevi nitelikli çağrı üretmektir. <b>1–18 Ekim</b> reklam bütçesinin ağırlık merkezidir ve hedef doğrudan online rezervasyondur. 19 Ekim sonrası ile Kasım için <b>promosyon kodu, paket kurgusu ve ticari iş birlikleri</b> devreye girmekte, böylece her dönem kendi en verimli aracıyla değerlendirilmektedir.</div>
+  </div>
+  <div class="card">
+    <h2>Performans Geçmişi — Temmuz ve Ağustos</h2>
+    <table>
+      <thead><tr><th>Dönem</th><th class="right">Harcama</th><th class="right">Gösterim</th><th class="right">Tık</th><th class="right">Tık oranı</th><th class="right">Tık başı</th><th class="right">Günlük ort.</th></tr></thead>
+      <tbody>
+        <tr><td>Temmuz · Google <span class="badge b-google">25 gün</span></td><td class="right">477.937 ₺</td><td class="right">2.498.072</td><td class="right">181.902</td><td class="right">%7,28</td><td class="right">2,63 ₺</td><td class="right">19.117 ₺</td></tr>
+        <tr><td>1–16 Ağustos · Google</td><td class="right">129.032 ₺</td><td class="right">489.968</td><td class="right">15.169</td><td class="right">%3,10</td><td class="right">8,51 ₺</td><td class="right">8.064 ₺</td></tr>
+        <tr><td>1–16 Ağustos · Meta</td><td class="right">—</td><td class="right">—</td><td class="right">—</td><td class="right">—</td><td class="right">—</td><td class="right">—</td></tr>
+      </tbody>
+    </table>
+    <div class="note">Temmuz'un 1–6'sı sistemde bulunmamaktadır; reklam ölçümü 7 Temmuz'da devreye alınmıştır, dolayısıyla Temmuz rakamı 25 günü kapsamaktadır ve ayın tamamı bu hızla yaklaşık 620–660 bin TL düzeyinde gerçekleşmiştir. Meta ölçümü 7 Ağustos'ta eklenmiştir.</div>
+
+    <h3 style="margin-top:22px">Günlük harcama seyri — gerçekleşen ve planlanan</h3>
+    <div class="chart-trend">
+      <div class="col"><div class="val">19.117 ₺</div><div class="bar" style="height:67%"></div><div class="lbl">Temmuz<br>gerçekleşen</div></div>
+      <div class="col"><div class="val">8.064 ₺</div><div class="bar" style="height:28%"></div><div class="lbl">1–16 Ağu<br>gerçekleşen</div></div>
+      <div class="col"><div class="val">17.300 ₺</div><div class="bar est" style="height:61%"></div><div class="lbl">17–31 Ağu<br>planlanan</div></div>
+      <div class="col"><div class="val">28.300 ₺</div><div class="bar est" style="height:100%"></div><div class="lbl">Eylül<br>planlanan</div></div>
+      <div class="col"><div class="val">15.500 ₺</div><div class="bar est" style="height:55%"></div><div class="lbl">Ekim<br>planlanan</div></div>
+    </div>
+
+    <div class="ok-box"><b>Meta kanalı planın en önemli hazır kapasitesidir.</b> Meta tarafında 1–16 Ağustos döneminde yayın gerçekleşmemiştir; Ağustos için kurulmuş iki kampanya (<b>Belconti_Dönüşüm_TR_Ağustos26</b> ve <b>Belconti_Call_TR_Ağustos26</b>) 25 Temmuz'da hazırlanmış olup devreye alınmayı beklemektedir. Mevcut kurguları Türkiye pazarına odaklı olduğundan, hedef pazarlara (Almanya %37,6 ve İngiltere %11,6) uyarlanmış kopyalarıyla birlikte yayına alınacaktır. Bu durum, Eylül'de hızlı ölçeklenebilecek <b>kullanılmamış bir kapasite</b> anlamına gelmektedir.</div>
+
+    <table>
+      <thead><tr><th>1–16 Ağustos'ta yayında olan kampanyalar</th><th class="right">Harcama</th><th class="right">Pay</th><th class="right">Tık</th><th class="right">Tık başı</th></tr></thead>
+      <tbody>
+        <tr><td>Belconti_Search_Jenerik_TR_2026_REV</td><td class="right">57.867 ₺</td><td class="right">%44,8</td><td class="right">3.275</td><td class="right">17,67 ₺</td></tr>
+        <tr><td>Belconti_Remarketing_TR_2026</td><td class="right">23.550 ₺</td><td class="right">%18,3</td><td class="right">414</td><td class="right">56,88 ₺</td></tr>
+        <tr><td>Belconti_Search_Almanya_Turkler_2026_REV</td><td class="right">20.270 ₺</td><td class="right">%15,7</td><td class="right">559</td><td class="right">36,26 ₺</td></tr>
+        <tr><td>Belconti_PMAX_Erken_Rezervasyon_UK_Ocak'26</td><td class="right">15.043 ₺</td><td class="right">%11,7</td><td class="right">7.388</td><td class="right">2,04 ₺</td></tr>
+        <tr><td>Belconti_DE_Gurbetçi_PMAX_Haziran24</td><td class="right">12.302 ₺</td><td class="right">%9,5</td><td class="right">3.533</td><td class="right">3,48 ₺</td></tr>
+        <tr class="total-row"><td>Toplam</td><td class="right">129.032 ₺</td><td class="right">%100</td><td class="right">15.169</td><td class="right">8,51 ₺</td></tr>
+      </tbody>
+    </table>
+    <div class="note">Türkiye jenerik arama kalemi Ağustos harcamasının %44,8'ini oluşturmaktadır. Türkiye'nin doldurulacak aylardaki payı %13,8 olduğundan, bu kalemin bütçesinin hedef pazarlara göre yeniden dengelenmesi planın en yüksek etkili düzenlemesidir.</div>
+  </div>
+
+  <div class="card">
+    <h2>Pazar Analizi — Bütçe Dağılımının Defterle Hizalanması</h2>
+    <div class="note">Harcama: <b>AdsDailySnapshot.byCampaign</b>, 7–31 Temmuz, kampanya adındaki pazar etiketine göre gruplanmıştır. Rezervasyon: <b>DailySnapshot.countryBreakdown</b>, 17 Ağustos – 30 Eylül konaklamaları, toplam 2.993 rezervasyon.</div>
+
+    <h3 style="margin-top:18px">Bütçe payı ↔ rezervasyon payı karşılaştırması</h3>
+    <div style="margin-top:12px">
+      <div class="hbar-row"><span><b>Almanya</b> · bütçe</span><div class="hbar-track"><div class="hbar-fill" style="width:23.2%"></div></div><span class="right">%23,2</span></div>
+      <div class="hbar-row"><span><b>Almanya</b> · rezervasyon</span><div class="hbar-track"><div class="hbar-fill meta" style="width:35.6%"></div></div><span class="right gold">%35,6</span></div>
+      <div class="hbar-row" style="margin-top:14px"><span><b>Türkiye</b> · bütçe</span><div class="hbar-track"><div class="hbar-fill" style="width:65.6%"></div></div><span class="right">%65,6</span></div>
+      <div class="hbar-row"><span><b>Türkiye</b> · rezervasyon</span><div class="hbar-track"><div class="hbar-fill meta" style="width:11.8%"></div></div><span class="right">%11,8</span></div>
+      <div class="hbar-row" style="margin-top:14px"><span><b>Rusya</b> · bütçe</span><div class="hbar-track"><div class="hbar-fill" style="width:0.5%"></div></div><span class="right">%0</span></div>
+      <div class="hbar-row"><span><b>Rusya</b> · rezervasyon</span><div class="hbar-track"><div class="hbar-fill ru" style="width:28.7%"></div></div><span class="right gold">%28,7</span></div>
+    </div>
+    <div class="legend" style="display:flex;gap:20px;font-size:12px;margin-top:6px;color:var(--text-muted)">
+      <span><b style="color:var(--gold)">■</b> Temmuz bütçe payı</span><span><b style="color:#8b5cf6">■</b> Defterdeki rezervasyon payı</span><span><b style="color:var(--ru)">■</b> Yeni kanal potansiyeli</span>
+    </div>
+
+    <table>
+      <thead><tr><th>Pazar</th><th class="right">Temmuz bütçesi</th><th class="right">Bütçe payı</th><th class="right">Rezervasyon</th><th class="right">Rez. payı</th><th>Plan yaklaşımı</th></tr></thead>
+      <tbody>
+        <tr><td>Türkiye</td><td class="right">313.518 ₺</td><td class="right">%65,6</td><td class="right">353</td><td class="right">%11,8</td><td>Payı hedef pazarlara göre yeniden dengelenecektir</td></tr>
+        <tr><td><b>Almanya</b></td><td class="right">110.886 ₺</td><td class="right">%23,2</td><td class="right">1.066</td><td class="right gold">%35,6</td><td>En yüksek verimli pazar — ağırlık buraya kaydırılmaktadır</td></tr>
+        <tr><td>Rusya</td><td class="right">—</td><td class="right">%0</td><td class="right">858</td><td class="right gold">%28,7</td><td>Yandex Direct ile açılabilecek doğrudan satış potansiyeli</td></tr>
+        <tr><td><b>İngiltere</b></td><td class="right">49.847 ₺</td><td class="right">%10,4</td><td class="right">86</td><td class="right">%2,9</td><td>Ekim–Kasım'da payı %11,6'ya yükselmektedir — güçlendirilecektir</td></tr>
+        <tr><td>Romanya + Polonya</td><td class="right">2.160 ₺</td><td class="right">%0,5</td><td class="right">238</td><td class="right">%7,9</td><td>Ölçülebilir test bütçesiyle değerlendirilecektir</td></tr>
+        <tr><td>Diğer</td><td class="right">1.526 ₺</td><td class="right">%0,3</td><td class="right">392</td><td class="right">%13,1</td><td>Slovakya, Kazakistan, Moldova, Çekya</td></tr>
+        <tr class="total-row"><td>Toplam</td><td class="right">477.937 ₺</td><td class="right">%100</td><td class="right">2.993</td><td class="right">%100</td><td></td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:24px">Öncelikli pencerede kimler rezervasyon yapıyor? (Ekim + Kasım, 647 rezervasyon)</h3>
+    <table>
+      <thead><tr><th>Pazar</th><th class="right">Rezervasyon</th><th class="right">Pay</th><th>Erişim kanalı</th></tr></thead>
+      <tbody>
+        <tr><td><b>Almanya</b></td><td class="right">243</td><td class="right gold">%37,6</td><td><span class="badge b-google">Google</span> <span class="badge b-meta">Meta</span></td></tr>
+        <tr><td>Rusya</td><td class="right">114</td><td class="right">%17,6</td><td><span class="badge b-yandex">Yandex Direct</span></td></tr>
+        <tr><td>Türkiye</td><td class="right">89</td><td class="right">%13,8</td><td><span class="badge b-google">Google</span> <span class="badge b-meta">Meta</span></td></tr>
+        <tr><td><b>İngiltere</b></td><td class="right">75</td><td class="right">%11,6</td><td><span class="badge b-google">Google</span> <span class="badge b-meta">Meta</span></td></tr>
+        <tr><td>İtalya, Hollanda, Fransa, ABD, Polonya</td><td class="right">65</td><td class="right">%10,0</td><td><span class="badge b-google">Google</span> <span class="badge b-meta">Meta</span></td></tr>
+        <tr><td>Diğer</td><td class="right">61</td><td class="right">%9,4</td><td>Kısmi</td></tr>
+      </tbody>
+    </table>
+    <div class="ru-box"><b>Rusya — değerlendirilmeye hazır bir büyüme fırsatı.</b> Rusya, defterdeki ikinci büyük pazar konumundadır (kalan sezonun %28,7'si, Ekim–Kasım'ın %17,6'sı) ve bu talep hâlihazırda tur operatörü ile acente kanallarından gelmektedir. Google ve Meta bu pazarda yayın imkânı sunmadığından, doğrudan satışa dönüştürülmesi <b>Yandex Direct</b> ile mümkün olacaktır. Temmuz'un arşivlenmiş planında bu kalem için %10 pay öngörülmüş, uygulamaya alınmamıştır. Bu plandaki 1.590.000 TL Google ve Meta ile sınırlı tutulmuş olup, Yandex kararı ayrı bir bütçe kalemi olarak yönetimin değerlendirmesine sunulmaktadır.</div>
+  </div>
+
+  <div class="card">
+    <h2>Hedef 1 · Nitelikli Çağrı — Call Center Kapasitesi ve Hedefleri</h2>
+    <div class="sub">Ağustos ve Eylül'ün kalan kapasitesinin call center tarafından değerlendirilmesi kararı, reklamın bu iki aydaki görevini netleştirmektedir: hedef, call center'ın kapatabileceği nitelikli çağrı üretmektir.</div>
+
+    <h3 style="margin-top:18px">Çağrı hacmi — gerçekleşen ve hedef</h3>
+    <div class="chart-trend">
+      <div class="col"><div class="val">1.432</div><div class="bar" style="height:100%"></div><div class="lbl">Tem 2026<br>gerçekleşen</div></div>
+      <div class="col"><div class="val">1.039</div><div class="bar" style="height:73%"></div><div class="lbl">Eyl 2025<br>geçen yıl</div></div>
+      <div class="col"><div class="val">1.150</div><div class="bar est" style="height:80%"></div><div class="lbl">Eyl 2026<br><b>hedef</b></div></div>
+      <div class="col"><div class="val">639</div><div class="bar" style="height:45%"></div><div class="lbl">Eki 2025<br>geçen yıl</div></div>
+      <div class="col"><div class="val">950</div><div class="bar est" style="height:66%"></div><div class="lbl">Eki 2026<br><b>hedef</b></div></div>
+    </div>
+
+    <table>
+      <thead><tr><th>Dönem</th><th class="right">Toplam çağrı</th><th class="right">Cevaplanan</th><th class="right">Karşılanamayan</th><th class="right">Ort. süre</th></tr></thead>
+      <tbody>
+        <tr><td>1–15 Ağustos 2026</td><td class="right">663</td><td class="right">663</td><td class="right">0</td><td class="right">183 sn</td></tr>
+        <tr><td>Temmuz 2026</td><td class="right">1.432</td><td class="right">1.432</td><td class="right">0</td><td class="right">195 sn</td></tr>
+        <tr><td>Haziran 2026</td><td class="right">1.178</td><td class="right">1.178</td><td class="right">0</td><td class="right">173 sn</td></tr>
+        <tr><td>Eylül 2025 <span class="badge b-google">geçen yıl</span></td><td class="right">1.039</td><td class="right">1.039</td><td class="right">0</td><td class="right">131 sn</td></tr>
+        <tr><td>Ekim 2025 <span class="badge b-google">geçen yıl</span></td><td class="right">639</td><td class="right">639</td><td class="right">0</td><td class="right">120 sn</td></tr>
+        <tr><td>Kasım 2025 <span class="badge b-google">geçen yıl</span></td><td class="right">444</td><td class="right">444</td><td class="right">0</td><td class="right">106 sn</td></tr>
+      </tbody>
+    </table>
+    <div class="ok-box"><b>Call center kapasitesi hedefleri karşılamaya elverişlidir.</b> Kaynak: PPG <b>CallCenterDailyStat</b> (sağlayıcı "guven"). Karşılanamayan çağrı sayısı incelenen tüm dönemlerde <b>sıfırdır</b> — dolayısıyla bir kapasite kısıtı bulunmamakta ve gelen çağrı hacmi artırılabilmektedir. Ortalama görüşme süresinin sezon boyunca 183–195 saniyeye yükselmesi, gelen çağrıların satış niteliği taşıdığını göstermektedir.</div>
+
+    <table>
+      <thead><tr><th>Ay</th><th class="right">Referans</th><th class="right">Hedef</th><th class="right">Artış</th><th>Dayanak</th></tr></thead>
+      <tbody>
+        <tr><td>Ağustos (17–31)</td><td class="right">≈676</td><td class="right">700</td><td class="right">+%4</td><td>28–31 Ağustos kapasitesinin değerlendirilmesi</td></tr>
+        <tr><td>Eylül</td><td class="right">1.039</td><td class="right">1.150</td><td class="right">+%11</td><td>Eylül kapasitesi ve Ekim satışının başlaması</td></tr>
+        <tr><td>Ekim</td><td class="right">639</td><td class="right">950</td><td class="right gold">+%49</td><td>Öncelikli pencerenin çağrı desteği</td></tr>
+        <tr class="total-row"><td>Toplam</td><td class="right">≈2.354</td><td class="right">2.800</td><td class="right">+%19</td><td></td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>Çağrı başı maliyet ilk ay sonunda ölçülecektir.</b> Belconti'de <b>CallCenterOffer</b> kaydı henüz oluşturulmadığından, çağrının rezervasyona dönüşüm oranı bugün sistemde izlenmemektedir. Ayrıca gelen çağrıların bir bölümü organik ve doğrudan kaynaklıdır. Bu nedenle çağrı üretim bütçesinin toplam çağrıya bölünmesi gerçek maliyeti yansıtmayacaktır. Ölçüm, Google "Kişi" dönüşümü, Meta çağrı raporları ve <b>call center promosyon kodlarının kullanım sayısı</b> üzerinden ilk ayın sonunda net biçimde kurulacaktır.</div>
+  </div>
+
+  <div class="card">
+    <h2>Hedef 2 · Online Rezervasyon — Dönüşüm Yolu</h2>
+    <div class="sub">Online rezervasyon, bütçenin %72,2'sinin yönlendirildiği ana hedeftir. Satış, HotelRunner BV3 rezervasyon motoru üzerinde tamamlanmakta ve hesapta canlı olan "Ödeme başlatma" dönüşümüyle ölçülmektedir.</div>
+    <div class="cta" style="margin-top:16px">
+      <div><b>1 · Talep yaratma</b> Meta (Almanya, İngiltere, Türkiye) ve Google PMax ile hedef pazarlarda ilgi oluşturulur. Ölçüt: erişim, gösterim ve site ziyareti.</div>
+      <div><b>2 · Talep yakalama</b> Google Arama kampanyaları niyetli talebi karşılar. Ölçüt: tık ve nitelikli oturum.</div>
+      <div><b>3 · Rezervasyon motoruna geçiş</b> Site üzerinden BV3'e yönlendirme. Ölçüt: <b>"Ödeme başlatma"</b> dönüşümü — canlı ve doğrulanmıştır.</div>
+      <div><b>4 · Dönüşümün tamamlanması</b> Promosyon kodu ile fiyat avantajı sunularak karar hızlandırılır. Ölçüt: <b>kod kullanım sayısı</b> — kanal bazında kesin atıf sağlar.</div>
+      <div><b>5 · Geri kazanım</b> Rezervasyon motorunda tamamlamayan misafirler yeniden pazarlama kitlesine alınır ve geri dönüş kodu ile yeniden kazanılır.</div>
+      <div><b>6 · Raporlama</b> HotelRunner kupon raporu ile PPG çağrı kayıtları birlikte değerlendirilerek kanal bazlı katkı raporlanır.</div>
+    </div>
+    <div class="ok-box"><b>Planın ölçüm altyapısına katkısı.</b> Rezervasyon motorundaki satış tutarının reklam platformlarına geri yazılması çalışması bu plan döneminde tamamlanacaktır. Bu tamamlanana kadar, <b>kanal bazlı promosyon kodları</b> sayılabilir ve doğrulanabilir bir atıf kaynağı sağlayacaktır — böylece hangi kanalın rezervasyon ürettiği ilk aydan itibaren izlenebilir hâle gelmektedir.</div>
+  </div>
+  <div class="card">
+    <h2>Promosyon Kodu Kurgusu — Düşük Sezon Kaldıracı</h2>
+    <div class="sub">Sistemde <b>onay akışlı promosyon kodu altyapısı hazır durumdadır</b> ve henüz kullanıma alınmamıştır. PPG <b>CallCenterDiscount</b> yapısı; geçerlilik tarihi (<code>validFrom / validTo</code>), azami kullanım (<code>maxUses</code>), kullanım sayacı (<code>usedCount</code>), oda ve pansiyon tipi kısıtı ile yönetici onayı (<code>approvalStatus</code>) alanlarını içermektedir. Online tarafta ise kuponlar HotelRunner BV3 rezervasyon motoru üzerinden tanımlanmaktadır. Bu iki kanal <b>ayrı kod aileleri</b> kullanacak, böylece her rezervasyonun kaynağı kesin biçimde ölçülebilecektir.</div>
+
+    <div class="grid4" style="margin-top:16px">
+      <div class="metric"><div class="v">2</div><div class="l">Kod ailesi</div><div class="f">BLC-CC (çağrı) · BLC-WEB (online)</div></div>
+      <div class="metric"><div class="v">9</div><div class="l">Planlanan kod</div><div class="f">Her biri tek bir pencereye bağlı</div></div>
+      <div class="metric"><div class="v">3.150</div><div class="l">Azami kullanım</div><div class="f">Gelir koruması için üst sınırlı</div></div>
+      <div class="metric-hero"><div class="v">Hazır</div><div class="l">Altyapı durumu</div><div class="f">Onay akışı ve sayaç mevcut, kullanılmayı bekliyor</div></div>
+    </div>
+
+    <h3 style="margin-top:26px">Uygulama ilkeleri</h3>
+    <ul class="checklist">
+      <li><b>Kod yalnızca satılabilir kapasitesi olan tarihlerde geçerlidir.</b> Her kodun <code>validFrom / validTo</code> aralığı, kapasite haritasındaki pencereyle birebir eşleştirilir. Kapasitesi tamamlanmış tarihler (17–27 Ağustos gibi) hiçbir kodun kapsamına alınmaz; böylece dolu tarihlerde gereksiz indirim verilmesi önlenir.</li>
+      <li><b>Yüksek ADR pencerelerinde önce değer katkısı sunulur.</b> 28–31 Ağustos'ta ADR 225–293 € düzeyindedir; bu pencerede fiyat indirimi yerine oda yükseltme, geç çıkış ve spa kredisi gibi <b>değer paketleri</b> uygulanır ve ortalama oda geliri korunur.</li>
+      <li><b>Her kanal kendi kod ailesini kullanır.</b> Çağrı ile gelen rezervasyonlar <code>BLC-CC-*</code>, online rezervasyonlar <code>BLC-WEB-*</code> kodlarıyla kapatılır. Kullanım sayaçları, kanal bazlı katkının doğrudan ölçülmesini sağlar.</li>
+      <li><b>Azami kullanım sınırı gelir korumasını güvence altına alır.</b> Her kod için üst sınır tanımlanır; sınıra ulaşıldığında kod otomatik olarak devre dışı kalır ve indirim maliyeti öngörülebilir düzeyde tutulur.</li>
+      <li><b>İndirim oranı sezon derinliğiyle kademelenir.</b> Öncelikli pencerede (1–18 Ekim) %10, ısıtmalı havuz döneminde %15, 2027 erken rezervasyonunda %20 uygulanır. Kademelendirme, yüksek talepli tarihlerde gereksiz iskontoyu engeller.</li>
+      <li><b>Onay akışı yetki kontrolünü sağlar.</b> Kodlar <code>approvalStatus</code> üzerinden yönetici onayına bağlanır; talep eden, onaylayan ve kullanım kaydı sistemde izlenebilir durumda tutulur.</li>
+    </ul>
+
+    <h3 style="margin-top:26px">Planlanan promosyon kodları</h3>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>Kod</th><th>Geçerli konaklama</th><th>Kanal</th><th>Avantaj</th><th class="right">Azami kullanım</th><th>Amaç</th></tr></thead>
+      <tbody>
+        <tr><td><code>BLC-WEB-EYLUL16</code></td><td>16–30 Eylül</td><td><span class="badge b-google">Online</span></td><td>%12 indirim</td><td class="right">250</td><td>Eylül kapasitesinin son dakika değerlendirilmesi</td></tr>
+        <tr><td><code>BLC-CC-EYLUL16</code></td><td>16–30 Eylül</td><td><span class="badge b-meta">Çağrı</span></td><td>%12 + geç çıkış</td><td class="right">150</td><td>Call center'a kapatma gücü kazandırılması</td></tr>
+        <tr><td><b><code>BLC-WEB-EKIM18</code></b></td><td><b>1–18 Ekim</b></td><td><span class="badge b-google">Online</span></td><td>%10 indirim</td><td class="right">400</td><td>Öncelikli pencerede karar hızlandırma</td></tr>
+        <tr><td><b><code>BLC-CC-EKIM18</code></b></td><td><b>1–18 Ekim</b></td><td><span class="badge b-meta">Çağrı</span></td><td>%10 + oda yükseltme</td><td class="right">200</td><td>Öncelikli pencerenin çağrı desteği</td></tr>
+        <tr><td><code>BLC-WEB-HAVUZ</code></td><td>12 Ekim – 30 Kasım</td><td><span class="badge b-google">Online</span></td><td>%15 indirim</td><td class="right">500</td><td>Isıtmalı havuz döneminin ana kodu</td></tr>
+        <tr><td><code>BLC-WEB-UZUN7</code></td><td>19 Ekim – 30 Kasım</td><td><span class="badge b-google">Online</span></td><td>7 gece konakla, 6 gece öde</td><td class="right">300</td><td>Ortalama oda gelirini koruyarak doluluk artışı</td></tr>
+        <tr><td><code>BLC-CC-ARATATIL</code></td><td>Kasım ara tatili</td><td><span class="badge b-meta">Çağrı</span></td><td>%12 + 12 yaş altı ücretsiz</td><td class="right">150</td><td>Aile segmentine yönelik teklif</td></tr>
+        <tr><td><code>BLC-WEB-GERIDON</code></td><td>Tüm dönem</td><td><span class="badge b-google">Yeniden pazarlama</span></td><td>%8 indirim</td><td class="right">200</td><td>Rezervasyonunu tamamlamayan misafirin geri kazanımı</td></tr>
+        <tr><td><code>BLC-WEB-ERKEN2027</code></td><td>2027 sezonu</td><td><span class="badge b-google">Online</span></td><td>%20 indirim</td><td class="right">1.000</td><td>2027 erken rezervasyon açılışı</td></tr>
+        <tr class="total-row"><td>Toplam</td><td></td><td></td><td></td><td class="right">3.150</td><td></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3 style="margin-top:24px">İndirim oranının pencere derinliğine göre kademelenmesi</h3>
+    <div class="chart-trend">
+      <div class="col"><div class="val">—</div><div class="bar" style="height:3%"></div><div class="lbl">17–27 Ağu<br>kod yok</div></div>
+      <div class="col"><div class="val">değer</div><div class="bar" style="height:20%;background:#8b5cf6"></div><div class="lbl">28–31 Ağu<br>değer paketi</div></div>
+      <div class="col"><div class="val">%12</div><div class="bar" style="height:60%"></div><div class="lbl">16–30 Eyl</div></div>
+      <div class="col"><div class="val">%10</div><div class="bar" style="height:50%"></div><div class="lbl">1–18 Eki<br><b>öncelikli</b></div></div>
+      <div class="col"><div class="val">%15</div><div class="bar" style="height:75%"></div><div class="lbl">12 Eki–30 Kas<br>havuz</div></div>
+      <div class="col"><div class="val">%20</div><div class="bar est" style="height:100%"></div><div class="lbl">2027<br>erken rez.</div></div>
+    </div>
+    <div class="note">Kademelendirmenin mantığı: doluluğun yüksek olduğu tarihlerde indirim uygulanmaz veya değer katkısıyla karşılanır; kapasitenin genişlediği tarihlerde oran kademeli olarak artırılır. 2027 erken rezervasyonundaki %20, sezon açılışının standart uygulamasıdır ve nakit akışını öne çekme amacı taşımaktadır.</div>
+
+    <div class="ok-box"><b>Promosyon kodlarının ikinci ve stratejik faydası: ölçüm.</b> Rezervasyon motorundaki satış tutarının reklam platformlarına geri yazılması çalışması tamamlanana kadar, kanal bazlı kod kullanımı <b>doğrudan sayılabilir bir atıf kaynağı</b> oluşturmaktadır. <code>BLC-CC-*</code> kodlarının kullanım sayacı çağrı kanalının, <code>BLC-WEB-*</code> kodlarının HotelRunner kupon raporu ise online kanalın katkısını net biçimde ortaya koyacaktır. Bu sayede plan, ilk ayın sonundan itibaren kanal bazlı getiri raporlaması üretebilecek duruma gelmektedir.</div>
+  </div>
+
+  <div class="card">
+    <h2>Bütçe Dağılımı — 1.590.000 TL'nin Üç Aya ve Bloklara Tahsisi</h2>
+    <div class="sub">Dağıtım, kapasite haritasına ve iki hedefe (çağrı / online rezervasyon) göre yapılmıştır. Kaynak, dönüşüm olasılığının en yüksek olduğu pencerelerde yoğunlaştırılmıştır.</div>
+
+    <div class="grid3" style="margin-bottom:18px">
+      <div class="metric"><div class="v">260.000 ₺</div><div class="l">Ağustos (17–31)</div><div class="f">15 gün · ≈17.300 ₺/gün</div></div>
+      <div class="metric-hero"><div class="v">850.000 ₺</div><div class="l">Eylül</div><div class="f">Öncelikli pencereyi satan ay · ≈28.300 ₺/gün</div></div>
+      <div class="metric"><div class="v">480.000 ₺</div><div class="l">Ekim</div><div class="f">Promosyon + 2027 · ≈15.500 ₺/gün</div></div>
+    </div>
+
+    <div class="chart-trend">
+      <div class="col"><div class="val">260.000 ₺</div><div class="bar" style="height:31%"></div><div class="lbl">Ağustos<br>(17–31)</div></div>
+      <div class="col"><div class="val">850.000 ₺</div><div class="bar" style="height:100%"></div><div class="lbl">Eylül<br><b>ağırlık merkezi</b></div></div>
+      <div class="col"><div class="val">480.000 ₺</div><div class="bar" style="height:56%"></div><div class="lbl">Ekim</div></div>
+    </div>
+
+    <div class="ok-box"><b>Eylül'ün ağırlık merkezi olmasının gerekçesi.</b> Eylül'ün değerlendirdiği kapasite, 1–18 Ekim'deki <b>4.610 oda gecesidir</b> ve bunun karşılığı ≈912.780 € (≈48,3 milyon ₺) düzeyindedir. 850.000 TL'lik bütçe bu kapasitenin <b>%1,8'ine</b> denk gelmekte olup, konaklama sektöründe son derece verimli bir reklam maliyeti oranıdır. Rezervasyon öncü süresi dikkate alındığında Eylül, bu kapasitenin değerlendirilebileceği en etkili aydır.</div>
+
+    <h3 style="margin-top:24px">Ağustos 17–31 · 260.000 TL</h3>
+    <div class="note">Ağustos'un 17–27 aralığında kapasite tamamlanmış olduğundan ve 28–31 Ağustos kapasitesi call center tarafından değerlendirileceğinden, bu ay için ölçülü bir bütçe planlanmıştır. Gözlenen fiili teslim hızı günlük 8.064 TL düzeyindedir; Meta'nın devreye alınmasıyla günlük ≈17.300 TL, sağlıklı biçimde ulaşılabilir bir seviyedir. Onaylı plandaki kalan 570.968 TL'nin bir bölümünün Eylül'e devredilmesi, kaynağın daha yüksek getirili pencerede çalışmasını sağlayacaktır.</div>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>Blok</th><th>Hedef</th><th>Platform</th><th>Pencere</th><th class="right">Pay</th><th class="right">Tutar</th><th class="right">Hedef ACOS</th></tr></thead>
+      <tbody>
+        <tr><td><b>Çağrı üretimi — son dakika</b></td><td><span class="badge b-meta">Çağrı</span></td><td><span class="badge b-google">Google</span> <span class="badge b-meta">Meta</span></td><td>28–31 Ağu + Eylül</td><td class="right">%24</td><td class="right">62.400 ₺</td><td class="right">—</td></tr>
+        <tr><td><b>Meta — talep yaratma (DE + UK)</b></td><td><span class="badge b-google">Online</span></td><td><span class="badge b-meta">Meta</span></td><td>1–18 Ekim</td><td class="right">%22</td><td class="right">57.200 ₺</td><td class="right">5,0</td></tr>
+        <tr><td>Almanya araması — erken rezervasyon</td><td><span class="badge b-google">Online</span></td><td><span class="badge b-google">Google</span></td><td>1–18 Ekim</td><td class="right">%20</td><td class="right">52.000 ₺</td><td class="right">4,0</td></tr>
+        <tr><td>Isıtmalı havuz — DE + UK PMax</td><td><span class="badge b-google">Online</span></td><td><span class="badge b-google">Google</span></td><td>12 Eki–Kasım</td><td class="right">%12</td><td class="right">31.200 ₺</td><td class="right">5,0</td></tr>
+        <tr><td>Yeniden pazarlama</td><td><span class="badge b-google">Online</span> <span class="badge b-meta">Çağrı</span></td><td><span class="badge b-google">Google</span> <span class="badge b-meta">Meta</span></td><td>Tümü</td><td class="right">%12</td><td class="right">31.200 ₺</td><td class="right">2,5</td></tr>
+        <tr><td>Marka savunması</td><td><span class="badge b-google">Online</span></td><td><span class="badge b-google">Google</span></td><td>Tümü</td><td class="right">%10</td><td class="right">26.000 ₺</td><td class="right">2,0</td></tr>
+        <tr class="total-row"><td>Toplam</td><td></td><td></td><td></td><td class="right">%100</td><td class="right">260.000 ₺</td><td class="right"></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3 style="margin-top:26px">Eylül · 850.000 TL — planın ağırlık merkezi</h3>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>Blok</th><th>Hedef</th><th>Platform</th><th>Pencere</th><th class="right">Pay</th><th class="right">Tutar</th><th class="right">Hedef ACOS</th></tr></thead>
+      <tbody>
+        <tr><td><b>Almanya — arama + Isıtmalı Havuz PMax</b></td><td><span class="badge b-google">Online</span></td><td><span class="badge b-google">Google</span></td><td>1–18 Ekim</td><td class="right">%24</td><td class="right">204.000 ₺</td><td class="right">4,0</td></tr>
+        <tr><td><b>Meta — talep yaratma (DE + UK)</b></td><td><span class="badge b-google">Online</span></td><td><span class="badge b-meta">Meta</span></td><td>1–18 Ekim</td><td class="right">%20</td><td class="right">170.000 ₺</td><td class="right">5,0</td></tr>
+        <tr><td><b>Çağrı üretimi — Eylül kapasitesi</b></td><td><span class="badge b-meta">Çağrı</span></td><td><span class="badge b-google">Google</span> <span class="badge b-meta">Meta</span></td><td>16–30 Eylül + Ekim</td><td class="right">%16</td><td class="right">136.000 ₺</td><td class="right">—</td></tr>
+        <tr><td>Türkiye araması — ara tatil + son dakika</td><td><span class="badge b-google">Online</span> <span class="badge b-meta">Çağrı</span></td><td><span class="badge b-google">Google</span></td><td>1–18 Ekim</td><td class="right">%13</td><td class="right">110.500 ₺</td><td class="right">3,5</td></tr>
+        <tr><td>Yeniden pazarlama</td><td><span class="badge b-google">Online</span> <span class="badge b-meta">Çağrı</span></td><td><span class="badge b-google">Google</span> <span class="badge b-meta">Meta</span></td><td>Tümü</td><td class="right">%12</td><td class="right">102.000 ₺</td><td class="right">2,5</td></tr>
+        <tr><td>İngiltere — arama + PMax (ara tatil)</td><td><span class="badge b-google">Online</span></td><td><span class="badge b-google">Google</span></td><td>12–25 Ekim</td><td class="right">%8</td><td class="right">68.000 ₺</td><td class="right">4,5</td></tr>
+        <tr><td>Yeni pazar testi — PL / RO / NL / IT</td><td><span class="badge b-google">Online</span></td><td><span class="badge b-google">Google</span></td><td>Ekim</td><td class="right">%4</td><td class="right">34.000 ₺</td><td class="right">4,5</td></tr>
+        <tr><td>Marka savunması</td><td><span class="badge b-google">Online</span></td><td><span class="badge b-google">Google</span></td><td>Tümü</td><td class="right">%3</td><td class="right">25.500 ₺</td><td class="right">2,0</td></tr>
+        <tr class="total-row"><td>Toplam</td><td></td><td></td><td></td><td class="right">%100</td><td class="right">850.000 ₺</td><td class="right"></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3 style="margin-top:26px">Ekim · 480.000 TL</h3>
+    <div class="note">Ekim bütçesi üç işi üstlenmektedir: 19–31 Ekim kapasitesinin promosyon kodu ve paket kurgusuyla değerlendirilmesi, Kasım ara tatili segmentinin denenmesi ve 2027 erken rezervasyonunun açılması. <b>2027 kalemi sezon takvimine dayanmaktadır</b>; defter ufku 12 Aralık'ta sona erdiğinden 2027 talebine ilişkin ölçüm verisi henüz oluşmamıştır.</div>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>Blok</th><th>Hedef</th><th>Platform</th><th>Pencere</th><th class="right">Pay</th><th class="right">Tutar</th><th class="right">Hedef ACOS</th></tr></thead>
+      <tbody>
+        <tr><td><b>2027 erken rezervasyon açılışı (DE + UK)</b></td><td><span class="badge b-google">Online</span></td><td><span class="badge b-google">Google</span></td><td>2027 sezonu</td><td class="right">%26</td><td class="right">124.800 ₺</td><td class="right">5,0</td></tr>
+        <tr><td><b>Kasım ara tatili + ısıtmalı havuz</b></td><td><span class="badge b-google">Online</span> <span class="badge b-meta">Çağrı</span></td><td><span class="badge b-google">Google</span> <span class="badge b-meta">Meta</span></td><td>Kasım</td><td class="right">%22</td><td class="right">105.600 ₺</td><td class="right">5,5</td></tr>
+        <tr><td>Meta — kış ve yılbaşı talep yaratma</td><td><span class="badge b-google">Online</span></td><td><span class="badge b-meta">Meta</span></td><td>Kasım–Aralık</td><td class="right">%18</td><td class="right">86.400 ₺</td><td class="right">5,5</td></tr>
+        <tr><td>Promosyon kodlu teklif — 19–31 Ekim</td><td><span class="badge b-meta">Çağrı</span> <span class="badge b-google">Online</span></td><td><span class="badge b-google">Google</span> <span class="badge b-meta">Meta</span></td><td>19–31 Ekim</td><td class="right">%14</td><td class="right">67.200 ₺</td><td class="right">6,0</td></tr>
+        <tr><td>Yeniden pazarlama</td><td><span class="badge b-google">Online</span> <span class="badge b-meta">Çağrı</span></td><td><span class="badge b-google">Google</span> <span class="badge b-meta">Meta</span></td><td>Tümü</td><td class="right">%12</td><td class="right">57.600 ₺</td><td class="right">2,5</td></tr>
+        <tr><td>Marka savunması</td><td><span class="badge b-google">Online</span></td><td><span class="badge b-google">Google</span></td><td>Tümü</td><td class="right">%5</td><td class="right">24.000 ₺</td><td class="right">2,0</td></tr>
+        <tr><td>Türkiye araması — kış ve bayram</td><td><span class="badge b-google">Online</span> <span class="badge b-meta">Çağrı</span></td><td><span class="badge b-google">Google</span></td><td>Kasım–Aralık</td><td class="right">%3</td><td class="right">14.400 ₺</td><td class="right">3,5</td></tr>
+        <tr class="total-row"><td>Toplam</td><td></td><td></td><td></td><td class="right">%100</td><td class="right">480.000 ₺</td><td class="right"></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3 style="margin-top:26px">Platform kırılımı — üç ay toplamı</h3>
+    <div class="chart-trend small" style="gap:30px">
+      <div class="col"><div class="val">995.400 ₺</div><div class="bar google" style="height:100%"></div><div class="lbl">Google Ads · %62,6</div></div>
+      <div class="col"><div class="val">594.600 ₺</div><div class="bar" style="height:60%;background:#8b5cf6"></div><div class="lbl">Meta · %37,4</div></div>
+    </div>
+    <table>
+      <thead><tr><th>Platform</th><th class="right">Ağustos</th><th class="right">Eylül</th><th class="right">Ekim</th><th class="right">3 ay toplamı</th><th class="right">Pay</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge b-google">Google Ads</span></td><td class="right">156.000 ₺</td><td class="right">561.000 ₺</td><td class="right">278.400 ₺</td><td class="right">995.400 ₺</td><td class="right">%62,6</td></tr>
+        <tr><td><span class="badge b-meta">Meta</span></td><td class="right">104.000 ₺</td><td class="right">289.000 ₺</td><td class="right">201.600 ₺</td><td class="right">594.600 ₺</td><td class="right">%37,4</td></tr>
+        <tr class="total-row"><td>Toplam</td><td class="right">260.000 ₺</td><td class="right">850.000 ₺</td><td class="right">480.000 ₺</td><td class="right">1.590.000 ₺</td><td class="right">%100</td></tr>
+      </tbody>
+    </table>
+    <div class="note">Çağrı üretimi, yeniden pazarlama, Kasım ara tatili ve promosyon kodlu teklif blokları iki platform arasında eşit bölünmüştür.</div>
+
+    <h3 style="margin-top:26px">Bütçenin kapasite pencerelerine dağılımı</h3>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>Pencere</th><th class="right">Kapasite</th><th class="right">Potansiyel gelir</th><th class="right">Bütçe payı</th><th class="right">Reklam / potansiyel</th></tr></thead>
+      <tbody>
+        <tr><td>28–31 Ağustos + Eylül <span class="badge b-meta">çağrı</span></td><td class="right">1.806</td><td class="right">≈18,6 mn ₺</td><td class="right">198.400 ₺</td><td class="right">%1,1</td></tr>
+        <tr><td><b>1–18 Ekim</b> <span class="badge b-google">öncelikli</span></td><td class="right gold">4.610</td><td class="right gold">≈48,3 mn ₺</td><td class="right gold">797.700 ₺</td><td class="right">%1,7</td></tr>
+        <tr><td>19–31 Ekim + Kasım ara tatili <span class="badge b-yandex">promosyon</span></td><td class="right">6.077</td><td class="right">≈59,8 mn ₺</td><td class="right">172.800 ₺</td><td class="right">%0,3</td></tr>
+        <tr><td>2027 erken rezervasyon</td><td class="right">—</td><td class="right">—</td><td class="right">124.800 ₺</td><td class="right">—</td></tr>
+        <tr><td>Marka + yeniden pazarlama (pencere bağımsız)</td><td class="right">—</td><td class="right">—</td><td class="right">296.300 ₺</td><td class="right">—</td></tr>
+        <tr class="total-row"><td>Toplam</td><td class="right"></td><td class="right"></td><td class="right">1.590.000 ₺</td><td class="right"></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note">Kasım'ın geniş kapasitesi reklam bütçesi yerine promosyon kodu, uzun konaklama paketleri ve ticari iş birlikleriyle değerlendirilecektir; bu yaklaşım, reklam yatırımının dönüşüm olasılığı yüksek pencerelerde kalmasını sağlamaktadır.</div>
+  </div>
+  <div class="card">
+    <h2>Kampanya Önerileri — Hazır Kapasite ve Devreye Alma Planı</h2>
+    <div class="sub">Belconti Google Ads hesabında <b>70 kampanya</b> bulunmakta, bunların 6'sı yayında, <b>56'sı devreye alınmaya hazır</b> durumdadır. Hazır kampanyalar arasında sonbahar envanterine birebir uyan varlıklar yer almaktadır. Bu yapı, planın büyük ölçüde <b>yeni kurulum gerektirmeden</b>, kısa sürede hayata geçirilmesini sağlamaktadır.</div>
+
+    <div class="grid4" style="margin-top:16px">
+      <div class="metric"><div class="v">6</div><div class="l">Yayında</div><div class="f">3 Arama + 3 PMax</div></div>
+      <div class="metric-hero"><div class="v">56</div><div class="l">Devreye alınmaya hazır</div><div class="f">27 Arama · 12 PMax · 8 Display · 7 Demand Gen</div></div>
+      <div class="metric"><div class="v">10</div><div class="l">Öncelikli açılacak</div><div class="f">Sonbahar envanterine birebir uyumlu</div></div>
+      <div class="metric"><div class="v">7</div><div class="l">Yeni kurulacak</div><div class="f">5 Meta + 2 Google Arama</div></div>
+    </div>
+
+    <h3 style="margin-top:26px">① Devreye Alınacak Kampanyalar</h3>
+    <div class="note">Aşağıdaki kampanyaların tamamı hesapta kurulu durumdadır. Günlük bütçeler Eylül ayı için önerilmiştir (Google Eylül toplamı 561.000 TL ≈ 18.700 TL/gün).</div>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>Kampanya</th><th>Tür</th><th>Hedef</th><th>Dayanak</th><th class="right">Temmuz verisi</th><th class="right">₺/gün</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Belconti_PMAX_Isıtmalı Havuz_DE_Şubat2026</b></td><td><span class="badge b-google">PMax</span></td><td><span class="badge b-google">Online</span></td>
+          <td>Sonbahar envanterine en uyumlu varlık: Alman pazarı ve ısıtmalı havuz konumlandırması. 12 Ekim sonrası dönemin ana ürün argümanını taşımaktadır. Henüz kullanılmamış durumdadır.</td>
+          <td class="right">kullanılmadı</td><td class="right gold">2.200</td>
+        </tr>
+        <tr>
+          <td><b>Belconti_Jenerik_Erken_Rezervasyon_DE_Mart2024</b></td><td><span class="badge b-google">Arama</span></td><td><span class="badge b-google">Online</span></td>
+          <td>Alman erken rezervasyon araması. Almanya, Ekim–Kasım defterinin %37,6'sını oluşturmaktadır; Temmuz'da 19,55 TL tık maliyetiyle verimli çalışmıştır.</td>
+          <td class="right">6.491 ₺ / 332 tık</td><td class="right gold">2.400</td>
+        </tr>
+        <tr>
+          <td>Belconti_PMAX_Erken_Rezervasyon_DE_Mart2024</td><td><span class="badge b-google">PMax</span></td><td><span class="badge b-google">Online</span></td>
+          <td>Almanya'da geniş erişim. Yurtdışı PMax kalemlerinde tık maliyeti düşüktür (İngiltere muadili 2,04 TL) ve niyet kalitesi yurtdışı pazarlarda olumlu seyretmektedir.</td>
+          <td class="right">—</td><td class="right">1.200</td>
+        </tr>
+        <tr>
+          <td>Belconti_Search_Jenerik_Erken_Rezervasyon_UK_Ocak'26</td><td><span class="badge b-google">Arama</span></td><td><span class="badge b-google">Online</span></td>
+          <td>İngiltere'nin payı Ekim–Kasım'da %11,6'ya yükselmektedir. Ekim yarıyıl tatili (half term) bu kanaldan değerlendirilecektir.</td>
+          <td class="right">572 ₺ / 29 tık</td><td class="right">1.000</td>
+        </tr>
+        <tr>
+          <td>Dex_Belconti_PMAX_Istmalı Havuz_UK_Şubat2026</td><td><span class="badge b-google">PMax</span></td><td><span class="badge b-google">Online</span></td>
+          <td>Isıtmalı havuz konumlandırmasının İngiltere sürümü. Kurulu ve kullanıma hazırdır.</td>
+          <td class="right">kullanılmadı</td><td class="right">800</td>
+        </tr>
+        <tr>
+          <td>Belconti_Search_Brand_TR_2025</td><td><span class="badge b-google">Arama</span></td><td><span class="badge b-google">Online</span></td>
+          <td>Marka savunması. Yüksek doluluk dönemlerinde de değer üretir: gelen talebi acente komisyonu yerine doğrudan rezervasyona yönlendirir.</td>
+          <td class="right">16.326 ₺ / 908 tık</td><td class="right">700</td>
+        </tr>
+        <tr>
+          <td>Belconti_Search_SonDakika_Indirim_TR_2026</td><td><span class="badge b-google">Arama</span></td><td><span class="badge b-meta">Çağrı</span></td>
+          <td>28–31 Ağustos ve 16–30 Eylül kapasitesini call center'a taşıyacak kanal. Promosyon kodlarıyla birlikte çalışacaktır.</td>
+          <td class="right">4.506 ₺ / 86 tık</td><td class="right">600</td>
+        </tr>
+        <tr>
+          <td>PL · RO · FR · NL erken rezervasyon araması (4 kampanya)</td><td><span class="badge b-google">Arama</span></td><td><span class="badge b-google">Online</span></td>
+          <td>Bu pazarlar Ekim–Kasım defterinde 140'ın üzerinde rezervasyon üretmektedir. Ölçülebilir test bütçesiyle değerlendirilecektir.</td>
+          <td class="right">3.381 ₺ toplam</td><td class="right">900</td>
+        </tr>
+        <tr>
+          <td>Dex_Belconti_Kasım_Ara_Tatil_PMAX_2025</td><td><span class="badge b-google">PMax</span></td><td><span class="badge b-google">Online</span></td>
+          <td>Kasım ara tatili segmentine yönelik hazır kampanya. <b>Ekim ayında</b> devreye alınacak ve promosyon kodlarıyla desteklenecektir.</td>
+          <td class="right">—</td><td class="right">Ekim'de</td>
+        </tr>
+        <tr>
+          <td>Dex_Belconti_Demand_Gen_Erken_Rezervasyon_DE + UK</td><td><span class="badge b-google">Demand Gen</span></td><td><span class="badge b-google">Online</span></td>
+          <td>Hedef pazarlarda görsel talep yaratma. Eylül'de ölçülü bütçeyle Meta ile karşılaştırmalı olarak test edilecektir.</td>
+          <td class="right">—</td><td class="right">test</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3 style="margin-top:26px">② Bütçesi Yeniden Dengelenecek Kampanyalar</h3>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>Kampanya</th><th class="right">Ağustos</th><th class="right">Mevcut ₺/gün</th><th class="right">Önerilen ₺/gün</th><th>Gerekçe</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Belconti_Search_Jenerik_TR_2026_REV</b></td><td class="right">57.867 ₺</td><td class="right">3.617</td><td class="right gold">2.200</td>
+          <td>Planın en yüksek etkili düzenlemesi. Bu kalem Ağustos harcamasının %44,8'ini oluşturmakta, Türkiye ise doldurulacak aylarda %13,8 pay taşımaktadır. Serbest kalan kaynak Almanya'ya yönlendirilecektir.</td>
+        </tr>
+        <tr>
+          <td><b>Belconti_Search_Almanya_Turkler_2026_REV</b></td><td class="right">20.270 ₺</td><td class="right">1.267</td><td class="right gold">3.000</td>
+          <td>Tık maliyeti 36,26 TL ile yüksek olmakla birlikte Almanya rezervasyonların %35,6'sını üretmektedir. Getiri açısından hacim artışı bu kalemde en verimli tercihtir.</td>
+        </tr>
+        <tr>
+          <td>Belconti_PMAX_Erken_Rezervasyon_UK_Ocak'26</td><td class="right">15.043 ₺</td><td class="right">940</td><td class="right">900</td>
+          <td>2,04 TL tık maliyetiyle hesabın en verimli erişim kalemidir. Korunacak, Ekim'de ara tatil için güçlendirilecektir.</td>
+        </tr>
+        <tr>
+          <td>Belconti_DE_Gurbetçi_PMAX_Haziran24</td><td class="right">12.302 ₺</td><td class="right">769</td><td class="right">700</td>
+          <td>3,48 TL tık maliyeti. Gurbetçi talebi Ekim ara tatilinde de sürmektedir; mevcut seviyede korunacaktır.</td>
+        </tr>
+        <tr>
+          <td><b>Belconti_Remarketing_TR_2026</b></td><td class="right">23.550 ₺</td><td class="right">1.472</td><td class="right">800</td>
+          <td>Bu kalemde tık maliyeti 56,88 TL düzeyindedir. Yeniden pazarlama normalde hesabın en verimli kalemi olduğundan, <b>kitle yapılandırmasının güncellenmesi belirgin bir verimlilik kazanımı potansiyeli taşımaktadır</b>. Kanal SEARCH (RLSA) olarak çalışmakta olup kitle tanımı, üyelik süresi ve teklif ayarı gözden geçirilecek; bu çalışma tamamlanana kadar bütçe ölçülü tutulacaktır.</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3 style="margin-top:26px">③ Kapalı Tutulacak Kampanyalar — bilinçli tercih</h3>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>Kampanya</th><th class="right">Temmuz</th><th>Gerekçe</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Belconti_PMAX_Erken_Rezervasyon_TR_REV</td><td class="right">44.421 ₺ / 69.830 tık</td>
+          <td>Tık maliyeti 0,64 TL ile düşük olmakla birlikte, 7 Ağustos'ta onaylanan planda %0,78 tık→çağrı oranı nedeniyle kapatılmıştır. Geniş envanter niteliği taşıdığından kapalı tutulacaktır.</td>
+        </tr>
+        <tr>
+          <td>Belconti_PMAX_Isıtmalı Havuz _TR_Şubat2026</td><td class="right">29.226 ₺ / 54.951 tık</td>
+          <td>Ürün konumlandırması doğru, kanal tercihi ise Türkiye pazarı için uygun değildir. Isıtmalı havuz argümanı Türkiye'de <b>Arama</b> kampanyası olarak kurulacaktır (bkz. bölüm ④).</td>
+        </tr>
+        <tr>
+          <td>8 Display kampanyası</td><td class="right">—</td>
+          <td>Tamamı trafik amaçlı marka kampanyalarıdır. Plan dönemi hedefleri çağrı ve rezervasyon odaklı olduğundan kapsam dışında bırakılmıştır.</td>
+        </tr>
+        <tr>
+          <td>5 arşivlenmiş YouTube kampanyası</td><td class="right">—</td>
+          <td>Arşiv durumundadır. Video ihtiyacı Meta ve Demand Gen kanalları üzerinden karşılanacaktır.</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3 style="margin-top:26px">④ Yeni Kurulacak Kampanyalar</h3>
+    <div class="note">Meta tarafında Ağustos için hazırlanan iki kampanya (<b>Belconti_Dönüşüm_TR_Ağustos26</b>, <b>Belconti_Call_TR_Ağustos26</b>) şablon olarak kullanılacak ve hedef pazarlara uyarlanacaktır. Meta Eylül toplamı 289.000 TL ≈ 9.630 TL/gün.</div>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>Kampanya</th><th>Platform / pazar</th><th>Hedef</th><th>Kurgu</th><th class="right">₺/gün</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><b>Belconti_Meta_Ekim_DE_2026</b></td><td><span class="badge b-meta">Meta</span> · Almanya</td><td><span class="badge b-google">Online</span></td>
+          <td>Talep yaratma. Sonbahar deniz sıcaklığı, ısıtmalı havuz ve sakin otel konumlandırması. <code>BLC-WEB-EKIM18</code> kodu ile desteklenir.</td><td class="right gold">3.400</td>
+        </tr>
+        <tr>
+          <td><b>Belconti_Meta_Ekim_UK_2026</b></td><td><span class="badge b-meta">Meta</span> · İngiltere</td><td><span class="badge b-google">Online</span></td>
+          <td>Yarıyıl tatili odaklı aile kurgusu; ısıtmalı havuz ve doğrudan uçuş mesajı. <code>BLC-WEB-HAVUZ</code> ile desteklenir.</td><td class="right">1.800</td>
+        </tr>
+        <tr>
+          <td><b>Belconti_Meta_Cagri_TR_2026</b></td><td><span class="badge b-meta">Meta</span> · Türkiye</td><td><span class="badge b-meta">Çağrı</span></td>
+          <td>Çağrı ve WhatsApp hedefli reklam setleri. Call center beslemesinin ana Meta kalemi; <code>BLC-CC-*</code> kodlarıyla birlikte çalışır.</td><td class="right">1.700</td>
+        </tr>
+        <tr>
+          <td>Belconti_Meta_SonDakika_Eylul_TR</td><td><span class="badge b-meta">Meta</span> · Türkiye</td><td><span class="badge b-meta">Çağrı</span> <span class="badge b-google">Online</span></td>
+          <td>Son dakika kurgusu; dinamik tarih ve fiyat, hafta sonu ağırlıklı yayın. <code>BLC-WEB-EYLUL16</code> ve <code>BLC-CC-EYLUL16</code> ile eşleştirilir.</td><td class="right">1.400</td>
+        </tr>
+        <tr>
+          <td>Belconti_Meta_Remarketing_2026</td><td><span class="badge b-meta">Meta</span> · Tümü</td><td><span class="badge b-google">Online</span></td>
+          <td>Site ziyaretçisi, rezervasyon motorunda tamamlamayanlar ve çağrı bırakanlar ayrı kitleler olarak kurulur. <code>BLC-WEB-GERIDON</code> kodu bu kitleye sunulur.</td><td class="right">1.330</td>
+        </tr>
+        <tr>
+          <td>Belconti_Search_Ekim_AraTatil_TR_2026</td><td><span class="badge b-google">Google Arama</span> · Türkiye</td><td><span class="badge b-google">Online</span> <span class="badge b-meta">Çağrı</span></td>
+          <td>Ekim okul ara tatili araması. Türkiye pazarının bu dönemdeki temel satın alma gerekçesini karşılar.</td><td class="right">1.100</td>
+        </tr>
+        <tr>
+          <td>Belconti_Search_Isitmali_Havuz_TR_2026</td><td><span class="badge b-google">Google Arama</span> · Türkiye</td><td><span class="badge b-google">Online</span></td>
+          <td>Isıtmalı havuz ürününü Türkiye'de Arama kanalında konumlandırır; niyetli talebi doğru envanterle karşılar.</td><td class="right">200</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="ok-box"><b>Dönüşüm hedeflerinin bağlanması — uygulamanın ilk adımı.</b> Çağrı hedefli tüm kampanyalar hesapta canlı olan <b>"Kişi"</b> dönüşümüne (<code>AW-452928081 / mMeWCL…</code>), online rezervasyon hedefli kampanyalar ise <b>"Ödeme başlatma"</b> dönüşümüne (<code>AW-452928081 / cboACO…</code>) birincil hedef olarak bağlanacaktır. Bu ayrım, iki hedefin performansının birbirinden bağımsız olarak ölçülmesini ve bütçenin doğru sinyale göre optimize edilmesini sağlamaktadır.</div>
+  </div>
+
+  <div class="card">
+    <h2>Uygulama Takvimi — Üç Aylık Program</h2>
+    <ul class="checklist">
+      <li><b>Hafta 1 (17–23 Ağustos)</b> — Almanya ve İngiltere hedefli Meta kampanyalarının kurulması ve yayına alınması. "Kişi" ve "Ödeme başlatma" dönüşümlerinin ilgili kampanyalara birincil hedef olarak bağlanması. Türkiye jenerik arama bütçesinin 2.200 TL/gün seviyesine dengelenmesi. Kampanya tarih hedeflerinin 28 Ağustos ve sonrasını kapsayacak şekilde ayarlanması. Promosyon kodlarının sistemde tanımlanması ve onaya sunulması.</li>
+      <li><b>Hafta 2 (24–31 Ağustos)</b> — Isıtmalı Havuz DE ve UK PMax kampanyalarının devreye alınması. Alman erken rezervasyon aramasının açılması. Son dakika kampanyasının açılması ve <code>BLC-CC-EYLUL16</code> ile eşleştirilmesi. 28–31 Ağustos için değer paketi kurgusunun call center'a tanımlanması. HotelRunner satış değeri geri yazımı çalışmasının başlatılması.</li>
+      <li><b>Eylül 1–15</b> — Eylül bütçesinin devreye alınması (≈28.300 TL/gün). Almanya aramasının 3.000 TL/gün seviyesine çıkarılması. İngiltere erken rezervasyonunun açılması ve ara tatil hazırlığı. PL/RO/NL/IT test kümesinin açılması. <code>BLC-WEB-EKIM18</code> kodunun BV3'te yayına alınması. İlk çağrı başı maliyet ölçümünün yapılması.</li>
+      <li><b>Eylül 16–30</b> — Eylül kapasitesi için son dakika ve çağrı kalemlerinin yoğunlaştırılması; Eylül promosyon kodlarının aktif kullanımı. 1–18 Ekim doluluğunun haftalık izlenmesi. Yeniden pazarlama kitlesinin güncellenmesi ve bütçesinin verimlilik kazanımına göre yeniden değerlendirilmesi. Test pazarlarının ilk performans değerlendirmesi.</li>
+      <li><b>Ekim 1–18</b> — Öncelikli pencere yayında; bütçe bu dönemde yoğunlaşmaktadır. 12 Ekim itibarıyla ürün mesajının ısıtmalı havuza geçirilmesi ve <code>BLC-WEB-HAVUZ</code> kodunun devreye alınması. Kod kullanım sayaçlarının haftalık raporlanması.</li>
+      <li><b>Ekim 19–31</b> — Kasım Ara Tatil kampanyasının devreye alınması. 19–31 Ekim için promosyon kodlu teklif ve uzun konaklama paketlerinin yayına alınması. 2027 erken rezervasyonunun ve <code>BLC-WEB-ERKEN2027</code> kodunun açılması. Üç aylık kapanış ölçümünün yapılması; satış değeri geri yazımı devreye girdiyse ilk kanal bazlı getiri raporunun üretilmesi ve Kasım–Ocak planının bu veriye dayandırılması.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Kanal Stratejisi</h2>
+    <div class="cta">
+      <div><b>Google Arama</b> Niyetli talebi karşılar ve iki hedefe de hizmet eder. Ağırlık Almanya'ya kaydırılmaktadır: tık maliyeti yüksek olmakla birlikte rezervasyonların %35,6'sını üretmektedir.</div>
+      <div><b>Meta</b> Talep yaratmanın ana kanalıdır ve hızlı ölçeklenebilir hazır kapasite sunmaktadır. Görsel kurguda ısıtmalı havuz, sonbahar deniz sıcaklığı ve geniş plaj öne çıkarılır.</div>
+      <div><b>Çağrı kampanyaları</b> Call center'ı besler: Google çağrı uzantıları ve "Kişi" dönüşümü ile Meta çağrı/WhatsApp reklam setleri. Yakın tarihli kapasitede birincil kanaldır.</div>
+      <div><b>Rezervasyon motoru</b> Online hedefin dönüşüm noktasıdır. "Ödeme başlatma" dönüşümü ve BV3 kuponları ile ölçülür; promosyon kodu kararı hızlandırır.</div>
+      <div><b>PMax</b> Yurtdışı erken rezervasyonda kullanılır (İngiltere, Almanya) — tık maliyeti 2,04–3,48 TL. Türkiye'de Arama kanalı tercih edilmektedir.</div>
+      <div><b>Yeniden pazarlama</b> Her iki hedefe hizmet eder ve <code>BLC-WEB-GERIDON</code> kodu ile geri kazanımı güçlendirir. Kitle yapılandırmasının güncellenmesi bu kalemde verimlilik kazanımı sağlayacaktır.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Anahtar Kelime Fikirleri</h2>
+    <div class="note">Sonbahar ve kış kapasitesinin değerlendirilmesine yönelik, üç dilde. Belconti'nin <b>ısıtmalı havuz</b> ürünü bu dönemin en güçlü satış argümanı olduğundan anahtar kelime kümesinin merkezine yerleştirilmiştir. Çağrı hedefli kümede aksiyon ifadeleri ("hemen arayın", "fiyat alın") öne çıkarılmaktadır.</div>
+    <div class="grid3" style="margin-top:14px">
+      <div class="metric" style="text-align:left"><div class="l">Türkçe</div><div class="f" style="line-height:2">belek ekim tatili · antalya sonbahar otel · belek ara tatil oteli · kasım tatili her şey dahil · <b>belek ısıtmalı havuzlu otel</b> · belek kapalı havuzlu otel · belek son dakika ekim · <b>belek otel fiyat sorma</b> · belek otel iletişim</div></div>
+      <div class="metric" style="text-align:left"><div class="l">Almanca</div><div class="f" style="line-height:2">belek urlaub oktober · türkei all inclusive oktober · belek hotel herbstferien · antalya urlaub november · <b>belek hotel beheizter pool</b> · türkei hotel warmes wetter oktober · belek last minute oktober · belek hotel direkt buchen</div></div>
+      <div class="metric" style="text-align:left"><div class="l">İngilizce</div><div class="f" style="line-height:2">belek holiday october · turkey all inclusive autumn · belek half term holiday · antalya hotel november · <b>belek hotel heated pool</b> · turkey winter sun hotel · belek late deals october · belek hotel book direct</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Reklam Metni Örnekleri</h2>
+    <div class="note">Google duyarlı arama reklamı sınırlarına uygun hazırlanmıştır: başlık ≤30 karakter, açıklama ≤90 karakter. Metinler iki hedefe göre ayrılmış olup, promosyon kodları açıklama alanında konumlandırılmaktadır.</div>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>Dil / hedef</th><th>Başlıklar</th><th>Açıklama</th></tr></thead>
+      <tbody>
+        <tr><td>Türkçe · <span class="badge b-google">Online</span></td><td>Belek'te Ekim Tatili<br>Isıtmalı Havuz Açık<br>Her Şey Dahil Sonbahar</td><td>Ekim'de deniz hâlâ sıcak, havuz ısıtmalı. EKIM18 kodu ile online rezervasyon avantajı.</td></tr>
+        <tr><td>Türkçe · <span class="badge b-meta">Çağrı</span></td><td>Ekim İçin Hemen Arayın<br>Size Özel Fiyat Alın<br>Belconti Resort Belek</td><td>Boş tarihler için özel fiyat alın. Rezervasyon danışmanımız sizi hemen bilgilendirsin.</td></tr>
+        <tr><td>Almanca · <span class="badge b-google">Online</span></td><td>Belek im Oktober<br>Beheizter Pool Offen<br>All Inclusive Herbst</td><td>Im Oktober ist das Meer noch warm, der Pool beheizt. Direkt buchen und sparen.</td></tr>
+        <tr><td>İngilizce · <span class="badge b-google">Online</span></td><td>October in Belek<br>Heated Pool Open<br>All Inclusive Autumn</td><td>The sea is still warm in October and the pool is heated. Book direct and save.</td></tr>
+        <tr><td>Türkçe · <span class="badge b-yandex">Kasım / uzun konaklama</span></td><td>Kasım'da Belek Keyfi<br>7 Gece Kal 6 Öde<br>Isıtmalı Havuz Açık</td><td>Uzun konaklamada avantajlı fiyat. UZUN7 kodu ile 7 gece konakla, 6 gece öde.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Ölçüm Altyapısı ve Planın Veri Temeli</h2>
+    <div class="sub">Plan, doğrulanabilir veri kaynakları üzerine kurulmuştur. Ölçüm altyapısının tamamlanmasıyla birlikte, önümüzdeki dönemde kampanya bazlı getiri raporlaması da devreye girecektir.</div>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>Ölçü</th><th class="right">Temmuz</th><th>Durum ve yaklaşım</th></tr></thead>
+      <tbody>
+        <tr><td>Harcama</td><td class="right">477.937 ₺</td><td>Güvenilir — plan hesaplamalarında esas alınmaktadır</td></tr>
+        <tr><td>Tık</td><td class="right">181.902</td><td>Güvenilir — kanal verimliliği bu veriyle değerlendirilmektedir</td></tr>
+        <tr><td>Doluluk defteri</td><td class="right">gün bazlı</td><td><b>Güvenilir</b> — planın kapasite haritası bu kaynağa dayanmaktadır (<b>DailySnapshot</b>)</td></tr>
+        <tr><td>Çağrı kayıtları</td><td class="right">1.432</td><td><b>Güvenilir</b> — çağrı hedefi bu kaynakla izlenmektedir (<b>CallCenterDailyStat</b>)</td></tr>
+        <tr><td>Platform dönüşüm sayısı</td><td class="right">49.652</td><td>Mikro etkileşimleri de içermektedir; bu nedenle plan hedeflerinde esas alınmamıştır</td></tr>
+        <tr><td>Platform dönüşüm değeri</td><td class="right">25.545 ₺</td><td>Rezervasyon motoru satış tutarı henüz platformlara geri yazılmamaktadır; bu çalışma plan döneminde tamamlanacaktır</td></tr>
+        <tr><td>Promosyon kodu kullanımı</td><td class="right">devreye alınıyor</td><td><b>Yeni atıf kaynağı</b> — kanal bazlı katkıyı sayılabilir biçimde ortaya koyacaktır</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="ok-box"><b>Yaklaşımın özeti.</b> Bu plan, reklam platformlarının dönüşüm rakamları yerine <b>otelin kendi rezervasyon defterine, call center çağrı kayıtlarına ve promosyon kodu kullanım sayaçlarına</b> dayandırılmıştır; bu üç kaynak doğrulanabilir niteliktedir. Tablolardaki <b>hedef ACOS</b> değerleri yönlendirici hedeflerdir. Plan döneminin en değerli teknik kazanımı, HotelRunner satış değeri geri yazımının tamamlanmasıyla kampanya bazlı gerçek getiri raporlamasının devreye girmesi olacaktır.</div>
+  </div>
+
+  <div class="card">
+    <h2>Atılacak Adımlar</h2>
+    <ul class="next">
+      <li>Kampanya tarih hedefleri 28 Ağustos ve sonrasını kapsayacak şekilde ayarlanacak, böylece bütçe getirili pencerelerde çalışacaktır.</li>
+      <li>Almanya ve İngiltere hedefli 5 Meta kampanyası kurulacak ve yayına alınacaktır; mevcut iki kampanya şablon olarak kullanılacaktır.</li>
+      <li>Hesapta hazır bulunan 10 kampanya devreye alınacaktır: Isıtmalı Havuz DE ve UK, Alman erken rezervasyon arama ve PMax'i, İngiliz erken rezervasyon araması, marka savunması, son dakika, PL/RO/FR/NL test kümesi ve Kasım Ara Tatil.</li>
+      <li>Türkiye jenerik arama bütçesi 2.200 TL/gün seviyesine dengelenecek, serbest kalan kaynak Almanya aramasına (3.000 TL/gün) yönlendirilecektir.</li>
+      <li>"Kişi" ve "Ödeme başlatma" dönüşümleri ilgili kampanyalara birincil hedef olarak bağlanacak; iki hedefin performansı ayrı ayrı izlenecektir.</li>
+      <li>Dokuz promosyon kodu sistemde tanımlanacak, onay akışından geçirilecek ve pencere bazlı geçerlilik tarihleriyle yayına alınacaktır.</li>
+      <li>Yeniden pazarlama kitlesi güncellenecek; bu kalemdeki verimlilik kazanımı sonrasında bütçesi yeniden değerlendirilecektir.</li>
+      <li>Isıtmalı havuz ürünü Türkiye'de Arama kanalında konumlandırılacaktır.</li>
+      <li>HotelRunner satış değeri geri yazımı kurulacaktır — plan döneminin en değerli teknik kazanımıdır.</li>
+      <li>1–18 Ekim doluluğu haftalık izlenecek, bütçe Almanya ve Meta blokları arasında performansa göre yönlendirilecektir.</li>
+    </ul>
+    <div class="ok-box"><b>Yönetimin değerlendirmesine sunulan üç konu:</b> (1) <b>Ağustos bütçesi</b> — onaylı plandaki kalan 570.968 TL, kapasite haritası doğrultusunda 260.000 TL olarak planlanmıştır; aradaki 310.968 TL'nin Eylül'e devredilmesi, kaynağın daha yüksek getirili pencerede çalışmasını sağlayacaktır. (2) <b>Kasım kapasitesi</b> — bu dönem için reklam bütçesi yerine promosyon kodu, uzun konaklama paketleri ve tur operatörü / grup satışı iş birlikleri önerilmektedir. (3) <b>Yandex Direct</b> — Rusya defterin %28,7'sini oluşturmaktadır ve doğrudan satışa açılması ayrı bir bütçe kalemiyle mümkün olacaktır.</div>
+  </div>
+
+  <footer>
+    PPG · PMA Partner — Belconti Resort 3 Aylık Pazarlama Planı · Ağustos–Ekim 2026 · Bütçe 1.590.000 ₺<br>
+    Veri kaynağı: PPG prod veritabanı, 17 Ağustos 2026 ölçümü — DailySnapshot, AdsDailySnapshot, CallCenterDailyStat, CallCenterDiscount, MarketingBudgetPlan.<br>
+    Kur: 1 € = 52,94 ₺ (sistemdeki Ağustos ortalaması). Doluluk defteri 15 Ağustos 02:42'de güncellenmiştir; senkron ufku 12 Aralık 2026.
+  </footer>
+</div>
+</div>
+<div class="lang-doc" id="doc-en">
+<div class="wrap">
+  <div class="pma-bar"><span>PMA PARTNER · MARKETING BRIEFING</span><span>BELCONTI RESORT</span></div>
+
+  <div class="hero-band">
+    <div class="eyebrow">August – September – October 2026 · Three-Month Advertising &amp; Marketing Plan</div>
+    <h1>Carrying a strong season's momentum into autumn</h1>
+    <div class="sub">Belconti Resort is closing August at <b>99.3%</b> and September at <b>91.0%</b> occupancy on the books. This strong performance creates a valuable opportunity for the coming three months: while the call center converts the remaining near-term capacity, the advertising budget can be directed to the <b>4,610 room-night growth window in 1–18 October</b>. The plan is built on two clear objectives — <b>qualified call generation</b> and <b>online reservation</b> — each tied to a conversion action already live in the account.</div>
+    <div class="confidence-pill">🎯 Priority Window 1–18 October · Calls + Online Reservations · 56 Campaigns Ready to Activate</div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="v">₺1,590,000</div><div class="l">Three-Month Total Budget</div></div>
+      <div class="hero-stat"><div class="v">≈₺48.3 Million</div><div class="l">1–18 October Growth Potential</div></div>
+      <div class="hero-stat"><div class="v">2,800 Calls</div><div class="l">Call Center Target</div></div>
+    </div>
+  </div>
+
+  <div class="summary-box">
+    <h2>🎯 Executive Summary — 4 Key Points</h2>
+    <ol>
+      <li><b>The budget is directed to the highest-return windows on the basis of day-level measurement.</b> 17–27 August has reached above 100% occupancy on the books; with capacity complete on those dates, resource can be moved directly to autumn windows offering higher return. The windows to be worked are clearly identified: 28–31 August (182 room nights), 16–30 September (1,418) and <b>1–18 October (4,610)</b>.</li>
+      <li><b>The priority growth window is 1–18 October.</b> This period stands at 73% occupancy and holds <b>4,610 room nights</b> of sellable capacity (≈€912,780 / ≈₺48.3 million). Given booking lead time, the month in which that capacity is converted is <b>September</b>, which is why the weight of the budget sits there (₺850,000). For late October and November, complementary instruments are planned: promotion codes, long-stay packages and tour-operator partnerships.</li>
+      <li><b>The plan rests on two objectives: calls and online reservations.</b> <b>27.8% (₺442,650)</b> of the budget is allocated to generating qualified calls for the call center and <b>72.2% (₺1,147,350)</b> to online reservations. Both objectives are tied to live, verified conversion actions — "Contact" for calls and "Begin checkout" for online reservations.</li>
+      <li><b>Ready capacity allows the plan to be implemented quickly.</b> Of the 70 campaigns in the account, 56 are ready to activate, and among them are assets that match the autumn inventory precisely: Heated Pool DE and UK, November Half Term, and German and British early-booking campaigns. In addition, the system's <b>approval-governed promotion-code infrastructure</b> is ready for use and offers a direct lever for the low season.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>The Plan's Two Objectives — Calls and Online Reservations</h2>
+    <div class="sub">Every campaign line is tied to one of these two objectives and optimised against the corresponding live conversion action, so each objective's contribution becomes measurable by channel.</div>
+
+    <div class="grid2" style="margin-top:18px">
+      <div class="metric-hero" style="text-align:left">
+        <div class="l" style="margin-top:0">Objective 1 · Qualified Calls</div>
+        <div class="v" style="font-size:32px">₺442,650</div>
+        <div class="f">27.8% of budget · three-month target 2,800 calls</div>
+        <div class="f" style="margin-top:10px"><b>Conversion:</b> "Contact" — WhatsApp + phone click<br><code>AW-452928081 / mMeWCL-Nn7kcENHE_NcB</code><br><b>Status:</b> live and verified</div>
+      </div>
+      <div class="metric-hero" style="text-align:left">
+        <div class="l" style="margin-top:0">Objective 2 · Online Reservations</div>
+        <div class="v" style="font-size:32px">₺1,147,350</div>
+        <div class="f">72.2% of budget · direct sales via the booking engine</div>
+        <div class="f" style="margin-top:10px"><b>Conversion:</b> "Begin checkout" — booking-engine click<br><code>AW-452928081 / cboACO77nrkcENHE_NcB</code><br><b>Status:</b> live and verified</div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:24px">Objectives by month</h3>
+    <div class="chart-trend">
+      <div class="col"><div class="val">₺78,000</div><div class="bar" style="height:32%;background:#8b5cf6"></div><div class="lbl">August<br>Calls</div></div>
+      <div class="col"><div class="val">₺182,000</div><div class="bar" style="height:75%"></div><div class="lbl">August<br>Online</div></div>
+      <div class="col"><div class="val">₺242,250</div><div class="bar" style="height:40%;background:#8b5cf6"></div><div class="lbl">September<br>Calls</div></div>
+      <div class="col"><div class="val">₺607,750</div><div class="bar" style="height:100%"></div><div class="lbl">September<br>Online</div></div>
+      <div class="col"><div class="val">₺122,400</div><div class="bar" style="height:20%;background:#8b5cf6"></div><div class="lbl">October<br>Calls</div></div>
+      <div class="col"><div class="val">₺357,600</div><div class="bar" style="height:59%"></div><div class="lbl">October<br>Online</div></div>
+    </div>
+    <div class="legend" style="display:flex;gap:20px;font-size:12px;margin-top:6px;color:var(--text-muted)">
+      <span><b style="color:#8b5cf6">■</b> Qualified calls</span><span><b style="color:var(--gold)">■</b> Online reservations</span>
+    </div>
+
+    <table>
+      <thead><tr><th>Month</th><th class="right">Call objective budget</th><th class="right">Online reservation budget</th><th class="right">Total</th><th class="right">Call share</th></tr></thead>
+      <tbody>
+        <tr><td>August (17–31)</td><td class="right">₺78,000</td><td class="right">₺182,000</td><td class="right">₺260,000</td><td class="right">30.0%</td></tr>
+        <tr><td>September</td><td class="right">₺242,250</td><td class="right">₺607,750</td><td class="right">₺850,000</td><td class="right">28.5%</td></tr>
+        <tr><td>October</td><td class="right">₺122,400</td><td class="right">₺357,600</td><td class="right">₺480,000</td><td class="right">25.5%</td></tr>
+        <tr class="total-row"><td>Total</td><td class="right">₺442,650</td><td class="right">₺1,147,350</td><td class="right">₺1,590,000</td><td class="right">27.8%</td></tr>
+      </tbody>
+    </table>
+    <div class="ok-box"><b>The shift in objective weighting across the months is deliberate.</b> The call share is highest in August (30%) because the call center's closing power is decisive for near-term capacity. Toward October the weight moves to online reservations (74.5%), as the dates being sold are further out and the guest completes their own research online.</div>
+  </div>
+
+  <div class="card">
+    <h2>Situation Analysis — The Occupancy Book and Sellable Capacity</h2>
+    <div class="note">Source: PPG <b>DailySnapshot</b>. The book is forward-looking; last updated 15 August 02:42. Capacity is derived from measured data as <b>≈596 rooms/night</b> (August: 18,353 room nights ÷ 99.3% ÷ 31 days). The sync horizon ends 12 December 2026; no data exists yet in the system beyond that date or for 2027.</div>
+
+    <div class="chart-trend" style="margin-top:20px">
+      <div class="col"><div class="val">99.3%</div><div class="bar" style="height:99%"></div><div class="lbl">August<br>18,353 rn</div></div>
+      <div class="col"><div class="val">91.0%</div><div class="bar" style="height:91%"></div><div class="lbl">September<br>16,270 rn</div></div>
+      <div class="col"><div class="val">42.2%</div><div class="bar est" style="height:42%"></div><div class="lbl">October<br>7,789 rn</div></div>
+      <div class="col"><div class="val">10.0%</div><div class="bar est" style="height:10%"></div><div class="lbl">November<br>1,789 rn</div></div>
+    </div>
+    <div class="legend" style="display:flex;gap:20px;font-size:12px;margin-top:4px;color:var(--text-muted)">
+      <span><b style="color:var(--gold)">■</b> Months at complete capacity</span><span>▨ Months carrying growth capacity</span>
+    </div>
+
+    <table>
+      <thead><tr><th>Month</th><th class="right">Occupancy</th><th class="right">ADR (€)</th><th class="right">Room nights on books</th><th class="right">Sellable capacity</th><th class="right">Potential revenue (€)</th></tr></thead>
+      <tbody>
+        <tr><td>August</td><td class="right">99.3%</td><td class="right">256</td><td class="right">18,353</td><td class="right">123</td><td class="right">31,488</td></tr>
+        <tr><td>September</td><td class="right">91.0%</td><td class="right">203</td><td class="right">16,270</td><td class="right">1,610</td><td class="right">326,830</td></tr>
+        <tr><td><b>October</b></td><td class="right">42.2%</td><td class="right">207</td><td class="right">7,789</td><td class="right gold">10,687</td><td class="right gold">2,212,209</td></tr>
+        <tr><td><b>November</b></td><td class="right">10.0%</td><td class="right">175</td><td class="right">1,789</td><td class="right gold">16,091</td><td class="right gold">2,815,925</td></tr>
+        <tr><td>December (1–12)</td><td class="right">11.4%</td><td class="right">106</td><td class="right">678</td><td class="right">—</td><td class="right">—</td></tr>
+      </tbody>
+    </table>
+    <div class="note">This table shows monthly totals. Determining which dates the budget should target requires a day- and week-level breakdown, which the next section provides.</div>
+  </div>
+
+  <div class="card">
+    <h2>Sellable Capacity Map — Day and Week Level</h2>
+    <div class="sub">Monthly average occupancy alone does not indicate which dates the budget should target. The day-level breakdown shows that capacity in August and September concentrates on specific weekends, and that October should be treated as <b>two separate periods</b>.</div>
+    <div class="note">Source: PPG <b>DailySnapshot</b>, daily granularity. Capacity ≈596 rooms/night. <b>Values above 100%</b> reflect additional beds and room upgrades; capacity is complete on those dates.</div>
+
+    <table>
+      <thead><tr><th>Window</th><th class="right">Occupancy</th><th class="right">Sellable capacity</th><th class="right">ADR (€)</th><th>Assessment</th></tr></thead>
+      <tbody>
+        <tr><td>17–22 August</td><td class="right">100.2–101.0%</td><td class="right">—</td><td class="right">253–269</td><td>Capacity complete</td></tr>
+        <tr><td>23–27 August</td><td class="right">97.5–99.3%</td><td class="right">38</td><td class="right">256–272</td><td>Capacity largely complete</td></tr>
+        <tr><td><b>28–31 August</b></td><td class="right">90.4–95.8%</td><td class="right gold">182</td><td class="right">225–293</td><td>Weekend-weighted; 157 of it Fri–Sun</td></tr>
+        <tr><td>1–15 September</td><td class="right">90.9–101.2%</td><td class="right">206</td><td class="right">188–245</td><td>Scattered; 146 in the 11–13 September weekend</td></tr>
+        <tr><td><b>16–30 September</b></td><td class="right">68.6–93.6%</td><td class="right gold">1,418</td><td class="right">170–205</td><td>Capacity widening toward month end</td></tr>
+        <tr><td><b>1–18 October</b></td><td class="right">73% → 32%</td><td class="right gold">4,610</td><td class="right">198</td><td><b>Priority growth window</b></td></tr>
+        <tr><td>19–31 October</td><td class="right">31.5% → 11.6%</td><td class="right">6,077</td><td class="right">186–243</td><td>Promotion-code and package led</td></tr>
+        <tr><td>November</td><td class="right">5.9–14.5%</td><td class="right">≈15,000</td><td class="right">102–281</td><td>Season transition — complementary channels</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:24px">Capacity to be worked, by window</h3>
+    <div class="chart-trend">
+      <div class="col"><div class="val">182</div><div class="bar" style="height:4%;background:#8b5cf6"></div><div class="lbl">28–31 Aug</div></div>
+      <div class="col"><div class="val">206</div><div class="bar" style="height:5%;background:#8b5cf6"></div><div class="lbl">1–15 Sep</div></div>
+      <div class="col"><div class="val">1,418</div><div class="bar" style="height:23%;background:#8b5cf6"></div><div class="lbl">16–30 Sep</div></div>
+      <div class="col"><div class="val">4,610</div><div class="bar" style="height:76%"></div><div class="lbl">1–18 Oct<br><b>priority</b></div></div>
+      <div class="col"><div class="val">6,077</div><div class="bar est" style="height:100%"></div><div class="lbl">19–31 Oct</div></div>
+    </div>
+    <div class="legend" style="display:flex;gap:20px;font-size:12px;margin-top:4px;color:var(--text-muted)">
+      <span><b style="color:#8b5cf6">■</b> Call center led</span><span><b style="color:var(--gold)">■</b> Advertising led</span><span>▨ Promotion/package led</span>
+    </div>
+
+    <h3 style="margin-top:26px">October's two periods — weekly occupancy</h3>
+    <div style="margin-top:12px">
+      <div class="hbar-row"><span>1–4 Oct · 71.5%</span><div class="hbar-track"><div class="hbar-fill" style="width:71.5%"></div></div><span class="right">679</span></div>
+      <div class="hbar-row"><span>5–11 Oct · 73.8%</span><div class="hbar-track"><div class="hbar-fill" style="width:73.8%"></div></div><span class="right">1,093</span></div>
+      <div class="hbar-row"><span>12–18 Oct · 32.0%</span><div class="hbar-track"><div class="hbar-fill meta" style="width:32%"></div></div><span class="right">2,838</span></div>
+      <div class="hbar-row"><span>19–25 Oct · 31.5%</span><div class="hbar-track"><div class="hbar-fill ru" style="width:31.5%"></div></div><span class="right">2,859</span></div>
+      <div class="hbar-row"><span>26 Oct–1 Nov · 11.6%</span><div class="hbar-track"><div class="hbar-fill ru" style="width:11.6%"></div></div><span class="right">3,689</span></div>
+      <div class="hbar-row"><span>2–8 Nov · 11.6%</span><div class="hbar-track"><div class="hbar-fill ru" style="width:11.6%"></div></div><span class="right">3,686</span></div>
+      <div class="hbar-row"><span>9–15 Nov · 9.9%</span><div class="hbar-track"><div class="hbar-fill ru" style="width:9.9%"></div></div><span class="right">3,756</span></div>
+      <div class="hbar-row"><span>16–22 Nov · 5.9%</span><div class="hbar-track"><div class="hbar-fill ru" style="width:5.9%"></div></div><span class="right">3,927</span></div>
+      <div class="hbar-row"><span>23–29 Nov · 14.5%</span><div class="hbar-track"><div class="hbar-fill ru" style="width:14.5%"></div></div><span class="right">3,567</span></div>
+    </div>
+    <div class="legend" style="display:flex;gap:20px;font-size:12px;margin-top:6px;color:var(--text-muted)">
+      <span><b style="color:var(--gold)">■</b> Advertising led</span><span><b style="color:#8b5cf6">■</b> Heated-pool proposition</span><span><b style="color:var(--ru)">■</b> Promotion/package and complementary channels</span>
+    </div>
+
+    <div class="ok-box"><b>What this breakdown adds to the plan.</b> The first 18 days of October form a shoulder period starting at 73% occupancy that can be worked with standard early-booking tactics, and with <b>4,610 room nights</b> it is the highest-return window of the three months. From 19 October occupancy tapers, so for that period <b>promotion codes, long-stay packages and tour-operator partnerships</b> are planned as the more efficient instruments rather than advertising investment. This keeps the entire budget working on the dates with the highest conversion probability.</div>
+  </div>
+
+  <div class="card">
+    <h2>Capacity Strategy — By Window</h2>
+    <div class="sub">Each window's owner, instrument and message is defined separately. This structure concentrates the budget on the dates with the highest conversion probability.</div>
+
+    <table>
+      <thead><tr><th>Window</th><th class="right">Capacity</th><th>Owner</th><th>Objective</th><th>Instrument and message</th></tr></thead>
+      <tbody>
+        <tr><td><b>17–27 August</b></td><td class="right">—</td><td>—</td><td>—</td>
+          <td>Capacity is complete. Campaign date targeting will be set to cover 28 August onward, directing budget straight to return-generating windows.</td></tr>
+        <tr><td><b>28–31 August</b></td><td class="right">182</td><td>Call center</td><td><span class="badge b-meta">Calls</span></td>
+          <td>Weekend-weighted capacity. Google call campaigns and Meta WhatsApp ad sets will be active. With ADR at €225–293, rate is held and <b>value packages</b> (room upgrade, late checkout, spa credit) are foregrounded.</td></tr>
+        <tr><td><b>1–15 September</b></td><td class="right">206</td><td>Call center</td><td><span class="badge b-meta">Calls</span></td>
+          <td>Capacity is scattered and limited, with 146 concentrated in the 11–13 September weekend. Current inbound call volume is sufficient, so no additional budget is allocated.</td></tr>
+        <tr><td><b>16–30 September</b></td><td class="right gold">1,418</td><td>Call center + advertising</td><td><span class="badge b-meta">Calls</span> <span class="badge b-google">Online</span></td>
+          <td>End-of-season positioning: quiet hotel, spacious beach, mild sea. <b>Promotion codes enter here</b> (see Promotion Code Framework) and last-minute search campaigns are intensified.</td></tr>
+        <tr><td><b>1–11 October</b></td><td class="right gold">1,772</td><td>Advertising</td><td><span class="badge b-google">Online</span></td>
+          <td>Shoulder period at 73%. Germany (37.6%) and the UK (11.6%) are primary; Turkey's school half-term demand falls in this window. Standard early-booking structure applies.</td></tr>
+        <tr><td><b>12–18 October</b></td><td class="right gold">2,838</td><td>Advertising</td><td><span class="badge b-google">Online</span> <span class="badge b-meta">Calls</span></td>
+          <td>From this date the product proposition moves to the <b>heated pool</b>. The ready-built Heated Pool DE and UK campaigns were designed for exactly this window and will be activated.</td></tr>
+        <tr><td><b>19–31 October</b></td><td class="right">6,077</td><td>Promotion + package</td><td><span class="badge b-google">Online</span> <span class="badge b-meta">Calls</span></td>
+          <td>The objective is to maximise revenue contribution: promotion codes, long-stay packages (7 nights for 6) and November half-term offers. A measured share of budget is allocated.</td></tr>
+        <tr><td><b>November</b></td><td class="right">≈15,000</td><td>Commercial channels</td><td>Complementary</td>
+          <td>Season transition. This capacity is planned through tour-operator and charter partnerships, group and conference sales, and promotion-coded long-stay offers; advertising budget is not directed to this period.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="ok-box"><b>Strategy in summary.</b> Through the remainder of August and September the <b>call center</b> takes priority and advertising's role is to generate qualified calls. <b>1–18 October</b> is the centre of gravity for the advertising budget, targeting online reservations directly. For late October and November, <b>promotion codes, package structures and commercial partnerships</b> take over — so each period is worked with its most efficient instrument.</div>
+  </div>
+  <div class="card">
+    <h2>Performance History — July and August</h2>
+    <table>
+      <thead><tr><th>Period</th><th class="right">Spend</th><th class="right">Impressions</th><th class="right">Clicks</th><th class="right">CTR</th><th class="right">CPC</th><th class="right">Daily avg.</th></tr></thead>
+      <tbody>
+        <tr><td>July · Google <span class="badge b-google">25 days</span></td><td class="right">₺477,937</td><td class="right">2,498,072</td><td class="right">181,902</td><td class="right">7.28%</td><td class="right">₺2.63</td><td class="right">₺19,117</td></tr>
+        <tr><td>1–16 August · Google</td><td class="right">₺129,032</td><td class="right">489,968</td><td class="right">15,169</td><td class="right">3.10%</td><td class="right">₺8.51</td><td class="right">₺8,064</td></tr>
+        <tr><td>1–16 August · Meta</td><td class="right">—</td><td class="right">—</td><td class="right">—</td><td class="right">—</td><td class="right">—</td><td class="right">—</td></tr>
+      </tbody>
+    </table>
+    <div class="note">July 1–6 is not held in the system; ad measurement was activated on 7 July, so the July figure covers 25 days and the full month came in at roughly ₺620,000–660,000 at that pace. Meta measurement was added on 7 August.</div>
+
+    <h3 style="margin-top:22px">Daily spend — actual and planned</h3>
+    <div class="chart-trend">
+      <div class="col"><div class="val">₺19,117</div><div class="bar" style="height:67%"></div><div class="lbl">July<br>actual</div></div>
+      <div class="col"><div class="val">₺8,064</div><div class="bar" style="height:28%"></div><div class="lbl">1–16 Aug<br>actual</div></div>
+      <div class="col"><div class="val">₺17,300</div><div class="bar est" style="height:61%"></div><div class="lbl">17–31 Aug<br>planned</div></div>
+      <div class="col"><div class="val">₺28,300</div><div class="bar est" style="height:100%"></div><div class="lbl">September<br>planned</div></div>
+      <div class="col"><div class="val">₺15,500</div><div class="bar est" style="height:55%"></div><div class="lbl">October<br>planned</div></div>
+    </div>
+
+    <div class="ok-box"><b>Meta is the plan's most significant ready capacity.</b> No delivery took place on Meta between 1 and 16 August; the two campaigns prepared for August (<b>Belconti_Dönüşüm_TR_Ağustos26</b> and <b>Belconti_Call_TR_Ağustos26</b>) were built on 25 July and are awaiting activation. As their current setup is focused on the Turkish market, they will go live together with versions adapted to the target markets (Germany 37.6% and the UK 11.6%). This represents <b>unused capacity</b> that can scale quickly in September.</div>
+
+    <table>
+      <thead><tr><th>Campaigns delivering 1–16 August</th><th class="right">Spend</th><th class="right">Share</th><th class="right">Clicks</th><th class="right">CPC</th></tr></thead>
+      <tbody>
+        <tr><td>Belconti_Search_Jenerik_TR_2026_REV</td><td class="right">₺57,867</td><td class="right">44.8%</td><td class="right">3,275</td><td class="right">₺17.67</td></tr>
+        <tr><td>Belconti_Remarketing_TR_2026</td><td class="right">₺23,550</td><td class="right">18.3%</td><td class="right">414</td><td class="right">₺56.88</td></tr>
+        <tr><td>Belconti_Search_Almanya_Turkler_2026_REV</td><td class="right">₺20,270</td><td class="right">15.7%</td><td class="right">559</td><td class="right">₺36.26</td></tr>
+        <tr><td>Belconti_PMAX_Erken_Rezervasyon_UK_Ocak'26</td><td class="right">₺15,043</td><td class="right">11.7%</td><td class="right">7,388</td><td class="right">₺2.04</td></tr>
+        <tr><td>Belconti_DE_Gurbetçi_PMAX_Haziran24</td><td class="right">₺12,302</td><td class="right">9.5%</td><td class="right">3,533</td><td class="right">₺3.48</td></tr>
+        <tr class="total-row"><td>Total</td><td class="right">₺129,032</td><td class="right">100%</td><td class="right">15,169</td><td class="right">₺8.51</td></tr>
+      </tbody>
+    </table>
+    <div class="note">The Turkish generic search line accounts for 44.8% of August spend. As Turkey represents 13.8% of the months to be filled, rebalancing this line toward the target markets is the plan's highest-impact adjustment.</div>
+  </div>
+
+  <div class="card">
+    <h2>Market Analysis — Aligning Budget with the Book</h2>
+    <div class="note">Spend: <b>AdsDailySnapshot.byCampaign</b>, 7–31 July, grouped by the market tag in each campaign name. Reservations: <b>DailySnapshot.countryBreakdown</b>, stays 17 August – 30 September, 2,993 reservations in total.</div>
+
+    <h3 style="margin-top:18px">Budget share ↔ reservation share</h3>
+    <div style="margin-top:12px">
+      <div class="hbar-row"><span><b>Germany</b> · budget</span><div class="hbar-track"><div class="hbar-fill" style="width:23.2%"></div></div><span class="right">23.2%</span></div>
+      <div class="hbar-row"><span><b>Germany</b> · reservations</span><div class="hbar-track"><div class="hbar-fill meta" style="width:35.6%"></div></div><span class="right gold">35.6%</span></div>
+      <div class="hbar-row" style="margin-top:14px"><span><b>Turkey</b> · budget</span><div class="hbar-track"><div class="hbar-fill" style="width:65.6%"></div></div><span class="right">65.6%</span></div>
+      <div class="hbar-row"><span><b>Turkey</b> · reservations</span><div class="hbar-track"><div class="hbar-fill meta" style="width:11.8%"></div></div><span class="right">11.8%</span></div>
+      <div class="hbar-row" style="margin-top:14px"><span><b>Russia</b> · budget</span><div class="hbar-track"><div class="hbar-fill" style="width:0.5%"></div></div><span class="right">0%</span></div>
+      <div class="hbar-row"><span><b>Russia</b> · reservations</span><div class="hbar-track"><div class="hbar-fill ru" style="width:28.7%"></div></div><span class="right gold">28.7%</span></div>
+    </div>
+    <div class="legend" style="display:flex;gap:20px;font-size:12px;margin-top:6px;color:var(--text-muted)">
+      <span><b style="color:var(--gold)">■</b> July budget share</span><span><b style="color:#8b5cf6">■</b> Reservation share on books</span><span><b style="color:var(--ru)">■</b> New channel potential</span>
+    </div>
+
+    <table>
+      <thead><tr><th>Market</th><th class="right">July budget</th><th class="right">Budget share</th><th class="right">Reservations</th><th class="right">Res. share</th><th>Plan approach</th></tr></thead>
+      <tbody>
+        <tr><td>Turkey</td><td class="right">₺313,518</td><td class="right">65.6%</td><td class="right">353</td><td class="right">11.8%</td><td>Share to be rebalanced toward the target markets</td></tr>
+        <tr><td><b>Germany</b></td><td class="right">₺110,886</td><td class="right">23.2%</td><td class="right">1,066</td><td class="right gold">35.6%</td><td>Highest-efficiency market — weight moves here</td></tr>
+        <tr><td>Russia</td><td class="right">—</td><td class="right">0%</td><td class="right">858</td><td class="right gold">28.7%</td><td>Direct-sales potential that Yandex Direct can open</td></tr>
+        <tr><td><b>United Kingdom</b></td><td class="right">₺49,847</td><td class="right">10.4%</td><td class="right">86</td><td class="right">2.9%</td><td>Rises to 11.6% in October–November — to be strengthened</td></tr>
+        <tr><td>Romania + Poland</td><td class="right">₺2,160</td><td class="right">0.5%</td><td class="right">238</td><td class="right">7.9%</td><td>To be worked with a measurable test budget</td></tr>
+        <tr><td>Other</td><td class="right">₺1,526</td><td class="right">0.3%</td><td class="right">392</td><td class="right">13.1%</td><td>Slovakia, Kazakhstan, Moldova, Czechia</td></tr>
+        <tr class="total-row"><td>Total</td><td class="right">₺477,937</td><td class="right">100%</td><td class="right">2,993</td><td class="right">100%</td><td></td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:24px">Who books in the priority window? (October + November, 647 reservations)</h3>
+    <table>
+      <thead><tr><th>Market</th><th class="right">Reservations</th><th class="right">Share</th><th>Reach channel</th></tr></thead>
+      <tbody>
+        <tr><td><b>Germany</b></td><td class="right">243</td><td class="right gold">37.6%</td><td><span class="badge b-google">Google</span> <span class="badge b-meta">Meta</span></td></tr>
+        <tr><td>Russia</td><td class="right">114</td><td class="right">17.6%</td><td><span class="badge b-yandex">Yandex Direct</span></td></tr>
+        <tr><td>Turkey</td><td class="right">89</td><td class="right">13.8%</td><td><span class="badge b-google">Google</span> <span class="badge b-meta">Meta</span></td></tr>
+        <tr><td><b>United Kingdom</b></td><td class="right">75</td><td class="right">11.6%</td><td><span class="badge b-google">Google</span> <span class="badge b-meta">Meta</span></td></tr>
+        <tr><td>Italy, Netherlands, France, USA, Poland</td><td class="right">65</td><td class="right">10.0%</td><td><span class="badge b-google">Google</span> <span class="badge b-meta">Meta</span></td></tr>
+        <tr><td>Other</td><td class="right">61</td><td class="right">9.4%</td><td>Partial</td></tr>
+      </tbody>
+    </table>
+    <div class="ru-box"><b>Russia — a growth opportunity ready to be worked.</b> Russia is the second-largest market on the books (28.7% of the remaining season, 17.6% of October–November) and this demand already arrives through tour-operator and agency channels. As Google and Meta do not offer delivery in that market, converting it to direct sales will be possible through <b>Yandex Direct</b>. July's archived plan foresaw a 10% share for this line but it was not implemented. The ₺1,590,000 in this plan is confined to Google and Meta, and the Yandex decision is presented for management's consideration as a separate budget line.</div>
+  </div>
+
+  <div class="card">
+    <h2>Objective 1 · Qualified Calls — Call Center Capacity and Targets</h2>
+    <div class="sub">The decision to have the call center work the remaining August and September capacity clarifies advertising's role in those two months: the target is to generate qualified calls the call center can close.</div>
+
+    <h3 style="margin-top:18px">Call volume — actual and target</h3>
+    <div class="chart-trend">
+      <div class="col"><div class="val">1,432</div><div class="bar" style="height:100%"></div><div class="lbl">Jul 2026<br>actual</div></div>
+      <div class="col"><div class="val">1,039</div><div class="bar" style="height:73%"></div><div class="lbl">Sep 2025<br>last year</div></div>
+      <div class="col"><div class="val">1,150</div><div class="bar est" style="height:80%"></div><div class="lbl">Sep 2026<br><b>target</b></div></div>
+      <div class="col"><div class="val">639</div><div class="bar" style="height:45%"></div><div class="lbl">Oct 2025<br>last year</div></div>
+      <div class="col"><div class="val">950</div><div class="bar est" style="height:66%"></div><div class="lbl">Oct 2026<br><b>target</b></div></div>
+    </div>
+
+    <table>
+      <thead><tr><th>Period</th><th class="right">Total calls</th><th class="right">Answered</th><th class="right">Unmet</th><th class="right">Avg. duration</th></tr></thead>
+      <tbody>
+        <tr><td>1–15 August 2026</td><td class="right">663</td><td class="right">663</td><td class="right">0</td><td class="right">183 s</td></tr>
+        <tr><td>July 2026</td><td class="right">1,432</td><td class="right">1,432</td><td class="right">0</td><td class="right">195 s</td></tr>
+        <tr><td>June 2026</td><td class="right">1,178</td><td class="right">1,178</td><td class="right">0</td><td class="right">173 s</td></tr>
+        <tr><td>September 2025 <span class="badge b-google">last year</span></td><td class="right">1,039</td><td class="right">1,039</td><td class="right">0</td><td class="right">131 s</td></tr>
+        <tr><td>October 2025 <span class="badge b-google">last year</span></td><td class="right">639</td><td class="right">639</td><td class="right">0</td><td class="right">120 s</td></tr>
+        <tr><td>November 2025 <span class="badge b-google">last year</span></td><td class="right">444</td><td class="right">444</td><td class="right">0</td><td class="right">106 s</td></tr>
+      </tbody>
+    </table>
+    <div class="ok-box"><b>Call center capacity is well suited to the targets.</b> Source: PPG <b>CallCenterDailyStat</b> (provider "guven"). Unmet calls are <b>zero</b> across every period examined, so there is no capacity constraint and inbound volume can be increased. Average handling time rising to 183–195 seconds through the season indicates that inbound calls carry genuine sales intent.</div>
+
+    <table>
+      <thead><tr><th>Month</th><th class="right">Reference</th><th class="right">Target</th><th class="right">Increase</th><th>Basis</th></tr></thead>
+      <tbody>
+        <tr><td>August (17–31)</td><td class="right">≈676</td><td class="right">700</td><td class="right">+4%</td><td>Working the 28–31 August capacity</td></tr>
+        <tr><td>September</td><td class="right">1,039</td><td class="right">1,150</td><td class="right">+11%</td><td>September capacity and the start of October selling</td></tr>
+        <tr><td>October</td><td class="right">639</td><td class="right">950</td><td class="right gold">+49%</td><td>Call support for the priority window</td></tr>
+        <tr class="total-row"><td>Total</td><td class="right">≈2,354</td><td class="right">2,800</td><td class="right">+19%</td><td></td></tr>
+      </tbody>
+    </table>
+    <div class="note"><b>Cost per call will be measured at the end of the first month.</b> As no <b>CallCenterOffer</b> record has been created for Belconti yet, the call-to-reservation rate is not currently tracked in the system, and a portion of inbound calls is organic and direct. Dividing the call-generation budget by total calls would therefore not reflect the true cost. Measurement will be established at the end of the first month through Google's "Contact" conversion, Meta call reporting and <b>call center promotion-code usage counts</b>.</div>
+  </div>
+
+  <div class="card">
+    <h2>Objective 2 · Online Reservations — Conversion Path</h2>
+    <div class="sub">Online reservation is the primary objective, carrying 72.2% of the budget. The sale completes on the HotelRunner BV3 booking engine and is measured through the live "Begin checkout" conversion.</div>
+    <div class="cta" style="margin-top:16px">
+      <div><b>1 · Demand generation</b> Interest is created in target markets via Meta (Germany, UK, Turkey) and Google PMax. Measure: reach, impressions, site visits.</div>
+      <div><b>2 · Demand capture</b> Google Search campaigns meet intent-driven demand. Measure: clicks and qualified sessions.</div>
+      <div><b>3 · Transition to the booking engine</b> Referral from the site into BV3. Measure: the <b>"Begin checkout"</b> conversion — live and verified.</div>
+      <div><b>4 · Completing the conversion</b> A promotion code provides a price advantage that accelerates the decision. Measure: <b>code usage count</b>, giving precise attribution by channel.</div>
+      <div><b>5 · Recovery</b> Guests who do not complete in the booking engine enter the remarketing audience and are re-engaged with a return code.</div>
+      <div><b>6 · Reporting</b> The HotelRunner coupon report and PPG call records are assessed together to report channel-level contribution.</div>
+    </div>
+    <div class="ok-box"><b>What the plan contributes to measurement.</b> The work to write booking-engine sales values back to the ad platforms will be completed during this plan period. Until then, <b>channel-specific promotion codes</b> provide a countable and verifiable attribution source — making it possible to track which channel produces reservations from the first month onward.</div>
+  </div>
+  <div class="card">
+    <h2>Promotion Code Framework — The Low-Season Lever</h2>
+    <div class="sub">An <b>approval-governed promotion-code infrastructure is ready in the system</b> and has not yet been brought into use. The PPG <b>CallCenterDiscount</b> structure includes validity dates (<code>validFrom / validTo</code>), maximum uses (<code>maxUses</code>), a usage counter (<code>usedCount</code>), room and board-type restrictions, and management approval (<code>approvalStatus</code>). On the online side, coupons are defined in the HotelRunner BV3 booking engine. The two channels will use <b>separate code families</b>, so the source of every reservation becomes precisely measurable.</div>
+
+    <div class="grid4" style="margin-top:16px">
+      <div class="metric"><div class="v">2</div><div class="l">Code families</div><div class="f">BLC-CC (calls) · BLC-WEB (online)</div></div>
+      <div class="metric"><div class="v">9</div><div class="l">Planned codes</div><div class="f">Each tied to a single window</div></div>
+      <div class="metric"><div class="v">3,150</div><div class="l">Maximum uses</div><div class="f">Capped for revenue protection</div></div>
+      <div class="metric-hero"><div class="v">Ready</div><div class="l">Infrastructure status</div><div class="f">Approval flow and counters in place, awaiting use</div></div>
+    </div>
+
+    <h3 style="margin-top:26px">Operating principles</h3>
+    <ul class="checklist">
+      <li><b>A code is valid only on dates with sellable capacity.</b> Each code's <code>validFrom / validTo</code> range is matched exactly to a window on the capacity map. Dates at complete capacity (such as 17–27 August) are excluded from every code, preventing unnecessary discounting on full dates.</li>
+      <li><b>Value is offered before rate in high-ADR windows.</b> ADR stands at €225–293 across 28–31 August; in this window room upgrades, late checkout and spa credit are applied as <b>value packages</b> instead of a rate reduction, protecting average room revenue.</li>
+      <li><b>Each channel uses its own code family.</b> Reservations closed by phone use <code>BLC-CC-*</code> and online reservations use <code>BLC-WEB-*</code>. Usage counters allow channel contribution to be measured directly.</li>
+      <li><b>Maximum-use limits safeguard revenue.</b> An upper limit is defined for every code; once reached the code deactivates automatically, keeping discount cost predictable.</li>
+      <li><b>Discount rates step with season depth.</b> 10% in the priority window (1–18 October), 15% in the heated-pool period, 20% for 2027 early booking. This tiering prevents unnecessary discounting on higher-demand dates.</li>
+      <li><b>The approval flow provides authorisation control.</b> Codes are tied to management approval via <code>approvalStatus</code>; the requester, approver and usage record remain traceable in the system.</li>
+    </ul>
+
+    <h3 style="margin-top:26px">Planned promotion codes</h3>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>Code</th><th>Valid stays</th><th>Channel</th><th>Benefit</th><th class="right">Max uses</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td><code>BLC-WEB-EYLUL16</code></td><td>16–30 September</td><td><span class="badge b-google">Online</span></td><td>12% discount</td><td class="right">250</td><td>Last-minute working of September capacity</td></tr>
+        <tr><td><code>BLC-CC-EYLUL16</code></td><td>16–30 September</td><td><span class="badge b-meta">Calls</span></td><td>12% + late checkout</td><td class="right">150</td><td>Closing power for the call center</td></tr>
+        <tr><td><b><code>BLC-WEB-EKIM18</code></b></td><td><b>1–18 October</b></td><td><span class="badge b-google">Online</span></td><td>10% discount</td><td class="right">400</td><td>Accelerating decisions in the priority window</td></tr>
+        <tr><td><b><code>BLC-CC-EKIM18</code></b></td><td><b>1–18 October</b></td><td><span class="badge b-meta">Calls</span></td><td>10% + room upgrade</td><td class="right">200</td><td>Call support for the priority window</td></tr>
+        <tr><td><code>BLC-WEB-HAVUZ</code></td><td>12 Oct – 30 Nov</td><td><span class="badge b-google">Online</span></td><td>15% discount</td><td class="right">500</td><td>Primary code for the heated-pool period</td></tr>
+        <tr><td><code>BLC-WEB-UZUN7</code></td><td>19 Oct – 30 Nov</td><td><span class="badge b-google">Online</span></td><td>Stay 7 nights, pay 6</td><td class="right">300</td><td>Occupancy gain while protecting average room revenue</td></tr>
+        <tr><td><code>BLC-CC-ARATATIL</code></td><td>November half term</td><td><span class="badge b-meta">Calls</span></td><td>12% + under-12s free</td><td class="right">150</td><td>Offer aimed at the family segment</td></tr>
+        <tr><td><code>BLC-WEB-GERIDON</code></td><td>All periods</td><td><span class="badge b-google">Remarketing</span></td><td>8% discount</td><td class="right">200</td><td>Recovering guests who did not complete a booking</td></tr>
+        <tr><td><code>BLC-WEB-ERKEN2027</code></td><td>2027 season</td><td><span class="badge b-google">Online</span></td><td>20% discount</td><td class="right">1,000</td><td>2027 early-booking launch</td></tr>
+        <tr class="total-row"><td>Total</td><td></td><td></td><td></td><td class="right">3,150</td><td></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3 style="margin-top:24px">Discount tiering by window depth</h3>
+    <div class="chart-trend">
+      <div class="col"><div class="val">—</div><div class="bar" style="height:3%"></div><div class="lbl">17–27 Aug<br>no code</div></div>
+      <div class="col"><div class="val">value</div><div class="bar" style="height:20%;background:#8b5cf6"></div><div class="lbl">28–31 Aug<br>value package</div></div>
+      <div class="col"><div class="val">12%</div><div class="bar" style="height:60%"></div><div class="lbl">16–30 Sep</div></div>
+      <div class="col"><div class="val">10%</div><div class="bar" style="height:50%"></div><div class="lbl">1–18 Oct<br><b>priority</b></div></div>
+      <div class="col"><div class="val">15%</div><div class="bar" style="height:75%"></div><div class="lbl">12 Oct–30 Nov<br>pool</div></div>
+      <div class="col"><div class="val">20%</div><div class="bar est" style="height:100%"></div><div class="lbl">2027<br>early booking</div></div>
+    </div>
+    <div class="note">The logic of the tiering: no discount is applied on high-occupancy dates, or it is met with added value; as capacity widens the rate increases step by step. The 20% for 2027 early booking is standard season-opening practice and serves to bring cash flow forward.</div>
+
+    <div class="ok-box"><b>The second, strategic benefit of promotion codes: measurement.</b> Until the work to write booking-engine sales values back to the ad platforms is complete, channel-level code usage constitutes a <b>directly countable attribution source</b>. The usage counter on <code>BLC-CC-*</code> codes will evidence the call channel's contribution, and the HotelRunner coupon report will evidence the online channel's. This enables the plan to produce channel-level return reporting from the end of the first month onward.</div>
+  </div>
+
+  <div class="card">
+    <h2>Budget Allocation — ₺1,590,000 Across Three Months and Their Blocks</h2>
+    <div class="sub">Allocation follows the capacity map and the two objectives (calls / online reservations). Resource is concentrated in the windows with the highest conversion probability.</div>
+
+    <div class="grid3" style="margin-bottom:18px">
+      <div class="metric"><div class="v">₺260,000</div><div class="l">August (17–31)</div><div class="f">15 days · ≈₺17,300/day</div></div>
+      <div class="metric-hero"><div class="v">₺850,000</div><div class="l">September</div><div class="f">The month that sells the priority window · ≈₺28,300/day</div></div>
+      <div class="metric"><div class="v">₺480,000</div><div class="l">October</div><div class="f">Promotion + 2027 · ≈₺15,500/day</div></div>
+    </div>
+
+    <div class="chart-trend">
+      <div class="col"><div class="val">₺260,000</div><div class="bar" style="height:31%"></div><div class="lbl">August<br>(17–31)</div></div>
+      <div class="col"><div class="val">₺850,000</div><div class="bar" style="height:100%"></div><div class="lbl">September<br><b>centre of gravity</b></div></div>
+      <div class="col"><div class="val">₺480,000</div><div class="bar" style="height:56%"></div><div class="lbl">October</div></div>
+    </div>
+
+    <div class="ok-box"><b>Why September is the centre of gravity.</b> The capacity September works is the <b>4,610 room nights</b> in 1–18 October, worth ≈€912,780 (≈₺48.3 million). A budget of ₺850,000 equals <b>1.8%</b> of that capacity — a highly efficient advertising cost ratio for the accommodation sector. Given booking lead time, September is the most effective month in which this capacity can be converted.</div>
+
+    <h3 style="margin-top:24px">August 17–31 · ₺260,000</h3>
+    <div class="note">As capacity is complete across 17–27 August and the 28–31 August capacity will be worked by the call center, a measured budget is planned for this month. The observed delivery pace is ₺8,064 per day; with Meta activated, ≈₺17,300 per day is a healthy and achievable level. Carrying part of the ₺570,968 remaining in the approved plan into September will allow the resource to work in the higher-return window.</div>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>Block</th><th>Objective</th><th>Platform</th><th>Window</th><th class="right">Share</th><th class="right">Amount</th><th class="right">Target ACOS</th></tr></thead>
+      <tbody>
+        <tr><td><b>Call generation — last minute</b></td><td><span class="badge b-meta">Calls</span></td><td><span class="badge b-google">Google</span> <span class="badge b-meta">Meta</span></td><td>28–31 Aug + Sep</td><td class="right">24%</td><td class="right">₺62,400</td><td class="right">—</td></tr>
+        <tr><td><b>Meta — demand generation (DE + UK)</b></td><td><span class="badge b-google">Online</span></td><td><span class="badge b-meta">Meta</span></td><td>1–18 Oct</td><td class="right">22%</td><td class="right">₺57,200</td><td class="right">5.0</td></tr>
+        <tr><td>German search — early booking</td><td><span class="badge b-google">Online</span></td><td><span class="badge b-google">Google</span></td><td>1–18 Oct</td><td class="right">20%</td><td class="right">₺52,000</td><td class="right">4.0</td></tr>
+        <tr><td>Heated pool — DE + UK PMax</td><td><span class="badge b-google">Online</span></td><td><span class="badge b-google">Google</span></td><td>12 Oct–Nov</td><td class="right">12%</td><td class="right">₺31,200</td><td class="right">5.0</td></tr>
+        <tr><td>Remarketing</td><td><span class="badge b-google">Online</span> <span class="badge b-meta">Calls</span></td><td><span class="badge b-google">Google</span> <span class="badge b-meta">Meta</span></td><td>All</td><td class="right">12%</td><td class="right">₺31,200</td><td class="right">2.5</td></tr>
+        <tr><td>Brand defence</td><td><span class="badge b-google">Online</span></td><td><span class="badge b-google">Google</span></td><td>All</td><td class="right">10%</td><td class="right">₺26,000</td><td class="right">2.0</td></tr>
+        <tr class="total-row"><td>Total</td><td></td><td></td><td></td><td class="right">100%</td><td class="right">₺260,000</td><td class="right"></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3 style="margin-top:26px">September · ₺850,000 — the plan's centre of gravity</h3>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>Block</th><th>Objective</th><th>Platform</th><th>Window</th><th class="right">Share</th><th class="right">Amount</th><th class="right">Target ACOS</th></tr></thead>
+      <tbody>
+        <tr><td><b>Germany — search + Heated Pool PMax</b></td><td><span class="badge b-google">Online</span></td><td><span class="badge b-google">Google</span></td><td>1–18 Oct</td><td class="right">24%</td><td class="right">₺204,000</td><td class="right">4.0</td></tr>
+        <tr><td><b>Meta — demand generation (DE + UK)</b></td><td><span class="badge b-google">Online</span></td><td><span class="badge b-meta">Meta</span></td><td>1–18 Oct</td><td class="right">20%</td><td class="right">₺170,000</td><td class="right">5.0</td></tr>
+        <tr><td><b>Call generation — September capacity</b></td><td><span class="badge b-meta">Calls</span></td><td><span class="badge b-google">Google</span> <span class="badge b-meta">Meta</span></td><td>16–30 Sep + Oct</td><td class="right">16%</td><td class="right">₺136,000</td><td class="right">—</td></tr>
+        <tr><td>Turkish search — half term + last minute</td><td><span class="badge b-google">Online</span> <span class="badge b-meta">Calls</span></td><td><span class="badge b-google">Google</span></td><td>1–18 Oct</td><td class="right">13%</td><td class="right">₺110,500</td><td class="right">3.5</td></tr>
+        <tr><td>Remarketing</td><td><span class="badge b-google">Online</span> <span class="badge b-meta">Calls</span></td><td><span class="badge b-google">Google</span> <span class="badge b-meta">Meta</span></td><td>All</td><td class="right">12%</td><td class="right">₺102,000</td><td class="right">2.5</td></tr>
+        <tr><td>UK — search + PMax (half term)</td><td><span class="badge b-google">Online</span></td><td><span class="badge b-google">Google</span></td><td>12–25 Oct</td><td class="right">8%</td><td class="right">₺68,000</td><td class="right">4.5</td></tr>
+        <tr><td>New market test — PL / RO / NL / IT</td><td><span class="badge b-google">Online</span></td><td><span class="badge b-google">Google</span></td><td>Oct</td><td class="right">4%</td><td class="right">₺34,000</td><td class="right">4.5</td></tr>
+        <tr><td>Brand defence</td><td><span class="badge b-google">Online</span></td><td><span class="badge b-google">Google</span></td><td>All</td><td class="right">3%</td><td class="right">₺25,500</td><td class="right">2.0</td></tr>
+        <tr class="total-row"><td>Total</td><td></td><td></td><td></td><td class="right">100%</td><td class="right">₺850,000</td><td class="right"></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3 style="margin-top:26px">October · ₺480,000</h3>
+    <div class="note">The October budget carries three jobs: working the 19–31 October capacity through promotion codes and packages, testing the November half-term segment, and launching 2027 early booking. <b>The 2027 line rests on the season calendar</b>; as the book's horizon ends on 12 December, measurement data for 2027 demand has not yet formed.</div>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>Block</th><th>Objective</th><th>Platform</th><th>Window</th><th class="right">Share</th><th class="right">Amount</th><th class="right">Target ACOS</th></tr></thead>
+      <tbody>
+        <tr><td><b>2027 early-booking launch (DE + UK)</b></td><td><span class="badge b-google">Online</span></td><td><span class="badge b-google">Google</span></td><td>2027 season</td><td class="right">26%</td><td class="right">₺124,800</td><td class="right">5.0</td></tr>
+        <tr><td><b>November half term + heated pool</b></td><td><span class="badge b-google">Online</span> <span class="badge b-meta">Calls</span></td><td><span class="badge b-google">Google</span> <span class="badge b-meta">Meta</span></td><td>Nov</td><td class="right">22%</td><td class="right">₺105,600</td><td class="right">5.5</td></tr>
+        <tr><td>Meta — winter and New Year demand generation</td><td><span class="badge b-google">Online</span></td><td><span class="badge b-meta">Meta</span></td><td>Nov–Dec</td><td class="right">18%</td><td class="right">₺86,400</td><td class="right">5.5</td></tr>
+        <tr><td>Promotion-coded offer — 19–31 October</td><td><span class="badge b-meta">Calls</span> <span class="badge b-google">Online</span></td><td><span class="badge b-google">Google</span> <span class="badge b-meta">Meta</span></td><td>19–31 Oct</td><td class="right">14%</td><td class="right">₺67,200</td><td class="right">6.0</td></tr>
+        <tr><td>Remarketing</td><td><span class="badge b-google">Online</span> <span class="badge b-meta">Calls</span></td><td><span class="badge b-google">Google</span> <span class="badge b-meta">Meta</span></td><td>All</td><td class="right">12%</td><td class="right">₺57,600</td><td class="right">2.5</td></tr>
+        <tr><td>Brand defence</td><td><span class="badge b-google">Online</span></td><td><span class="badge b-google">Google</span></td><td>All</td><td class="right">5%</td><td class="right">₺24,000</td><td class="right">2.0</td></tr>
+        <tr><td>Turkish search — winter and holidays</td><td><span class="badge b-google">Online</span> <span class="badge b-meta">Calls</span></td><td><span class="badge b-google">Google</span></td><td>Nov–Dec</td><td class="right">3%</td><td class="right">₺14,400</td><td class="right">3.5</td></tr>
+        <tr class="total-row"><td>Total</td><td></td><td></td><td></td><td class="right">100%</td><td class="right">₺480,000</td><td class="right"></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3 style="margin-top:26px">Platform split — three-month total</h3>
+    <div class="chart-trend small" style="gap:30px">
+      <div class="col"><div class="val">₺995,400</div><div class="bar google" style="height:100%"></div><div class="lbl">Google Ads · 62.6%</div></div>
+      <div class="col"><div class="val">₺594,600</div><div class="bar" style="height:60%;background:#8b5cf6"></div><div class="lbl">Meta · 37.4%</div></div>
+    </div>
+    <table>
+      <thead><tr><th>Platform</th><th class="right">August</th><th class="right">September</th><th class="right">October</th><th class="right">Three-month total</th><th class="right">Share</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge b-google">Google Ads</span></td><td class="right">₺156,000</td><td class="right">₺561,000</td><td class="right">₺278,400</td><td class="right">₺995,400</td><td class="right">62.6%</td></tr>
+        <tr><td><span class="badge b-meta">Meta</span></td><td class="right">₺104,000</td><td class="right">₺289,000</td><td class="right">₺201,600</td><td class="right">₺594,600</td><td class="right">37.4%</td></tr>
+        <tr class="total-row"><td>Total</td><td class="right">₺260,000</td><td class="right">₺850,000</td><td class="right">₺480,000</td><td class="right">₺1,590,000</td><td class="right">100%</td></tr>
+      </tbody>
+    </table>
+    <div class="note">The call generation, remarketing, November half-term and promotion-coded offer blocks are split evenly between the two platforms.</div>
+
+    <h3 style="margin-top:26px">Budget by capacity window</h3>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>Window</th><th class="right">Capacity</th><th class="right">Potential revenue</th><th class="right">Budget share</th><th class="right">Ad / potential</th></tr></thead>
+      <tbody>
+        <tr><td>28–31 Aug + September <span class="badge b-meta">calls</span></td><td class="right">1,806</td><td class="right">≈₺18.6m</td><td class="right">₺198,400</td><td class="right">1.1%</td></tr>
+        <tr><td><b>1–18 October</b> <span class="badge b-google">priority</span></td><td class="right gold">4,610</td><td class="right gold">≈₺48.3m</td><td class="right gold">₺797,700</td><td class="right">1.7%</td></tr>
+        <tr><td>19–31 Oct + November half term <span class="badge b-yandex">promotion</span></td><td class="right">6,077</td><td class="right">≈₺59.8m</td><td class="right">₺172,800</td><td class="right">0.3%</td></tr>
+        <tr><td>2027 early booking</td><td class="right">—</td><td class="right">—</td><td class="right">₺124,800</td><td class="right">—</td></tr>
+        <tr><td>Brand + remarketing (window-independent)</td><td class="right">—</td><td class="right">—</td><td class="right">₺296,300</td><td class="right">—</td></tr>
+        <tr class="total-row"><td>Total</td><td class="right"></td><td class="right"></td><td class="right">₺1,590,000</td><td class="right"></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note">November's broad capacity will be worked through promotion codes, long-stay packages and commercial partnerships rather than advertising budget; this keeps advertising investment in the windows with the highest conversion probability.</div>
+  </div>
+
+  <div class="card">
+    <h2>Campaign Recommendations — Ready Capacity and Activation Plan</h2>
+    <div class="sub">The Belconti Google Ads account holds <b>70 campaigns</b>, 6 of them live and <b>56 ready to activate</b>. Among the ready campaigns are assets that match the autumn inventory precisely, which allows the plan to be implemented quickly and largely <b>without new build work</b>.</div>
+
+    <div class="grid4" style="margin-top:16px">
+      <div class="metric"><div class="v">6</div><div class="l">Live</div><div class="f">3 Search + 3 PMax</div></div>
+      <div class="metric-hero"><div class="v">56</div><div class="l">Ready to activate</div><div class="f">27 Search · 12 PMax · 8 Display · 7 Demand Gen</div></div>
+      <div class="metric"><div class="v">10</div><div class="l">Priority activations</div><div class="f">Precise match to autumn inventory</div></div>
+      <div class="metric"><div class="v">7</div><div class="l">To be built</div><div class="f">5 Meta + 2 Google Search</div></div>
+    </div>
+
+    <h3 style="margin-top:26px">① Campaigns to Activate</h3>
+    <div class="note">All campaigns below are already set up in the account. Daily budgets are proposed for September (Google September total ₺561,000 ≈ ₺18,700/day).</div>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>Campaign</th><th>Type</th><th>Objective</th><th>Basis</th><th class="right">July data</th><th class="right">₺/day</th></tr></thead>
+      <tbody>
+        <tr><td><b>Belconti_PMAX_Isıtmalı Havuz_DE_Şubat2026</b></td><td><span class="badge b-google">PMax</span></td><td><span class="badge b-google">Online</span></td>
+          <td>The asset most aligned with autumn inventory: German market and heated-pool positioning. Carries the primary product proposition for the period after 12 October. Not yet used.</td><td class="right">not used</td><td class="right gold">2,200</td></tr>
+        <tr><td><b>Belconti_Jenerik_Erken_Rezervasyon_DE_Mart2024</b></td><td><span class="badge b-google">Search</span></td><td><span class="badge b-google">Online</span></td>
+          <td>German early-booking search. Germany forms 37.6% of the October–November book; it performed efficiently in July at ₺19.55 per click.</td><td class="right">₺6,491 / 332</td><td class="right gold">2,400</td></tr>
+        <tr><td>Belconti_PMAX_Erken_Rezervasyon_DE_Mart2024</td><td><span class="badge b-google">PMax</span></td><td><span class="badge b-google">Online</span></td>
+          <td>Broad reach in Germany. International PMax lines carry low cost per click (the UK equivalent at ₺2.04) and intent quality trends positively in international markets.</td><td class="right">—</td><td class="right">1,200</td></tr>
+        <tr><td>Belconti_Search_Jenerik_Erken_Rezervasyon_UK_Ocak'26</td><td><span class="badge b-google">Search</span></td><td><span class="badge b-google">Online</span></td>
+          <td>The UK's share rises to 11.6% in October–November. The October half-term holiday will be worked through this channel.</td><td class="right">₺572 / 29</td><td class="right">1,000</td></tr>
+        <tr><td>Dex_Belconti_PMAX_Istmalı Havuz_UK_Şubat2026</td><td><span class="badge b-google">PMax</span></td><td><span class="badge b-google">Online</span></td>
+          <td>The UK version of the heated-pool positioning. Built and ready for use.</td><td class="right">not used</td><td class="right">800</td></tr>
+        <tr><td>Belconti_Search_Brand_TR_2025</td><td><span class="badge b-google">Search</span></td><td><span class="badge b-google">Online</span></td>
+          <td>Brand defence. It creates value in high-occupancy periods too, directing incoming demand to direct booking rather than agency commission.</td><td class="right">₺16,326 / 908</td><td class="right">700</td></tr>
+        <tr><td>Belconti_Search_SonDakika_Indirim_TR_2026</td><td><span class="badge b-google">Search</span></td><td><span class="badge b-meta">Calls</span></td>
+          <td>The channel carrying 28–31 August and 16–30 September capacity to the call center. Will operate alongside the promotion codes.</td><td class="right">₺4,506 / 86</td><td class="right">600</td></tr>
+        <tr><td>PL · RO · FR · NL early-booking search (4 campaigns)</td><td><span class="badge b-google">Search</span></td><td><span class="badge b-google">Online</span></td>
+          <td>These markets produce over 140 reservations in the October–November book. To be worked with a measurable test budget.</td><td class="right">₺3,381 total</td><td class="right">900</td></tr>
+        <tr><td>Dex_Belconti_Kasım_Ara_Tatil_PMAX_2025</td><td><span class="badge b-google">PMax</span></td><td><span class="badge b-google">Online</span></td>
+          <td>A ready campaign for the November half-term segment. To be activated <b>in October</b> and supported by promotion codes.</td><td class="right">—</td><td class="right">in Oct</td></tr>
+        <tr><td>Dex_Belconti_Demand_Gen_Erken_Rezervasyon_DE + UK</td><td><span class="badge b-google">Demand Gen</span></td><td><span class="badge b-google">Online</span></td>
+          <td>Visual demand generation in the target markets. To be tested in September on a measured budget, benchmarked against Meta.</td><td class="right">—</td><td class="right">test</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3 style="margin-top:26px">② Campaigns to Rebalance</h3>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>Campaign</th><th class="right">August</th><th class="right">Current ₺/day</th><th class="right">Proposed ₺/day</th><th>Rationale</th></tr></thead>
+      <tbody>
+        <tr><td><b>Belconti_Search_Jenerik_TR_2026_REV</b></td><td class="right">₺57,867</td><td class="right">3,617</td><td class="right gold">2,200</td>
+          <td>The plan's highest-impact adjustment. This line makes up 44.8% of August spend, while Turkey carries a 13.8% share in the months to be filled. Released resource moves to Germany.</td></tr>
+        <tr><td><b>Belconti_Search_Almanya_Turkler_2026_REV</b></td><td class="right">₺20,270</td><td class="right">1,267</td><td class="right gold">3,000</td>
+          <td>Cost per click is high at ₺36.26, yet Germany produces 35.6% of reservations. In return terms, increasing volume here is the most efficient choice.</td></tr>
+        <tr><td>Belconti_PMAX_Erken_Rezervasyon_UK_Ocak'26</td><td class="right">₺15,043</td><td class="right">940</td><td class="right">900</td>
+          <td>At ₺2.04 per click this is the account's most efficient reach line. Maintained, and strengthened in October for half term.</td></tr>
+        <tr><td>Belconti_DE_Gurbetçi_PMAX_Haziran24</td><td class="right">₺12,302</td><td class="right">769</td><td class="right">700</td>
+          <td>₺3.48 per click. Expat demand continues through the October half term; maintained at current level.</td></tr>
+        <tr><td><b>Belconti_Remarketing_TR_2026</b></td><td class="right">₺23,550</td><td class="right">1,472</td><td class="right">800</td>
+          <td>Cost per click stands at ₺56.88 on this line. As remarketing is normally the account's most efficient line, <b>updating the audience configuration carries clear efficiency-gain potential</b>. The channel runs as SEARCH (RLSA); audience definition, membership duration and bid settings will be reviewed, and budget kept measured until that work completes.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3 style="margin-top:26px">③ Campaigns to Keep Paused — a deliberate choice</h3>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>Campaign</th><th class="right">July</th><th>Rationale</th></tr></thead>
+      <tbody>
+        <tr><td>Belconti_PMAX_Erken_Rezervasyon_TR_REV</td><td class="right">₺44,421 / 69,830</td>
+          <td>Cost per click is low at ₺0.64, but the plan approved on 7 August paused it on account of a 0.78% click-to-call rate. As it carries broad-inventory characteristics it will remain paused.</td></tr>
+        <tr><td>Belconti_PMAX_Isıtmalı Havuz _TR_Şubat2026</td><td class="right">₺29,226 / 54,951</td>
+          <td>The product positioning is right; the channel choice is not suited to the Turkish market. The heated-pool proposition will be built as a <b>Search</b> campaign for Turkey (see section ④).</td></tr>
+        <tr><td>8 Display campaigns</td><td class="right">—</td>
+          <td>All are traffic-oriented brand campaigns. As the plan period's objectives are call and reservation focused, they are left out of scope.</td></tr>
+        <tr><td>5 archived YouTube campaigns</td><td class="right">—</td>
+          <td>In archived status. Video needs will be met through the Meta and Demand Gen channels.</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3 style="margin-top:26px">④ Campaigns to Build</h3>
+    <div class="note">On Meta, the two campaigns prepared for August (<b>Belconti_Dönüşüm_TR_Ağustos26</b>, <b>Belconti_Call_TR_Ağustos26</b>) will serve as templates and be adapted to the target markets. Meta September total ₺289,000 ≈ ₺9,630/day.</div>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>Campaign</th><th>Platform / market</th><th>Objective</th><th>Structure</th><th class="right">₺/day</th></tr></thead>
+      <tbody>
+        <tr><td><b>Belconti_Meta_Ekim_DE_2026</b></td><td><span class="badge b-meta">Meta</span> · Germany</td><td><span class="badge b-google">Online</span></td>
+          <td>Demand generation. Autumn sea temperature, heated pool and quiet-hotel positioning. Supported by the <code>BLC-WEB-EKIM18</code> code.</td><td class="right gold">3,400</td></tr>
+        <tr><td><b>Belconti_Meta_Ekim_UK_2026</b></td><td><span class="badge b-meta">Meta</span> · UK</td><td><span class="badge b-google">Online</span></td>
+          <td>Half-term focused family structure; heated pool and direct-flight message. Supported by <code>BLC-WEB-HAVUZ</code>.</td><td class="right">1,800</td></tr>
+        <tr><td><b>Belconti_Meta_Cagri_TR_2026</b></td><td><span class="badge b-meta">Meta</span> · Turkey</td><td><span class="badge b-meta">Calls</span></td>
+          <td>Call and WhatsApp objective ad sets. The primary Meta line feeding the call center; operates with the <code>BLC-CC-*</code> codes.</td><td class="right">1,700</td></tr>
+        <tr><td>Belconti_Meta_SonDakika_Eylul_TR</td><td><span class="badge b-meta">Meta</span> · Turkey</td><td><span class="badge b-meta">Calls</span> <span class="badge b-google">Online</span></td>
+          <td>Last-minute structure; dynamic dates and pricing, weekend-weighted delivery. Paired with <code>BLC-WEB-EYLUL16</code> and <code>BLC-CC-EYLUL16</code>.</td><td class="right">1,400</td></tr>
+        <tr><td>Belconti_Meta_Remarketing_2026</td><td><span class="badge b-meta">Meta</span> · All</td><td><span class="badge b-google">Online</span></td>
+          <td>Site visitors, booking-engine non-completers and call drop-offs built as separate audiences. The <code>BLC-WEB-GERIDON</code> code is offered to this audience.</td><td class="right">1,330</td></tr>
+        <tr><td>Belconti_Search_Ekim_AraTatil_TR_2026</td><td><span class="badge b-google">Google Search</span> · Turkey</td><td><span class="badge b-google">Online</span> <span class="badge b-meta">Calls</span></td>
+          <td>October school half-term search. Meets the Turkish market's core purchase rationale for this period.</td><td class="right">1,100</td></tr>
+        <tr><td>Belconti_Search_Isitmali_Havuz_TR_2026</td><td><span class="badge b-google">Google Search</span> · Turkey</td><td><span class="badge b-google">Online</span></td>
+          <td>Positions the heated-pool product in the Search channel for Turkey, meeting intent-driven demand with the right inventory.</td><td class="right">200</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="ok-box"><b>Binding the conversion goals — the first step of implementation.</b> All call-objective campaigns will be attached to the live <b>"Contact"</b> conversion (<code>AW-452928081 / mMeWCL…</code>) and all online-reservation campaigns to <b>"Begin checkout"</b> (<code>AW-452928081 / cboACO…</code>) as their primary goal. This separation allows each objective's performance to be measured independently and the budget to be optimised against the correct signal.</div>
+  </div>
+
+  <div class="card">
+    <h2>Implementation Schedule — Three-Month Programme</h2>
+    <ul class="checklist">
+      <li><b>Week 1 (17–23 August)</b> — Build and launch the Meta campaigns targeting Germany and the UK. Attach the "Contact" and "Begin checkout" conversions to the relevant campaigns as primary goals. Rebalance Turkish generic search to ₺2,200/day. Set campaign date targeting to cover 28 August onward. Define the promotion codes in the system and submit them for approval.</li>
+      <li><b>Week 2 (24–31 August)</b> — Activate the Heated Pool DE and UK PMax campaigns. Enable German early-booking search. Enable the last-minute campaign and pair it with <code>BLC-CC-EYLUL16</code>. Define the value-package structure for 28–31 August with the call center. Begin the HotelRunner sales-value write-back work.</li>
+      <li><b>1–15 September</b> — Bring the September budget online (≈₺28,300/day). Raise German search to ₺3,000/day. Enable UK early booking and prepare for half term. Open the PL/RO/NL/IT test cluster. Publish the <code>BLC-WEB-EKIM18</code> code in BV3. Take the first cost-per-call measurement.</li>
+      <li><b>16–30 September</b> — Intensify last-minute and call lines for September capacity; activate the September promotion codes. Monitor 1–18 October occupancy weekly. Update the remarketing audience and reassess its budget against the efficiency gain. First performance review of the test markets.</li>
+      <li><b>1–18 October</b> — The priority window is live and the budget concentrates here. From 12 October move the product message to the heated pool and activate <code>BLC-WEB-HAVUZ</code>. Report code usage counters weekly.</li>
+      <li><b>19–31 October</b> — Activate the November Half Term campaign. Publish the promotion-coded offer and long-stay packages for 19–31 October. Open 2027 early booking and the <code>BLC-WEB-ERKEN2027</code> code. Complete the three-month closing measurement; if sales-value write-back is in place, produce the first channel-level return report and base the November–January plan on it.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Channel Strategy</h2>
+    <div class="cta">
+      <div><b>Google Search</b> Meets intent-driven demand and serves both objectives. Weight moves to Germany: cost per click is higher, yet it produces 35.6% of reservations.</div>
+      <div><b>Meta</b> The primary demand-generation channel, offering ready capacity that scales quickly. Creative foregrounds the heated pool, autumn sea temperature and spacious beach.</div>
+      <div><b>Call campaigns</b> Feed the call center: Google call extensions with the "Contact" conversion, and Meta call/WhatsApp ad sets. The primary channel for near-term capacity.</div>
+      <div><b>Booking engine</b> The conversion point for the online objective. Measured through "Begin checkout" and BV3 coupons; the promotion code accelerates the decision.</div>
+      <div><b>PMax</b> Used for international early booking (UK, Germany) — cost per click ₺2.04–3.48. For Turkey the Search channel is preferred.</div>
+      <div><b>Remarketing</b> Serves both objectives and strengthens recovery through the <code>BLC-WEB-GERIDON</code> code. Updating the audience configuration will deliver efficiency gains on this line.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Keyword Ideas</h2>
+    <div class="note">Aimed at working autumn and winter capacity, in three languages. As Belconti's <b>heated pool</b> product is the strongest sales proposition for this period, it sits at the centre of the keyword set. In the call-objective cluster, action phrases ("call now", "get a price") are foregrounded.</div>
+    <div class="grid3" style="margin-top:14px">
+      <div class="metric" style="text-align:left"><div class="l">Turkish</div><div class="f" style="line-height:2">belek ekim tatili · antalya sonbahar otel · belek ara tatil oteli · kasım tatili her şey dahil · <b>belek ısıtmalı havuzlu otel</b> · belek kapalı havuzlu otel · belek son dakika ekim · <b>belek otel fiyat sorma</b> · belek otel iletişim</div></div>
+      <div class="metric" style="text-align:left"><div class="l">German</div><div class="f" style="line-height:2">belek urlaub oktober · türkei all inclusive oktober · belek hotel herbstferien · antalya urlaub november · <b>belek hotel beheizter pool</b> · türkei hotel warmes wetter oktober · belek last minute oktober · belek hotel direkt buchen</div></div>
+      <div class="metric" style="text-align:left"><div class="l">English</div><div class="f" style="line-height:2">belek holiday october · turkey all inclusive autumn · belek half term holiday · antalya hotel november · <b>belek hotel heated pool</b> · turkey winter sun hotel · belek late deals october · belek hotel book direct</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Ad Copy Examples</h2>
+    <div class="note">Written to Google responsive search ad limits: headlines ≤30 characters, descriptions ≤90 characters. Copy is separated by objective, with promotion codes positioned in the description.</div>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>Language / objective</th><th>Headlines</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Turkish · <span class="badge b-google">Online</span></td><td>Belek'te Ekim Tatili<br>Isıtmalı Havuz Açık<br>Her Şey Dahil Sonbahar</td><td>Ekim'de deniz hâlâ sıcak, havuz ısıtmalı. EKIM18 kodu ile online rezervasyon avantajı.</td></tr>
+        <tr><td>Turkish · <span class="badge b-meta">Calls</span></td><td>Ekim İçin Hemen Arayın<br>Size Özel Fiyat Alın<br>Belconti Resort Belek</td><td>Boş tarihler için özel fiyat alın. Rezervasyon danışmanımız sizi hemen bilgilendirsin.</td></tr>
+        <tr><td>German · <span class="badge b-google">Online</span></td><td>Belek im Oktober<br>Beheizter Pool Offen<br>All Inclusive Herbst</td><td>Im Oktober ist das Meer noch warm, der Pool beheizt. Direkt buchen und sparen.</td></tr>
+        <tr><td>English · <span class="badge b-google">Online</span></td><td>October in Belek<br>Heated Pool Open<br>All Inclusive Autumn</td><td>The sea is still warm in October and the pool is heated. Book direct and save.</td></tr>
+        <tr><td>Turkish · <span class="badge b-yandex">November / long stay</span></td><td>Kasım'da Belek Keyfi<br>7 Gece Kal 6 Öde<br>Isıtmalı Havuz Açık</td><td>Uzun konaklamada avantajlı fiyat. UZUN7 kodu ile 7 gece konakla, 6 gece öde.</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Measurement Infrastructure and the Plan's Data Basis</h2>
+    <div class="sub">The plan is built on verifiable data sources. As the measurement infrastructure is completed, campaign-level return reporting will also come into service in the coming period.</div>
+    <div class="scroll">
+    <table>
+      <thead><tr><th>Metric</th><th class="right">July</th><th>Status and approach</th></tr></thead>
+      <tbody>
+        <tr><td>Spend</td><td class="right">₺477,937</td><td>Reliable — used as the basis for plan calculations</td></tr>
+        <tr><td>Clicks</td><td class="right">181,902</td><td>Reliable — channel efficiency is assessed with this data</td></tr>
+        <tr><td>Occupancy book</td><td class="right">daily</td><td><b>Reliable</b> — the plan's capacity map rests on this source (<b>DailySnapshot</b>)</td></tr>
+        <tr><td>Call records</td><td class="right">1,432</td><td><b>Reliable</b> — the call objective is tracked with this source (<b>CallCenterDailyStat</b>)</td></tr>
+        <tr><td>Platform conversion count</td><td class="right">49,652</td><td>Includes micro-interactions, so it is not used as a basis for plan targets</td></tr>
+        <tr><td>Platform conversion value</td><td class="right">₺25,545</td><td>Booking-engine sales values are not yet written back to the platforms; this work will be completed during the plan period</td></tr>
+        <tr><td>Promotion code usage</td><td class="right">coming online</td><td><b>New attribution source</b> — will evidence channel-level contribution in countable form</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="ok-box"><b>The approach in summary.</b> This plan is grounded in <b>the hotel's own reservation book, the call center's call records and promotion-code usage counters</b> rather than platform conversion figures; all three sources are verifiable. The <b>target ACOS</b> values in the tables are directional targets. The plan period's most valuable technical gain will be the completion of HotelRunner sales-value write-back, bringing genuine campaign-level return reporting into service.</div>
+  </div>
+
+  <div class="card">
+    <h2>Next Steps</h2>
+    <ul class="next">
+      <li>Campaign date targeting will be set to cover 28 August onward, so the budget works in return-generating windows.</li>
+      <li>Five Meta campaigns targeting Germany and the UK will be built and launched, using the two existing campaigns as templates.</li>
+      <li>Ten ready campaigns in the account will be activated: Heated Pool DE and UK, German early-booking search and PMax, British early-booking search, brand defence, last minute, the PL/RO/FR/NL test cluster and November Half Term.</li>
+      <li>Turkish generic search will be rebalanced to ₺2,200/day and the released resource directed to German search (₺3,000/day).</li>
+      <li>The "Contact" and "Begin checkout" conversions will be attached to the relevant campaigns as primary goals, and each objective's performance tracked separately.</li>
+      <li>Nine promotion codes will be defined in the system, passed through the approval flow and published with window-based validity dates.</li>
+      <li>The remarketing audience will be updated, and its budget reassessed once the efficiency gain is realised.</li>
+      <li>The heated-pool product will be positioned in the Search channel for Turkey.</li>
+      <li>HotelRunner sales-value write-back will be established — the plan period's most valuable technical gain.</li>
+      <li>1–18 October occupancy will be monitored weekly and budget directed between the German and Meta blocks according to performance.</li>
+    </ul>
+    <div class="ok-box"><b>Three items for management's consideration:</b> (1) <b>The August budget</b> — the ₺570,968 remaining in the approved plan is planned at ₺260,000 in line with the capacity map; carrying the ₺310,968 difference into September will allow the resource to work in the higher-return window. (2) <b>November capacity</b> — for this period, promotion codes, long-stay packages and tour-operator / group-sales partnerships are recommended in place of advertising budget. (3) <b>Yandex Direct</b> — Russia forms 28.7% of the book, and opening it to direct sales will be possible with a separate budget line.</div>
+  </div>
+
+  <footer>
+    PPG · PMA Partner — Belconti Resort Three-Month Marketing Plan · August–October 2026 · Budget ₺1,590,000<br>
+    Data source: PPG production database, measured 17 August 2026 — DailySnapshot, AdsDailySnapshot, CallCenterDailyStat, CallCenterDiscount, MarketingBudgetPlan.<br>
+    Exchange rate: €1 = ₺52.94 (the system's August average). The occupancy book was last updated 15 August 02:42; sync horizon 12 December 2026.
+  </footer>
+</div>
+</div>
+<script>
+function toggleTheme(){
+  var html = document.documentElement;
+  var cur = html.getAttribute('data-theme') || 'light';
+  var next = cur === 'light' ? 'dark' : 'light';
+  html.setAttribute('data-theme', next);
+  document.getElementById('themeBtn').textContent = next === 'light' ? '🌙 Dark' : '☀️ Light';
+  try { localStorage.setItem('belconti-theme', next); } catch(e){}
+}
+function toggleLang(){
+  var tr = document.getElementById('doc-tr'), en = document.getElementById('doc-en');
+  var isTr = tr.classList.contains('active');
+  tr.classList.toggle('active', !isTr);
+  en.classList.toggle('active', isTr);
+  document.getElementById('langBtn').textContent = isTr ? 'TR' : 'EN';
+  try { localStorage.setItem('belconti-lang', isTr ? 'en' : 'tr'); } catch(e){}
+}
+function toggleApprove(){
+  var btn = document.getElementById('approveBtn'), banner = document.getElementById('banner');
+  var approved = btn.classList.toggle('approved');
+  banner.classList.toggle('approved', approved);
+  banner.textContent = approved
+    ? '✅ ONAYLANDI — sohbette "onaylıyorum" yazarak sistemde etkinleştirmemi isteyin / APPROVED — say "I approve" in chat so I can activate it in the system'
+    : '⏳ ONAY BEKLENİYOR — hiçbir kampanya bütçesi değiştirilmedi, hiçbir para harcanmadı / AWAITING APPROVAL — no budget changed, no money spent';
+  btn.textContent = approved ? '✅ Onaylandı / Approved' : '✅ Onayla / Approve';
+  try { localStorage.setItem('belconti-approved', approved ? '1' : '0'); } catch(e){}
+}
+(function init(){
+  var theme = 'light', lang = 'tr', approved = false;
+  try {
+    theme = localStorage.getItem('belconti-theme') || 'light';
+    lang = localStorage.getItem('belconti-lang') || 'tr';
+    approved = localStorage.getItem('belconti-approved') === '1';
+  } catch(e){}
+  document.documentElement.setAttribute('data-theme', theme);
+  document.getElementById('themeBtn').textContent = theme === 'light' ? '🌙 Dark' : '☀️ Light';
+  if (lang === 'en'){
+    document.getElementById('doc-tr').classList.remove('active');
+    document.getElementById('doc-en').classList.add('active');
+    document.getElementById('langBtn').textContent = 'TR';
+  }
+  if (approved){
+    document.getElementById('approveBtn').classList.add('approved');
+    document.getElementById('approveBtn').textContent = '✅ Onaylandı / Approved';
+    document.getElementById('banner').classList.add('approved');
+    document.getElementById('banner').textContent = '✅ ONAYLANDI — sohbette "onaylıyorum" yazarak sistemde etkinleştirmemi isteyin / APPROVED — say "I approve" in chat so I can activate it in the system';
+  }
+})();
+</script>
+
+</body></html>
+

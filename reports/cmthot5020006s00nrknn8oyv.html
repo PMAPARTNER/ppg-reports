@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Belconti Resort — Aylık Performans Raporu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg-dark: #FFFFFF;
+      --bg-black: #F5F7FA;
+      --bg-light: #FFFFFF;
+      --primary-gold: #0E7C86;
+      --gold-hover: #0E7C86;
+      --gold-light: rgba(14, 124, 134, 0.15);
+      --text-white: #1A1A1A;
+      --text-muted: #666666;
+      --text-dark: #0F1B29;
+      --text-muted-light: #999999;
+      --bg-card: rgba(14, 124, 134, 0.08);
+      --border-card: rgba(14, 124, 134, 0.2);
+      --border-light: #CCCCCC;
+      --aegean-blue: #0E7C86;
+      --danger: #DC2626;
+      --success: #0E7C86;
+      --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      --card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.12);
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Sora', sans-serif;
+      color: var(--text-white);
+      background-color: var(--bg-black);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* ── PMA CO-BRANDING HEADER BANNER ── */
+    .pma-top-bar {
+      background-color: var(--bg-black);
+      color: var(--text-white);
+      padding: 12px 60px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-card);
+      z-index: 1000;
+      position: relative;
+    }
+
+    .pma-partner-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .pma-logo-text {
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ── HOTEL WEBSITE HEADER ── */
+    .cavo-header {
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--text-white);
+      backdrop-filter: blur(15px);
+      padding: 18px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      border-bottom: 1px solid var(--border-card);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .cavo-book-btn {
+      background-color: var(--primary-gold);
+      color: var(--bg-dark);
+      border: none;
+      padding: 10px 24px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: var(--transition);
+      border-radius: 99px;
+    }
+
+    .cavo-book-btn:hover {
+      background-color: var(--gold-hover);
+      box-shadow: 0 0 15px rgba(14, 124, 134, 0.4);
+    }
+
+    /* ── SLIDE DECK CONTAINER (16:9 ASPECT RATIO) ── */
+    .deck-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    .slide {
+      background: var(--bg-dark);
+      border: 1px solid var(--border-card);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 60px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+      min-height: 600px;
+      transition: var(--transition);
+    }
+
+    .slide:hover {
+      border-color: rgba(14, 124, 134, 0.3);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /*
+     * Cover Slide — GÖRSELSİZ (kullanıcı, 2026-08-23).
+     *
+     * Önceki sürüm arka plana bir fotoğraf koyuyordu ve iki şey bozuktu:
+     *  1. Otelin kendi coverImageUrl alanı boşsa SABİT KODLU, BAŞKA BİR
+     *     ait dış görsel devreye giriyordu — rapor yanlış tesisi gösteriyordu.
+     *  2. Fotoğrafın üstündeki başlık okunmuyordu; metin rengi bir CSS
+     *     değişkenine bağlıydı ve bazı bağlamlarda (PDF/print) koyuya
+     *     çözülüyordu, koyu zeminde koyu yazı çıkıyordu.
+     *
+     * Çözüm: fotoğraf yok, düz koyu degrade var; metin renkleri DEĞİŞKENE
+     * BAĞLI DEĞİL, doğrudan yazıldı — hangi bağlamda render edilirse edilsin
+     * kontrast garanti.
+     */
+    .slide-cover {
+      background: linear-gradient(160deg, #0f1f28 0%, #16303d 55%, #0f1f28 100%);
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+
+    .slide-cover-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide-cover-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      /* Degiskene BAGLI DEGIL: bazi render baglamlarinda (PDF/print) koyuya
+         cozuluyor ve koyu zeminde okunmaz hale geliyordu. */
+      color: #ffffff;
+    }
+
+    .slide-cover-subtitle {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.78);
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    /* Slide Header */
+    .slide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-card);
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+      height: 45px;
+      flex-shrink: 0;
+    }
+
+    .slide-title-area {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .slide-tag {
+      font-size: 9px;
+      font-weight: 700;
+      background: rgba(14, 124, 134, 0.15);
+      color: var(--primary-gold);
+      border: 1px solid var(--primary-gold);
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .slide-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--text-white);
+    }
+
+    .slide-pma-badge {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 9px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--primary-gold);
+      font-weight: 700;
+    }
+
+    /* Slide Body & Footer */
+    .slide-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    .slide-footer {
+      border-top: 1px solid var(--border-card);
+      padding-top: 15px;
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      height: 30px;
+      flex-shrink: 0;
+    }
+
+    .slide-footer span strong {
+      color: var(--primary-gold);
+    }
+
+    /* ── SPLIT GRID (FOR SLIDE USE) ── */
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+      height: 100%;
+    }
+
+    /* ── HIGH-SEASON STATS & METRICS CARDS ── */
+    .metrics-summary-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .metric-card-visual {
+      background: var(--bg-card);
+      border-radius: 12px;
+      border: 1px solid var(--border-card);
+      padding: 24px 16px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .metric-card-visual:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: var(--primary-gold);
+    }
+
+    .metric-visual-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--primary-gold);
+      margin-bottom: 5px;
+    }
+
+    .metric-visual-lbl {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-white);
+    }
+
+    .metric-visual-foot {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* ── TABLES ── */
+    .table-container {
+      background: var(--bg-card);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-card);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .report-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      text-align: left;
+    }
+
+    .report-table th {
+      background: var(--bg-black);
+      color: var(--primary-gold);
+      padding: 12px 18px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border-card);
+    }
+
+    .report-table td {
+      padding: 10px 18px;
+      border-bottom: 1px solid var(--border-card);
+      color: var(--text-white);
+    }
+
+    .report-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .report-table tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 0;
+      }
+      body {
+        background-color: var(--bg-black) !important;
+        color: var(--text-white) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .pma-top-bar, .cavo-header {
+        display: none !important;
+      }
+      .slide {
+        width: 297mm !important;
+        height: 210mm !important;
+        max-width: 297mm !important;
+        max-height: 210mm !important;
+        margin: 0 !important;
+        padding: 20mm !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background-color: var(--bg-dark) !important;
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+    }
+  </style>
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet"></head>
+<body>
+
+  <!-- PMA CO-BRANDING HEADER BANNER -->
+  <div class="pma-top-bar">
+    <div class="pma-partner-brand">
+      <span class="pma-logo-text">PMA PARTNER</span>
+    </div>
+    <div>OTOMATİK PERFORMANS BİLGİLENDİRME RAPORU</div>
+  </div>
+
+  <!-- HOTEL HEADER -->
+  <div class="cavo-header">
+    <span style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--text-white);">Belconti Resort</span>
+    <button class="cavo-book-btn">AYLIK PERFORMANS RAPORU</button>
+  </div>
+
+  <div class="deck-container">
+    
+            <div class="slide slide-cover" id="slide-1">
+              <div class="slide-cover-body">
+                <div style="font-size:12px; font-weight:700; color:var(--primary-gold); letter-spacing:2.5px; text-transform:uppercase; margin-bottom:20px;">PPG NEWS &bull; PERFORMANCE BRIEFING</div>
+                <h1 class="slide-cover-title" style="font-size:52px; font-family:'Playfair Display', serif;">SON DOGRULAMA</h1>
+                <div class="slide-cover-subtitle" style="font-size:16px;">Belconti Resort &bull; 2026-08-01 — 2026-08-31</div>
+                <div style="font-size:13px; color:var(--text-muted); margin-top:15px; font-weight:500;">PPG-01 Series Performance Report</div>
+              </div>
+              <div style="font-size:10px; color:var(--text-muted); letter-spacing:1px; text-transform:uppercase;">PPG Hospitality Technology &bull; Automated Briefing System</div>
+            </div>
+        
+
+                <div class="slide" id="slide-2">
+                  <div class="slide-header">
+                    <div class="slide-title-area">
+                      <span class="slide-tag">OCCUPANCY</span>
+                      <h2 class="slide-heading">Doluluk ve ADR Detayları</h2>
+                    </div>
+                    <div class="slide-pma-badge">PPG-01 SERIES</div>
+                  </div>
+                  <div class="slide-body">
+                    <div class="table-container" style="max-height:340px; overflow-y:auto;">
+                      <table class="report-table">
+                        <thead>
+                          <tr>
+                            <th>Tarih</th>
+                            <th style="text-align:right;">Toplam Oda</th>
+                            <th style="text-align:right;">Dolu Oda</th>
+                            <th style="text-align:right;">Doluluk Oranı</th>
+                            <th style="text-align:right;">ADR</th>
+                            <th style="text-align:right;">RevPAR</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">31 Tem 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">592</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%99</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">15.347 <span style="font-size:10px;opacity:.6;">(birim bilinmiyor)</span></td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">15.244 <span style="font-size:10px;opacity:.6;">(birim bilinmiyor)</span></td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">1 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">573</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%96</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€259</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€259</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">2 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">597</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%100</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€255</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€255</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">3 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%100</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€254</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€254</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">4 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">594</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%100</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€257</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€257</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">5 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">592</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%99</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€257</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€257</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">6 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">601</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%101</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€261</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€261</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">7 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">580</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%97</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€268</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€268</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">8 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">573</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%96</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€266</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€266</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">9 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">598</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%100</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€260</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€260</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">10 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">600</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%101</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€254</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€254</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">11 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">590</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%99</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€256</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€256</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">12 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">600</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%101</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€256</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€256</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">13 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">603</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%101</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€258</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€258</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">14 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">581</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%97</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€261</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€261</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">15 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">595</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%100</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€259</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€259</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">16 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">590</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%99</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€258</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€258</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">17 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">603</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%101</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€263</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€263</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">18 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">603</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%101</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€265</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€265</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">19 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">601</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%101</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€266</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€266</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">20 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">601</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%101</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€263</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€263</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">21 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">594</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%100</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€255</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€255</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">22 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%100</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€251</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€251</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">23 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">595</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%100</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€251</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€251</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">24 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">600</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%101</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€257</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€257</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">25 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">597</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%100</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€260</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€260</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">26 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">601</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%101</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€262</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€262</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">27 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">602</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%101</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€262</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€262</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">28 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">593</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%99</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€261</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€261</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">29 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">604</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%101</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€251</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€251</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">30 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">581</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%97</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€244</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€244</td>
+                </tr>
+            
+                <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                    <td style="padding:10px 14px; color:var(--text-white); font-weight:500;">31 Ağu 2026</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">596</td>
+                    <td style="padding:10px 14px; text-align:right; color:var(--text-muted);">598</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--text-white);">%100</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€243</td>
+                    <td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">€243</td>
+                </tr>
+            
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="slide-footer">
+                    <span>PPG MASTER SYSTEM REPORT &bull; <strong>Belconti Resort</strong></span>
+                    <span>SLIDE 2</span>
+                  </div>
+                </div>
+            
+
+    <div class="slide" id="sec-pickup">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">PICK-UP</span><h2 class="slide-heading">2026-08-31 Pick-Up</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/tr/admin/sales-monitor?from=2026-08-31&to=2026-08-31&currency=EUR&hotelId=cmnabk7vm0004sf0kygmq7xww" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ Görüntüle</a><div class="slide-pma-badge">PMA PARTNER</div></div></div>
+      <div class="slide-body">
+        <p style="font-size:11px;color:var(--text-muted);margin-bottom:14px;font-style:italic;">Sadece 2026-08-31 tarihinde oluşturulan rezervasyonların segment kırılımı — Acente/Tur Operatörü, OTA, Münferit/Direkt ve MICE (tutarlar €).</p>
+        <div class="table-container">
+          <table class="report-table"><thead><tr><th>Segment</th><th style="text-align:right;">Adet</th><th style="text-align:right;">Ciro (€)</th></tr></thead><tbody><tr><td>Agency / Tour Operator</td><td style="text-align:right;">13</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€14.304</td></tr><tr><td>OTA</td><td style="text-align:right;">8</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€11.949</td></tr><tr><td>Individual / Direct</td><td style="text-align:right;">10</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€9.271</td></tr><tr><td>MICE</td><td style="text-align:right;">0</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€0</td></tr>
+            <tr><td style="font-weight:700;">Toplam</td><td style="text-align:right;font-weight:700;">31</td><td style="text-align:right;font-weight:800;color:var(--primary-gold);">€35.524</td></tr></tbody></table>
+        </div>
+        <div class="metrics-summary-cards" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-card-visual" style="padding:14px 12px;">
+            <div class="metric-visual-val" style="font-size:22px;color:#ef4444;">0</div>
+            <div class="metric-visual-lbl">İptal</div>
+            <div class="metric-visual-foot">€0</div>
+          </div>
+          <div class="metric-card-visual" style="padding:14px 12px;">
+            <div class="metric-visual-val" style="font-size:22px;">0</div>
+            <div class="metric-visual-lbl">No-Show</div>
+            <div class="metric-visual-foot">varış: 2026-08-25 → 2026-08-31</div>
+          </div>
+          <div class="metric-card-visual" style="padding:14px 12px;">
+            <div class="metric-visual-val" style="font-size:22px;color:var(--primary-gold);">31</div>
+            <div class="metric-visual-lbl">NET Pick-Up</div>
+            <div class="metric-visual-foot">€35.524 · brüt − iptal</div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>PMA PARTNER &bull; <strong>Belconti Resort</strong></span><span>GÜNLÜK E-POSTA / PMS VERİSİ</span></div>
+    </div>
+    <div class="slide" id="sec-forecast">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">FORECAST</span><h2 class="slide-heading">FORECAST — Rapor Günü Yeni Rezervasyon Check-In Ayları</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/tr/admin/demand-forecast?from=2026-08-31&to=2026-08-31&currency=EUR&hotelId=cmnabk7vm0004sf0kygmq7xww" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ Görüntüle</a><div class="slide-pma-badge">PMA PARTNER</div></div></div>
+      <div class="slide-body">
+        <p style="font-size:11px;color:var(--text-muted);margin-bottom:14px;font-style:italic;">2026-08-31 tarihinde oluşturulan yeni rezervasyonların check-in ayına göre dağılımı. Bu bölüm genel doluluk tahmini değildir.</p>
+        <div class="table-container">
+          <table class="report-table"><thead><tr><th>Check-in Ayı</th><th style="text-align:right;">Oda-gece</th><th style="text-align:right;">Yeni Rez. Cirosu</th></tr></thead><tbody>
+            <tr><td style="font-weight:700;">2026-08</td><td style="text-align:right;">3</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€1.147</td></tr>
+            <tr><td style="font-weight:700;">2026-09</td><td style="text-align:right;">82</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€20.634</td></tr>
+          </tbody></table>
+        </div>
+        <div style="margin-top:18px;">
+          <div style="font-size:11px;color:var(--text-muted);margin-bottom:10px;font-style:italic;">Talep Tahmini — önümüzdeki 60 gün (web /admin/demand-forecast paneliyle aynı hesaplama): doluluk projeksiyonu, geçen yıl pace ve uçuş baskısı.</div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:center;background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:20px;">
+            <div><div style="font-size:24px;font-weight:800;color:var(--primary-gold);">%92</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:.5px;margin-top:2px;">Ort. Tahmini Doluluk</div></div>
+            <div><div style="font-size:24px;font-weight:800;color:var(--text-white);">%100</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:.5px;margin-top:2px;">Pik Doluluk</div><div style="font-size:10px;color:var(--text-muted);margin-top:2px;">31.08</div></div>
+            <div><div style="font-size:24px;font-weight:800;color:var(--text-white);">%81</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:.5px;margin-top:2px;">Pace (Geçen Yıl)</div><div style="font-size:10px;color:var(--text-muted);margin-top:2px;">100 = başabaş</div></div>
+            <div><div style="font-size:24px;font-weight:800;color:var(--text-white);">Yoğun (8.36x)</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:.5px;margin-top:2px;">Uçuş Sinyali</div></div>
+          </div>
+          <div style="font-size:12.5px;color:var(--text-white);margin-top:12px;line-height:1.5;">Önümüzdeki dönem ortalama tahmini doluluk %92 (otelin gerçek pickup eğrisi + geçen yıl bazlı). Rezervasyon pace'i geçen yıla göre %19 geride. Uçuş kapasitesi sinyali: güçlü (baseline'a göre %736). Ortalama güven: %80 (uzak tarihlerde düşer). Sektör riski: "News Summary-Intelligence Report 8/28/2026*Newsdump Friday*US Backs Down China Hack Claim*Epstein-Netanyahu Link Confirmed*US Kurd Cutoff*House To Vote More Spending*'Upper Hand' Hormuz*Five Killed Gaza*Fed Chair Inflation Worry*Trump Disapproval...".</div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>PMA PARTNER &bull; <strong>Belconti Resort</strong></span><span>GÜNLÜK E-POSTA / PMS VERİSİ</span></div>
+    </div>
+    <div class="slide" id="sec-roomstatus">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">ODA DURUMU</span><h2 class="slide-heading">OOO – HU – COMP – SOLD</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/tr/admin?from=2026-08-31&to=2026-08-31&currency=EUR&hotelId=cmnabk7vm0004sf0kygmq7xww" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ Görüntüle</a><div class="slide-pma-badge">PPG NEWS</div></div></div>
+      <div class="slide-body">
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:center;background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:24px;">
+          <div><div style="font-size:26px;font-weight:800;color:var(--text-white);">0</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:1px;">OOO</div></div>
+          <div><div style="font-size:26px;font-weight:800;color:var(--text-white);">0</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:1px;">HU</div></div>
+          <div><div style="font-size:26px;font-weight:800;color:var(--text-white);">0</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:1px;">COMP</div></div>
+          <div><div style="font-size:26px;font-weight:800;color:var(--primary-gold);">555</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:1px;">SOLD</div></div>
+        </div>
+        
+      </div>
+      <div class="slide-footer"><span>PMA PARTNER &bull; <strong>Belconti Resort</strong></span><span>GÜNLÜK E-POSTA / PMS VERİSİ</span></div>
+    </div>
+    <div class="slide" id="sec-d2c">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">D2C</span><h2 class="slide-heading">D2C (Call Center + Münferit + Web)</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/tr/admin/sales-monitor?from=2026-08-31&to=2026-08-31&currency=EUR&hotelId=cmnabk7vm0004sf0kygmq7xww" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ Görüntüle</a><div class="slide-pma-badge">PPG NEWS</div></div></div>
+      <div class="slide-body">
+        <p style="font-size:11px;color:var(--text-muted);margin-bottom:14px;font-style:italic;">2026-08-25 → 2026-08-31 pickup — € tutar + işlem/rezervasyon sayısı.</p>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:22px;">
+          <div style="text-align:center;"><div style="font-size:24px;font-weight:800;color:var(--text-white);">9</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Call Center</div><div style="font-size:13px;font-weight:700;color:var(--primary-gold);margin-top:4px;">€8.913</div></div>
+          <div style="text-align:center;"><div style="font-size:24px;font-weight:800;color:var(--text-white);">1</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Münferit</div><div style="font-size:13px;font-weight:700;color:var(--primary-gold);margin-top:4px;">€357</div></div>
+          <div style="text-align:center;"><div style="font-size:24px;font-weight:800;color:var(--text-white);">0</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Web</div><div style="font-size:13px;font-weight:700;color:var(--primary-gold);margin-top:4px;">€0</div></div>
+        </div>
+        <div style="margin-top:12px;text-align:right;font-size:13px;color:var(--text-muted);">Toplam: <strong style="color:var(--text-white);">10</strong> · <strong style="color:var(--primary-gold);">€9.271</strong></div>
+      </div>
+      <div class="slide-footer"><span>PMA PARTNER &bull; <strong>Belconti Resort</strong></span><span>GÜNLÜK E-POSTA / PMS VERİSİ</span></div>
+    </div>
+    <div class="slide" id="sec-flights">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">UÇUŞ</span><h2 class="slide-heading">Uçuş Analizi — Origin Airport Bazlı Talep Baskısı</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/tr/admin/demand-forecast?from=2026-08-31&to=2026-08-31&currency=EUR&hotelId=cmnabk7vm0004sf0kygmq7xww" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ Görüntüle</a><div class="slide-pma-badge">PMA PARTNER</div></div></div>
+      <div class="slide-body">
+        <div style="font-size:12px;color:var(--text-muted);margin-bottom:14px;">Varış havalimanı: <strong style="color:var(--text-white);">AYT</strong></div>
+        <div style="font-size:11px;color:var(--text-muted);margin-bottom:8px;font-style:italic;">2026-08-31 → 2026-09-20 toplam uçuş; ilk 5 çıkış havalimanı ve ilk 5 havayolu (kaynak: uçuş arşivi). Ülke gruplaması kullanılmaz.</div>
+        <div class="metrics-summary-cards" style="grid-template-columns:repeat(3,1fr);">
+          <div class="metric-card-visual"><div class="metric-visual-val">870</div><div class="metric-visual-lbl">2026-08-31 → 2026-09-06</div><div class="metric-visual-foot">7.412 koltuk</div></div>
+          <div class="metric-card-visual"><div class="metric-visual-val">1.452</div><div class="metric-visual-lbl">2026-08-31 → 2026-09-13</div><div class="metric-visual-foot">15.826 koltuk</div></div>
+          <div class="metric-card-visual"><div class="metric-visual-val">1.981</div><div class="metric-visual-lbl">Toplam Uçuş · 2026-08-31 → 2026-09-20</div><div class="metric-visual-foot">24.240 koltuk</div></div>
+        </div>
+        <div class="table-container" style="margin-top:16px;"><table class="report-table"><thead><tr><th>Çıkış Havalimanı</th><th style="text-align:right;">Uçuş</th><th style="text-align:right;">Koltuk</th></tr></thead><tbody><tr><td style="font-weight:700;">Sabiha Gökçen (SAW)</td><td style="text-align:right;color:var(--primary-gold);font-weight:800;">243</td><td style="text-align:right;">0</td></tr><tr><td style="font-weight:700;">İstanbul Havalimanı (IST)</td><td style="text-align:right;color:var(--primary-gold);font-weight:800;">193</td><td style="text-align:right;">0</td></tr><tr><td style="font-weight:700;">DUS (DUS)</td><td style="text-align:right;color:var(--primary-gold);font-weight:800;">116</td><td style="text-align:right;">0</td></tr><tr><td style="font-weight:700;">Ankara Esenboğa Havalimanı (ESB)</td><td style="text-align:right;color:var(--primary-gold);font-weight:800;">105</td><td style="text-align:right;">0</td></tr><tr><td style="font-weight:700;">STR (STR)</td><td style="text-align:right;color:var(--primary-gold);font-weight:800;">92</td><td style="text-align:right;">0</td></tr></tbody></table></div>
+        <div style="margin-top:16px;">
+              <div style="font-size:11px;color:var(--text-muted);margin-bottom:6px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;">Gün Gün Uçuş Hacmi</div>
+              <div style="display:flex;align-items:flex-end;gap:3px;height:76px;">
+                <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-08-31 — 167 uçuş / 200 koltuk">
+                      <div style="width:100%;height:71px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-09-01 — 169 uçuş / 1.202 koltuk">
+                      <div style="width:100%;height:72px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-09-02 — 92 uçuş / 1.202 koltuk">
+                      <div style="width:100%;height:39px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-09-03 — 69 uçuş / 1.202 koltuk">
+                      <div style="width:100%;height:29px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-09-04 — 93 uçuş / 1.202 koltuk">
+                      <div style="width:100%;height:40px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-09-05 — 144 uçuş / 1.202 koltuk">
+                      <div style="width:100%;height:61px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-09-06 — 136 uçuş / 1.202 koltuk">
+                      <div style="width:100%;height:58px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-09-07 — 78 uçuş / 1.202 koltuk">
+                      <div style="width:100%;height:33px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-09-08 — 50 uçuş / 1.202 koltuk">
+                      <div style="width:100%;height:21px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-09-09 — 38 uçuş / 1.202 koltuk">
+                      <div style="width:100%;height:16px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-09-10 — 78 uçuş / 1.202 koltuk">
+                      <div style="width:100%;height:33px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-09-11 — 111 uçuş / 1.202 koltuk">
+                      <div style="width:100%;height:47px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-09-12 — 145 uçuş / 1.202 koltuk">
+                      <div style="width:100%;height:62px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-09-13 — 82 uçuş / 1.202 koltuk">
+                      <div style="width:100%;height:35px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-09-14 — 50 uçuş / 1.202 koltuk">
+                      <div style="width:100%;height:21px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-09-15 — 41 uçuş / 1.202 koltuk">
+                      <div style="width:100%;height:17px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-09-16 — 76 uçuş / 1.202 koltuk">
+                      <div style="width:100%;height:32px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-09-17 — 101 uçuş / 1.202 koltuk">
+                      <div style="width:100%;height:43px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-09-18 — 120 uçuş / 1.202 koltuk">
+                      <div style="width:100%;height:51px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-09-19 — 96 uçuş / 1.202 koltuk">
+                      <div style="width:100%;height:41px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-09-20 — 45 uçuş / 1.202 koltuk">
+                      <div style="width:100%;height:19px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--text-muted);margin-top:4px;">
+                <span>2026-08-31</span><span>2026-09-20</span>
+              </div>
+              <div class="table-container" style="margin-top:10px;max-height:210px;overflow:auto;"><table class="report-table"><thead><tr><th>Tarih</th><th style="text-align:right;">Uçuş</th><th style="text-align:right;">Koltuk</th></tr></thead><tbody><tr><td>2026-08-31</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">167</td><td style="text-align:right;">200</td></tr><tr><td>2026-09-01</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">169</td><td style="text-align:right;">1.202</td></tr><tr><td>2026-09-02</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">92</td><td style="text-align:right;">1.202</td></tr><tr><td>2026-09-03</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">69</td><td style="text-align:right;">1.202</td></tr><tr><td>2026-09-04</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">93</td><td style="text-align:right;">1.202</td></tr><tr><td>2026-09-05</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">144</td><td style="text-align:right;">1.202</td></tr><tr><td>2026-09-06</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">136</td><td style="text-align:right;">1.202</td></tr><tr><td>2026-09-07</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">78</td><td style="text-align:right;">1.202</td></tr><tr><td>2026-09-08</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">50</td><td style="text-align:right;">1.202</td></tr><tr><td>2026-09-09</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">38</td><td style="text-align:right;">1.202</td></tr><tr><td>2026-09-10</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">78</td><td style="text-align:right;">1.202</td></tr><tr><td>2026-09-11</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">111</td><td style="text-align:right;">1.202</td></tr><tr><td>2026-09-12</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">145</td><td style="text-align:right;">1.202</td></tr><tr><td>2026-09-13</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">82</td><td style="text-align:right;">1.202</td></tr><tr><td>2026-09-14</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">50</td><td style="text-align:right;">1.202</td></tr><tr><td>2026-09-15</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">41</td><td style="text-align:right;">1.202</td></tr><tr><td>2026-09-16</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">76</td><td style="text-align:right;">1.202</td></tr><tr><td>2026-09-17</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">101</td><td style="text-align:right;">1.202</td></tr><tr><td>2026-09-18</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">120</td><td style="text-align:right;">1.202</td></tr><tr><td>2026-09-19</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">96</td><td style="text-align:right;">1.202</td></tr><tr><td>2026-09-20</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">45</td><td style="text-align:right;">1.202</td></tr></tbody></table></div>
+            </div>
+        <div class="table-container" style="margin-top:14px;"><table class="report-table"><thead><tr><th>Havayolu</th><th style="text-align:right;">Uçuş</th><th style="text-align:right;">Koltuk</th></tr></thead><tbody><tr><td style="font-weight:700;">sunexpress</td><td style="text-align:right;color:var(--primary-gold);font-weight:800;">555</td><td style="text-align:right;">0</td></tr><tr><td style="font-weight:700;">pegasus</td><td style="text-align:right;color:var(--primary-gold);font-weight:800;">411</td><td style="text-align:right;">0</td></tr><tr><td style="font-weight:700;">ajet</td><td style="text-align:right;color:var(--primary-gold);font-weight:800;">284</td><td style="text-align:right;">0</td></tr><tr><td style="font-weight:700;">turkish airlines</td><td style="text-align:right;color:var(--primary-gold);font-weight:800;">206</td><td style="text-align:right;">0</td></tr><tr><td style="font-weight:700;">corendon</td><td style="text-align:right;color:var(--primary-gold);font-weight:800;">100</td><td style="text-align:right;">0</td></tr></tbody></table></div>
+        <div style="font-size:10px;color:var(--text-muted);margin-top:6px;font-style:italic;">Havayolu adı kaynakta olduğu gibi gösterilir; bazı satırlarda tam ad, bazılarında IATA kodu bulunur — koddan ada tahmin yapılmaz.</div>
+      </div>
+      <div class="slide-footer"><span>PMA PARTNER &bull; <strong>Belconti Resort</strong></span><span>GÜNLÜK E-POSTA / PMS VERİSİ</span></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="border-top:1px solid var(--border-card); padding:30px 60px; text-align:center; color:var(--text-muted); font-size:11px; font-weight:500; background:var(--bg-dark);">
+    PPG Performance — Otomatik Rapor &bull; Raporlama Zamanı: 31.08.2026 23:24:53<br>
+    <strong style="color:var(--text-white); font-weight:700;">PPG Hospitality Technology &copy; 2026</strong>
+  </div>
+
+</body>
+</html>

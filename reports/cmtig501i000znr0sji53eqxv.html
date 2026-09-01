@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Blue Dreams Resort — Monthly Performance Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg-dark: #FFFFFF;
+      --bg-black: #F5F7FA;
+      --bg-light: #FFFFFF;
+      --primary-gold: #0E7C86;
+      --gold-hover: #0E7C86;
+      --gold-light: rgba(14, 124, 134, 0.15);
+      --text-white: #1A1A1A;
+      --text-muted: #666666;
+      --text-dark: #0F1B29;
+      --text-muted-light: #999999;
+      --bg-card: rgba(14, 124, 134, 0.08);
+      --border-card: rgba(14, 124, 134, 0.2);
+      --border-light: #CCCCCC;
+      --aegean-blue: #0E7C86;
+      --danger: #DC2626;
+      --success: #0E7C86;
+      --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      --card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.12);
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Sora', sans-serif;
+      color: var(--text-white);
+      background-color: var(--bg-black);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* ── PMA CO-BRANDING HEADER BANNER ── */
+    .pma-top-bar {
+      background-color: var(--bg-black);
+      color: var(--text-white);
+      padding: 12px 60px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-card);
+      z-index: 1000;
+      position: relative;
+    }
+
+    .pma-partner-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .pma-logo-text {
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ── HOTEL WEBSITE HEADER ── */
+    .cavo-header {
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--text-white);
+      backdrop-filter: blur(15px);
+      padding: 18px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      border-bottom: 1px solid var(--border-card);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .cavo-book-btn {
+      background-color: var(--primary-gold);
+      color: var(--bg-dark);
+      border: none;
+      padding: 10px 24px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: var(--transition);
+      border-radius: 99px;
+    }
+
+    .cavo-book-btn:hover {
+      background-color: var(--gold-hover);
+      box-shadow: 0 0 15px rgba(14, 124, 134, 0.4);
+    }
+
+    /* ── SLIDE DECK CONTAINER (16:9 ASPECT RATIO) ── */
+    .deck-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    .slide {
+      background: var(--bg-dark);
+      border: 1px solid var(--border-card);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 60px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+      min-height: 600px;
+      transition: var(--transition);
+    }
+
+    .slide:hover {
+      border-color: rgba(14, 124, 134, 0.3);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /*
+     * Cover Slide — GÖRSELSİZ (kullanıcı, 2026-08-23).
+     *
+     * Önceki sürüm arka plana bir fotoğraf koyuyordu ve iki şey bozuktu:
+     *  1. Otelin kendi coverImageUrl alanı boşsa SABİT KODLU, BAŞKA BİR
+     *     ait dış görsel devreye giriyordu — rapor yanlış tesisi gösteriyordu.
+     *  2. Fotoğrafın üstündeki başlık okunmuyordu; metin rengi bir CSS
+     *     değişkenine bağlıydı ve bazı bağlamlarda (PDF/print) koyuya
+     *     çözülüyordu, koyu zeminde koyu yazı çıkıyordu.
+     *
+     * Çözüm: fotoğraf yok, düz koyu degrade var; metin renkleri DEĞİŞKENE
+     * BAĞLI DEĞİL, doğrudan yazıldı — hangi bağlamda render edilirse edilsin
+     * kontrast garanti.
+     */
+    .slide-cover {
+      background: linear-gradient(160deg, #0f1f28 0%, #16303d 55%, #0f1f28 100%);
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+
+    .slide-cover-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide-cover-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      /* Degiskene BAGLI DEGIL: bazi render baglamlarinda (PDF/print) koyuya
+         cozuluyor ve koyu zeminde okunmaz hale geliyordu. */
+      color: #ffffff;
+    }
+
+    .slide-cover-subtitle {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.78);
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    /* Slide Header */
+    .slide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-card);
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+      height: 45px;
+      flex-shrink: 0;
+    }
+
+    .slide-title-area {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .slide-tag {
+      font-size: 9px;
+      font-weight: 700;
+      background: rgba(14, 124, 134, 0.15);
+      color: var(--primary-gold);
+      border: 1px solid var(--primary-gold);
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .slide-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--text-white);
+    }
+
+    .slide-pma-badge {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 9px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--primary-gold);
+      font-weight: 700;
+    }
+
+    /* Slide Body & Footer */
+    .slide-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    .slide-footer {
+      border-top: 1px solid var(--border-card);
+      padding-top: 15px;
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      height: 30px;
+      flex-shrink: 0;
+    }
+
+    .slide-footer span strong {
+      color: var(--primary-gold);
+    }
+
+    /* ── SPLIT GRID (FOR SLIDE USE) ── */
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+      height: 100%;
+    }
+
+    /* ── HIGH-SEASON STATS & METRICS CARDS ── */
+    .metrics-summary-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .metric-card-visual {
+      background: var(--bg-card);
+      border-radius: 12px;
+      border: 1px solid var(--border-card);
+      padding: 24px 16px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .metric-card-visual:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: var(--primary-gold);
+    }
+
+    .metric-visual-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--primary-gold);
+      margin-bottom: 5px;
+    }
+
+    .metric-visual-lbl {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-white);
+    }
+
+    .metric-visual-foot {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* ── TABLES ── */
+    .table-container {
+      background: var(--bg-card);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-card);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .report-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      text-align: left;
+    }
+
+    .report-table th {
+      background: var(--bg-black);
+      color: var(--primary-gold);
+      padding: 12px 18px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border-card);
+    }
+
+    .report-table td {
+      padding: 10px 18px;
+      border-bottom: 1px solid var(--border-card);
+      color: var(--text-white);
+    }
+
+    .report-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .report-table tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 0;
+      }
+      body {
+        background-color: var(--bg-black) !important;
+        color: var(--text-white) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .pma-top-bar, .cavo-header {
+        display: none !important;
+      }
+      .slide {
+        width: 297mm !important;
+        height: 210mm !important;
+        max-width: 297mm !important;
+        max-height: 210mm !important;
+        margin: 0 !important;
+        padding: 20mm !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background-color: var(--bg-dark) !important;
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+    }
+  </style>
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet"></head>
+<body>
+
+  <!-- PMA CO-BRANDING HEADER BANNER -->
+  <div class="pma-top-bar">
+    <div class="pma-partner-brand">
+      <span class="pma-logo-text">PMA PARTNER</span>
+    </div>
+    <div>AUTOMATED PERFORMANCE BRIEFING REPORT</div>
+  </div>
+
+  <!-- HOTEL HEADER -->
+  <div class="cavo-header">
+    <span style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--text-white);">Blue Dreams Resort</span>
+    <button class="cavo-book-btn">MONTHLY PERFORMANCE REPORT</button>
+  </div>
+
+  <div class="deck-container">
+    
+            <div class="slide slide-cover" id="slide-1">
+              <div class="slide-cover-body">
+                <div style="font-size:12px; font-weight:700; color:var(--primary-gold); letter-spacing:2.5px; text-transform:uppercase; margin-bottom:20px;">PPG NEWS &bull; PERFORMANCE BRIEFING</div>
+                <h1 class="slide-cover-title" style="font-size:52px; font-family:'Playfair Display', serif;">Guest Sentiment - 01/09/2026</h1>
+                <div class="slide-cover-subtitle" style="font-size:16px;">Blue Dreams Resort &bull; 2026-08-01 — 2026-08-31</div>
+                <div style="font-size:13px; color:var(--text-muted); margin-top:15px; font-weight:500;">PPG-01 Series Performance Report</div>
+              </div>
+              <div style="font-size:10px; color:var(--text-muted); letter-spacing:1px; text-transform:uppercase;">PPG Hospitality Technology &bull; Automated Briefing System</div>
+            </div>
+        
+
+                <div class="slide" id="slide-2">
+                  <div class="slide-header">
+                    <div class="slide-title-area">
+                      <span class="slide-tag">AI ANALYSIS</span>
+                      <h2 class="slide-heading">AI Performance Commentary</h2>
+                    </div>
+                    <div class="slide-pma-badge">PPG-01 SERIES</div>
+                  </div>
+                  <div class="slide-body">
+                    <div style="background:var(--bg-black); border:1px solid var(--border-card); border-radius:12px; padding:30px 40px; font-size:14px; line-height:1.7; color:var(--text-white); overflow-y:auto; max-height:360px;">
+                      ```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Dreams Resort - Executive Summary & Strategic Recommendations</title>
+    
+</head>
+<body>
+    <h1>Blue Dreams Resort & Spa – Executive Summary & Strategic Recommendations</h1>
+
+    <p><strong>Date:</strong> August 2026 | <strong>Prepared for:</strong> Senior Revenue Management & General Manager</p>
+
+    <h2>Executive Summary</h2>
+
+    <p>Blue Dreams Resort & Spa demonstrates a <strong>strong brand reputation</strong> with an overall average rating of <strong>5.5/10</strong> across <strong>438 reviews</strong>, reflecting high guest satisfaction. However, there is a <strong>significant discrepancy in platform ratings</strong> that warrants attention:
+        <ul>
+            <li><strong>Booking.com (7.3/10, 164 reviews)</strong> and <strong>HolidayCheck (5.4/10, 20 reviews)</strong> show exceptional performance, with <strong>perfect scores (10/10) in recent reviews</strong> praising hospitality, service quality, and amenities.</li>
+            <li><strong>Google (4.3/10, 141 reviews) and TripAdvisor (4.2/10, 110 reviews)</strong> lag significantly, indicating potential <strong>platform-specific perception gaps</strong> or <strong>content visibility issues</strong>.</li>
+        </ul>
+    </p>
+
+    <p>The latest reviews (all dated <strong>2026-08-30/31</strong>) are overwhelmingly positive, with <strong>five 5-star or 10/10 ratings</strong> on Booking.com and TripAdvisor. Key recurring themes include:</p>
+
+    <ul class="highlight">
+        <li><strong>Exceptional hospitality</strong> – Staff are repeatedly praised for going "above and beyond" (e.g., Mr. Burak’s team and the "feeling of service" highlighted by Halit).</li>
+        <li><strong>Premium amenities</strong> – Highlights include <strong>sea views, sunsets, pools, food quality, and family-friendly activities</strong>.</li>
+        <li><strong>Personalized service</strong> – Guests emphasize attentive staff who cater to specific needs (e.g., Natalia’s review).</li>
+        <li><strong>One area for improvement</strong> – A single guest on Booking.com suggests expanding <strong>spa services and adding sports activities</strong> (Тахмина).</li>
+    </ul>
+
+    <p><strong>Key Insights:</strong></p>
+    <ul>
+        <li><strong>Platform disparity</strong> suggests a need to investigate why Google and TripAdvisor ratings are lower despite positive sentiment in other channels.</li>
+        <li><strong>August 2026 performance</strong> is exceptional, but the data does not reflect occupancy or revenue trends—critical for strategic planning.</li>
+        <li><strong>Opportunities to leverage</strong> include <strong>highlighting staff excellence</strong> in marketing (e.g., testimonials) and addressing the <strong>spa/sports gap</strong> to differentiate further.</li>
+    </ul>
+
+    <h2>Strategic Recommendations for August 2026</h2>
+
+    <p>To capitalize on the current positive momentum and address platform-specific challenges, the following <strong>data-driven actions</strong> are recommended:</p>
+
+    <div class="recommendation">
+        <h3>1. Platform-Specific Reputation Management</h3>
+        <p>Investigate and rectify the <strong>Google/TripAdvisor rating gap</strong> by:</p>
+        <ul>
+            <li><strong>Audit recent reviews</strong> on Google/TripAdvisor for <strong>negative sentiment patterns</strong> (e.g., missing reviews, delayed responses, or specific complaints).</li>
+            <li><strong>Proactively engage</strong> with guests on these platforms to:</li>
+            <ul>
+                <li>Respond to all <strong>new reviews within 24 hours</strong> with personalized thank-you messages (leveraging the positive sentiment from Booking.com).</li>
+                <li>Encourage satisfied guests to <strong>post reviews on Google/TripAdvisor</strong> via in-room cards or post-stay emails, highlighting their <strong>exceptional experience</strong>.</li>
+            </ul>
+            <li><strong>Optimize listings</strong> on Google/TripAdvisor to align with <strong>Booking.com’s high standards</strong> (e.g., update photos, emphasize sea views, and highlight staff awards).</li>
+        </ul>
+    </div>
+
+    <div class="recommendation">
+        <h3>2. Staff-Centric Marketing Campaign</h3>
+        <p>Leverage the <strong>unanimous praise for staff</strong> to create a <strong>brand differentiator</strong>:</p>
+        <ul>
+            <li><strong>Develop a "Meet the Team" campaign</strong> featuring:</li>
+            <ul>
+                <li>Short videos or photoshoots with key staff (e.g., Mr. Burak, front desk, spa team) highlighting their <strong>personalized service approach</strong>.</li>
+                <li>A dedicated <strong>staff spotlight section</strong> on the hotel website and OTA profiles, with quotes from recent guests (e.g., "They don’t just provide a service, but ‘serve feelings’—Halit").</li>
+            </ul>
+            <li><strong>Incentivize staff engagement</strong> with guests who leave <strong>detailed, positive reviews</strong> on all platforms, with recognition in team meetings or a <strong>"Guest Champion" award</strong>.</li>
+            <li><strong>Train staff to encourage reviews</strong> during check-out, directing guests to <strong>high-impact platforms</strong> (Booking.com, Google) with clear instructions.</li>
+        </ul>
+    </div>
+
+    <div class="recommendation">
+        <h3>3. Targeted Amenity Expansion for High-Value Segments</h3>
+        <p>Address the <strong>single feedback point</strong> about expanding spa and sports offerings to attract <strong>health-conscious and luxury-seeking guests</strong>:</p>
+        <ul>
+            <li><strong>Conduct a guest survey</strong> (via email or in-room) to validate demand for:</li>
+            <ul>
+                <li><strong>Premium spa packages</strong> (e.g., couples’ treatments, wellness retreats) tied to high-ADR rooms.</li>
+                <li><strong>Sports activities</strong> such as yoga classes, paddleboarding, or beach volleyball, marketed as <strong>"exclusive experiences"</strong> for booking.com travelers.</li>
+            </ul>
+            <li><strong>Pilot a "Wellness & Adventure" add-on</strong> for August 2026, offering:</li>
+            <ul>
+                <li>A <strong>discounted spa credit</strong> for guests booking a minimum of 5 nights.</li>
+                <li>A <strong>sports package</strong> (e.g., 2x paddleboarding + yoga session) for families or groups, promoted via <strong>Booking.com’s "Special Offers"</strong> tab.</li>
+            </ul>
+            <li><strong>Track performance</strong> of these add-ons to justify permanent inclusion, focusing on <strong>occupancy uplift in high-season periods</strong>.</li>
+        </ul>
+    </div>
+
+    <p><strong>Next Steps:</strong></p>
+    <ul>
+        <li>Schedule a <strong>reputation audit meeting</strong> with the marketing team to analyze Google/TripAdvisor gaps by August 5, 2026.</li>
+        <li>Allocate <strong>10% of the marketing budget</strong> to the staff-centric campaign, with content ready by August 15.</li>
+        <li>Present a <strong>spa/sports pilot proposal</strong> to the GM for approval by August 10, 2026.</li>
+    </ul>
+
+    <p><strong>Outcome:</strong> By August 31, 2026, Blue Dreams Resort can expect:</p>
+    <ul>
+        <li><strong>Improved platform consistency</strong> (Google/TripAdvisor ratings aligning with Booking.com).</li>
+        <li><strong>Higher direct bookings</strong> via staff-driven testimonials and OTA promotions.</li>
+        <li><strong>Upsell revenue</strong> from wellness and sports add-ons, targeting high-margin segments.</li>
+    </ul>
+
+    <p><strong>Prepared by:</strong> Senior Revenue Manager / GM Advisor, Blue Dreams Resort</p>
+</body>
+</html>
+```
+                    </div>
+                  </div>
+                  <div class="slide-footer">
+                    <span>PPG MASTER SYSTEM REPORT &bull; <strong>Blue Dreams Resort</strong></span>
+                    <span>SLIDE 2</span>
+                  </div>
+                </div>
+            
+
+                <div class="slide" id="slide-3">
+                  <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">REVIEWS</span><h2 class="slide-heading">Guest Sentiment</h2></div><div class="slide-pma-badge">PPG-01 SERIES</div></div>
+                  <div class="slide-body"><div class="split-grid">
+                    <div style="background:var(--bg-card); border:1px solid var(--border-card); border-radius:12px; padding:30px; display:flex; flex-direction:column; justify-content:center;">
+                      <div style="font-size:12px; color:var(--text-muted); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:6px;">Average Rating</div>
+                      <div style="font-size:48px; font-weight:800; color:var(--primary-gold); font-family:'Playfair Display', serif; line-height:1;">5.5<span style="font-size:18px; color:var(--text-muted);">/10</span></div>
+                      <div style="font-size:13px; color:var(--text-white); opacity:0.85; margin-top:14px;">Total <strong>438</strong> reviews analyzed.</div>
+                    </div>
+                    <div class="table-container" style="max-height:320px; overflow-y:auto;"><table class="report-table"><thead><tr><th>Platform</th><th style="text-align:right;">Count</th><th style="text-align:right;">Avg</th></tr></thead><tbody><tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));"><td style="padding:10px 14px; color:var(--text-white); text-transform:capitalize;">Booking.com</td><td style="padding:10px 14px; text-align:right; color:var(--text-muted);">164</td><td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">7.3</td></tr><tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));"><td style="padding:10px 14px; color:var(--text-white); text-transform:capitalize;">Google</td><td style="padding:10px 14px; text-align:right; color:var(--text-muted);">141</td><td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">4.3</td></tr><tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));"><td style="padding:10px 14px; color:var(--text-white); text-transform:capitalize;">TripAdvisor</td><td style="padding:10px 14px; text-align:right; color:var(--text-muted);">110</td><td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">4.2</td></tr><tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));"><td style="padding:10px 14px; color:var(--text-white); text-transform:capitalize;">HolidayCheck</td><td style="padding:10px 14px; text-align:right; color:var(--text-muted);">20</td><td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">5.4</td></tr><tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));"><td style="padding:10px 14px; color:var(--text-white); text-transform:capitalize;">TopHotels</td><td style="padding:10px 14px; text-align:right; color:var(--text-muted);">3</td><td style="padding:10px 14px; text-align:right; font-weight:700; color:var(--primary-gold);">5.0</td></tr></tbody></table></div>
+                  </div></div>
+                  <div class="slide-footer"><span>PPG MASTER SYSTEM REPORT &bull; <strong>Blue Dreams Resort</strong></span><span>SLIDE 3</span></div>
+                </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="border-top:1px solid var(--border-card); padding:30px 60px; text-align:center; color:var(--text-muted); font-size:11px; font-weight:500; background:var(--bg-dark);">
+    PPG Performance — Automated Report &bull; Report Time: 9/1/2026, 12:09:56 PM<br>
+    <strong style="color:var(--text-white); font-weight:700;">PPG Hospitality Technology &copy; 2026</strong>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cavomarina Beach — Aylık Pazarlama Raporu 1 Ağustos 2026 – 31 Ağustos 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --accent: #0E7C86;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #64748b;
+      --success: #10b981;
+      --danger: #f43f5e;
+      --warn: #f59e0b;
+      --radius: 16px;
+    }
+    html { scroll-padding-top: 110px; scroll-behavior: smooth; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; font-size: 14px; }
+    
+
+    /* ── Sticky header ──────────────────────────────── */
+    .hdr {
+      position: sticky; top: 0; z-index: 50;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 10px 24px;
+      background: #f8fafcf0; backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .hdr-left { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .hdr-logo { height: 30px; width: auto; object-fit: contain; flex-shrink: 0; display: block; }
+    /* Logo, tasarım-şablonu renginde bir katman (badge) üzerine oturur → beyaz/renkli logo HER fonda (açık/koyu) görünür. */
+    .hdr-logo-badge { display: inline-flex; align-items: center; justify-content: center; background: var(--accent); padding: 6px 11px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,.18); flex-shrink: 0; }
+    .hdr-name { font-size: 14px; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .hdr-period { font-size: 10px; color: var(--muted); margin-top: 1px; }
+    .hdr-badge { font-size: 9px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); border: 1.5px solid rgba(0,0,0,.12); padding: 3px 10px; border-radius: 99px; flex-shrink: 0; background: rgba(0,0,0,.04); }
+
+    /* ── Sticky nav ─────────────────────────────────── */
+    .nav {
+      position: sticky; top: 53px; z-index: 40;
+      display: flex; overflow-x: auto; gap: 2px; padding: 0 16px;
+      background: #f8fafce8; backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      scrollbar-width: none;
+    }
+    .nav::-webkit-scrollbar { display: none; }
+    .nav a {
+      display: inline-flex; align-items: center;
+      padding: 10px 12px;
+      font-size: 11px; font-weight: 600; color: var(--muted);
+      text-decoration: none; white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: color .15s, border-color .15s;
+    }
+    .nav a:hover, .nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+    /* ── Main ───────────────────────────────────────── */
+    .main { max-width: 1100px; margin: 0 auto; padding: 28px 16px 64px; }
+
+    /* ── Hero KPI ───────────────────────────────────── */
+    .hero-title { font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .hero-sub { font-size: 12px; color: var(--muted); margin-bottom: 20px; }
+    .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
+    .kpi {
+      display: flex; flex-direction: column; border-radius: 12px; padding: 16px;
+      border: 1px solid var(--border); background: var(--card);
+    }
+    .kpi-lbl { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 8px; }
+    .kpi-val { font-size: 22px; font-weight: 700; line-height: 1; color: var(--accent); }
+    .kpi-sub { font-size: 10px; color: var(--muted); margin-top: 4px; }
+
+    /* ── Section card ───────────────────────────────── */
+    .sec { border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; margin-bottom: 20px; scroll-margin-top: 110px; background: var(--card); }
+    .sec-hdr { display: flex; align-items: center; gap: 12px; padding: 14px 20px; border-bottom: 1px solid var(--border); }
+    .sec-icon { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 8px; font-size: 15px; flex-shrink: 0; }
+    .sec-title { font-size: 13px; font-weight: 700; color: var(--text); }
+    .sec-body { padding: 20px; }
+
+    /* ── Tables ─────────────────────────────────────── */
+    .tbl { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .tbl th { padding: 8px 10px 8px 0; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); border-bottom: 1px solid var(--border); text-align: left; }
+    .tbl td { padding: 8px 10px 8px 0; color: var(--muted); border-bottom: 1px solid #e2e8f0cc; vertical-align: middle; }
+    .tbl td.acc { color: var(--text); font-weight: 700; }
+    .tbl td.num { text-align: right; }
+    .tbl tr:last-child td { border-bottom: none; }
+
+    /* ── Two-col ────────────────────────────────────── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+    /* ── Social posts ───────────────────────────────── */
+    .post-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .post-card { display: block; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); padding: 12px; text-decoration: none; }
+    .post-card:hover { border-color: var(--accent); }
+    .post-cap { font-size: 12px; color: var(--text); line-height: 1.5; margin-bottom: 8px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .post-meta { display: flex; align-items: center; justify-content: space-between; font-size: 10px; color: var(--muted); }
+    .post-stats { display: flex; gap: 10px; }
+
+    /* ── Change badge ───────────────────────────────── */
+    .up { font-size: 10px; font-weight: 700; color: var(--success); }
+    .dn { font-size: 10px; font-weight: 700; color: var(--danger); }
+    .neu { font-size: 10px; font-weight: 600; color: var(--muted); }
+
+    /* ── Sub heading ────────────────────────────────── */
+    .sh { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 12px; margin-top: 20px; }
+    .sh:first-child { margin-top: 0; }
+
+    /* ── Stat box ───────────────────────────────────── */
+    .stat-box { border-radius: 12px; border: 1px solid var(--border); background: var(--bg); padding: 16px; text-align: center; }
+    .stat-val { font-size: 22px; font-weight: 700; color: var(--accent); }
+    .stat-lbl { font-size: 10px; color: var(--muted); margin-top: 4px; }
+
+    /* ── AI Insight ─────────────────────────────────── */
+    .insight { border-radius: 12px; border: 1px solid #e2e8f0; padding: 18px 20px; font-size: 13px; line-height: 1.8; color: var(--text); }
+    .prose-block { border-left: 3px solid var(--accent); padding: 14px 18px; font-size: 13px; line-height: 1.8; background: var(--bg); border-radius: 0 8px 8px 0; }
+    .prose-block ul { margin: 8px 0 8px 18px; }
+    .prose-block li { margin-bottom: 3px; }
+    .steps { list-style: none; }
+    .steps li { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid #e2e8f0cc; font-size: 13px; }
+    .steps li:last-child { border-bottom: none; }
+    .step-n { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; background: var(--accent); color: #fff; border-radius: 50%; font-size: 10px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+
+    /* ── Footer ─────────────────────────────────────── */
+    .footer { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; border-top: 1px solid var(--border); margin-top: 8px; font-size: 11px; color: var(--muted); }
+
+    /* ── No-data warning ────────────────────────────── */
+    .warn { border-radius: 12px; border: 1px solid #fca5a5; background: rgba(254,202,202,.5); color: #991b1b; padding: 12px 18px; font-size: 12px; margin-bottom: 16px; }
+
+    /* ── Charts ─────────────────────────────────────── */
+    .chart-wrap { position: relative; width: 100%; margin: 6px 0 4px; }
+    .chart-wrap canvas { max-width: 100%; }
+    .chart-cap { font-size: 10px; color: var(--muted); text-align: center; margin-top: 4px; }
+    .chart-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+
+    /* ── Data explainer (giriş seviyesi, olumlu anlatım) ── */
+    .explain { font-size: 11.5px; line-height: 1.7; color: var(--muted); background: var(--bg); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 4px 0 14px; }
+    .explain strong { color: var(--text); }
+    .period-banner { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 12px 18px; margin-bottom: 18px; font-size: 12px; color: var(--muted); }
+    .period-banner b { color: var(--text); }
+    .period-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(0,0,0,.04); color: var(--accent); border: 1px solid rgba(0,0,0,.12); border-radius: 99px; padding: 3px 12px; font-weight: 700; font-size: 11px; }
+
+    /* ── Responsive (kusursuz mobil) ─────────────────── */
+    @media (max-width: 760px) {
+      .kpi-grid { grid-template-columns: repeat(2,1fr); }
+      .two-col, .chart-2col, .post-grid { grid-template-columns: 1fr; }
+      .main { padding: 16px 10px 40px; }
+      .hdr { padding: 8px 12px; }
+      .hero-title { font-size: 18px; }
+      .kpi-val { font-size: 18px; } .stat-val { font-size: 18px; }
+      .sec-body { padding: 14px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .tbl { font-size: 11px; } .tbl th, .tbl td { padding: 7px 8px 7px 0; }
+    }
+    @media (max-width: 440px) {
+      .kpi-grid { grid-template-columns: 1fr; }
+      .hdr-name { font-size: 12px; max-width: 42vw; }
+      .hdr-badge { display: none; }
+      .hero-title { font-size: 16px; }
+      .nav a { padding: 9px 9px; font-size: 10.5px; }
+    }
+    @media print {
+      @page { size: A4 portrait; margin: 12mm; }
+      body { background: #fff; color: #000; }
+      .hdr, .nav { position: static; background: none; backdrop-filter: none; border: none; }
+      .card, .sec { break-inside: avoid; }
+    }
+  </style>
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet"></head>
+<body>
+
+  <!-- Sticky header -->
+  <header class="hdr">
+    <div class="hdr-left">
+      
+      <div style="min-width:0">
+        <div class="hdr-name">Cavomarina Beach</div>
+        <div class="hdr-period">Dijital Özet — 1 Ağustos 2026 – 31 Ağustos 2026</div>
+      </div>
+    </div>
+    <span class="hdr-badge">PMA PARTNER</span>
+  </header>
+
+  <!-- Sticky nav -->
+  <nav class="nav"><a href="#summary">📊 Özet</a><a href="#analytics">🌐 GA4</a><a href="#seo">🔍 GSC</a><a href="#meta-ads">📱 Meta Ads</a><a href="#social">📲 Sosyal</a><a href="#reservations">🏨 Rezervasyon</a><a href="#budget">💰 Bütçe</a><a href="#reviews">💬 Yorumlar</a><a href="#activity">📝 Faaliyet</a><a href="#recommendations">🤖 Öneriler</a></nav>
+
+  <main class="main">
+
+    <!-- No-data warning — distinguishes "no data" from "needs OAuth re-consent" -->
+    <div class="warn">⚠️ Veri eksik kanallar: Google Ads, Çağrı Merkezi<br><span style="font-weight:normal;font-size:11px;opacity:.85;">Google Ads için ppg@ OAuth yeniden yetkilendirmesi gerekir. Çağrı Merkezi bu dönem için veri döndürmedi.</span></div>
+
+    <!-- Dönem açıklaması — giriş seviyesi kullanıcı için -->
+    <div class="period-banner">
+      <span class="period-pill">📅 1 Ağustos 2026 – 31 Ağustos 2026</span>
+      <span><b>Bu rapor</b> yukarıdaki tarih aralığındaki dijital pazarlama ve rezervasyon performansını özetler. Yüzde değişimler <b>bir önceki eş dönemle</b> kıyaslanır; ▲ artış, ▼ azalış demektir. Tüm gelir tutarları <b>net EUR (€)</b> bazındadır.</span>
+    </div>
+
+    
+    <section class="sec" id="sec-visual">
+      <div class="sec-hdr"><div class="sec-icon" style="background:rgba(0,0,0,.04);">📊</div><div class="sec-title">Görsel Özet</div></div>
+      <div class="sec-body">
+        <div class="explain">Haftanın iki temel resmi: <strong>ziyaretçiler siteye hangi kanallardan geldi</strong> ve <strong>en çok geliri hangi acente/operatörler getirdi</strong>. Dilim/çubuk ne kadar büyükse katkı o kadar yüksek — hızlıca nereye odaklanacağınızı gösterir.</div>
+        <div class="chart-2col">
+          <div class="chart-wrap"><canvas id="chChannels" height="230"></canvas><div class="chart-cap">Trafik kanalları — oturum payı</div></div>
+          <div class="chart-wrap"><canvas id="chAgencies" height="230"></canvas><div class="chart-cap">En iyi acenteler — net gelir (€)</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="summary" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">📊</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">YÖNETİCİ ÖZETİ</div>
+      <div class="sec-title">Genel Performans Göstergeleri</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Bu ay tüm dijital kanallardan elde edilen ana performans göstergeleri. <span style="opacity:.7">(1 Ağustos 2026 – 31 Ağustos 2026)</span></div>
+    </div>
+  </div>
+      <div class="sec-body"><div class="kpi-grid"><div class="kpi">
+    <div class="kpi-lbl">Aktif Kullanıcı (GA4)</div>
+    <div class="kpi-val">20.889</div>
+    <div class="kpi-sub">24.526 oturum</div>
+  </div><div class="kpi">
+    <div class="kpi-lbl">Çağrı Merkezi Geliri</div>
+    <div class="kpi-val">—</div>
+    
+  </div><div class="kpi">
+    <div class="kpi-lbl">Rezervasyon Geliri</div>
+    <div class="kpi-val">€168.233</div>
+    <div class="kpi-sub">223 rezervasyon</div>
+  </div><div class="kpi">
+    <div class="kpi-lbl">Oda Geceleme</div>
+    <div class="kpi-val">1.413</div>
+    <div class="kpi-sub">€119/gece</div>
+  </div><div class="kpi">
+    <div class="kpi-lbl">Atfedilmiş ROAS</div>
+    <div class="kpi-val">—</div>
+    <div class="kpi-sub">Kampanya-gelir eşleşmesi yok</div>
+  </div><div class="kpi">
+    <div class="kpi-lbl">Booking Başına Maliyet</div>
+    <div class="kpi-val">—</div>
+    <div class="kpi-sub">Atfedilmiş booking yok</div>
+  </div></div><div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 €533 reklam harcaması görüldü; ancak PMS rezervasyonları kampanya veya dönüşüm kimliğiyle eşleşmediği için ROAS ve booking başına maliyet hesaplanmadı. PMS toplam geliri reklam geliri olarak kabul edilmez.</div></div>
+    </section>
+<section id="analytics" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">🌐</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">WEB ANALİTİĞİ</div>
+      <div class="sec-title">Google Analytics 4 — Web Performansı</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Otelin web sitesini kaç kişi ziyaret etti, nereden geldi ve hangi sayfaları gezdi. <span style="opacity:.7">(1 Ağustos 2026 – 31 Ağustos 2026)</span></div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="kpi-grid">
+          <div class="kpi">
+    <div class="kpi-lbl">Aktif Kullanıcı</div>
+    <div class="kpi-val">20.889</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Yeni Kullanıcı</div>
+    <div class="kpi-val">20.851</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Sayfa Görüntüleme</div>
+    <div class="kpi-val">42.970</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Ort. Etkileşim Süresi</div>
+    <div class="kpi-val">1dk</div>
+    
+  </div>
+        </div>
+        <div style="margin-top:12px;padding:10px 14px;border-radius:10px;background:rgba(127,127,127,0.08);font-size:12px;line-height:1.6;color:var(--muted)"><b style="color:var(--text)">Geçen Yıla Göre (YoY)</b> — Kullanıcı <b style="color:var(--success)">▲ +1210%</b> · Oturum <b style="color:var(--success)">▲ +693%</b> · Sayfa <b style="color:var(--success)">▲ +522%</b> <span style="opacity:.8">(geçen yıl aynı dönem: 1.594 kullanıcı)</span></div>
+        <div class="two-col">
+          <div>
+            <div class="sh">🔗 Trafik Kaynakları</div>
+            <table class="tbl"><thead><tr><th>Kaynak</th><th>Oturum</th><th>%</th></tr></thead><tbody><tr><td class="acc">Paid Social</td><td class="num">5.778</td><td class="num">32%</td></tr><tr><td class="acc">Cross-network</td><td class="num">5.400</td><td class="num">30%</td></tr><tr><td class="acc">Paid Search</td><td class="num">2.782</td><td class="num">15%</td></tr><tr><td class="acc">Paid Other</td><td class="num">2.660</td><td class="num">15%</td></tr><tr><td class="acc">Direct</td><td class="num">1.610</td><td class="num">9%</td></tr></tbody></table>
+          </div>
+          <div>
+            <div class="sh">🌍 Ülkeler</div>
+            <table class="tbl"><thead><tr><th>Ülke</th><th>Kullanıcı</th><th>%</th></tr></thead><tbody><tr><td class="acc">Italy</td><td class="num">7.693</td><td class="num">49%</td></tr><tr><td class="acc">Serbia</td><td class="num">3.431</td><td class="num">22%</td></tr><tr><td class="acc">North Macedonia</td><td class="num">1.641</td><td class="num">10%</td></tr><tr><td class="acc">Greece</td><td class="num">1.542</td><td class="num">10%</td></tr><tr><td class="acc">Bosnia &amp; Herzegovina</td><td class="num">1.393</td><td class="num">9%</td></tr></tbody></table>
+          </div>
+        </div>
+        
+        
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Bu dönemde 20.889 kullanıcı ve 24.526 oturum ölçüldü. Gelir kararlarında kaynak/medium ve booking dönüşüm eşlemesi ayrıca izlenmelidir.</div>
+      </div>
+    </section>
+<section id="seo" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">🔍</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">ORGANİK ARAMA</div>
+      <div class="sec-title">Google Search Console — Arama Görünürlüğü</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Otelin Google'da reklamsız olarak kaç aramada göründüğü ve kaç tıklama aldığı. <span style="opacity:.7">(1 Ağustos 2026 – 31 Ağustos 2026)</span></div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="kpi-grid">
+          <div class="kpi">
+    <div class="kpi-lbl">Toplam Tıklama</div>
+    <div class="kpi-val">917</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Toplam Gösterim</div>
+    <div class="kpi-val">8.763</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Ort. TO (CTR)</div>
+    <div class="kpi-val">10.46%</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Ort. Konum</div>
+    <div class="kpi-val">6.4</div>
+    
+  </div>
+        </div>
+        <div class="sh">🔑 En İyi Arama Sorguları</div>
+        <table class="tbl"><thead><tr><th>Sorgu</th><th>Tıklama</th><th>Gösterim</th><th>CTR</th><th>Konum</th></tr></thead><tbody><tr><td class="acc">cavomarina beach hotel</td><td class="num">394</td><td class="num">2.952</td><td class="num">13.35%</td><td class="num">1.7</td></tr><tr><td class="acc">cavomarina beach hotel korfu</td><td class="num">140</td><td class="num">1.046</td><td class="num">13.38%</td><td class="num">1.6</td></tr><tr><td class="acc">cavomarina beach</td><td class="num">81</td><td class="num">813</td><td class="num">9.96%</td><td class="num">2.8</td></tr><tr><td class="acc">cavomarina beach hotel corfu</td><td class="num">56</td><td class="num">394</td><td class="num">14.21%</td><td class="num">1.2</td></tr><tr><td class="acc">cavomarina beach korfu</td><td class="num">21</td><td class="num">275</td><td class="num">7.64%</td><td class="num">3.3</td></tr><tr><td class="acc">cavomarina beach- adults only</td><td class="num">19</td><td class="num">96</td><td class="num">19.79%</td><td class="num">3.0</td></tr><tr><td class="acc">cavomarina beach hotel fotos</td><td class="num">17</td><td class="num">221</td><td class="num">7.69%</td><td class="num">2.7</td></tr><tr><td class="acc">cavomarina</td><td class="num">15</td><td class="num">211</td><td class="num">7.11%</td><td class="num">2.5</td></tr></tbody></table>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Otelin Google'da 8.763 kez göründüğü bu dönemde %10.5 tıklama oranıyla 917 organik ziyaret sağlandı. Ücretli reklam olmadan bu kadar görünürlük elde etmek güçlü bir SEO temeline işaret ediyor.</div>
+      </div>
+    </section>
+<section id="meta-ads" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">📱</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">META ADS</div>
+      <div class="sec-title">Facebook &amp; Instagram Reklam Performansı</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Facebook ve Instagram reklamlarının kaç kişiye ulaştığı, tıklama ve harcama özeti. <span style="opacity:.7">(1 Ağustos 2026 – 31 Ağustos 2026)</span></div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="kpi-grid">
+          <div class="kpi">
+    <div class="kpi-lbl">Gösterim</div>
+    <div class="kpi-val">465.331</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Tıklama</div>
+    <div class="kpi-val">15.339</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Toplam Harcama</div>
+    <div class="kpi-val">€533</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Erişim</div>
+    <div class="kpi-val">225.115</div>
+    
+  </div>
+        </div>
+        
+        <div class="sh">📋 Aktif Kampanya Detayları</div>
+        <table class="tbl"><thead><tr><th>Kampanya</th><th>Gösterim</th><th>Tıklama</th><th>Harcama</th><th>Erişim</th><th>CPC</th></tr></thead><tbody><tr><td class="acc">Albania Market Traffic</td><td class="num">74.196</td><td class="num">2.611</td><td class="num acc">€73</td><td class="num">34.151</td><td class="num">€0</td></tr><tr><td class="acc">Macedonia Market Traffic</td><td class="num">96.668</td><td class="num">3.538</td><td class="num acc">€73</td><td class="num">39.124</td><td class="num">€0</td></tr><tr><td class="acc">Serbia Market Traffic</td><td class="num">55.146</td><td class="num">2.091</td><td class="num acc">€73</td><td class="num">27.269</td><td class="num">€0</td></tr><tr><td class="acc">IT market traffic</td><td class="num">77.745</td><td class="num">1.169</td><td class="num acc">€73</td><td class="num">41.466</td><td class="num">€0</td></tr><tr><td class="acc">GR Market Traffic</td><td class="num">30.840</td><td class="num">1.432</td><td class="num acc">€73</td><td class="num">17.538</td><td class="num">€0</td></tr><tr><td class="acc">BG Market Traffic</td><td class="num">61.941</td><td class="num">1.111</td><td class="num acc">€72</td><td class="num">25.485</td><td class="num">€0</td></tr></tbody></table>
+        
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Meta (Facebook & Instagram) reklamları 225.115 kişiye ulaştı. Sosyal medya reklamları marka bilinirliğini artırarak doğrudan rezervasyona zemin hazırlıyor.</div>
+      </div>
+    </section>
+<section id="social" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">📲</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">SOSYAL MEDYA</div>
+      <div class="sec-title">Organik Sosyal Medya Performansı</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Reklam harcaması olmadan, organik olarak Instagram ve Facebook'ta kaç kişiye ulaşıldığı; dönem içi paylaşımlar ve takipçi demografisi. <span style="opacity:.7">(1 Ağustos 2026 – 31 Ağustos 2026)</span></div>
+    </div>
+  </div>
+      <div class="sec-body"><div class="two-col">
+      <div>
+        <div class="sh">📸 Instagram</div>
+        <table class="tbl">
+          <thead><tr><th>Metrik</th><th>Değer (7g)</th><th>Değişim (önceki 3 hf ort.)</th></tr></thead>
+          <tbody>
+            <tr><td>Gösterim</td><td class="num acc">61</td><td><span class="dn">↓ 31%</span></td></tr>
+            <tr><td>Erişim</td><td class="num">1.977</td><td><span class="neu">±0%</span></td></tr>
+            <tr><td>Hesap Etkileşimi</td><td class="num">37</td><td><span class="up">↑ 46%</span></td></tr>
+            <tr><td>Profil Ziyareti</td><td class="num">127</td><td><span class="dn">↓ 31%</span></td></tr>
+            <tr><td>Takipçi</td><td class="num">1.600</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div class="sh">👥 Facebook</div>
+        <table class="tbl">
+          <thead><tr><th>Metrik</th><th>Değer (7g)</th><th>Değişim (önceki 3 hf ort.)</th></tr></thead>
+          <tbody>
+            <tr><td>Etkileşim</td><td class="num acc">2.713</td><td><span class="dn">↓ 20%</span></td></tr>
+            <tr><td>Sayfa Ziyareti</td><td class="num">774</td><td><span class="dn">↓ 20%</span></td></tr>
+          </tbody>
+        </table>
+      </div></div>
+      <div class="sh" style="margin-top:24px">📝 Bu Dönemin Paylaşımları (11)</div>
+      <div class="post-grid">
+        
+          <a class="post-card" href="https://www.instagram.com/reel/DcOWqPrjLMA/" target="_blank" rel="noopener noreferrer">
+            <div class="post-cap">The only thing better than this view is sharing it with someone special. 💙
+
+At Cavomarina Beach Hotel, every corner is designed as a peaceful adults-only sanctuary—from renovated rooms to the gentle </div>
+            <div class="post-meta">
+              <span>19 Ağu</span>
+              <span class="post-stats"><span>❤️ 29</span><span>💬 0</span></span>
+            </div>
+          </a>
+          <a class="post-card" href="https://www.instagram.com/p/DblKfWSl6sf/" target="_blank" rel="noopener noreferrer">
+            <div class="post-cap">The sound of the Ionian Sea is the only alarm clock you’ll need here.
+
+At Cavomarina Beach Hotel, every corner is designed as an oasis of calm. From recently renovated rooms to the sun-drenched shore </div>
+            <div class="post-meta">
+              <span>3 Ağu</span>
+              <span class="post-stats"><span>❤️ 25</span><span>💬 0</span></span>
+            </div>
+          </a>
+          <a class="post-card" href="https://www.instagram.com/p/DbqT9CijRFp/" target="_blank" rel="noopener noreferrer">
+            <div class="post-cap">The first thing you hear isn’t an alarm—it’s the soft pull of the tide against the shore. 🌊
+
+At Cavomarina Beach Hotel, every moment is designed to feel slower, lighter, and more restorative. Wake to</div>
+            <div class="post-meta">
+              <span>5 Ağu</span>
+              <span class="post-stats"><span>❤️ 24</span><span>💬 0</span></span>
+            </div>
+          </a>
+          <a class="post-card" href="https://www.instagram.com/p/DbyCS2YgHba/" target="_blank" rel="noopener noreferrer">
+            <div class="post-cap">The only sound here is the soft meeting of pool water and sea 🌊
+
+At Cavomarina Beach Hotel, every corner is designed to slow the world down. From the elevated pool deck to the private beach, our adul</div>
+            <div class="post-meta">
+              <span>8 Ağu</span>
+              <span class="post-stats"><span>❤️ 22</span><span>💬 0</span></span>
+            </div>
+          </a>
+          <a class="post-card" href="https://www.instagram.com/p/Dbs4jEBAFsn/" target="_blank" rel="noopener noreferrer">
+            <div class="post-cap">Forget the noise for a moment.
+
+At Cavomarina Beach Hotel, every corner is shaped to help time slow down — from the first view of the Ionian Sea to your reserved spot under the sun, from refreshed bea</div>
+            <div class="post-meta">
+              <span>6 Ağu</span>
+              <span class="post-stats"><span>❤️ 22</span><span>💬 0</span></span>
+            </div>
+          </a>
+          <a class="post-card" href="https://www.instagram.com/reel/DcLx9OVjXKP/" target="_blank" rel="noopener noreferrer">
+            <div class="post-cap">The only thing missing from this sunset is your glass of rosé. 🍷
+
+Golden light, an Ionian breeze, and a private balcony made for slow afternoons and quiet toasts. At Cavomarina Beach Hotel, every sun</div>
+            <div class="post-meta">
+              <span>18 Ağu</span>
+              <span class="post-stats"><span>❤️ 21</span><span>💬 0</span></span>
+            </div>
+          </a>
+          <a class="post-card" href="https://www.instagram.com/p/Db0nMsiiA0Y/" target="_blank" rel="noopener noreferrer">
+            <div class="post-cap">Where the only soundtrack is the soft rhythm of the Ionian Sea 🌊
+
+At Cavomarina Beach Hotel, every corner is designed for complete relaxation—from golden-hour pool views to newly renovated bungalows </div>
+            <div class="post-meta">
+              <span>9 Ağu</span>
+              <span class="post-stats"><span>❤️ 21</span><span>💬 0</span></span>
+            </div>
+          </a>
+          <a class="post-card" href="https://www.instagram.com/p/DbgAnUhDvxv/" target="_blank" rel="noopener noreferrer">
+            <div class="post-cap">The sound of the Ionian tide is the only alarm clock you’ll need here.
+
+At Cavomarina Beach Hotel, every corner is designed as a sanctuary of stillness. Step out from your room onto warm sand, settle </div>
+            <div class="post-meta">
+              <span>1 Ağu</span>
+              <span class="post-stats"><span>❤️ 20</span><span>💬 0</span></span>
+            </div>
+          </a>
+          <a class="post-card" href="https://www.instagram.com/reel/DcED2ihgNw3/" target="_blank" rel="noopener noreferrer">
+            <div class="post-cap">The only sound here is the soft breath of the Mediterranean. 🌊
+
+Specified by client: At Cavomarina Beach Hotel, the pool meets the sand and the sand meets the horizon.
+Creative interpretation: Every </div>
+            <div class="post-meta">
+              <span>15 Ağu</span>
+              <span class="post-stats"><span>❤️ 19</span><span>💬 0</span></span>
+            </div>
+          </a>
+          <a class="post-card" href="https://www.instagram.com/p/DbnvKsYiBwW/" target="_blank" rel="noopener noreferrer">
+            <div class="post-cap">The morning light hits the hills just as the pool catches the first reflection of the Ionian blue.
+
+At Cavomarina Beach Hotel, your view is a perfect balance of Mediterranean greenery and endless coas</div>
+            <div class="post-meta">
+              <span>4 Ağu</span>
+              <span class="post-stats"><span>❤️ 16</span><span>💬 0</span></span>
+            </div>
+          </a>
+          <a class="post-card" href="https://www.instagram.com/reel/DcGoQXFAAsL/" target="_blank" rel="noopener noreferrer">
+            <div class="post-cap">The only rhythm you need is the gentle ripple of the water. 🌊☀️
+
+Wake up to renovated bungalows, an azure pool, and the kind of stillness that makes summer feel slower in the best way. At Cavomarina </div>
+            <div class="post-meta">
+              <span>16 Ağu</span>
+              <span class="post-stats"><span>❤️ 12</span><span>💬 0</span></span>
+            </div>
+          </a>
+      </div>
+      <div class="sh" style="margin-top:24px">🌍 Etkileşim Demografisi</div>
+      <div class="two-col">
+        
+        <div>
+          <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:8px">Yaş / Cinsiyet</div>
+          <table class="tbl"><tbody>
+            <tr><td class="acc">13-17 F</td><td class="num">2</td></tr><tr><td class="acc">18-24 F</td><td class="num">341</td></tr><tr><td class="acc">25-34 F</td><td class="num">461</td></tr><tr><td class="acc">35-44 F</td><td class="num">138</td></tr><tr><td class="acc">45-54 F</td><td class="num">134</td></tr><tr><td class="acc">55-64 F</td><td class="num">51</td></tr><tr><td class="acc">65+ F</td><td class="num">11</td></tr><tr><td class="acc">18-24 M</td><td class="num">32</td></tr><tr><td class="acc">25-34 M</td><td class="num">78</td></tr><tr><td class="acc">35-44 M</td><td class="num">66</td></tr>
+          </tbody></table>
+        </div>
+        
+        <div>
+          <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:8px">Ülkeler</div>
+          <table class="tbl"><tbody>
+            <tr><td class="acc">GB</td><td class="num">912</td></tr><tr><td class="acc">DE</td><td class="num">179</td></tr><tr><td class="acc">GR</td><td class="num">107</td></tr><tr><td class="acc">IT</td><td class="num">36</td></tr><tr><td class="acc">IE</td><td class="num">32</td></tr><tr><td class="acc">AT</td><td class="num">28</td></tr><tr><td class="acc">PL</td><td class="num">28</td></tr><tr><td class="acc">SK</td><td class="num">25</td></tr>
+          </tbody></table>
+        </div>
+      </div>
+      
+      <div style="margin-top:14px">
+        <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:8px">Şehirler</div>
+        <table class="tbl"><tbody>
+          <tr><td class="acc">Korfu, Ionian Islands (region)</td><td class="num">58</td></tr><tr><td class="acc">London, England</td><td class="num">24</td></tr><tr><td class="acc">Dubai, Dubai</td><td class="num">19</td></tr><tr><td class="acc">Bolton, England</td><td class="num">11</td></tr><tr><td class="acc">Ipswich, England</td><td class="num">10</td></tr><tr><td class="acc">Southampton, England</td><td class="num">10</td></tr><tr><td class="acc">Barnsley, England</td><td class="num">9</td></tr><tr><td class="acc">Portsmouth, England</td><td class="num">9</td></tr>
+        </tbody></table>
+      </div></div>
+    </section>
+<section id="reservations" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">🏨</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">REZERVASYON &amp; GELİR</div>
+      <div class="sec-title">Booking-Date Pick-Up Performansı (PMS)</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Rapor döneminde oluşturulan rezervasyonların toplam konaklama değeri, oda gecesi ve kanal katkısı; konaklama günü gerçekleşen oda geliri değildir. <span style="opacity:.7">(1 Ağustos 2026 – 31 Ağustos 2026)</span></div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="kpi-grid">
+          <div class="kpi">
+    <div class="kpi-lbl">Net Booking Pick-Up Değeri</div>
+    <div class="kpi-val">€168.233</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Oda Geceleme</div>
+    <div class="kpi-val">1.413</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Rezervasyon</div>
+    <div class="kpi-val">223</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">İptal</div>
+    <div class="kpi-val">18</div>
+    
+  </div>
+        </div>
+        <div class="two-col" style="max-width:420px;margin-bottom:20px">
+          <div class="stat-box"><div class="stat-val">€415</div><div class="stat-lbl">Misafir Başına Gelir</div></div>
+          <div class="stat-box"><div class="stat-val">€119</div><div class="stat-lbl">Ortalama Oda-Gece Değeri</div></div>
+        </div>
+        <div class="sh">🏢 Acenta / Kanal Dağılımı</div>
+        <table class="tbl"><thead><tr><th>Acenta / Kanal</th><th>Oda Geceleme</th><th>Gelir (€)</th><th>Misafir Başına (€)</th></tr></thead><tbody><tr><td class="acc">Schauinsland reisen</td><td class="num">219</td><td class="num acc">€41.597</td><td class="num">€816</td></tr><tr><td class="acc">DERTOUR Deutschland GmbH</td><td class="num">219</td><td class="num acc">€33.994</td><td class="num">€531</td></tr><tr><td class="acc">TUI DE</td><td class="num">85</td><td class="num acc">€18.026</td><td class="num">€644</td></tr><tr><td class="acc">OTS</td><td class="num">85</td><td class="num acc">€8.293</td><td class="num">€395</td></tr><tr><td class="acc">Expedia Group inc.</td><td class="num">29</td><td class="num acc">€5.701</td><td class="num">€356</td></tr><tr><td class="acc">Blue Style CZ</td><td class="num">23</td><td class="num acc">€5.538</td><td class="num">€554</td></tr><tr><td class="acc">RAINBOW TOURS S.A.</td><td class="num">37</td><td class="num acc">€5.121</td><td class="num">€233</td></tr><tr><td class="acc">Cretan Holidays</td><td class="num">26</td><td class="num acc">€4.762</td><td class="num">€595</td></tr></tbody></table>
+        <div class="sh" style="margin-top:16px">🏷️ Fiyat Planı Dağılımı (İADESİZ / ADR)</div>
+        <table class="tbl"><thead><tr><th>Fiyat Planı</th><th>Rez.</th><th>Oda Geceleme</th><th>Gelir (€)</th><th>ADR (€)</th></tr></thead><tbody><tr><td class="acc">BAR</td><td class="num">223</td><td class="num">1.413</td><td class="num acc">€168.233</td><td class="num acc">€137</td></tr></tbody></table>
+        <div class="sh" style="margin-top:16px">🛏️ Oda Tipine Göre Ort. Fiyat (ADR)</div>
+        <table class="tbl"><thead><tr><th>Oda Tipi</th><th>Oda Geceleme</th><th>Gelir (€)</th><th>ADR (€)</th></tr></thead><tbody><tr><td class="acc">Standard Sea View Room</td><td class="num">640</td><td class="num">€73.188</td><td class="num acc">€133</td></tr><tr><td class="acc">Standard Mountain View Room</td><td class="num">374</td><td class="num">€42.978</td><td class="num acc">€142</td></tr><tr><td class="acc">Superior Swim Up Room</td><td class="num">181</td><td class="num">€25.615</td><td class="num acc">€157</td></tr><tr><td class="acc">Anex Sup Swim Up Room</td><td class="num">101</td><td class="num">€12.333</td><td class="num acc">€122</td></tr><tr><td class="acc">Superior Sea View Room</td><td class="num">70</td><td class="num">€8.570</td><td class="num acc">€136</td></tr><tr><td class="acc">Superior SPA Room</td><td class="num">22</td><td class="num">€4.165</td><td class="num acc">€189</td></tr><tr><td class="acc">Rooftop Penthouse Room</td><td class="num">20</td><td class="num">€1.373</td><td class="num acc">€69</td></tr><tr><td class="acc">Garden Villa</td><td class="num">5</td><td class="num">€10</td><td class="num acc">€2</td></tr></tbody></table>
+
+        <!-- Veri Kaynağı ve Metodolojisi -->
+        <div class="meth-box" style="margin-top: 15px; padding: 10px; border-radius: 6px; background-color: var(--card-bg); border: 1px solid var(--border); font-size: 11px; line-height: 1.4;">
+          <strong style="color: var(--accent); display: block; margin-bottom: 4px;">ℹ️ Veri Kaynağı ve Metodolojisi</strong>
+          <span style="color: var(--muted);">Kaynak: PMS booking creation tarihi. Tutar, rezervasyonların tüm konaklama süresine ait net booking değeridir; stay-date oda geliri veya reklama atfedilmiş gelir değildir. Ortalama oda-gece değeri = net değer ÷ oda gecesi. İptaller hariç, uygulanmış komisyon kuralları sonrasındaki EUR değerleri kullanılır.</span>
+        </div>
+
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 223 yeni rezervasyon 1.413 oda gecesi ve €168.233 net booking pick-up üretti. Ortalama oda-gece değeri €119; kanal payı, komisyon ve kalış tarihi doluluk baskısıyla birlikte değerlendirilmelidir.</div>
+      </div>
+    </section>
+<section id="budget" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">💰</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">BÜTÇE &amp; HEDEF</div>
+      <div class="sec-title">Bütçe vs Gerçekleşen vs Geçen Yıl</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Aylık gelir hedefi, gerçekleşen net gelir ve geçen yılın aynı dönemiyle kıyaslama (net EUR). <span style="opacity:.7">(1 Ağustos 2026 – 31 Ağustos 2026)</span></div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="kpi-grid">
+          <div class="kpi">
+    <div class="kpi-lbl">Dönem Hedefi</div>
+    <div class="kpi-val">€616.782</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Gerçekleşen (Net)</div>
+    <div class="kpi-val">€551.238</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Geçen Yıl</div>
+    <div class="kpi-val">—</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Hedefe Ulaşma</div>
+    <div class="kpi-val">89%</div>
+    
+  </div>
+        </div>
+        <div class="sh">📆 Aylık Kırılım (Net EUR)</div>
+        <table class="tbl"><thead><tr><th>Ay</th><th>Hedef</th><th>Gerçekleşen</th><th>Geçen Yıl</th><th>Hedef %</th><th>YoY</th></tr></thead><tbody><tr>
+      <td class="acc">Ağustos 2026</td>
+      <td class="num">€616.782</td>
+      <td class="num acc">€551.238</td>
+      <td class="num">€0</td>
+      <td class="num"><b style="color:var(--warn)">89%</b></td>
+      <td class="num">—</td>
+    </tr></tbody></table>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Rapor dönemini kapsayan ayda €551.238 net gelir gerçekleşti. Bütçe hedefinin %89'i yakalandı — kalan dönem için net bir yol haritası sağlıyor.</div>
+      </div>
+    </section>
+<section id="reviews" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">💬</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">MİSAFİR YORUMLARI</div>
+      <div class="sec-title">Dönemsel Yorum &amp; İtibar Özeti</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Bu dönemde gelen yeni misafir yorumları, platform bazında puanlar ve öne çıkan konular. <span style="opacity:.7">(1 Ağustos 2026 – 31 Ağustos 2026)</span></div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="kpi-grid">
+          <div class="kpi">
+    <div class="kpi-lbl">Yeni Yorum</div>
+    <div class="kpi-val">29</div>
+    <div class="kpi-sub">önceki dönem: 10</div>
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Ort. Puan</div>
+    <div class="kpi-val">4.9 / 5</div>
+    <div class="kpi-sub">▲ +0.1 önceki döneme göre</div>
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Platform</div>
+    <div class="kpi-val">3</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">En İyi Giden Konu</div>
+    <div class="kpi-val">Yemek</div>
+    
+  </div>
+        </div>
+        <div class="sh">⭐ Platform Bazında Puanlar (kendi ölçeğinde)</div>
+        <table class="tbl"><thead><tr><th>Platform</th><th>Puan</th><th>Yorum</th><th>Önceki</th><th>Değişim</th></tr></thead><tbody><tr>
+      <td class="acc">TripAdvisor</td>
+      <td class="num acc">5.0 / 5</td>
+      <td class="num">16</td>
+      <td class="num">5.0</td>
+      <td class="num"><span class="neu">±0.0</span></td>
+    </tr><tr>
+      <td class="acc">Google</td>
+      <td class="num acc">4.7 / 5</td>
+      <td class="num">11</td>
+      <td class="num">4.6</td>
+      <td class="num"><span class="up">↑ +0.1</span></td>
+    </tr><tr>
+      <td class="acc">Booking.com</td>
+      <td class="num acc">10.0 / 10</td>
+      <td class="num">2</td>
+      <td class="num">10.0</td>
+      <td class="num"><span class="neu">±0.0</span></td>
+    </tr></tbody></table>
+        <div class="sh" style="margin-top:20px">🧭 Öne Çıkan Konular</div>
+         <div style="display:flex;flex-wrap:wrap;gap:8px"><span style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:4px 10px;border-radius:99px;background:rgba(16,185,129,.13);color:var(--success)">↑ Yemek <span style="opacity:.75;font-weight:500">5.0/5 · 12 bahis</span></span><span style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:4px 10px;border-radius:99px;background:rgba(16,185,129,.13);color:var(--success)">↑ Plaj/Deniz <span style="opacity:.75;font-weight:500">5.0/5 · 12 bahis</span></span><span style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:4px 10px;border-radius:99px;background:rgba(16,185,129,.13);color:var(--success)">↑ Personel <span style="opacity:.75;font-weight:500">5.0/5 · 11 bahis</span></span><span style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:4px 10px;border-radius:99px;background:rgba(245,158,11,.13);color:var(--warn)">↓ Havuz <span style="opacity:.75;font-weight:500">4.5/5 · 6 bahis</span></span></div>
+        <div class="sh" style="margin-top:20px">🗨️ Misafirlerin Sesinden</div><div style="border-left:3px solid var(--success);border-radius:0 8px 8px 0;background:var(--bg);padding:10px 14px;margin-bottom:8px">
+      <div style="font-size:12px;line-height:1.7;color:var(--text)">“TRAUMHAFT — ★★★★★ Ein außergewöhnlicher Aufenthalt – Herzlichkeit, die man spürt Schon beim Betreten des Cavomarina Beach Hotels wird man von einem wunderbaren Rezeptionsteam herzlichst empfangen. Die Mitarbeiter an der ”</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">TripAdvisor · 5.0/5 · 2026-09-01</div>
+    </div><div style="border-left:3px solid var(--success);border-radius:0 8px 8px 0;background:var(--bg);padding:10px 14px;margin-bottom:8px">
+      <div style="font-size:12px;line-height:1.7;color:var(--text)">“What tranquility and relaxation this hotel is... a pleasant surprise... the staff is very kind and willing to serve you... and honestly, the kitchen is unbeatable.. i said”</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">TripAdvisor · 5.0/5 · 2026-08-30</div>
+    </div><div style="border-left:3px solid var(--success);border-radius:0 8px 8px 0;background:var(--bg);padding:10px 14px;margin-bottom:8px">
+      <div style="font-size:12px;line-height:1.7;color:var(--text)">“Wonderful hotel.. — What tranquility and relaxation this hotel is... a pleasant surprise... the staff is very kind and willing to serve you... and honestly, the kitchen is unbeatable.. i said”</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">TripAdvisor · 5.0/5 · 2026-08-30</div>
+    </div>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Bu dönemde 29 yeni misafir yorumu geldi ve genel ortalama 4.9/5 seviyesinde. Puan önceki döneme göre yükseliyor — misafir deneyimindeki iyileşme yorumlara yansıyor. Misafirler özellikle "Yemek" konusundan memnun.</div>
+      </div>
+    </section>
+<section id="activity" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">📝</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">DOĞRULANMIŞ DÖNEM KAYDI</div>
+      <div class="sec-title">Kaynak Sistemlerde Ölçülen Sonuçlar</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Yalnız bağlı PMS, reklam, GA4 ve yorum kaynaklarında ölçülen sonuçlar; yapılmış olduğu doğrulanmayan faaliyetler bu bölüme eklenmez. <span style="opacity:.7">(1 Ağustos 2026 – 31 Ağustos 2026)</span></div>
+    </div>
+  </div>
+      <div class="sec-body"><div class="prose-block"><ul><li><strong>Booking pick-up:</strong> 223 yeni rezervasyon, 1413 oda gecesi ve €168.233 net booking değeri kaydedildi.</li><li><strong>Reklam teslimatı:</strong> Meta ve Google kaynaklarında raporlanan harcama, gösterim, tıklama ve platform dönüşümleri izlendi. PMS geliri yalnız açık kampanya eşleşmesi varsa reklama atfedilir.</li><li><strong>Web analitiği:</strong> GA4 bağlantısı doğrulandı; 20889 kullanıcı ve 24526 oturum raporlandı.</li><li><strong>İtibar:</strong> Dönemde 29 yeni yorum ve 5 üzerinden 4.9 normalize ortalama izlendi.</li></ul></div></div>
+    </section>
+<section id="recommendations" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">🤖</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">ÖZET &amp; ÖNERİLER</div>
+      <div class="sec-title">Yapay Zeka Analizi &amp; Sonraki Adımlar</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Yapay zekanın tüm verileri değerlendirerek oluşturduğu analiz ve öncelikli aksiyon önerileri. <span style="opacity:.7">(1 Ağustos 2026 – 31 Ağustos 2026)</span></div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="insight" style="background:#0E7C8612;border-color:#0E7C8633"><p>Cavomarina Beach, Ağustos 2026 döneminde web sitesinde 24.526 oturum ve Meta Ads tarafında 15.339 tıklama elde ederek güçlü bir dijital trafik yakalamış, misafir memnuniyetinde ise 4.9 gibi yüksek bir ortalama puan seviyesine ulaşmıştır. Ayrıca ilgili ayda 168.233 EUR değerinde toplam 223 adet yeni rezervasyon kayda geçmiştir. Buna karşın gerçekleşen 551.238 EUR ciro ile bütçe hedefine ulaşma oranı %89 seviyesinde kalarak hedefin altında kalmıştır. Mevcut 533 EUR reklam harcamasının PMS rezervasyonlarıyla doğrudan eşleşmemesi sebebiyle blended ROAS hesaplanamamış olup, veri izleme ve satış dönüşüm optimizasyonu temel gelişim alanı olarak öne çıkmaktadır.</p></div>
+        <div class="sh" style="margin-top:20px">✅ Önerilen Aksiyonlar</div><ol class="steps"><li><span class="step-n">1</span>Reklam harcamalarının PMS gelirleriyle doğru şekilde ilişkilendirilebilmesi ve blended ROAS takibinin yapılabilmesi için dönüşüm izleme (tracking) altyapısını optimize edin.</li><li><span class="step-n">2</span>Bütçe hedefine ulaşma oranını (%89) yukarı taşımak adına doğrudan rezervasyon sağlayan satış kanallarındaki dönüşüm hunisini güçlendirin.</li><li><span class="step-n">3</span>Web sitesine gelen 20.889 tekil kullanıcının doğrudan rezervasyona yönelmesini destekleyecek rezervasyon motoru kullanıcı deneyimi iyileştirmelerini hayata geçirin.</li><li><span class="step-n">4</span>4.9 puanlık güçlü misafir memnuniyetini öne çıkaran dijital içerikler ve pazarlama mesajlarıyla Meta Ads kampanyalarının nitelikli rezervasyon getirisini artırın.</li></ol>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span>Cavomarina Beach &middot; 1 Ağustos 2026 – 31 Ağustos 2026</span>
+      <span>PMA Partner &copy; 2026</span>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script>
+    (function(){
+      if (typeof Chart === 'undefined') {
+        // CDN engellendiğinde (ör. PDF render) boş canvas yerine kısa bir not göster
+        document.querySelectorAll('.chart-wrap canvas').forEach(function(c){
+          if (c.parentElement) c.parentElement.innerHTML = '<p style="color:var(--muted);font-size:12px">Grafik çevrimdışı — veriler yukarıdaki tablolarda.</p>';
+        });
+        return;
+      }
+      var D = {"channels":{"labels":["Paid Social","Cross-network","Paid Search","Paid Other","Direct"],"data":[5778,5400,2782,2660,1610]},"agencies":{"labels":["Schauinsland reisen","DERTOUR Deutschland GmbH","TUI DE","OTS","Expedia Group inc.","Blue Style CZ"],"data":[41597,33994,18026,8293,5701,5538]},"callCenter":{"labels":[],"calls":[],"conv":[]},"accent":"#0E7C86","muted":"#64748b"};
+      var palette = [D.accent, D.accent+'CC', '#F59E0B','#8B5CF6','#EC4899','#14B8A6'];
+      Chart.defaults.color = D.muted; Chart.defaults.font.family = 'Inter, system-ui, sans-serif';
+      var cc = document.getElementById('chChannels');
+      if (cc && D.channels.labels.length) new Chart(cc, { type:'doughnut', data:{ labels:D.channels.labels, datasets:[{ data:D.channels.data, backgroundColor:palette, borderWidth:0 }] }, options:{ responsive:true, plugins:{ legend:{ position:'bottom', labels:{ boxWidth:10, padding:10, font:{size:11} } } }, cutout:'60%' } });
+      var ca = document.getElementById('chAgencies');
+      if (ca && D.agencies.labels.length) new Chart(ca, { type:'bar', data:{ labels:D.agencies.labels, datasets:[{ data:D.agencies.data, backgroundColor:D.accent, borderRadius:6 }] }, options:{ responsive:true, indexAxis:'y', plugins:{ legend:{ display:false } }, scales:{ x:{ grid:{ display:false }, ticks:{ callback:function(v){ return '\u20ac'+Number(v).toLocaleString(); } } }, y:{ grid:{ display:false } } } } });
+      var ccc = document.getElementById('chCallCenter');
+      if (ccc && D.callCenter.labels.length) new Chart(ccc, { data:{ labels:D.callCenter.labels, datasets:[
+        { type:'bar', label:'Arama', data:D.callCenter.calls, backgroundColor:D.accent+'99', borderRadius:4, yAxisID:'y' },
+        { type:'line', label:'Dönüşüm %', data:D.callCenter.conv, borderColor:'#F59E0B', backgroundColor:'#F59E0B', tension:.3, yAxisID:'y1', pointRadius:3 },
+      ]}, options:{ responsive:true, plugins:{ legend:{ position:'bottom', labels:{ boxWidth:10, padding:10, font:{size:11} } } }, scales:{ x:{ grid:{ display:false } }, y:{ grid:{ display:false }, beginAtZero:true }, y1:{ position:'right', beginAtZero:true, max:100, grid:{ display:false }, ticks:{ callback:function(v){ return v+'%'; } } } } } });
+    })();
+  </script>
+  <script>
+    (function() {
+      var links = document.querySelectorAll('.nav a');
+      var secs = document.querySelectorAll('.sec[id]');
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) {
+            links.forEach(function(l) {
+              l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id);
+            });
+          }
+        });
+      }, { rootMargin: '-110px 0px -45% 0px', threshold: 0 });
+      secs.forEach(function(s) { obs.observe(s); });
+    })();
+  </script>
+</body>
+</html>

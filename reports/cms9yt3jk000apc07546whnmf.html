@@ -94,13 +94,17 @@
   footer{text-align:center;color:var(--text-muted);font-size:11px;padding:24px 0;border-top:1px solid var(--border);margin-top:10px}
   @media (max-width:720px){ .hero-stats,.outcome-grid{grid-template-columns:repeat(2,1fr)} }
 </style>
-</head>
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet"></head>
 <body>
 <div class="toolbar">
   <button id="themeBtn" onclick="toggleTheme()">🌙 Dark</button>
   <button id="langBtn" onclick="toggleLang()">EN</button>
 </div>
-<div class="lang-doc active" id="doc-tr">
+<!-- 🔴 2026-08-14 — dil parity (denetim raporu i18n): belge İKİ DİLLİ tek dosya.
+     Dış <html lang> tek bir değer taşımak zorunda (birincil = tr), ama İngilizce
+     bölüm de İngilizce olarak işaretlenmeli; aksi halde ekran okuyucular ve
+     çeviri araçları İngilizce metni Türkçe sanıyor. -->
+<div class="lang-doc active" id="doc-tr" lang="tr">
 <div class="wrap">
   <div class="pma-bar"><span>PMA PARTNER · MARKETING BRIEFING</span><span>BELCONTI RESORT</span></div>
 
@@ -110,17 +114,17 @@
     <div class="sub">Bu belge, onaylı bütçe şablonu ve güncel reklam verileri kullanılarak sistem tarafından otomatik olarak üretilmiştir.</div>
     <div class="hero-stats">
       <div class="hero-stat"><div class="v">700.000 EUR</div><div class="l">Ağustos Bütçesi</div></div>
-      <div class="hero-stat"><div class="v">19.490.000 EUR</div><div class="l">Hedeflenen Ciro</div></div>
-      <div class="hero-stat"><div class="v">1 EUR → 27.8 EUR</div><div class="l">Hedeflenen Getiri Oranı</div></div>
+      <div class="hero-stat"><div class="v">73.193.078 EUR</div><div class="l">Hedeflenen Ciro</div></div>
+      <div class="hero-stat"><div class="v">1 EUR → 104.6 EUR</div><div class="l">Hedeflenen Getiri Oranı</div></div>
     </div>
   </div>
 
   <div class="outcome-band">
     <div class="cap" style="margin-top:0;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;color:var(--gold)">Konsolide Hedef Özeti</div>
     <div class="outcome-grid">
-      <div class="cell"><div class="v">19.490.000 EUR</div><div class="l">Toplam Ciro Hedefi</div></div>
-      <div class="cell"><div class="v">~11090</div><div class="l">Hedeflenen Rezervasyon</div></div>
-      <div class="cell"><div class="v">%3.6</div><div class="l">Ortalama Reklam/Ciro Oranı</div></div>
+      <div class="cell"><div class="v">73.193.078 EUR</div><div class="l">Toplam Ciro Hedefi</div></div>
+      <div class="cell"><div class="v">~938</div><div class="l">Hedeflenen Rezervasyon</div></div>
+      <div class="cell"><div class="v">%1.0</div><div class="l">Ortalama Reklam/Ciro Oranı</div></div>
     </div>
     <p class="note" style="text-align:left;margin-top:16px">Bu rakamlar iddialı hedeflerdir, garanti değildir; ay içinde gerçek sonuçlarla karşılaştırılacaktır.</p>
   </div>
@@ -128,7 +132,7 @@
   
   <div class="card">
     <div class="section-head"><div class="section-icon">📊</div><div><span class="kicker">Bölüm 1</span><h2>Güncel Harcama Temposu</h2></div></div>
-    <p class="note" style="margin-top:0">Son 30 günün gerçek reklam harcaması 11.594 EUR olarak gerçekleşmiştir; bu, onaylı 700.000 EUR bütçenin %2'ine karşılık gelmektedir.</p>
+    <p class="note" style="margin-top:0">Son 30 günün gerçek reklam harcaması 9.048 EUR olarak gerçekleşmiştir; bu, onaylı 700.000 EUR bütçenin %1'ine karşılık gelmektedir.</p>
   </div>
 
   <div class="card">
@@ -139,25 +143,26 @@
   <div class="card">
     <div class="section-head"><div class="section-icon">💰</div><div><span class="kicker">Bölüm 3</span><h2>700.000 EUR Nasıl Paylaşılıyor?</h2></div></div>
     <div class="donut-wrap">
-      <div class="donut" style="background:conic-gradient(#1E8C82 0.0deg 136.8deg, #C98A00 136.8deg 216.0deg, #4285F4 216.0deg 280.8deg, #8b5cf6 280.8deg 331.2deg, #B4454F 331.2deg 360.0deg)"><div class="hole"><div class="v">700.000 EUR</div><div class="l">Toplam</div></div></div>
+      <div class="donut" style="background:conic-gradient(#1E8C82 0.0deg 162.0deg, #C98A00 162.0deg 252.0deg, #4285F4 252.0deg 316.8deg, #8b5cf6 316.8deg 360.0deg, #B4454F 360.0deg 360.0deg)"><div class="hole"><div class="v">700.000 EUR</div><div class="l">Toplam</div></div></div>
       <div class="legend">
-    <div class="legend-row"><span class="legend-dot" style="background:#1E8C82"></span><span class="name">TR Arama (Marka+Jenerik+Rakip)</span><span class="amt">266.000 EUR</span><span class="pct">%38</span></div>
-    <div class="legend-row"><span class="legend-dot" style="background:#C98A00"></span><span class="name">Yurtdışı/Gurbetçi Arama</span><span class="amt">154.000 EUR</span><span class="pct">%22</span></div>
-    <div class="legend-row"><span class="legend-dot" style="background:#4285F4"></span><span class="name">PMAX (talep artırma)</span><span class="amt">126.000 EUR</span><span class="pct">%18</span></div>
-    <div class="legend-row"><span class="legend-dot" style="background:#8b5cf6"></span><span class="name">Remarketing / Geri Kazanım</span><span class="amt">98.000 EUR</span><span class="pct">%14</span></div>
-    <div class="legend-row"><span class="legend-dot" style="background:#B4454F"></span><span class="name">Son Dakika / Teklif</span><span class="amt">56.000 EUR</span><span class="pct">%8</span></div></div>
+    <div class="legend-row"><span class="legend-dot" style="background:#1E8C82"></span><span class="name">TR Arama (Marka+Jenerik+Rakip)</span><span class="amt">315.000 EUR</span><span class="pct">%45</span></div>
+    <div class="legend-row"><span class="legend-dot" style="background:#C98A00"></span><span class="name">Yurtdışı/Gurbetçi Arama</span><span class="amt">175.000 EUR</span><span class="pct">%25</span></div>
+    <div class="legend-row"><span class="legend-dot" style="background:#4285F4"></span><span class="name">Remarketing / Geri Kazanım</span><span class="amt">126.000 EUR</span><span class="pct">%18</span></div>
+    <div class="legend-row"><span class="legend-dot" style="background:#8b5cf6"></span><span class="name">Son Dakika / Teklif</span><span class="amt">84.000 EUR</span><span class="pct">%12</span></div>
+    <div class="legend-row"><span class="legend-dot" style="background:#B4454F"></span><span class="name">PMAX (talep artırma)</span><span class="amt">0 EUR</span><span class="pct">%0</span></div></div>
     </div>
     <table>
       <thead><tr><th>Bölüm</th><th>Amaç</th><th class="right">Bütçe</th></tr></thead>
       <tbody>
-        <tr><td>TR Arama (Marka+Jenerik+Rakip)</td><td>En yüksek niyetli talebi yakala</td><td class="right gold">266.000 EUR</td></tr>
-        <tr><td>Yurtdışı/Gurbetçi Arama</td><td>Hedef dış pazar</td><td class="right gold">154.000 EUR</td></tr>
-        <tr><td>PMAX (talep artırma)</td><td>Yeni talep &amp; geniş erişim</td><td class="right gold">126.000 EUR</td></tr>
-        <tr><td>Remarketing / Geri Kazanım</td><td>Bizi tanıyan kitleyi geri çek</td><td class="right gold">98.000 EUR</td></tr>
-        <tr><td>Son Dakika / Teklif</td><td>Aciliyetle dönüşümü hızlandır</td><td class="right gold">56.000 EUR</td></tr>
+        <tr><td>TR Arama (Marka+Jenerik+Rakip)</td><td>En yüksek niyetli talebi yakala — ağırlık buraya kaydırıldı</td><td class="right gold">315.000 EUR</td></tr>
+        <tr><td>Yurtdışı/Gurbetçi Arama</td><td>Hedef dış pazar</td><td class="right gold">175.000 EUR</td></tr>
+        <tr><td>Remarketing / Geri Kazanım</td><td>Bizi tanıyan kitleyi geri çek — en yüksek getirili kalem</td><td class="right gold">126.000 EUR</td></tr>
+        <tr><td>Son Dakika / Teklif</td><td>Aciliyetle dönüşümü hızlandır</td><td class="right gold">84.000 EUR</td></tr>
+        <tr><td>PMAX (talep artırma)</td><td>KAPATILDI — %0,78 tık→çağrı oranının kaynağı bu geniş/düşük-niyetli envanter</td><td class="right gold">0 EUR</td></tr>
         <tr class="total-row"><td colspan="2">TOPLAM</td><td class="right gold">700.000 EUR</td></tr>
       </tbody>
     </table>
+    
   </div>
 
   <div class="card">
@@ -178,23 +183,18 @@
     <div class="section-head"><div class="section-icon">🧮</div><div><span class="kicker">Detaylar</span><h2>Yatırım Getirisi Analizi</h2></div></div>
     <div class="chart-title">Bölüm Bazlı İddialı Ciro Hedefi (EUR)</div>
     
-    <div class="hbar-row"><div>TR Arama (Marka+Jenerik+Rakip)</div><div class="hbar-track"><div class="hbar-fill" style="width:100%;background:#1E8C82"></div></div><div class="right gold">7.600.000 EUR</div></div>
-    <div class="hbar-row"><div>Remarketing / Geri Kazanım</div><div class="hbar-track"><div class="hbar-fill" style="width:52%;background:#C98A00"></div></div><div class="right gold">3.920.000 EUR</div></div>
-    <div class="hbar-row"><div>Yurtdışı/Gurbetçi Arama</div><div class="hbar-track"><div class="hbar-fill" style="width:51%;background:#4285F4"></div></div><div class="right gold">3.850.000 EUR</div></div>
-    <div class="hbar-row"><div>PMAX (talep artırma)</div><div class="hbar-track"><div class="hbar-fill" style="width:33%;background:#8b5cf6"></div></div><div class="right gold">2.520.000 EUR</div></div>
-    <div class="hbar-row"><div>Son Dakika / Teklif</div><div class="hbar-track"><div class="hbar-fill" style="width:21%;background:#B4454F"></div></div><div class="right gold">1.600.000 EUR</div></div>
     <table style="margin-top:18px">
       <thead><tr><th>Bölüm</th><th class="right">Hedef Reklam/Ciro Oranı</th><th class="right">İddialı Hedef Ciro</th></tr></thead>
       <tbody>
-        <tr><td>TR Arama (Marka+Jenerik+Rakip)</td><td class="right gold">%3.5</td><td class="right">7.600.000 EUR</td></tr>
-        <tr><td>Yurtdışı/Gurbetçi Arama</td><td class="right gold">%4.0</td><td class="right">3.850.000 EUR</td></tr>
-        <tr><td>PMAX (talep artırma)</td><td class="right gold">%5.0</td><td class="right">2.520.000 EUR</td></tr>
-        <tr><td>Remarketing / Geri Kazanım</td><td class="right gold">%2.5</td><td class="right">3.920.000 EUR</td></tr>
-        <tr><td>Son Dakika / Teklif</td><td class="right gold">%3.5</td><td class="right">1.600.000 EUR</td></tr>
-        <tr class="total-row"><td>Toplam</td><td class="right gold">%3.6</td><td class="right gold">19.490.000 EUR</td></tr>
+        <tr><td>TR Arama (Marka+Jenerik+Rakip)</td><td class="right gold">— (veri yok)</td><td class="right">—</td></tr>
+        <tr><td>Yurtdışı/Gurbetçi Arama</td><td class="right gold">— (veri yok)</td><td class="right">—</td></tr>
+        <tr><td>Remarketing / Geri Kazanım</td><td class="right gold">— (veri yok)</td><td class="right">—</td></tr>
+        <tr><td>Son Dakika / Teklif</td><td class="right gold">— (veri yok)</td><td class="right">—</td></tr>
+        <tr><td>PMAX (talep artırma)</td><td class="right gold">— (veri yok)</td><td class="right">—</td></tr>
+        <tr class="total-row"><td>Toplam</td><td class="right gold">%1.0</td><td class="right gold">73.193.078 EUR</td></tr>
       </tbody>
     </table>
-    <p class="note">Ortalama rezervasyon sepet değeri 1.757 EUR varsayımıyla hesaplanmıştır.</p>
+    <p class="note">Ortalama rezervasyon sepet değeri 78.031 EUR varsayımıyla hesaplanmıştır.</p>
   </div>
 
   <div class="card">
@@ -206,9 +206,9 @@
     </div>
   </div>
 
-  <footer>PMA Partner Pazarlama Raporu · Üretim: 01.08.2026 · İşbu belge onaylı bütçe planına dayanılarak otomatik üretilmiştir.</footer>
+  <footer>PMA Partner Pazarlama Raporu · Üretim: 03.09.2026 · İşbu belge onaylı bütçe planına dayanılarak otomatik üretilmiştir.</footer>
 </div></div>
-<div class="lang-doc" id="doc-en">
+<div class="lang-doc" id="doc-en" lang="en">
 <div class="wrap">
   <div class="pma-bar"><span>PMA PARTNER · MARKETING BRIEFING</span><span>BELCONTI RESORT</span></div>
 
@@ -218,17 +218,17 @@
     <div class="sub">This document was automatically generated by the system using the approved budget template and current advertising data.</div>
     <div class="hero-stats">
       <div class="hero-stat"><div class="v">EUR700,000</div><div class="l">August Budget</div></div>
-      <div class="hero-stat"><div class="v">EUR19,490,000</div><div class="l">Revenue Target</div></div>
-      <div class="hero-stat"><div class="v">1 EUR → 27.8 EUR</div><div class="l">Target Return Ratio</div></div>
+      <div class="hero-stat"><div class="v">EUR73,193,078</div><div class="l">Revenue Target</div></div>
+      <div class="hero-stat"><div class="v">1 EUR → 104.6 EUR</div><div class="l">Target Return Ratio</div></div>
     </div>
   </div>
 
   <div class="outcome-band">
     <div class="cap" style="margin-top:0;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;color:var(--gold)">Consolidated Target Summary</div>
     <div class="outcome-grid">
-      <div class="cell"><div class="v">EUR19,490,000</div><div class="l">Total Revenue Target</div></div>
-      <div class="cell"><div class="v">~11090</div><div class="l">Targeted Bookings</div></div>
-      <div class="cell"><div class="v">%3.6</div><div class="l">Average Ad-Cost-of-Sale</div></div>
+      <div class="cell"><div class="v">EUR73,193,078</div><div class="l">Total Revenue Target</div></div>
+      <div class="cell"><div class="v">~938</div><div class="l">Targeted Bookings</div></div>
+      <div class="cell"><div class="v">%1.0</div><div class="l">Average Ad-Cost-of-Sale</div></div>
     </div>
     <p class="note" style="text-align:left;margin-top:16px">These figures are ambitious targets, not guarantees; they will be checked against real results during the month.</p>
   </div>
@@ -236,7 +236,7 @@
   
   <div class="card">
     <div class="section-head"><div class="section-icon">📊</div><div><span class="kicker">Section 1</span><h2>Current Spend Pacing</h2></div></div>
-    <p class="note" style="margin-top:0">Actual ad spend over the last 30 days was EUR11,594, corresponding to %2 of the approved EUR700,000 budget.</p>
+    <p class="note" style="margin-top:0">Actual ad spend over the last 30 days was EUR9,048, corresponding to %1 of the approved EUR700,000 budget.</p>
   </div>
 
   <div class="card">
@@ -247,25 +247,26 @@
   <div class="card">
     <div class="section-head"><div class="section-icon">💰</div><div><span class="kicker">Section 3</span><h2>How Is EUR700,000 Split?</h2></div></div>
     <div class="donut-wrap">
-      <div class="donut" style="background:conic-gradient(#1E8C82 0.0deg 136.8deg, #C98A00 136.8deg 216.0deg, #4285F4 216.0deg 280.8deg, #8b5cf6 280.8deg 331.2deg, #B4454F 331.2deg 360.0deg)"><div class="hole"><div class="v">EUR700,000</div><div class="l">Total</div></div></div>
+      <div class="donut" style="background:conic-gradient(#1E8C82 0.0deg 162.0deg, #C98A00 162.0deg 252.0deg, #4285F4 252.0deg 316.8deg, #8b5cf6 316.8deg 360.0deg, #B4454F 360.0deg 360.0deg)"><div class="hole"><div class="v">EUR700,000</div><div class="l">Total</div></div></div>
       <div class="legend">
-    <div class="legend-row"><span class="legend-dot" style="background:#1E8C82"></span><span class="name">TR Arama (Marka+Jenerik+Rakip)</span><span class="amt">EUR266,000</span><span class="pct">%38</span></div>
-    <div class="legend-row"><span class="legend-dot" style="background:#C98A00"></span><span class="name">Yurtdışı/Gurbetçi Arama</span><span class="amt">EUR154,000</span><span class="pct">%22</span></div>
-    <div class="legend-row"><span class="legend-dot" style="background:#4285F4"></span><span class="name">PMAX (talep artırma)</span><span class="amt">EUR126,000</span><span class="pct">%18</span></div>
-    <div class="legend-row"><span class="legend-dot" style="background:#8b5cf6"></span><span class="name">Remarketing / Geri Kazanım</span><span class="amt">EUR98,000</span><span class="pct">%14</span></div>
-    <div class="legend-row"><span class="legend-dot" style="background:#B4454F"></span><span class="name">Son Dakika / Teklif</span><span class="amt">EUR56,000</span><span class="pct">%8</span></div></div>
+    <div class="legend-row"><span class="legend-dot" style="background:#1E8C82"></span><span class="name">TR Arama (Marka+Jenerik+Rakip)</span><span class="amt">EUR315,000</span><span class="pct">%45</span></div>
+    <div class="legend-row"><span class="legend-dot" style="background:#C98A00"></span><span class="name">Yurtdışı/Gurbetçi Arama</span><span class="amt">EUR175,000</span><span class="pct">%25</span></div>
+    <div class="legend-row"><span class="legend-dot" style="background:#4285F4"></span><span class="name">Remarketing / Geri Kazanım</span><span class="amt">EUR126,000</span><span class="pct">%18</span></div>
+    <div class="legend-row"><span class="legend-dot" style="background:#8b5cf6"></span><span class="name">Son Dakika / Teklif</span><span class="amt">EUR84,000</span><span class="pct">%12</span></div>
+    <div class="legend-row"><span class="legend-dot" style="background:#B4454F"></span><span class="name">PMAX (talep artırma)</span><span class="amt">EUR0</span><span class="pct">%0</span></div></div>
     </div>
     <table>
       <thead><tr><th>Section</th><th>Goal</th><th class="right">Budget</th></tr></thead>
       <tbody>
-        <tr><td>TR Arama (Marka+Jenerik+Rakip)</td><td>En yüksek niyetli talebi yakala</td><td class="right gold">EUR266,000</td></tr>
-        <tr><td>Yurtdışı/Gurbetçi Arama</td><td>Hedef dış pazar</td><td class="right gold">EUR154,000</td></tr>
-        <tr><td>PMAX (talep artırma)</td><td>Yeni talep &amp; geniş erişim</td><td class="right gold">EUR126,000</td></tr>
-        <tr><td>Remarketing / Geri Kazanım</td><td>Bizi tanıyan kitleyi geri çek</td><td class="right gold">EUR98,000</td></tr>
-        <tr><td>Son Dakika / Teklif</td><td>Aciliyetle dönüşümü hızlandır</td><td class="right gold">EUR56,000</td></tr>
+        <tr><td>TR Arama (Marka+Jenerik+Rakip)</td><td>En yüksek niyetli talebi yakala — ağırlık buraya kaydırıldı</td><td class="right gold">EUR315,000</td></tr>
+        <tr><td>Yurtdışı/Gurbetçi Arama</td><td>Hedef dış pazar</td><td class="right gold">EUR175,000</td></tr>
+        <tr><td>Remarketing / Geri Kazanım</td><td>Bizi tanıyan kitleyi geri çek — en yüksek getirili kalem</td><td class="right gold">EUR126,000</td></tr>
+        <tr><td>Son Dakika / Teklif</td><td>Aciliyetle dönüşümü hızlandır</td><td class="right gold">EUR84,000</td></tr>
+        <tr><td>PMAX (talep artırma)</td><td>KAPATILDI — %0,78 tık→çağrı oranının kaynağı bu geniş/düşük-niyetli envanter</td><td class="right gold">EUR0</td></tr>
         <tr class="total-row"><td colspan="2">TOTAL</td><td class="right gold">EUR700,000</td></tr>
       </tbody>
     </table>
+    <p class="note">Block names and purposes are shown exactly as recorded in the approved budget plan (Turkish); they are not machine-translated so the approved wording is preserved.</p>
   </div>
 
   <div class="card">
@@ -286,23 +287,18 @@
     <div class="section-head"><div class="section-icon">🧮</div><div><span class="kicker">Details</span><h2>Return on Investment Analysis</h2></div></div>
     <div class="chart-title">Ambitious Revenue Target by Section (EUR)</div>
     
-    <div class="hbar-row"><div>TR Arama (Marka+Jenerik+Rakip)</div><div class="hbar-track"><div class="hbar-fill" style="width:100%;background:#1E8C82"></div></div><div class="right gold">EUR7,600,000</div></div>
-    <div class="hbar-row"><div>Remarketing / Geri Kazanım</div><div class="hbar-track"><div class="hbar-fill" style="width:52%;background:#C98A00"></div></div><div class="right gold">EUR3,920,000</div></div>
-    <div class="hbar-row"><div>Yurtdışı/Gurbetçi Arama</div><div class="hbar-track"><div class="hbar-fill" style="width:51%;background:#4285F4"></div></div><div class="right gold">EUR3,850,000</div></div>
-    <div class="hbar-row"><div>PMAX (talep artırma)</div><div class="hbar-track"><div class="hbar-fill" style="width:33%;background:#8b5cf6"></div></div><div class="right gold">EUR2,520,000</div></div>
-    <div class="hbar-row"><div>Son Dakika / Teklif</div><div class="hbar-track"><div class="hbar-fill" style="width:21%;background:#B4454F"></div></div><div class="right gold">EUR1,600,000</div></div>
     <table style="margin-top:18px">
       <thead><tr><th>Section</th><th class="right">Target Ad-Cost-of-Sale</th><th class="right">Ambitious Revenue Target</th></tr></thead>
       <tbody>
-        <tr><td>TR Arama (Marka+Jenerik+Rakip)</td><td class="right gold">3.5</td><td class="right">EUR7,600,000</td></tr>
-        <tr><td>Yurtdışı/Gurbetçi Arama</td><td class="right gold">4.0</td><td class="right">EUR3,850,000</td></tr>
-        <tr><td>PMAX (talep artırma)</td><td class="right gold">5.0</td><td class="right">EUR2,520,000</td></tr>
-        <tr><td>Remarketing / Geri Kazanım</td><td class="right gold">2.5</td><td class="right">EUR3,920,000</td></tr>
-        <tr><td>Son Dakika / Teklif</td><td class="right gold">3.5</td><td class="right">EUR1,600,000</td></tr>
-        <tr class="total-row"><td>Total</td><td class="right gold">%3.6</td><td class="right gold">EUR19,490,000</td></tr>
+        <tr><td>TR Arama (Marka+Jenerik+Rakip)</td><td class="right gold">— (no data)</td><td class="right">—</td></tr>
+        <tr><td>Yurtdışı/Gurbetçi Arama</td><td class="right gold">— (no data)</td><td class="right">—</td></tr>
+        <tr><td>Remarketing / Geri Kazanım</td><td class="right gold">— (no data)</td><td class="right">—</td></tr>
+        <tr><td>Son Dakika / Teklif</td><td class="right gold">— (no data)</td><td class="right">—</td></tr>
+        <tr><td>PMAX (talep artırma)</td><td class="right gold">— (no data)</td><td class="right">—</td></tr>
+        <tr class="total-row"><td>Total</td><td class="right gold">%1.0</td><td class="right gold">EUR73,193,078</td></tr>
       </tbody>
     </table>
-    <p class="note">Calculated assuming an average booking value of EUR1,757.</p>
+    <p class="note">Calculated assuming an average booking value of EUR78,031.</p>
   </div>
 
   <div class="card">
@@ -314,7 +310,7 @@
     </div>
   </div>
 
-  <footer>PMA Partner Marketing Report · Generated: 01.08.2026 · This document was automatically generated from the approved budget plan.</footer>
+  <footer>PMA Partner Marketing Report · Generated: 03.09.2026 · This document was automatically generated from the approved budget plan.</footer>
 </div></div>
 <script>
 function toggleTheme(){

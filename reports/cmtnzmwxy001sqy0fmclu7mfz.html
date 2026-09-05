@@ -186,7 +186,7 @@
   </header>
 
   <!-- Sticky nav -->
-  <nav class="nav"><a href="#summary">📊 Özet</a><a href="#analytics">🌐 GA4</a><a href="#seo">🔍 GSC</a><a href="#google-ads">🎯 Google Ads</a><a href="#meta-ads">📱 Meta Ads</a><a href="#social">📲 Sosyal</a><a href="#reservations">🏨 Rezervasyon</a><a href="#budget">💰 Bütçe</a><a href="#compset">🏷️ Rakip Fiyat</a><a href="#callcenter">📞 Çağrı</a><a href="#reviews">💬 Yorumlar</a><a href="#activity">📝 Faaliyet</a><a href="#recommendations">🤖 Öneriler</a></nav>
+  <nav class="nav"><a href="#summary">📊 Özet</a><a href="#analytics">🌐 GA4</a><a href="#seo">🔍 GSC</a><a href="#google-ads">🎯 Google Ads</a><a href="#meta-ads">📱 Meta Ads</a><a href="#social">📲 Sosyal</a><a href="#reservations">🏨 Rezervasyon</a><a href="#budget">💰 Bütçe</a><a href="#compset">🏷️ Rakip Fiyat</a><a href="#callcenter">📞 Çağrı</a><a href="#reviews">💬 Yorumlar</a><a href="#activity">📝 Faaliyet</a></nav>
 
   <main class="main">
 
@@ -207,6 +207,8 @@
         <div class="chart-2col">
           <div class="chart-wrap"><canvas id="chChannels" height="230"></canvas><div class="chart-cap">Trafik kanalları — oturum payı</div></div>
           <div class="chart-wrap"><canvas id="chAgencies" height="230"></canvas><div class="chart-cap">En iyi acenteler — net gelir (€)</div></div>
+          <div class="chart-wrap"><canvas id="chGa4Trend" height="230"></canvas><div class="chart-cap">GA4 — günlük oturum/kullanıcı seyri</div></div>
+          <div class="chart-wrap"><canvas id="chGscTrend" height="230"></canvas><div class="chart-cap">Search Console — günlük tıklama/gösterim seyri</div></div>
         </div>
       </div>
     </section>
@@ -222,20 +224,20 @@
   </div>
       <div class="sec-body"><div class="kpi-grid"><div class="kpi">
     <div class="kpi-lbl">Aktif Kullanıcı (GA4)</div>
-    <div class="kpi-val">8.571</div>
-    <div class="kpi-sub">10.849 oturum</div>
+    <div class="kpi-val">8.816</div>
+    <div class="kpi-sub">11.018 oturum</div>
   </div><div class="kpi">
     <div class="kpi-lbl">Çağrı Merkezi Geliri</div>
     <div class="kpi-val">€6.677</div>
     <div class="kpi-sub">108 rezervasyon</div>
   </div><div class="kpi">
     <div class="kpi-lbl">Rezervasyon Geliri</div>
-    <div class="kpi-val">€377.724</div>
-    <div class="kpi-sub">241 rezervasyon</div>
+    <div class="kpi-val">€375.169</div>
+    <div class="kpi-sub">240 rezervasyon</div>
   </div><div class="kpi">
     <div class="kpi-lbl">Oda Geceleme</div>
-    <div class="kpi-val">1.311</div>
-    <div class="kpi-sub">€288/gece</div>
+    <div class="kpi-val">1.309</div>
+    <div class="kpi-sub">€287/gece</div>
   </div><div class="kpi">
     <div class="kpi-lbl">Atfedilmiş ROAS</div>
     <div class="kpi-val">—</div>
@@ -259,39 +261,39 @@
         <div class="kpi-grid">
           <div class="kpi">
     <div class="kpi-lbl">Aktif Kullanıcı</div>
-    <div class="kpi-val">8.571</div>
+    <div class="kpi-val">8.816</div>
     
   </div>
           <div class="kpi">
     <div class="kpi-lbl">Yeni Kullanıcı</div>
-    <div class="kpi-val">7.939</div>
+    <div class="kpi-val">8.203</div>
     
   </div>
           <div class="kpi">
     <div class="kpi-lbl">Sayfa Görüntüleme</div>
-    <div class="kpi-val">18.758</div>
+    <div class="kpi-val">19.253</div>
     
   </div>
           <div class="kpi">
     <div class="kpi-lbl">Ort. Etkileşim Süresi</div>
-    <div class="kpi-val">1dk 34sn</div>
+    <div class="kpi-val">1dk 35sn</div>
     
   </div>
         </div>
-        <div style="margin-top:12px;padding:10px 14px;border-radius:10px;background:rgba(127,127,127,0.08);font-size:12px;line-height:1.6;color:var(--muted)"><b style="color:var(--text)">Geçen Yıla Göre (YoY)</b> — Kullanıcı <b style="color:var(--danger)">▼ -59%</b> · Oturum <b style="color:var(--danger)">▼ -62%</b> · Sayfa <b style="color:var(--danger)">▼ -57%</b> <span style="opacity:.8">(geçen yıl aynı dönem: 20.733 kullanıcı)</span></div>
+        <div style="margin-top:12px;padding:10px 14px;border-radius:10px;background:rgba(127,127,127,0.08);font-size:12px;line-height:1.6;color:var(--muted)"><b style="color:var(--text)">Geçen Yıla Göre (YoY)</b> — Kullanıcı <b style="color:var(--danger)">▼ -57%</b> · Oturum <b style="color:var(--danger)">▼ -61%</b> · Sayfa <b style="color:var(--danger)">▼ -56%</b> <span style="opacity:.8">(geçen yıl aynı dönem: 20.733 kullanıcı)</span></div>
         <div class="two-col">
           <div>
             <div class="sh">🔗 Trafik Kaynakları</div>
-            <table class="tbl"><thead><tr><th>Kaynak</th><th>Oturum</th><th>%</th></tr></thead><tbody><tr><td class="acc">Paid Search</td><td class="num">3.306</td><td class="num">39%</td></tr><tr><td class="acc">Direct</td><td class="num">2.207</td><td class="num">26%</td></tr><tr><td class="acc">Cross-network</td><td class="num">1.277</td><td class="num">15%</td></tr><tr><td class="acc">Referral</td><td class="num">838</td><td class="num">10%</td></tr><tr><td class="acc">Organic Search</td><td class="num">826</td><td class="num">10%</td></tr></tbody></table>
+            <table class="tbl"><thead><tr><th>Kaynak</th><th>Oturum</th><th>%</th></tr></thead><tbody><tr><td class="acc">Paid Search</td><td class="num">3.431</td><td class="num">39%</td></tr><tr><td class="acc">Direct</td><td class="num">2.296</td><td class="num">26%</td></tr><tr><td class="acc">Cross-network</td><td class="num">1.276</td><td class="num">15%</td></tr><tr><td class="acc">Referral</td><td class="num">868</td><td class="num">10%</td></tr><tr><td class="acc">Organic Search</td><td class="num">846</td><td class="num">10%</td></tr></tbody></table>
           </div>
           <div>
             <div class="sh">🌍 Ülkeler</div>
-            <table class="tbl"><thead><tr><th>Ülke</th><th>Kullanıcı</th><th>%</th></tr></thead><tbody><tr><td class="acc">Türkiye</td><td class="num">5.759</td><td class="num">72%</td></tr><tr><td class="acc">United Kingdom</td><td class="num">1.116</td><td class="num">14%</td></tr><tr><td class="acc">Germany</td><td class="num">569</td><td class="num">7%</td></tr><tr><td class="acc">Singapore</td><td class="num">388</td><td class="num">5%</td></tr><tr><td class="acc">Russia</td><td class="num">183</td><td class="num">2%</td></tr></tbody></table>
+            <table class="tbl"><thead><tr><th>Ülke</th><th>Kullanıcı</th><th>%</th></tr></thead><tbody><tr><td class="acc">Türkiye</td><td class="num">5.985</td><td class="num">72%</td></tr><tr><td class="acc">United Kingdom</td><td class="num">1.117</td><td class="num">14%</td></tr><tr><td class="acc">Germany</td><td class="num">580</td><td class="num">7%</td></tr><tr><td class="acc">Singapore</td><td class="num">389</td><td class="num">5%</td></tr><tr><td class="acc">Russia</td><td class="num">186</td><td class="num">2%</td></tr></tbody></table>
           </div>
         </div>
         
         
-        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Bu dönemde 8.571 kullanıcı ve 10.849 oturum ölçüldü. Gelir kararlarında kaynak/medium ve booking dönüşüm eşlemesi ayrıca izlenmelidir.</div>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Bu dönemde 8.816 kullanıcı ve 11.018 oturum ölçüldü. Gelir kararlarında kaynak/medium ve booking dönüşüm eşlemesi ayrıca izlenmelidir.</div>
       </div>
     </section>
 <section id="seo" class="sec">
@@ -344,12 +346,12 @@
         <div class="kpi-grid">
           <div class="kpi">
     <div class="kpi-lbl">Gösterim</div>
-    <div class="kpi-val">116.090</div>
+    <div class="kpi-val">116.081</div>
     
   </div>
           <div class="kpi">
     <div class="kpi-lbl">Tıklama</div>
-    <div class="kpi-val">8.306</div>
+    <div class="kpi-val">8.307</div>
     
   </div>
           <div class="kpi">
@@ -359,15 +361,15 @@
   </div>
           <div class="kpi">
     <div class="kpi-lbl">Dönüşüm</div>
-    <div class="kpi-val">1.546</div>
+    <div class="kpi-val">1.545</div>
     
   </div>
         </div>
         
         <div class="sh">📋 Aktif Kampanya Detayları</div>
-        <table class="tbl"><thead><tr><th>Kampanya</th><th>Gösterim</th><th>Tıklama</th><th>Harcama</th><th>Dönüşüm</th><th>CPC</th></tr></thead><tbody><tr><td class="acc">Belconti_Search_Jenerik_TR_2026_REV</td><td class="num">84.542</td><td class="num">4.798</td><td class="num acc">€1.469</td><td class="num">1.211</td><td class="num">€0</td></tr><tr><td class="acc">Belconti_Remarketing_TR_2026</td><td class="num">3.833</td><td class="num">290</td><td class="num acc">€331</td><td class="num">72</td><td class="num">€1</td></tr><tr><td class="acc">Belconti_PMAX_Erken_Rezervasyon_UK_Ocak&#39;26</td><td class="num">16.511</td><td class="num">2.456</td><td class="num acc">€242</td><td class="num">204</td><td class="num">€0</td></tr><tr><td class="acc">Belconti_Search_Almanya_Turkler_2026_REV</td><td class="num">1.059</td><td class="num">126</td><td class="num acc">€79</td><td class="num">18</td><td class="num">€1</td></tr><tr><td class="acc">Belconti_DE_Gurbetçi_PMAX_Haziran24</td><td class="num">10.145</td><td class="num">636</td><td class="num acc">€44</td><td class="num">41</td><td class="num">€0</td></tr></tbody></table>
+        <table class="tbl"><thead><tr><th>Kampanya</th><th>Gösterim</th><th>Tıklama</th><th>Harcama</th><th>Dönüşüm</th><th>CPC</th></tr></thead><tbody><tr><td class="acc">Belconti_Search_Jenerik_TR_2026_REV</td><td class="num">84.542</td><td class="num">4.798</td><td class="num acc">€1.469</td><td class="num">1.208</td><td class="num">€0</td></tr><tr><td class="acc">Belconti_Remarketing_TR_2026</td><td class="num">3.833</td><td class="num">290</td><td class="num acc">€331</td><td class="num">73</td><td class="num">€1</td></tr><tr><td class="acc">Belconti_PMAX_Erken_Rezervasyon_UK_Ocak&#39;26</td><td class="num">16.498</td><td class="num">2.456</td><td class="num acc">€242</td><td class="num">207</td><td class="num">€0</td></tr><tr><td class="acc">Belconti_Search_Almanya_Turkler_2026_REV</td><td class="num">1.059</td><td class="num">126</td><td class="num acc">€79</td><td class="num">18</td><td class="num">€1</td></tr><tr><td class="acc">Belconti_DE_Gurbetçi_PMAX_Haziran24</td><td class="num">10.149</td><td class="num">637</td><td class="num acc">€44</td><td class="num">40</td><td class="num">€0</td></tr></tbody></table>
         
-        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Google Ads kampanyaları bu dönemde 116.090 gösterim ve 8.306 tıklama üretti. 1.546 dönüşüm gerçekleşti — her tıklama rezervasyon potansiyeli taşıyor.</div>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Google Ads kampanyaları bu dönemde 116.081 gösterim ve 8.307 tıklama üretti. 1.545 dönüşüm gerçekleşti — her tıklama rezervasyon potansiyeli taşıyor.</div>
       </div>
     </section>
 <section id="meta-ads" class="sec">
@@ -383,7 +385,7 @@
         <div class="kpi-grid">
           <div class="kpi">
     <div class="kpi-lbl">Gösterim</div>
-    <div class="kpi-val">8.087</div>
+    <div class="kpi-val">8.106</div>
     
   </div>
           <div class="kpi">
@@ -398,15 +400,15 @@
   </div>
           <div class="kpi">
     <div class="kpi-lbl">Erişim</div>
-    <div class="kpi-val">5.499</div>
+    <div class="kpi-val">5.509</div>
     
   </div>
         </div>
         
         <div class="sh">📋 Aktif Kampanya Detayları</div>
-        <table class="tbl"><thead><tr><th>Kampanya</th><th>Gösterim</th><th>Tıklama</th><th>Harcama</th><th>Erişim</th><th>CPC</th></tr></thead><tbody><tr><td class="acc">29.Yıl Etkileşim reklamı</td><td class="num">8.087</td><td class="num">287</td><td class="num acc">€6</td><td class="num">5.499</td><td class="num">€0</td></tr></tbody></table>
+        <table class="tbl"><thead><tr><th>Kampanya</th><th>Gösterim</th><th>Tıklama</th><th>Harcama</th><th>Erişim</th><th>CPC</th></tr></thead><tbody><tr><td class="acc">29.Yıl Etkileşim reklamı</td><td class="num">8.106</td><td class="num">287</td><td class="num acc">€6</td><td class="num">5.509</td><td class="num">€0</td></tr></tbody></table>
         
-        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Meta (Facebook & Instagram) reklamları 5.499 kişiye ulaştı. Sosyal medya reklamları marka bilinirliğini artırarak doğrudan rezervasyona zemin hazırlıyor.</div>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Meta (Facebook & Instagram) reklamları 5.509 kişiye ulaştı. Sosyal medya reklamları marka bilinirliğini artırarak doğrudan rezervasyona zemin hazırlıyor.</div>
       </div>
     </section>
 <section id="social" class="sec">
@@ -424,11 +426,11 @@
         <table class="tbl">
           <thead><tr><th>Metrik</th><th>Değer (7g)</th><th>Değişim (önceki 3 hf ort.)</th></tr></thead>
           <tbody>
-            <tr><td>Gösterim</td><td class="num acc">1.025</td><td><span class="dn">↓ 40%</span></td></tr>
-            <tr><td>Erişim</td><td class="num">10.168</td><td><span class="neu">±0%</span></td></tr>
-            <tr><td>Hesap Etkileşimi</td><td class="num">463</td><td><span class="dn">↓ 46%</span></td></tr>
-            <tr><td>Profil Ziyareti</td><td class="num">1.931</td><td><span class="dn">↓ 47%</span></td></tr>
-            <tr><td>Takipçi</td><td class="num">20.942</td><td>—</td></tr>
+            <tr><td>Gösterim</td><td class="num acc">991</td><td><span class="dn">↓ 43%</span></td></tr>
+            <tr><td>Erişim</td><td class="num">9.774</td><td><span class="neu">±0%</span></td></tr>
+            <tr><td>Hesap Etkileşimi</td><td class="num">430</td><td><span class="dn">↓ 50%</span></td></tr>
+            <tr><td>Profil Ziyareti</td><td class="num">1.756</td><td><span class="dn">↓ 52%</span></td></tr>
+            <tr><td>Takipçi</td><td class="num">20.944</td><td>—</td></tr>
           </tbody>
         </table>
       </div>
@@ -437,8 +439,8 @@
         <table class="tbl">
           <thead><tr><th>Metrik</th><th>Değer (7g)</th><th>Değişim (önceki 3 hf ort.)</th></tr></thead>
           <tbody>
-            <tr><td>Etkileşim</td><td class="num acc">854</td><td><span class="dn">↓ 51%</span></td></tr>
-            <tr><td>Sayfa Ziyareti</td><td class="num">1.381</td><td><span class="dn">↓ 36%</span></td></tr>
+            <tr><td>Etkileşim</td><td class="num acc">1.155</td><td><span class="dn">↓ 29%</span></td></tr>
+            <tr><td>Sayfa Ziyareti</td><td class="num">1.657</td><td><span class="dn">↓ 18%</span></td></tr>
           </tbody>
         </table>
       </div></div>
@@ -451,7 +453,7 @@
 Yesterday, we celebrated August 30 Victory Day with great enthusiasm a</div>
             <div class="post-meta">
               <span>31 Ağu</span>
-              <span class="post-stats"><span>❤️ 132</span><span>💬 4</span></span>
+              <span class="post-stats"><span>❤️ 134</span><span>💬 4</span></span>
             </div>
           </a>
           <a class="post-card" href="https://www.instagram.com/p/DcyF0D6FQWC/" target="_blank" rel="noopener noreferrer">
@@ -460,7 +462,7 @@ Yesterday, we celebrated August 30 Victory Day with great enthusiasm a</div>
 Belconti Resort Hotel olarak 29. yılımızı gururla geride bırakıyoruz! 6 Eylül’de gerçekleşecek görkemli kutlamamız ve </div>
             <div class="post-meta">
               <span>2 Eyl</span>
-              <span class="post-stats"><span>❤️ 122</span><span>💬 3</span></span>
+              <span class="post-stats"><span>❤️ 125</span><span>💬 3</span></span>
             </div>
           </a>
           <a class="post-card" href="https://www.instagram.com/p/Dc3BN5PFXOj/" target="_blank" rel="noopener noreferrer">
@@ -469,7 +471,7 @@ Belconti Resort Hotel olarak 29. yılımızı gururla geride bırakıyoruz! 6 Ey
 Siz tati</div>
             <div class="post-meta">
               <span>4 Eyl</span>
-              <span class="post-stats"><span>❤️ 65</span><span>💬 0</span></span>
+              <span class="post-stats"><span>❤️ 69</span><span>💬 0</span></span>
             </div>
           </a>
           <a class="post-card" href="https://www.instagram.com/p/DcpmqevgJhF/" target="_blank" rel="noopener noreferrer">
@@ -478,7 +480,7 @@ Siz tati</div>
 Belconti Resort Hotel olarak, geçmişimizden aldığımız gurur ve sorumlulukla misafirlerimize u</div>
             <div class="post-meta">
               <span>30 Ağu</span>
-              <span class="post-stats"><span>❤️ 62</span><span>💬 1</span></span>
+              <span class="post-stats"><span>❤️ 63</span><span>💬 1</span></span>
             </div>
           </a>
       </div>
@@ -488,14 +490,14 @@ Belconti Resort Hotel olarak, geçmişimizden aldığımız gurur ve sorumlulukl
         <div>
           <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:8px">Yaş / Cinsiyet</div>
           <table class="tbl"><tbody>
-            <tr><td class="acc">13-17 F</td><td class="num">20</td></tr><tr><td class="acc">18-24 F</td><td class="num">248</td></tr><tr><td class="acc">25-34 F</td><td class="num">1.741</td></tr><tr><td class="acc">35-44 F</td><td class="num">3.982</td></tr><tr><td class="acc">45-54 F</td><td class="num">1.627</td></tr><tr><td class="acc">55-64 F</td><td class="num">340</td></tr><tr><td class="acc">65+ F</td><td class="num">130</td></tr><tr><td class="acc">13-17 M</td><td class="num">31</td></tr><tr><td class="acc">18-24 M</td><td class="num">289</td></tr><tr><td class="acc">25-34 M</td><td class="num">1.086</td></tr>
+            <tr><td class="acc">13-17 F</td><td class="num">20</td></tr><tr><td class="acc">18-24 F</td><td class="num">248</td></tr><tr><td class="acc">25-34 F</td><td class="num">1.741</td></tr><tr><td class="acc">35-44 F</td><td class="num">3.985</td></tr><tr><td class="acc">45-54 F</td><td class="num">1.630</td></tr><tr><td class="acc">55-64 F</td><td class="num">341</td></tr><tr><td class="acc">65+ F</td><td class="num">130</td></tr><tr><td class="acc">13-17 M</td><td class="num">31</td></tr><tr><td class="acc">18-24 M</td><td class="num">289</td></tr><tr><td class="acc">25-34 M</td><td class="num">1.088</td></tr>
           </tbody></table>
         </div>
         
         <div>
           <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:8px">Ülkeler</div>
           <table class="tbl"><tbody>
-            <tr><td class="acc">TR</td><td class="num">8.936</td></tr><tr><td class="acc">RU</td><td class="num">2.723</td></tr><tr><td class="acc">DE</td><td class="num">1.851</td></tr><tr><td class="acc">UZ</td><td class="num">528</td></tr><tr><td class="acc">KZ</td><td class="num">440</td></tr><tr><td class="acc">KG</td><td class="num">303</td></tr><tr><td class="acc">PL</td><td class="num">292</td></tr><tr><td class="acc">AZ</td><td class="num">233</td></tr>
+            <tr><td class="acc">TR</td><td class="num">8.945</td></tr><tr><td class="acc">RU</td><td class="num">2.725</td></tr><tr><td class="acc">DE</td><td class="num">1.854</td></tr><tr><td class="acc">UZ</td><td class="num">528</td></tr><tr><td class="acc">KZ</td><td class="num">440</td></tr><tr><td class="acc">KG</td><td class="num">302</td></tr><tr><td class="acc">PL</td><td class="num">292</td></tr><tr><td class="acc">AZ</td><td class="num">233</td></tr>
           </tbody></table>
         </div>
       </div>
@@ -503,7 +505,7 @@ Belconti Resort Hotel olarak, geçmişimizden aldığımız gurur ve sorumlulukl
       <div style="margin-top:14px">
         <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:8px">Şehirler</div>
         <table class="tbl"><tbody>
-          <tr><td class="acc">Istanbul, Istanbul Province</td><td class="num">1.418</td></tr><tr><td class="acc">Antalya, Antalya Province</td><td class="num">615</td></tr><tr><td class="acc">Ankara, Ankara Province</td><td class="num">545</td></tr><tr><td class="acc">Chita, Zabaykalsky Krai</td><td class="num">410</td></tr><tr><td class="acc">Moscow, Moscow</td><td class="num">396</td></tr><tr><td class="acc">Volzhskiy, Volgograd Oblast</td><td class="num">294</td></tr><tr><td class="acc">Izmir, İzmir Province</td><td class="num">271</td></tr><tr><td class="acc">Bursa, Bursa Province</td><td class="num">222</td></tr>
+          <tr><td class="acc">Istanbul, Istanbul Province</td><td class="num">1.420</td></tr><tr><td class="acc">Antalya, Antalya Province</td><td class="num">616</td></tr><tr><td class="acc">Ankara, Ankara Province</td><td class="num">546</td></tr><tr><td class="acc">Chita, Zabaykalsky Krai</td><td class="num">410</td></tr><tr><td class="acc">Moscow, Moscow</td><td class="num">397</td></tr><tr><td class="acc">Volzhskiy, Volgograd Oblast</td><td class="num">294</td></tr><tr><td class="acc">Izmir, İzmir Province</td><td class="num">271</td></tr><tr><td class="acc">Bursa, Bursa Province</td><td class="num">222</td></tr>
         </tbody></table>
       </div></div>
     </section>
@@ -520,35 +522,35 @@ Belconti Resort Hotel olarak, geçmişimizden aldığımız gurur ve sorumlulukl
         <div class="kpi-grid">
           <div class="kpi">
     <div class="kpi-lbl">Net Booking Pick-Up Değeri</div>
-    <div class="kpi-val">€377.724</div>
+    <div class="kpi-val">€375.169</div>
     
   </div>
           <div class="kpi">
     <div class="kpi-lbl">Oda Geceleme</div>
-    <div class="kpi-val">1.311</div>
+    <div class="kpi-val">1.309</div>
     
   </div>
           <div class="kpi">
     <div class="kpi-lbl">Rezervasyon</div>
-    <div class="kpi-val">241</div>
+    <div class="kpi-val">240</div>
     
   </div>
           <div class="kpi">
     <div class="kpi-lbl">İptal</div>
-    <div class="kpi-val">6</div>
+    <div class="kpi-val">7</div>
     
   </div>
         </div>
         <div class="two-col" style="max-width:420px;margin-bottom:20px">
-          <div class="stat-box"><div class="stat-val">€784</div><div class="stat-lbl">Misafir Başına Gelir</div></div>
-          <div class="stat-box"><div class="stat-val">€288</div><div class="stat-lbl">Ortalama Oda-Gece Değeri</div></div>
+          <div class="stat-box"><div class="stat-val">€782</div><div class="stat-lbl">Misafir Başına Gelir</div></div>
+          <div class="stat-box"><div class="stat-val">€287</div><div class="stat-lbl">Ortalama Oda-Gece Değeri</div></div>
         </div>
         <div class="sh">🏢 Acenta / Kanal Dağılımı</div>
-        <table class="tbl"><thead><tr><th>Acenta / Kanal</th><th>Oda Geceleme</th><th>Gelir (€)</th><th>Misafir Başına (€)</th></tr></thead><tbody><tr><td class="acc">CALLCENTER</td><td class="num">195</td><td class="num acc">€75.092</td><td class="num">€616</td></tr><tr><td class="acc">TAU TATİL</td><td class="num">5</td><td class="num acc">€73.000</td><td class="num">€36.500</td></tr><tr><td class="acc">BOOKING.COM</td><td class="num">155</td><td class="num acc">€38.546</td><td class="num">€622</td></tr><tr><td class="acc">ODEON TURIZM</td><td class="num">221</td><td class="num acc">€35.007</td><td class="num">€604</td></tr><tr><td class="acc">MINA TR GARANTI</td><td class="num">135</td><td class="num acc">€27.850</td><td class="num">€819</td></tr><tr><td class="acc">OTS</td><td class="num">65</td><td class="num acc">€13.189</td><td class="num">€733</td></tr><tr><td class="acc">AKAY TRAVEL</td><td class="num">87</td><td class="num acc">€11.783</td><td class="num">€1.178</td></tr><tr><td class="acc">ANEX TOUR</td><td class="num">59</td><td class="num acc">€10.944</td><td class="num">€782</td></tr></tbody></table>
+        <table class="tbl"><thead><tr><th>Acenta / Kanal</th><th>Oda Geceleme</th><th>Gelir (€)</th><th>Misafir Başına (€)</th></tr></thead><tbody><tr><td class="acc">CALLCENTER</td><td class="num">195</td><td class="num acc">€73.147</td><td class="num">€600</td></tr><tr><td class="acc">TAU TATİL</td><td class="num">5</td><td class="num acc">€73.000</td><td class="num">€36.500</td></tr><tr><td class="acc">BOOKING.COM</td><td class="num">153</td><td class="num acc">€37.935</td><td class="num">€632</td></tr><tr><td class="acc">ODEON TURIZM</td><td class="num">221</td><td class="num acc">€35.007</td><td class="num">€604</td></tr><tr><td class="acc">MINA TR GARANTI</td><td class="num">135</td><td class="num acc">€27.850</td><td class="num">€819</td></tr><tr><td class="acc">OTS</td><td class="num">65</td><td class="num acc">€13.189</td><td class="num">€733</td></tr><tr><td class="acc">AKAY TRAVEL</td><td class="num">87</td><td class="num acc">€11.783</td><td class="num">€1.178</td></tr><tr><td class="acc">ANEX TOUR</td><td class="num">59</td><td class="num acc">€10.944</td><td class="num">€782</td></tr></tbody></table>
         <div class="sh" style="margin-top:16px">🏷️ Fiyat Planı Dağılımı (İADESİZ / ADR)</div>
-        <table class="tbl"><thead><tr><th>Fiyat Planı</th><th>Rez.</th><th>Oda Geceleme</th><th>Gelir (€)</th><th>ADR (€)</th></tr></thead><tbody><tr><td class="acc">STANDART</td><td class="num">241</td><td class="num">1.311</td><td class="num acc">€377.724</td><td class="num acc">€288</td></tr></tbody></table>
+        <table class="tbl"><thead><tr><th>Fiyat Planı</th><th>Rez.</th><th>Oda Geceleme</th><th>Gelir (€)</th><th>ADR (€)</th></tr></thead><tbody><tr><td class="acc">STANDART</td><td class="num">240</td><td class="num">1.309</td><td class="num acc">€375.169</td><td class="num acc">€287</td></tr></tbody></table>
         <div class="sh" style="margin-top:16px">🛏️ Oda Tipine Göre Ort. Fiyat (ADR)</div>
-        <table class="tbl"><thead><tr><th>Oda Tipi</th><th>Oda Geceleme</th><th>Gelir (€)</th><th>ADR (€)</th></tr></thead><tbody><tr><td class="acc">Comfort Club Room</td><td class="num">545</td><td class="num">€163.539</td><td class="num acc">€300</td></tr><tr><td class="acc">Standart Room Garden</td><td class="num">429</td><td class="num">€120.641</td><td class="num acc">€281</td></tr><tr><td class="acc">Standart Room Sea</td><td class="num">152</td><td class="num">€37.208</td><td class="num acc">€245</td></tr><tr><td class="acc">Family Room Garden</td><td class="num">104</td><td class="num">€35.894</td><td class="num acc">€345</td></tr><tr><td class="acc">Deluxe Room Garden</td><td class="num">19</td><td class="num">€4.148</td><td class="num acc">€218</td></tr><tr><td class="acc">Family Room Sea</td><td class="num">11</td><td class="num">€3.861</td><td class="num acc">€351</td></tr><tr><td class="acc">Low Cost Family Room</td><td class="num">9</td><td class="num">€3.262</td><td class="num acc">€362</td></tr><tr><td class="acc">Deluxe Room Sea</td><td class="num">13</td><td class="num">€2.508</td><td class="num acc">€193</td></tr><tr><td class="acc">Handicapped Room</td><td class="num">11</td><td class="num">€2.299</td><td class="num acc">€209</td></tr><tr><td class="acc">Honeymoon Garden</td><td class="num">7</td><td class="num">€1.756</td><td class="num acc">€251</td></tr></tbody></table>
+        <table class="tbl"><thead><tr><th>Oda Tipi</th><th>Oda Geceleme</th><th>Gelir (€)</th><th>ADR (€)</th></tr></thead><tbody><tr><td class="acc">Comfort Club Room</td><td class="num">548</td><td class="num">€165.225</td><td class="num acc">€302</td></tr><tr><td class="acc">Standart Room Garden</td><td class="num">417</td><td class="num">€116.880</td><td class="num acc">€280</td></tr><tr><td class="acc">Family Room Garden</td><td class="num">106</td><td class="num">€36.669</td><td class="num acc">€346</td></tr><tr><td class="acc">Standart Room Sea</td><td class="num">152</td><td class="num">€35.995</td><td class="num acc">€237</td></tr><tr><td class="acc">Low Cost Family Room</td><td class="num">16</td><td class="num">€4.731</td><td class="num acc">€296</td></tr><tr><td class="acc">Deluxe Room Garden</td><td class="num">19</td><td class="num">€4.148</td><td class="num acc">€218</td></tr><tr><td class="acc">Deluxe Room Sea</td><td class="num">13</td><td class="num">€2.508</td><td class="num acc">€193</td></tr><tr><td class="acc">Family Room Sea</td><td class="num">9</td><td class="num">€2.346</td><td class="num acc">€261</td></tr><tr><td class="acc">Handicapped Room</td><td class="num">11</td><td class="num">€2.299</td><td class="num acc">€209</td></tr><tr><td class="acc">Honeymoon Garden</td><td class="num">7</td><td class="num">€1.756</td><td class="num acc">€251</td></tr></tbody></table>
 
         <!-- Veri Kaynağı ve Metodolojisi -->
         <div class="meth-box" style="margin-top: 15px; padding: 10px; border-radius: 6px; background-color: var(--card-bg); border: 1px solid var(--border); font-size: 11px; line-height: 1.4;">
@@ -556,7 +558,7 @@ Belconti Resort Hotel olarak, geçmişimizden aldığımız gurur ve sorumlulukl
           <span style="color: var(--muted);">Kaynak: PMS booking creation tarihi. Tutar, rezervasyonların tüm konaklama süresine ait net booking değeridir; stay-date oda geliri veya reklama atfedilmiş gelir değildir. Ortalama oda-gece değeri = net değer ÷ oda gecesi. İptaller hariç, uygulanmış komisyon kuralları sonrasındaki EUR değerleri kullanılır.</span>
         </div>
 
-        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 241 yeni rezervasyon 1.311 oda gecesi ve €377.724 net booking pick-up üretti. Ortalama oda-gece değeri €288; kanal payı, komisyon ve kalış tarihi doluluk baskısıyla birlikte değerlendirilmelidir.</div>
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 240 yeni rezervasyon 1.309 oda gecesi ve €375.169 net booking pick-up üretti. Ortalama oda-gece değeri €287; kanal payı, komisyon ve kalış tarihi doluluk baskısıyla birlikte değerlendirilmelidir.</div>
       </div>
     </section>
 <section id="budget" class="sec">
@@ -816,21 +818,7 @@ Belconti Resort Hotel olarak, geçmişimizden aldığımız gurur ve sorumlulukl
       <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Yalnız bağlı PMS, reklam, GA4 ve yorum kaynaklarında ölçülen sonuçlar; yapılmış olduğu doğrulanmayan faaliyetler bu bölüme eklenmez. <span style="opacity:.7">(29 Ağustos 2026 – 4 Eylül 2026)</span></div>
     </div>
   </div>
-      <div class="sec-body"><div class="prose-block"><ul><li><strong>Booking pick-up:</strong> 241 yeni rezervasyon, 1311 oda gecesi ve €377.724 net booking değeri kaydedildi.</li><li><strong>Reklam teslimatı:</strong> Meta ve Google kaynaklarında raporlanan harcama, gösterim, tıklama ve platform dönüşümleri izlendi. PMS geliri yalnız açık kampanya eşleşmesi varsa reklama atfedilir.</li><li><strong>Web analitiği:</strong> GA4 bağlantısı doğrulandı; 8571 kullanıcı ve 10849 oturum raporlandı.</li><li><strong>İtibar:</strong> Dönemde 33 yeni yorum ve 5 üzerinden 4.7 normalize ortalama izlendi.</li></ul></div></div>
-    </section>
-<section id="recommendations" class="sec">
-      <div class="sec-hdr" style="background:#0E7C8618">
-    <div class="sec-icon" style="background:#0E7C8622">🤖</div>
-    <div style="min-width:0">
-      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">ÖZET &amp; ÖNERİLER</div>
-      <div class="sec-title">Yapay Zeka Analizi &amp; Sonraki Adımlar</div>
-      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Yapay zekanın tüm verileri değerlendirerek oluşturduğu analiz ve öncelikli aksiyon önerileri. <span style="opacity:.7">(29 Ağustos 2026 – 4 Eylül 2026)</span></div>
-    </div>
-  </div>
-      <div class="sec-body">
-        <div class="insight" style="background:#0E7C8612;border-color:#0E7C8633"><p>Belconti Resort, geçen yıla göre %5 büyüme ile 7.54M EUR gelire ulaşmış ancak bütçe hedefinin %88'i (88%) gerçekleşerek hedefin altında kalınmıştır. Dijital performanslarda GA4 kullanıcı (8.571) ve oturum (10.849) trafiği sağlamken, Google Ads harcaması (2.165 EUR) karşılığında blended ROAS ölçülemediği için reklam yatırımının rezervasyonlarla eşleşmediği görülmektedir. Meta Ads harcaması (6 EUR) nispeten çok düşük seviyededir. Arama merkezi %47,4 satış dönüşüm oranı (108/228) ve 4.7/5 ortalama puanla 33 yeni yorum, operasyonel kalitenin ve doğrudan satış kanallarının güçlü olduğunu göstermektedir.</p></div>
-        <div class="sh" style="margin-top:20px">✅ Önerilen Aksiyonlar</div><ol class="steps"><li><span class="step-n">1</span>Blended ROAS null olduğu için Google Ads ve Meta Ads conversion tracking / offline import entegrasyonunu doğrulayın ve PMS ile eşleşen gelir verisini aktif edin.</li><li><span class="step-n">2</span>Bütçe hedefi (%88 gerçekleşme) kapatmak için son çeyrekta yüksek dönüşümlü segmentlere (ör. erken rezervasyon, grup/etkinlik) odaklı satış baskısı artırın.</li><li><span class="step-n">3</span>Meta Ads günlük 6 EUR harcamayı hedef kitle genişletme ve yeniden hedefleme kampanyaları ile artırarak artan talep döneminde görünürlüğü maksimize edin.</li><li><span class="step-n">4</span>Arama merkezi yüksek satış oranını koruyarak gelen aramaların %100&#39;üne teklif gönderimi ve takip otomasyonu kurarak doğrudan rezervasyon payını artırın.</li></ol>
-      </div>
+      <div class="sec-body"><div class="prose-block"><ul><li><strong>Booking pick-up:</strong> 240 yeni rezervasyon, 1309 oda gecesi ve €375.169 net booking değeri kaydedildi.</li><li><strong>Reklam teslimatı:</strong> Meta ve Google kaynaklarında raporlanan harcama, gösterim, tıklama ve platform dönüşümleri izlendi. PMS geliri yalnız açık kampanya eşleşmesi varsa reklama atfedilir.</li><li><strong>Web analitiği:</strong> GA4 bağlantısı doğrulandı; 8816 kullanıcı ve 11018 oturum raporlandı.</li><li><strong>İtibar:</strong> Dönemde 33 yeni yorum ve 5 üzerinden 4.7 normalize ortalama izlendi.</li></ul></div></div>
     </section>
 
     <!-- Footer -->
@@ -850,7 +838,7 @@ Belconti Resort Hotel olarak, geçmişimizden aldığımız gurur ve sorumlulukl
         });
         return;
       }
-      var D = {"channels":{"labels":["Paid Search","Direct","Cross-network","Referral","Organic Search"],"data":[3306,2207,1277,838,826]},"agencies":{"labels":["CALLCENTER","TAU TATİL","BOOKING.COM","ODEON TURIZM","MINA TR GARANTI","OTS"],"data":[75092,73000,38546,35007,27850,13189]},"callCenter":{"labels":["08-29","08-31","09-01","09-02","09-03"],"calls":[38,47,58,50,35],"conv":[100,81,28,18,20]},"accent":"#0E7C86","muted":"#64748b"};
+      var D = {"channels":{"labels":["Paid Search","Direct","Cross-network","Referral","Organic Search"],"data":[3431,2296,1276,868,846]},"agencies":{"labels":["CALLCENTER","TAU TATİL","BOOKING.COM","ODEON TURIZM","MINA TR GARANTI","OTS"],"data":[73147,73000,37935,35007,27850,13189]},"callCenter":{"labels":["08-29","08-31","09-01","09-02","09-03"],"calls":[38,47,58,50,35],"conv":[100,81,28,18,20]},"ga4Trend":{"labels":["08-29","08-30","08-31","09-01","09-02","09-03","09-04"],"sessions":[1588,1658,1904,1748,1718,1181,1299],"users":[1333,1398,1623,1457,1381,947,1143]},"gscTrend":{"labels":["08-29","08-30","08-31","09-01","09-02","09-03"],"clicks":[99,135,147,143,142,139],"impressions":[10385,15845,14106,13553,12000,12180]},"accent":"#0E7C86","muted":"#64748b"};
       var palette = [D.accent, D.accent+'CC', '#F59E0B','#8B5CF6','#EC4899','#14B8A6'];
       Chart.defaults.color = D.muted; Chart.defaults.font.family = 'Inter, system-ui, sans-serif';
       var cc = document.getElementById('chChannels');
@@ -862,6 +850,16 @@ Belconti Resort Hotel olarak, geçmişimizden aldığımız gurur ve sorumlulukl
         { type:'bar', label:'Arama', data:D.callCenter.calls, backgroundColor:D.accent+'99', borderRadius:4, yAxisID:'y' },
         { type:'line', label:'Dönüşüm %', data:D.callCenter.conv, borderColor:'#F59E0B', backgroundColor:'#F59E0B', tension:.3, yAxisID:'y1', pointRadius:3 },
       ]}, options:{ responsive:true, plugins:{ legend:{ position:'bottom', labels:{ boxWidth:10, padding:10, font:{size:11} } } }, scales:{ x:{ grid:{ display:false } }, y:{ grid:{ display:false }, beginAtZero:true }, y1:{ position:'right', beginAtZero:true, max:100, grid:{ display:false }, ticks:{ callback:function(v){ return v+'%'; } } } } } });
+      var cg4 = document.getElementById('chGa4Trend');
+      if (cg4 && D.ga4Trend.labels.length) new Chart(cg4, { type:'line', data:{ labels:D.ga4Trend.labels, datasets:[
+        { label:'Oturum', data:D.ga4Trend.sessions, borderColor:D.accent, backgroundColor:D.accent+'22', tension:.3, pointRadius:2, fill:true },
+        { label:'Kullanıcı', data:D.ga4Trend.users, borderColor:'#8B5CF6', backgroundColor:'#8B5CF622', tension:.3, pointRadius:2, fill:true },
+      ]}, options:{ responsive:true, plugins:{ legend:{ position:'bottom', labels:{ boxWidth:10, padding:10, font:{size:11} } } }, scales:{ x:{ grid:{ display:false } }, y:{ grid:{ display:false }, beginAtZero:true } } } });
+      var cgs = document.getElementById('chGscTrend');
+      if (cgs && D.gscTrend.labels.length) new Chart(cgs, { data:{ labels:D.gscTrend.labels, datasets:[
+        { type:'bar', label:'Gösterim', data:D.gscTrend.impressions, backgroundColor:D.muted+'55', borderRadius:4, yAxisID:'y1' },
+        { type:'line', label:'Tıklama', data:D.gscTrend.clicks, borderColor:D.accent, backgroundColor:D.accent, tension:.3, yAxisID:'y', pointRadius:2 },
+      ]}, options:{ responsive:true, plugins:{ legend:{ position:'bottom', labels:{ boxWidth:10, padding:10, font:{size:11} } } }, scales:{ x:{ grid:{ display:false } }, y:{ grid:{ display:false }, beginAtZero:true, position:'left' }, y1:{ position:'right', beginAtZero:true, grid:{ display:false } } } } });
     })();
   </script>
   <script>

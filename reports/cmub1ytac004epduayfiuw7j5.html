@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Seya Beach Resort — Haftalık Pazarlama Raporu 14 Eylül 2026 – 20 Eylül 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --accent: #0E7C86;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #64748b;
+      --success: #10b981;
+      --danger: #f43f5e;
+      --warn: #f59e0b;
+      --radius: 16px;
+    }
+    html { scroll-padding-top: 110px; scroll-behavior: smooth; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; font-size: 14px; }
+    
+
+    /* ── Sticky header ──────────────────────────────── */
+    .hdr {
+      position: sticky; top: 0; z-index: 50;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      padding: 10px 24px;
+      background: #f8fafcf0; backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .hdr-left { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .hdr-logo { height: 30px; width: auto; object-fit: contain; flex-shrink: 0; display: block; }
+    /* Logo, tasarım-şablonu renginde bir katman (badge) üzerine oturur → beyaz/renkli logo HER fonda (açık/koyu) görünür. */
+    .hdr-logo-badge { display: inline-flex; align-items: center; justify-content: center; background: var(--accent); padding: 6px 11px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,.18); flex-shrink: 0; }
+    .hdr-name { font-size: 14px; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .hdr-period { font-size: 10px; color: var(--muted); margin-top: 1px; }
+    .hdr-badge { font-size: 9px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); border: 1.5px solid rgba(0,0,0,.12); padding: 3px 10px; border-radius: 99px; flex-shrink: 0; background: rgba(0,0,0,.04); }
+
+    /* ── Sticky nav ─────────────────────────────────── */
+    .nav {
+      position: sticky; top: 53px; z-index: 40;
+      display: flex; overflow-x: auto; gap: 2px; padding: 0 16px;
+      background: #f8fafce8; backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      scrollbar-width: none;
+    }
+    .nav::-webkit-scrollbar { display: none; }
+    .nav a {
+      display: inline-flex; align-items: center;
+      padding: 10px 12px;
+      font-size: 11px; font-weight: 600; color: var(--muted);
+      text-decoration: none; white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: color .15s, border-color .15s;
+    }
+    .nav a:hover, .nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+    /* ── Main ───────────────────────────────────────── */
+    .main { max-width: 1100px; margin: 0 auto; padding: 28px 16px 64px; }
+
+    /* ── Hero KPI ───────────────────────────────────── */
+    .hero-title { font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .hero-sub { font-size: 12px; color: var(--muted); margin-bottom: 20px; }
+    .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
+    .kpi {
+      display: flex; flex-direction: column; border-radius: 12px; padding: 16px;
+      border: 1px solid var(--border); background: var(--card);
+    }
+    .kpi-lbl { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 8px; }
+    .kpi-val { font-size: 22px; font-weight: 700; line-height: 1; color: var(--accent); }
+    .kpi-sub { font-size: 10px; color: var(--muted); margin-top: 4px; }
+
+    /* ── Section card ───────────────────────────────── */
+    .sec { border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; margin-bottom: 20px; scroll-margin-top: 110px; background: var(--card); }
+    .sec-hdr { display: flex; align-items: center; gap: 12px; padding: 14px 20px; border-bottom: 1px solid var(--border); }
+    .sec-icon { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 8px; font-size: 15px; flex-shrink: 0; }
+    .sec-title { font-size: 13px; font-weight: 700; color: var(--text); }
+    .sec-body { padding: 20px; }
+
+    /* ── Tables ─────────────────────────────────────── */
+    .tbl { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .tbl th { padding: 8px 10px 8px 0; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); border-bottom: 1px solid var(--border); text-align: left; }
+    .tbl td { padding: 8px 10px 8px 0; color: var(--muted); border-bottom: 1px solid #e2e8f0cc; vertical-align: middle; }
+    .tbl td.acc { color: var(--text); font-weight: 700; }
+    .tbl td.num { text-align: right; }
+    .tbl tr:last-child td { border-bottom: none; }
+
+    /* ── Two-col ────────────────────────────────────── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+    /* ── Social posts ───────────────────────────────── */
+    .post-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .post-card { display: block; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); padding: 12px; text-decoration: none; }
+    .post-card:hover { border-color: var(--accent); }
+    .post-cap { font-size: 12px; color: var(--text); line-height: 1.5; margin-bottom: 8px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .post-meta { display: flex; align-items: center; justify-content: space-between; font-size: 10px; color: var(--muted); }
+    .post-stats { display: flex; gap: 10px; }
+
+    /* ── Change badge ───────────────────────────────── */
+    .up { font-size: 10px; font-weight: 700; color: var(--success); }
+    .dn { font-size: 10px; font-weight: 700; color: var(--danger); }
+    .neu { font-size: 10px; font-weight: 600; color: var(--muted); }
+
+    /* ── Sub heading ────────────────────────────────── */
+    .sh { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .15em; color: var(--muted); margin-bottom: 12px; margin-top: 20px; }
+    .sh:first-child { margin-top: 0; }
+
+    /* ── Stat box ───────────────────────────────────── */
+    .stat-box { border-radius: 12px; border: 1px solid var(--border); background: var(--bg); padding: 16px; text-align: center; }
+    .stat-val { font-size: 22px; font-weight: 700; color: var(--accent); }
+    .stat-lbl { font-size: 10px; color: var(--muted); margin-top: 4px; }
+
+    /* ── AI Insight ─────────────────────────────────── */
+    .insight { border-radius: 12px; border: 1px solid #e2e8f0; padding: 18px 20px; font-size: 13px; line-height: 1.8; color: var(--text); }
+    .prose-block { border-left: 3px solid var(--accent); padding: 14px 18px; font-size: 13px; line-height: 1.8; background: var(--bg); border-radius: 0 8px 8px 0; }
+    .prose-block ul { margin: 8px 0 8px 18px; }
+    .prose-block li { margin-bottom: 3px; }
+    .steps { list-style: none; }
+    .steps li { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid #e2e8f0cc; font-size: 13px; }
+    .steps li:last-child { border-bottom: none; }
+    .step-n { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; background: var(--accent); color: #fff; border-radius: 50%; font-size: 10px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+
+    /* ── Footer ─────────────────────────────────────── */
+    .footer { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; border-top: 1px solid var(--border); margin-top: 8px; font-size: 11px; color: var(--muted); }
+
+    /* ── No-data warning ────────────────────────────── */
+    .warn { border-radius: 12px; border: 1px solid #fca5a5; background: rgba(254,202,202,.5); color: #991b1b; padding: 12px 18px; font-size: 12px; margin-bottom: 16px; }
+
+    /* ── Charts ─────────────────────────────────────── */
+    .chart-wrap { position: relative; width: 100%; margin: 6px 0 4px; }
+    .chart-wrap canvas { max-width: 100%; }
+    .chart-cap { font-size: 10px; color: var(--muted); text-align: center; margin-top: 4px; }
+    .chart-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+
+    /* ── Data explainer (giriş seviyesi, olumlu anlatım) ── */
+    .explain { font-size: 11.5px; line-height: 1.7; color: var(--muted); background: var(--bg); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 10px 14px; margin: 4px 0 14px; }
+    .explain strong { color: var(--text); }
+    .period-banner { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 12px 18px; margin-bottom: 18px; font-size: 12px; color: var(--muted); }
+    .period-banner b { color: var(--text); }
+    .period-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(0,0,0,.04); color: var(--accent); border: 1px solid rgba(0,0,0,.12); border-radius: 99px; padding: 3px 12px; font-weight: 700; font-size: 11px; }
+
+    /* ── Responsive (kusursuz mobil) ─────────────────── */
+    @media (max-width: 760px) {
+      .kpi-grid { grid-template-columns: repeat(2,1fr); }
+      .two-col, .chart-2col, .post-grid { grid-template-columns: 1fr; }
+      .main { padding: 16px 10px 40px; }
+      .hdr { padding: 8px 12px; }
+      .hero-title { font-size: 18px; }
+      .kpi-val { font-size: 18px; } .stat-val { font-size: 18px; }
+      .sec-body { padding: 14px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .tbl { font-size: 11px; } .tbl th, .tbl td { padding: 7px 8px 7px 0; }
+    }
+    @media (max-width: 440px) {
+      .kpi-grid { grid-template-columns: 1fr; }
+      .hdr-name { font-size: 12px; max-width: 42vw; }
+      .hdr-badge { display: none; }
+      .hero-title { font-size: 16px; }
+      .nav a { padding: 9px 9px; font-size: 10.5px; }
+    }
+    @media print {
+      @page { size: A4 portrait; margin: 12mm; }
+      body { background: #fff; color: #000; }
+      .hdr, .nav { position: static; background: none; backdrop-filter: none; border: none; }
+      .card, .sec { break-inside: avoid; }
+    }
+  </style>
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet"></head>
+<body>
+
+  <!-- Sticky header -->
+  <header class="hdr">
+    <div class="hdr-left">
+      
+      <div style="min-width:0">
+        <div class="hdr-name">Seya Beach Resort</div>
+        <div class="hdr-period">Dijital Özet — 14 Eylül 2026 – 20 Eylül 2026</div>
+      </div>
+    </div>
+    <span class="hdr-badge">PMA PARTNER</span>
+  </header>
+
+  <!-- Sticky nav -->
+  <nav class="nav"><a href="#summary">📊 Özet</a><a href="#activity">📝 Faaliyet</a><a href="#recommendations">🤖 Öneriler</a></nav>
+
+  <main class="main">
+
+    <!-- No-data warning — distinguishes "no data" from "needs OAuth re-consent" -->
+    <div class="warn">⚠️ Veri eksik kanallar: GA4, GSC, Google Ads, Meta Ads, Sosyal Medya, Rezervasyon, Çağrı Merkezi<br><span style="font-weight:normal;font-size:11px;opacity:.85;">Google Ads ve Meta Ads için ppg@ OAuth yeniden yetkilendirmesi gerekir. GA4, GSC, Sosyal Medya, Rezervasyon, Çağrı Merkezi bu dönem için veri döndürmedi.</span></div>
+
+    <!-- Dönem açıklaması — giriş seviyesi kullanıcı için -->
+    <div class="period-banner">
+      <span class="period-pill">📅 14 Eylül 2026 – 20 Eylül 2026</span>
+      <span><b>Bu rapor</b> yukarıdaki tarih aralığındaki dijital pazarlama ve rezervasyon performansını özetler. Yüzde değişimler <b>bir önceki eş dönemle</b> kıyaslanır; ▲ artış, ▼ azalış demektir. Tüm gelir tutarları <b>net EUR (€)</b> bazındadır.</span>
+    </div>
+
+    
+
+    <section id="summary" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">📊</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">YÖNETİCİ ÖZETİ</div>
+      <div class="sec-title">Genel Performans Göstergeleri</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Bu hafta tüm dijital kanallardan elde edilen ana performans göstergeleri. <span style="opacity:.7">(14 Eylül 2026 – 20 Eylül 2026)</span></div>
+    </div>
+  </div>
+      <div class="sec-body"><div class="kpi-grid"><div class="kpi">
+    <div class="kpi-lbl">Aktif Kullanıcı (GA4)</div>
+    <div class="kpi-val">—</div>
+    
+  </div><div class="kpi">
+    <div class="kpi-lbl">Çağrı Merkezi Geliri</div>
+    <div class="kpi-val">—</div>
+    
+  </div><div class="kpi">
+    <div class="kpi-lbl">Rezervasyon Geliri</div>
+    <div class="kpi-val">—</div>
+    
+  </div><div class="kpi">
+    <div class="kpi-lbl">Oda Geceleme</div>
+    <div class="kpi-val">—</div>
+    
+  </div></div></div>
+    </section>
+<section id="activity" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">📝</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">DOĞRULANMIŞ DÖNEM KAYDI</div>
+      <div class="sec-title">Kaynak Sistemlerde Ölçülen Sonuçlar</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Yalnız bağlı PMS, reklam, GA4 ve yorum kaynaklarında ölçülen sonuçlar; yapılmış olduğu doğrulanmayan faaliyetler bu bölüme eklenmez. <span style="opacity:.7">(14 Eylül 2026 – 20 Eylül 2026)</span></div>
+    </div>
+  </div>
+      <div class="sec-body"><div class="prose-block"><ul></ul></div></div>
+    </section>
+<section id="recommendations" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">🤖</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">ÖZET &amp; ÖNERİLER</div>
+      <div class="sec-title">Yapay Zeka Analizi &amp; Sonraki Adımlar</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Yapay zekanın tüm verileri değerlendirerek oluşturduğu analiz ve öncelikli aksiyon önerileri. <span style="opacity:.7">(14 Eylül 2026 – 20 Eylül 2026)</span></div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="insight" style="background:#0E7C8612;border-color:#0E7C8633"><p>Seya Beach Resort için 14-20 Eylül 2026 dönemi ile ilgili GA4, GSC, Google Ads, Meta Ads, çağrı merkezi, yorumlar, Google İşletme, bütçe ve ROAS verileri mevcut değil; bu nedenle dijital performans ve gelir analizi yapılamamaktadır. PMS toplam gelir veya dönemde alınan rezervasyon değeri de sağlanmamış. Veri akışlarının eksikliği performans değerlendirmesini ve kanallar arası atfı engellemektedir.</p></div>
+        <div class="sh" style="margin-top:20px">✅ Önerilen Aksiyonlar</div><ol class="steps"><li><span class="step-n">1</span>GA4 mülk bağlantısını kurun ve e-ticari olayları (purchase, revenue) doğrulayın</li><li><span class="step-n">2</span>Google Ads ve Meta Ads hesaplarını bağlayıp utm/parametre eşleşmesini test edin</li><li><span class="step-n">3</span>PMS entegrasyonunu aktif ederek dönemlik brüt gelir ve rezervasyon değerini otomatik çekin</li><li><span class="step-n">4</span>Bütçe hedeflerini (hedefe_ulasma_yuzde) ve ROAS hedeflerini belirleyip raporlama panelinde izlemeyi başlatın</li></ol>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span>Seya Beach Resort &middot; 14 Eylül 2026 – 20 Eylül 2026</span>
+      <span>PMA Partner &copy; 2026</span>
+    </div>
+  </main>
+
+  
+  <script>
+    (function() {
+      var links = document.querySelectorAll('.nav a');
+      var secs = document.querySelectorAll('.sec[id]');
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) {
+            links.forEach(function(l) {
+              l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id);
+            });
+          }
+        });
+      }, { rootMargin: '-110px 0px -45% 0px', threshold: 0 });
+      secs.forEach(function(s) { obs.observe(s); });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cavomarina Beach — Marketing Report</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0F1F28;
+      --bg-black: #0A141A;
+      --bg-light: #F8FAFB;
+      --primary-gold: #38ADA4;
+      --gold-hover: #48BEB4;
+      --gold-light: rgba(56, 173, 164, 0.12);
+      --text-white: rgba(255, 255, 255, 0.95);
+      --text-muted: rgba(255, 255, 255, 0.65);
+      --text-dark: #0F1B29;
+      --text-muted-light: #52647A;
+      --bg-card: rgba(255, 255, 255, 0.04);
+      --border-card: rgba(255, 255, 255, 0.1);
+      --border-light: #E0E5EB;
+      --aegean-blue: #38ADA4;
+      --danger: #E53E3E;
+      --success: #38ADA4;
+      --card-shadow: 0 10px 30px rgba(15, 27, 41, 0.04);
+      --card-shadow-hover: 0 20px 40px rgba(15, 27, 41, 0.08);
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Sora', sans-serif;
+      color: var(--text-white);
+      background-color: var(--bg-black);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* ── PMA CO-BRANDING HEADER BANNER ── */
+    .pma-top-bar {
+      background-color: var(--bg-black);
+      color: var(--text-white);
+      padding: 12px 60px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-card);
+      z-index: 1000;
+      position: relative;
+    }
+
+    .pma-partner-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .pma-logo-text {
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ── HOTEL WEBSITE HEADER ── */
+    .cavo-header {
+      background: rgba(15, 31, 40, 0.95);
+      backdrop-filter: blur(15px);
+      padding: 18px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      border-bottom: 1px solid var(--border-card);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .cavo-book-btn {
+      background-color: var(--primary-gold);
+      color: var(--bg-dark);
+      border: none;
+      padding: 10px 24px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: var(--transition);
+      border-radius: 99px;
+    }
+
+    .cavo-book-btn:hover {
+      background-color: var(--gold-hover);
+      box-shadow: 0 0 15px rgba(56, 173, 164, 0.4);
+    }
+
+    /* ── SLIDE DECK CONTAINER (16:9 ASPECT RATIO) ── */
+    .deck-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    .slide {
+      background: var(--bg-dark);
+      border: 1px solid var(--border-card);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 60px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+      min-height: 600px;
+      transition: var(--transition);
+    }
+
+    .slide:hover {
+      border-color: rgba(56, 173, 164, 0.3);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Cover Slide Specifics */
+    .slide-cover {
+      background-image: 
+        linear-gradient(rgba(15, 31, 40, 0.75) 0%, rgba(15, 31, 40, 0.95) 100%),
+        url('https://image-tc.galaxy.tf/wijpeg-7kppa0lzf1jd60cpcx0dap4vd/general-view-with-beach-web.jpg?width=1200');
+      background-size: cover;
+      background-position: center;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+
+    .slide-cover-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide-cover-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--text-white);
+    }
+
+    .slide-cover-subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    /* Slide Header */
+    .slide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-card);
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+      height: 45px;
+      flex-shrink: 0;
+    }
+
+    .slide-title-area {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .slide-tag {
+      font-size: 9px;
+      font-weight: 700;
+      background: rgba(56, 173, 164, 0.15);
+      color: var(--primary-gold);
+      border: 1px solid var(--primary-gold);
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .slide-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--text-white);
+    }
+
+    .slide-pma-badge {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 9px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--primary-gold);
+      font-weight: 700;
+    }
+
+    /* Slide Body & Footer */
+    .slide-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    .slide-footer {
+      border-top: 1px solid var(--border-card);
+      padding-top: 15px;
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      height: 30px;
+      flex-shrink: 0;
+    }
+
+    .slide-footer span strong {
+      color: var(--primary-gold);
+    }
+
+    /* ── SPLIT GRID (FOR SLIDE USE) ── */
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+      height: 100%;
+    }
+
+    /* ── HIGH-SEASON STATS & METRICS CARDS ── */
+    .metrics-summary-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .metric-card-visual {
+      background: var(--bg-card);
+      border-radius: 12px;
+      border: 1px solid var(--border-card);
+      padding: 24px 16px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .metric-card-visual:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: var(--primary-gold);
+    }
+
+    .metric-visual-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--primary-gold);
+      margin-bottom: 5px;
+    }
+
+    .metric-visual-lbl {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-white);
+    }
+
+    .metric-visual-foot {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* ── TABLES ── */
+    .table-container {
+      background: var(--bg-card);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-card);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .report-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      text-align: left;
+    }
+
+    .report-table th {
+      background: var(--bg-black);
+      color: var(--primary-gold);
+      padding: 12px 18px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border-card);
+    }
+
+    .report-table td {
+      padding: 10px 18px;
+      border-bottom: 1px solid var(--border-card);
+      color: var(--text-white);
+    }
+
+    .report-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .report-table tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .badge-google {
+      background: rgba(66, 133, 244, 0.15);
+      color: #8AB4F8;
+      border: 1px solid rgba(66, 133, 244, 0.3);
+    }
+
+    .badge-meta {
+      background: rgba(139, 92, 246, 0.15);
+      color: #C084FC;
+      border: 1px solid rgba(139, 92, 246, 0.3);
+    }
+
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 0;
+      }
+      body {
+        background-color: var(--bg-black) !important;
+        color: var(--text-white) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .pma-top-bar, .cavo-header {
+        display: none !important;
+      }
+      .slide {
+        width: 297mm !important;
+        height: 210mm !important;
+        max-width: 297mm !important;
+        max-height: 210mm !important;
+        margin: 0 !important;
+        padding: 20mm !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background-color: var(--bg-dark) !important;
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+    }
+  </style>
+<style id="rs-stil">:root{--rs-ac:#0E7C86}
+[data-site-duzen] .top,[data-site-duzen] .nav,[data-site-duzen] .report-nav,[data-site-duzen] .pma-top-bar,[data-site-duzen] .cavo-header,[data-site-duzen] .slide-cover,[data-site-duzen]>.hero,[data-site-duzen]>.wrap>.hero:first-child,[data-site-duzen]>header.hdr{display:none!important}
+[data-site-duzen] .rs-bolum{scroll-margin-top:76px}
+#rs-ust{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.93);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(15,23,42,.08);font-family:Inter,-apple-system,'Segoe UI',Roboto,Arial,sans-serif}
+#rs-ust .rs-ic{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:8px 18px}
+#rs-ust .rs-marka{display:flex;align-items:center;gap:8px;font-weight:700;color:#0f172a;text-decoration:none;white-space:nowrap;font-size:15px}
+#rs-ust .rs-marka img{height:28px;max-width:110px;object-fit:contain}
+#rs-ust nav{display:flex;gap:4px;overflow-x:auto;flex:1;scrollbar-width:none}#rs-ust nav::-webkit-scrollbar{display:none}
+#rs-ust nav a{white-space:nowrap;padding:6px 12px;border-radius:999px;font-size:13.5px;color:#334155;text-decoration:none}
+#rs-ust nav a:hover{background:rgba(15,23,42,.06)}#rs-ust nav a.aktif{background:var(--rs-ac);color:#fff}
+#rs-ust .rs-dg{border:1px solid rgba(15,23,42,.15);background:transparent;border-radius:8px;padding:6px 10px;cursor:pointer;font-size:13px;color:#334155;white-space:nowrap}
+#rs-ust .rs-ham{display:none;border:0;background:transparent;padding:8px;cursor:pointer}#rs-ust .rs-ham span{display:block;width:20px;height:2px;background:#334155;margin:4px 0;border-radius:2px}
+[data-theme="dark"] #rs-ust{background:rgba(15,23,42,.9);border-color:rgba(255,255,255,.08)}[data-theme="dark"] #rs-ust .rs-marka{color:#f1f5f9}
+[data-theme="dark"] #rs-ust nav a,[data-theme="dark"] #rs-ust .rs-dg{color:#cbd5e1;border-color:rgba(255,255,255,.18)}[data-theme="dark"] #rs-ust .rs-ham span{background:#cbd5e1}
+#rs-hero{max-width:1280px;margin:16px auto 8px;border-radius:22px;overflow:hidden;color:#fff;background-size:cover;background-position:center;font-family:Inter,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;box-shadow:0 18px 40px -24px rgba(15,23,42,.55)}
+#rs-hero .rs-h-ic{padding:34px 30px 26px;background:linear-gradient(180deg,rgba(8,15,30,.25),rgba(8,15,30,.78))}
+#rs-hero .rs-logo{height:44px;max-width:160px;object-fit:contain;background:#fff;border-radius:8px;padding:5px 9px;margin-bottom:10px}
+#rs-hero .rs-ust{margin:0 0 4px;letter-spacing:.14em;font-size:12px;text-transform:uppercase;opacity:.85}
+#rs-hero h1{margin:0;font-size:34px;line-height:1.12;font-weight:700;color:#fff}
+#rs-hero .rs-alt{margin:6px 0 0;opacity:.9;font-size:15px}
+#rs-hero .rs-kpi{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:20px}
+#rs-hero .rs-k{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:11px 13px;min-width:0}
+#rs-hero .rs-k span{display:block;font-size:12px;opacity:.85;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#rs-hero .rs-k b{display:block;font-size:22px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#rs-hero .rs-k em{display:block;font-style:normal;font-size:12px;opacity:.85;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#rs-hero .rs-kisa{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+#rs-hero .rs-kisa a{color:#fff;text-decoration:none;font-size:13px;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:4px 11px}
+#rs-hero .rs-kisa a:hover{background:rgba(255,255,255,.15)}
+@media (max-width:860px){
+ #rs-ust .rs-ham{display:block;margin-left:auto}#rs-ust nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;background:inherit;padding:8px 14px 14px;border-bottom:1px solid rgba(15,23,42,.08);max-height:70vh;overflow-y:auto}
+ #rs-ust.acik nav{display:flex}#rs-ust .rs-dg{display:none}
+ #rs-hero{margin:10px;border-radius:16px}#rs-hero .rs-h-ic{padding:22px 18px}#rs-hero h1{font-size:26px}#rs-hero .rs-kpi{grid-template-columns:repeat(2,minmax(0,1fr))}#rs-hero .rs-kisa{display:none}
+}
+@media print{#rs-ust{display:none!important}#rs-hero{box-shadow:none;margin:0 0 12px}}
+</style><meta name="robots" content="noindex,nofollow,noarchive,nosnippet"></head>
+<body data-site-duzen="1">
+
+  <!-- PMA CO-BRANDING HEADER BANNER -->
+  <div class="pma-top-bar">
+    <div class="pma-partner-brand">
+      <span class="pma-logo-text">PMA PARTNER</span>
+    </div>
+    <div>AUTOMATED MARKETING BRIEFING REPORT</div>
+  </div>
+
+  <!-- HOTEL HEADER -->
+  <div class="cavo-header">
+    <span style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--text-white);">Cavomarina Beach</span>
+    <button class="cavo-book-btn">EXECUTIVE AUDIT</button>
+  </div>
+
+  <div class="deck-container">
+    
+    <div class="slide slide-cover" id="slide-1">
+      <div class="slide-cover-body">
+        <div style="font-size:12px; font-weight:700; color:var(--primary-gold); letter-spacing:2.5px; text-transform:uppercase; margin-bottom:20px;">PMA PARTNER &bull; MARKETING BRIEFING</div>
+        <h1 class="slide-cover-title" style="font-size:52px; font-family:'Playfair Display', serif;">Executive Audit</h1>
+        <div class="slide-cover-subtitle" style="font-size:16px;">Cavomarina Beach &bull; Last 30 days</div>
+        <div style="font-size:13px; color:var(--text-muted); margin-top:15px; font-weight:500;">Automated Digital Marketing Performance</div>
+      </div>
+      <div style="font-size:10px; color:var(--text-muted); letter-spacing:1px; text-transform:uppercase;">PMA Partner &bull; Resort Marketing Intelligence</div>
+    </div>
+  
+
+      <div class="slide" id="slide-2">
+        <div class="slide-header">
+          <div class="slide-title-area">
+            <span class="slide-tag">SUMMARY</span>
+            <h2 class="slide-heading">Executive Performance Summary</h2>
+          </div>
+          <div class="slide-pma-badge">PMA PARTNER</div>
+        </div>
+        <div class="slide-body">
+          <div class="metrics-summary-cards" style="margin-bottom:25px;">
+            <div class="metric-card-visual">
+              <div class="metric-visual-val">1,007 EUR</div>
+              <div class="metric-visual-lbl">Ad Spend</div>
+              <div class="metric-visual-foot">Total budget spent</div>
+            </div>
+            <div class="metric-card-visual">
+              <div class="metric-visual-val">173,530</div>
+              <div class="metric-visual-lbl">Impressions</div>
+              <div class="metric-visual-foot">Total ad impressions</div>
+            </div>
+            <div class="metric-card-visual">
+              <div class="metric-visual-val">8,629</div>
+              <div class="metric-visual-lbl">Clicks</div>
+              <div class="metric-visual-foot">Average CTR: 4.97%</div>
+            </div>
+            <div class="metric-card-visual">
+              <div class="metric-visual-val">690</div>
+              <div class="metric-visual-lbl">Conversions</div>
+              <div class="metric-visual-foot">Average CPC: 0 EUR</div>
+            </div>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <span>PMA PARTNER REPORT &bull; <strong>Cavomarina Beach</strong></span>
+          <span>SLIDE 2</span>
+        </div>
+      </div>
+    
+
+      <div class="slide" id="slide-3">
+        <div class="slide-header">
+          <div class="slide-title-area">
+            <span class="slide-tag">PERFORMANCE</span>
+            <h2 class="slide-heading">Top Performing Campaigns</h2>
+          </div>
+          <div class="slide-pma-badge">PMA PARTNER</div>
+        </div>
+        <div class="slide-body">
+          <div class="table-container" style="max-height:340px; overflow-y:auto;">
+            <table class="report-table">
+              <thead>
+                <tr>
+                  <th>Campaign Name</th>
+                  <th>Platform</th>
+                  <th style="text-align:right;">Spend</th>
+                  <th style="text-align:right;">Clicks</th>
+                  <th style="text-align:right;">Conversions</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+      <tr>
+        <td>Website Search traffic italy</td>
+        <td><span class="badge badge-google">google</span></td>
+        <td style="text-align:right; font-weight:700; color:var(--primary-gold);">265 EUR</td>
+        <td style="text-align:right; color:var(--text-muted);">385</td>
+        <td style="text-align:right; font-weight:700; color:var(--text-white);">96</td>
+      </tr>
+    
+      <tr>
+        <td>Website traffic pmax italy-eng</td>
+        <td><span class="badge badge-google">google</span></td>
+        <td style="text-align:right; font-weight:700; color:var(--primary-gold);">256 EUR</td>
+        <td style="text-align:right; color:var(--text-muted);">3,123</td>
+        <td style="text-align:right; font-weight:700; color:var(--text-white);">469</td>
+      </tr>
+    
+      <tr>
+        <td>web traffic balkans-serbian</td>
+        <td><span class="badge badge-google">google</span></td>
+        <td style="text-align:right; font-weight:700; color:var(--primary-gold);">253 EUR</td>
+        <td style="text-align:right; color:var(--text-muted);">1,179</td>
+        <td style="text-align:right; font-weight:700; color:var(--text-white);">110</td>
+      </tr>
+    
+      <tr>
+        <td>Cavomarina | DE | Search | 2027</td>
+        <td><span class="badge badge-google">google</span></td>
+        <td style="text-align:right; font-weight:700; color:var(--primary-gold);">51 EUR</td>
+        <td style="text-align:right; color:var(--text-muted);">120</td>
+        <td style="text-align:right; font-weight:700; color:var(--text-white);">12</td>
+      </tr>
+    
+      <tr>
+        <td>August promotion %35</td>
+        <td><span class="badge badge-google">google</span></td>
+        <td style="text-align:right; font-weight:700; color:var(--primary-gold);">31 EUR</td>
+        <td style="text-align:right; color:var(--text-muted);">567</td>
+        <td style="text-align:right; font-weight:700; color:var(--text-white);">3</td>
+      </tr>
+    
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <span>PMA PARTNER REPORT &bull; <strong>Cavomarina Beach</strong></span>
+          <span>SLIDE 3</span>
+        </div>
+      </div>
+    
+
+      <div class="slide" id="slide-4">
+        <div class="slide-header">
+          <div class="slide-title-area">
+            <span class="slide-tag">PLATFORMS</span>
+            <h2 class="slide-heading">Ad Platform Integration Status</h2>
+          </div>
+          <div class="slide-pma-badge">PMA PARTNER</div>
+        </div>
+        <div class="slide-body">
+          <div class="table-container" style="max-height:340px; overflow-y:auto; max-width:600px; margin: 0 auto;">
+            <table class="report-table">
+              <thead>
+                <tr>
+                  <th>Ad Channel / API</th>
+                  <th style="text-align:right;">Connection Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Google Ads API Integration</td>
+                  <td style="text-align:right; font-weight:700; color:var(--primary-gold);">Bağlı</td>
+                </tr>
+                <tr>
+                  <td>Meta Graph API Integration</td>
+                  <td style="text-align:right; font-weight:700; color:var(--primary-gold);">Bağlı</td>
+                </tr>
+                <tr>
+                  <td>Yandex Direct API Integration</td>
+                  <td style="text-align:right; font-weight:700; color:var(--primary-gold);">Bağlantı Bekleniyor</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <span>PMA PARTNER REPORT &bull; <strong>Cavomarina Beach</strong></span>
+          <span>SLIDE 4</span>
+        </div>
+      </div>
+    
+
+      <div class="slide" id="slide-5">
+        <div class="slide-header">
+          <div class="slide-title-area">
+            <span class="slide-tag">ROI / ATTRIBUTION</span>
+            <h2 class="slide-heading">Source-Based Real Return on Investment (ROAS)</h2>
+          </div>
+          <div class="slide-pma-badge">PMA PARTNER</div>
+        </div>
+        <div class="slide-body">
+          <div class="table-container" style="max-height:340px; overflow-y:auto;">
+            <table class="report-table">
+              <thead>
+                <tr>
+                  <th>Traffic Source</th>
+                  <th style="text-align:right;">Spend</th>
+                  <th style="text-align:right;">Attributed PMS Revenue</th>
+                  <th style="text-align:right;">Real ROAS</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+      <tr>
+        <td>dertour</td>
+        <td style="text-align:right; color:var(--text-muted);">0 EUR</td>
+        <td style="text-align:right; color:var(--text-muted);">8,915 EUR</td>
+        <td style="text-align:right; font-weight:800; color:var(--primary-gold);"><span style="font-weight:600; color:var(--text-muted);">not measured</span></td>
+      </tr>
+    
+      <tr>
+        <td>booking</td>
+        <td style="text-align:right; color:var(--text-muted);">0 EUR</td>
+        <td style="text-align:right; color:var(--text-muted);">7,788 EUR</td>
+        <td style="text-align:right; font-weight:800; color:var(--primary-gold);"><span style="font-weight:600; color:var(--text-muted);">not measured</span></td>
+      </tr>
+    
+      <tr>
+        <td>ots</td>
+        <td style="text-align:right; color:var(--text-muted);">0 EUR</td>
+        <td style="text-align:right; color:var(--text-muted);">7,061 EUR</td>
+        <td style="text-align:right; font-weight:800; color:var(--primary-gold);"><span style="font-weight:600; color:var(--text-muted);">not measured</span></td>
+      </tr>
+    
+      <tr>
+        <td>schauinsland</td>
+        <td style="text-align:right; color:var(--text-muted);">0 EUR</td>
+        <td style="text-align:right; color:var(--text-muted);">6,734 EUR</td>
+        <td style="text-align:right; font-weight:800; color:var(--primary-gold);"><span style="font-weight:600; color:var(--text-muted);">not measured</span></td>
+      </tr>
+    
+      <tr>
+        <td>tui</td>
+        <td style="text-align:right; color:var(--text-muted);">0 EUR</td>
+        <td style="text-align:right; color:var(--text-muted);">3,969 EUR</td>
+        <td style="text-align:right; font-weight:800; color:var(--primary-gold);"><span style="font-weight:600; color:var(--text-muted);">not measured</span></td>
+      </tr>
+    
+      <tr>
+        <td>rainbow-tours-s-a</td>
+        <td style="text-align:right; color:var(--text-muted);">0 EUR</td>
+        <td style="text-align:right; color:var(--text-muted);">2,653 EUR</td>
+        <td style="text-align:right; font-weight:800; color:var(--primary-gold);"><span style="font-weight:600; color:var(--text-muted);">not measured</span></td>
+      </tr>
+    
+      <tr>
+        <td>cretan-holidays</td>
+        <td style="text-align:right; color:var(--text-muted);">0 EUR</td>
+        <td style="text-align:right; color:var(--text-muted);">2,296 EUR</td>
+        <td style="text-align:right; font-weight:800; color:var(--primary-gold);"><span style="font-weight:600; color:var(--text-muted);">not measured</span></td>
+      </tr>
+    
+      <tr>
+        <td>sunhotels</td>
+        <td style="text-align:right; color:var(--text-muted);">0 EUR</td>
+        <td style="text-align:right; color:var(--text-muted);">1,935 EUR</td>
+        <td style="text-align:right; font-weight:800; color:var(--primary-gold);"><span style="font-weight:600; color:var(--text-muted);">not measured</span></td>
+      </tr>
+    
+      <tr>
+        <td>danaos</td>
+        <td style="text-align:right; color:var(--text-muted);">0 EUR</td>
+        <td style="text-align:right; color:var(--text-muted);">1,528 EUR</td>
+        <td style="text-align:right; font-weight:800; color:var(--primary-gold);"><span style="font-weight:600; color:var(--text-muted);">not measured</span></td>
+      </tr>
+    
+      <tr>
+        <td>spica-travel-ag</td>
+        <td style="text-align:right; color:var(--text-muted);">0 EUR</td>
+        <td style="text-align:right; color:var(--text-muted);">1,200 EUR</td>
+        <td style="text-align:right; font-weight:800; color:var(--primary-gold);"><span style="font-weight:600; color:var(--text-muted);">not measured</span></td>
+      </tr>
+    
+      <tr>
+        <td>anex</td>
+        <td style="text-align:right; color:var(--text-muted);">0 EUR</td>
+        <td style="text-align:right; color:var(--text-muted);">1,146 EUR</td>
+        <td style="text-align:right; font-weight:800; color:var(--primary-gold);"><span style="font-weight:600; color:var(--text-muted);">not measured</span></td>
+      </tr>
+    
+      <tr>
+        <td>le-grand-tourism-enterprises-s-a</td>
+        <td style="text-align:right; color:var(--text-muted);">0 EUR</td>
+        <td style="text-align:right; color:var(--text-muted);">966 EUR</td>
+        <td style="text-align:right; font-weight:800; color:var(--primary-gold);"><span style="font-weight:600; color:var(--text-muted);">not measured</span></td>
+      </tr>
+    
+      <tr>
+        <td>rocket-dmc-türkiye</td>
+        <td style="text-align:right; color:var(--text-muted);">0 EUR</td>
+        <td style="text-align:right; color:var(--text-muted);">936 EUR</td>
+        <td style="text-align:right; font-weight:800; color:var(--primary-gold);"><span style="font-weight:600; color:var(--text-muted);">not measured</span></td>
+      </tr>
+    
+      <tr>
+        <td>expedia</td>
+        <td style="text-align:right; color:var(--text-muted);">0 EUR</td>
+        <td style="text-align:right; color:var(--text-muted);">924 EUR</td>
+        <td style="text-align:right; font-weight:800; color:var(--primary-gold);"><span style="font-weight:600; color:var(--text-muted);">not measured</span></td>
+      </tr>
+    
+      <tr>
+        <td>alltours</td>
+        <td style="text-align:right; color:var(--text-muted);">0 EUR</td>
+        <td style="text-align:right; color:var(--text-muted);">809 EUR</td>
+        <td style="text-align:right; font-weight:800; color:var(--primary-gold);"><span style="font-weight:600; color:var(--text-muted);">not measured</span></td>
+      </tr>
+    
+      <tr>
+        <td>kolbe-tibor</td>
+        <td style="text-align:right; color:var(--text-muted);">0 EUR</td>
+        <td style="text-align:right; color:var(--text-muted);">795 EUR</td>
+        <td style="text-align:right; font-weight:800; color:var(--primary-gold);"><span style="font-weight:600; color:var(--text-muted);">not measured</span></td>
+      </tr>
+    
+      <tr>
+        <td>avra-tours</td>
+        <td style="text-align:right; color:var(--text-muted);">0 EUR</td>
+        <td style="text-align:right; color:var(--text-muted);">624 EUR</td>
+        <td style="text-align:right; font-weight:800; color:var(--primary-gold);"><span style="font-weight:600; color:var(--text-muted);">not measured</span></td>
+      </tr>
+    
+      <tr>
+        <td>byrnes-nicholas</td>
+        <td style="text-align:right; color:var(--text-muted);">0 EUR</td>
+        <td style="text-align:right; color:var(--text-muted);">510 EUR</td>
+        <td style="text-align:right; font-weight:800; color:var(--primary-gold);"><span style="font-weight:600; color:var(--text-muted);">not measured</span></td>
+      </tr>
+    
+      <tr>
+        <td>temple-tree-hospitality-hellas-ike</td>
+        <td style="text-align:right; color:var(--text-muted);">0 EUR</td>
+        <td style="text-align:right; color:var(--text-muted);">4 EUR</td>
+        <td style="text-align:right; font-weight:800; color:var(--primary-gold);"><span style="font-weight:600; color:var(--text-muted);">not measured</span></td>
+      </tr>
+    
+      <tr>
+        <td>google-ads</td>
+        <td style="text-align:right; color:var(--text-muted);">876 EUR</td>
+        <td style="text-align:right; color:var(--text-muted);">0 EUR</td>
+        <td style="text-align:right; font-weight:800; color:var(--primary-gold);">0.0x</td>
+      </tr>
+    
+      <tr>
+        <td>meta-ads</td>
+        <td style="text-align:right; color:var(--text-muted);">131 EUR</td>
+        <td style="text-align:right; color:var(--text-muted);">0 EUR</td>
+        <td style="text-align:right; font-weight:800; color:var(--primary-gold);">0.0x</td>
+      </tr>
+    
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <span>PMA PARTNER REPORT &bull; <strong>Cavomarina Beach</strong></span>
+          <span>SLIDE 5</span>
+        </div>
+      </div>
+    
+
+      <div class="slide" id="slide-6">
+        <div class="slide-header">
+          <div class="slide-title-area">
+            <span class="slide-tag">BUDGET PLAN</span>
+            <h2 class="slide-heading">Next Period Budget Allocation Plan · Search-Weighted Smart Allocation</h2>
+          </div>
+          <div class="slide-pma-badge">PMA PARTNER</div>
+        </div>
+        <div class="slide-body">
+          <div class="table-container" style="max-height:300px; overflow-y:auto; margin-bottom:15px;">
+            <table class="report-table">
+              <thead>
+                <tr>
+                  <th>Campaign Group / Goal</th>
+                  <th style="text-align:right;">Planned Budget</th>
+                  <th style="text-align:right;">Target Ad Cost (ACOS)</th>
+                  <th style="text-align:right;">Expected Revenue</th>
+                  <th style="text-align:right;">~Bookings Count</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+        <tr>
+          <td><strong>TR Search (Brand+Generic+Comp)</strong><div style="font-size:10px; color:var(--text-muted); margin-top:2px;">Capture high-intent domestic demand</div></td>
+          <td style="text-align:right; color:var(--text-white);">6,840 EUR</td>
+          <td style="text-align:right; font-weight:700; color:var(--primary-gold);">%3.5</td>
+          <td style="text-align:right; font-weight:700; color:var(--text-white);">195,429 EUR</td>
+          <td style="text-align:right; color:var(--text-muted);">~137</td>
+        </tr>
+      
+        <tr>
+          <td><strong>International Search</strong><div style="font-size:10px; color:var(--text-muted); margin-top:2px;">Target key foreign markets</div></td>
+          <td style="text-align:right; color:var(--text-white);">3,960 EUR</td>
+          <td style="text-align:right; font-weight:700; color:var(--primary-gold);">%4.0</td>
+          <td style="text-align:right; font-weight:700; color:var(--text-white);">99,000 EUR</td>
+          <td style="text-align:right; color:var(--text-muted);">~70</td>
+        </tr>
+      
+        <tr>
+          <td><strong>Performance Max</strong><div style="font-size:10px; color:var(--text-muted); margin-top:2px;">New demand &amp; broad reach</div></td>
+          <td style="text-align:right; color:var(--text-white);">3,240 EUR</td>
+          <td style="text-align:right; font-weight:700; color:var(--primary-gold);">%5.0</td>
+          <td style="text-align:right; font-weight:700; color:var(--text-white);">64,800 EUR</td>
+          <td style="text-align:right; color:var(--text-muted);">~46</td>
+        </tr>
+      
+        <tr>
+          <td><strong>Remarketing / Recovery</strong><div style="font-size:10px; color:var(--text-muted); margin-top:2px;">Retarget visiting audiences</div></td>
+          <td style="text-align:right; color:var(--text-white);">2,520 EUR</td>
+          <td style="text-align:right; font-weight:700; color:var(--primary-gold);">%2.5</td>
+          <td style="text-align:right; font-weight:700; color:var(--text-white);">100,800 EUR</td>
+          <td style="text-align:right; color:var(--text-muted);">~71</td>
+        </tr>
+      
+        <tr>
+          <td><strong>Last Minute / Offer</strong><div style="font-size:10px; color:var(--text-muted); margin-top:2px;">Accelerate conversions with urgency</div></td>
+          <td style="text-align:right; color:var(--text-white);">1,440 EUR</td>
+          <td style="text-align:right; font-weight:700; color:var(--primary-gold);">%3.5</td>
+          <td style="text-align:right; font-weight:700; color:var(--text-white);">41,143 EUR</td>
+          <td style="text-align:right; color:var(--text-muted);">~29</td>
+        </tr>
+      
+                <tr style="font-weight:800; background:rgba(56, 173, 164, 0.08);">
+                  <td>Total Target</td>
+                  <td style="text-align:right; color:var(--primary-gold);">18,000 EUR</td>
+                  <td style="text-align:right; color:var(--primary-gold);">%3.6</td>
+                  <td style="text-align:right; color:var(--primary-gold);">501,171 EUR</td>
+                  <td style="text-align:right; color:var(--primary-gold);">~353</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="font-size:10px; color:var(--text-muted); line-height:1.5; padding:0 10px;">
+            * Assumption: Average booking basket value (AOV) ≈ 1,421 EUR. Advertising Cost of Sales (ACOS) is formulated as Spend / Attributed Revenue.
+          </div>
+        </div>
+        <div class="slide-footer">
+          <span>PMA PARTNER REPORT &bull; <strong>Cavomarina Beach</strong></span>
+          <span>SLIDE 6</span>
+        </div>
+      </div>
+    
+
+      <div class="slide" id="slide-7">
+        <div class="slide-header">
+          <div class="slide-title-area">
+            <span class="slide-tag">AI INSIGHT</span>
+            <h2 class="slide-heading">AI Marketing Analysis</h2>
+          </div>
+          <div class="slide-pma-badge">PMA PARTNER</div>
+        </div>
+        <div class="slide-body">
+          <div style="background:var(--bg-black); border:1px solid var(--border-card); border-radius:12px; padding:30px 40px; font-size:14px; line-height:1.7; color:var(--text-white); overflow-y:auto; max-height:360px;">
+            Paid channels (Google + Meta) spent €1,007 but generated only €690 in attributed revenue (ROAS 0.68), indicating negative ROI. Google PMax Italy-Eng is the sole bright spot (ROAS ~1.83), while five other Google campaigns and all Meta spend (€131) produced near-zero returns. Meanwhile, 19 zero-spend partner sources (Booking, Dertour, TUI, etc.) delivered ~€40K+ in untracked revenue, suggesting strong organic/partner demand but a measurement gap for paid efforts. Low CPC (€0.12) and high clicks (8.6K) show efficient traffic acquisition, yet conversion value remains weak.
+          </div>
+        </div>
+        <div class="slide-footer">
+          <span>PMA PARTNER REPORT &bull; <strong>Cavomarina Beach</strong></span>
+          <span>SLIDE 7</span>
+        </div>
+      </div>
+    
+
+      <div class="slide" id="slide-8">
+        <div class="slide-header">
+          <div class="slide-title-area">
+            <span class="slide-tag">ACTION PLAN</span>
+            <h2 class="slide-heading">Next Steps & Recommended Actions</h2>
+          </div>
+          <div class="slide-pma-badge">PMA PARTNER</div>
+        </div>
+        <div class="slide-body">
+          <div style="background:var(--bg-card); border:1px solid var(--border-card); border-radius:12px; padding:30px 45px; height:100%; overflow-y:auto; max-height:360px;">
+            <ol style="margin-left: 20px; font-family:'Sora', sans-serif;">
+              
+      <li style="margin-bottom:12px; font-size:13.5px; line-height:1.6; color:var(--text-white);">
+        Pause Meta Ads immediately until conversion tracking is validated and a test budget proves ROAS &gt; 1.
+      </li>
+    
+      <li style="margin-bottom:12px; font-size:13.5px; line-height:1.6; color:var(--text-white);">
+        Reallocate Google budget from underperforming campaigns (August promos, DE Search, Balkans Serbian) to PMax Italy-Eng and test new PMax asset groups for DE/UK markets.
+      </li>
+    
+      <li style="margin-bottom:12px; font-size:13.5px; line-height:1.6; color:var(--text-white);">
+        Implement enhanced conversion tracking (GA4 + Google Ads offline import) to capture revenue from partner/OTA bookings influenced by paid clicks.
+      </li>
+    
+      <li style="margin-bottom:12px; font-size:13.5px; line-height:1.6; color:var(--text-white);">
+        Negotiate co-op marketing or preferred placement with top zero-spend partners (Dertour, Booking, OTS) to amplify their existing high-volume contribution.
+      </li>
+    
+            </ol>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <span>PMA PARTNER REPORT &bull; <strong>Cavomarina Beach</strong></span>
+          <span>SLIDE 8</span>
+        </div>
+      </div>
+    
+  </div>
+
+  <!-- Footer -->
+  <div style="border-top:1px solid var(--border-card); padding:30px 60px; text-align:center; color:var(--text-muted); font-size:11px; font-weight:500; background:var(--bg-dark);">
+    PMA Partner Marketing Report &bull; Report Time: 9/27/2026<br>
+    <strong style="color:var(--text-white); font-weight:700;">PMA Partner &copy; 2026</strong>
+  </div>
+
+<script type="application/json" id="rs-cfg">{"logo":null,"kapak":null}</script><script>(function(){
+var d=document,b=d.body;if(!b||b.getAttribute('data-rs-hazir'))return;b.setAttribute('data-rs-hazir','1');
+var cfg={};try{cfg=JSON.parse(d.getElementById('rs-cfg').textContent||'{}')}catch(e){}
+var dil=(d.documentElement.lang||'tr').slice(0,2);
+var M={tr:['Menü','Yazdır','Tema','Rapor'],en:['Menu','Print','Theme','Report'],de:['Menü','Drucken','Design','Bericht'],ru:['Меню','Печать','Тема','Отчёт']}[dil]||['Menü','Yazdır','Tema','Rapor'];
+function txt(el){if(el&&el.querySelector&&el.querySelector(".info,[data-tip],sup,svg,button")){el=el.cloneNode(true);[].slice.call(el.querySelectorAll(".info,[data-tip],sup,svg,button")).forEach(function(x){x.remove()})}return el?(el.textContent||'').replace(/\s+/g,' ').trim():''}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+var SEC='section,.section,.slide,.card';
+var bolumler=[],gorulen={};
+[].slice.call(d.querySelectorAll(SEC)).forEach(function(el){
+ if(el.classList.contains('slide-cover'))return;
+ var p=el.parentElement&&el.parentElement.closest(SEC);if(p)return;
+ var h=el.querySelector('h2,.slide-heading,.sec-h h2,.sec-head h2,h3');if(!h)return;
+ var t=txt(h);if(!t)return;if(t.length>48)t=t.slice(0,46)+'…';
+ if(gorulen[t])return;gorulen[t]=1;
+ if(!el.id)el.id='rs-b-'+bolumler.length;el.classList.add('rs-bolum');bolumler.push({id:el.id,t:t,el:el});
+});
+if(bolumler.length<2){[].slice.call(d.querySelectorAll('.nav a[href^="#"],.report-nav a[href^="#"]')).forEach(function(a){
+ var id=a.getAttribute('href').slice(1),el=id&&d.getElementById(id),t=txt(a);if(!el||!t||gorulen[t])return;gorulen[t]=1;el.classList.add('rs-bolum');bolumler.push({id:id,t:t,el:el})})}
+var baslik='',alt='';
+var brand=d.querySelector('.top .brand');
+if(brand){var sm=brand.querySelector('small');alt=txt(sm);var kl=brand.cloneNode(true);var s2=kl.querySelector('small');if(s2)s2.remove();baslik=txt(kl)}
+var dt=(d.title||'').split(/\s+[—–|]\s+/);
+if(!baslik&&dt[0]){baslik=dt[0];alt=dt.slice(1).join(' · ')}
+if(!baslik)baslik=txt(d.querySelector('h1'))||M[3];
+if(alt.length>140)alt=alt.slice(0,138)+'…';
+var kpi=[];
+[].slice.call(d.querySelectorAll('.kpi,.metric-card-visual,.kpi-card')).some(function(k){
+ var e=txt(k.querySelector('.kpi-label,.metric-visual-lbl,.kpi-l,.lbl')),v=txt(k.querySelector('.kpi-val,.metric-visual-val,.kpi-v,.val'));
+ if(e&&v&&v.length<24)kpi.push({e:e,v:v,a:txt(k.querySelector('.kpi-sub,.kpi-s,.metric-visual-sub'))});return kpi.length>=4});
+var menu=d.createElement('header');menu.id='rs-ust';
+var tema=typeof window.toggleTheme==='function';
+menu.innerHTML='<div class="rs-ic"><a class="rs-marka" href="#rs-hero">'+(cfg.logo?'<img src="'+esc(cfg.logo)+'" alt="" onerror="this.remove()">':'')+'<span>'+esc(baslik.length>34?baslik.slice(0,33)+'…':baslik)+'</span></a>'
+ +'<nav aria-label="'+esc(M[0])+'">'+bolumler.map(function(x){return '<a href="#'+esc(x.id)+'">'+esc(x.t)+'</a>'}).join('')+'</nav>'
+ +(tema?'<button type="button" class="rs-dg" data-rs="tema">◐ '+esc(M[2])+'</button>':'')+'<button type="button" class="rs-dg" data-rs="yazdir">⎙ '+esc(M[1])+'</button>'
+ +'<button type="button" class="rs-ham" aria-label="'+esc(M[0])+'" aria-expanded="false"><span></span><span></span><span></span></button></div>';
+var hero=d.createElement('section');hero.id='rs-hero';
+hero.style.backgroundImage=cfg.kapak?'url("'+String(cfg.kapak).replace(/["\\]/g,'')+'")':'radial-gradient(900px 400px at 12% 0%,rgba(255,255,255,.18),transparent),linear-gradient(135deg,var(--rs-ac),#0f172a)';
+hero.innerHTML='<div class="rs-h-ic">'+(cfg.logo?'<img class="rs-logo" src="'+esc(cfg.logo)+'" alt="" onerror="this.remove()">':'')
+ +'<p class="rs-ust">PMA PARTNER · COCKPIT NEWS</p><h1>'+esc(baslik)+'</h1>'+(alt?'<p class="rs-alt">'+esc(alt)+'</p>':'')
+ +(kpi.length?'<div class="rs-kpi">'+kpi.map(function(k){return '<div class="rs-k"><span>'+esc(k.e)+'</span><b>'+esc(k.v)+'</b>'+(k.a?'<em>'+esc(k.a)+'</em>':'')+'</div>'}).join('')+'</div>':'')
+ +(bolumler.length>1?'<div class="rs-kisa">'+bolumler.slice(0,8).map(function(x){return '<a href="#'+esc(x.id)+'">'+esc(x.t)+' →</a>'}).join('')+'</div>':'')+'</div>';
+var ilk=d.querySelector('.wrap,.deck-container,main')||b.firstChild;
+b.insertBefore(menu,b.firstChild);
+if(ilk&&ilk.parentNode)ilk.parentNode.insertBefore(hero,ilk);else b.insertBefore(hero,menu.nextSibling);
+menu.addEventListener('click',function(ev){var t=ev.target.closest('[data-rs],.rs-ham,nav a');if(!t)return;
+ if(t.classList.contains('rs-ham')){var a=menu.classList.toggle('acik');t.setAttribute('aria-expanded',a?'true':'false');return}
+ if(t.getAttribute('data-rs')==='yazdir'){window.print();return}if(t.getAttribute('data-rs')==='tema'){window.toggleTheme();return}
+ menu.classList.remove('acik')});
+if('IntersectionObserver' in window&&bolumler.length){var linkler={};[].slice.call(menu.querySelectorAll('nav a')).forEach(function(a){linkler[a.getAttribute('href').slice(1)]=a});
+ var io=new IntersectionObserver(function(g){g.forEach(function(x){if(x.isIntersecting){for(var k in linkler)linkler[k].classList.remove('aktif');var a=linkler[x.target.id];if(a){a.classList.add('aktif');if(a.scrollIntoView&&window.innerWidth>860){var n=a.parentNode;n.scrollLeft=a.offsetLeft-n.clientWidth/2+a.clientWidth/2}}}})},{rootMargin:'-80px 0px -65% 0px'});
+ bolumler.forEach(function(x){io.observe(x.el)})}
+})();</script></body>
+</html>

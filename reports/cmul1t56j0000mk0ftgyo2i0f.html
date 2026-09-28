@@ -220,12 +220,12 @@
   </header>
 
   <!-- Sticky nav -->
-  <nav class="nav"><a href="#summary">📊 Özet</a><a href="#seo">🔍 GSC</a><a href="#google-ads">🎯 Google Ads</a><a href="#social">📲 Sosyal</a><a href="#reservations">🏨 Rezervasyon</a><a href="#budget">💰 Bütçe</a><a href="#compset">🏷️ Rakip Fiyat</a><a href="#callcenter">📞 Çağrı</a><a href="#reviews">💬 Yorumlar</a><a href="#activity">📝 Faaliyet</a><a href="#recommendations">🤖 Öneriler</a></nav>
+  <nav class="nav"><a href="#summary">📊 Özet</a><a href="#analytics">🌐 GA4</a><a href="#seo">🔍 GSC</a><a href="#google-ads">🎯 Google Ads</a><a href="#social">📲 Sosyal</a><a href="#reservations">🏨 Rezervasyon</a><a href="#budget">💰 Bütçe</a><a href="#compset">🏷️ Rakip Fiyat</a><a href="#callcenter">📞 Çağrı</a><a href="#reviews">💬 Yorumlar</a><a href="#activity">📝 Faaliyet</a></nav>
 
   <main class="main">
 
     <!-- No-data warning — distinguishes "no data" from "needs OAuth re-consent" -->
-    <div class="warn">⚠️ Veri eksik kanallar: GA4<br><span style="font-weight:normal;font-size:11px;opacity:.85;">GA4 bu dönem için veri döndürmedi.</span></div>
+    
 
     <!-- Dönem açıklaması — giriş seviyesi kullanıcı için -->
     <div class="period-banner">
@@ -239,9 +239,9 @@
       <div class="sec-body">
         <div class="explain">Haftanın iki temel resmi: <strong>ziyaretçiler siteye hangi kanallardan geldi</strong> ve <strong>en çok geliri hangi acente/operatörler getirdi</strong>. Dilim/çubuk ne kadar büyükse katkı o kadar yüksek — hızlıca nereye odaklanacağınızı gösterir.</div>
         <div class="chart-2col">
-          
+          <div class="chart-wrap"><canvas id="chChannels" height="230"></canvas><div class="chart-cap">Trafik kanalları — oturum payı</div></div>
           <div class="chart-wrap"><canvas id="chAgencies" height="230"></canvas><div class="chart-cap">En iyi acenteler — net gelir (€)</div></div>
-          
+          <div class="chart-wrap"><canvas id="chGa4Trend" height="230"></canvas><div class="chart-cap">GA4 — günlük oturum/kullanıcı seyri</div></div>
           <div class="chart-wrap"><canvas id="chGscTrend" height="230"></canvas><div class="chart-cap">Search Console — günlük tıklama/gösterim seyri</div></div>
         </div>
       </div>
@@ -258,8 +258,8 @@
   </div>
       <div class="sec-body"><div class="kpi-grid"><div class="kpi">
     <div class="kpi-lbl">Aktif Kullanıcı (GA4)</div>
-    <div class="kpi-val">—</div>
-    
+    <div class="kpi-val">5.293</div>
+    <div class="kpi-sub">6.547 oturum</div>
   </div><div class="kpi">
     <div class="kpi-lbl">Çağrı Merkezi Geliri</div>
     <div class="kpi-val">€4.397</div>
@@ -281,6 +281,54 @@
     <div class="kpi-val">—</div>
     <div class="kpi-sub">Atfedilmiş booking yok</div>
   </div></div><div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 €91 reklam harcaması görüldü; ancak PMS rezervasyonları kampanya veya dönüşüm kimliğiyle eşleşmediği için ROAS ve booking başına maliyet hesaplanmadı. PMS toplam geliri reklam geliri olarak kabul edilmez.</div></div>
+    </section>
+<section id="analytics" class="sec">
+      <div class="sec-hdr" style="background:#0E7C8618">
+    <div class="sec-icon" style="background:#0E7C8622">🌐</div>
+    <div style="min-width:0">
+      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">WEB ANALİTİĞİ</div>
+      <div class="sec-title">Google Analytics 4 — Web Performansı</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Otelin web sitesini kaç kişi ziyaret etti, nereden geldi ve hangi sayfaları gezdi. <span style="opacity:.7">(21 Eylül 2026 – 27 Eylül 2026)</span></div>
+    </div>
+  </div>
+      <div class="sec-body">
+        <div class="kpi-grid">
+          <div class="kpi">
+    <div class="kpi-lbl">Aktif Kullanıcı</div>
+    <div class="kpi-val">5.293</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Yeni Kullanıcı</div>
+    <div class="kpi-val">5.124</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Sayfa Görüntüleme</div>
+    <div class="kpi-val">12.181</div>
+    
+  </div>
+          <div class="kpi">
+    <div class="kpi-lbl">Ort. Etkileşim Süresi</div>
+    <div class="kpi-val">1dk 14sn</div>
+    
+  </div>
+        </div>
+        <div style="margin-top:12px;padding:10px 14px;border-radius:10px;background:rgba(127,127,127,0.08);font-size:12px;line-height:1.6;color:var(--muted)"><b style="color:var(--text)">Geçen Yıla Göre (YoY)</b> — Kullanıcı <b style="color:var(--success)">▲ +384%</b> · Oturum <b style="color:var(--success)">▲ +252%</b> · Sayfa <b style="color:var(--success)">▲ +305%</b> <span style="opacity:.8">(geçen yıl aynı dönem: 1.094 kullanıcı)</span></div>
+        <div class="two-col">
+          <div>
+            <div class="sh">🔗 Trafik Kaynakları</div>
+            <table class="tbl"><thead><tr><th>Kaynak</th><th>Oturum</th><th>%</th></tr></thead><tbody><tr><td class="acc">Direct</td><td class="num">3.602</td><td class="num">68%</td></tr><tr><td class="acc">Referral</td><td class="num">954</td><td class="num">18%</td></tr><tr><td class="acc">Organic Search</td><td class="num">638</td><td class="num">12%</td></tr><tr><td class="acc">Organic Social</td><td class="num">50</td><td class="num">1%</td></tr><tr><td class="acc">Unassigned</td><td class="num">41</td><td class="num">1%</td></tr></tbody></table>
+          </div>
+          <div>
+            <div class="sh">🌍 Ülkeler</div>
+            <table class="tbl"><thead><tr><th>Ülke</th><th>Kullanıcı</th><th>%</th></tr></thead><tbody><tr><td class="acc">Türkiye</td><td class="num">4.557</td><td class="num">93%</td></tr><tr><td class="acc">Germany</td><td class="num">101</td><td class="num">2%</td></tr><tr><td class="acc">United Kingdom</td><td class="num">77</td><td class="num">2%</td></tr><tr><td class="acc">Singapore</td><td class="num">75</td><td class="num">2%</td></tr><tr><td class="acc">United States</td><td class="num">65</td><td class="num">1%</td></tr></tbody></table>
+          </div>
+        </div>
+        
+        
+        <div style="margin-top:16px;padding:12px 16px;border-radius:10px;border-left:3px solid #0E7C86;background:#0E7C860d;font-size:12px;line-height:1.7;color:inherit">💡 Bu dönemde 5.293 kullanıcı ve 6.547 oturum ölçüldü. Gelir kararlarında kaynak/medium ve booking dönüşüm eşlemesi ayrıca izlenmelidir.</div>
+      </div>
     </section>
 <section id="seo" class="sec">
       <div class="sec-hdr" style="background:#0E7C8618">
@@ -777,21 +825,7 @@ A bright room with blue-and-</div>
       <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Yalnız bağlı PMS, reklam, GA4 ve yorum kaynaklarında ölçülen sonuçlar; yapılmış olduğu doğrulanmayan faaliyetler bu bölüme eklenmez. <span style="opacity:.7">(21 Eylül 2026 – 27 Eylül 2026)</span></div>
     </div>
   </div>
-      <div class="sec-body"><div class="prose-block"><ul><li><strong>Booking pick-up:</strong> 137 yeni rezervasyon, 489 oda gecesi ve €90.055 net booking değeri kaydedildi.</li><li><strong>Reklam teslimatı:</strong> Meta ve Google kaynaklarında raporlanan harcama, gösterim, tıklama ve platform dönüşümleri izlendi. PMS geliri yalnız açık kampanya eşleşmesi varsa reklama atfedilir.</li><li><strong>İtibar:</strong> Dönemde 34 yeni yorum ve 5 üzerinden 4.7 normalize ortalama izlendi.</li></ul></div></div>
-    </section>
-<section id="recommendations" class="sec">
-      <div class="sec-hdr" style="background:#0E7C8618">
-    <div class="sec-icon" style="background:#0E7C8622">🤖</div>
-    <div style="min-width:0">
-      <div style="font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;color:#0E7C86;margin-bottom:2px">ÖZET &amp; ÖNERİLER</div>
-      <div class="sec-title">Yapay Zeka Analizi &amp; Sonraki Adımlar</div>
-      <div style="font-size:11px;color:var(--muted);margin-top:3px;font-weight:400">Yapay zekanın tüm verileri değerlendirerek oluşturduğu analiz ve öncelikli aksiyon önerileri. <span style="opacity:.7">(21 Eylül 2026 – 27 Eylül 2026)</span></div>
-    </div>
-  </div>
-      <div class="sec-body">
-        <div class="insight" style="background:#0E7C8612;border-color:#0E7C8633"><p>Bütçe hedefi %111 ile aşıldı ve geçen yıla göre %16 büyüme kaydedildi. 4.7 puanlık ortalama ile 34 yeni olumlu yorum, misafir memnuniyetinin yüksek olduğunu gösteriyor. Google Ads 554 EUR harcamayla 29 dönüşüm sağlarken, Meta Ads ve GA4 entegrasyonu eksikliği dijital performansın tam ölçülmesini engelliyor. ROAS hesaplanamaması, reklam harcamalarının PMS verisiyle eşleşmediğini ortaya koyuyor. Organik arama trafiğinde (GSC) 2763 gösterime karşın 223 tıklama, CTR iyileştirme potansiyeli taşıyor.</p></div>
-        <div class="sh" style="margin-top:20px">✅ Önerilen Aksiyonlar</div><ol class="steps"><li><span class="step-n">1</span>GA4 entegrasyonunu tamamlayarak web analitiğini etkinleştirin</li><li><span class="step-n">2</span>Meta Ads kampanyalarını başlatarak çok kanallı reklam stratejisi oluşturun</li><li><span class="step-n">3</span>Reklam-PMS veri eşleşmesini sağlayarak ROAS ve rezervasyon maliyeti ölçümünü aktif hale getirin</li><li><span class="step-n">4</span>Google İşletme profili ve organik SEO iyileştirmeleriyle organik trafiği artırın</li></ol>
-      </div>
+      <div class="sec-body"><div class="prose-block"><ul><li><strong>Booking pick-up:</strong> 137 yeni rezervasyon, 489 oda gecesi ve €90.055 net booking değeri kaydedildi.</li><li><strong>Reklam teslimatı:</strong> Meta ve Google kaynaklarında raporlanan harcama, gösterim, tıklama ve platform dönüşümleri izlendi. PMS geliri yalnız açık kampanya eşleşmesi varsa reklama atfedilir.</li><li><strong>Web analitiği:</strong> GA4 bağlantısı doğrulandı; 5293 kullanıcı ve 6547 oturum raporlandı.</li><li><strong>İtibar:</strong> Dönemde 34 yeni yorum ve 5 üzerinden 4.7 normalize ortalama izlendi.</li></ul></div></div>
     </section>
 
     <!-- Footer -->
@@ -811,7 +845,7 @@ A bright room with blue-and-</div>
         });
         return;
       }
-      var D = {"channels":{"labels":[],"data":[]},"agencies":{"labels":["BIANCA ","BOOKING.COM","TURK CHOPPER","CALL CENTER EUR","ETS","CALL CENTER TL"],"data":[23172,18848,13650,10524,4553,4292]},"callCenter":{"labels":["09-21","09-22","09-23","09-24","09-25","09-26","09-27"],"calls":[18,20,11,9,14,16,13],"conv":[22,5,18,67,0,6,8]},"ga4Trend":{"labels":[],"sessions":[],"users":[]},"gscTrend":{"labels":["09-21","09-22","09-23","09-24","09-25"],"clicks":[75,61,75,51,61],"impressions":[1599,1750,1465,1064,1197]},"accent":"#0E7C86","muted":"#64748b"};
+      var D = {"channels":{"labels":["Direct","Referral","Organic Search","Organic Social","Unassigned"],"data":[3602,954,638,50,41]},"agencies":{"labels":["BIANCA ","BOOKING.COM","TURK CHOPPER","CALL CENTER EUR","ETS","CALL CENTER TL"],"data":[23172,18848,13650,10524,4553,4292]},"callCenter":{"labels":["09-21","09-22","09-23","09-24","09-25","09-26","09-27"],"calls":[18,20,11,9,14,16,13],"conv":[22,5,18,67,0,6,8]},"ga4Trend":{"labels":["09-21","09-22","09-23","09-24","09-25","09-26","09-27"],"sessions":[1004,883,962,851,809,936,1019],"users":[832,728,797,717,685,828,878]},"gscTrend":{"labels":["09-21","09-22","09-23","09-24","09-25"],"clicks":[75,61,75,51,61],"impressions":[1599,1750,1465,1064,1197]},"accent":"#0E7C86","muted":"#64748b"};
       var palette = [D.accent, D.accent+'CC', '#F59E0B','#8B5CF6','#EC4899','#14B8A6'];
       Chart.defaults.color = D.muted; Chart.defaults.font.family = 'Inter, system-ui, sans-serif';
       var cc = document.getElementById('chChannels');

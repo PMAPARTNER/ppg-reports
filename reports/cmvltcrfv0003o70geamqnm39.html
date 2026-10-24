@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Blue Dreams Resort — Aylık Performans Raporu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg-dark: #FFFFFF;
+      --bg-black: #F5F7FA;
+      --bg-light: #FFFFFF;
+      --primary-gold: #0E7C86;
+      --gold-hover: #0E7C86;
+      --gold-light: rgba(14, 124, 134, 0.15);
+      --text-white: #1A1A1A;
+      --text-muted: #666666;
+      --text-dark: #0F1B29;
+      --text-muted-light: #999999;
+      --bg-card: rgba(14, 124, 134, 0.08);
+      --border-card: rgba(14, 124, 134, 0.2);
+      --border-light: #CCCCCC;
+      --aegean-blue: #0E7C86;
+      --danger: #DC2626;
+      --success: #0E7C86;
+      --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      --card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.12);
+      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Sora', sans-serif;
+      color: var(--text-white);
+      background-color: var(--bg-black);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* ── PMA CO-BRANDING HEADER BANNER ── */
+    .pma-top-bar {
+      background-color: var(--bg-black);
+      color: var(--text-white);
+      padding: 12px 60px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-card);
+      z-index: 1000;
+      position: relative;
+    }
+
+    .pma-partner-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .pma-logo-text {
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ── HOTEL WEBSITE HEADER ── */
+    .cavo-header {
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--text-white);
+      backdrop-filter: blur(15px);
+      padding: 18px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      border-bottom: 1px solid var(--border-card);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .cavo-book-btn {
+      background-color: var(--primary-gold);
+      color: var(--bg-dark);
+      border: none;
+      padding: 10px 24px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: var(--transition);
+      border-radius: 99px;
+    }
+
+    .cavo-book-btn:hover {
+      background-color: var(--gold-hover);
+      box-shadow: 0 0 15px rgba(14, 124, 134, 0.4);
+    }
+
+    /* ── SLIDE DECK CONTAINER (16:9 ASPECT RATIO) ── */
+    .deck-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+
+    .slide {
+      background: var(--bg-dark);
+      border: 1px solid var(--border-card);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 60px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+      min-height: 600px;
+      transition: var(--transition);
+    }
+
+    .slide:hover {
+      border-color: rgba(14, 124, 134, 0.3);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /*
+     * Cover Slide — GÖRSELSİZ (kullanıcı, 2026-08-23).
+     *
+     * Önceki sürüm arka plana bir fotoğraf koyuyordu ve iki şey bozuktu:
+     *  1. Otelin kendi coverImageUrl alanı boşsa SABİT KODLU, BAŞKA BİR
+     *     ait dış görsel devreye giriyordu — rapor yanlış tesisi gösteriyordu.
+     *  2. Fotoğrafın üstündeki başlık okunmuyordu; metin rengi bir CSS
+     *     değişkenine bağlıydı ve bazı bağlamlarda (PDF/print) koyuya
+     *     çözülüyordu, koyu zeminde koyu yazı çıkıyordu.
+     *
+     * Çözüm: fotoğraf yok, düz koyu degrade var; metin renkleri DEĞİŞKENE
+     * BAĞLI DEĞİL, doğrudan yazıldı — hangi bağlamda render edilirse edilsin
+     * kontrast garanti.
+     */
+    .slide-cover {
+      background: linear-gradient(160deg, #0f1f28 0%, #16303d 55%, #0f1f28 100%);
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+    }
+
+    .slide-cover-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide-cover-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      /* Degiskene BAGLI DEGIL: bazi render baglamlarinda (PDF/print) koyuya
+         cozuluyor ve koyu zeminde okunmaz hale geliyordu. */
+      color: #ffffff;
+    }
+
+    .slide-cover-subtitle {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.78);
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    /* Slide Header */
+    .slide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-card);
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+      height: 45px;
+      flex-shrink: 0;
+    }
+
+    .slide-title-area {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .slide-tag {
+      font-size: 9px;
+      font-weight: 700;
+      background: rgba(14, 124, 134, 0.15);
+      color: var(--primary-gold);
+      border: 1px solid var(--primary-gold);
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .slide-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--text-white);
+    }
+
+    .slide-pma-badge {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 9px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--primary-gold);
+      font-weight: 700;
+    }
+
+    /* Slide Body & Footer */
+    .slide-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      min-height: 0;
+    }
+
+    .slide-footer {
+      border-top: 1px solid var(--border-card);
+      padding-top: 15px;
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      height: 30px;
+      flex-shrink: 0;
+    }
+
+    .slide-footer span strong {
+      color: var(--primary-gold);
+    }
+
+    /* ── SPLIT GRID (FOR SLIDE USE) ── */
+    .split-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+      height: 100%;
+    }
+
+    /* ── HIGH-SEASON STATS & METRICS CARDS ── */
+    .metrics-summary-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .metric-card-visual {
+      background: var(--bg-card);
+      border-radius: 12px;
+      border: 1px solid var(--border-card);
+      padding: 24px 16px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .metric-card-visual:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.06);
+      border-color: var(--primary-gold);
+    }
+
+    .metric-visual-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--primary-gold);
+      margin-bottom: 5px;
+    }
+
+    .metric-visual-lbl {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-white);
+    }
+
+    .metric-visual-foot {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* ── TABLES ── */
+    .table-container {
+      background: var(--bg-card);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-card);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .report-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      text-align: left;
+    }
+
+    .report-table th {
+      background: var(--bg-black);
+      color: var(--primary-gold);
+      padding: 12px 18px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border-card);
+    }
+
+    .report-table td {
+      padding: 10px 18px;
+      border-bottom: 1px solid var(--border-card);
+      color: var(--text-white);
+    }
+
+    .report-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .report-table tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    @media print {
+      @page {
+        size: A4 landscape;
+        margin: 0;
+      }
+      body {
+        background-color: var(--bg-black) !important;
+        color: var(--text-white) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .pma-top-bar, .cavo-header {
+        display: none !important;
+      }
+      .slide {
+        width: 297mm !important;
+        height: 210mm !important;
+        max-width: 297mm !important;
+        max-height: 210mm !important;
+        margin: 0 !important;
+        padding: 20mm !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background-color: var(--bg-dark) !important;
+        page-break-after: always !important;
+        break-after: page !important;
+      }
+    }
+  </style>
+<style id="rs-stil">:root{--rs-ac:#0E7C86}
+[data-site-duzen] .top,[data-site-duzen] .nav,[data-site-duzen] .report-nav,[data-site-duzen] .pma-top-bar,[data-site-duzen] .cavo-header,[data-site-duzen] .slide-cover,[data-site-duzen]>.hero,[data-site-duzen]>.wrap>.hero:first-child,[data-site-duzen]>header.hdr{display:none!important}
+[data-site-duzen] .rs-bolum{scroll-margin-top:76px}
+#rs-ust{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.93);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(15,23,42,.08);font-family:Inter,-apple-system,'Segoe UI',Roboto,Arial,sans-serif}
+#rs-ust .rs-ic{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:8px 18px}
+#rs-ust .rs-marka{display:flex;align-items:center;gap:8px;font-weight:700;color:#0f172a;text-decoration:none;white-space:nowrap;font-size:15px}
+#rs-ust .rs-marka img{height:28px;max-width:110px;object-fit:contain}
+#rs-ust nav{display:flex;gap:4px;overflow-x:auto;flex:1;scrollbar-width:none}#rs-ust nav::-webkit-scrollbar{display:none}
+#rs-ust nav a{white-space:nowrap;padding:6px 12px;border-radius:999px;font-size:13.5px;color:#334155;text-decoration:none}
+#rs-ust nav a:hover{background:rgba(15,23,42,.06)}#rs-ust nav a.aktif{background:var(--rs-ac);color:#fff}
+#rs-ust .rs-dg{border:1px solid rgba(15,23,42,.15);background:transparent;border-radius:8px;padding:6px 10px;cursor:pointer;font-size:13px;color:#334155;white-space:nowrap}
+#rs-ust .rs-ham{display:none;border:0;background:transparent;padding:8px;cursor:pointer}#rs-ust .rs-ham span{display:block;width:20px;height:2px;background:#334155;margin:4px 0;border-radius:2px}
+[data-theme="dark"] #rs-ust{background:rgba(15,23,42,.9);border-color:rgba(255,255,255,.08)}[data-theme="dark"] #rs-ust .rs-marka{color:#f1f5f9}
+[data-theme="dark"] #rs-ust nav a,[data-theme="dark"] #rs-ust .rs-dg{color:#cbd5e1;border-color:rgba(255,255,255,.18)}[data-theme="dark"] #rs-ust .rs-ham span{background:#cbd5e1}
+#rs-hero{max-width:1280px;margin:16px auto 8px;border-radius:22px;overflow:hidden;color:#fff;background-size:cover;background-position:center;font-family:Inter,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;box-shadow:0 18px 40px -24px rgba(15,23,42,.55)}
+#rs-hero .rs-h-ic{padding:34px 30px 26px;background:linear-gradient(180deg,rgba(8,15,30,.25),rgba(8,15,30,.78))}
+#rs-hero .rs-logo{height:44px;max-width:160px;object-fit:contain;background:#fff;border-radius:8px;padding:5px 9px;margin-bottom:10px}
+#rs-hero .rs-ust{margin:0 0 4px;letter-spacing:.14em;font-size:12px;text-transform:uppercase;opacity:.85}
+#rs-hero h1{margin:0;font-size:34px;line-height:1.12;font-weight:700;color:#fff}
+#rs-hero .rs-alt{margin:6px 0 0;opacity:.9;font-size:15px}
+#rs-hero .rs-kpi{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:20px}
+#rs-hero .rs-k{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:11px 13px;min-width:0}
+#rs-hero .rs-k span{display:block;font-size:12px;opacity:.85;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#rs-hero .rs-k b{display:block;font-size:22px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#rs-hero .rs-k em{display:block;font-style:normal;font-size:12px;opacity:.85;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#rs-hero .rs-kisa{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+#rs-hero .rs-kisa a{color:#fff;text-decoration:none;font-size:13px;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:4px 11px}
+#rs-hero .rs-kisa a:hover{background:rgba(255,255,255,.15)}
+@media (max-width:860px){
+ #rs-ust .rs-ham{display:block;margin-left:auto}#rs-ust nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;background:#fff;box-shadow:0 14px 28px rgba(15,23,42,.18);padding:8px 14px 14px;border-bottom:1px solid rgba(15,23,42,.08);max-height:70vh;overflow-y:auto}
+ #rs-ust.acik nav{display:flex}#rs-ust .rs-dg{display:none}
+ [data-theme="dark"] #rs-ust nav{background:#0f172a;box-shadow:0 14px 28px rgba(0,0,0,.5)}
+ #rs-ust nav a{padding:12px 14px;font-size:15px}
+ #rs-hero{margin:10px;border-radius:16px}#rs-hero .rs-h-ic{padding:22px 18px}#rs-hero h1{font-size:26px}#rs-hero .rs-kpi{grid-template-columns:repeat(2,minmax(0,1fr))}#rs-hero .rs-kisa{display:none}
+}
+@media print{#rs-ust{display:none!important}#rs-hero{box-shadow:none;margin:0 0 12px}}
+</style><meta name="robots" content="noindex,nofollow,noarchive,nosnippet"></head>
+<body data-site-duzen="1">
+
+  <!-- PMA CO-BRANDING HEADER BANNER -->
+  <div class="pma-top-bar">
+    <div class="pma-partner-brand">
+      <span class="pma-logo-text">PMA PARTNER</span>
+    </div>
+    <div>OTOMATİK PERFORMANS BİLGİLENDİRME RAPORU</div>
+  </div>
+
+  <!-- HOTEL HEADER -->
+  <div class="cavo-header">
+    <span style="font-family:'Playfair Display', serif; font-size:18px; font-weight:700; color:var(--text-white);">Blue Dreams Resort</span>
+    <button class="cavo-book-btn">AYLIK PERFORMANS RAPORU</button>
+  </div>
+
+  <div class="deck-container">
+    
+            <div class="slide slide-cover" id="slide-1">
+              <div class="slide-cover-body">
+                <div style="font-size:12px; font-weight:700; color:var(--primary-gold); letter-spacing:2.5px; text-transform:uppercase; margin-bottom:20px;">PPG NEWS &bull; PERFORMANCE BRIEFING</div>
+                <h1 class="slide-cover-title" style="font-size:52px; font-family:'Playfair Display', serif;">📊 Conti Finansal Rapor &amp; P&amp;L Bülteni - 24.10.2026</h1>
+                <div class="slide-cover-subtitle" style="font-size:16px;">Blue Dreams Resort &bull; 2026-09-01 — 2026-09-30</div>
+                <div style="font-size:13px; color:var(--text-muted); margin-top:15px; font-weight:500;">PPG-01 Series Performance Report</div>
+              </div>
+              <div style="font-size:10px; color:var(--text-muted); letter-spacing:1px; text-transform:uppercase;">PPG Hospitality Technology &bull; Automated Briefing System</div>
+            </div>
+        
+
+                <div class="slide" id="slide-2">
+                  <div class="slide-header">
+                    <div class="slide-title-area">
+                      <span class="slide-tag">AI ANALYSIS</span>
+                      <h2 class="slide-heading">Yapay Zeka Performans Yorumu</h2>
+                    </div>
+                    <div class="slide-pma-badge">PPG-01 SERIES</div>
+                  </div>
+                  <div class="slide-body">
+                    <div style="background:var(--bg-black); border:1px solid var(--border-card); border-radius:12px; padding:30px 40px; font-size:14px; line-height:1.7; color:var(--text-white); overflow-y:auto; max-height:360px;">
+                      <p><strong>Blue Dreams Resort — Yönetici Özeti | 01–30 Eylül 2026</strong></p>
+
+<p>Eylül ayında net oda geliri 2.070.411,76 EUR, EBITDA 1.090.895,15 EUR ve GOP marjı %51,69 olarak gerçekleşmiştir. Net ADR 200,45 EUR, RevPAR 202,53 EUR ve raporlanan oda doluluğu %101,04’tür. Otel, yılbaşından bugüne GOP marjı olan %44,88’in üzerinde kârlılık üretmiştir. Bununla birlikte, fiziksel kapasiteyi aşan doluluk göstergesi, gelir performansı değerlendirilmeden önce envanter ve oda gecesi tanımlarının doğrulanmasını gerektirir.</p>
+
+<p>Ağustosta 297,57 EUR olan ortalama oda fiyatının eylülde 200,45 EUR’ya gerilemesine karşılık, raporlanan doluluk %100,20’den %101,04’e yükselmiştir. Aynı dönemde GOP marjı %64,71’den %51,69’a, EBITDA ise 2.067.885,94 EUR’dan 1.090.895,15 EUR’ya düşmüştür. Bu görünüm, eylülde kapasite kullanımından çok fiyat gerçekleşmesi ve satış karmasının incelenmesi gerektiğini göstermektedir; veriler fiyat düşüşünün nedenini tek başına açıklamamaktadır.</p>
+
+<p>Yılbaşından bugüne Blue Dreams, 198,90 EUR RevPAR ve 14.756,32 EUR oda başına EBITDA ile karşılaştırmadaki diğer otellerin ve konsolide grubun üzerindedir. Buna karşın net ADR’si 209,64 EUR ile grubun 218,99 EUR seviyesinin altındadır. Sapma tablosunda net konaklama geliri bütçenin %4,63 üzerinde, yatak gecesi ise yalnızca %0,10 üzerindedir; cari ay ARB’sinin bütçeyi %4,37 aşması da bütçeye karşı gelir performansının hacim artışından daha güçlü olduğuna işaret etmektedir.</p>
+
+<p><strong>Veri kapsamı:</strong> Eylül aylık serisindeki net gelir 2.071.894,17 EUR olup aylık net oda geliriyle farklılaşmaktadır; kapanış net cirosu ise 2.111.842,39 EUR’dur. Bu kalemler aynı gelir tanımıyla değerlendirilmemelidir. Ocak kapanışı eksiktir. EBITDA köprüsünün bitiş tutarı konsolide EBITDA ile eşleştiğinden, köprüdeki gider etkileri otele atfedilmemiştir. Ekim tarihinde üretilen ileri dönem tahminleri ve dönem bilgisi bulunmayan rezervasyon toplamları eylül gerçekleşmesine dahil edilmemiştir.</p>
+
+<p><strong>Otele Özel Stratejik Aksiyonlar</strong></p>
+
+<ul>
+<li><strong>Eylül fiyat gerçekleşmesini kanal ve oda tipi düzeyinde inceleyin.</strong> Ağustostan eylüle ortalama oda fiyatındaki gerilemeyi; sözleşmeli fiyatlar, promosyonlar, kanal kesintileri ve oda tipi dağılımı üzerinden ayrıştırın. Kapasitenin üzerinde raporlanan doluluk ortamında düşük net getirili satışların katkısını sorgulayın; talebin güçlü olduğu tarihlerde düşük fiyatlı kontenjanları daraltıp ücretli oda yükseltmelerini öne çıkarın. Kararları net ADR, RevPAR ve GOP birlikte izlenerek değerlendirin.</li>
+
+<li><strong>Envanter ve gelir tanımlarını tek kapanış kontrolünde uzlaştırın.</strong> Eylüldeki %101,04 doluluğu, 10.336 oda gecesini ve 341 odalık fiziksel kapasiteyi PMS kayıtlarıyla karşılaştırın; kapasite dışı oda tanımı, kullanım dışı oda veya kayıt farkı olup olmadığını belirleyin. Net oda geliri, aylık seri net geliri ve kapanış net cirosu için mutabakat oluşturun. Bu çalışma tamamlanmadan kapasite üstü doluluğu ilave satış başarısı olarak yorumlamayın.</li>
+
+<li><strong>Personel planlamasını ve enerji alt kalemlerini faaliyet yoğunluğuna bağlayın.</strong> Oda başına personel göstergesi Blue Dreams’te 1,0077; Belconti’de 0,7415 ve Salamis’te 0,7389’dur. Bu farkı doğrudan kadro fazlası saymadan, departman görevleri ve hizmet kapsamıyla açıklayın; vardiyaları dolu oda ve misafir hareketine göre düzenleyin. Tüketim tablosunda toplam enerji gideri bütçenin altında olmasına rağmen su, doğalgaz, LPG ve atık giderlerinin bütçeyi aşmasını ayrı ayrı inceleyin. Elektrik tüketimindeki 80,6427 kWh gerçekleşmesi ile 0,0255 kWh geçmiş yıl değerinin ölçüm ve birim tutarlılığını doğrulamadan verimlilik sonucu çıkarmayın.</li>
+</ul>
+                    </div>
+                  </div>
+                  <div class="slide-footer">
+                    <span>PPG MASTER SYSTEM REPORT &bull; <strong>Blue Dreams Resort</strong></span>
+                    <span>SLIDE 2</span>
+                  </div>
+                </div>
+            
+
+                <div class="slide" id="slide-3">
+                  <div class="slide-header">
+                    <div class="slide-title-area">
+                      <span class="slide-tag">REVENUE</span>
+                      <h2 class="slide-heading">Rezervasyon ve Gelir Analizi</h2>
+                    </div>
+                    <div class="slide-pma-badge">PPG-01 SERIES</div>
+                  </div>
+                  <div class="slide-body">
+                    <div class="split-grid">
+                      <div class="metrics-summary-cards" style="grid-template-columns: 1fr; gap: 15px;">
+                        <div class="metric-card-visual" style="padding: 16px;">
+                          <div class="metric-visual-val">2.603</div>
+                          <div class="metric-visual-lbl">Toplam Rezervasyon</div>
+                        </div>
+                        <div class="metric-card-visual" style="padding: 16px;">
+                          <div class="metric-visual-val">2.071</div>
+                          <div class="metric-visual-lbl" style="color:var(--primary-gold);">Aktif Rezervasyon</div>
+                        </div>
+                        <div class="metric-card-visual" style="padding: 16px; border-color: var(--danger, #ef4444)">
+                          <div class="metric-visual-val" style="color:var(--danger, #ef4444);">532</div>
+                          <div class="metric-visual-lbl" style="color:var(--danger, #ef4444);">İptal Rezervasyon</div>
+                        </div>
+                      </div>
+                      
+                      <div style="background:var(--bg-card); border:1px solid var(--border-card); border-radius:12px; padding:30px; display:flex; flex-direction:column; justify-content:center; height:100%;">
+                        <div style="font-size:12px; color:var(--text-muted); text-transform:uppercase; letter-spacing:1.5px; margin-bottom:6px;">Toplam Rezervasyon Cirosu</div>
+                        <div style="font-size:44px; font-weight:800; color:var(--primary-gold); font-family:'Playfair Display', serif; line-height:1.1; margin-bottom:20px;">
+                          €3.748.219
+                        </div>
+                        
+                        <div style="font-size:13px; color:var(--text-white); opacity:0.9; line-height:1.6;">
+                          Önbellek (Cache) veri katmanı üzerinden hesaplanan yaklaşıksal ciro değeridir.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slide-footer">
+                    <span>PPG MASTER SYSTEM REPORT &bull; <strong>Blue Dreams Resort</strong></span>
+                    <span>SLIDE 3</span>
+                  </div>
+                </div>
+            
+
+                <div class="slide" id="slide-4">
+                  <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">FORECAST</span><h2 class="slide-heading">Talep Tahmini & Pickup</h2></div><div class="slide-pma-badge">PPG-01 SERIES</div></div>
+                  <div class="slide-body">
+                    <div class="metrics-summary-cards" style="grid-template-columns:repeat(3,1fr); gap:15px; margin-bottom:20px;">
+                      <div class="metric-card-visual" style="padding:16px;"><div class="metric-visual-val">%58</div><div class="metric-visual-lbl">Öngörülen Ort. Doluluk (30 gün)</div></div>
+                      <div class="metric-card-visual" style="padding:16px;"><div class="metric-visual-val">%244</div><div class="metric-visual-lbl">Pace Endeksi (100=geçen yıl)</div></div>
+                      <div class="metric-card-visual" style="padding:16px;"><div class="metric-visual-val">24 Eki</div><div class="metric-visual-lbl">Zirve Gün (%100)</div></div>
+                    </div>
+                    <div class="table-container" style="margin-bottom:16px;max-height:280px;overflow-y:auto;"><table class="report-table">
+                        <thead><tr>
+                          <th>Hafta</th>
+                          <th style="text-align:right;">Öngörülen Doluluk</th>
+                          <th style="text-align:right;">Bugüne Kadar (OTB)</th>
+                          <th style="text-align:right;">Geçen Yıl</th>
+                        </tr></thead>
+                        <tbody><tr>
+                          <td style="padding:8px 14px;">24 Eki – 30 Eki</td>
+                          <td style="padding:8px 14px;text-align:right;font-weight:700;">%63</td>
+                          <td style="padding:8px 14px;text-align:right;color:var(--text-muted);">%60</td>
+                          <td style="padding:8px 14px;text-align:right;color:var(--text-muted);">%29</td>
+                        </tr><tr>
+                          <td style="padding:8px 14px;">31 Eki – 1 Kas</td>
+                          <td style="padding:8px 14px;text-align:right;font-weight:700;">%38</td>
+                          <td style="padding:8px 14px;text-align:right;color:var(--text-muted);">%33</td>
+                          <td style="padding:8px 14px;text-align:right;color:var(--text-muted);">%0</td>
+                        </tr></tbody>
+                      </table></div>
+                    <div style="background:var(--bg-card); border:1px solid var(--border-card); border-radius:12px; padding:24px 30px; font-size:14px; line-height:1.7; color:var(--text-white);">Önümüzdeki dönem ortalama tahmini doluluk %58 (otelin gerçek pickup eğrisi + geçen yıl bazlı). Rezervasyon pace&#39;i geçen yıla göre %144 ileride (doluluk YoY). Uçuş kapasitesi sinyali: güçlü (baseline&#39;a göre %3195). Ortalama güven: %91 (uzak tarihlerde düşer). Sektör riski: &quot;Saudi Arabia’s Houthi trap: The underdog sets the price of war&quot;.<div style="margin-top:12px; font-size:12px; color:var(--text-muted);">Uçuş baskısı: surge</div></div>
+                  </div>
+                  <div class="slide-footer"><span>PPG MASTER SYSTEM REPORT &bull; <strong>Blue Dreams Resort</strong></span><span>SLIDE 4</span></div>
+                </div>
+
+                <div class="slide" id="slide-5">
+                  <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">P&amp;L</span><h2 class="slide-heading">P&L Gelir-Gider Özeti</h2></div><div class="slide-pma-badge">PPG-01 SERIES</div></div>
+                  <div class="slide-body">
+                    <div class="metrics-summary-cards" style="grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:16px;">
+                      
+                <div class="metric-card-visual" style="padding:16px 12px;">
+                  <div class="metric-visual-val" style="font-size:25px; line-height:1.15;">€2.070.412</div>
+                  <div class="metric-visual-lbl" style="letter-spacing:0.8px;">Net Oda Geliri — Eylül</div>
+                </div>
+                      
+                <div class="metric-card-visual" style="padding:16px 12px;">
+                  <div class="metric-visual-val" style="font-size:25px; line-height:1.15; color:var(--success, #10b981);">%51.7</div>
+                  <div class="metric-visual-lbl" style="letter-spacing:0.8px;">GOP % — Eylül</div>
+                </div>
+                      
+                <div class="metric-card-visual" style="padding:16px 12px;">
+                  <div class="metric-visual-val" style="font-size:25px; line-height:1.15; color:var(--success, #10b981);">€1.090.895</div>
+                  <div class="metric-visual-lbl" style="letter-spacing:0.8px;">EBITDA — Eylül</div>
+                </div>
+                      
+                <div class="metric-card-visual" style="padding:16px 12px;">
+                  <div class="metric-visual-val" style="font-size:25px; line-height:1.15;">%101.0</div>
+                  <div class="metric-visual-lbl" style="letter-spacing:0.8px;">Oda Doluluğu — Eylül</div>
+                </div>
+                    </div>
+                    <div class="metrics-summary-cards" style="grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:18px;">
+                      
+                <div class="metric-card-visual" style="padding:16px 12px;">
+                  <div class="metric-visual-val" style="font-size:25px; line-height:1.15;">€11.187.737</div>
+                  <div class="metric-visual-lbl" style="letter-spacing:0.8px;">Net Oda Geliri — YTD</div>
+                </div>
+                      
+                <div class="metric-card-visual" style="padding:16px 12px;">
+                  <div class="metric-visual-val" style="font-size:25px; line-height:1.15; color:var(--success, #10b981);">%44.9</div>
+                  <div class="metric-visual-lbl" style="letter-spacing:0.8px;">GOP % — YTD</div>
+                </div>
+                      
+                <div class="metric-card-visual" style="padding:16px 12px;">
+                  <div class="metric-visual-val" style="font-size:25px; line-height:1.15; color:var(--success, #10b981);">€5.031.904</div>
+                  <div class="metric-visual-lbl" style="letter-spacing:0.8px;">EBITDA — YTD</div>
+                </div>
+                      
+                <div class="metric-card-visual" style="padding:16px 12px;">
+                  <div class="metric-visual-val" style="font-size:25px; line-height:1.15;">%94.9</div>
+                  <div class="metric-visual-lbl" style="letter-spacing:0.8px;">Oda Doluluğu — YTD</div>
+                </div>
+                    </div>
+                    <div class="split-grid" style="align-items:flex-start; height:auto;">
+                      <div>
+                        <div style="font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--text-muted); margin-bottom:8px;">Bütçe / Gerçekleşen Sapması (YTD)</div>
+                        <div class="table-container" style="max-height:300px; overflow-y:auto;">
+                          <table class="report-table"><thead><tr>
+                            <th>Kalem</th>
+                            <th style="text-align:right;">Bütçe</th>
+                            <th style="text-align:right;">Gerçekleşen</th>
+                            <th style="text-align:right;">Sapma</th>
+                            <th style="text-align:right;">%</th>
+                          </tr></thead><tbody>
+                        <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                          <td style="padding:9px 14px; color:var(--text-white); font-weight:500;">Net Konaklama Geliri</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">€10.696.145</td>
+                          <td style="padding:9px 14px; text-align:right; font-weight:700; color:var(--text-white);">€11.191.224</td>
+                          <td style="padding:9px 14px; text-align:right; font-weight:700; color:var(--success, #10b981);">€495.079</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--success, #10b981);">+%4.6</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                          <td style="padding:9px 14px; color:var(--text-white); font-weight:500;">Yatak Gecesi</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">€114.871</td>
+                          <td style="padding:9px 14px; text-align:right; font-weight:700; color:var(--text-white);">€114.987</td>
+                          <td style="padding:9px 14px; text-align:right; font-weight:700; color:var(--success, #10b981);">€116</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--success, #10b981);">+%0.1</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                          <td style="padding:9px 14px; color:var(--text-white); font-weight:500;">ARB (Yatak Başına Gelir) (cari ay)</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">€91</td>
+                          <td style="padding:9px 14px; text-align:right; font-weight:700; color:var(--text-white);">€95</td>
+                          <td style="padding:9px 14px; text-align:right; font-weight:700; color:var(--success, #10b981);">€4</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--success, #10b981);">+%4.4</td>
+                        </tr></tbody></table>
+                        </div>
+                      </div>
+                      <div>
+                        <div style="font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--text-muted); margin-bottom:8px;">Aylık Kapanış (GOP / EBITDA)</div>
+                        <div class="table-container" style="max-height:300px; overflow-y:auto;">
+                          <table class="report-table"><thead><tr>
+                            <th>Dönem</th>
+                            <th style="text-align:right;">Net Ciro</th>
+                            <th style="text-align:right;">GOP %</th>
+                            <th style="text-align:right;">EBITDA</th>
+                          </tr></thead><tbody>
+                        <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                          <td style="padding:9px 14px; color:var(--text-white); font-weight:500;">Eylül 26</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">€2.111.842</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--success, #10b981);">%51.7</td>
+                          <td style="padding:9px 14px; text-align:right; font-weight:700; color:var(--success, #10b981);">€1.090.895</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                          <td style="padding:9px 14px; color:var(--text-white); font-weight:500;">Ağustos 26</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">€3.196.647</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--success, #10b981);">%64.7</td>
+                          <td style="padding:9px 14px; text-align:right; font-weight:700; color:var(--success, #10b981);">€2.067.886</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                          <td style="padding:9px 14px; color:var(--text-white); font-weight:500;">Temmuz 26</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">€2.970.598</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--success, #10b981);">%59.9</td>
+                          <td style="padding:9px 14px; text-align:right; font-weight:700; color:var(--success, #10b981);">€1.779.167</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                          <td style="padding:9px 14px; color:var(--text-white); font-weight:500;">Haziran 26</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">€1.794.746</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--success, #10b981);">%42.7</td>
+                          <td style="padding:9px 14px; text-align:right; font-weight:700; color:var(--success, #10b981);">€765.806</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                          <td style="padding:9px 14px; color:var(--text-white); font-weight:500;">Mayıs 26</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">€1.071.922</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--success, #10b981);">%6.2</td>
+                          <td style="padding:9px 14px; text-align:right; font-weight:700; color:var(--success, #10b981);">€66.143</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                          <td style="padding:9px 14px; color:var(--text-white); font-weight:500;">Nisan 26</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">€272.410</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--danger, #ef4444);">%-91.2</td>
+                          <td style="padding:9px 14px; text-align:right; font-weight:700; color:var(--danger, #ef4444);">−€335.221</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                          <td style="padding:9px 14px; color:var(--text-white); font-weight:500;">Mart 26</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">€0</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">—</td>
+                          <td style="padding:9px 14px; text-align:right; font-weight:700; color:var(--danger, #ef4444);">−€181.054</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                          <td style="padding:9px 14px; color:var(--text-white); font-weight:500;">Şubat 26</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">€0</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">—</td>
+                          <td style="padding:9px 14px; text-align:right; font-weight:700; color:var(--danger, #ef4444);">−€113.737</td>
+                        </tr></tbody></table>
+                        </div>
+                        <div style="margin-top:10px; font-size:11px; color:var(--danger, #ef4444);">Kapanış satırı olmayan aylar: Ocak — bu aylar tabloda yer almıyor, sıfır anlamına GELMEZ.</div>
+                      </div>
+                    </div>
+                    <div style="margin-top:12px; font-size:10px; color:var(--text-muted);">Kaynak: YTD / September 2026 &bull; Conti Resorts_Raporlama Paketi_FY 2026_11.10.2026.xlsx &bull; EUR</div>
+                  </div>
+                  <div class="slide-footer"><span>PPG MASTER SYSTEM REPORT &bull; <strong>Blue Dreams Resort</strong></span><span>SLIDE 5</span></div>
+                </div>
+
+                <div class="slide" id="slide-6">
+                  <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">GOP / EBITDA</span><h2 class="slide-heading">GOP & EBITDA Analizi</h2></div><div class="slide-pma-badge">PPG-01 SERIES</div></div>
+                  <div class="slide-body">
+                    <div class="metrics-summary-cards" style="grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:18px;">
+                      
+                <div class="metric-card-visual" style="padding:16px 12px;">
+                  <div class="metric-visual-val" style="font-size:25px; line-height:1.15; color:var(--success, #10b981);">€5.031.904</div>
+                  <div class="metric-visual-lbl" style="letter-spacing:0.8px;">EBITDA — YTD</div>
+                </div>
+                      
+                <div class="metric-card-visual" style="padding:16px 12px;">
+                  <div class="metric-visual-val" style="font-size:25px; line-height:1.15; color:var(--success, #10b981);">€14.756</div>
+                  <div class="metric-visual-lbl" style="letter-spacing:0.8px;">Oda Başına EBITDA — YTD</div>
+                </div>
+                      
+                <div class="metric-card-visual" style="padding:16px 12px;">
+                  <div class="metric-visual-val" style="font-size:25px; line-height:1.15;">%24.4</div>
+                  <div class="metric-visual-lbl" style="letter-spacing:0.8px;">Portföy İçindeki Payı</div>
+                </div>
+                      
+                <div class="metric-card-visual" style="padding:16px 12px;">
+                  <div class="metric-visual-val" style="font-size:25px; line-height:1.15;">€199</div>
+                  <div class="metric-visual-lbl" style="letter-spacing:0.8px;">RevPAR — YTD</div>
+                </div>
+                    </div>
+                    <div class="split-grid" style="align-items:flex-start; height:auto;">
+                      <div>
+                        <div style="font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--text-muted); margin-bottom:10px;">EBITDA Köprüsü (YTD)</div>
+                        
+                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:7px;">
+                          <div style="flex:0 0 42%; font-size:12px; color:var(--text-white); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">2025 EBITDA</div>
+                          <div style="flex:1; height:9px; background:var(--border-card); border-radius:5px; overflow:hidden;">
+                            <div style="width:98%; height:100%; background:var(--success, #10b981); border-radius:5px;"></div>
+                          </div>
+                          <div style="flex:0 0 22%; text-align:right; font-size:12px; font-weight:700; color:var(--success, #10b981);">€20.225.328</div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:7px;">
+                          <div style="flex:0 0 42%; font-size:12px; color:var(--text-white); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">Satışlardaki Artış</div>
+                          <div style="flex:1; height:9px; background:var(--border-card); border-radius:5px; overflow:hidden;">
+                            <div style="width:19%; height:100%; background:var(--success, #10b981); border-radius:5px;"></div>
+                          </div>
+                          <div style="flex:0 0 22%; text-align:right; font-size:12px; font-weight:700; color:var(--success, #10b981);">€3.816.113</div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:7px;">
+                          <div style="flex:0 0 42%; font-size:12px; color:var(--text-white); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">Toplam Oda Giderleri</div>
+                          <div style="flex:1; height:9px; background:var(--border-card); border-radius:5px; overflow:hidden;">
+                            <div style="width:0%; height:100%; background:var(--success, #10b981); border-radius:5px;"></div>
+                          </div>
+                          <div style="flex:0 0 22%; text-align:right; font-size:12px; font-weight:700; color:var(--success, #10b981);">€8.096</div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:7px;">
+                          <div style="flex:0 0 42%; font-size:12px; color:var(--text-white); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">Toplam Yiyecek &amp; İçecek Gideri</div>
+                          <div style="flex:1; height:9px; background:var(--border-card); border-radius:5px; overflow:hidden;">
+                            <div style="width:8%; height:100%; background:var(--danger, #ef4444); border-radius:5px;"></div>
+                          </div>
+                          <div style="flex:0 0 22%; text-align:right; font-size:12px; font-weight:700; color:var(--danger, #ef4444);">−€1.552.314</div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:7px;">
+                          <div style="flex:0 0 42%; font-size:12px; color:var(--text-white); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">Toplam Ekstra &amp; Diğer Giderler</div>
+                          <div style="flex:1; height:9px; background:var(--border-card); border-radius:5px; overflow:hidden;">
+                            <div style="width:1%; height:100%; background:var(--danger, #ef4444); border-radius:5px;"></div>
+                          </div>
+                          <div style="flex:0 0 22%; text-align:right; font-size:12px; font-weight:700; color:var(--danger, #ef4444);">−€283.451</div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:7px;">
+                          <div style="flex:0 0 42%; font-size:12px; color:var(--text-white); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">Toplam Personel Maliyeti</div>
+                          <div style="flex:1; height:9px; background:var(--border-card); border-radius:5px; overflow:hidden;">
+                            <div style="width:5%; height:100%; background:var(--danger, #ef4444); border-radius:5px;"></div>
+                          </div>
+                          <div style="flex:0 0 22%; text-align:right; font-size:12px; font-weight:700; color:var(--danger, #ef4444);">−€1.122.278</div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:7px;">
+                          <div style="flex:0 0 42%; font-size:12px; color:var(--text-white); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">Enerji &amp; Tüketim Gideri</div>
+                          <div style="flex:1; height:9px; background:var(--border-card); border-radius:5px; overflow:hidden;">
+                            <div style="width:1%; height:100%; background:var(--success, #10b981); border-radius:5px;"></div>
+                          </div>
+                          <div style="flex:0 0 22%; text-align:right; font-size:12px; font-weight:700; color:var(--success, #10b981);">€171.806</div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:7px;">
+                          <div style="flex:0 0 42%; font-size:12px; color:var(--text-white); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">Genel ve İdari Yönetim Giderleri</div>
+                          <div style="flex:1; height:9px; background:var(--border-card); border-radius:5px; overflow:hidden;">
+                            <div style="width:4%; height:100%; background:var(--danger, #ef4444); border-radius:5px;"></div>
+                          </div>
+                          <div style="flex:0 0 22%; text-align:right; font-size:12px; font-weight:700; color:var(--danger, #ef4444);">−€766.827</div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:7px;">
+                          <div style="flex:0 0 42%; font-size:12px; color:var(--text-white); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">Kira Gideleri</div>
+                          <div style="flex:1; height:9px; background:var(--border-card); border-radius:5px; overflow:hidden;">
+                            <div style="width:0%; height:100%; background:var(--success, #10b981); border-radius:5px;"></div>
+                          </div>
+                          <div style="flex:0 0 22%; text-align:right; font-size:12px; font-weight:700; color:var(--success, #10b981);">€80.524</div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:7px;">
+                          <div style="flex:0 0 42%; font-size:12px; color:var(--text-white); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">2026 EBITDA</div>
+                          <div style="flex:1; height:9px; background:var(--border-card); border-radius:5px; overflow:hidden;">
+                            <div style="width:100%; height:100%; background:var(--success, #10b981); border-radius:5px;"></div>
+                          </div>
+                          <div style="flex:0 0 22%; text-align:right; font-size:12px; font-weight:700; color:var(--success, #10b981);">€20.576.998</div>
+                        </div>
+                      </div>
+                      <div>
+                        <div style="font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--text-muted); margin-bottom:8px;">Tüketim / Enerji (YTD)</div>
+                        <div class="table-container" style="max-height:280px; overflow-y:auto;">
+                          <table class="report-table"><thead><tr>
+                            <th>Kalem</th>
+                            <th style="text-align:right;">Geçen Yıl</th>
+                            <th style="text-align:right;">Bütçe</th>
+                            <th style="text-align:right;">Gerçekleşen</th>
+                          </tr></thead><tbody>
+                        <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                          <td style="padding:9px 14px; color:var(--text-white);">Toplam Enerji Gideri</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">-337.669</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">-358.525</td>
+                          <td style="padding:9px 14px; text-align:right; font-weight:700; color:var(--text-white);">-291.844</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                          <td style="padding:9px 14px; color:var(--text-white);">Elektrik Gideri</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">-210.328</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">-225.722</td>
+                          <td style="padding:9px 14px; text-align:right; font-weight:700; color:var(--text-white);">-133.736</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                          <td style="padding:9px 14px; color:var(--text-white);">Oda Gecesi Başına Elektrik (kWh)</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">0</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">0</td>
+                          <td style="padding:9px 14px; text-align:right; font-weight:700; color:var(--text-white);">81</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                          <td style="padding:9px 14px; color:var(--text-white);">Su Gideri</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">-4.986</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">-5.370</td>
+                          <td style="padding:9px 14px; text-align:right; font-weight:700; color:var(--text-white);">-6.281</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                          <td style="padding:9px 14px; color:var(--text-white);">Doğalgaz Gideri</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">-41.560</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">-44.737</td>
+                          <td style="padding:9px 14px; text-align:right; font-weight:700; color:var(--text-white);">-52.625</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                          <td style="padding:9px 14px; color:var(--text-white);">LPG Gideri</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">-72.181</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">-77.314</td>
+                          <td style="padding:9px 14px; text-align:right; font-weight:700; color:var(--text-white);">-84.891</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                          <td style="padding:9px 14px; color:var(--text-white);">Atık Gideri</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">-8.614</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">-5.382</td>
+                          <td style="padding:9px 14px; text-align:right; font-weight:700; color:var(--text-white);">-14.311</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08));">
+                          <td style="padding:9px 14px; color:var(--text-white);">Oda Gecesi Başına Enerji Maliyeti</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">-7</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">-7</td>
+                          <td style="padding:9px 14px; text-align:right; font-weight:700; color:var(--text-white);">-5</td>
+                        </tr></tbody></table>
+                        </div>
+                      </div>
+                    </div>
+                    <div style="margin-top:12px; font-size:10px; color:var(--text-muted);">Kaynak: YTD / September 2026 &bull; Conti Resorts_Raporlama Paketi_FY 2026_11.10.2026.xlsx &bull; EUR</div>
+                  </div>
+                  <div class="slide-footer"><span>PPG MASTER SYSTEM REPORT &bull; <strong>Blue Dreams Resort</strong></span><span>SLIDE 6</span></div>
+                </div>
+
+                <div class="slide" id="slide-7">
+                  <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">MATRIX</span><h2 class="slide-heading">Oteller Arası Karşılaştırma (YTD)</h2></div><div class="slide-pma-badge">PPG-01 SERIES</div></div>
+                  <div class="slide-body">
+                    <div class="table-container" style="max-height:400px; overflow:auto;">
+                      <table class="report-table"><thead><tr>
+                        <th>Otel</th>
+                        <th style="text-align:right;">Oda</th>
+                        <th style="text-align:right;">Net Oda Geliri</th>
+                        <th style="text-align:right;">GOP %</th>
+                        <th style="text-align:right;">EBITDA</th>
+                        <th style="text-align:right;">Oda Başına</th>
+                        <th style="text-align:right;">RevPAR</th>
+                        <th style="text-align:right;">ADR (net)</th>
+                        <th style="text-align:right;">Personel/Oda</th>
+                        <th style="text-align:right;">İptal</th>
+                      </tr></thead><tbody>
+                        <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08)); background:var(--bg-card);">
+                          <td style="padding:9px 14px; color:var(--text-white); font-weight:700;">Blue Dreams Resort <span style="color:var(--primary-gold); font-size:10px;">&bull; BU OTEL</span></td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">341</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-white);">€11.187.737</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--success, #10b981);">%44.9</td>
+                          <td style="padding:9px 14px; text-align:right; font-weight:700; color:var(--success, #10b981);">€5.031.904</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">€14.756</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">€199</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">€210</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">1,01</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">%18.4</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08)); ">
+                          <td style="padding:9px 14px; color:var(--text-white); font-weight:500;">Belconti Resort</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">596</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-white);">€17.690.572</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--success, #10b981);">%45.0</td>
+                          <td style="padding:9px 14px; text-align:right; font-weight:700; color:var(--success, #10b981);">€7.943.583</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">€13.328</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">€162</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">€206</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">0,74</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">%15.2</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08)); ">
+                          <td style="padding:9px 14px; color:var(--text-white); font-weight:500;">Salamis Bay Conti</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">664</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-white);">€28.887.107</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--success, #10b981);">%26.5</td>
+                          <td style="padding:9px 14px; text-align:right; font-weight:700; color:var(--success, #10b981);">€7.601.511</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">€11.448</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">€159</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">€232</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">0,74</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">%27.2</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border-card, rgba(0,0,0,0.08)); ">
+                          <td style="padding:9px 14px; color:var(--text-white); font-weight:500;">Konsolide (Grup)</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">1.601</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-white);">€57.765.416</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--success, #10b981);">%35.7</td>
+                          <td style="padding:9px 14px; text-align:right; font-weight:700; color:var(--success, #10b981);">€20.576.998</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">€12.853</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">€167</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">€219</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">0,80</td>
+                          <td style="padding:9px 14px; text-align:right; color:var(--text-muted);">%22.3</td>
+                        </tr></tbody></table>
+                    </div>
+                    <div style="margin-top:12px; font-size:10px; color:var(--text-muted);">Kaynak: YTD / September 2026 &bull; Conti Resorts_Raporlama Paketi_FY 2026_11.10.2026.xlsx &bull; EUR &bull; Boş hücre ("—") o metriğin pakette OLMADIĞINI gösterir; sıfır anlamına gelmez.</div>
+                  </div>
+                  <div class="slide-footer"><span>PPG MASTER SYSTEM REPORT &bull; <strong>Blue Dreams Resort</strong></span><span>SLIDE 7</span></div>
+                </div>
+
+    <div class="slide" id="sec-pickup">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">PICK-UP</span><h2 class="slide-heading">2026-09-30 Pick-Up</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/tr/admin/sales-monitor?from=2026-09-30&to=2026-09-30&currency=EUR&hotelId=cmnabk7ve0002sf0kj7wfhrv0" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ Görüntüle</a><div class="slide-pma-badge">PMA PARTNER</div></div></div>
+      <div class="slide-body">
+        
+<div style="display:flex;gap:6px 12px;flex-wrap:wrap;align-items:center;margin:0 0 14px;font-size:11px;color:var(--text-muted);line-height:1.45;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:7px 12px;">
+  <span style="display:inline-flex;align-items:center;gap:3px;padding:2px 7px;background:rgba(253,224,71,0.12);color:var(--primary-gold);border:1px solid rgba(253,224,71,0.25);border-radius:5px;font-weight:800;font-size:9.5px;letter-spacing:0.4px;white-space:nowrap;">
+    📅 RECORD DATE (GÜNLÜK REZERVASYON ÜRETİMİ)
+  </span>
+  <span style="color:var(--text-white);">ℹ️ <b>Açıklama:</b> Sadece rapor gününde oluşturulan rezervasyonların segment kırılımı (Acente/Tur Operatörü, OTA, Münferit/Direkt, MICE) ve net ciro üretimi.</span>
+  <span style="color:var(--text-muted);">📊 <b>Kaynak:</b> PMS Rezervasyon İşlem Kayıtları (Creation Date Log)</span>
+</div>
+        <p style="font-size:11px;color:var(--text-muted);margin-bottom:14px;font-style:italic;">Sadece 2026-09-30 tarihinde oluşturulan rezervasyonların segment kırılımı — Acente/Tur Operatörü, OTA, Münferit/Direkt ve MICE (tutarlar €).</p>
+        <div class="table-container">
+          <table class="report-table"><thead><tr><th>Segment</th><th style="text-align:right;">Adet</th><th style="text-align:right;">Ciro (€)</th></tr></thead><tbody><tr><td>Agency / Tour Operator</td><td style="text-align:right;">1</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€480</td></tr><tr><td>OTA</td><td style="text-align:right;">3</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€5.298</td></tr><tr><td>Individual / Direct</td><td style="text-align:right;">1</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€317</td></tr><tr><td>MICE</td><td style="text-align:right;">0</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€0</td></tr>
+            <tr><td style="font-weight:700;">Toplam</td><td style="text-align:right;font-weight:700;">5</td><td style="text-align:right;font-weight:800;color:var(--primary-gold);">€6.095</td></tr></tbody></table>
+        </div>
+        <div class="metrics-summary-cards" style="grid-template-columns:repeat(3,1fr);margin-top:14px;">
+          <div class="metric-card-visual" style="padding:14px 12px;">
+            <div class="metric-visual-val" style="font-size:22px;color:#ef4444;">0</div>
+            <div class="metric-visual-lbl">İptal</div>
+            <div class="metric-visual-foot">€0</div>
+          </div>
+          <div class="metric-card-visual" style="padding:14px 12px;">
+            <div class="metric-visual-val" style="font-size:22px;">0</div>
+            <div class="metric-visual-lbl">No-Show</div>
+            <div class="metric-visual-foot">varış: 2026-09-24 → 2026-09-30</div>
+          </div>
+          <div class="metric-card-visual" style="padding:14px 12px;">
+            <div class="metric-visual-val" style="font-size:22px;color:var(--primary-gold);">5</div>
+            <div class="metric-visual-lbl">NET Pick-Up</div>
+            <div class="metric-visual-foot">€6.094 · brüt − iptal</div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>PMA PARTNER &bull; <strong>Blue Dreams Resort</strong></span><span>GÜNLÜK E-POSTA / PMS VERİSİ</span></div>
+    </div>
+    <div class="slide" id="sec-forecast">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">FORECAST</span><h2 class="slide-heading">FORECAST — Rapor Günü Yeni Rezervasyon Check-In Ayları</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/tr/admin/demand-forecast?from=2026-09-30&to=2026-09-30&currency=EUR&hotelId=cmnabk7ve0002sf0kj7wfhrv0" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ Görüntüle</a><div class="slide-pma-badge">PMA PARTNER</div></div></div>
+      <div class="slide-body">
+        
+<div style="display:flex;gap:6px 12px;flex-wrap:wrap;align-items:center;margin:0 0 14px;font-size:11px;color:var(--text-muted);line-height:1.45;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:7px 12px;">
+  <span style="display:inline-flex;align-items:center;gap:3px;padding:2px 7px;background:rgba(253,224,71,0.12);color:var(--primary-gold);border:1px solid rgba(253,224,71,0.25);border-radius:5px;font-weight:800;font-size:9.5px;letter-spacing:0.4px;white-space:nowrap;">
+    📅 STAY DATE (OTB FORECAST &amp; TALEP TAHMİNİ)
+  </span>
+  <span style="color:var(--text-white);">ℹ️ <b>Açıklama:</b> Yeni rezervasyonların check-in aylarına göre OTB dağılımı ve önümüzdeki 60 gün için talep, pace ve uçuş projeksiyonu.</span>
+  <span style="color:var(--text-muted);">📊 <b>Kaynak:</b> PMS İleriye Dönük Rezervasyonlar &amp; Havalimanı Kapasite Veritabanı</span>
+</div>
+        <p style="font-size:11px;color:var(--text-muted);margin-bottom:14px;font-style:italic;">2026-09-30 tarihinde oluşturulan yeni rezervasyonların check-in ayına göre dağılımı. Bu bölüm genel doluluk tahmini değildir.</p>
+        <div class="table-container">
+          <table class="report-table"><thead><tr><th>Check-in Ayı</th><th style="text-align:right;">Oda-gece</th><th style="text-align:right;">Yeni Rez. Cirosu</th></tr></thead><tbody>
+            <tr><td style="font-weight:700;">2026-09</td><td style="text-align:right;">7</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€1.604</td></tr>
+            <tr><td style="font-weight:700;">2026-10</td><td style="text-align:right;">255</td><td style="text-align:right;font-weight:700;color:var(--primary-gold);">€4.490</td></tr>
+          </tbody></table>
+        </div>
+        <div style="margin-top:18px;">
+          <div style="font-size:11px;color:var(--text-muted);margin-bottom:10px;font-style:italic;">Talep Tahmini — önümüzdeki 60 gün (web /admin/demand-forecast paneliyle aynı hesaplama): doluluk projeksiyonu, geçen yıl pace ve uçuş baskısı.</div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;text-align:center;background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:20px;">
+            <div><div style="font-size:24px;font-weight:800;color:var(--primary-gold);">%58</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:.5px;margin-top:2px;">Ort. Tahmini Doluluk</div></div>
+            <div><div style="font-size:24px;font-weight:800;color:var(--text-white);">%100</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:.5px;margin-top:2px;">Pik Doluluk</div><div style="font-size:10px;color:var(--text-muted);margin-top:2px;">24.10</div></div>
+            <div><div style="font-size:24px;font-weight:800;color:var(--text-white);">%244</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:.5px;margin-top:2px;">Pace (Geçen Yıl)</div><div style="font-size:10px;color:var(--text-muted);margin-top:2px;">100 = başabaş</div></div>
+            <div><div style="font-size:24px;font-weight:800;color:var(--text-white);">Yoğun (2.00x)</div><div style="font-size:11px;color:var(--text-muted);letter-spacing:.5px;margin-top:2px;">Uçuş Sinyali</div></div>
+          </div>
+          <div style="font-size:12.5px;color:var(--text-white);margin-top:12px;line-height:1.5;">Önümüzdeki dönem ortalama tahmini doluluk %58 (otelin gerçek pickup eğrisi + geçen yıl bazlı). Rezervasyon pace'i geçen yıla göre %144 ileride (doluluk YoY). Uçuş kapasitesi sinyali: güçlü (baseline'a göre %100). Ortalama güven: %91 (uzak tarihlerde düşer). Sektör riski: "Saudi Arabia’s Houthi trap: The underdog sets the price of war".</div>
+        </div>
+      </div>
+      <div class="slide-footer"><span>PMA PARTNER &bull; <strong>Blue Dreams Resort</strong></span><span>GÜNLÜK E-POSTA / PMS VERİSİ</span></div>
+    </div>
+    <div class="slide" id="sec-d2c">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">D2C</span><h2 class="slide-heading">D2C (Call Center + Münferit + Web)</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/tr/admin/sales-monitor?from=2026-09-30&to=2026-09-30&currency=EUR&hotelId=cmnabk7ve0002sf0kj7wfhrv0" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ Görüntüle</a><div class="slide-pma-badge">PPG NEWS</div></div></div>
+      <div class="slide-body">
+        
+<div style="display:flex;gap:6px 12px;flex-wrap:wrap;align-items:center;margin:0 0 14px;font-size:11px;color:var(--text-muted);line-height:1.45;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:7px 12px;">
+  <span style="display:inline-flex;align-items:center;gap:3px;padding:2px 7px;background:rgba(253,224,71,0.12);color:var(--primary-gold);border:1px solid rgba(253,224,71,0.25);border-radius:5px;font-weight:800;font-size:9.5px;letter-spacing:0.4px;white-space:nowrap;">
+    📅 RECORD DATE (SON 7 GÜN D2C SATIŞLARI)
+  </span>
+  <span style="color:var(--text-white);">ℹ️ <b>Açıklama:</b> Son 7 günde doğrudan satış kanallarından (Web, Çağrı Merkezi, Münferit) üretilen rezervasyon adedi ve net ciro hacmi.</span>
+  <span style="color:var(--text-muted);">📊 <b>Kaynak:</b> PMS &amp; Çağrı Merkezi / Web Motoru Kayıtları</span>
+</div>
+        <p style="font-size:11px;color:var(--text-muted);margin-bottom:14px;font-style:italic;">2026-09-24 → 2026-09-30 pickup — € tutar + işlem/rezervasyon sayısı.</p>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;background:var(--bg-card);border:1px solid var(--border-card);border-radius:12px;padding:22px;">
+          <div style="text-align:center;"><div style="font-size:24px;font-weight:800;color:var(--text-white);">1</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Call Center</div><div style="font-size:13px;font-weight:700;color:var(--primary-gold);margin-top:4px;">€317</div></div>
+          <div style="text-align:center;"><div style="font-size:24px;font-weight:800;color:var(--text-white);">0</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Münferit</div><div style="font-size:13px;font-weight:700;color:var(--primary-gold);margin-top:4px;">€0</div></div>
+          <div style="text-align:center;"><div style="font-size:24px;font-weight:800;color:var(--text-white);">0</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Web</div><div style="font-size:13px;font-weight:700;color:var(--primary-gold);margin-top:4px;">€0</div></div>
+        </div>
+        <div style="margin-top:12px;text-align:right;font-size:13px;color:var(--text-muted);">Toplam: <strong style="color:var(--text-white);">1</strong> · <strong style="color:var(--primary-gold);">€317</strong></div>
+      </div>
+      <div class="slide-footer"><span>PMA PARTNER &bull; <strong>Blue Dreams Resort</strong></span><span>GÜNLÜK E-POSTA / PMS VERİSİ</span></div>
+    </div>
+    <div class="slide" id="sec-flights">
+      <div class="slide-header"><div class="slide-title-area"><span class="slide-tag">UÇUŞ</span><h2 class="slide-heading">Uçuş Analizi — Origin Airport Bazlı Talep Baskısı</h2></div><div style="display:flex;align-items:center;gap:12px;"><a href="https://ppg.pmapartner.com/tr/admin/demand-forecast?from=2026-09-30&to=2026-09-30&currency=EUR&hotelId=cmnabk7ve0002sf0kj7wfhrv0" target="_blank" rel="noopener" style="font-size:10px;color:var(--primary-gold);text-decoration:none;opacity:0.8;margin-left:auto;">→ Görüntüle</a><div class="slide-pma-badge">PMA PARTNER</div></div></div>
+      <div class="slide-body">
+        
+<div style="display:flex;gap:6px 12px;flex-wrap:wrap;align-items:center;margin:0 0 14px;font-size:11px;color:var(--text-muted);line-height:1.45;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:7px 12px;">
+  <span style="display:inline-flex;align-items:center;gap:3px;padding:2px 7px;background:rgba(253,224,71,0.12);color:var(--primary-gold);border:1px solid rgba(253,224,71,0.25);border-radius:5px;font-weight:800;font-size:9.5px;letter-spacing:0.4px;white-space:nowrap;">
+    📅 FLIGHT PRESSURE (21 GÜNLÜK VARIŞ KAPASİTESİ)
+  </span>
+  <span style="color:var(--text-white);">ℹ️ <b>Açıklama:</b> Hedef havalimanına önümüzdeki 21 günde inecek olan uçak ve koltuk sayısı ile ilk 10 çıkış havalimanı analizi.</span>
+  <span style="color:var(--text-muted);">📊 <b>Kaynak:</b> FlightAware / Sivil Havacılık &amp; Uçuş Arşivi</span>
+</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-bottom:14px;">Varış havalimanı: <strong style="color:var(--text-white);">BJV</strong></div>
+        <div style="font-size:11px;color:var(--text-muted);margin-bottom:8px;font-style:italic;">2026-09-30 → 2026-10-20 toplam uçuş; ilk 10 çıkış havalimanı (kaynak: uçuş arşivi). Ülke gruplaması kullanılmaz.</div>
+        <div class="metrics-summary-cards" style="grid-template-columns:repeat(3,1fr);">
+          <div class="metric-card-visual"><div class="metric-visual-val">655</div><div class="metric-visual-lbl">2026-09-30 → 2026-10-06</div><div class="metric-visual-foot">3.538 koltuk</div></div>
+          <div class="metric-card-visual"><div class="metric-visual-val">851</div><div class="metric-visual-lbl">2026-09-30 → 2026-10-13</div><div class="metric-visual-foot">6.975 koltuk</div></div>
+          <div class="metric-card-visual"><div class="metric-visual-val">1.086</div><div class="metric-visual-lbl">Toplam Uçuş · 2026-09-30 → 2026-10-20</div><div class="metric-visual-foot">10.412 koltuk</div></div>
+        </div>
+        <div class="table-container" style="margin-top:16px;"><table class="report-table"><thead><tr><th>Çıkış Havalimanı</th><th style="text-align:right;">Uçuş</th><th style="text-align:right;">Koltuk</th></tr></thead><tbody><tr><td style="font-weight:700;">İstanbul Sabiha Gökçen Uluslararası Havalimanı (SAW)</td><td style="text-align:right;color:var(--primary-gold);font-weight:800;">245</td><td style="text-align:right;">0</td></tr><tr><td style="font-weight:700;">Istanbul Airport (IST)</td><td style="text-align:right;color:var(--primary-gold);font-weight:800;">152</td><td style="text-align:right;">0</td></tr><tr><td style="font-weight:700;">Viyana Uluslararası Havalimanı (VIE)</td><td style="text-align:right;color:var(--primary-gold);font-weight:800;">99</td><td style="text-align:right;">0</td></tr><tr><td style="font-weight:700;">Stockholm-Arlanda Havalimanı (ARN)</td><td style="text-align:right;color:var(--primary-gold);font-weight:800;">93</td><td style="text-align:right;">0</td></tr><tr><td style="font-weight:700;">Kopenhag Havalimanı (CPH)</td><td style="text-align:right;color:var(--primary-gold);font-weight:800;">87</td><td style="text-align:right;">0</td></tr><tr><td style="font-weight:700;">Londra Stansted Havalimanı (STN)</td><td style="text-align:right;color:var(--primary-gold);font-weight:800;">75</td><td style="text-align:right;">0</td></tr><tr><td style="font-weight:700;">Ankara Esenboğa Havalimanı (ESB)</td><td style="text-align:right;color:var(--primary-gold);font-weight:800;">66</td><td style="text-align:right;">0</td></tr><tr><td style="font-weight:700;">Budapeşte Ferenc Liszt Uluslararası Havaalanı (BUD)</td><td style="text-align:right;color:var(--primary-gold);font-weight:800;">51</td><td style="text-align:right;">0</td></tr><tr><td style="font-weight:700;">Düsseldorf Uluslararası Havalimanı (DUS)</td><td style="text-align:right;color:var(--primary-gold);font-weight:800;">50</td><td style="text-align:right;">0</td></tr><tr><td style="font-weight:700;">Atina Elefterios Venizelos Uluslararası Havalimanı (ATH)</td><td style="text-align:right;color:var(--primary-gold);font-weight:800;">47</td><td style="text-align:right;">0</td></tr></tbody></table></div>
+        <div style="margin-top:16px;">
+              <div style="font-size:11px;color:var(--text-muted);margin-bottom:6px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;">Gün Gün Uçuş Hacmi</div>
+              <div style="display:flex;align-items:flex-end;gap:3px;height:76px;">
+                <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-09-30 — 159 uçuş / 592 koltuk">
+                      <div style="width:100%;height:72px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-10-01 — 140 uçuş / 491 koltuk">
+                      <div style="width:100%;height:63px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-10-02 — 123 uçuş / 491 koltuk">
+                      <div style="width:100%;height:56px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-10-03 — 109 uçuş / 491 koltuk">
+                      <div style="width:100%;height:49px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-10-04 — 43 uçuş / 491 koltuk">
+                      <div style="width:100%;height:19px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-10-05 — 27 uçuş / 491 koltuk">
+                      <div style="width:100%;height:12px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-10-06 — 54 uçuş / 491 koltuk">
+                      <div style="width:100%;height:24px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-10-07 — 16 uçuş / 491 koltuk">
+                      <div style="width:100%;height:7px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-10-08 — 18 uçuş / 491 koltuk">
+                      <div style="width:100%;height:8px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-10-09 — 28 uçuş / 491 koltuk">
+                      <div style="width:100%;height:13px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-10-10 — 32 uçuş / 491 koltuk">
+                      <div style="width:100%;height:14px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-10-11 — 30 uçuş / 491 koltuk">
+                      <div style="width:100%;height:14px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-10-12 — 52 uçuş / 491 koltuk">
+                      <div style="width:100%;height:24px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-10-13 — 20 uçuş / 491 koltuk">
+                      <div style="width:100%;height:9px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-10-14 — 19 uçuş / 491 koltuk">
+                      <div style="width:100%;height:9px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-10-15 — 31 uçuş / 491 koltuk">
+                      <div style="width:100%;height:14px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-10-16 — 32 uçuş / 491 koltuk">
+                      <div style="width:100%;height:14px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-10-17 — 37 uçuş / 491 koltuk">
+                      <div style="width:100%;height:17px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-10-18 — 55 uçuş / 491 koltuk">
+                      <div style="width:100%;height:25px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-10-19 — 40 uçuş / 491 koltuk">
+                      <div style="width:100%;height:18px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;" title="2026-10-20 — 21 uçuş / 491 koltuk">
+                      <div style="width:100%;height:10px;background:linear-gradient(180deg,var(--primary-gold),rgba(148,163,184,.35));border-radius:3px 3px 0 0;"></div>
+                    </div>
+              </div>
+              <div style="display:flex;justify-content:space-between;font-size:9px;color:var(--text-muted);margin-top:4px;">
+                <span>2026-09-30</span><span>2026-10-20</span>
+              </div>
+              <div class="table-container" style="margin-top:10px;max-height:210px;overflow:auto;"><table class="report-table"><thead><tr><th>Tarih</th><th style="text-align:right;">Uçuş</th><th style="text-align:right;">Koltuk</th></tr></thead><tbody><tr><td>2026-09-30</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">159</td><td style="text-align:right;">592</td></tr><tr><td>2026-10-01</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">140</td><td style="text-align:right;">491</td></tr><tr><td>2026-10-02</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">123</td><td style="text-align:right;">491</td></tr><tr><td>2026-10-03</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">109</td><td style="text-align:right;">491</td></tr><tr><td>2026-10-04</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">43</td><td style="text-align:right;">491</td></tr><tr><td>2026-10-05</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">27</td><td style="text-align:right;">491</td></tr><tr><td>2026-10-06</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">54</td><td style="text-align:right;">491</td></tr><tr><td>2026-10-07</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">16</td><td style="text-align:right;">491</td></tr><tr><td>2026-10-08</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">18</td><td style="text-align:right;">491</td></tr><tr><td>2026-10-09</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">28</td><td style="text-align:right;">491</td></tr><tr><td>2026-10-10</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">32</td><td style="text-align:right;">491</td></tr><tr><td>2026-10-11</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">30</td><td style="text-align:right;">491</td></tr><tr><td>2026-10-12</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">52</td><td style="text-align:right;">491</td></tr><tr><td>2026-10-13</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">20</td><td style="text-align:right;">491</td></tr><tr><td>2026-10-14</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">19</td><td style="text-align:right;">491</td></tr><tr><td>2026-10-15</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">31</td><td style="text-align:right;">491</td></tr><tr><td>2026-10-16</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">32</td><td style="text-align:right;">491</td></tr><tr><td>2026-10-17</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">37</td><td style="text-align:right;">491</td></tr><tr><td>2026-10-18</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">55</td><td style="text-align:right;">491</td></tr><tr><td>2026-10-19</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">40</td><td style="text-align:right;">491</td></tr><tr><td>2026-10-20</td><td style="text-align:right;color:var(--primary-gold);font-weight:700;">21</td><td style="text-align:right;">491</td></tr></tbody></table></div>
+            </div>
+        <div class="table-container" style="margin-top:14px;"><table class="report-table"><thead><tr><th>Havayolu</th><th style="text-align:right;">Uçuş</th><th style="text-align:right;">Koltuk</th></tr></thead><tbody><tr><td style="font-weight:700;">pc</td><td style="text-align:right;color:var(--primary-gold);font-weight:800;">377</td><td style="text-align:right;">0</td></tr><tr><td style="font-weight:700;">vf</td><td style="text-align:right;color:var(--primary-gold);font-weight:800;">360</td><td style="text-align:right;">0</td></tr><tr><td style="font-weight:700;">tk</td><td style="text-align:right;color:var(--primary-gold);font-weight:800;">278</td><td style="text-align:right;">0</td></tr><tr><td style="font-weight:700;">xq</td><td style="text-align:right;color:var(--primary-gold);font-weight:800;">58</td><td style="text-align:right;">0</td></tr><tr><td style="font-weight:700;">ju</td><td style="text-align:right;color:var(--primary-gold);font-weight:800;">55</td><td style="text-align:right;">0</td></tr></tbody></table></div>
+        <div style="font-size:10px;color:var(--text-muted);margin-top:6px;font-style:italic;">Havayolu adı kaynakta olduğu gibi gösterilir; bazı satırlarda tam ad, bazılarında IATA kodu bulunur — koddan ada tahmin yapılmaz.</div>
+      </div>
+      <div class="slide-footer"><span>PMA PARTNER &bull; <strong>Blue Dreams Resort</strong></span><span>GÜNLÜK E-POSTA / PMS VERİSİ</span></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="border-top:1px solid var(--border-card); padding:30px 60px; text-align:center; color:var(--text-muted); font-size:11px; font-weight:500; background:var(--bg-dark);">
+    PPG Performance — Otomatik Rapor &bull; Raporlama Zamanı: 24.10.2026 06:02:36<br>
+    <strong style="color:var(--text-white); font-weight:700;">PPG Hospitality Technology &copy; 2026</strong>
+  </div>
+
+<script type="application/json" id="rs-cfg">{"logo":null,"kapak":null}</script><script>(function(){
+var d=document,b=d.body;if(!b||b.getAttribute('data-rs-hazir'))return;b.setAttribute('data-rs-hazir','1');
+var cfg={};try{cfg=JSON.parse(d.getElementById('rs-cfg').textContent||'{}')}catch(e){}
+var dil=(d.documentElement.lang||'tr').slice(0,2);
+var M={tr:['Menü','Yazdır','Tema','Rapor'],en:['Menu','Print','Theme','Report'],de:['Menü','Drucken','Design','Bericht'],ru:['Меню','Печать','Тема','Отчёт']}[dil]||['Menü','Yazdır','Tema','Rapor'];
+function txt(el){if(el&&el.querySelector&&el.querySelector(".info,[data-tip],sup,svg,button")){el=el.cloneNode(true);[].slice.call(el.querySelectorAll(".info,[data-tip],sup,svg,button")).forEach(function(x){x.remove()})}return el?(el.textContent||'').replace(/\s+/g,' ').trim():''}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+var SEC='section,.section,.slide,.card';
+var bolumler=[],gorulen={};
+[].slice.call(d.querySelectorAll(SEC)).forEach(function(el){
+ if(el.classList.contains('slide-cover'))return;
+ var p=el.parentElement&&el.parentElement.closest(SEC);if(p)return;
+ var h=el.querySelector('h2,.slide-heading,.sec-h h2,.sec-head h2,h3');if(!h)return;
+ var t=txt(h);if(!t)return;if(t.length>48)t=t.slice(0,46)+'…';
+ if(gorulen[t])return;gorulen[t]=1;
+ if(!el.id)el.id='rs-b-'+bolumler.length;el.classList.add('rs-bolum');bolumler.push({id:el.id,t:t,el:el});
+});
+var gruplar=[].slice.call(d.querySelectorAll('.grp[id]')).map(function(el){var t=txt(el.querySelector('.grp-t'));el.classList.add('rs-bolum');return t?{id:el.id,t:t.length>48?t.slice(0,46)+'…':t,el:el}:null}).filter(Boolean);
+if(gruplar.length>=2)bolumler=gruplar;
+if(bolumler.length<2){[].slice.call(d.querySelectorAll('.nav a[href^="#"],.report-nav a[href^="#"]')).forEach(function(a){
+ var id=a.getAttribute('href').slice(1),el=id&&d.getElementById(id),t=txt(a);if(!el||!t||gorulen[t])return;gorulen[t]=1;el.classList.add('rs-bolum');bolumler.push({id:id,t:t,el:el})})}
+var baslik='',alt='';
+var brand=d.querySelector('.top .brand');
+if(brand){var sm=brand.querySelector('small');alt=txt(sm);var kl=brand.cloneNode(true);var s2=kl.querySelector('small');if(s2)s2.remove();baslik=txt(kl)}
+var dt=(d.title||'').split(/\s+[—–|]\s+/);
+if(!baslik&&dt[0]){baslik=dt[0];alt=dt.slice(1).join(' · ')}
+if(!baslik)baslik=txt(d.querySelector('h1'))||M[3];
+if(alt.length>140)alt=alt.slice(0,138)+'…';
+var kpi=[];
+[].slice.call(d.querySelectorAll('.kpi,.metric-card-visual,.kpi-card')).some(function(k){
+ var e=txt(k.querySelector('.kpi-label,.metric-visual-lbl,.kpi-l,.lbl')),v=txt(k.querySelector('.kpi-val,.metric-visual-val,.kpi-v,.val'));
+ if(e&&v&&v.length<24)kpi.push({e:e,v:v,a:txt(k.querySelector('.kpi-sub,.kpi-s,.metric-visual-sub'))});return kpi.length>=4});
+var menu=d.createElement('header');menu.id='rs-ust';
+var tema=typeof window.toggleTheme==='function';
+menu.innerHTML='<div class="rs-ic"><a class="rs-marka" href="#rs-hero">'+(cfg.logo?'<img src="'+esc(cfg.logo)+'" alt="" onerror="this.remove()">':'')+'<span>'+esc(baslik.length>34?baslik.slice(0,33)+'…':baslik)+'</span></a>'
+ +'<nav aria-label="'+esc(M[0])+'">'+bolumler.map(function(x){return '<a href="#'+esc(x.id)+'">'+esc(x.t)+'</a>'}).join('')+'</nav>'
+ +(tema?'<button type="button" class="rs-dg" data-rs="tema">◐ '+esc(M[2])+'</button>':'')+'<button type="button" class="rs-dg" data-rs="yazdir">⎙ '+esc(M[1])+'</button>'
+ +'<button type="button" class="rs-ham" aria-label="'+esc(M[0])+'" aria-expanded="false"><span></span><span></span><span></span></button></div>';
+var hero=d.createElement('section');hero.id='rs-hero';
+hero.style.backgroundImage=cfg.kapak?'url("'+String(cfg.kapak).replace(/["\\]/g,'')+'")':'radial-gradient(900px 400px at 12% 0%,rgba(255,255,255,.18),transparent),linear-gradient(135deg,var(--rs-ac),#0f172a)';
+hero.innerHTML='<div class="rs-h-ic">'+(cfg.logo?'<img class="rs-logo" src="'+esc(cfg.logo)+'" alt="" onerror="this.remove()">':'')
+ +'<p class="rs-ust">PMA PARTNER · COCKPIT NEWS</p><h1>'+esc(baslik)+'</h1>'+(alt?'<p class="rs-alt">'+esc(alt)+'</p>':'')
+ +(kpi.length?'<div class="rs-kpi">'+kpi.map(function(k){return '<div class="rs-k"><span>'+esc(k.e)+'</span><b>'+esc(k.v)+'</b>'+(k.a?'<em>'+esc(k.a)+'</em>':'')+'</div>'}).join('')+'</div>':'')
+ +(bolumler.length>1?'<div class="rs-kisa">'+bolumler.slice(0,8).map(function(x){return '<a href="#'+esc(x.id)+'">'+esc(x.t)+' →</a>'}).join('')+'</div>':'')+'</div>';
+var ilk=d.querySelector('.wrap,.deck-container,main')||b.firstChild;
+b.insertBefore(menu,b.firstChild);
+if(ilk&&ilk.parentNode)ilk.parentNode.insertBefore(hero,ilk);else b.insertBefore(hero,menu.nextSibling);
+menu.addEventListener('click',function(ev){var t=ev.target.closest('[data-rs],.rs-ham,nav a');if(!t)return;
+ if(t.classList.contains('rs-ham')){var a=menu.classList.toggle('acik');t.setAttribute('aria-expanded',a?'true':'false');return}
+ if(t.getAttribute('data-rs')==='yazdir'){window.print();return}if(t.getAttribute('data-rs')==='tema'){window.toggleTheme();return}
+ menu.classList.remove('acik')});
+if('IntersectionObserver' in window&&bolumler.length){var linkler={};[].slice.call(menu.querySelectorAll('nav a')).forEach(function(a){linkler[a.getAttribute('href').slice(1)]=a});
+ var io=new IntersectionObserver(function(g){g.forEach(function(x){if(x.isIntersecting){for(var k in linkler)linkler[k].classList.remove('aktif');var a=linkler[x.target.id];if(a){a.classList.add('aktif');if(a.scrollIntoView&&window.innerWidth>860){var n=a.parentNode;n.scrollLeft=a.offsetLeft-n.clientWidth/2+a.clientWidth/2}}}})},{rootMargin:'-80px 0px -65% 0px'});
+ bolumler.forEach(function(x){io.observe(x.el)})}
+})();</script></body>
+</html>
